@@ -124,7 +124,12 @@
     </section>
 
     <section class="production section section-dark">
-      <div class="production-visual reveal"><div class="factory-grid"><div class="factory-tile big">ASSEMBLY</div><div class="factory-tile">ELECTRONICS</div><div class="factory-tile">TESTING</div><div class="factory-tile wide">FINAL INSPECTION</div></div></div>
+      <div class="production-visual reveal"><div class="factory-grid">
+        <div class="factory-tile big"><img src="/assets/production/assembly.webp" alt="Assembly and final setup of Pro Games boxer machines in Poland" loading="lazy" decoding="async"><span>ASSEMBLY</span></div>
+        <div class="factory-tile"><img src="/assets/production/electronics.webp" alt="Electronics and wiring inside a Pro Games amusement machine" loading="lazy" decoding="async"><span>ELECTRONICS</span></div>
+        <div class="factory-tile"><img src="/assets/production/testing.webp" alt="Testing a Pro Games boxer machine during production" loading="lazy" decoding="async"><span>TESTING</span></div>
+        <div class="factory-tile wide"><img src="/assets/production/production-line.webp" alt="Completed Pro Games amusement machines lined up at the production facility" loading="lazy" decoding="async"><span>FINAL INSPECTION</span></div>
+      </div></div>
       <div class="production-copy reveal"><p class="kicker">MANUFACTURING</p><h2>MADE<br>IN POLAND.</h2><p>Pro Games states that its machines are designed and built in Poland. Current company materials also emphasise selected suppliers, experienced staff and controls during production and before sale.</p><div class="mini-list"><span>01 / PRODUCTION</span><span>02 / ASSEMBLY</span><span>03 / TESTING</span></div></div>
     </section>
 
@@ -170,13 +175,16 @@
 
     <section class="contact section" id="contact">
       <div class="contact-copy reveal"><p class="kicker">LET'S TALK</p><h2>LET'S BUILD YOUR NEXT<br><span>ENTERTAINMENT EXPERIENCE.</span></h2><div class="contact-details"><a href="tel:+48536068912">Sales: +48 536 068 912</a><a href="tel:+48604978462">Mobile: +48 604 978 462</a><a href="mailto:office@progames.pl">office@progames.pl</a><a href="mailto:service@progames.pl">service@progames.pl</a><a href="tel:+48789108086">Service: +48 789 108 086</a><p>PRO GAMES POLAND Sp. z o.o.<br>ul. Rybnicka 19A<br>44-335 Jastrzębie-Zdrój, Poland</p></div></div>
-      <form class="contact-form reveal" action="mailto:office@progames.pl" method="post" enctype="text/plain">
-        <div class="field-row"><label>Full name<input name="name" required placeholder="Your name"></label><label>Company<input name="company" placeholder="Company name"></label></div>
-        <div class="field-row"><label>Email<input type="email" name="email" required placeholder="name@company.com"></label><label>Phone<input type="tel" name="phone" placeholder="+48 ..."></label></div>
+      <form class="contact-form reveal" id="contactForm" action="/api/contact" method="post" novalidate>
+        <div class="field-row"><label>Full name<input name="name" required autocomplete="name" placeholder="Your name"></label><label>Company<input name="company" autocomplete="organization" placeholder="Company name"></label></div>
+        <div class="field-row"><label>Email<input type="email" name="email" required autocomplete="email" placeholder="name@company.com"></label><label>Phone<input type="tel" name="phone" autocomplete="tel" placeholder="+48 ..."></label></div>
         <label>Product of interest<select name="product" id="productInterest"><option value="">Select a product</option></select></label>
-        <label>Message<textarea name="message" rows="5" placeholder="Tell us what you need…"></textarea></label>
+        <label>Message<textarea name="message" rows="5" required placeholder="Tell us what you need…"></textarea></label>
+        <input type="hidden" name="language" value="en">
+        <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn btn-primary" type="submit">Send inquiry</button>
-        <small>For production deployment, connect this form to a mail or CRM endpoint instead of the current mail-client fallback.</small>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <small>Your inquiry will be sent directly to office@progames.pl.</small>
       </form>
     </section>
   </main>
