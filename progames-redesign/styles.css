@@ -466,8 +466,29 @@ body.product-page-v2{margin:0;background:#fff;color:#111;font-family:Inter,Arial
   .product-page-v2 .product-main-stage{height:390px!important;max-height:390px!important}
   .product-page-v2 .product-main-stage img{max-width:74%!important;max-height:86%!important}
 }
-.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
-.form-status{min-height:22px;margin:12px 0 0;font-size:13px;font-weight:700}
-.form-status[data-state="success"]{color:#16843b}
-.form-status[data-state="error"]{color:#c62828}
-.contact-form .btn:disabled{opacity:.65;cursor:wait;transform:none}
+
+/* 2026-09-30 — mobile product image: always keep the whole product inside the card */
+@media(max-width:640px){
+  .product-page-v2 .product-main-stage{
+    padding:18px!important;
+  }
+  .product-page-v2 .product-main-stage img{
+    display:block!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    min-width:0!important;
+    min-height:0!important;
+    padding:0!important;
+    margin:0!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    flex:0 1 auto!important;
+  }
+}
+@media(max-width:390px){
+  .product-page-v2 .product-main-stage{
+    padding:16px!important;
+  }
+}
