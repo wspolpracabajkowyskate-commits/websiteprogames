@@ -1,3 +1,10 @@
+const isES=document.documentElement.lang==='es';
+const UI=isES?{
+  view:'Ver producto ↗', shownSingular:'máquina mostrada', shownPlural:'máquinas mostradas', spare:'Repuestos', distribution:'Distribución / colaboración B2B', other:'Otro'
+}:{
+  view:'View product ↗', shownSingular:'machine shown', shownPlural:'machines shown', spare:'Spare parts', distribution:'Distribution / B2B partnership', other:'Other'
+};
+const es=window.PG_ES||{labels:{}};
 const header=document.querySelector('#header');
 addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>40),{passive:true});
 
@@ -22,7 +29,12 @@ let activeCategory='all';
 let activeQuery='';
 
 if(grid){
-  grid.innerHTML=Object.entries(products).map(([slug,p])=>`<article class="product-card reveal" data-category="${p.category}" data-search="${`${p.name} ${p.label} ${p.desc}`.toLowerCase().replace(/"/g,'&quot;')}"><a href="/product.html?model=${encodeURIComponent(slug)}" aria-label="View ${p.name}"><div class="card-media"><img loading="lazy" src="${p.image}" alt="${p.name} by Pro Games" referrerpolicy="no-referrer">${p.tag?`<span class="tag">${p.tag}</span>`:''}</div><div class="card-body"><p>${p.label}</p><h3>${p.name}</h3><span>View product ↗</span></div></a></article>`).join('');
+  grid.innerHTML=Object.entries(products).map(([slug,p])=>{
+    const label=isES?(es.labels[p.label]||p.label):p.label;
+    const desc=isES?((window.PRODUCT_ES||{})[slug]?.desc||p.desc):p.desc;
+    const url=`${isES?'/product-es.html':'/product.html'}?model=${encodeURIComponent(slug)}`;
+    return `<article class="product-card reveal" data-category="${p.category}" data-search="${`${p.name} ${label} ${desc}`.toLowerCase().replace(/"/g,'&quot;')}"><a href="${url}" aria-label="${isES?'Ver':'View'} ${p.name}"><div class="card-media"><img loading="lazy" src="${p.image}" alt="${p.name} by Pro Games" referrerpolicy="no-referrer">${p.tag?`<span class="tag">${p.tag}</span>`:''}</div><div class="card-body"><p>${label}</p><h3>${p.name}</h3><span>${UI.view}</span></div></a></article>`;
+  }).join('');
 }
 
 function applyProductFilters(){
@@ -35,7 +47,7 @@ function applyProductFilters(){
     card.hidden=!show;
     if(show) visible++;
   });
-  if(productCount) productCount.textContent=`${visible} ${visible===1?'machine':'machines'} shown`;
+  if(productCount) productCount.textContent=`${visible} ${visible===1?UI.shownSingular:UI.shownPlural}`;
   if(clearProductFilters) clearProductFilters.hidden=activeCategory==='all'&&!activeQuery;
 }
 
@@ -65,7 +77,7 @@ if(productInterest){
     const option=document.createElement('option');
     option.value=p.name;option.textContent=p.name;productInterest.append(option);
   });
-  ['Spare parts','Distribution / B2B partnership','Other'].forEach(name=>{
+  [UI.spare,UI.distribution,UI.other].forEach(name=>{
     const option=document.createElement('option');option.value=name;option.textContent=name;productInterest.append(option);
   });
 }

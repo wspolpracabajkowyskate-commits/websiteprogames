@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pro Games Poland | Máquinas Boxer y Arcade Profesionales</title>
+  <meta name="description" content="Pro Games Poland diseña y fabrica máquinas boxer y de entretenimiento profesionales en Polonia, con ventas, repuestos, servicio técnico y una red internacional de distribución." />
+  <meta name="theme-color" content="#07090c" />
+  <meta property="og:title" content="Pro Games Poland — We Build The Game" />
+  <meta property="og:description" content="Máquinas de entretenimiento profesionales fabricadas en Polonia para operadores, locales, centros de ocio, eventos y distribuidores." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://progames.pl/" />
+  <meta property="og:image" content="/assets/hero-champion.webp" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"PRO GAMES POLAND Sp. z o.o.",
+    "url":"https://progames.pl/",
+    "email":"office@progames.pl",
+    "telephone":"+48 536 068 912",
+    "address":{"@type":"PostalAddress","streetAddress":"ul. Rybnicka 19A","postalCode":"44-335","addressLocality":"Jastrzębie-Zdrój","addressCountry":"PL"},
+    "description":"Fabricante polaco de máquinas boxer y de entretenimiento profesionales."
+  }
+  </script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="header">
+    <a class="brand" href="#top" aria-label="Pro Games home">
+      <span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#machines">Productos</a>
+      <a href="/catalog-es.html?catalog=machines">Catálogos</a>
+      <a href="#business">Para empresas</a>
+      <a href="#distributors">Distribuidores</a>
+      <a href="#trade-shows">Ferias</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+    <div class="language-switch header-language" aria-label="Language"><a href="/">EN</a><a class="active" href="/es.html">ES</a></div><a class="btn btn-primary header-cta" href="#contact">Solicitar oferta</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="mobile-nav" id="mobileNav"><div class="mobile-language"><a href="/">EN</a><a class="active" href="/es.html">ES</a></div>
+    <a href="#machines">Productos</a>
+    <a href="/catalog-es.html?catalog=machines">Catálogos</a>
+    <a href="#business">Para empresas</a>
+    <a href="#distributors">Distribuidores</a>
+    <a href="#trade-shows">Ferias</a>
+    <a href="#contact">Contacto</a>
+  </div>
+
+  <main id="top">
+    <section class="hero hero-cinematic section-dark">
+      <img class="hero-cinematic-bg" src="/assets/hero-champion.webp" alt="Pro Games Champion boxer machine in an arena setting" fetchpriority="high" decoding="async" />
+      <div class="hero-cinematic-overlay" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> HECHO EN POLONIA · CREADO PARA JUGAR</p>
+        <h1>CREAMOS<br><em>EL JUEGO.</em></h1>
+        <p class="lead">Máquinas de entretenimiento profesionales fabricadas en Polonia.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#machines">Ver máquinas</a><a class="btn btn-ghost" href="#contact">Contacto</a></div>
+      </div>
+      <div class="hero-badge reveal" data-delay="120"><b>PRO GAMES</b><span>Máquinas de entretenimiento profesionales</span></div>
+      <div class="scroll-cue"><span></span> VER PRODUCTOS</div>
+    </section>
+
+    <section class="machines section machines-light" id="machines">
+      <div class="section-head split reveal">
+        <div><p class="kicker">GAMA ACTUAL</p><h2>NUESTRAS MÁQUINAS</h2></div>
+        <p>Descubre la gama actual de Pro Games: boxers Standard y Premium, máquinas combo, modelos infantiles, pruebas de fuerza y atracciones distribuidas.</p>
+      </div>
+      <div class="product-toolbar reveal">
+        <div class="category-tabs" role="tablist" aria-label="Filter machines by category">
+          <button class="active" data-filter="all">TODOS</button>
+          <button data-filter="boxer">BOXERS</button>
+          <button data-filter="combo">COMBO / 3 EN 1</button>
+          <button data-filter="kids">INFANTIL</button>
+          <button data-filter="strength">KICKER / MARTILLO</button>
+          <button data-filter="distributed">DISTRIBUCIÓN</button>
+        </div>
+        <label class="product-search"><span>Buscar</span><input id="productSearch" type="search" placeholder="Buscar una máquina…" autocomplete="off"></label>
+      </div>
+      <div class="product-result-line"><span id="productCount"></span><button type="button" id="clearProductFilters" hidden>Borrar filtros</button></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="products-catalog-cta reveal">
+        <div><span class="kicker">GAMA COMPLETA / PDF</span><h3>Ver el catálogo completo de Pro Games</h3><p>Consulta el catálogo oficial actual en PDF directamente en la web.</p></div>
+        <div class="products-catalog-actions">
+          <a class="btn btn-dark" href="/catalog-es.html?catalog=machines">Ver catálogo PDF ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro section" id="about">
+      <div class="section-head reveal"><p class="kicker">QUIÉNES SOMOS</p><h2>INGENIERÍA POLACA.<br><span>ENTRETENIMIENTO REAL.</span></h2></div>
+      <div class="intro-grid">
+        <div class="intro-copy reveal"><p>Pro Games Poland está especializada en máquinas boxer y equipamiento de entretenimiento comercial. La empresa desarrolla y fabrica máquinas en Polonia y apoya a los operadores con ventas, repuestos y servicio técnico.</p><p>La marca Pro Games opera desde 2012 y suministra equipos a clientes en Europa y otros mercados.</p></div>
+        <div class="stats reveal">
+          <div class="stat"><strong>2012</strong><span>marca Pro Games establecida</span></div>
+          <div class="stat"><strong>PL</strong><span>diseñado y fabricado en Polonia</span></div>
+          <div class="stat"><strong>B2B</strong><span>enfoque en operadores y distribuidores</span></div>
+          <div class="stat"><strong>EU+</strong><span>red internacional de distribución</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why section why-compact">
+      <div class="why-compact-head reveal">
+        <div><p class="kicker">POR QUÉ PRO GAMES</p><h2>CREADO PARA OPERADORES.</h2></div>
+        <p>Producción polaca, construcción comercial, repuestos y soporte técnico: lo esencial que un operador necesita de un fabricante de máquinas de entretenimiento.</p>
+      </div>
+      <div class="why-compact-grid">
+        <div class="why-pill reveal"><b>01</b><span>Producción polaca</span></div>
+        <div class="why-pill reveal"><b>02</b><span>Construcción sólida</span></div>
+        <div class="why-pill reveal"><b>03</b><span>Diseño moderno</span></div>
+        <div class="why-pill reveal"><b>04</b><span>Configuración para operadores</span></div>
+        <div class="why-pill reveal"><b>05</b><span>Repuestos</span></div>
+        <div class="why-pill reveal"><b>06</b><span>Servicio y soporte</span></div>
+      </div>
+    </section>
+
+    <section class="production section section-dark">
+      <div class="production-visual reveal"><div class="factory-grid"><div class="factory-tile big">MONTAJE</div><div class="factory-tile">ELECTRÓNICA</div><div class="factory-tile">PRUEBAS</div><div class="factory-tile wide">INSPECCIÓN FINAL</div></div></div>
+      <div class="production-copy reveal"><p class="kicker">FABRICACIÓN</p><h2>HECHO<br>EN POLONIA.</h2><p>Pro Games indica que sus máquinas se diseñan y fabrican en Polonia. Los materiales actuales de la empresa también destacan proveedores seleccionados, personal con experiencia y controles durante la producción y antes de la venta.</p><div class="mini-list"><span>01 / PRODUCCIÓN</span><span>02 / MONTAJE</span><span>03 / PRUEBAS</span></div></div>
+    </section>
+
+    <section class="business section" id="business">
+      <div class="business-head reveal"><p class="kicker">B2B / OPERADORES / DISTRIBUIDORES</p><h2>CONVIERTE EL ENTRETENIMIENTO<br><span>EN NEGOCIO.</span></h2><p>Máquinas para espacios donde el entretenimiento debe llamar la atención, generar competición y dar a los visitantes una razón más para jugar.</p><a class="btn btn-primary" href="#contact">Háblanos de tu proyecto</a></div>
+      <div class="venue-strip reveal"><span>BARES</span><span>CLUBES</span><span>CENTROS COMERCIALES</span><span>SALONES ARCADE</span><span>EVENTOS</span><span>PARQUES DE ATRACCIONES</span><span>HOTELES</span><span>CENTROS DE OCIO FAMILIAR</span></div>
+    </section>
+
+    <section class="partners section" id="distributors">
+      <div class="partners-head reveal">
+        <div><p class="kicker">NUESTROS DISTRIBUIDORES</p><h2>RED GLOBAL.<br><span>SOPORTE LOCAL.</span></h2></div>
+        <p>Nuestros socios de distribución apoyan la venta, instalación y servicio de Pro Games en mercados internacionales seleccionados.</p>
+      </div>
+      <div class="distributor-grid reveal" aria-label="Pro Games distribution network">
+        <article class="distributor-card"><div class="distributor-meta"><span>AMÉRICAS</span><b>Distribuidor exclusivo</b></div><div class="distributor-logo"><img src="/assets/distributors/uplay-america.webp" alt="UPlay America Arcade Solutions" loading="lazy" decoding="async"></div><div class="distributor-foot"><span>Norte · Centro · Sudamérica</span><a href="https://www.uplayamerica.com/" target="_blank" rel="noopener">Visitar socio ↗</a></div></article>
+        <article class="distributor-card"><div class="distributor-meta"><span>ESPAÑA</span><b>Ventas · almacén · servicio</b></div><div class="distributor-logo distributor-logo--portrait"><img src="/assets/distributors/progames-espana.webp" alt="Pro Games Poland en España" loading="lazy" decoding="async"></div><div class="distributor-foot"><span>Elche · Alicante</span></div></article>
+        <article class="distributor-card"><div class="distributor-meta"><span>EMIRATOS ÁRABES UNIDOS</span><b>Dubai</b></div><div class="distributor-logo"><img src="/assets/distributors/warehouse-of-games.webp" alt="Warehouse of Games" loading="lazy" decoding="async"></div><div class="distributor-foot"><span>Socio de distribución</span></div></article>
+        <article class="distributor-card"><div class="distributor-meta"><span>ALEMANIA</span><b>Socio de distribución</b></div><div class="distributor-logo"><img src="/assets/distributors/vipa-eventmodule.webp" alt="ViPa Eventmodule" loading="lazy" decoding="async"></div><div class="distributor-foot"><span>Alemania</span></div></article>
+        <article class="distributor-card"><div class="distributor-meta"><span>REINO UNIDO</span><b>Socio de distribución</b></div><div class="distributor-logo"><img src="/assets/distributors/jnc-sales.webp" alt="JNC Sales Products" loading="lazy" decoding="async"></div><div class="distributor-foot"><span>Reino Unido</span></div></article>
+        <article class="distributor-card"><div class="distributor-meta"><span>DINAMARCA</span><b>Socio de distribución</b></div><div class="distributor-logo"><img src="/assets/distributors/danskeautomater.webp" alt="Danskeautomater" loading="lazy" decoding="async"></div><div class="distributor-foot"><span>Odense · Dinamarca</span></div></article>
+        <article class="distributor-card distributor-card--text"><div class="distributor-meta"><span>FRANCIA</span><b>Red de distribución</b></div><div class="distributor-textmark">FRANCIA</div><div class="distributor-foot"><span>Datos del socio disponibles bajo consulta</span></div></article>
+      </div>
+      <div class="distributor-note reveal"><span>PRO GAMES EN EL MUNDO</span><p>La red refleja los distribuidores indicados actualmente por Pro Games. Los datos de contacto y la cobertura pueden cambiar con el tiempo.</p></div>
+    </section>
+
+    <section class="trade-shows section section-dark" id="trade-shows">
+      <div class="trade-shows-head reveal"><div><p class="kicker">FERIAS / CONOCE PRO GAMES</p><h2>NOS VEMOS<br><span>EN LA FERIA.</span></h2></div><p>Conoce al equipo y descubre las máquinas Pro Games en ferias internacionales seleccionadas del sector del entretenimiento.</p></div>
+      <div class="trade-show-list reveal">
+        <article class="trade-show-card next"><div class="trade-date"><strong>17–20</strong><span>NOV 2026</span></div><div class="trade-main"><span class="trade-status">PRÓXIMA FERIA</span><h3>IAAPA EXPO ORLANDO 2026</h3><p>Orange County Convention Center · Orlando, Florida, EE. UU.</p></div><a class="trade-contact" href="https://iaapa.org/expos-and-events/iaapa-expo" target="_blank" rel="noopener noreferrer">Detalles del evento ↗</a></article>
+        <article class="trade-show-card featured"><div class="trade-date"><strong>22–24</strong><span>SEP 2026</span></div><div class="trade-main"><span class="trade-status">RECIENTE / CONFIRMADA</span><h3>IAAPA EXPO EUROPE 2026</h3><p>ExCeL London · Reino Unido</p></div><div class="trade-booth"><span>STAND</span><strong>S2201</strong></div></article>
+      </div>
+    </section>
+
+    <section class="parts section section-dark" id="parts">
+      <div class="parts-copy reveal">
+        <p class="kicker">PARA OPERADORES</p>
+        <h2>REPUESTOS.</h2>
+        <p>Mantén tus máquinas en funcionamiento con acceso al catálogo actual de repuestos Pro Games y soporte técnico directo.</p>
+        <div class="parts-actions"><a class="btn btn-ghost" href="/catalog-es.html?catalog=parts">Ver catálogo de repuestos ↗</a><a class="text-link-light" href="#contact">Consultar un repuesto →</a></div>
+      </div>
+      <div class="parts-categories reveal"><div><b>01</b><span>Electrónica</span></div><div><b>02</b><span>Mecanismos</span></div><div><b>03</b><span>Piezas mecánicas</span></div><div><b>04</b><span>Iluminación</span></div><div><b>05</b><span>Componentes de desgaste</span></div></div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-copy reveal"><p class="kicker">HABLEMOS</p><h2>CREEMOS TU PRÓXIMA<br><span>EXPERIENCIA DE ENTRETENIMIENTO.</span></h2><div class="contact-details"><a href="tel:+48536068912">Ventas: +48 536 068 912</a><a href="tel:+48604978462">Móvil: +48 604 978 462</a><a href="mailto:office@progames.pl">office@progames.pl</a><a href="mailto:service@progames.pl">service@progames.pl</a><a href="tel:+48789108086">Servicio: +48 789 108 086</a><p>PRO GAMES POLAND Sp. z o.o.<br>ul. Rybnicka 19A<br>44-335 Jastrzębie-Zdrój, Polonia</p></div></div>
+      <form class="contact-form reveal" action="mailto:office@progames.pl" method="post" enctype="text/plain">
+        <div class="field-row"><label>Nombre y apellidos<input name="name" required placeholder="Tu nombre"></label><label>Empresa<input name="company" placeholder="Empresa name"></label></div>
+        <div class="field-row"><label>Email<input type="email" name="email" required placeholder="name@company.com"></label><label>Teléfono<input type="tel" name="phone" placeholder="+48 ..."></label></div>
+        <label>Producto de interés<select name="product" id="productInterest"><option value="">Selecciona un producto</option></select></label>
+        <label>Mensaje<textarea name="message" rows="5" placeholder="Cuéntanos qué necesitas…"></textarea></label>
+        <button class="btn btn-primary" type="submit">Enviar consulta</button>
+        <small>Para producción, conecta este formulario con un endpoint de correo o CRM.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="brand footer-brand"><span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span></div><div class="footer-links"><a href="#machines">Productos</a><a href="/catalog-es.html?catalog=machines">Catálogos</a><a href="#about">Empresa</a><a href="#business">Para empresas</a><a href="#distributors">Distribuidores</a><a href="#trade-shows">Ferias</a><a href="#parts">Repuestos</a><a href="#contact">Contacto</a></div><div class="footer-bottom"><span>© 2026 PRO GAMES POLAND Sp. z o.o.</span><span>Hecho en Polonia / Creado para operadores</span></div></footer>
+
+  <script src="/products.js" defer></script>
+  <script src="/script.js" defer></script>
+</body>
+</html>

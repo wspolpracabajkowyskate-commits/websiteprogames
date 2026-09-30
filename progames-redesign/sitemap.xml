@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://progames.pl/</loc></url>
+  <url><loc>https://progames.pl/es.html</loc></url>
+  <url><loc>https://progames.pl/catalog.html</loc></url>
+  <url><loc>https://progames.pl/catalog-es.html</loc></url>
   <url><loc>https://progames.pl/product.html</loc></url>
+  <url><loc>https://progames.pl/product-es.html</loc></url>
 </urlset>

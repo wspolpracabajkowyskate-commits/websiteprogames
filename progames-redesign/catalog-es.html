@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Catalogs — Pro Games Poland</title>
-  <meta name="description" content="Browse the Pro Games Poland machine catalog and spare parts catalog directly online or download the PDF files.">
+  <title>Catálogos — Pro Games Poland</title>
+  <meta name="description" content="Consulta online el catálogo de máquinas y el catálogo de repuestos de Pro Games Poland o descarga los archivos PDF.">
   <link rel="icon" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,15 +14,15 @@
 <body class="catalog-page catalog-page-v2">
   <header class="site-header compact">
     <a class="brand" href="/" aria-label="Pro Games home"><span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span></a>
-    <nav class="desktop-nav"><a href="/#machines">Products</a><a href="/#distributors">Distributors</a><a href="/#contact">Contact</a></nav>
-    <div class="language-switch header-language" aria-label="Language"><a class="active" href="/catalog.html">EN</a><a href="/catalog-es.html">ES</a></div><a class="btn btn-primary header-cta" href="/#contact">Request a quote</a>
+    <nav class="desktop-nav"><a href="/es.html#machines">Productos</a><a href="/es.html#distributors">Distribuidores</a><a href="/es.html#contact">Contacto</a></nav>
+    <div class="language-switch header-language" aria-label="Language"><a href="/catalog.html">EN</a><a class="active" href="/catalog-es.html">ES</a></div><a class="btn btn-primary header-cta" href="/es.html#contact">Solicitar oferta</a>
   </header>
 
   <main>
     <section class="catalog-hero catalog-hero-v2">
-      <p class="kicker">DOWNLOADS / ONLINE VIEWER</p>
-      <h1>PRO GAMES<br><span>CATALOGS.</span></h1>
-      <p>Choose the catalog you need. Browse it directly on this page or download the original PDF for offline use.</p>
+      <p class="kicker">CATÁLOGOS / VISOR ONLINE</p>
+      <h1>CATÁLOGOS<br><span>PRO GAMES.</span></h1>
+      <p>Elige el catálogo que necesitas. Consúltalo directamente en esta página o descarga el PDF para verlo sin conexión.</p>
     </section>
 
     <section class="catalog-center" aria-label="Pro Games catalogs">
@@ -30,38 +30,38 @@
         <button class="catalog-choice active" type="button" data-catalog="machines" aria-pressed="true">
           <span class="catalog-choice-index">01</span>
           <div class="catalog-choice-copy">
-            <small>MACHINES / 40 PAGES</small>
-            <h2>Machine<br>Catalog</h2>
-            <p>Boxers, combo machines, kids machines, Kicker, Hammer and selected distributed amusement products.</p>
+            <small>MÁQUINAS / 40 PÁGINAS</small>
+            <h2>Catálogo de<br>máquinas</h2>
+            <p>Boxers, máquinas combo, modelos infantiles, Kicker, Hammer y una selección de productos distribuidos.</p>
           </div>
-          <span class="catalog-choice-arrow">VIEW →</span>
+          <span class="catalog-choice-arrow">VER →</span>
         </button>
 
         <button class="catalog-choice" type="button" data-catalog="parts" aria-pressed="false">
           <span class="catalog-choice-index">02</span>
           <div class="catalog-choice-copy">
-            <small>SPARE PARTS / 10 PAGES</small>
-            <h2>Spare Parts<br>Catalog</h2>
-            <p>Punchballs, electronics, mechanisms, displays, sensors, cables, plexiglass parts and service components.</p>
+            <small>REPUESTOS / 10 PÁGINAS</small>
+            <h2>Catálogo de<br>repuestos</h2>
+            <p>Punchballs, electrónica, mecanismos, displays, sensores, cables, piezas de plexiglás y componentes de servicio.</p>
           </div>
-          <span class="catalog-choice-arrow">VIEW →</span>
+          <span class="catalog-choice-arrow">VER →</span>
         </button>
       </div>
 
       <div class="catalog-viewer-shell">
         <div class="catalog-viewer-head">
           <div>
-            <p class="kicker" id="catalogEyebrow">MACHINE CATALOG</p>
-            <h2 id="catalogTitle">Pro Games Machines</h2>
-            <p id="catalogDescription">Browse the complete machine range without leaving the website.</p>
+            <p class="kicker" id="catalogEyebrow">CATÁLOGO DE MÁQUINAS</p>
+            <h2 id="catalogTitle">Máquinas Pro Games</h2>
+            <p id="catalogDescription">Consulta la gama completa de máquinas sin salir de la web.</p>
           </div>
           <div class="catalog-viewer-actions">
-            <a id="catalogOpen" class="btn btn-outline-dark" href="/assets/catalogs/pro-games-machines-catalog.pdf" target="_blank" rel="noopener">Open PDF ↗</a>
-            <a id="catalogDownload" class="btn btn-primary" href="/assets/catalogs/pro-games-machines-catalog.pdf" download>Download PDF</a>
+            <a id="catalogOpen" class="btn btn-outline-dark" href="/assets/catalogs/pro-games-machines-catalog.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a>
+            <a id="catalogDownload" class="btn btn-primary" href="/assets/catalogs/pro-games-machines-catalog.pdf" download>Descargar PDF</a>
           </div>
         </div>
         <div class="pdf-frame pdf-frame-v2">
-          <iframe id="catalogFrame" title="Pro Games Machines Catalog" src="/assets/catalogs/pro-games-machines-catalog.pdf#view=FitH"></iframe>
+          <iframe id="catalogFrame" title="Máquinas Pro Games Catalog" src="/assets/catalogs/pro-games-machines-catalog.pdf#view=FitH"></iframe>
         </div>
       </div>
     </section>
@@ -73,16 +73,16 @@
     catalogLangLinks.forEach(a=>{const base=a.getAttribute('href').split('?')[0];a.href=base+'?catalog='+encodeURIComponent(initialCatalogParam);});
     const catalogs={
       machines:{
-        eyebrow:'MACHINE CATALOG',
-        title:'Pro Games Machines',
-        description:'Browse the complete machine range without leaving the website.',
+        eyebrow:'CATÁLOGO DE MÁQUINAS',
+        title:'Máquinas Pro Games',
+        description:'Consulta la gama completa de máquinas sin salir de la web.',
         file:'/assets/catalogs/pro-games-machines-catalog.pdf',
-        frameTitle:'Pro Games Machines Catalog'
+        frameTitle:'Máquinas Pro Games Catalog'
       },
       parts:{
-        eyebrow:'SPARE PARTS CATALOG',
-        title:'Pro Games Spare Parts',
-        description:'Browse service parts and replacement components for Pro Games machines.',
+        eyebrow:'CATÁLOGO DE REPUESTOS',
+        title:'Repuestos Pro Games',
+        description:'Consulta repuestos y componentes de sustitución para máquinas Pro Games.',
         file:'/assets/catalogs/pro-games-spare-parts-catalog.pdf',
         frameTitle:'Pro Games Spare Parts Catalog'
       }
