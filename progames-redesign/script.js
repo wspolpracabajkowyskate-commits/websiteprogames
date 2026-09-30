@@ -1,0 +1,5 @@
+const header=document.querySelector('#header');const toggle=document.querySelector('.menu-toggle');const mobileNav=document.querySelector('#mobileNav');
+addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>30),{passive:true});
+toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));mobileNav.classList.toggle('open',!open)});mobileNav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.category-tabs button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.category-tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.product-card').forEach(c=>c.hidden=!(f==='all'||c.dataset.category===f))}));
