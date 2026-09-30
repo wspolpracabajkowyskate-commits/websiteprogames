@@ -12,10 +12,29 @@ const standardOptions=['Bill acceptor','Card reader / cashless payment','2 m pow
 const standardSpec=[['Height','219 cm / 86 in'],['Width','72 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','121 kg / 265 lb']];
 const comboOptions=['Bill acceptor','Nayax / cashless payment','Ticket dispenser','Custom graphics and branding','Silent mode (advance order)'];
 
+// Colour names follow the finishes shown in the current Pro Games machine catalogue.
+// The arrays intentionally match the order of the source product photos below.
+const STANDARD_VARIANT_COLORS={
+  'joker':['Purple','Red','Yellow','Blue'],
+  'boxer-standard-champion':['Blue','Red','Yellow','White'],
+  'boxer-standard-easy':['Orange','Red','Blue','White'],
+  'boxer-standard-cyberpunch':['Orange','Red','Blue','White'],
+  'boxer-standard-gladiator':['Brown','Red','Blue','White'],
+  'boxer-standard-mma':['White','Red','Blue','Yellow'],
+  'boxer-standard-blackjack':['White','Red','Black','Blue'],
+  'super-hero':['Blue','Red','Yellow','White'],
+  'boxer-standard-powerblack':['Black','Red','Yellow','Blue'],
+  'boxer-standard-poisonsquad':['Green','Red','Yellow','Blue'],
+  'boxer-standard-hacker':['Red','Black','Yellow','Blue'],
+  'boxer-standard-strongman':['Yellow','Red','Blue','White'],
+  'boxer-standard-viking':['Blue','Red','Yellow','White'],
+  'boxer-standard-disco':['Black','Red','Blue','White']
+};
+
 const makeStandard=(name,slug,files,extra='')=>({
   name,category:'boxer',label:'BOXER STANDARD',
   desc:`${name} is a commercial Pro Games boxer built around the Standard strength-test platform. ${extra || 'It combines a distinctive cabinet artwork with a proven punch-score format for arcades, bars, leisure venues and event locations.'}`,
-  features:standardFeatures,spec:standardSpec,options:standardOptions,variants:variants(files),source:`https://www.progamespoland.com/${slug}`
+  features:standardFeatures,spec:standardSpec,options:standardOptions,variants:variants(files,STANDARD_VARIANT_COLORS[slug]||[]),source:`https://www.progamespoland.com/${slug}`
 });
 
 window.PRODUCTS={
@@ -24,7 +43,7 @@ window.PRODUCTS={
     desc:'A space-efficient three-in-one attraction combining Boxer, Kicker and Hammer gameplay in one cabinet, with a ticket-ready concept for redemption-focused venues. LED lighting and strength sensors make the machine highly visible while preserving three distinct challenges in a single footprint.',
     features:['Boxer + Kicker + Hammer in one cabinet','LED lighting and score sensors','Designed for repeated commercial use','Ticket-ready concept for redemption venues'],
     spec:[['Height','230 cm / 91 in'],['Width','140 cm / 56 in'],['Length','140 cm / 56 in'],['Weight','250 kg / 552 lb']],options:comboOptions,
-    variants:variants(['d36c49_9106047d54a04ae9a045c26e9ed522ba~mv2.jpg','d36c49_4dd9a82d428247c7a156b759ec1d6884~mv2.jpg','d36c49_22c5ef2bff4b402fb4480ae3f0708506~mv2.jpg','d36c49_4ef9d427262b4f5cb2710288044e922d~mv2.jpg','d36c49_dcebd6d56c8b404699b3af378e4ae082~mv2.jpg','d36c49_599d9c84ccb946038ad484d074b79be9~mv2.jpg']),
+    variants:variants(['d36c49_9106047d54a04ae9a045c26e9ed522ba~mv2.jpg','d36c49_4dd9a82d428247c7a156b759ec1d6884~mv2.jpg','d36c49_22c5ef2bff4b402fb4480ae3f0708506~mv2.jpg','d36c49_4ef9d427262b4f5cb2710288044e922d~mv2.jpg','d36c49_dcebd6d56c8b404699b3af378e4ae082~mv2.jpg','d36c49_599d9c84ccb946038ad484d074b79be9~mv2.jpg'],['White','Orange','Yellow','Green','Blue','Red']),
     source:'https://www.progamespoland.com/monster-3in1-ticket'
   },
   'monster-3in1':{
@@ -32,7 +51,7 @@ window.PRODUCTS={
     desc:'One cabinet, three strength challenges. Monster 3 in 1 combines boxing, kicking and hammer gameplay with bright LED presentation and accurate score sensing, giving operators a high-impact attraction without needing three separate machines.',
     features:['Boxer + Kicker + Hammer gameplay','Integrated LED lighting','High-quality score sensing','Suitable for bars, FECs, arcades and events'],
     spec:[['Height','230 cm / 91 in'],['Width','140 cm / 56 in'],['Length','140 cm / 56 in'],['Weight','250 kg / 552 lb']],options:comboOptions,
-    variants:variants(['d36c49_2ccdfe409adb4a62a3a9adcd9b5e3879~mv2.jpeg','d36c49_d72a7ba8470a46a18b2be3187bd9b875~mv2.jpeg','d36c49_60dd3c05ac3045fd8bab9b8c141e2bdc~mv2.jpeg','d36c49_39249cce3907437787d188071719290d~mv2.jpeg','d36c49_f6e319708c734e2e8a424d07bb864c22~mv2.jpeg','d36c49_b75ea8cc5bbf431294f5cdabd63ed930~mv2.jpg']),
+    variants:variants(['d36c49_2ccdfe409adb4a62a3a9adcd9b5e3879~mv2.jpeg','d36c49_d72a7ba8470a46a18b2be3187bd9b875~mv2.jpeg','d36c49_60dd3c05ac3045fd8bab9b8c141e2bdc~mv2.jpeg','d36c49_39249cce3907437787d188071719290d~mv2.jpeg','d36c49_f6e319708c734e2e8a424d07bb864c22~mv2.jpeg','d36c49_b75ea8cc5bbf431294f5cdabd63ed930~mv2.jpg'],['Red','Orange','Yellow','Green','Blue','White']),
     source:'https://www.progamespoland.com/monster-3w1'
   },
   'double-hit':{
@@ -40,7 +59,7 @@ window.PRODUCTS={
     desc:'Double Hit combines two competitive strength challenges in one compact cabinet: a punchball at the top and a football target below. The format gives players two ways to compete while helping operators add more gameplay to a limited floor area.',
     features:['Boxing and kicking challenges in one machine','LED attraction lighting','Adjustable difficulty and free-play modes','Payment-ready for bills, coins, cards or tokens depending on configuration'],
     spec:[['Height','219 cm / 86 in'],['Width','85 cm / 34 in'],['Length','122 cm / 48 in'],['Weight','175 kg / 386 lb']],options:comboOptions,
-    variants:variants(['d36c49_338c0feaec2046e998aa61a62dac23e7~mv2.jpg','d36c49_753f3da69f204a27befeaa9c2357be8a~mv2.jpg','d36c49_e4eeef964453407db8c3d177cd8885eb~mv2.jpg','d36c49_dbb917eefcfc4fc7826b4cdf9ff6ee97~mv2.jpg','d36c49_259b178e80664fb59165fce8ce3d56a0~mv2.jpg','d36c49_53130585e6d849f2ad3378c7268ed2db~mv2.jpg']),
+    variants:variants(['d36c49_338c0feaec2046e998aa61a62dac23e7~mv2.jpg','d36c49_753f3da69f204a27befeaa9c2357be8a~mv2.jpg','d36c49_e4eeef964453407db8c3d177cd8885eb~mv2.jpg','d36c49_dbb917eefcfc4fc7826b4cdf9ff6ee97~mv2.jpg','d36c49_259b178e80664fb59165fce8ce3d56a0~mv2.jpg','d36c49_53130585e6d849f2ad3378c7268ed2db~mv2.jpg'],['Black','Orange','Red','Yellow','Blue','White']),
     source:'https://www.progamespoland.com/double-hit'
   },
   'double-hit-gift':{
@@ -48,7 +67,7 @@ window.PRODUCTS={
     desc:'A three-part commercial attraction that combines boxing, kicking and a prize feature in one cabinet. Bright LED lighting and the additional reward mechanic create an extra reason to replay, while operator settings allow the game to be adapted to the venue.',
     features:['Boxing + kicking + prize feature','High-visibility LED lighting','Adjustable difficulty and free-play modes','Supports multiple payment configurations'],
     spec:[['Height','219 cm / 86 in'],['Width','85 cm / 34 in'],['Length','122 cm / 48 in'],['Weight','190 kg / 419 lb']],options:comboOptions,
-    variants:variants(['d36c49_50ed6391ec3a4358a07dbc092be34e08~mv2.jpg','d36c49_88e6ccc745e54081a0e66bf6c895ceef~mv2.jpg','d36c49_f449c8e887144f15b48bca8aaf7834d2~mv2.jpg','d36c49_f234704039194aa197eae9dc1587ab43~mv2.jpg','d36c49_146b6575c7e846aa84b8c2819111cc8d~mv2.jpg','d36c49_08202140789c4254a5c8f9e1c0ecfd6a~mv2.jpg']),
+    variants:variants(['d36c49_50ed6391ec3a4358a07dbc092be34e08~mv2.jpg','d36c49_88e6ccc745e54081a0e66bf6c895ceef~mv2.jpg','d36c49_f449c8e887144f15b48bca8aaf7834d2~mv2.jpg','d36c49_f234704039194aa197eae9dc1587ab43~mv2.jpg','d36c49_146b6575c7e846aa84b8c2819111cc8d~mv2.jpg','d36c49_08202140789c4254a5c8f9e1c0ecfd6a~mv2.jpg'],['Red','Orange','Black','Yellow','Blue','White']),
     source:'https://www.progamespoland.com/double-hit-gift'
   },
   'double-hit-kids':{
@@ -56,7 +75,7 @@ window.PRODUCTS={
     desc:'A younger-player version of the Double Hit concept, combining a punch and kick challenge in a lower, colourful cabinet. It is intended for family entertainment environments where a compact strength game needs to be accessible to children.',
     features:['Two challenges: punch and kick','Child-oriented cabinet height and graphics','LED lighting','Adjustable difficulty and free-play modes'],
     spec:[['Height','186 cm / 73 in'],['Width','85 cm / 34 in'],['Length','120 cm / 47 in'],['Weight','175 kg / 386 lb']],options:comboOptions,
-    variants:variants(['d36c49_90652a5c1dce4cf4a1bedc35fab12696~mv2.jpg','d36c49_fb72e48ad6404c379f65671ba03854c1~mv2.jpg','d36c49_d07f480621054a18b6e131227dd3e436~mv2.jpg','d36c49_13503ca78b334b819fb9b1cb74de4807~mv2.jpg']),
+    variants:variants(['d36c49_90652a5c1dce4cf4a1bedc35fab12696~mv2.jpg','d36c49_fb72e48ad6404c379f65671ba03854c1~mv2.jpg','d36c49_d07f480621054a18b6e131227dd3e436~mv2.jpg','d36c49_13503ca78b334b819fb9b1cb74de4807~mv2.jpg'],['White','Orange','Red','Blue']),
     source:'https://www.progamespoland.com/double-hit-kids'
   },
   'double-hit-kids-gift':{
@@ -64,7 +83,7 @@ window.PRODUCTS={
     desc:'The Kids Gift version adds a prize function to the compact boxing-and-kicking format. Colourful graphics, LED lighting and reward gameplay are aimed at family entertainment centres, kids zones and leisure venues.',
     features:['Punch + kick + prize gameplay','Designed for younger players','LED attraction lighting','Flexible operator settings'],
     spec:[['Height','182 cm / 72 in'],['Width','85 cm / 34 in'],['Length','120 cm / 47 in'],['Weight','180 kg / 397 lb']],options:comboOptions,
-    variants:variants(['d36c49_69c61593a9a243a58b82f59499fa7ff7~mv2.jpg','d36c49_2d8f1e66766741bb9baaa4db1d244914~mv2.jpg','d36c49_0f8b83f56b444c6fb58251f23697d899~mv2.jpg','d36c49_ac6fcddc490247fcac0fb6911daa2da3~mv2.jpg']),
+    variants:variants(['d36c49_69c61593a9a243a58b82f59499fa7ff7~mv2.jpg','d36c49_2d8f1e66766741bb9baaa4db1d244914~mv2.jpg','d36c49_0f8b83f56b444c6fb58251f23697d899~mv2.jpg','d36c49_ac6fcddc490247fcac0fb6911daa2da3~mv2.jpg'],['Yellow','Orange','Red','Blue']),
     source:'https://www.progamespoland.com/double-hit-kids-gift'
   },
   'double-strike':{
@@ -72,7 +91,7 @@ window.PRODUCTS={
     desc:'Double Strike 2 brings boxing and kicking gameplay together in a wider commercial cabinet. The two strength challenges, LED presentation and configurable operator settings are intended for busy amusement locations.',
     features:['Boxing and kicking in one attraction','LED presentation','Adjustable difficulty and free-play mode','Commercial payment configuration'],
     spec:[['Height','219 cm / 86 in'],['Width','142 cm / 56 in'],['Length','122 cm / 48 in'],['Weight','170 kg / 375 lb']],options:comboOptions,
-    variants:variants(['d36c49_0eeb916b0aa74377be5592607d75377e~mv2.jpeg','d36c49_34cef7cbcb0446a8a597a64acb068451~mv2.jpeg','d36c49_af20043d8307453a9db1d73b4fa27533~mv2.jpeg','d36c49_3e8aff8b9cfd4ea99957922b99e48b8b~mv2.jpeg']),
+    variants:variants(['d36c49_0eeb916b0aa74377be5592607d75377e~mv2.jpeg','d36c49_34cef7cbcb0446a8a597a64acb068451~mv2.jpeg','d36c49_af20043d8307453a9db1d73b4fa27533~mv2.jpeg','d36c49_3e8aff8b9cfd4ea99957922b99e48b8b~mv2.jpeg'],['Yellow','Orange','Red','Blue']),
     source:'https://www.progamespoland.com/double-strike'
   },
 
@@ -97,7 +116,7 @@ window.PRODUCTS={
     desc:'A current collection of Pro Games boxer cabinets finished with matte, airbrushed artwork. The collection focuses on distinctive visual treatments for venues that want a more custom, design-led machine.',
     features:['Matte airbrushed cabinet finishes','Multiple artwork variants shown by Pro Games','Commercial boxer platform','Custom configuration available on request'],
     spec:[['Configuration','Varies by selected boxer and finish'],['Exact dimensions','Confirm with Pro Games for the chosen configuration']],options:['Custom artwork','Payment configuration','LED configuration','Protective cover'],
-    variants:variants(['d36c49_fb9904ebbd3b48c78b4e7981a992da60~mv2.jpg','d36c49_94e67a361c934d989d3f632aab8c4a14~mv2.jpg','d36c49_8034b961b31c47f2bd7c3a534c5cc8e3~mv2.jpg']),
+    variants:variants(['d36c49_fb9904ebbd3b48c78b4e7981a992da60~mv2.jpg','d36c49_94e67a361c934d989d3f632aab8c4a14~mv2.jpg','d36c49_8034b961b31c47f2bd7c3a534c5cc8e3~mv2.jpg'],['Black','Red','Blue']),
     source:'https://www.progamespoland.com/matte-airbrushed-boxer'
   },
   'boxer-combat':{
@@ -113,7 +132,7 @@ window.PRODUCTS={
     desc:'Boxer Fist is designed around social competition. The three-player concept, illuminated controls and score presentation make it suitable for group challenges and head-to-head play in modern entertainment venues.',
     features:['Three-player competition concept','Integrated LED presentation','Reinforced commercial construction','Cashless-ready operator configuration'],
     spec:[['Height','219 cm / 86 in'],['Width','72 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','121 kg / 265 lb']],options:comboOptions,
-    variants:variants(['d36c49_08b14c21b6e94f6699d7d27a332005c7~mv2.jpg','d36c49_42c30a9a3d03436491ae1a4b140d6c22~mv2.jpg','d36c49_7fcc4c1eccb9482fa199de11f831aa93~mv2.jpg','d36c49_83436840037d4442a0452f7d7d812e3b~mv2.jpg']),
+    variants:variants(['d36c49_08b14c21b6e94f6699d7d27a332005c7~mv2.jpg','d36c49_42c30a9a3d03436491ae1a4b140d6c22~mv2.jpg','d36c49_7fcc4c1eccb9482fa199de11f831aa93~mv2.jpg','d36c49_83436840037d4442a0452f7d7d812e3b~mv2.jpg'],['Green','Blue','Yellow','Red']),
     source:'https://www.progamespoland.com/boxer-fist-3-player'
   },
   'boxer-ring':{
@@ -121,7 +140,7 @@ window.PRODUCTS={
     desc:'Boxer Ring is a premium punch-strength machine with a distinctive ring-inspired silhouette and strong visual lighting. It is intended for professional arcade and leisure operation with configurable difficulty and payment options.',
     features:['Professional punch-strength gameplay','Distinctive Ring cabinet design','Adjustable difficulty and free-play mode','Flexible operator payment options'],
     spec:[['Height','219 cm / 86 in'],['Width','72 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','127 kg / 280 lb']],options:comboOptions,
-    variants:variants(['d36c49_2b04783014544dbf92e39e725e3881e2~mv2.jpg','d36c49_723aed8e93204089b71de4a1fc06ffe5~mv2.jpg','d36c49_d8111cc412a642c38b0fd4b8b0200c33~mv2.jpg','d36c49_dc1a2938c5124466bc9a71f579530026~mv2.jpg']),
+    variants:variants(['d36c49_2b04783014544dbf92e39e725e3881e2~mv2.jpg','d36c49_723aed8e93204089b71de4a1fc06ffe5~mv2.jpg','d36c49_d8111cc412a642c38b0fd4b8b0200c33~mv2.jpg','d36c49_dc1a2938c5124466bc9a71f579530026~mv2.jpg'],['Yellow','Black','Blue','White']),
     source:'https://www.progamespoland.com/boxer-ring'
   },
   'boxer-combat-kids':{
@@ -129,7 +148,7 @@ window.PRODUCTS={
     desc:'A child-oriented version of Boxer Combat with a lower cabinet, bright artwork and adjustable gameplay. The machine is intended for family entertainment centres and children’s leisure areas while preserving the familiar score-based boxing challenge.',
     features:['Lower format for younger players','Bright child-friendly graphics','Adjustable difficulty and free-play modes','Commercial payment configurations'],
     spec:[['Height','182 cm / 72 in'],['Width','70 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','120 kg / 265 lb']],options:comboOptions,
-    variants:variants(['d36c49_fbeb20a103aa42b5b345d720aad3b43f~mv2.jpg','d36c49_b790e6faa3cc42b28f93bc578a0f270c~mv2.jpg','d36c49_fb94a0a9e52a4558809f8845ac00cd0e~mv2.jpg','d36c49_1824eafb06d14abab4a7226c74d11e0b~mv2.jpg']),
+    variants:variants(['d36c49_fbeb20a103aa42b5b345d720aad3b43f~mv2.jpg','d36c49_b790e6faa3cc42b28f93bc578a0f270c~mv2.jpg','d36c49_fb94a0a9e52a4558809f8845ac00cd0e~mv2.jpg','d36c49_1824eafb06d14abab4a7226c74d11e0b~mv2.jpg'],['Green','Red','Yellow','Blue']),
     source:'https://www.progamespoland.com/boxer-combat-kids'
   },
   'boxer-kids':{
@@ -137,7 +156,7 @@ window.PRODUCTS={
     desc:'A compact Pro Games boxer sized for younger players. Colourful cabinet themes, adjustable difficulty and flexible operating modes make it suitable for family entertainment centres, play areas and children’s attractions.',
     features:['Child-oriented cabinet dimensions','Multiple artwork themes','Adjustable difficulty and free-play mode','Flexible payment configuration'],
     spec:[['Height','182 cm / 72 in'],['Width','70 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','100 kg / 220 lb']],options:comboOptions,
-    variants:variants(['d36c49_300367abd71c42bbad49b4f4cf1d5428~mv2.jpg','d36c49_2d0fa67b34e44a299250fd8daa5614ea~mv2.jpg','d36c49_5c3690fb87bc46ada411be7b2234c1bd~mv2.jpg','d36c49_ac9df6857b07407dbfe71dd0e303b3a0~mv2.jpg']),
+    variants:variants(['d36c49_300367abd71c42bbad49b4f4cf1d5428~mv2.jpg','d36c49_2d0fa67b34e44a299250fd8daa5614ea~mv2.jpg','d36c49_5c3690fb87bc46ada411be7b2234c1bd~mv2.jpg','d36c49_ac9df6857b07407dbfe71dd0e303b3a0~mv2.jpg'],['Blue','Green','Yellow','Red']),
     source:'https://www.progamespoland.com/boxer-kids'
   },
   'boxer-flash-gift':{
@@ -145,7 +164,7 @@ window.PRODUCTS={
     desc:'Boxer Flash Gift adds a prize feature to the high-visibility Flash boxing format. LED lighting, strength scoring and the reward mechanic are designed to increase attraction and replay value in commercial venues.',
     features:['Punch-strength game with prize feature','LED attraction lighting','Adjustable difficulty and free-play mode','Flexible payment configuration'],
     spec:[['Height','219 cm / 86 in'],['Width','72 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','140 kg / 309 lb']],options:comboOptions,
-    variants:variants(['d36c49_1b5a7bd5dec9447b921b80f57a0e13ae~mv2.jpg','d36c49_fa66a189137141aebbb22389942df45f~mv2.jpg','d36c49_7a50a1705283411c9ee69293c5e258e3~mv2.jpg','d36c49_258c9fef06c64c189855e8a5e3c52898~mv2.jpg']),
+    variants:variants(['d36c49_1b5a7bd5dec9447b921b80f57a0e13ae~mv2.jpg','d36c49_fa66a189137141aebbb22389942df45f~mv2.jpg','d36c49_7a50a1705283411c9ee69293c5e258e3~mv2.jpg','d36c49_258c9fef06c64c189855e8a5e3c52898~mv2.jpg'],['Black','Red','Blue','White']),
     source:'https://www.progamespoland.com/boxer-flash-gift'
   },
   'hammer':{
@@ -153,7 +172,7 @@ window.PRODUCTS={
     desc:'A classic hammer strength tester presented in a bright modern cabinet. The machine is designed for amusement parks, arcades and family entertainment centres, with adjustable difficulty, free-play operation and optional ticket functionality.',
     features:['Classic hammer power challenge','LED attraction lighting','Adjustable difficulty and free-play mode','Ticket functionality available'],
     spec:[['Height','225 cm / 89 in'],['Width','95 cm / 37 in'],['Length','140 cm / 55 in'],['Weight','125 kg / 276 lb']],options:comboOptions,
-    variants:variants(['d36c49_afafeaaf41674a4c88c922aeee800230~mv2.jpg','d36c49_ac7eaef74298496aad818f988bd23f75~mv2.jpg','d36c49_9d42e4537f474adcab4a61b64d2f7fe8~mv2.jpg','d36c49_5dc33c7849ff4b339aaff07525d0b204~mv2.jpg']),
+    variants:variants(['d36c49_afafeaaf41674a4c88c922aeee800230~mv2.jpg','d36c49_ac7eaef74298496aad818f988bd23f75~mv2.jpg','d36c49_9d42e4537f474adcab4a61b64d2f7fe8~mv2.jpg','d36c49_5dc33c7849ff4b339aaff07525d0b204~mv2.jpg'],['Red','Black','Yellow','Blue']),
     source:'https://www.progamespoland.com/hammer'
   },
   'kicker':{
@@ -161,7 +180,7 @@ window.PRODUCTS={
     desc:'Kicker measures the force and accuracy of a football-style kick. It is aimed at both younger and adult players and works well in arcades, sports bars, events and family entertainment locations.',
     features:['Kick-strength and accuracy challenge','Suitable for a broad player age range','Adjustable difficulty and free-play mode','Flexible payment setup'],
     spec:[['Height','170 cm / 67 in'],['Width','133 cm / 52 in'],['Length','66 cm / 26 in'],['Weight','100 kg / 220 lb']],options:comboOptions,
-    variants:variants(['d36c49_2fe123c3c3a74277842af12504d08f47~mv2.jpg','d36c49_c44c1aee2d7a439cb83ab840bcc8030d~mv2.jpg','d36c49_d3572c2031064190bae8986aa690d99e~mv2.jpg','d36c49_43bb55c00ff6450aa3daf3aa21fab3e0~mv2.jpg']),
+    variants:variants(['d36c49_2fe123c3c3a74277842af12504d08f47~mv2.jpg','d36c49_c44c1aee2d7a439cb83ab840bcc8030d~mv2.jpg','d36c49_d3572c2031064190bae8986aa690d99e~mv2.jpg','d36c49_43bb55c00ff6450aa3daf3aa21fab3e0~mv2.jpg'],['Blue','Red','Yellow','Black']),
     source:'https://www.progamespoland.com/kicker'
   },
   'boxer-flash':{
@@ -183,7 +202,7 @@ window.PRODUCTS={
     desc:'Boxer Gift combines the familiar punch-strength challenge with a prize feature. It is built for high-traffic operation and can be configured for different payment systems, difficulty levels and free-play use.',
     features:['Punch-strength gameplay with prize feature','Commercial-duty construction','Adjustable difficulty and free-play mode','Flexible payment configuration'],
     spec:[['Height','219 cm / 86 in'],['Width','72 cm / 28 in'],['Length','115 cm / 45 in'],['Weight','140 kg / 309 lb']],options:comboOptions,
-    variants:variants(['d36c49_64245c96fa354f81b1c1b0f5130cd14d~mv2.jpg','d36c49_4df2d5e039194f468a3f2b3d3cab83b2~mv2.jpg','d36c49_11fdece776ca4e8dbe9beaf45c050bb8~mv2.jpg','d36c49_b35278bab1fa4872b1af15ec0d69a12f~mv2.jpg']),
+    variants:variants(['d36c49_64245c96fa354f81b1c1b0f5130cd14d~mv2.jpg','d36c49_4df2d5e039194f468a3f2b3d3cab83b2~mv2.jpg','d36c49_11fdece776ca4e8dbe9beaf45c050bb8~mv2.jpg','d36c49_b35278bab1fa4872b1af15ec0d69a12f~mv2.jpg'],['Black','Red','Yellow','Blue']),
     source:'https://www.progamespoland.com/boxer-gift'
   },
 
@@ -327,6 +346,6 @@ window.PG_ES={
  features:{
  'Boxer + Kicker + Hammer in one cabinet':'Boxer + Kicker + Hammer en un solo mueble','LED lighting and score sensors':'Iluminación LED y sensores de puntuación','Designed for repeated commercial use':'Diseñada para uso comercial intensivo','Ticket-ready concept for redemption venues':'Concepto preparado para tickets y centros redemption','Boxer + Kicker + Hammer gameplay':'Juego Boxer + Kicker + Hammer','Integrated LED lighting':'Iluminación LED integrada','High-quality score sensing':'Medición de puntuación de alta calidad','Suitable for bars, FECs, arcades and events':'Adecuada para bares, FEC, arcades y eventos','Boxing and kicking challenges in one machine':'Retos de boxeo y patada en una máquina','LED attraction lighting':'Iluminación LED de atracción','Adjustable difficulty and free-play modes':'Dificultad ajustable y modo free play','Payment-ready for bills, coins, cards or tokens depending on configuration':'Preparada para billetes, monedas, tarjetas o fichas según configuración','Boxing + kicking + prize feature':'Boxeo + patada + función de premio','High-visibility LED lighting':'Iluminación LED de alta visibilidad','Supports multiple payment configurations':'Compatible con múltiples configuraciones de pago','Two challenges: punch and kick':'Dos retos: puñetazo y patada','Child-oriented cabinet height and graphics':'Altura y gráficos adaptados a niños','LED lighting':'Iluminación LED','Punch + kick + prize gameplay':'Puñetazo + patada + juego con premio','Designed for younger players':'Diseñada para jugadores jóvenes','Flexible operator settings':'Ajustes flexibles para operador','Boxing and kicking in one attraction':'Boxeo y patada en una sola atracción','LED presentation':'Presentación LED','Adjustable difficulty and free-play mode':'Dificultad ajustable y modo free play','Commercial payment configuration':'Configuración de pago comercial','Commercial strength-test gameplay designed for high-traffic venues':'Juego comercial de prueba de fuerza para locales con alta afluencia','Adjustable difficulty settings and free-play mode':'Dificultad ajustable y modo free play','Supports flexible payment configurations for different markets':'Configuraciones de pago flexibles para distintos mercados','Operator-focused construction with service access and configurable lighting':'Construcción orientada al operador, acceso de servicio e iluminación configurable','Matte airbrushed cabinet finishes':'Acabados mate aerografiados','Multiple artwork variants shown by Pro Games':'Múltiples variantes gráficas mostradas por Pro Games','Commercial boxer platform':'Plataforma boxer comercial','Custom configuration available on request':'Configuración personalizada bajo pedido','Commercial punch-strength gameplay':'Juego comercial de fuerza de golpeo','Robust electronics and mechanics':'Electrónica y mecánica robustas','Multiple payment options depending on market':'Múltiples opciones de pago según mercado','Three-player competition concept':'Concepto de competición para tres jugadores','Integrated LED presentation':'Presentación LED integrada','Reinforced commercial construction':'Construcción comercial reforzada','Cashless-ready operator configuration':'Configuración preparada para pago cashless','Professional punch-strength gameplay':'Juego profesional de fuerza de golpeo','Distinctive Ring cabinet design':'Diseño distintivo de mueble Ring','Flexible operator payment options':'Opciones de pago flexibles para operador','Lower format for younger players':'Formato más bajo para jugadores jóvenes','Bright child-friendly graphics':'Gráficos luminosos adaptados a niños','Commercial payment configurations':'Configuraciones de pago comerciales','Child-oriented cabinet dimensions':'Dimensiones adaptadas a niños','Multiple artwork themes':'Múltiples temas gráficos','Flexible payment configuration':'Configuración de pago flexible','Punch-strength game with prize feature':'Juego de fuerza con función de premio','Classic hammer power challenge':'Reto clásico de fuerza con martillo','Ticket functionality available':'Función de tickets disponible','Kick-strength and accuracy challenge':'Reto de fuerza y precisión de patada','Suitable for a broad player age range':'Adecuado para un amplio rango de edades','Flexible payment setup':'Configuración de pago flexible','High-visibility LED presentation':'Presentación LED de alta visibilidad','Configurable payment systems':'Sistemas de pago configurables','Punch-strength gameplay with prize feature':'Juego de fuerza con función de premio','Commercial-duty construction':'Construcción para uso comercial','Compact format for younger children':'Formato compacto para niños pequeños','Multiple themes and artwork options':'Múltiples temas y opciones gráficas','Selected models include integrated slides':'Algunos modelos incluyen tobogán integrado','Designed for repeated event and leisure use':'Diseñada para uso repetido en eventos y ocio','Stainless perforated playfield':'Pista perforada de acero inoxidable','LED lighting in playfield and legs':'Iluminación LED en pista y patas','Digital score display':'Marcador digital','260 W air pump':'Bomba de aire de 260 W','Waterproof outdoor/indoor concept':'Concepto resistente al agua para exterior/interior','LED playfield and leg lighting':'Iluminación LED en pista y patas','Digital score displays':'Marcadores digitales','Integrated LED matrix display':'Pantalla LED matricial integrada','LED score and game-message updates':'Puntuación y mensajes de juego mediante LED','In-game sound system':'Sistema de sonido integrado','Electronic coin acceptor with free-play option':'Monedero electrónico con opción free play','Compact transport-friendly format':'Formato compacto y fácil de transportar','Adjustable height from 248 to 310 cm':'Altura ajustable de 248 a 310 cm','Moving basket and linking option':'Canasta móvil y opción de conexión','Five balls included':'Cinco balones incluidos','Weatherproof construction':'Construcción resistente a la intemperie','Four difficulty levels':'Cuatro niveles de dificultad','Moving-basket mode':'Modo de canasta móvil','Linking for competitive play':'Conexión para juego competitivo','Child-oriented height and styling':'Altura y estilo adaptados a niños','Weather-resistant construction':'Construcción resistente a la intemperie','Moving basket and five balls included':'Canasta móvil y cinco balones incluidos','Children’s amusement category':'Categoría de entretenimiento infantil','Commercial venue use':'Uso en espacios comerciales','Model-specific configuration':'Configuración específica según modelo','Details available from Pro Games sales':'Detalles disponibles con el equipo comercial Pro Games','Electronic darts entertainment format':'Formato de entretenimiento de dardos electrónicos','Commercial venue category':'Categoría para espacios comerciales'},
  options:{'Bill acceptor':'Aceptador de billetes','Nayax / cashless payment':'Nayax / pago cashless','Ticket dispenser':'Dispensador de tickets','Custom graphics and branding':'Gráficos y branding personalizados','Silent mode (advance order)':'Modo silencioso (pedido anticipado)','Card reader / cashless payment':'Lector de tarjetas / pago cashless','2 m power cable':'Cable de alimentación de 2 m','Protective cover':'Cubierta protectora','LED lighting variation':'Variación de iluminación LED','Custom artwork':'Diseño gráfico personalizado','Payment configuration':'Configuración de pago','LED configuration':'Configuración LED','Dino with Slide':'Dino con tobogán','Sea with Slide':'Mar con tobogán','Pirates with Slide':'Piratas con tobogán','Sea with Roof':'Mar con techo','Princess variants':'Variantes Princesa','Jungle variants':'Variantes Jungla','Card reader':'Lector de tarjetas','Optional LED lamp':'Lámpara LED opcional','Operator game settings':'Ajustes de juego para operador','Free-play mode':'Modo free play','Ask about current available models':'Consultar modelos disponibles','Ask about current model and payment setup':'Consultar modelo actual y sistema de pago'},
- colors:{'White':'Blanco','Orange':'Naranja','Yellow':'Amarillo','Green':'Verde','Blue':'Azul','Red':'Rojo','Black':'Negro','Brown':'Marrón','Graphite':'Grafito','Golden':'Dorado','Arctic':'Arctic','Matrix':'Matrix','Compact':'Compact','Standard':'Standard','Kids':'Infantil','Current range':'Gama actual','Current model':'Modelo actual','Dino with Slide':'Dino con tobogán','Sea with Slide':'Mar con tobogán','Pirates with Slide':'Piratas con tobogán','Sea with Roof':'Mar con techo'}
+ colors:{'White':'Blanco','Orange':'Naranja','Yellow':'Amarillo','Green':'Verde','Blue':'Azul','Red':'Rojo','Black':'Negro','Brown':'Marrón','Graphite':'Grafito','Golden':'Dorado','Arctic':'Arctic','Matrix':'Matrix','Compact':'Compact','Standard':'Standard','Kids':'Infantil','Purple':'Morado','Silver':'Plata','Pink':'Rosa','Current range':'Gama actual','Current model':'Modelo actual','Dino with Slide':'Dino con tobogán','Sea with Slide':'Mar con tobogán','Pirates with Slide':'Piratas con tobogán','Sea with Roof':'Mar con techo'}
 };
 /* === END PG LOCALIZATION === */
