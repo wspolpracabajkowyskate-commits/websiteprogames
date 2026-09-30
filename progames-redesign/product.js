@@ -20,8 +20,9 @@ const related=Object.entries(products)
   .slice(0,4)
   .map(([slug,item])=>`<a class="related-card" href="/product.html?model=${slug}"><img src="${item.image}" alt="${item.name} by Pro Games" loading="lazy" referrerpolicy="no-referrer"><span>${item.label}</span><h3>${item.name}</h3></a>`).join('');
 
-const thumbs=variantList.length>1?`<div class="variant-thumbs" role="list" aria-label="Available visual variants">${variantList.map((v,i)=>`<button type="button" class="variant-thumb ${i===0?'active':''}" data-index="${i}" aria-label="Show ${v.name}"><img src="${v.image}" alt="${p.name} — ${v.name}" loading="lazy" referrerpolicy="no-referrer"><span>${v.name}</span></button>`).join('')}</div>`:'';
-const finishBlock=variantList.length>1?`<div class="finish-selector"><div class="finish-selector-head"><div><p class="kicker">COLOUR / ARTWORK VARIANTS</p><h3>Choose a colour / artwork variant</h3></div><strong id="variantName">${mainVariant.name}</strong></div>${thumbs}<p class="finish-note">Choose a thumbnail to switch the main preview to the corresponding real product photo from the current Pro Games range. Final colour, artwork and availability are confirmed with the sales team.</p></div>`:`<div class="finish-selector single"><p class="kicker">FINISH / ARTWORK</p><h3>Current product image</h3><p class="finish-note">Ask the Pro Games sales team about current artwork, colour and branding options for this model.</p></div>`;
+const swatchPalette=['#ef3123','#17191c','#ffd329','#1976d2','#ff7a18','#1fad62','#f4f4f2','#7d3cff'];
+const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="Choose colour or artwork variant"><div class="gallery-variant-head"><span>COLOUR / ARTWORK</span><strong id="variantName">${mainVariant.name}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>`<button type="button" class="gallery-swatch ${i===0?'active':''}" data-index="${i}" aria-label="Show ${v.name}" title="${v.name}" style="--swatch:${swatchPalette[i%swatchPalette.length]}"><span class="swatch-dot"></span><span class="swatch-label">${v.name}</span></button>`).join('')}</div></div>`:'';
+const finishBlock=variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">Select a colour / artwork option below the product image. The main product photo changes automatically to the corresponding real Pro Games variant. Final colour, artwork and availability are confirmed with the sales team.</p></div>`:`<div class="finish-selector single"><p class="kicker">FINISH / ARTWORK</p><h3>Current product image</h3><p class="finish-note">Ask the Pro Games sales team about current artwork, colour and branding options for this model.</p></div>`;
 
 detail.innerHTML=`
 <section class="product-detail-v2">
@@ -30,7 +31,7 @@ detail.innerHTML=`
       <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${mainVariant.name}" fetchpriority="high" referrerpolicy="no-referrer">
       ${p.tag?`<span class="product-tag">${p.tag}</span>`:''}
     </div>
-    ${variantList.length>1?`<div class="mobile-variant-strip">${variantList.map((v,i)=>`<button type="button" class="mobile-variant ${i===0?'active':''}" data-index="${i}"><img src="${v.image}" alt="${p.name} ${v.name}" loading="lazy" referrerpolicy="no-referrer"></button>`).join('')}</div>`:''}
+    ${variantSelector}
   </div>
   <div class="product-info-panel">
     <a class="product-back-link" href="/#machines">← All machines</a>
