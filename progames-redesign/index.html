@@ -85,7 +85,7 @@
         </div>
         <label class="product-search"><span>Search</span><input id="productSearch" type="search" placeholder="Find a machine…" autocomplete="off"></label>
       </div>
-      <div class="product-result-line"><span id="productCount"></span><button type="button" id="clearProductFilters" hidden>Clear filters</button></div>
+      <div class="product-result-line"><span id="productCount" role="status" aria-live="polite"></span><button type="button" id="clearProductFilters" hidden>Clear filters</button></div>
       <div class="product-grid" id="productGrid"></div>
       <div class="products-catalog-cta reveal">
         <div><span class="kicker">FULL PRODUCT RANGE / PDF</span><h3>View the complete Pro Games catalog</h3><p>Open the current official product catalog as a PDF or save it for later.</p></div>
@@ -180,8 +180,8 @@
         <div class="field-row"><label>Email<input type="email" name="email" required placeholder="name@company.com"></label><label>Phone<input type="tel" name="phone" placeholder="+48 ..."></label></div>
         <label>Product of interest<select name="product" id="productInterest"><option value="">Select a product</option></select></label>
         <label>Message<textarea name="message" rows="5" placeholder="Tell us what you need…"></textarea></label>
-        <button class="btn btn-primary" type="submit">Send inquiry</button>
-        <small>For production deployment, connect this form to a mail or CRM endpoint instead of the current mail-client fallback.</small>
+        <button class="btn btn-primary" type="submit">Prepare email inquiry</button>
+        <small>Opens your email app with the inquiry prepared. You can also email office@progames.pl directly.</small>
       </form>
     </section>
   </main>

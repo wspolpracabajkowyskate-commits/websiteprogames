@@ -1,13 +1,18 @@
+(()=>{
 const products=window.PRODUCTS||{};
 const params=new URLSearchParams(location.search);
 const requested=params.get('model')||'champion';
-const key=products[requested]?requested:'champion';
+const key=Object.hasOwn(products,requested)?requested:null;
+if(!key){ document.title='Product not found | Pro Games Poland'; document.querySelector('#productDetail').innerHTML=document.documentElement.lang==='es'?'<section class="section"><h1>Producto no encontrado</h1><a href="/es.html#machines">Ver productos</a></section>':'<section class="section"><h1>Product not found</h1><a href="/#machines">View products</a></section>'; return; }
 const p=products[key];
 const isES=document.documentElement.lang==='es';
 const es=window.PG_ES||{labels:{},specs:{},features:{},options:{},colors:{}};
 const pEs=(window.PRODUCT_ES||{})[key]||{};
 const CATALOG_URL=isES?'/catalog-es.html?catalog=machines':'/catalog.html?catalog=machines';
 const HOME_URL=isES?'/es.html':'/';
+const standardFamily=window.PRODUCT_COLLECTIONS?.['boxer-standard'];
+const isStandard=standardFamily?.slugs.includes(key)||false;
+const FAMILY_URL=isES?'/boxer-standard-es.html':'/boxer-standard.html';
 const txt=isES?{
   all:'Todos los productos', allMachines:'Todas las máquinas', request:'Solicitar oferta', catalog:'Ver catálogo completo →', price:'El precio y la configuración final se cotizan individualmente.',
   colour:'COLOR / ACABADO', current:'Acabado actual', colourNote:'Selecciona un color o acabado. La foto principal cambia automáticamente para mostrar la variante real de Pro Games. El color, el diseño y la disponibilidad final se confirman con el equipo comercial.',
@@ -36,32 +41,33 @@ if(meta) meta.content=isES?`${p.name} de Pro Games Poland. Descripción, especif
 
 const detail=document.querySelector('#productDetail');
 const variantList=(p.variants||[]).filter(v=>v&&v.image);
-const mainVariant=variantList[0]||{name:'Product',image:p.image};
+let selectedIndex=Math.max(0,variantList.findIndex(v=>v.id===params.get('variant')));
+const mainVariant=variantList[selectedIndex]||{name:'Product',image:p.image};
 const spec=(p.spec||[]).map(([label,value])=>`<div><span>${localSpec(label)}</span><b>${value}</b></div>`).join('');
 const features=(p.features||[]).map(x=>`<li>${localFeature(x)}</li>`).join('');
 const options=(p.options||[]).map(o=>`<div><span>${localOption(o)}</span><b>+</b></div>`).join('');
 const related=Object.entries(products)
-  .filter(([slug,item])=>slug!==key && item.category===p.category)
+  .filter(([slug,item])=>slug!==key && item.category===p.category && (!isStandard||standardFamily.slugs.includes(slug)))
   .slice(0,4)
   .map(([slug,item])=>`<a class="related-card" href="${isES?'/product-es.html':'/product.html'}?model=${slug}"><img src="${item.image}" alt="${item.name} by Pro Games" loading="lazy" referrerpolicy="no-referrer"><span>${isES?(es.labels[item.label]||item.label):item.label}</span><h3>${item.name}</h3></a>`).join('');
 
 const swatchColor={White:'#f4f4f1',Orange:'#ff7a18',Yellow:'#ffd329',Green:'#27ae60',Blue:'#1976d2',Red:'#ef3123',Black:'#17191c',Brown:'#84543a',Graphite:'#4b4f55',Golden:'#c49b38',Arctic:'#d9f4ff',Matrix:'#4d56a8',Compact:'#7f8c8d',Standard:'#777',Kids:'#4fa3ff',Purple:'#7b4cb8',Silver:'#bfc3c7',Pink:'#e85e9f'};
 const isGenericVariantName=(name='')=>/^Variant\s+\d+$/i.test(name);
-const displayVariantName=(v,i)=>isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
-const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="Choose colour or artwork variant"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName">${displayVariantName(mainVariant,0)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=!isGenericVariantName(v.name);return `<button type="button" class="gallery-swatch ${i===0?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-label="${isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
-const finishBlock=variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${txt.currentImage}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
+const displayVariantName=(v,i)=>isES&&v.nameES?v.nameES:isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
+const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="${isES?'Elegir color o diseño':'Choose colour or artwork variant'}"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName" aria-live="polite">${displayVariantName(mainVariant,selectedIndex)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=Boolean(swatchColor[v.color||v.name]);return `<button type="button" class="gallery-swatch ${i===selectedIndex?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-pressed="${i===selectedIndex}" aria-label="${isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.color||v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
+const finishBlock=variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
 detail.innerHTML=`
 <section class="product-detail-v2">
   <div class="product-gallery-panel">
     <div class="product-main-stage reveal in">
-      <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${localColor(mainVariant.name)}" fetchpriority="high" referrerpolicy="no-referrer">
+      <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${displayVariantName(mainVariant,selectedIndex)}" fetchpriority="high" referrerpolicy="no-referrer">
       ${p.tag?`<span class="product-tag">${p.tag}</span>`:''}
     </div>
-    ${variantSelector}
+    ${variantSelector}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
   </div>
   <div class="product-info-panel">
-    <a class="product-back-link" href="${HOME_URL}#machines">← ${txt.allMachines}</a>
+    <a class="product-back-link" href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">← ${isStandard?'Boxer Standard':txt.allMachines}</a>
     <p class="kicker">${label}</p>
     <h1>${p.name}</h1>
     <p class="detail-lead">${desc}</p>
@@ -89,7 +95,7 @@ detail.innerHTML=`
 
 <section class="related section">
   <p class="kicker">${txt.explore}</p>
-  <div class="related-heading"><h2>${txt.related}</h2><a href="${HOME_URL}#machines">${txt.viewAll}</a></div>
+  <div class="related-heading"><h2>${txt.related}</h2><a href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">${isStandard?(isES?'Ver todos los Boxer Standard ↗':'View all Boxer Standard models ↗'):txt.viewAll}</a></div>
   <div class="related-grid">${related}</div>
 </section>
 
@@ -99,25 +105,46 @@ detail.innerHTML=`
   <a class="btn btn-primary" href="${HOME_URL}#contact">${txt.send}</a>
 </section>`;
 
+let variantRequest=0;
+function updateVariantLinks(){
+  const query=new URLSearchParams({model:key,variant:variantList[selectedIndex].id});
+  document.querySelectorAll('[data-lang-link]').forEach(a=>{a.href=(a.dataset.langLink==='es'?'/product-es.html':'/product.html')+'?'+query;});
+  document.querySelectorAll('.detail-actions a:first-child, .product-cta .btn').forEach(a=>{a.href=HOME_URL+'?'+query+'#contact';});
+}
 function setVariant(index){
   const variant=variantList[index];
   if(!variant) return;
+  const token=++variantRequest;
   const img=document.querySelector('#productMainImage');
-  if(img){
-    img.classList.add('switching');
-    const preload=new Image();
-    preload.onload=()=>{
-      img.src=variant.image;
-      img.alt=`${p.name} — ${localColor(variant.name)}`;
-      requestAnimationFrame(()=>img.classList.remove('switching'));
-    };
-    preload.onerror=()=>img.classList.remove('switching');
-    preload.src=variant.image;
-  }
-  const name=document.querySelector('#variantName');
-  if(name) name.textContent=displayVariantName(variant,index);
-  document.querySelectorAll('[data-index]').forEach(btn=>btn.classList.toggle('active',Number(btn.dataset.index)===index));
+  const status=document.querySelector('#variantStatus');
+  img.classList.add('switching');
+  img.setAttribute('aria-busy','true');
+  status.textContent=isES?'Cargando imagen…':'Loading image…';
+  const preload=new Image();
+  preload.onload=()=>{
+    if(token!==variantRequest) return;
+    selectedIndex=index;
+    img.src=variant.image;
+    img.alt=`${p.name} — ${displayVariantName(variant,index)}`;
+    document.querySelector('#variantName').textContent=displayVariantName(variant,index);
+    document.querySelectorAll('.gallery-swatch').forEach(btn=>{
+      const active=Number(btn.dataset.index)===index;
+      btn.classList.toggle('active',active);
+      btn.setAttribute('aria-pressed',String(active));
+    });
+    img.classList.remove('switching');img.setAttribute('aria-busy','false');status.textContent='';
+    const url=new URL(location.href);url.searchParams.set('variant',variant.id);
+    history.replaceState(null,'',url);
+    updateVariantLinks();
+  };
+  preload.onerror=()=>{
+    if(token!==variantRequest) return;
+    img.classList.remove('switching');img.setAttribute('aria-busy','false');
+    status.textContent=isES?'No se pudo cargar la imagen. Vuelve a intentarlo.':'The image could not be loaded. Please try again.';
+  };
+  preload.src=variant.image;
 }
+updateVariantLinks();
 
 const schema=document.createElement('script');
 schema.type='application/ld+json';
@@ -126,8 +153,10 @@ schema.textContent=JSON.stringify({
   description:desc,image:variantList.map(v=>v.image),
   brand:{'@type':'Brand',name:'Pro Games Poland'},
   manufacturer:{'@type':'Organization',name:'PRO GAMES POLAND Sp. z o.o.'},
-  offers:{'@type':'Offer',url:location.href,availability:'https://schema.org/InStock',priceSpecification:{'@type':'PriceSpecification',description:isES?'Precio bajo consulta':'Price on request'}}
+  offers:{'@type':'Offer',url:location.href,priceSpecification:{'@type':'PriceSpecification',description:isES?'Precio bajo consulta':'Price on request'}}
 });
 document.head.append(schema);
 
 document.querySelectorAll('[data-index]').forEach(btn=>btn.addEventListener('click',()=>setVariant(Number(btn.dataset.index))));
+
+})();

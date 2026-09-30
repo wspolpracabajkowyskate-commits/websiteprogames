@@ -85,7 +85,7 @@
         </div>
         <label class="product-search"><span>Buscar</span><input id="productSearch" type="search" placeholder="Buscar una máquina…" autocomplete="off"></label>
       </div>
-      <div class="product-result-line"><span id="productCount"></span><button type="button" id="clearProductFilters" hidden>Borrar filtros</button></div>
+      <div class="product-result-line"><span id="productCount" role="status" aria-live="polite"></span><button type="button" id="clearProductFilters" hidden>Borrar filtros</button></div>
       <div class="product-grid" id="productGrid"></div>
       <div class="products-catalog-cta reveal">
         <div><span class="kicker">GAMA COMPLETA / PDF</span><h3>Ver el catálogo completo de Pro Games</h3><p>Consulta el catálogo oficial actual en PDF directamente en la web.</p></div>
@@ -180,8 +180,8 @@
         <div class="field-row"><label>Email<input type="email" name="email" required placeholder="name@company.com"></label><label>Teléfono<input type="tel" name="phone" placeholder="+48 ..."></label></div>
         <label>Producto de interés<select name="product" id="productInterest"><option value="">Selecciona un producto</option></select></label>
         <label>Mensaje<textarea name="message" rows="5" placeholder="Cuéntanos qué necesitas…"></textarea></label>
-        <button class="btn btn-primary" type="submit">Enviar consulta</button>
-        <small>Para producción, conecta este formulario con un endpoint de correo o CRM.</small>
+        <button class="btn btn-primary" type="submit">Preparar consulta por email</button>
+        <small>Se abrirá tu aplicación de correo con la consulta preparada. También puedes escribir a office@progames.pl.</small>
       </form>
     </section>
   </main>

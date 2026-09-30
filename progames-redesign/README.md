@@ -1,28 +1,25 @@
-# Pro Games Poland — redesign prototype
+# Pro Games Poland — Boxer Standard collection v6
 
-Static, Vercel-ready marketing and product website for Pro Games Poland.
+Static website, English and Spanish, ready for a static HTTP host such as Vercel.
 
-## Included
+- 28 homepage cards: 27 individual products and one Boxer Standard collection.
+- The Boxer Standard collection contains the 15 models from the supplied screenshots, in the same order, on `boxer-standard.html` and `boxer-standard-es.html`.
+- 42 individual products remain available with all 222 verified colour/artwork/model variants.
+- Homepage search includes collection member names. Each Standard product links back to its family page.
+- All product photos are included in `assets/products/` as WebP files.
+- Each variant has a stable ID, a colour/artwork label, its own local image, the original image URL and the source filename.
+- `variant-audit.json` records the mapping and product source pages.
+- Product selection is preserved in the URL, language switch and quote link.
+- A failed image request preserves the previous photo and label. Stale responses from earlier clicks cannot overwrite the last selection.
+- The contact form prepares an email in the visitor's mail application. There is no backend email delivery or CRM integration.
 
-- English-first responsive homepage
-- 42 product entries based on the current Pro Games Poland public range, including the 15 Boxer Standard artwork models and the distributed product families shown on the current website
-- Dedicated product page generated from `products.js`
-- Real image-based finish / artwork switching: when a product has multiple source images, the selector swaps the actual photograph rather than applying a CSS colour filter
-- Current official Pro Games product catalog PDF and spare-parts PDF links
-- Distributor network with supplied partner logos
-- Trade-show section including IAAPA Expo Orlando 2026
-- Contact and service details from the current Pro Games website
-- SEO metadata and Product / Organization structured data
+## Run locally
 
-## Main files
+From this directory: `python3 -m http.server 8000`, then open `http://localhost:8000`.
+Use an HTTP server; root-relative URLs require the project at the host root. Opening HTML with `file://` is not supported.
 
-- `index.html` — homepage
-- `product.html` + `product.js` — product detail template
-- `products.js` — product database, descriptions, technical data and image variants
-- `styles.css` — responsive visual system
-- `script.js` — filters, search, mobile navigation and interactions
-- `catalog.html` — optional in-site PDF viewer (no upload feature)
+## Checks and remaining limitations
 
-## Deployment
+See `RAPORT_KONTROLI.md`. Logic was tested on all 84 English/Spanish product pages with a DOM simulator. A real-browser desktop/mobile visual regression could not be run in the execution environment. Do not treat that check as passed. Product variant images themselves were inspected visually and all 222 local images were decoded successfully.
 
-The project can be deployed as a static site on Vercel. Product images currently reference the public media assets used by Pro Games / its official Americas distributor. For production, mirroring approved high-resolution originals into the project CDN is recommended for long-term asset control and Core Web Vitals.
+The website has not been deployed to the public domain. Source photographs document the published options; they do not establish stock levels.

@@ -28,12 +28,36 @@ const clearProductFilters=document.querySelector('#clearProductFilters');
 let activeCategory='all';
 let activeQuery='';
 
+// Render one family card on the homepage, and its members on the family page.
+const collections=window.PRODUCT_COLLECTIONS||{};
+const collectionKey=grid?.dataset.collection;
+const collection=Object.hasOwn(collections,collectionKey)?collections[collectionKey]:null;
+const listing=[];
+if(collection){
+  collection.slugs.forEach(slug=>{if(products[slug]) listing.push([slug,products[slug],false]);});
+}else{
+  const shownCollections=new Set();
+  Object.entries(products).forEach(([slug,p])=>{
+    const family=Object.entries(collections).find(([,c])=>c.slugs.includes(slug));
+    if(!family){listing.push([slug,p,false]);return;}
+    if(!shownCollections.has(family[0])){listing.push([family[0],family[1],true]);shownCollections.add(family[0]);}
+  });
+}
+const escapeAttribute=value=>String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 if(grid){
-  grid.innerHTML=Object.entries(products).map(([slug,p])=>{
+  grid.innerHTML=listing.map(([slug,p,isCollection])=>{
     const label=isES?(es.labels[p.label]||p.label):p.label;
-    const desc=isES?((window.PRODUCT_ES||{})[slug]?.desc||p.desc):p.desc;
-    const url=`${isES?'/product-es.html':'/product.html'}?model=${encodeURIComponent(slug)}`;
-    return `<article class="product-card reveal" data-category="${p.category}" data-search="${`${p.name} ${label} ${desc}`.toLowerCase().replace(/"/g,'&quot;')}"><a href="${url}" aria-label="${isES?'Ver':'View'} ${p.name}"><div class="card-media"><img loading="lazy" src="${p.image}" alt="${p.name} by Pro Games" referrerpolicy="no-referrer">${p.tag?`<span class="tag">${p.tag}</span>`:''}</div><div class="card-body"><p>${label}</p><h3>${p.name}</h3><span>${UI.view}</span></div></a></article>`;
+    const desc=isES?((window.PRODUCT_ES||{})[slug]?.desc||p.desc||''):p.desc||'';
+    const members=isCollection?p.slugs.map(id=>products[id].name).join(' '):'';
+    const selected=collection?.coverVariants?.[slug];
+    const variant=p.variants?.find(v=>v.id===selected);
+    const url=isCollection?`/${slug}${isES?'-es':''}.html`:`${isES?'/product-es.html':'/product.html'}?model=${encodeURIComponent(slug)}${variant?'&variant='+encodeURIComponent(variant.id):''}`;
+    const cover=isCollection?p.coverModels.map(id=>{
+      const model=products[id];const photo=model.variants.find(v=>v.id===p.coverVariants[id])||model.variants[0];
+      return `<img loading="lazy" src="${photo.image}" alt="${model.name}">`;
+    }).join(''):`<img loading="lazy" src="${variant?.image||p.image}" alt="${p.name} by Pro Games">`;
+    const cta=isCollection?(isES?`Ver ${p.slugs.length} modelos ↗`:`Explore ${p.slugs.length} models ↗`):UI.view;
+    return `<article class="product-card reveal ${isCollection?'collection-card':''}" data-slug="${slug}" data-category="${p.category}" data-search="${escapeAttribute(`${p.name} ${label} ${desc} ${members}`.toLowerCase())}"><a href="${url}" aria-label="${isES?'Ver':'View'} ${p.name}"><div class="card-media ${isCollection?'collection-cover':''}">${cover}${p.tag?`<span class="tag">${p.tag}</span>`:''}${isCollection?`<span class="tag">${p.slugs.length} ${isES?'MODELOS':'MODELS'}</span>`:''}</div><div class="card-body"><p>${isCollection?(isES?'COLECCIÓN / BOXERS':'COLLECTION / BOXERS'):label}</p><h3>${p.name}</h3><span>${cta}</span></div></a></article>`;
   }).join('');
 }
 
@@ -47,7 +71,7 @@ function applyProductFilters(){
     card.hidden=!show;
     if(show) visible++;
   });
-  if(productCount) productCount.textContent=`${visible} ${visible===1?UI.shownSingular:UI.shownPlural}`;
+  if(productCount) productCount.textContent=collection?`${visible} ${isES?'modelos mostrados':'models shown'}`:`${visible} ${isES?'productos / colecciones':'products / collections'}`;
   if(clearProductFilters) clearProductFilters.hidden=activeCategory==='all'&&!activeQuery;
 }
 
@@ -87,4 +111,37 @@ if('IntersectionObserver' in window){
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 }else{
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}
+
+// Preserve the quoted product and finish when entering the contact form.
+const quoteParams=new URLSearchParams(location.search);
+const quoteProduct=Object.hasOwn(products,quoteParams.get('model'))?products[quoteParams.get('model')]:null;
+if(productInterest&&quoteProduct){
+  productInterest.value=quoteProduct.name;
+  const variant=quoteProduct.variants.find(v=>v.id===quoteParams.get('variant'));
+  if(variant){const message=document.querySelector('[name="message"]');message.value=(isES?'Acabado: ':'Finish: ')+(isES?(variant.nameES||es.colors?.[variant.name]||variant.name):variant.name)+'\n';}
+}
+const contactForm=document.querySelector('.contact-form');
+contactForm?.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!contactForm.reportValidity()) return;
+  const data=new FormData(contactForm);
+  const body=[...data].map(([name,value])=>`${name}: ${value}`).join('\r\n');
+  location.href='mailto:office@progames.pl?subject='+encodeURIComponent('Pro Games inquiry — '+(data.get('product')||'General'))+'&body='+encodeURIComponent(body);
+});
+addEventListener('keydown',event=>{if(event.key==='Escape'){mobile?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');}});
+// Announce empty results and selected categories without leaving a blank grid.
+if(grid){
+  const empty=document.createElement('p');
+  empty.className='product-empty';empty.setAttribute('role','status');empty.hidden=true;
+  empty.textContent=isES?'No hay productos que coincidan. Cambia la búsqueda o borra los filtros.':'No matching products. Change your search or clear the filters.';
+  grid.after(empty);
+  const syncFilterState=()=>{
+    empty.hidden=[...grid.querySelectorAll('.product-card')].some(card=>!card.hidden);
+    tabs.forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.filter===activeCategory)));
+  };
+  tabs.forEach(btn=>btn.addEventListener('click',syncFilterState));
+  productSearch?.addEventListener('input',syncFilterState);
+  clearProductFilters?.addEventListener('click',syncFilterState);
+  syncFilterState();
 }

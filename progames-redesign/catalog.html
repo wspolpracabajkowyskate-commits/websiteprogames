@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Catalogs — Pro Games Poland</title>
   <meta name="description" content="Browse the Pro Games Poland machine catalog and spare parts catalog directly online or download the PDF files.">
@@ -95,7 +96,9 @@
     const open=document.querySelector('#catalogOpen');
     const download=document.querySelector('#catalogDownload');
     function setCatalog(key,scroll=false){
-      const c=catalogs[key]||catalogs.machines;
+      key=Object.hasOwn(catalogs,key)?key:'machines';
+      const c=catalogs[key];
+      catalogLangLinks.forEach(a=>{a.href=a.getAttribute('href').split('?')[0]+'?catalog='+key;});
       buttons.forEach(btn=>{const active=btn.dataset.catalog===key;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));});
       eyebrow.textContent=c.eyebrow; title.textContent=c.title; description.textContent=c.description;
       frame.src=c.file+'#view=FitH'; frame.title=c.frameTitle; open.href=c.file; download.href=c.file;

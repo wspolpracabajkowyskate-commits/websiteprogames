@@ -1,0 +1,517 @@
+{
+  "environment": "Node + linkedom DOM simulation, not a browser layout test",
+  "standardCollection": "PASS: 28 homepage cards; 15 models, exact order; links, matching cover photos, backlinks, search, reset, EN/ES",
+  "results": [
+    {
+      "product": "monster-3in1-ticket",
+      "language": "en",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "monster-3in1",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit",
+      "language": "en",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit-gift",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit-kids",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit-kids-gift",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-strike",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "joker",
+      "language": "en",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "pow-boxer",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "champion",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "easy",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "cyber-punch",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "gladiator",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "mma",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "black-jack",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "super-hero",
+      "language": "en",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "power-black",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "poison-squad",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "hacker",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "strongman",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "viking",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "disco",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "matte-airbrushed",
+      "language": "en",
+      "variants": 3,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-combat",
+      "language": "en",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-fist",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-ring",
+      "language": "en",
+      "variants": 5,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-combat-kids",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-kids",
+      "language": "en",
+      "variants": 18,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-flash-gift",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "hammer",
+      "language": "en",
+      "variants": 5,
+      "status": "PASS"
+    },
+    {
+      "product": "kicker",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-flash",
+      "language": "en",
+      "variants": 5,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-gift",
+      "language": "en",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "bouncy-castles-xs",
+      "language": "en",
+      "variants": 10,
+      "status": "PASS"
+    },
+    {
+      "product": "air-hockey-golden",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "air-hockey-arctic",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "air-hockey-matrix",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "basketball-compact",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "basketball",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "kids-basketball",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "kiddie-ride",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "cyberdart",
+      "language": "en",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "monster-3in1-ticket",
+      "language": "es",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "monster-3in1",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit",
+      "language": "es",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit-gift",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit-kids",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-hit-kids-gift",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "double-strike",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "joker",
+      "language": "es",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "pow-boxer",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "champion",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "easy",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "cyber-punch",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "gladiator",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "mma",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "black-jack",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "super-hero",
+      "language": "es",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "power-black",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "poison-squad",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "hacker",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "strongman",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "viking",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "disco",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "matte-airbrushed",
+      "language": "es",
+      "variants": 3,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-combat",
+      "language": "es",
+      "variants": 7,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-fist",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-ring",
+      "language": "es",
+      "variants": 5,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-combat-kids",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-kids",
+      "language": "es",
+      "variants": 18,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-flash-gift",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "hammer",
+      "language": "es",
+      "variants": 5,
+      "status": "PASS"
+    },
+    {
+      "product": "kicker",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-flash",
+      "language": "es",
+      "variants": 5,
+      "status": "PASS"
+    },
+    {
+      "product": "boxer-gift",
+      "language": "es",
+      "variants": 6,
+      "status": "PASS"
+    },
+    {
+      "product": "bouncy-castles-xs",
+      "language": "es",
+      "variants": 10,
+      "status": "PASS"
+    },
+    {
+      "product": "air-hockey-golden",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "air-hockey-arctic",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "air-hockey-matrix",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "basketball-compact",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "basketball",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "kids-basketball",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "kiddie-ride",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    },
+    {
+      "product": "cyberdart",
+      "language": "es",
+      "variants": 1,
+      "status": "PASS"
+    }
+  ],
+  "race": "PASS",
+  "imageFailure": "PASS",
+  "deepLinks": "PASS",
+  "languageLinks": "PASS",
+  "filters": "PASS",
+  "menu": "PASS",
+  "invalidProducts": "PASS"
+}
