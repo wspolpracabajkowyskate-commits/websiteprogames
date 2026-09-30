@@ -1,21 +1,224 @@
-window.PRODUCTS = {
-  'monster-3in1': {name:'Monster 3 in 1',category:'exclusive',label:'EXCLUSIVE / 3-IN-1',tag:'NEW',image:'https://www.uplayamerica.com/wp-content/uploads/2025/11/monstr-white-500x1016-1-1.webp',desc:'Trzy gry siłowe w jednym urządzeniu: boxer, kicker i hammer. Kompaktowa konstrukcja łączy trzy mechaniki, efektowne oświetlenie LED i pomiar wyniku.',features:['Boxer + Kicker + Hammer w jednym urządzeniu','Oświetlenie LED i czujniki pomiarowe','Konstrukcja do intensywnej eksploatacji','Tryb free play i regulowane ustawienia'],spec:[['Wysokość','230 cm'],['Szerokość','142 cm'],['Długość','142 cm'],['Waga','250 kg']],options:['Akceptor banknotów','Nayax','Dyspenser ticketów','Custom branding','Tryb cichy','Monety / tokeny / karty']},
-  'champion': {name:'Champion',category:'boxer',label:'BOXER STANDARD',image:'https://www.uplayamerica.com/wp-content/uploads/2024/11/champ-500x1016-1-1.webp',desc:'Klasyczny profesjonalny boxer Pro Games przeznaczony do lokali o dużym natężeniu ruchu. Czytelny wyświetlacz wyniku, solidna konstrukcja i szerokie możliwości konfiguracji płatności.',features:['Elektronika i mechanika do zastosowań komercyjnych','Regulowany poziom trudności','Tryb free play','Obsługa wielu metod płatności'],spec:[['Wysokość','219 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Pokrowiec ochronny','Custom branding','Tryb cichy']},
-  'gladiator': {name:'Gladiator',category:'boxer',label:'BOXER STANDARD',image:'https://www.uplayamerica.com/wp-content/uploads/2024/11/Sin-titulo1-1-1-1.webp',desc:'Standardowy boxer w wyrazistej stylistyce Gladiator. Model dla operatorów szukających sprawdzonej mechaniki gry siłowej i mocnej widoczności w lokalu.',features:['Konstrukcja do miejsc o dużym ruchu','Regulowany poziom trudności','Tryb free play','Obsługa monet, banknotów, kart i tokenów'],spec:[['Wysokość','219 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Pokrowiec ochronny','Custom branding','Tryb cichy']},
-  'boxer-flash': {name:'Boxer Flash',category:'boxer',label:'BOXER PREMIUM',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/flashnegra-1-1-1-500x1016.webp',desc:'Dynamiczny boxer premium z rozbudowanym oświetleniem LED. Zaprojektowany tak, aby przyciągać uwagę w salonach gier, barach sportowych i centrach rozrywki.',features:['Mocne oświetlenie LED','Regulowany poziom trudności','Tryb free play','Elastyczne systemy płatności'],spec:[['Wysokość','221 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Pokrowiec ochronny','Tryb cichy','Karty / tokeny / tickety']},
-  'boxer-flash-gift': {name:'Boxer Flash Gift',category:'boxer',label:'BOXER PREMIUM / GIFT',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/fgbl-500x1016.webp',desc:'Wariant Boxer Flash rozszerzony o funkcję nagród. Łączy klasyczne wyzwanie siłowe z mechaniką prize/reward i efektowną oprawą LED.',features:['Gra siłowa + funkcja nagród','Oświetlenie LED','Regulowany poziom trudności','Tryb free play'],spec:[['Wysokość','221 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','140 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Pokrowiec ochronny','Tryb cichy']},
-  'boxer-ring': {name:'Boxer Ring',category:'boxer',label:'BOXER PREMIUM',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/ringing-1.webp',desc:'Boxer premium o charakterystycznej, dynamicznej bryle i wielokolorowym oświetleniu. Zaprojektowany do profesjonalnej eksploatacji.',features:['Profesjonalna maszyna siłowa','Regulowany poziom trudności','Tryb free play','Obsługa wielu metod płatności'],spec:[['Wysokość','221 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','127 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Pokrowiec ochronny','Custom branding','Tryb cichy']},
-  'boxer-combat': {name:'Boxer Combat',category:'boxer',label:'BOXER PREMIUM',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/combatredeng.webp',desc:'Profesjonalny boxer o mocnej stylistyce Combat. Konstrukcja przygotowana do miejsc o wysokim natężeniu ruchu i konfiguracji operatora.',features:['Solidna konstrukcja komercyjna','Regulowany poziom trudności','Tryb free play','Płatności gotówkowe i bezgotówkowe'],spec:[['Wysokość','221 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Tryb cichy','Karty / tokeny / tickety']},
-  'boxer-fist': {name:'Boxer Fist',category:'boxer',label:'BOXER PREMIUM / MULTIPLAYER',tag:'NEW',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/fist-1-1-1-500x1016.webp',desc:'Nowoczesny boxer premium przygotowany do rywalizacji grupowej. LED-y, nowoczesna grafika i konstrukcja nastawiona na powtarzalną grę w lokalach rozrywkowych.',features:['Tryby rywalizacji multiplayer','Pełna integracja oświetlenia LED','Wzmocniona konstrukcja','Łatwy dostęp serwisowy'],spec:[['Wysokość','221 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Tryb cichy','Karty / tokeny / tickety']},
-  'boxer-matte-airbrush': {name:'Boxer Matte Airbrush',category:'airbrush',label:'MATTE AIRBRUSH',tag:'NEW',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-airb-1.webp',desc:'Matowy boxer z indywidualną stylistyką airbrush. Łączy standardową mechanikę Pro Games z bardziej ekskluzywnym, artystycznym wykończeniem obudowy.',features:['Matowe wykończenie airbrush','Solidna konstrukcja','Regulowany poziom trudności','Tryb free play'],spec:[['Wysokość','219 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Pokrowiec ochronny','Custom branding','Tryb cichy']},
-  'combat-matte-airbrush': {name:'Combat Matte Airbrush',category:'airbrush',label:'MATTE AIRBRUSH',tag:'NEW',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1-1.webp',desc:'Wariant Combat w matowej stylistyce airbrush. Model przeznaczony dla operatorów, którzy chcą połączyć charakterystyczny wygląd urządzenia z rozwiązaniami komercyjnymi.',features:['Matowe wykończenie airbrush','Oświetlenie LED','Regulowany poziom trudności','Tryb free play'],spec:[['Wysokość','221 cm'],['Szerokość','72 cm'],['Długość','115 cm'],['Waga','121 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Custom branding','Tryb cichy']},
-  'double-hit': {name:'Double Hit',category:'combo',label:'BOXER COMBO',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/cdbhit.webp',desc:'Dwa wyzwania w jednym urządzeniu: uderzenie pięścią oraz kopnięcie piłki. Kompaktowy automat combo z oświetleniem LED i konfiguracją operatora.',features:['Boxer + kicker w jednej obudowie','Oświetlenie LED','Regulowany poziom trudności','Tryb free play'],spec:[['Wysokość','219 cm'],['Szerokość','85 cm'],['Długość','122 cm'],['Waga','175 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Custom branding','Tryb cichy','Karty / tokeny']},
-  'double-hit-gift': {name:'Double Hit Gift',category:'combo',label:'BOXER COMBO / GIFT',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/dhgblanca-500x1016.webp',desc:'Boxer, kicker i funkcja nagród w jednej kompaktowej konstrukcji. Wariant Gift zwiększa zaangażowanie graczy przez dodatkową mechanikę prize.',features:['Boxer + kicker + funkcja nagród','Oświetlenie LED','Regulowany poziom trudności','Tryb free play'],spec:[['Wysokość','221 cm'],['Szerokość','85 cm'],['Długość','122 cm'],['Waga','190 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Custom branding','Tryb cichy']},
-  'double-strike': {name:'Double Strike',category:'combo',label:'BOXER COMBO',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/dst-1-1.webp',desc:'Kombinowana maszyna boxer + kicker z dużym wyświetlaczem wyniku, przeznaczona do intensywnej eksploatacji w salonach gier i obiektach rozrywkowych.',features:['Boxer + kicker','Duży wyświetlacz wyniku','Regulacja trudności','Konfiguracja do pracy komercyjnej'],spec:[['Wysokość','215 cm'],['Szerokość','150 cm'],['Głębokość','83 cm'],['Waga','170 kg']],options:['Akceptor monet','Opcjonalny akceptor banknotów','Czytnik kart / Nayax — zależnie od konfiguracji']},
-  'boxer-kids-gift': {name:'Boxer Kids Gift',category:'kids',label:'BOXER KIDS / GIFT',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/kidsbging-1-1.webp',desc:'Kompaktowy boxer zaprojektowany dla młodszych graczy, z dodatkową funkcją nagród i jasną, przyjazną oprawą graficzną.',features:['Konstrukcja dopasowana do dzieci','Funkcja nagród','Oświetlenie LED','Regulowany poziom trudności'],spec:[['Wysokość','186 cm'],['Szerokość','70 cm'],['Długość','115 cm'],['Waga','120 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Custom branding','Tryb cichy']},
-  'combat-kids': {name:'Boxer Combat Kids',category:'kids',label:'BOXER KIDS',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/combatk-500x1016.webp',desc:'Dziecięca odmiana boxera Combat z kolorową grafiką i oświetleniem LED, przygotowana do rodzinnych centrów rozrywki i stref kids.',features:['Format dla młodszych graczy','Oświetlenie LED','Pomiar wyniku','Konfiguracja komercyjna'],spec:[['Wymiary','Sprawdź w aktualnej specyfikacji / zapytaj producenta']],options:['Systemy płatności zależnie od konfiguracji','Custom branding','Tryb free play']},
-  'double-hit-kids': {name:'Double Hit Kids',category:'kids',label:'KIDS COMBO',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/dhk-y-1-2-1.webp',desc:'Kompaktowa, kolorowa maszyna combo dla młodszych graczy. Łączy uderzenie pięścią i kopnięcie piłki w jednej obudowie.',features:['Boxer + kicker w wersji Kids','Oświetlenie LED','Pomiar wyniku','Konstrukcja do obiektów rodzinnych'],spec:[['Wymiary','Sprawdź w aktualnej specyfikacji / zapytaj producenta']],options:['Systemy płatności zależnie od konfiguracji','Custom branding','Tryb free play']},
-  'double-hit-kids-gift': {name:'Double Hit Kids Gift',category:'kids',label:'KIDS COMBO / GIFT',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/dhgk-1-2-1.webp',desc:'Wersja Kids łącząca boxer, kicker i funkcję nagród. Zaprojektowana do rodzinnych centrów rozrywki, parków i stref dziecięcych.',features:['Boxer + kicker + funkcja nagród','Kolorowe oświetlenie LED','Pomiar wyniku','Format dla rodzinnych obiektów'],spec:[['Wymiary','Sprawdź w aktualnej specyfikacji / zapytaj producenta']],options:['Systemy płatności zależnie od konfiguracji','Dyspenser / prize system','Custom branding']},
-  'kicker': {name:'Kicker',category:'kicker',label:'KICKER',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/kicker-blue-1.webp',desc:'Automat do pomiaru siły i precyzji kopnięcia. Przeznaczony zarówno dla młodszych, jak i dorosłych użytkowników, do salonów gier, barów sportowych i FEC.',features:['Pomiar siły kopnięcia','Regulowany poziom trudności','Tryb free play','Obsługa wielu metod płatności'],spec:[['Wysokość','170 cm'],['Szerokość','133 cm'],['Długość','66 cm'],['Waga','100 kg']],options:['Akceptor banknotów','Akceptor monet','Custom branding','Karty / tokeny / tickety']},
-  'hammer': {name:'Hammer',category:'hammer',label:'HAMMER',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/hammering1-1.webp',desc:'Klasyczna gra siłowa z młotem w nowoczesnej, podświetlanej obudowie. Stworzona z myślą o parkach rozrywki, salonach arcade i rodzinnych centrach rozrywki.',features:['Power Strike Challenge','Oświetlenie LED','Opcja ticketów','Regulowany poziom trudności i free play'],spec:[['Wysokość','225 cm'],['Szerokość','95 cm'],['Długość','140 cm'],['Waga','125 kg']],options:['Akceptor banknotów / monet','Nayax','Dyspenser ticketów','Custom branding','Karty / tokeny']}
+const wix=(file)=>`https://static.wixstatic.com/media/${file}`;
+const colours=['Orange','Red','Yellow','Blue','White'];
+const makeVariants=(files,names=colours)=>files.map((file,i)=>({name:names[i]||`Colour ${i+1}`,image:wix(file)}));
+
+window.PRODUCTS={
+  'monster-3in1':{
+    name:'Monster 3 in 1',category:'combo',label:'EXCLUSIVE / 3-IN-1',tag:'NEW 2026',
+    image:wix('d36c49_9106047d54a04ae9a045c26e9ed522ba~mv2.jpg'),
+    desc:'A compact 3-in-1 strength machine combining Boxer, Kicker and Hammer in one cabinet. LED lighting, accurate scoring sensors and three game modes make it a high-impact attraction for busy entertainment venues.',
+    features:['Boxer, Kicker and Hammer in one machine','LED lighting and accurate scoring sensors','Built for intensive commercial use','Adjustable settings and free-play mode'],
+    spec:[['Height','230 cm'],['Width','140 cm'],['Length','140 cm'],['Weight','250 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants([
+      'd36c49_9106047d54a04ae9a045c26e9ed522ba~mv2.jpg','d36c49_4dd9a82d428247c7a156b759ec1d6884~mv2.jpg','d36c49_22c5ef2bff4b402fb4480ae3f0708506~mv2.jpg','d36c49_4ef9d427262b4f5cb2710288044e922d~mv2.jpg','d36c49_dcebd6d56c8b404699b3af378e4ae082~mv2.jpg','d36c49_599d9c84ccb946038ad484d074b79be9~mv2.jpg'
+    ],['White','Orange','Yellow','Green','Blue','Red'])
+  },
+  'champion':{
+    name:'Champion',category:'boxer',label:'BOXER STANDARD',
+    image:wix('d36c49_2281fd4805544bbbbb63e121ef43cb4c~mv2.png'),
+    desc:'A professional commercial boxer built for high-traffic locations. Champion combines robust electronics and mechanics with adjustable difficulty, free play and flexible payment configuration.',
+    features:['Commercial-grade electronics and mechanics','Adjustable difficulty','Free-play mode','Multiple payment options'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:makeVariants(['d36c49_2281fd4805544bbbbb63e121ef43cb4c~mv2.png','d36c49_48f1ab3e01fe4ed7af061c0a9735f338~mv2.jpg','d36c49_48ae36d5e21c469eba9d2767b559b7e1~mv2.jpg','d36c49_7bef8505ee7d4e07ab8fb124ae23e311~mv2.jpg','d36c49_65ef499e1133463dbc0efebb2f4db3f1~mv2.jpg'],['Blue','Red','White','Yellow','Orange'])
+  },
+  'gladiator':{
+    name:'Gladiator',category:'boxer',label:'BOXER STANDARD',
+    image:wix('d36c49_7a635f98ec534a55856195bfbd1e0fc5~mv2.jpg'),
+    desc:'A standard-format boxer with the distinctive Gladiator artwork. It is designed for reliable commercial operation, repeat play and flexible payment options in busy venues.',
+    features:['Designed for high-traffic venues','Adjustable difficulty','Free-play mode','Bills, coins, cards and tokens supported by configuration'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:makeVariants(['d36c49_7a635f98ec534a55856195bfbd1e0fc5~mv2.jpg','d36c49_df4021ea817f4f5790c5748eff209ae5~mv2.jpg','d36c49_887efae00a6a4a4cbf5130474c0d0f96~mv2.jpg','d36c49_a262ccb1d3fb45bc8caea78953886cac~mv2.jpg','d36c49_84b4dd7bd9cd4809befdb09743acaf9d~mv2.jpg'],['Brown','Red','White','Yellow','Blue'])
+  },
+  'boxer-flash':{
+    name:'Boxer Flash',category:'boxer',label:'BOXER PREMIUM',
+    image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/flashnegra-1-1-1-500x1016.webp',
+    desc:'A premium boxer with bright LED lighting and a modern visual design. Boxer Flash is intended for arcades, sports bars and entertainment centres where strong visibility matters.',
+    features:['High-visibility LED lighting','Adjustable difficulty','Free-play mode','Flexible payment configuration'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding']
+  },
+  'boxer-flash-gift':{
+    name:'Boxer Flash Gift',category:'boxer',label:'BOXER PREMIUM / GIFT',
+    image:wix('d36c49_1b5a7bd5dec9447b921b80f57a0e13ae~mv2.jpg'),
+    desc:'Boxer Flash with an added gift / prize mechanic. Players punch for a high score and can be rewarded with prizes, combining strength gameplay with a stronger redemption-style attraction.',
+    features:['Strength challenge with prize functionality','Bright LED lighting','Adjustable difficulty','Free-play mode'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','140 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_1b5a7bd5dec9447b921b80f57a0e13ae~mv2.jpg','d36c49_fa66a189137141aebbb22389942df45f~mv2.jpg','d36c49_7a50a1705283411c9ee69293c5e258e3~mv2.jpg','d36c49_258c9fef06c64c189855e8a5e3c52898~mv2.jpg','d36c49_eff96957a7914595b3182f0d8ae6436a~mv2.jpg'],['Red','Black','Yellow','Blue','White'])
+  },
+  'boxer-ring':{
+    name:'Boxer Ring',category:'boxer',label:'BOXER PREMIUM',
+    image:wix('d36c49_2b04783014544dbf92e39e725e3881e2~mv2.jpg'),
+    desc:'A premium boxing machine with a distinctive Ring cabinet shape and strong visual presence. Built for commercial use with adjustable play settings and flexible payment options.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','127 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Protective cover','Custom sticker and branding'],
+    variants:makeVariants(['d36c49_2b04783014544dbf92e39e725e3881e2~mv2.jpg','d36c49_723aed8e93204089b71de4a1fc06ffe5~mv2.jpg','d36c49_d8111cc412a642c38b0fd4b8b0200c33~mv2.jpg','d36c49_dc1a2938c5124466bc9a71f579530026~mv2.jpg','d36c49_c4fd1d01bd0e4d7ab832ad8fa3899805~mv2.jpg'],['Red','Black','Blue','White','Yellow'])
+  },
+  'boxer-combat':{
+    name:'Boxer Combat',category:'boxer',label:'BOXER PREMIUM',
+    image:wix('d36c49_6282f2a1ba5b4286be6282f1f2a3ebcb~mv2.jpg'),
+    desc:'A premium commercial boxer with bold Combat artwork, LED lighting and operator-focused configuration. Designed for repeat play in high-traffic venues.',
+    features:['Commercial-grade construction','LED lighting','Adjustable difficulty','Cash and cashless payment configuration'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_6282f2a1ba5b4286be6282f1f2a3ebcb~mv2.jpg','d36c49_22f24ca2aa154352a285a8644b6bb510~mv2.jpg','d36c49_901c5c7793f948f484450ca830abd03f~mv2.jpg','d36c49_8354cc65d5f14fcb982909f3f3ff0315~mv2.jpg','d36c49_4ca4b6f113024dacb9414a78c7dea9b2~mv2.jpg'],['Orange','Red','Yellow','Blue','White'])
+  },
+  'boxer-fist':{
+    name:'Boxer Fist',category:'boxer',label:'BOXER MULTIPLAYER',tag:'NEW 2025',
+    image:wix('d36c49_08b14c21b6e94f6699d7d27a332005c7~mv2.jpg'),
+    desc:'A multiplayer boxing arcade machine designed for group challenges and head-to-head competition. Full LED integration and a reinforced commercial cabinet make it suitable for busy entertainment locations.',
+    features:['Multiplayer-ready gameplay','Full LED integration','Heavy-duty commercial frame','Operator-friendly service access'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding'],
+    variants:makeVariants(['d36c49_08b14c21b6e94f6699d7d27a332005c7~mv2.jpg','d36c49_42c30a9a3d03436491ae1a4b140d6c22~mv2.jpg','d36c49_7fcc4c1eccb9482fa199de11f831aa93~mv2.jpg','d36c49_83436840037d4442a0452f7d7d812e3b~mv2.jpg','d36c49_18fe051df5d44db287a8477705475d9a~mv2.jpg'],['Black','White','Green','Blue','Orange'])
+  },
+  'boxer-matte-airbrush':{
+    name:'Boxer Matte Airbrush',category:'boxer',label:'MATTE AIRBRUSH',tag:'NEW 2025',
+    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-airb-1.webp',
+    desc:'A matte-finish boxer with custom airbrush styling. It combines the familiar Pro Games boxing format with a more individual, premium visual finish.',
+    features:['Matte airbrush finish','Commercial-grade construction','Adjustable difficulty','Free-play mode'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding']
+  },
+  'combat-matte-airbrush':{
+    name:'Combat Matte Airbrush',category:'boxer',label:'MATTE AIRBRUSH',tag:'NEW 2025',
+    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1-1.webp',
+    desc:'A matte airbrushed version of the Combat boxer, pairing commercial Pro Games hardware with a more exclusive custom-finish cabinet.',
+    features:['Matte airbrush finish','LED lighting','Adjustable difficulty','Free-play mode'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding']
+  },
+  'double-hit':{
+    name:'Double Hit',category:'combo',label:'COMBO MACHINE',
+    image:wix('d36c49_338c0feaec2046e998aa61a62dac23e7~mv2.jpg'),
+    desc:'Two challenges in one compact machine: punch the boxing bag or kick the football. Double Hit combines LED lighting, commercial durability and operator settings in one cabinet.',
+    features:['Boxing and kicking in one machine','LED lighting','Adjustable difficulty','Free-play mode'],
+    spec:[['Height','219 cm'],['Width','85 cm'],['Length','122 cm'],['Weight','175 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_338c0feaec2046e998aa61a62dac23e7~mv2.jpg','d36c49_753f3da69f204a27befeaa9c2357be8a~mv2.jpg','d36c49_e4eeef964453407db8c3d177cd8885eb~mv2.jpg','d36c49_dbb917eefcfc4fc7826b4cdf9ff6ee97~mv2.jpg','d36c49_259b178e80664fb59165fce8ce3d56a0~mv2.jpg'],['Orange','Red','Yellow','Blue','White'])
+  },
+  'double-hit-gift':{
+    name:'Double Hit Gift',category:'combo',label:'COMBO / GIFT',
+    image:wix('d36c49_50ed6391ec3a4358a07dbc092be34e08~mv2.jpg'),
+    desc:'A three-action entertainment machine combining boxing, kicking and a prize feature. LED lighting and operator configuration make it a strong attraction for family and arcade venues.',
+    features:['Boxing, kicking and prize functionality','Bright LED lighting','Adjustable difficulty','Free-play mode'],
+    spec:[['Height','219 cm'],['Width','85 cm'],['Length','122 cm'],['Weight','190 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_50ed6391ec3a4358a07dbc092be34e08~mv2.jpg','d36c49_88e6ccc745e54081a0e66bf6c895ceef~mv2.jpg','d36c49_f449c8e887144f15b48bca8aaf7834d2~mv2.jpg','d36c49_f234704039194aa197eae9dc1587ab43~mv2.jpg','d36c49_146b6575c7e846aa84b8c2819111cc8d~mv2.jpg'],['Red','Black','Yellow','Blue','White'])
+  },
+  'double-strike':{
+    name:'Double Strike',category:'combo',label:'COMBO MACHINE',
+    image:wix('d36c49_0eeb916b0aa74377be5592607d75377e~mv2.jpeg'),
+    desc:'A combined boxing and kicking machine with a strong visual presence and commercial operating modes. Designed for arcades and entertainment venues where two strength challenges in one cabinet add variety.',
+    features:['Boxing and kicking challenges','LED lighting','Adjustable difficulty','Commercial operator configuration'],
+    spec:[['Height','219 cm'],['Width','142 cm'],['Length','122 cm'],['Weight','170 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_0eeb916b0aa74377be5592607d75377e~mv2.jpeg','d36c49_34cef7cbcb0446a8a597a64acb068451~mv2.jpeg','d36c49_af20043d8307453a9db1d73b4fa27533~mv2.jpeg','d36c49_3e8aff8b9cfd4ea99957922b99e48b8b~mv2.jpeg','d36c49_3c0674be98e541f3b209c24e484dc98a~mv2.jpeg'],['Orange','Red','Black','Blue','White'])
+  },
+  'boxer-kids-gift':{
+    name:'Boxer Kids Gift',category:'kids',label:'KIDS / GIFT',
+    image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/kidsbging-1-1.webp',
+    desc:'A child-friendly boxer with a prize feature, bright graphics and a smaller cabinet format designed for family entertainment locations.',
+    features:['Child-friendly cabinet format','Prize functionality','Bright LED lighting','Adjustable play settings'],
+    spec:[['Height','186 cm'],['Width','70 cm'],['Length','115 cm'],['Weight','120 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode']
+  },
+  'combat-kids':{
+    name:'Boxer Combat Kids',category:'kids',label:'KIDS BOXER',
+    image:wix('d36c49_fbeb20a103aa42b5b345d720aad3b43f~mv2.jpg'),
+    desc:'A compact Kids Combat boxer designed for younger players, with colourful artwork, LED lighting and adjustable play modes for family-oriented venues.',
+    features:['Kid-friendly design','Safe and engaging gameplay','Flexible payment options','Adjustable play mode'],
+    spec:[['Height','182 cm'],['Width','70 cm'],['Length','115 cm'],['Weight','120 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_fbeb20a103aa42b5b345d720aad3b43f~mv2.jpg','d36c49_b790e6faa3cc42b28f93bc578a0f270c~mv2.jpg','d36c49_fb94a0a9e52a4558809f8845ac00cd0e~mv2.jpg','d36c49_1824eafb06d14abab4a7226c74d11e0b~mv2.jpg','d36c49_f3383beeaf7646049ece85b6a83dd6c2~mv2.jpg'],['Red','Black','Yellow','Blue','White'])
+  },
+  'boxer-kids':{
+    name:'Boxer Kids',category:'kids',label:'KIDS BOXER',
+    image:wix('d36c49_300367abd71c42bbad49b4f4cf1d5428~mv2.jpg'),
+    desc:'A boxer designed specifically for younger players, with a smaller format, bright artwork and adjustable play settings for family entertainment locations.',
+    features:['Kid-friendly size and layout','Flexible payment options','Adjustable play mode','Free-play configuration'],
+    spec:[['Height','182 cm'],['Width','70 cm'],['Length','115 cm'],['Weight','100 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_300367abd71c42bbad49b4f4cf1d5428~mv2.jpg','d36c49_2d0fa67b34e44a299250fd8daa5614ea~mv2.jpg','d36c49_5c3690fb87bc46ada411be7b2234c1bd~mv2.jpg','d36c49_ac9df6857b07407dbfe71dd0e303b3a0~mv2.jpg','d36c49_2551186fc1e140a1afbd3f55073cf506~mv2.jpg'],['Blue','Red','Yellow','White','Green'])
+  },
+  'double-hit-kids':{
+    name:'Double Hit Kids',category:'kids',label:'KIDS COMBO',
+    image:wix('d36c49_90652a5c1dce4cf4a1bedc35fab12696~mv2.jpg'),
+    desc:'A child-friendly 2-in-1 machine combining boxing and kicking in one compact cabinet. Bright LEDs and adjustable play settings make it suitable for family venues.',
+    features:['2-in-1 boxing and kicking gameplay','Kid-friendly design','Bright LED lighting','Adjustable play mode'],
+    spec:[['Height','186 cm'],['Width','85 cm'],['Length','120 cm'],['Weight','175 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_90652a5c1dce4cf4a1bedc35fab12696~mv2.jpg','d36c49_fb72e48ad6404c379f65671ba03854c1~mv2.jpg','d36c49_d07f480621054a18b6e131227dd3e436~mv2.jpg','d36c49_13503ca78b334b819fb9b1cb74de4807~mv2.jpg','d36c49_0419edab2547485083c8a969f3d5d0c1~mv2.jpg'],['Orange','Red','Yellow','Blue','Black'])
+  },
+  'double-hit-kids-gift':{
+    name:'Double Hit Kids Gift',category:'kids',label:'KIDS COMBO / GIFT',
+    image:wix('d36c49_69c61593a9a243a58b82f59499fa7ff7~mv2.jpg'),
+    desc:'A child-friendly 3-in-1 attraction combining boxing, kicking and a prize reward option. Designed for younger players with colourful LEDs and simple, engaging gameplay.',
+    features:['Boxing, kicking and prize functionality','Kid-friendly design','Bright LED lighting','Adjustable play mode'],
+    spec:[['Height','182 cm'],['Width','85 cm'],['Length','120 cm'],['Weight','180 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_69c61593a9a243a58b82f59499fa7ff7~mv2.jpg','d36c49_2d8f1e66766741bb9baaa4db1d244914~mv2.jpg','d36c49_0f8b83f56b444c6fb58251f23697d899~mv2.jpg','d36c49_ac6fcddc490247fcac0fb6911daa2da3~mv2.jpg','d36c49_82fcd9f00cf547809f0f1e9a10fe28ea~mv2.jpg'],['Orange','Red','Black','Blue','White'])
+  },
+  'kicker':{
+    name:'Kicker',category:'strength',label:'KICKER',
+    image:wix('d36c49_2fe123c3c3a74277842af12504d08f47~mv2.jpg'),
+    desc:'A strength and accuracy machine built around a football kick challenge. Kicker is suited to arcades, sports bars and family entertainment centres, with adjustable difficulty and payment configuration.',
+    features:['Kick strength challenge','Adjustable difficulty and free play','Flexible payment options','Commercial cabinet construction'],
+    spec:[['Height','170 cm'],['Width','133 cm'],['Length','66 cm'],['Weight','100 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding'],
+    variants:makeVariants(['d36c49_2fe123c3c3a74277842af12504d08f47~mv2.jpg','d36c49_c44c1aee2d7a439cb83ab840bcc8030d~mv2.jpg','d36c49_d3572c2031064190bae8986aa690d99e~mv2.jpg','d36c49_43bb55c00ff6450aa3daf3aa21fab3e0~mv2.jpg','d36c49_2b1753c161b04fc28e8dfb73fe0b029a~mv2.jpg'],['Orange','Red','Yellow','Black','White'])
+  },
+  'hammer':{
+    name:'Hammer',category:'strength',label:'HAMMER',
+    image:wix('d36c49_afafeaaf41674a4c88c922aeee800230~mv2.jpg'),
+    desc:'A classic strength-test hammer game in a modern illuminated cabinet. Designed for amusement parks, arcades and family entertainment centres.',
+    features:['Power strike strength challenge','Bright LED lighting','Ticket-ready configuration','Adjustable difficulty and free play'],
+    spec:[['Height','225 cm'],['Width','95 cm'],['Length','140 cm'],['Weight','125 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding'],
+    variants:makeVariants(['d36c49_afafeaaf41674a4c88c922aeee800230~mv2.jpg','d36c49_ac7eaef74298496aad818f988bd23f75~mv2.jpg','d36c49_9d42e4537f474adcab4a61b64d2f7fe8~mv2.jpg','d36c49_5dc33c7849ff4b339aaff07525d0b204~mv2.jpg','d36c49_4efd74c665204018afd2b0f34fcc463f~mv2.jpg'],['Red','Black','Yellow','Blue','White'])
+  },
+  'boxer-gift':{
+    name:'Boxer Gift',category:'boxer',label:'BOXER / GIFT',
+    image:wix('d36c49_64245c96fa354f81b1c1b0f5130cd14d~mv2.jpg'),
+    desc:'A boxing strength machine with a gift / reward feature for operators who want to combine score-based play with an additional prize mechanic.',
+    features:['Boxing strength challenge','Gift / reward functionality','LED lighting','Adjustable play settings'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','140 kg']],
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:makeVariants(['d36c49_64245c96fa354f81b1c1b0f5130cd14d~mv2.jpg','d36c49_4df2d5e039194f468a3f2b3d3cab83b2~mv2.jpg','d36c49_11fdece776ca4e8dbe9beaf45c050bb8~mv2.jpg','d36c49_b35278bab1fa4872b1af15ec0d69a12f~mv2.jpg','d36c49_b0699ee5b18a4ef48d2ae9f4c98d0882~mv2.jpg'],['White','Orange','Yellow','Blue','Red'])
+  }
+};
+
+window.PG_ES={
+  colors:{White:'Blanco',Orange:'Naranja',Yellow:'Amarillo',Green:'Verde',Blue:'Azul',Red:'Rojo',Black:'Negro',Brown:'Marrón',Graphite:'Grafito'},
+  labels:{
+    'EXCLUSIVE / 3-IN-1':'EXCLUSIVO / 3 EN 1','BOXER STANDARD':'BOXER STANDARD','BOXER PREMIUM':'BOXER PREMIUM','BOXER PREMIUM / GIFT':'BOXER PREMIUM / PREMIO','BOXER MULTIPLAYER':'BOXER MULTIJUGADOR','MATTE AIRBRUSH':'AEROGRAFÍA MATE','COMBO MACHINE':'MÁQUINA COMBO','COMBO / GIFT':'COMBO / PREMIO','KIDS / GIFT':'KIDS / PREMIO','KIDS BOXER':'BOXER INFANTIL','KIDS COMBO':'COMBO INFANTIL','KIDS COMBO / GIFT':'COMBO INFANTIL / PREMIO','KICKER':'KICKER','HAMMER':'HAMMER','BOXER / GIFT':'BOXER / PREMIO'
+  }
+};
+
+window.PRODUCT_ES={
+  'monster-3in1':{desc:'Una máquina de fuerza 3 en 1 que combina Boxer, Kicker y Hammer en un solo mueble. La iluminación LED, los sensores de puntuación y los tres modos de juego crean una atracción de alto impacto para locales de ocio.',features:['Boxer, Kicker y Hammer en una sola máquina','Iluminación LED y sensores de puntuación','Diseñada para uso comercial intensivo','Ajustes configurables y modo free play'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'champion':{desc:'Boxer profesional para ubicaciones de alto tráfico. Champion combina electrónica y mecánica robustas con dificultad ajustable, modo free play y configuración flexible de pagos.',features:['Electrónica y mecánica de uso comercial','Dificultad ajustable','Modo free play','Múltiples opciones de pago'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Gráfica y branding personalizados','Variantes de iluminación LED']},
+  'gladiator':{desc:'Boxer de formato estándar con la gráfica Gladiator. Diseñado para un funcionamiento comercial fiable, juego repetido y opciones flexibles de pago.',features:['Diseñado para locales de alto tráfico','Dificultad ajustable','Modo free play','Configuración para billetes, monedas, tarjetas y fichas'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Gráfica y branding personalizados','Variantes de iluminación LED']},
+  'boxer-flash':{desc:'Boxer premium con iluminación LED intensa y diseño visual moderno. Boxer Flash está pensado para arcades, sports bars y centros de ocio donde la visibilidad es clave.',features:['Iluminación LED de alta visibilidad','Dificultad ajustable','Modo free play','Configuración flexible de pagos'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Gráfica y branding personalizados']},
+  'boxer-flash-gift':{desc:'Boxer Flash con función adicional de premio. Los jugadores golpean para conseguir una puntuación alta y pueden recibir premios, combinando fuerza y recompensa.',features:['Reto de fuerza con función de premio','Iluminación LED','Dificultad ajustable','Modo free play'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'boxer-ring':{desc:'Boxer premium con la distintiva forma Ring y una fuerte presencia visual. Diseñado para uso comercial con ajustes de juego y pagos configurables.',features:['Juego de fuerza inmersivo','Construcción comercial','Múltiples configuraciones de pago','Dificultad ajustable y free play'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Funda protectora','Gráfica y branding personalizados']},
+  'boxer-combat':{desc:'Boxer premium con gráfica Combat, iluminación LED y configuración orientada al operador. Diseñado para juego repetido en locales de alto tráfico.',features:['Construcción de uso comercial','Iluminación LED','Dificultad ajustable','Configuración de pagos en efectivo y sin efectivo'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'boxer-fist':{desc:'Máquina boxer multijugador diseñada para retos de grupo y competición cara a cara. La integración LED y el mueble reforzado la hacen adecuada para locales de ocio con mucho tráfico.',features:['Juego preparado para multijugador','Integración LED completa','Estructura comercial reforzada','Acceso sencillo para servicio'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Gráfica y branding personalizados']},
+  'boxer-matte-airbrush':{desc:'Boxer con acabado mate y aerografía personalizada. Combina el formato de boxeo Pro Games con un acabado visual más individual y premium.',features:['Acabado mate aerografiado','Construcción comercial','Dificultad ajustable','Modo free play'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Branding personalizado']},
+  'combat-matte-airbrush':{desc:'Versión Combat con acabado mate aerografiado, combinando hardware comercial Pro Games con un mueble de acabado más exclusivo.',features:['Acabado mate aerografiado','Iluminación LED','Dificultad ajustable','Modo free play'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Branding personalizado']},
+  'double-hit':{desc:'Dos retos en una sola máquina compacta: golpear el punchball o chutar el balón. Double Hit combina iluminación LED, durabilidad comercial y ajustes para operador.',features:['Boxeo y fútbol en una sola máquina','Iluminación LED','Dificultad ajustable','Modo free play'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'double-hit-gift':{desc:'Máquina de entretenimiento con tres acciones: boxeo, fútbol y función de premio. La iluminación LED y la configuración de operador la convierten en una atracción potente para centros familiares y arcades.',features:['Boxeo, fútbol y función de premio','Iluminación LED','Dificultad ajustable','Modo free play'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'double-strike':{desc:'Máquina combinada de boxeo y fútbol con fuerte presencia visual y modos comerciales. Diseñada para arcades y centros de ocio que buscan dos retos de fuerza en un solo mueble.',features:['Retos de boxeo y fútbol','Iluminación LED','Dificultad ajustable','Configuración comercial para operadores'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'boxer-kids-gift':{desc:'Boxer infantil con función de premio, gráficos vivos y un formato de mueble más compacto para centros de entretenimiento familiar.',features:['Formato adaptado a niños','Función de premio','Iluminación LED','Ajustes de juego configurables'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'combat-kids':{desc:'Boxer Combat Kids compacto para jugadores más jóvenes, con gráficos coloridos, iluminación LED y modos ajustables para espacios familiares.',features:['Diseño adaptado a niños','Juego seguro y atractivo','Opciones de pago flexibles','Modo de juego ajustable'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'boxer-kids':{desc:'Boxer diseñado específicamente para jugadores más jóvenes, con un formato más pequeño, gráficos vivos y ajustes de juego para espacios familiares.',features:['Tamaño y diseño adaptados a niños','Opciones de pago flexibles','Modo de juego ajustable','Configuración free play'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'double-hit-kids':{desc:'Máquina infantil 2 en 1 que combina boxeo y fútbol en un mueble compacto. Los LED y los ajustes configurables la hacen adecuada para espacios familiares.',features:['Boxeo y fútbol 2 en 1','Diseño adaptado a niños','Iluminación LED','Modo de juego ajustable'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'double-hit-kids-gift':{desc:'Atracción infantil 3 en 1 con boxeo, fútbol y opción de premio. Diseñada para jugadores jóvenes con iluminación LED colorida y un manejo sencillo.',features:['Boxeo, fútbol y función de premio','Diseño adaptado a niños','Iluminación LED','Modo de juego ajustable'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']},
+  'kicker':{desc:'Máquina de fuerza y precisión basada en el reto de chutar un balón. Kicker está pensada para arcades, sports bars y centros de ocio familiar, con dificultad ajustable y pagos configurables.',features:['Reto de fuerza de chut','Dificultad ajustable y free play','Opciones de pago flexibles','Construcción de uso comercial'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Gráfica y branding personalizados']},
+  'hammer':{desc:'Juego clásico de fuerza con martillo en un mueble moderno e iluminado. Diseñado para parques de atracciones, arcades y centros de ocio familiar.',features:['Reto de fuerza con martillo','Iluminación LED','Configuración compatible con tickets','Dificultad ajustable y free play'],options:['Aceptador de billetes','Lector de tarjetas / pago sin efectivo','Funda protectora','Gráfica y branding personalizados']},
+  'boxer-gift':{desc:'Máquina boxer con función de regalo / premio para operadores que quieren combinar puntuación de fuerza con una mecánica adicional de recompensa.',features:['Reto de fuerza de boxeo','Función de regalo / premio','Iluminación LED','Ajustes de juego configurables'],options:['Aceptador de billetes','Pago sin efectivo Nayax','Dispensador de tickets','Gráfica y branding personalizados','Modo silencioso']}
 };

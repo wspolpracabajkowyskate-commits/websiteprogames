@@ -23,12 +23,12 @@ const txt=isES?{
   operator:'OPERATOR CONFIGURATION', one:'ONE MACHINE.\nCONFIGURED FOR YOUR VENUE.', operatorText:'Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact Pro Games for the current specification of the exact version you need.',
   explore:'EXPLORE MORE', related:'RELATED MACHINES', viewAll:'View all products ↗', ready:'READY TO TALK?', build:"LET'S BUILD YOUR NEXT\nENTERTAINMENT EXPERIENCE.", send:'Send an inquiry'
 };
-const label=isES?(es.labels[p.label]||p.label):p.label;
+const label=isES?(pEs.label||es.labels[p.label]||p.label):p.label;
 const desc=isES?(pEs.desc||p.desc):p.desc;
-const localFeature=x=>isES?(es.features[x]||x):x;
-const localOption=x=>isES?(es.options[x]||x):x;
-const localSpec=x=>isES?(es.specs[x]||x):x;
 const localColor=x=>isES?(es.colors[x]||x):x;
+const featureSource=isES?(pEs.features||p.features||[]):(p.features||[]);
+const optionSource=isES?(pEs.options||p.options||[]):(p.options||[]);
+const specSource=isES?(pEs.spec||p.spec||[]):(p.spec||[]);
 
 document.title=`${p.name} | Pro Games Poland`;
 const meta=document.querySelector('meta[name="description"]');
@@ -37,9 +37,10 @@ if(meta) meta.content=isES?`${p.name} de Pro Games Poland. Descripción, especif
 const detail=document.querySelector('#productDetail');
 const variantList=(p.variants||[]).filter(v=>v&&v.image);
 const mainVariant=variantList[0]||{name:'Product',image:p.image};
-const spec=(p.spec||[]).map(([label,value])=>`<div><span>${localSpec(label)}</span><b>${value}</b></div>`).join('');
-const features=(p.features||[]).map(x=>`<li>${localFeature(x)}</li>`).join('');
-const options=(p.options||[]).map(o=>`<div><span>${localOption(o)}</span><b>+</b></div>`).join('');
+const specLabels=isES?{Height:'Altura',Width:'Anchura',Length:'Longitud',Weight:'Peso'}:{};
+const spec=specSource.map(([specLabel,value])=>`<div><span>${specLabels[specLabel]||specLabel}</span><b>${value}</b></div>`).join('');
+const features=featureSource.map(x=>`<li>${x}</li>`).join('');
+const options=optionSource.map(o=>`<div><span>${o}</span><b>+</b></div>`).join('');
 const related=Object.entries(products)
   .filter(([slug,item])=>slug!==key && item.category===p.category)
   .slice(0,4)
