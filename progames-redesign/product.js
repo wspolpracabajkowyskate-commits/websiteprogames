@@ -46,7 +46,9 @@ const related=Object.entries(products)
   .map(([slug,item])=>`<a class="related-card" href="${isES?'/product-es.html':'/product.html'}?model=${slug}"><img src="${item.image}" alt="${item.name} by Pro Games" loading="lazy" referrerpolicy="no-referrer"><span>${isES?(es.labels[item.label]||item.label):item.label}</span><h3>${item.name}</h3></a>`).join('');
 
 const swatchColor={White:'#f4f4f1',Orange:'#ff7a18',Yellow:'#ffd329',Green:'#27ae60',Blue:'#1976d2',Red:'#ef3123',Black:'#17191c',Brown:'#84543a',Graphite:'#4b4f55',Golden:'#c49b38',Arctic:'#d9f4ff',Matrix:'#4d56a8',Compact:'#7f8c8d',Standard:'#777',Kids:'#4fa3ff'};
-const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="Choose colour or artwork variant"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName">${localColor(mainVariant.name)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>`<button type="button" class="gallery-swatch ${i===0?'active':''}" data-index="${i}" aria-label="${isES?'Mostrar':'Show'} ${localColor(v.name)}" title="${localColor(v.name)}" style="--swatch:${swatchColor[v.name]||'#777'}"><span class="swatch-dot"></span><span class="swatch-label">${localColor(v.name)}</span></button>`).join('')}</div></div>`:'';
+const isGenericVariantName=(name='')=>/^Variant\s+\d+$/i.test(name);
+const displayVariantName=(v,i)=>isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
+const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="Choose colour or artwork variant"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName">${displayVariantName(mainVariant,0)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=!isGenericVariantName(v.name);return `<button type="button" class="gallery-swatch ${i===0?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-label="${isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
 const finishBlock=variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${txt.currentImage}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
 detail.innerHTML=`
@@ -113,7 +115,7 @@ function setVariant(index){
     preload.src=variant.image;
   }
   const name=document.querySelector('#variantName');
-  if(name) name.textContent=localColor(variant.name);
+  if(name) name.textContent=displayVariantName(variant,index);
   document.querySelectorAll('[data-index]').forEach(btn=>btn.classList.toggle('active',Number(btn.dataset.index)===index));
 }
 

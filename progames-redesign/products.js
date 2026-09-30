@@ -258,46 +258,23 @@ Object.values(window.PRODUCTS).forEach(product=>{
 });
 
 /* === PG COLOR NAMES + ES LOCALIZATION === */
+/* === VERIFIED VARIANT LABELS + ES LOCALIZATION === */
+/*
+  Important: do not guess a cabinet colour from gallery position.
+  Most Wix galleries only provide image order, not a reliable colour name.
+  The product page therefore uses the real variant photo as the selector.
+  Colour labels are kept only where the source data explicitly identifies them.
+*/
 const PG_COLOR_NAMES={
-  'monster-3in1-ticket':['White','Orange','Yellow','Green','Blue','Red'],
-  'monster-3in1':['Blue','Red','Yellow','Green','White','Black'],
-  'double-hit':['Orange','Red','Yellow','Blue','White','Black'],
-  'double-hit-gift':['Orange','Red','Yellow','Blue','White','Black'],
-  'double-hit-kids':['Orange','Red','Yellow','Blue'],
-  'double-hit-kids-gift':['Orange','Red','Yellow','Blue'],
-  'double-strike':['Orange','Red','Black','Blue'],
-  'joker':['Red','Black','Yellow','Blue'],
-  'pow-boxer':['Red'],
-  'champion':['Blue','Red','White','Yellow'],
-  'easy':['Orange','White','Yellow','Blue'],
-  'cyber-punch':['Orange','Black','Yellow','Blue'],
-  'gladiator':['Brown','White','Yellow','Blue'],
-  'mma':['Red','Black','Yellow','Blue'],
-  'black-jack':['White','Black','Yellow','Blue'],
-  'super-hero':['Red','Black','Yellow','Blue'],
-  'power-black':['Black','White','Yellow','Blue'],
-  'poison-squad':['Green','White','Yellow','Blue'],
-  'hacker':['Red','Yellow','Black','Blue'],
-  'strongman':['Yellow','White','Red','Blue'],
-  'viking':['Red','White','Yellow','Blue'],
-  'disco':['Red','Black','Yellow','Blue'],
-  'matte-airbrushed':['Black','Graphite','Red'],
   'boxer-combat':['Red','White','Black','Blue'],
-  'boxer-fist':['Green','White','Black','Red'],
-  'boxer-ring':['Yellow','Red','Blue','White'],
-  'boxer-combat-kids':['Red','Black','Yellow','Blue'],
-  'boxer-kids':['Blue','Red','Yellow','Black'],
-  'boxer-flash-gift':['Black','Red','Yellow','Blue'],
-  'hammer':['Red','Black','Yellow','Blue'],
-  'kicker':['Blue','Red','Yellow','Black'],
-  'boxer-flash':['Black','Red','Blue','Yellow','White'],
-  'boxer-gift':['White','Red','Blue','Yellow']
+  'boxer-flash':['Black','Red','Blue','Yellow','White']
 };
 Object.entries(PG_COLOR_NAMES).forEach(([slug,names])=>{
   const product=window.PRODUCTS[slug];
   if(!product?.variants) return;
   product.variants.forEach((variant,i)=>{ if(names[i]) variant.name=names[i]; });
 });
+
 
 window.PRODUCT_ES={
 'monster-3in1-ticket':{desc:'Una atracción tres en uno que combina Boxer, Kicker y Hammer en un solo mueble, con concepto preparado para tickets y centros de redemption. La iluminación LED y los sensores de fuerza hacen que la máquina destaque visualmente manteniendo tres retos distintos en una sola superficie.'},
