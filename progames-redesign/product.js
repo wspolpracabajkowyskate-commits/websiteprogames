@@ -3,7 +3,7 @@ const params=new URLSearchParams(location.search);
 const requested=params.get('model')||'champion';
 const key=products[requested]?requested:'champion';
 const p=products[key];
-const CATALOG_URL='https://www.progamespoland.com/_files/ugd/d36c49_3ddf33bed9744292a3c9f7967a98534f.pdf';
+const CATALOG_URL='/catalog.html?catalog=machines';
 
 document.title=`${p.name} | Pro Games Poland`;
 const meta=document.querySelector('meta[name="description"]');
@@ -39,7 +39,7 @@ detail.innerHTML=`
     <p class="detail-lead">${p.desc}</p>
     <div class="detail-actions">
       <a class="btn btn-primary" href="/#contact">Request a quote</a>
-      <a class="btn btn-outline-dark" href="${CATALOG_URL}" target="_blank" rel="noopener">View full product catalog ↗</a>
+      <a class="btn btn-outline-dark" href="${CATALOG_URL}" >View full product catalog →</a>
     </div>
     <p class="quote-note">Pricing and final configuration are quoted individually.</p>
     ${finishBlock}
@@ -57,7 +57,6 @@ detail.innerHTML=`
   <p class="kicker">OPERATOR CONFIGURATION</p>
   <h2>ONE MACHINE.<br>CONFIGURED FOR YOUR VENUE.</h2>
   <p>Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact Pro Games for the current specification of the exact version you need.</p>
-  ${p.source?`<a class="source-link" href="${p.source}" target="_blank" rel="noopener">View original Pro Games product source ↗</a>`:''}
 </section>
 
 <section class="related section">
@@ -84,10 +83,23 @@ function setVariant(index){
       img.alt=`${p.name} — ${variant.name}`;
       requestAnimationFrame(()=>img.classList.remove('switching'));
     };
+    preload.onerror=()=>img.classList.remove('switching');
     preload.src=variant.image;
   }
   const name=document.querySelector('#variantName');
   if(name) name.textContent=variant.name;
   document.querySelectorAll('[data-index]').forEach(btn=>btn.classList.toggle('active',Number(btn.dataset.index)===index));
 }
+
+const schema=document.createElement('script');
+schema.type='application/ld+json';
+schema.textContent=JSON.stringify({
+  '@context':'https://schema.org','@type':'Product',name:p.name,
+  description:p.desc,image:variantList.map(v=>v.image),
+  brand:{'@type':'Brand',name:'Pro Games Poland'},
+  manufacturer:{'@type':'Organization',name:'PRO GAMES POLAND Sp. z o.o.'},
+  offers:{'@type':'Offer',url:location.href,availability:'https://schema.org/InStock',priceSpecification:{'@type':'PriceSpecification',description:'Price on request'}}
+});
+document.head.append(schema);
+
 document.querySelectorAll('[data-index]').forEach(btn=>btn.addEventListener('click',()=>setVariant(Number(btn.dataset.index))));
