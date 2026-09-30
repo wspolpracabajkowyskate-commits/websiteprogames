@@ -26,3 +26,13 @@ Projekt zawiera teraz 18 modeli/rodzin produktowych z aktualnej oferty Pro Games
 Zdjęcia są podpięte do aktualnych publicznych materiałów produktowych. Przed finalnym wdrożeniem produkcyjnym rekomendowane jest przeniesienie oryginalnych assetów do własnego CDN Pro Games po potwierdzeniu praw do wykorzystania.
 
 Dodano linki PDF do katalogu maszyn 2026 i katalogu części zamiennych.
+
+
+## Aktualizacja product-first
+- Hero -> bezpośrednio pełna oferta produktowa.
+- 29 modeli/wersji w strukturze danych.
+- Jasne tło sekcji produktów.
+- Konfigurator koloru na żywo na każdej karcie produktu (wizualizacja poglądowa).
+- Osobna strona `/catalog.html` z viewerem PDF, katalogiem maszyn, części oraz lokalnym uploadem PDF.
+- Kontakt: +48 536 068 912, office@progames.pl, ul. Rybnicka 19A, 44-335 Jastrzębie-Zdrój.
+- Widoczna mapa obecności targowej.
