@@ -78,19 +78,27 @@ window.PRODUCTS={
   },
   'boxer-matte-airbrush':{
     name:'Boxer Matte Airbrush',category:'boxer',label:'MATTE AIRBRUSH',tag:'NEW 2025',
-    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-airb-1.webp',
+    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-esp-1.webp',
     desc:'A matte-finish boxer with custom airbrush styling. It combines the familiar Pro Games boxing format with a more individual, premium visual finish.',
     features:['Matte airbrush finish','Commercial-grade construction','Adjustable difficulty','Free-play mode'],
     spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
-    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding']
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding'],
+    variants:[
+      {name:'Black',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-esp-1.webp'},
+      {name:'Alternate view',image:'https://static.wixstatic.com/media/d36c49_fb9904ebbd3b48c78b4e7981a992da60~mv2.jpg'}
+    ]
   },
   'combat-matte-airbrush':{
     name:'Combat Matte Airbrush',category:'boxer',label:'MATTE AIRBRUSH',tag:'NEW 2025',
-    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1-1.webp',
+    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1.webp',
     desc:'A matte airbrushed version of the Combat boxer, pairing commercial Pro Games hardware with a more exclusive custom-finish cabinet.',
     features:['Matte airbrush finish','LED lighting','Adjustable difficulty','Free-play mode'],
     spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
-    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding']
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding'],
+    variants:[
+      {name:'Black',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1.webp'},
+      {name:'Alternate view',image:'https://static.wixstatic.com/media/d36c49_8034b961b31c47f2bd7c3a534c5cc8e3~mv2.jpg'}
+    ]
   },
   'double-hit':{
     name:'Double Hit',category:'combo',label:'COMBO MACHINE',
@@ -125,7 +133,14 @@ window.PRODUCTS={
     desc:'A child-friendly boxer with a prize feature, bright graphics and a smaller cabinet format designed for family entertainment locations.',
     features:['Child-friendly cabinet format','Prize functionality','Bright LED lighting','Adjustable play settings'],
     spec:[['Height','186 cm'],['Width','70 cm'],['Length','115 cm'],['Weight','120 kg']],
-    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode']
+    options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
+    variants:[
+      {name:'Yellow',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/kidsbging-1-1.webp'},
+      {name:'Red',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Sin-titulo-7-1-500x1019-1.webp'},
+      {name:'Black',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Gift-Kids-Black-1.webp'},
+      {name:'Blue',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Gift-Kids-Blue-1.webp'},
+      {name:'White',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Gift-Kids-White-500x827-1.webp'}
+    ]
   },
   'combat-kids':{
     name:'Boxer Combat Kids',category:'kids',label:'KIDS BOXER',
@@ -193,7 +208,7 @@ window.PRODUCTS={
 };
 
 window.PG_ES={
-  colors:{White:'Blanco',Orange:'Naranja',Yellow:'Amarillo',Green:'Verde',Blue:'Azul',Red:'Rojo',Black:'Negro',Brown:'Marrón',Graphite:'Grafito'},
+  colors:{White:'Blanco',Orange:'Naranja',Yellow:'Amarillo',Green:'Verde',Blue:'Azul',Red:'Rojo',Black:'Negro',Brown:'Marrón',Graphite:'Grafito','Alternate view':'Vista alternativa'},
   labels:{
     'EXCLUSIVE / 3-IN-1':'EXCLUSIVO / 3 EN 1','BOXER STANDARD':'BOXER STANDARD','BOXER PREMIUM':'BOXER PREMIUM','BOXER PREMIUM / GIFT':'BOXER PREMIUM / PREMIO','BOXER MULTIPLAYER':'BOXER MULTIJUGADOR','MATTE AIRBRUSH':'AEROGRAFÍA MATE','COMBO MACHINE':'MÁQUINA COMBO','COMBO / GIFT':'COMBO / PREMIO','KIDS / GIFT':'KIDS / PREMIO','KIDS BOXER':'BOXER INFANTIL','KIDS COMBO':'COMBO INFANTIL','KIDS COMBO / GIFT':'COMBO INFANTIL / PREMIO','KICKER':'KICKER','HAMMER':'HAMMER','BOXER / GIFT':'BOXER / PREMIO'
   }
