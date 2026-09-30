@@ -32,13 +32,188 @@ window.PRODUCTS={
     options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
     variants:makeVariants(['d36c49_7a635f98ec534a55856195bfbd1e0fc5~mv2.jpg','d36c49_df4021ea817f4f5790c5748eff209ae5~mv2.jpg','d36c49_887efae00a6a4a4cbf5130474c0d0f96~mv2.jpg','d36c49_a262ccb1d3fb45bc8caea78953886cac~mv2.jpg','d36c49_84b4dd7bd9cd4809befdb09743acaf9d~mv2.jpg'],['Brown','Red','White','Yellow','Blue'])
   },
+  'easy':{
+    name:'Easy',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/easy-main.webp',
+    desc:'A Boxer Standard model with distinctive Easy artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/easy-red.webp'},
+      {name:'White',image:'assets/products/easy-white.webp'},
+      {name:'Yellow',image:'assets/products/easy-yellow.webp'},
+      {name:'Blue',image:'assets/products/easy-blue.webp'},
+      {name:'Orange',image:'assets/products/easy-orange.webp'}
+    ]
+  },
+  'mma':{
+    name:'MMA',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/mma-main.webp',
+    desc:'A Boxer Standard model with distinctive MMA artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/mma-red.webp'},
+      {name:'Black',image:'assets/products/mma-black.webp'},
+      {name:'Yellow',image:'assets/products/mma-yellow.webp'},
+      {name:'Blue',image:'assets/products/mma-blue.webp'},
+      {name:'Orange',image:'assets/products/mma-orange.webp'}
+    ]
+  },
+  'hacker':{
+    name:'Hacker',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/hacker-main.webp',
+    desc:'A Boxer Standard model with distinctive Hacker artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'White',image:'assets/products/hacker-black.webp'},
+      {name:'Yellow',image:'assets/products/hacker-yellow.webp'},
+      {name:'Black',image:'assets/products/hacker-black-2.webp'},
+      {name:'Blue',image:'assets/products/hacker-blue.webp'},
+      {name:'Orange',image:'assets/products/hacker-red.webp'}
+    ]
+  },
+  'power-black':{
+    name:'Power Black',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/power-black-main.webp',
+    desc:'A Boxer Standard model with distinctive Power Black artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/power-black-red.webp'},
+      {name:'White',image:'assets/products/power-black-white.webp'},
+      {name:'Yellow',image:'assets/products/power-black-yellow.webp'},
+      {name:'Blue',image:'assets/products/power-black-blue.webp'},
+      {name:'Orange',image:'assets/products/power-black-orange.webp'}
+    ]
+  },
+  'black-jack':{
+    name:'Black Jack',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/black-jack-main.webp',
+    desc:'A Boxer Standard model with distinctive Black Jack artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/black-jack-red.webp'},
+      {name:'Black',image:'assets/products/black-jack-black.webp'},
+      {name:'Yellow',image:'assets/products/black-jack-yellow.webp'},
+      {name:'Blue',image:'assets/products/black-jack-blue.webp'},
+      {name:'Orange',image:'assets/products/black-jack-orange.webp'}
+    ]
+  },
+  'poison-squad':{
+    name:'Poison Squad',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/poison-squad-main.webp',
+    desc:'A Boxer Standard model with distinctive Poison Squad artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/poison-squad-green.webp'},
+      {name:'White',image:'assets/products/poison-squad-white.webp'},
+      {name:'Yellow',image:'assets/products/poison-squad-yellow.webp'},
+      {name:'Blue',image:'assets/products/poison-squad-blue.webp'},
+      {name:'Orange',image:'assets/products/poison-squad-green-2.webp'}
+    ]
+  },
+  'cyber-punch':{
+    name:'Cyber Punch',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/cyber-punch-main.webp',
+    desc:'A Boxer Standard model with distinctive Cyber Punch artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/cyber-punch-red.webp'},
+      {name:'Black',image:'assets/products/cyber-punch-black.webp'},
+      {name:'Yellow',image:'assets/products/cyber-punch-yellow.webp'},
+      {name:'Blue',image:'assets/products/cyber-punch-blue.webp'},
+      {name:'White',image:'assets/products/cyber-punch-white.webp'}
+    ]
+  },
+  'strongman':{
+    name:'Strongman',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/strongman-main.webp',
+    desc:'A Boxer Standard model with distinctive Strongman artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Yellow',image:'assets/products/strongman-yellow.webp'},
+      {name:'White',image:'assets/products/strongman-white.webp'},
+      {name:'Red',image:'assets/products/strongman-red.webp'},
+      {name:'Blue',image:'assets/products/strongman-blue.webp'}
+    ]
+  },
+  'viking':{
+    name:'Viking',category:'boxer',label:'BOXER STANDARD',
+    image:'assets/products/viking-main.webp',
+    desc:'A Boxer Standard model with distinctive Viking artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[
+      {name:'Red',image:'assets/products/viking-red.webp'},
+      {name:'White',image:'assets/products/viking-white.webp'},
+      {name:'Yellow',image:'assets/products/viking-yellow.webp'},
+      {name:'Blue',image:'assets/products/viking-blue.webp'}
+    ]
+  },
+  'joker':{
+    name:'Joker',category:'boxer',label:'BOXER STANDARD',
+    image:wix('d36c49_5611ac7e3f864c13a4fc189bbd16b810~mv2.jpg'),
+    desc:'A Boxer Standard model with distinctive Joker artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[{name:'Black',image:wix('d36c49_5611ac7e3f864c13a4fc189bbd16b810~mv2.jpg')},{name:'Red',image:wix('d36c49_b446eee2ad3c40a19cc015b9d212936b~mv2.jpg')},{name:'White',image:wix('d36c49_dfdd05769c894908abaa303b62c4e615~mv2.jpg')},{name:'Yellow',image:wix('d36c49_964547d9712c478da4c35562208f33bc~mv2.jpg')},{name:'Blue',image:wix('d36c49_e952f0525a564a9d9a128be1a31f9e4d~mv2.jpg')},{name:'Orange',image:wix('d36c49_491d31ec388b407dab501b05d40cf85c~mv2.jpg')},{name:'Green',image:wix('d36c49_0d7ca67d0a40419891abb0cc307ef33e~mv2.jpg')}]
+  },
+  'super-hero':{
+    name:'Super Hero',category:'boxer',label:'BOXER STANDARD',
+    image:wix('d36c49_8632a38032df400d874177a182b19cf8~mv2.jpg'),
+    desc:'A Boxer Standard model with distinctive Super Hero artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[{name:'Red',image:wix('d36c49_8632a38032df400d874177a182b19cf8~mv2.jpg')},{name:'Black',image:wix('d36c49_dbf9fe6f5e134856aa0e926865377929~mv2.jpg')},{name:'White',image:wix('d36c49_49d2acbca85d4dada9a014724a5a18ed~mv2.jpg')},{name:'Yellow',image:wix('d36c49_4461db12062a412fbcbe7937c308defa~mv2.jpg')},{name:'Blue',image:wix('d36c49_c0aca74f621b460088cc4f7726714fc1~mv2.jpg')},{name:'Orange',image:wix('d36c49_7b2af41008de4cbcb0f1ec206f1311a3~mv2.jpg')},{name:'Green',image:wix('d36c49_0aa21d5c8ece4a329898f95f73578e19~mv2.jpg')}]
+  },
+  'disco':{
+    name:'Disco',category:'boxer',label:'BOXER STANDARD',
+    image:wix('d36c49_50ea9ec71a3d48e6b78fbcd9e6efcc59~mv2.jpg'),
+    desc:'A Boxer Standard model with distinctive Disco artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation'],
+    variants:[{name:'Red',image:wix('d36c49_50ea9ec71a3d48e6b78fbcd9e6efcc59~mv2.jpg')},{name:'Black',image:wix('d36c49_3ce3bc5e2b6b42f49d45dd931a880b15~mv2.jpg')},{name:'Yellow',image:wix('d36c49_a0665fd53d2e4cfabb182f578ff00f36~mv2.jpg')},{name:'Blue',image:wix('d36c49_6700443d44c940568ee12ea04b9da98c~mv2.jpg')},{name:'White',image:wix('d36c49_229535bd812e48e19016cc825c38e06e~mv2.jpg')},{name:'Orange',image:wix('d36c49_a13f9b2fff6f4f5fbbf4071253127e16~mv2.jpg')}]
+  },
+  'pow-boxer':{
+    name:'POW Boxer',category:'boxer',label:'BOXER STANDARD',
+    image:wix('d36c49_6cecc2a52bae4458a0a3816b5f3088bd~mv2.jpg'),
+    desc:'A Boxer Standard model with distinctive POW artwork, built for reliable commercial operation in high-traffic entertainment venues.',
+    features:['Immersive strength gameplay','Commercial-grade construction','Multiple payment configurations','Adjustable difficulty and free play'],
+    spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding','LED lighting variation']
+  },
   'boxer-flash':{
     name:'Boxer Flash',category:'boxer',label:'BOXER PREMIUM',
-    image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/flashnegra-1-1-1-500x1016.webp',
+    image:wix('d36c49_082568a7673a4348b86ff39dbae04067~mv2.jpg'),
     desc:'A premium boxer with bright LED lighting and a modern visual design. Boxer Flash is intended for arcades, sports bars and entertainment centres where strong visibility matters.',
     features:['High-visibility LED lighting','Adjustable difficulty','Free-play mode','Flexible payment configuration'],
     spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
-    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding']
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom sticker and branding'],
+    variants:[
+      {name:'Red',image:'assets/products/boxer-flash-red.webp'},
+      {name:'Black',image:'assets/products/boxer-flash-black.webp'},
+      {name:'Yellow',image:'assets/products/boxer-flash-yellow.webp'},
+      {name:'Blue',image:'assets/products/boxer-flash-blue.webp'},
+      {name:'White',image:'assets/products/boxer-flash-white.webp'}
+    ]
   },
   'boxer-flash-gift':{
     name:'Boxer Flash Gift',category:'boxer',label:'BOXER PREMIUM / GIFT',
@@ -78,27 +253,19 @@ window.PRODUCTS={
   },
   'boxer-matte-airbrush':{
     name:'Boxer Matte Airbrush',category:'boxer',label:'MATTE AIRBRUSH',tag:'NEW 2025',
-    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-esp-1.webp',
+    image:wix('d36c49_fb9904ebbd3b48c78b4e7981a992da60~mv2.jpg'),
     desc:'A matte-finish boxer with custom airbrush styling. It combines the familiar Pro Games boxing format with a more individual, premium visual finish.',
     features:['Matte airbrush finish','Commercial-grade construction','Adjustable difficulty','Free-play mode'],
     spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
-    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding'],
-    variants:[
-      {name:'Black',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/matte-esp-1.webp'},
-      {name:'Alternate view',image:'https://static.wixstatic.com/media/d36c49_fb9904ebbd3b48c78b4e7981a992da60~mv2.jpg'}
-    ]
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding']
   },
   'combat-matte-airbrush':{
     name:'Combat Matte Airbrush',category:'boxer',label:'MATTE AIRBRUSH',tag:'NEW 2025',
-    image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1.webp',
+    image:wix('d36c49_8034b961b31c47f2bd7c3a534c5cc8e3~mv2.jpg'),
     desc:'A matte airbrushed version of the Combat boxer, pairing commercial Pro Games hardware with a more exclusive custom-finish cabinet.',
     features:['Matte airbrush finish','LED lighting','Adjustable difficulty','Free-play mode'],
     spec:[['Height','219 cm'],['Width','72 cm'],['Length','115 cm'],['Weight','121 kg']],
-    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding'],
-    variants:[
-      {name:'Black',image:'https://www.uplayamerica.com/wp-content/uploads/2025/10/combatairbrush-1-1.webp'},
-      {name:'Alternate view',image:'https://static.wixstatic.com/media/d36c49_8034b961b31c47f2bd7c3a534c5cc8e3~mv2.jpg'}
-    ]
+    options:['Bill acceptor','Card reader / cashless payment','Protective cover','Custom branding']
   },
   'double-hit':{
     name:'Double Hit',category:'combo',label:'COMBO MACHINE',
@@ -129,17 +296,17 @@ window.PRODUCTS={
   },
   'boxer-kids-gift':{
     name:'Boxer Kids Gift',category:'kids',label:'KIDS / GIFT',
-    image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/kidsbging-1-1.webp',
+    image:'assets/products/boxer-kids-gift-clean.webp',
     desc:'A child-friendly boxer with a prize feature, bright graphics and a smaller cabinet format designed for family entertainment locations.',
     features:['Child-friendly cabinet format','Prize functionality','Bright LED lighting','Adjustable play settings'],
     spec:[['Height','186 cm'],['Width','70 cm'],['Length','115 cm'],['Weight','120 kg']],
     options:['Bill acceptor','Nayax cashless payment','Ticket dispenser','Custom sticker and branding','Silent mode'],
     variants:[
-      {name:'Yellow',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/kidsbging-1-1.webp'},
-      {name:'Red',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Sin-titulo-7-1-500x1019-1.webp'},
-      {name:'Black',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Gift-Kids-Black-1.webp'},
-      {name:'Blue',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Gift-Kids-Blue-1.webp'},
-      {name:'White',image:'https://www.uplayamerica.com/wp-content/uploads/2024/10/Gift-Kids-White-500x827-1.webp'}
+      {name:'Orange',image:'assets/products/boxer-kids-gift-orange.webp'},
+      {name:'Black',image:'assets/products/boxer-kids-gift-black.webp'},
+      {name:'Yellow',image:'assets/products/boxer-kids-gift-yellow.webp'},
+      {name:'Blue',image:'assets/products/boxer-kids-gift-blue.webp'},
+      {name:'White',image:'assets/products/boxer-kids-gift-white.webp'}
     ]
   },
   'combat-kids':{
