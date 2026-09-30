@@ -1,4 +1,4 @@
-const TO_EMAIL = process.env.CONTACT_TO || 'office@progames.pl';
+const TO_EMAIL = 'office@progames.pl';
 const FROM_EMAIL = process.env.CONTACT_FROM || 'Pro Games Website <website@progames.pl>';
 
 function clean(value, max = 2000) {

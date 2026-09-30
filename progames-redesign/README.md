@@ -39,13 +39,12 @@ Dodano linki PDF do katalogu maszyn 2026 i katalogu części zamiennych.
 
 ## Contact form email delivery
 
-The EN and ES contact forms submit to `/api/contact`. The serverless function sends every inquiry to `office@progames.pl` using Resend and sets the visitor's email as `Reply-To`.
+The EN and ES contact forms submit to `/api/contact`. The serverless function sends every inquiry to `office@progames.pl` using Resend and sets the visitor's email as `Reply-To`. The recipient is hard-coded as `office@progames.pl`, so it cannot be changed accidentally by an environment variable.
 
 ### Vercel setup required
 1. Create a Resend account and verify the `progames.pl` sending domain.
 2. In Vercel → Project → Settings → Environment Variables add:
    - `RESEND_API_KEY` = your Resend API key
-   - `CONTACT_TO` = `office@progames.pl` (optional; already the default)
    - `CONTACT_FROM` = `Pro Games Website <website@progames.pl>` (optional; already the default)
 3. Redeploy the project.
 
