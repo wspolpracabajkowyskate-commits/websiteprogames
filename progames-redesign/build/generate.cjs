@@ -21,16 +21,22 @@ function render(kind,lang,key){
  if(kind==='product')vm.runInContext(read('product.js'),ctx);
  const product=key?products[key]:null;const description=product?(lang==='pl'?pl[key].desc:lang==='es'?es[key]?.desc||product.desc:product.desc):descriptions[kind][lang];
  const label=product?(lang==='pl'?plLabels.labels[product.label]:lang==='es'?esLabels.labels[product.label]:product.label):'';
- document.title=product?`${product.name} — ${label} | Pro Games Poland`:titles[kind][lang];
- setMeta(document,'meta[name="description"]',{name:'description',content:description.length>170?description.slice(0,167).replace(/\s+\S*$/,'')+'…':description});
+ document.title=product?`${product.name} — ${label} | ${lang==='es'?'Catálogo Pro Games':'Pro Games'}`:titles[kind][lang];
+ const summary=product ? `${product.name} — ${description.replace(/\s+/g,' ').trim()}` : description;
+ setMeta(document,'meta[name="description"]',{name:'description',content:summary.length>165?summary.slice(0,162).replace(/\s+\S*$/,'')+'…':summary});
  for(const e of document.querySelectorAll('link[rel="canonical"],link[hreflang],meta[property^="og:"],meta[name^="twitter:"],script[type="application/ld+json"]'))e.remove();
  setMeta(document,'link[rel="canonical"]',{rel:'canonical',href:origin+url});
  for(const [l,u]of Object.entries({...alternates,'x-default':alternates.en})){const e=document.createElement('link');e.rel='alternate';e.hreflang=l;e.href=origin+u;document.head.append(e)}
- const og={title:document.title,description:document.querySelector('meta[name="description"]').content,type:kind==='product'?'product':'website',url:origin+url,image:origin+(product?product.image:'/assets/hero-champion.webp'),site_name:'Pro Games Poland',locale:lang==='pl'?'pl_PL':lang==='es'?'es_ES':'en_GB'};
+ const og={title:document.title,description:document.querySelector('meta[name="description"]').content,type:'website',url:origin+url,image:origin+(product?product.image:'/assets/hero-champion.webp'),site_name:'Pro Games Poland',locale:lang==='pl'?'pl_PL':lang==='es'?'es_ES':'en_GB'};
  for(const[k,v]of Object.entries(og))setMeta(document,`meta[property="og:${k}"]`,{property:'og:'+k,content:v});
  setMeta(document,'meta[name="twitter:card"]',{name:'twitter:card',content:'summary_large_image'});
+ for(const k of ['title','description','image'])setMeta(document,`meta[name="twitter:${k}"]`,{name:'twitter:'+k,content:og[k]});
+ setMeta(document,'meta[property="og:image:alt"]',{property:'og:image:alt',content:product?product.name+' — Pro Games Poland':'Pro Games Poland'});
+ setMeta(document,'meta[property="og:locale:alternate"]',{property:'og:locale:alternate',content:lang==='es'?'en_GB':'es_ES'});
  setMeta(document,'meta[name="robots"]',{name:'robots',content:'index,follow,max-image-preview:large'});
  const org={'@context':'https://schema.org','@type':'Organization','@id':origin+'/#organization',name:'PRO GAMES POLAND Sp. z o.o.',url:origin+'/',email:'office@progames.pl',telephone:'+48 536 068 912',address:{'@type':'PostalAddress',streetAddress:'ul. Rybnicka 19A',postalCode:'44-335',addressLocality:'Jastrzębie-Zdrój',addressCountry:'PL'}};
+ org.logo=origin+'/assets/progames-emblem.png';org.sameAs=['https://www.facebook.com/BoxerProgames','https://www.instagram.com/progames.pl/'];org.contactPoint=[{'@type':'ContactPoint',contactType:'sales',email:'office@progames.pl',telephone:'+48 536 068 912'},{'@type':'ContactPoint',contactType:'customer service',email:'service@progames.pl',telephone:'+48 789 108 086'}];
+ addSchema(document,{'@context':'https://schema.org','@type':kind==='collection'?'CollectionPage':'WebPage','@id':origin+url+'#webpage',url:origin+url,name:document.title,description:document.querySelector('meta[name="description"]').content,inLanguage:lang,isPartOf:{'@id':origin+'/#website'},publisher:{'@id':origin+'/#organization'},...(product?{mainEntity:{'@id':origin+url+'#product'}}:{})});
  if(kind==='home'){addSchema(document,org);addSchema(document,{'@context':'https://schema.org','@type':'WebSite','@id':origin+'/#website',url:origin+'/',name:'Pro Games Poland',inLanguage:langs,publisher:{'@id':origin+'/#organization'}})}
  if(product){
   addSchema(document,{'@context':'https://schema.org','@type':'Product','@id':origin+url+'#product',name:product.name,description,image:product.variants.map(v=>origin+v.image),url:origin+url,category:label,brand:{'@type':'Brand',name:'Pro Games Poland'},manufacturer:{'@id':origin+'/#organization'},additionalProperty:product.spec.map(([name,value])=>({'@type':'PropertyValue',name:lang==='pl'?(plLabels.specs[name]||name):lang==='es'?(esLabels.specs[name]||name):name,value:lang==='pl'?(plLabels.specs[value]||value):lang==='es'?(esLabels.specs[value]||value):value}))});
@@ -43,11 +49,12 @@ function render(kind,lang,key){
  }
  if(kind==='collection')addSchema(document,{'@context':'https://schema.org','@type':'ItemList',name:'Boxer Standard',itemListElement:data.window.PRODUCT_COLLECTIONS['boxer-standard'].slugs.map((slug,i)=>({'@type':'ListItem',position:i+1,name:products[slug].name,url:origin+routes.product(lang,slug)}))});
  // Reserve layout for product images; the file dimensions are optional for contained card artwork.
- for(const img of document.querySelectorAll('img')){img.setAttribute('decoding','async');if(!img.alt&&img.className!=='trade-world-outline'&&!img.closest('.swatch-dot'))img.alt=lang==='pl'?'Automat Pro Games':'Pro Games amusement machine'}
+ for(const img of document.querySelectorAll('img')){img.setAttribute('decoding','async');if(!img.alt&&!['trade-world-outline','header-emblem'].includes(img.className)&&!img.closest('.swatch-dot'))img.alt=lang==='es'?'Máquina recreativa Pro Games':'Pro Games amusement machine'}
  const filename=url.endsWith('/')?url.slice(1)+'index.html':url.slice(1);fs.mkdirSync(path.dirname(filename),{recursive:true});fs.writeFileSync(filename,'<!doctype html>\n'+document.documentElement.outerHTML);output.push({kind,lang,key,url,filename,title:document.title});
 }
 for(const lang of langs){for(const kind of ['home','collection','catalog'])render(kind,lang);for(const key of Object.keys(products))render('product',lang,key)}
-fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+output.map(p=>`  <url><loc>${origin}${p.url}</loc></url>`).join('\n')+'\n</urlset>\n');
+const xml=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'+output.map(p=>`  <url><loc>${xml(origin+p.url)}</loc>${[...langs,'x-default'].map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${xml(origin+pageURL(p.kind,l==='x-default'?'en':l,p.key))}"/>`).join('')}${p.key?`<image:image><image:loc>${xml(origin+products[p.key].image)}</image:loc></image:image>`:''}</url>`).join('\n')+'\n</urlset>\n');
 fs.writeFileSync('robots.txt',`User-agent: *\nAllow: /\nDisallow: /build/\nDisallow: /verification/\nSitemap: ${origin}/sitemap.xml\n`);
 fs.writeFileSync('build/pages.json',JSON.stringify(output,null,2));
 // Compatibility templates for previously shared ?model= URLs, also covered by server redirects.
