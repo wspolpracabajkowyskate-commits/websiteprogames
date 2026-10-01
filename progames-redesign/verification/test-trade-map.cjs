@@ -1,6 +1,6 @@
 const{parseHTML}=require('linkedom'),fs=require('fs'),vm=require('vm'),assert=require('assert');
 const checks=[];
-for(const language of ['en','es','pl']){
+for(const language of ['en','es']){
  for(const date of ['2026-10-01T12:00:00Z','2026-11-17T12:00:00Z','2026-11-20T22:59:00Z','2026-11-20T23:01:00Z','2027-01-01T12:00:00Z']){
   const {window}=parseHTML(fs.readFileSync(language==='pl'?'pl/index.html':language==='es'?'es.html':'index.html','utf8'));const document=window.document;let interval;
   class Clock extends Date{constructor(...args){super(...(args.length?args:[date]))}}

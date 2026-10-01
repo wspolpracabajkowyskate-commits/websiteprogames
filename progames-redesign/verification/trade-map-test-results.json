@@ -50,31 +50,6 @@
       "language": "es",
       "date": "2027-01-01T12:00:00Z",
       "status": "PASS"
-    },
-    {
-      "language": "pl",
-      "date": "2026-10-01T12:00:00Z",
-      "status": "PASS"
-    },
-    {
-      "language": "pl",
-      "date": "2026-11-17T12:00:00Z",
-      "status": "PASS"
-    },
-    {
-      "language": "pl",
-      "date": "2026-11-20T22:59:00Z",
-      "status": "PASS"
-    },
-    {
-      "language": "pl",
-      "date": "2026-11-20T23:01:00Z",
-      "status": "PASS"
-    },
-    {
-      "language": "pl",
-      "date": "2027-01-01T12:00:00Z",
-      "status": "PASS"
     }
   ]
 }

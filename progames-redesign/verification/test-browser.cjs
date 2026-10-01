@@ -7,4 +7,4 @@ if(p.kind==='product'){const buttons=await page.locator('.gallery-swatch').count
 if(p.kind==='home'){assert.equal(await page.locator('.product-card').count(),28);assert.equal(await page.locator('#productInterest option').count(),46);assert.equal(await page.locator('.trade-map-pin').count(),2);await page.locator('.trade-map-pin[data-event="london"]').click();assert((await page.locator('#tradeMapDetail').textContent()).includes('S2201'));await page.locator('#tradeMap').screenshot({path:`verification/screenshots/map-${p.lang}.png`});}
 if(p.kind==='collection')assert.equal(await page.locator('.product-card').count(),15);
 }
-assert.deepEqual(errors,[]);await browser.close();console.log('Browser test passed: 135 pages, variant images, map, layout overflow, no runtime errors.');})().catch(e=>{console.error(e);process.exit(1)});
+assert.deepEqual(errors,[]);await browser.close();console.log('Browser test passed: 90 pages, variant images, map, layout overflow, no runtime errors.');})().catch(e=>{console.error(e);process.exit(1)});

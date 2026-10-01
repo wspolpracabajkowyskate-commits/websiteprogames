@@ -74,7 +74,7 @@ detail.innerHTML=`
   <div class="product-gallery-panel">
     <div class="product-main-stage reveal in">
       <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${displayVariantName(mainVariant,selectedIndex)}" fetchpriority="high" referrerpolicy="no-referrer">
-      ${p.tag?`<span class="product-tag">${isPL?p.tag.replace('NEW','NOWOŚĆ'):p.tag}</span>`:''}
+      ${p.tag?`<span class="product-tag">${isES?p.tag.replace('NEW','NUEVO').replace('BESTSELLER','MÁS VENDIDO'):p.tag}</span>`:''}
     </div>
     ${variantSelector}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
   </div>

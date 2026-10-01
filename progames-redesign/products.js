@@ -201,7 +201,7 @@ window.PRODUCTS={
     "name": "Double Hit",
     "category": "combo",
     "label": "BOXER + KICKER",
-    "tag": "NEW 2023",
+    "tag": "BESTSELLER",
     "desc": "Offers two exciting challenges in one compact machine with vibrant LED lights that bring extra attraction. Press the top Start button to release the punchball and test your strength or hit the bottom button to kick the football and show off your skills. Double the action, all in one game!",
     "features": [
       "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
@@ -306,7 +306,7 @@ window.PRODUCTS={
     "name": "Double Hit Gift",
     "category": "combo",
     "label": "BOXER + KICKER + PRIZE",
-    "tag": "NEW 2024",
+    "tag": "BESTSELLER",
     "desc": "This versatile machine offers three exciting challenges boxing, kicking and a prize feature all in one compact design. Equipped with vibrant LED lights for added attraction, players can showcase their strength and skill by hitting the punchball or football and get special prizes with extra motivation and excitement. It’s triple the action in one game!",
     "features": [
       "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
@@ -402,7 +402,7 @@ window.PRODUCTS={
     "name": "Double Hit Kids",
     "category": "kids",
     "label": "KIDS / BOXER + KICKER",
-    "tag": "NEW 2024",
+    "tag": "BESTSELLER",
     "desc": "This machine combines two exciting games in one: boxing and kicking! Perfectly designed for younger players, this machine brings twice the fun in a single unit, making it ideal for family-friendly venues.",
     "features": [
       "2-in-1 Action: Combines boxing and kicking games for double the excitement.",
@@ -500,7 +500,7 @@ window.PRODUCTS={
     "name": "Double Hit Kids Gift",
     "category": "kids",
     "label": "KIDS / BOXER + KICKER + PRIZE",
-    "tag": "NEW 2024",
+    "tag": "BESTSELLER",
     "desc": "This machine combines three fun games in one: boxing, kicking and a prize feature! Designed for young players, it keeps kids engaged with exciting challenges and vibrant LED lights, making it a perfect fit for family venues.",
     "features": [
       "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.",
@@ -2106,7 +2106,7 @@ window.PRODUCTS={
     "name": "Matte Airbrushed",
     "category": "boxer",
     "label": "MATTE / AIRBRUSHED",
-    "tag": "NEW 2025",
+    "tag": "BESTSELLER",
     "desc": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
     "features": [],
     "spec": [],
@@ -2148,7 +2148,7 @@ window.PRODUCTS={
     "name": "Boxer Combat",
     "category": "boxer",
     "label": "BOXER PREMIUM",
-    "tag": "NEW 2024",
+    "tag": "BESTSELLER",
     "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
       "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
@@ -2253,7 +2253,7 @@ window.PRODUCTS={
     "name": "Boxer Fist · 3 Player",
     "category": "boxer",
     "label": "MULTIPLAYER BOXER",
-    "tag": "NEW 2025",
+    "tag": "BESTSELLER",
     "desc": "MULTIPLAYER BOXER MACHINE\n\nBoxer Fist is our new exciting multiplayer boxing arcade machine, built to entertain and challenge groups in any arcade, FEC, or entertainment venue. With its eye-catching LED lighting, modern decals, and robust construction, this machine invites competitive fun and repeat play.",
     "features": [
       "Multiplayer Ready: Supports group challenges and head-to-head punching competitions. Perfect for friends, events, and team contests.",
@@ -2350,7 +2350,7 @@ window.PRODUCTS={
     "name": "Boxer Ring",
     "category": "boxer",
     "label": "BOXER PREMIUM",
-    "tag": "NEW 2023",
+    "tag": "BESTSELLER",
     "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
       "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
@@ -2437,7 +2437,7 @@ window.PRODUCTS={
     "name": "Boxer Combat Kids",
     "category": "kids",
     "label": "PREMIUM KIDS",
-    "tag": "NEW 2024",
+    "tag": "BESTSELLER",
     "desc": "One of the latest additions to our lineup, Kids Combat offers an exciting, safe boxing experience for younger players. With its bold design and enhanced features, it’s ideal for arcades and family-friendly venues.",
     "features": [
       "Brand new Design: Fresh, engaging look tailored for kids.",
