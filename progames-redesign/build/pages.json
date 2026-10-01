@@ -23,6 +23,14 @@
   {
     "kind": "product",
     "lang": "en",
+    "key": "boxer-toy",
+    "url": "/en/products/boxer-toy.html",
+    "filename": "en/products/boxer-toy.html",
+    "title": "Boxer Toy — BOXER / TOY DISPLAY | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "en",
     "key": "monster-3in1-ticket",
     "url": "/en/products/monster-3in1-ticket.html",
     "filename": "en/products/monster-3in1-ticket.html",
@@ -376,6 +384,14 @@
     "url": "/catalog-es.html",
     "filename": "catalog-es.html",
     "title": "Catálogos de máquinas y repuestos | Pro Games Poland"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "boxer-toy",
+    "url": "/es/productos/boxer-toy.html",
+    "filename": "es/productos/boxer-toy.html",
+    "title": "Boxer Toy — BOXER / EXPOSITOR DE JUGUETES | Catálogo Pro Games"
   },
   {
     "kind": "product",

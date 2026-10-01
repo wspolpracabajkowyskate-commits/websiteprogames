@@ -2191,15 +2191,6 @@ window.PRODUCTS={
         "image": "/assets/products/boxer-combat-red.webp"
       },
       {
-        "name": "POW artwork · Blue",
-        "nameES": "Diseño POW · Azul",
-        "id": "pow-blue",
-        "color": "Blue",
-        "sourceImage": "https://static.wixstatic.com/media/d36c49_6282f2a1ba5b4286be6282f1f2a3ebcb~mv2.jpg",
-        "sourceFileName": "Combat.jpg",
-        "image": "/assets/products/boxer-combat-pow-blue.webp"
-      },
-      {
         "name": "White",
         "nameES": "Blanco",
         "id": "white",
@@ -4032,3 +4023,13 @@ window.PRODUCT_COLLECTIONS={
     }
   }
 };
+
+// New model supplied by the client; separate colour photos pending.
+window.PRODUCTS={"boxer-toy":{"name": "Boxer Toy", "category": "boxer", "label": "BOXER / TOY DISPLAY", "tag": "NEW 2026", "desc": "Boxer Toy brings a colourful new look to the Pro Games range. Its boxing-game cabinet combines a punching bag and digital score display with an illuminated front compartment showcasing a toy.\n\nChoose from eight cabinet colours: pink, yellow, white, green, blue, red, orange and black. Contact our sales team for gameplay details, prize-system configuration and technical specifications.", "features": [], "options": [], "spec": [], "image": "/assets/products/boxer-toy-presentation.png", "source": "https://www.progamespoland.com/", "availableColors": ["Pink", "Yellow", "White", "Green", "Blue", "Red", "Orange", "Black"], "variants": [{"id": "presentation", "name": "Colour range", "nameES": "Gama de colores", "image": "/assets/products/boxer-toy-presentation.png"}]},...window.PRODUCTS};
+window.PRODUCT_ES["boxer-toy"]={"desc": "Boxer Toy aporta una nueva imagen llena de color a la gama Pro Games. Su mueble de boxeo combina un saco de golpeo y una pantalla digital de puntuación con un compartimento frontal iluminado que muestra un juguete.\n\nDisponible en ocho colores: rosa, amarillo, blanco, verde, azul, rojo, naranja y negro. Contacta con nuestro equipo comercial para conocer el funcionamiento, la configuración del sistema de premios y las especificaciones técnicas.", "features": [], "options": []};
+window.PG_ES.labels["BOXER / TOY DISPLAY"]="BOXER / EXPOSITOR DE JUGUETES";
+
+// Supplied individual Boxer Toy colour photographs, v15.
+window.PRODUCTS["boxer-toy"].variants=[{"id": "pink", "name": "Pink", "nameES": "Rosa", "color": "Pink", "image": "/assets/products/boxer-toy-pink.png"}, {"id": "yellow", "name": "Yellow", "nameES": "Amarillo", "color": "Yellow", "image": "/assets/products/boxer-toy-yellow.png"}, {"id": "white", "name": "White", "nameES": "Blanco", "color": "White", "image": "/assets/products/boxer-toy-white.png"}, {"id": "green", "name": "Green", "nameES": "Verde", "color": "Green", "image": "/assets/products/boxer-toy-green.png"}, {"id": "blue", "name": "Blue", "nameES": "Azul", "color": "Blue", "image": "/assets/products/boxer-toy-blue.png"}, {"id": "red", "name": "Red", "nameES": "Rojo", "color": "Red", "image": "/assets/products/boxer-toy-red.png"}, {"id": "orange", "name": "Orange", "nameES": "Naranja", "color": "Orange", "image": "/assets/products/boxer-toy-orange.png"}, {"id": "black", "name": "Black", "nameES": "Negro", "color": "Black", "image": "/assets/products/boxer-toy-black.png"}];
+window.PRODUCTS["boxer-toy"].image="/assets/products/boxer-toy-pink.png";
+delete window.PRODUCTS["boxer-toy"].availableColors;

@@ -1,0 +1,1 @@
+Boxer Toy: eight supplied original PNG photos mapped to Pink, Yellow, White, Green, Blue, Red, Orange and Black. Homepage, product pages, social preview and sitemap now use the pink product photo instead of the poster. EN/ES image switching restored. Supplied photos copied without generative edits or quality claims. Build and tests passed: 92 pages, 458 variant checks.

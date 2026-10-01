@@ -67,7 +67,7 @@ const swatchColor={White:'#f4f4f1',Orange:'#ff7a18',Yellow:'#ffd329',Green:'#27a
 const isGenericVariantName=(name='')=>/^Variant\s+\d+$/i.test(name);
 const displayVariantName=(v,i)=>isPL?(es.colors[v.name]||v.name):isES&&v.nameES?v.nameES:isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
 const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="${isPL?'Wybierz kolor lub wzór':isES?'Elegir color o diseño':'Choose colour or artwork variant'}"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName" aria-live="polite">${displayVariantName(mainVariant,selectedIndex)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=Boolean(swatchColor[v.color||v.name]);return `<button type="button" class="gallery-swatch ${i===selectedIndex?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-pressed="${i===selectedIndex}" aria-label="${isPL?'Pokaż':isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.color||v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
-const finishBlock=variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
+const finishBlock=p.availableColors?'':variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
 detail.innerHTML=`
 <section class="product-detail-v2">
@@ -76,7 +76,7 @@ detail.innerHTML=`
       <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${displayVariantName(mainVariant,selectedIndex)}" fetchpriority="high" referrerpolicy="no-referrer">
       ${p.tag?`<span class="product-tag">${isES?p.tag.replace('NEW','NUEVO').replace('BESTSELLER','MÁS VENDIDO'):p.tag}</span>`:''}
     </div>
-    ${variantSelector}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
+    ${variantSelector}${p.availableColors?`<div class="gallery-variant-selector"><div class="gallery-variant-head"><span>${isES?'COLORES DISPONIBLES':'AVAILABLE COLORS'}</span></div><div class="gallery-variant-swatches">${p.availableColors.map(color=>`<span class="gallery-swatch" style="--swatch:${swatchColor[color]}"><span class="swatch-dot"></span><span class="swatch-label">${localColor(color)}</span></span>`).join('')}</div></div>`:''}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
   </div>
   <div class="product-info-panel">
     <a class="product-back-link" href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">← ${isStandard?'Boxer Standard':txt.allMachines}</a>

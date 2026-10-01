@@ -48,6 +48,7 @@ if(collection){
     if(!shownCollections.has(family[0])){listing.push([family[0],family[1],true]);shownCollections.add(family[0]);}
   });
 }
+if(!collection)listing.push(['parts-list',{name:isES?'Repuestos':'Parts list',category:'parts',label:isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.png',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
 const escapeAttribute=value=>String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 if(grid){
   grid.innerHTML=listing.map(([slug,p,isCollection])=>{
@@ -56,12 +57,12 @@ if(grid){
     const members=isCollection?p.slugs.map(id=>products[id].name).join(' '):'';
     const selected=collection?.coverVariants?.[slug];
     const variant=p.variants?.find(v=>v.id===selected);
-    const url=isCollection?routes.collection(lang):routes.product(lang,slug)+(variant?'?variant='+encodeURIComponent(variant.id):'');
+    const url=p.directURL|| (isCollection?routes.collection(lang):routes.product(lang,slug)+(variant?'?variant='+encodeURIComponent(variant.id):''));
     const cover=isCollection?p.coverModels.map(id=>{
       const model=products[id];const photo=model.variants.find(v=>v.id===p.coverVariants[id])||model.variants[0];
       return `<img loading="lazy" src="${photo.image}" alt="${model.name}">`;
     }).join(''):`<img loading="lazy" src="${variant?.image||p.image}" alt="${p.name} by Pro Games">`;
-    const cta=isCollection?(isPL?`Zobacz ${p.slugs.length} modeli ↗`:isES?`Ver ${p.slugs.length} modelos ↗`:`Explore ${p.slugs.length} models ↗`):UI.view;
+    const cta=p.directURL?(isES?'Ver catálogo de repuestos ↗':'View parts catalog ↗'):isCollection?(isPL?`Zobacz ${p.slugs.length} modeli ↗`:isES?`Ver ${p.slugs.length} modelos ↗`:`Explore ${p.slugs.length} models ↗`):UI.view;
     return `<article class="product-card reveal ${isCollection?'collection-card':''}" data-slug="${slug}" data-category="${p.category}" data-search="${escapeAttribute(`${p.name} ${label} ${desc} ${members}`.toLowerCase())}"><a href="${url}" aria-label="${isPL?'Zobacz':isES?'Ver':'View'} ${p.name}"><div class="card-media ${isCollection?'collection-cover':''}">${cover}${p.tag?`<span class="tag">${isES?p.tag.replace('NEW','NUEVO').replace('BESTSELLER','MÁS VENDIDO'):p.tag}</span>`:''}${isCollection?`<span class="tag">${p.slugs.length} ${isPL?'MODELI':isES?'MODELOS':'MODELS'}</span>`:''}</div><div class="card-body"><p>${isCollection?(isPL?'KOLEKCJA / BOKSERY':isES?'COLECCIÓN / BOXERS':'COLLECTION / BOXERS'):label}</p><h3>${p.name}</h3><span>${cta}</span></div></a></article>`;
   }).join('');
 }

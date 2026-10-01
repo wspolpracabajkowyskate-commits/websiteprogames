@@ -1,0 +1,1 @@
+Removed the incorrect POW artwork Blue variant from Boxer Combat in EN and ES. Kept the correct Blue variant. Build and tests passed: 90 pages, 442 variant checks. Other products and layout unchanged.

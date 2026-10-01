@@ -57,6 +57,35 @@
         {
           "type": "query",
           "key": "model",
+          "value": "boxer-toy"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/boxer-toy.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "boxer-toy"
+        }
+      ],
+      "destination": "/en/products/boxer-toy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
           "value": "monster-3in1-ticket"
         },
         {
@@ -1275,6 +1304,35 @@
         {
           "type": "query",
           "key": "model",
+          "value": "boxer-toy"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/boxer-toy.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "boxer-toy"
+        }
+      ],
+      "destination": "/en/products/boxer-toy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
           "value": "monster-3in1-ticket"
         },
         {
@@ -2485,6 +2543,35 @@
         }
       ],
       "destination": "/en/products/cyberdart.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "boxer-toy"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/es/productos/boxer-toy.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "boxer-toy"
+        }
+      ],
+      "destination": "/es/productos/boxer-toy.html",
       "statusCode": 301
     },
     {
