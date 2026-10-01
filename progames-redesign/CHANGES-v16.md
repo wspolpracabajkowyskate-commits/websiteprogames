@@ -1,0 +1,1 @@
+Boxer Toy temporarily removed from the product data, EN/ES pages, listings, enquiry dropdown, sitemap and generated redirects. Parts list retained. Original colour assets retained for future restoration. Build and tests passed.

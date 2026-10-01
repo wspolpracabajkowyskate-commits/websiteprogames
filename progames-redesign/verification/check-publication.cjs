@@ -23,8 +23,8 @@ for(const p of pages){
   assert.equal(d.querySelectorAll('.language-switch a').length,2);
  }
  if(p.kind==='home'||p.kind==='collection'){
-  const expected=p.kind==='home'?30:15;assert.equal(d.querySelectorAll('.product-card').length,expected);t.run('script.js');assert.equal(d.querySelectorAll('.product-card').length,expected);assert.equal(d.querySelectorAll('.product-empty').length,1);
-  if(p.kind==='home')assert.equal(d.querySelectorAll('#productInterest option').length,47);
+  const expected=p.kind==='home'?29:15;assert.equal(d.querySelectorAll('.product-card').length,expected);t.run('script.js');assert.equal(d.querySelectorAll('.product-card').length,expected);assert.equal(d.querySelectorAll('.product-empty').length,1);
+  if(p.kind==='home')assert.equal(d.querySelectorAll('#productInterest option').length,46);
   const search=d.querySelector('#productSearch');search.value='Champion';search.dispatchEvent(new t.ctx.window.Event('input'));assert.equal([...d.querySelectorAll('.product-card')].filter(c=>!c.hidden).length,1);d.querySelector('#clearProductFilters').click();assert.equal([...d.querySelectorAll('.product-card')].filter(c=>!c.hidden).length,expected);
   if(p.kind==='home'){t.run('trade-map.js');assert.equal(d.querySelectorAll('.trade-map-pin').length,2);d.querySelector('.trade-map-pin[data-event="london"]').click();assert(d.querySelector('#tradeMapDetail').textContent.includes('S2201'));}
  }
