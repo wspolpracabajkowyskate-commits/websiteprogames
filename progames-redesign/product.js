@@ -129,9 +129,9 @@ function setVariant(index){
   const token=++variantRequest;
   const img=document.querySelector('#productMainImage');
   const status=document.querySelector('#variantStatus');
-  img.classList.add('switching');
+  // Keep the current image stable until the selected variant is ready.
   img.setAttribute('aria-busy','true');
-  status.textContent=isPL?'Ładowanie zdjęcia…':isES?'Cargando imagen…':'Loading image…';
+  status.textContent='';
   const preload=new Image();
   preload.onload=()=>{
     if(token!==variantRequest) return;
