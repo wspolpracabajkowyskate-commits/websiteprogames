@@ -1,25 +1,17 @@
-# Pro Games Poland — Boxer Standard collection v6
+# Pro Games Poland v9
 
-Static website, English and Spanish, ready for a static HTTP host such as Vercel.
+Statyczna strona PL/EN/ES: 42 produkty, 222 warianty, kolekcja 15 Boxer Standard, mapa targów i 135 indeksowalnych stron HTML. Wszystkie zdjęcia, fonty, mapa i katalogi są lokalne.
 
-- 28 homepage cards: 27 individual products and one Boxer Standard collection.
-- The Boxer Standard collection contains the 15 models from the supplied screenshots, in the same order, on `boxer-standard.html` and `boxer-standard-es.html`.
-- 42 individual products remain available with all 222 verified colour/artwork/model variants.
-- Homepage search includes collection member names. Each Standard product links back to its family page.
-- All product photos are included in `assets/products/` as WebP files.
-- Each variant has a stable ID, a colour/artwork label, its own local image, the original image URL and the source filename.
-- `variant-audit.json` records the mapping and product source pages.
-- Product selection is preserved in the URL, language switch and quote link.
-- A failed image request preserves the previous photo and label. Stale responses from earlier clicks cannot overwrite the last selection.
-- The contact form prepares an email in the visitor's mail application. There is no backend email delivery or CRM integration.
+Uruchomienie: `python3 -m http.server 8000`, następnie http://localhost:8000. Publikuj w katalogu głównym domeny, zachowując strukturę plików. Serwer nie wymaga Node.js; gotowe HTML są już w paczce.
 
-## Run locally
+Źródła: build/templates, products.js, pl-content.js, script.js, product.js, trade-map.js, styles.css. Po zmianach szablonów lub danych uruchom `npm install`, następnie `npm run build` i `npm test`. Generator odtwarza HTML i przekierowania. Ustawienia domeny: site-config.js.
 
-From this directory: `python3 -m http.server 8000`, then open `http://localhost:8000`.
-Use an HTTP server; root-relative URLs require the project at the host root. Opening HTML with `file://` is not supported.
+Konfiguracja Vercel: vercel.json. Dla innego hostingu zastosuj build/redirects.csv. Samo wgranie HTML nie konfiguruje DNS ani przekierowań serwera.
 
-## Checks and remaining limitations
+Pełny zakres kontroli i ograniczenia: RAPORT_KONTROLI.md. Test rzeczywistej przeglądarki pozostaje do wykonania. Formularz korzysta z programu pocztowego użytkownika (mailto), bez wysyłki serwerowej. Strona nie została publicznie wdrożona.
 
-See `RAPORT_KONTROLI.md`. Logic was tested on all 84 English/Spanish product pages with a DOM simulator. A real-browser desktop/mobile visual regression could not be run in the execution environment. Do not treat that check as passed. Product variant images themselves were inspected visually and all 222 local images were decoded successfully.
+AUDIT_AND_IA.md zawiera historyczne notatki projektu; aktualny raport to RAPORT_KONTROLI.md.
 
-The website has not been deployed to the public domain. Source photographs document the published options; they do not establish stock levels.
+## Korekta opisów v9
+
+Opisy 37 produktów przeniesiono z poprzedniej strony bez przeredagowywania tekstu angielskiego; PL i ES są wiernymi tłumaczeniami. Dla 5 modeli bez opisu źródłowego usunięto niepotwierdzone treści i parametry. Szczegóły: ZGODNOSC_OPISOW_v9.md. Test porównawczy: verification/check-product-copy.cjs.

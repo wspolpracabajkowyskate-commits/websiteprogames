@@ -751,3 +751,66 @@ main,.section,.hero,.business-head,.contact-copy,.contact-form,.production-copy,
  .collection-intro>p:last-child{font-size:15px}
  .machines-light .collection-cover{padding:12px 4px 8px}
 }
+
+/* Trade show world map — v7 */
+.trade-map{margin-top:40px;border:1px solid rgba(177,199,216,.14);border-radius:24px;overflow:hidden;background:#0a1017;box-shadow:0 24px 70px rgba(0,0,0,.15)}
+.trade-map-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 32px 12px}
+.trade-map-heading .kicker{font-size:9px;letter-spacing:.2em;color:#8b9baa;margin:0 0 8px}
+.trade-map-heading h3{font-family:Manrope,Arial,sans-serif;font-size:clamp(19px,2.4vw,28px);letter-spacing:-.04em;margin:0;color:#f3f6f8}
+.trade-map-legend{display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:#a3b0bb}
+.trade-map-legend span{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.legend-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#c5d4df}.legend-dot.upcoming{background:#ff6a32;box-shadow:0 0 10px #ff6a3270}
+.trade-map-canvas{position:relative;width:100%;aspect-ratio:1000/460;isolation:isolate}
+.trade-world-outline{display:block;width:100%;height:100%;object-fit:contain}
+.trade-map-pins{position:absolute;inset:0}
+.trade-map-pin{--pin:#c5d4df;position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border:0;padding:0;background:transparent;color:var(--pin);cursor:pointer;z-index:2}
+.trade-map-pin[data-state="upcoming"],.trade-map-pin[data-state="live"]{--pin:#ff6a32}
+.trade-map-pin>svg{position:absolute;width:22px;height:30px;left:11px;bottom:22px;overflow:visible;filter:drop-shadow(0 2px 7px #0009)}
+.trade-map-pin>svg path{fill:#101820;stroke:var(--pin);stroke-width:1.7}.trade-map-pin>svg circle{fill:var(--pin)}
+.trade-pin-halo{position:absolute;width:28px;height:10px;border:1px solid var(--pin);border-radius:50%;left:8px;top:17px;opacity:.35;box-shadow:0 0 22px var(--pin)}
+.trade-map-pin[aria-pressed="true"]>svg path{fill:var(--pin)}.trade-map-pin[aria-pressed="true"]>svg circle{fill:#101820}
+.trade-map-pin[aria-pressed="true"] .trade-pin-halo{opacity:.7}
+.trade-pin-label{position:absolute;left:28px;top:2px;white-space:nowrap;font:650 12px Inter,Arial,sans-serif;color:#dce5ec;background:rgba(10,16,23,.9);padding:7px 11px;border:1px solid rgba(177,199,216,.17);border-radius:7px;box-shadow:0 5px 20px #0003}
+.trade-map-pin[aria-pressed="true"] .trade-pin-label{color:var(--pin);border-color:var(--pin)}
+.trade-map-pin:focus-visible,.trade-map-tabs button:focus-visible{outline:2px solid #fff;outline-offset:5px;border-radius:6px}
+.trade-map-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:0 32px 20px}
+.trade-map-hint{font-size:11px;color:#8493a0;margin:0}
+.trade-map-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.trade-map-tabs button{display:flex;align-items:center;gap:8px;background:transparent;color:#a8b7c4;border:1px solid #ffffff1f;border-radius:99px;padding:9px 14px;font:600 11px Inter,Arial,sans-serif;cursor:pointer;min-height:40px}
+.trade-map-tabs button i{width:5px;height:5px;background:#c5d4df;border-radius:50%}
+.trade-map-tabs button[data-state="upcoming"] i,.trade-map-tabs button[data-state="live"] i{background:#ff6a32}
+.trade-map-tabs button[aria-pressed="true"]{background:#ffffff0a;border-color:#ffffff60;color:#fff}
+.trade-map-detail{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 32px;border-top:1px solid #ffffff12;background:#ffffff02;min-height:145px}
+.trade-map-status{color:#c5d4df;font-size:9px;font-weight:750;letter-spacing:.16em;margin:0 0 7px}
+.trade-map-detail[data-state="upcoming"] .trade-map-status,.trade-map-detail[data-state="live"] .trade-map-status{color:#ff6a32}
+.trade-map-detail h4{font-family:Manrope,Arial,sans-serif;font-size:clamp(15px,2vw,21px);letter-spacing:-.025em;line-height:1.3;margin:0 0 6px;color:#f4f7fa}
+.trade-map-venue{color:#8f9eac;font-size:12px;margin:0}
+.trade-map-detail-meta{display:flex;flex-direction:column;gap:6px;text-align:right;flex-shrink:0;font-size:11px;color:#95a6b4}
+.trade-map-detail-meta>strong{font-size:14px;color:#e0e7ed}.trade-map-detail-meta a{margin-top:6px;color:#e0e7ed;text-decoration:underline;text-underline-offset:4px}
+.trade-show-card.map-selected{border-color:#ffffff40}
+.trade-show-card{scroll-margin-top:120px}
+@media(max-width:700px){
+ .trade-map{margin-top:28px;border-radius:18px}
+ .trade-map-heading{align-items:flex-start;flex-direction:column;gap:14px;padding:22px 18px 12px}
+ .trade-map-legend{gap:16px;font-size:10px}
+ .trade-map-canvas{margin-top:22px;margin-bottom:18px}
+ .trade-pin-label{font-size:10px;padding:5px 7px;left:26px;top:-9px}
+ .trade-map-pin[data-event="orlando"] .trade-pin-label{left:0;top:28px}
+ .trade-map-pin[data-event="london"] .trade-pin-label{left:29px;top:-17px}
+ .trade-map-bottom{padding:0 18px 18px;flex-direction:column;align-items:flex-start;gap:12px}
+ .trade-map-tabs{width:100%}.trade-map-tabs button{flex:1;justify-content:center;min-height:44px}
+ .trade-map-detail{padding:20px 18px;flex-direction:column;align-items:flex-start;gap:15px}
+ .trade-map-detail-meta{text-align:left}
+ .trade-map-detail h4{font-size:17px}
+}
+/* Publication accessibility and three-language navigation. */
+.skip-link{position:fixed;z-index:200;top:8px;left:12px;padding:10px 16px;background:white;color:#111;transform:translateY(-160%);border-radius:8px;font-weight:700}
+.skip-link:focus{transform:translateY(0)}
+.contact-delivery-note{font-size:12px;line-height:1.6;color:#646e78;margin-top:12px}
+.language-switch a{min-width:28px;text-align:center}
+@media(max-width:1100px){.desktop-nav{gap:14px}.header-cta{margin-left:0}}
+@media(max-width:600px){.product-header-actions{gap:8px;flex-wrap:wrap;justify-content:flex-end}.product-header-actions .btn{white-space:normal;text-align:center}.collection-header-actions{flex-wrap:wrap;justify-content:flex-end}.trade-map-detail{min-width:0}.trade-map-detail-copy{min-width:0}}
+
+/* Preserve complete source paragraphs without squeezing long product copy. */
+.detail-lead p{margin:0 0 1em}.detail-lead p:last-child{margin-bottom:0}
+.spec-table.light>div{gap:1rem;align-items:start}.spec-table.light>div span,.spec-table.light>div b{min-width:0;overflow-wrap:anywhere}

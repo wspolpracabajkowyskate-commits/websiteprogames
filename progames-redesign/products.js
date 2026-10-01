@@ -1,30 +1,26 @@
-// Verified source filenames and visual review: 2026-10-01.
-// Keep each name, image and stable ID together; never infer colours from gallery order.
+// Product copy transcribed from the old website, 2026-10-01. Local images and variant IDs preserved.
 window.PRODUCTS={
   "monster-3in1-ticket": {
     "name": "Monster 3 in 1 Ticket",
     "category": "combo",
     "label": "3-IN-1 / TICKET",
     "tag": "NEW 2026",
-    "desc": "A space-efficient three-in-one attraction combining Boxer, Kicker and Hammer gameplay in one cabinet, with a ticket-ready concept for redemption-focused venues. LED lighting and strength sensors make the machine highly visible while preserving three distinct challenges in a single footprint.",
+    "desc": "3-in-1 Amusement Machine: Boxer, Kicker & Hammer\n\nThis innovative 3-in-1 arcade machine combines three popular strength-testing games in one compact unit — Boxer, Kicker, and Hammer.\n\nPlayers can test their power by choosing between punching, kicking, or hammering modes, all integrated into a single durable and eye-catching cabinet.\n\nThe machine features a modern design with LED lighting, high-quality sensors for accurate scoring\n\nPerfect for bars, amusement centers, and events, it offers maximum entertainment value while saving space.",
     "features": [
-      "Boxer + Kicker + Hammer in one cabinet",
-      "LED lighting and score sensors",
-      "Designed for repeated commercial use",
-      "Ticket-ready concept for redemption venues"
+      "Built for heavy use, the 3-in-1 Boxer/Kicker/Hammer guarantees fun, competition, and excitement for players of all ages."
     ],
     "spec": [
       [
         "Height",
-        "230 cm / 91 in"
+        "230 cm / 91″"
       ],
       [
         "Width",
-        "140 cm / 56 in"
+        "140 cm / 56″"
       ],
       [
         "Length",
-        "140 cm / 56 in"
+        "140 cm / 56″"
       ],
       [
         "Weight",
@@ -32,11 +28,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -104,32 +100,30 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/monster-3in1-ticket",
-    "image": "/assets/products/monster-3in1-ticket-white.webp"
+    "image": "/assets/products/monster-3in1-ticket-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "monster-3in1": {
     "name": "Monster 3 in 1",
     "category": "combo",
     "label": "3-IN-1",
     "tag": "NEW 2026",
-    "desc": "One cabinet, three strength challenges. Monster 3 in 1 combines boxing, kicking and hammer gameplay with bright LED presentation and accurate score sensing, giving operators a high-impact attraction without needing three separate machines.",
+    "desc": "3-in-1 Amusement Machine: Boxer, Kicker & Hammer\n\nThis innovative 3-in-1 arcade machine combines three popular strength-testing games in one compact unit — Boxer, Kicker, and Hammer.\n\nPlayers can test their power by choosing between punching, kicking, or hammering modes, all integrated into a single durable and eye-catching cabinet.\n\nThe machine features a modern design with LED lighting, high-quality sensors for accurate scoring\n\nPerfect for bars, amusement centers, and events, it offers maximum entertainment value while saving space.",
     "features": [
-      "Boxer + Kicker + Hammer gameplay",
-      "Integrated LED lighting",
-      "High-quality score sensing",
-      "Suitable for bars, FECs, arcades and events"
+      "Built for heavy use, the 3-in-1 Boxer/Kicker/Hammer guarantees fun, competition, and excitement for players of all ages."
     ],
     "spec": [
       [
         "Height",
-        "230 cm / 91 in"
+        "230 cm / 91″"
       ],
       [
         "Width",
-        "140 cm / 56 in"
+        "140 cm / 56″"
       ],
       [
         "Length",
-        "140 cm / 56 in"
+        "140 cm / 56″"
       ],
       [
         "Weight",
@@ -137,11 +131,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -200,32 +194,32 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/monster-3w1",
-    "image": "/assets/products/monster-3in1-red.webp"
+    "image": "/assets/products/monster-3in1-red.webp",
+    "sourceCopyStatus": "matched"
   },
   "double-hit": {
     "name": "Double Hit",
     "category": "combo",
     "label": "BOXER + KICKER",
     "tag": "NEW 2023",
-    "desc": "Double Hit combines two competitive strength challenges in one compact cabinet: a punchball at the top and a football target below. The format gives players two ways to compete while helping operators add more gameplay to a limited floor area.",
+    "desc": "Offers two exciting challenges in one compact machine with vibrant LED lights that bring extra attraction. Press the top Start button to release the punchball and test your strength or hit the bottom button to kick the football and show off your skills. Double the action, all in one game!",
     "features": [
-      "Boxing and kicking challenges in one machine",
-      "LED attraction lighting",
-      "Adjustable difficulty and free-play modes",
-      "Payment-ready for bills, coins, cards or tokens depending on configuration"
+      "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+      "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+      "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "85 cm / 34 in"
+        "85 cm / 34″"
       ],
       [
         "Length",
-        "122 cm / 48 in"
+        "122 cm / 48″"
       ],
       [
         "Weight",
@@ -233,11 +227,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -305,32 +299,32 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/double-hit",
-    "image": "/assets/products/double-hit-red.webp"
+    "image": "/assets/products/double-hit-red.webp",
+    "sourceCopyStatus": "matched"
   },
   "double-hit-gift": {
     "name": "Double Hit Gift",
     "category": "combo",
     "label": "BOXER + KICKER + PRIZE",
     "tag": "NEW 2024",
-    "desc": "A three-part commercial attraction that combines boxing, kicking and a prize feature in one cabinet. Bright LED lighting and the additional reward mechanic create an extra reason to replay, while operator settings allow the game to be adapted to the venue.",
+    "desc": "This versatile machine offers three exciting challenges boxing, kicking and a prize feature all in one compact design. Equipped with vibrant LED lights for added attraction, players can showcase their strength and skill by hitting the punchball or football and get special prizes with extra motivation and excitement. It’s triple the action in one game!",
     "features": [
-      "Boxing + kicking + prize feature",
-      "High-visibility LED lighting",
-      "Adjustable difficulty and free-play modes",
-      "Supports multiple payment configurations"
+      "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+      "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+      "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "85 cm / 34 in"
+        "85 cm / 34″"
       ],
       [
         "Length",
-        "122 cm / 48 in"
+        "122 cm / 48″"
       ],
       [
         "Weight",
@@ -338,11 +332,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -401,32 +395,34 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/double-hit-gift",
-    "image": "/assets/products/double-hit-gift-black.webp"
+    "image": "/assets/products/double-hit-gift-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "double-hit-kids": {
     "name": "Double Hit Kids",
     "category": "kids",
     "label": "KIDS / BOXER + KICKER",
     "tag": "NEW 2024",
-    "desc": "A younger-player version of the Double Hit concept, combining a punch and kick challenge in a lower, colourful cabinet. It is intended for family entertainment environments where a compact strength game needs to be accessible to children.",
+    "desc": "This machine combines two exciting games in one: boxing and kicking! Perfectly designed for younger players, this machine brings twice the fun in a single unit, making it ideal for family-friendly venues.",
     "features": [
-      "Two challenges: punch and kick",
-      "Child-oriented cabinet height and graphics",
-      "LED lighting",
-      "Adjustable difficulty and free-play modes"
+      "2-in-1 Action: Combines boxing and kicking games for double the excitement.",
+      "Kid-Friendly Design: Tailored for children with a safe and easy-to-use layout.",
+      "Bright LED Lights: Eye-catching lights make gameplay even more fun.",
+      "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+      "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
     ],
     "spec": [
       [
         "Height",
-        "186 cm / 73 in"
+        "186 Cm / 74″"
       ],
       [
         "Width",
-        "85 cm / 34 in"
+        "85 cm / 34″"
       ],
       [
         "Length",
-        "120 cm / 47 in"
+        "120 cm / 48″"
       ],
       [
         "Weight",
@@ -434,11 +430,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -497,32 +493,34 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/double-hit-kids",
-    "image": "/assets/products/double-hit-kids-white.webp"
+    "image": "/assets/products/double-hit-kids-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "double-hit-kids-gift": {
     "name": "Double Hit Kids Gift",
     "category": "kids",
     "label": "KIDS / BOXER + KICKER + PRIZE",
     "tag": "NEW 2024",
-    "desc": "The Kids Gift version adds a prize function to the compact boxing-and-kicking format. Colourful graphics, LED lighting and reward gameplay are aimed at family entertainment centres, kids zones and leisure venues.",
+    "desc": "This machine combines three fun games in one: boxing, kicking and a prize feature! Designed for young players, it keeps kids engaged with exciting challenges and vibrant LED lights, making it a perfect fit for family venues.",
     "features": [
-      "Punch + kick + prize gameplay",
-      "Designed for younger players",
-      "LED attraction lighting",
-      "Flexible operator settings"
+      "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.",
+      "Kid-Friendly Design: Safe, engaging and easy-to-use for children.",
+      "Bright LED Lights: Colorful lights add to the fun and attraction.",
+      "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+      "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
     ],
     "spec": [
       [
         "Height",
-        "182 cm / 72 in"
+        "182 Cm / 72″"
       ],
       [
         "Width",
-        "85 cm / 34 in"
+        "85 cm / 34″"
       ],
       [
         "Length",
-        "120 cm / 47 in"
+        "120 cm / 48″"
       ],
       [
         "Weight",
@@ -530,11 +528,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -593,31 +591,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/double-hit-kids-gift",
-    "image": "/assets/products/double-hit-kids-gift-white.webp"
+    "image": "/assets/products/double-hit-kids-gift-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "double-strike": {
     "name": "Double Strike 2",
     "category": "combo",
     "label": "DOUBLE CHALLENGE",
-    "desc": "Double Strike 2 brings boxing and kicking gameplay together in a wider commercial cabinet. The two strength challenges, LED presentation and configurable operator settings are intended for busy amusement locations.",
+    "desc": "Offers two exciting challenges in one compact machine with vibrant LED lights that bring extra attraction. Press the top Start button to release the punchball and test your strength or hit the bottom button to kick the football and show off your skills. Double the action, all in one game!",
     "features": [
-      "Boxing and kicking in one attraction",
-      "LED presentation",
-      "Adjustable difficulty and free-play mode",
-      "Commercial payment configuration"
+      "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+      "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+      "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "142 cm / 56 in"
+        "142 cm / 56″"
       ],
       [
         "Length",
-        "122 cm / 48 in"
+        "122 cm / 48″"
       ],
       [
         "Weight",
@@ -625,11 +623,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -688,31 +686,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/double-strike",
-    "image": "/assets/products/double-strike-black.webp"
+    "image": "/assets/products/double-strike-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "joker": {
     "name": "Joker",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Joker is a commercial Pro Games boxer built around the Standard strength-test platform. Its graphic treatment gives the familiar commercial boxer format a bold, arcade-led visual identity.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -720,12 +718,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -793,31 +791,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/joker",
-    "image": "/assets/products/joker-white.webp"
+    "image": "/assets/products/joker-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "pow-boxer": {
     "name": "POW Boxer",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "POW Boxer is a commercial Pro Games boxer built around the Standard strength-test platform. The comic-inspired POW artwork gives the cabinet a bright visual character while retaining the Standard platform and operator configuration.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -825,12 +823,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -844,31 +842,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-powboxer",
-    "image": "/assets/products/pow-boxer-yellow.webp"
+    "image": "/assets/products/pow-boxer-yellow.webp",
+    "sourceCopyStatus": "matched"
   },
   "champion": {
     "name": "Champion",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Champion is a commercial Pro Games boxer built around the Standard strength-test platform. Champion uses a competition-inspired visual package around the Standard Pro Games punch-score platform.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -876,12 +874,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -940,31 +938,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-champion",
-    "image": "/assets/products/champion-orange.webp"
+    "image": "/assets/products/champion-orange.webp",
+    "sourceCopyStatus": "matched"
   },
   "easy": {
     "name": "Easy",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Easy is a commercial Pro Games boxer built around the Standard strength-test platform. Easy presents the strength-test experience in a clean, approachable visual format for a broad range of leisure locations.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -972,12 +970,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1036,31 +1034,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-easy",
-    "image": "/assets/products/easy-white.webp"
+    "image": "/assets/products/easy-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "cyber-punch": {
     "name": "Cyber Punch",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Cyber Punch is a commercial Pro Games boxer built around the Standard strength-test platform. Cyber Punch adds a technology-themed artwork package to the Standard commercial boxer.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1068,12 +1066,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1132,31 +1130,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-cyberpunch",
-    "image": "/assets/products/cyber-punch-orange.webp"
+    "image": "/assets/products/cyber-punch-orange.webp",
+    "sourceCopyStatus": "matched"
   },
   "gladiator": {
     "name": "Gladiator",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Gladiator is a commercial Pro Games boxer built around the Standard strength-test platform. Gladiator combines the Standard platform with a strong combat-inspired visual theme designed to stand out in busy venues.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1164,12 +1162,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1228,31 +1226,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-gladiator",
-    "image": "/assets/products/gladiator-white.webp"
+    "image": "/assets/products/gladiator-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "mma": {
     "name": "MMA",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "MMA is a commercial Pro Games boxer built around the Standard strength-test platform. MMA uses combat-sport graphics around the same commercial strength-test architecture.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1260,12 +1258,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1324,31 +1322,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-mma",
-    "image": "/assets/products/mma-white.webp"
+    "image": "/assets/products/mma-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "black-jack": {
     "name": "Black Jack",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Black Jack is a commercial Pro Games boxer built around the Standard strength-test platform. Black Jack brings a darker gaming-inspired look to the Standard Pro Games boxer platform.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1356,12 +1354,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1420,31 +1418,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-blackjack",
-    "image": "/assets/products/black-jack-orange.webp"
+    "image": "/assets/products/black-jack-orange.webp",
+    "sourceCopyStatus": "matched"
   },
   "super-hero": {
     "name": "Super Hero",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Super Hero is a commercial Pro Games boxer built around the Standard strength-test platform. Super Hero uses vivid character-led artwork to make the Standard strength-test format especially visible on an arcade floor.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1452,12 +1450,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1525,31 +1523,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/super-hero",
-    "image": "/assets/products/super-hero-green.webp"
+    "image": "/assets/products/super-hero-green.webp",
+    "sourceCopyStatus": "matched"
   },
   "power-black": {
     "name": "Power Black",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Power Black is a commercial Pro Games boxer built around the Standard strength-test platform. Power Black gives the Standard cabinet a darker, high-contrast finish suited to modern bars, clubs and entertainment spaces.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1557,12 +1555,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1621,31 +1619,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-powerblack",
-    "image": "/assets/products/power-black-black.webp"
+    "image": "/assets/products/power-black-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "poison-squad": {
     "name": "Poison Squad",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Poison Squad is a commercial Pro Games boxer built around the Standard strength-test platform. Poison Squad pairs energetic artwork with the Standard operator-ready punching platform.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1653,12 +1651,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1717,31 +1715,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-poisonsquad",
-    "image": "/assets/products/poison-squad-yellow.webp"
+    "image": "/assets/products/poison-squad-yellow.webp",
+    "sourceCopyStatus": "matched"
   },
   "hacker": {
     "name": "Hacker",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Hacker is a commercial Pro Games boxer built around the Standard strength-test platform. Hacker uses a digital-inspired visual direction on the Standard commercial boxer chassis.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1749,12 +1747,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1813,31 +1811,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-hacker",
-    "image": "/assets/products/hacker-yellow.webp"
+    "image": "/assets/products/hacker-yellow.webp",
+    "sourceCopyStatus": "matched"
   },
   "strongman": {
     "name": "Strongman",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Strongman is a commercial Pro Games boxer built around the Standard strength-test platform. Strongman reinforces the classic strength-test idea with a bold power-themed cabinet graphic.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1845,12 +1843,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -1909,31 +1907,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-strongman",
-    "image": "/assets/products/strongman-yellow.webp"
+    "image": "/assets/products/strongman-yellow.webp",
+    "sourceCopyStatus": "matched"
   },
   "viking": {
     "name": "Viking",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Viking is a commercial Pro Games boxer built around the Standard strength-test platform. Viking combines themed artwork with the same adjustable, payment-ready Standard boxer format.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -1941,12 +1939,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -2005,31 +2003,31 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-viking",
-    "image": "/assets/products/viking-orange.webp"
+    "image": "/assets/products/viking-orange.webp",
+    "sourceCopyStatus": "matched"
   },
   "disco": {
     "name": "Disco",
     "category": "boxer",
     "label": "BOXER STANDARD",
-    "desc": "Disco is a commercial Pro Games boxer built around the Standard strength-test platform. Disco brings a nightlife-oriented graphic theme to the Standard commercial boxer, making it a natural fit for bars and club environments.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial strength-test gameplay designed for high-traffic venues",
-      "Adjustable difficulty settings and free-play mode",
-      "Supports flexible payment configurations for different markets",
-      "Operator-focused construction with service access and configurable lighting"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -2037,12 +2035,12 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Card reader / cashless payment",
-      "2 m power cable",
-      "Protective cover",
-      "Custom graphics and branding",
-      "LED lighting variation"
+      "Bill acceptor.",
+      "Card reader.",
+      "2 meter power cable.",
+      "Protective cover.",
+      "Custom sticker and branding.",
+      "LED lighting variation available."
     ],
     "variants": [
       {
@@ -2101,36 +2099,18 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-disco",
-    "image": "/assets/products/disco-white.webp"
+    "image": "/assets/products/disco-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "matte-airbrushed": {
     "name": "Matte Airbrushed",
     "category": "boxer",
     "label": "MATTE / AIRBRUSHED",
     "tag": "NEW 2025",
-    "desc": "A current collection of Pro Games boxer cabinets finished with matte, airbrushed artwork. The collection focuses on distinctive visual treatments for venues that want a more custom, design-led machine.",
-    "features": [
-      "Matte airbrushed cabinet finishes",
-      "Multiple artwork variants shown by Pro Games",
-      "Commercial boxer platform",
-      "Custom configuration available on request"
-    ],
-    "spec": [
-      [
-        "Configuration",
-        "Varies by selected boxer and finish"
-      ],
-      [
-        "Exact dimensions",
-        "Confirm with Pro Games for the chosen configuration"
-      ]
-    ],
-    "options": [
-      "Custom artwork",
-      "Payment configuration",
-      "LED configuration",
-      "Protective cover"
-    ],
+    "desc": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+    "features": [],
+    "spec": [],
+    "options": [],
     "variants": [
       {
         "name": "Standard · Matte black",
@@ -2161,32 +2141,32 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/matte-airbrushed-boxer",
-    "image": "/assets/products/matte-airbrushed-standard-matte-black.webp"
+    "image": "/assets/products/matte-airbrushed-standard-matte-black.webp",
+    "sourceCopyStatus": "no-description"
   },
   "boxer-combat": {
     "name": "Boxer Combat",
     "category": "boxer",
     "label": "BOXER PREMIUM",
     "tag": "NEW 2024",
-    "desc": "Boxer Combat is a premium strength-test machine with a modern combat-inspired cabinet. It is built for repeated commercial play and can be configured for different payment systems, difficulty levels and free-play operation.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Commercial punch-strength gameplay",
-      "Robust electronics and mechanics",
-      "Adjustable difficulty and free-play mode",
-      "Multiple payment options depending on market"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -2194,11 +2174,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2266,32 +2246,33 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-combat",
-    "image": "/assets/products/boxer-combat-red.webp"
+    "image": "/assets/products/boxer-combat-red.webp",
+    "sourceCopyStatus": "matched"
   },
   "boxer-fist": {
     "name": "Boxer Fist · 3 Player",
     "category": "boxer",
     "label": "MULTIPLAYER BOXER",
     "tag": "NEW 2025",
-    "desc": "Boxer Fist is designed around social competition. The three-player concept, illuminated controls and score presentation make it suitable for group challenges and head-to-head play in modern entertainment venues.",
+    "desc": "MULTIPLAYER BOXER MACHINE\n\nBoxer Fist is our new exciting multiplayer boxing arcade machine, built to entertain and challenge groups in any arcade, FEC, or entertainment venue. With its eye-catching LED lighting, modern decals, and robust construction, this machine invites competitive fun and repeat play.",
     "features": [
-      "Three-player competition concept",
-      "Integrated LED presentation",
-      "Reinforced commercial construction",
-      "Cashless-ready operator configuration"
+      "Multiplayer Ready: Supports group challenges and head-to-head punching competitions. Perfect for friends, events, and team contests.",
+      "Full LED Integration: Illuminated edges, buttons, and scoring panel to maximize visibility and energy.",
+      "Heavy-Duty Frame: Reinforced body and impact-resistant build for long-term durability.",
+      "Operator-Friendly: Reliable electronics, easy maintenance access, and cashless-ready setup."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -2299,11 +2280,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2362,44 +2343,44 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-fist-3-player",
-    "image": "/assets/products/boxer-fist-white.webp"
+    "image": "/assets/products/boxer-fist-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "boxer-ring": {
     "name": "Boxer Ring",
     "category": "boxer",
     "label": "BOXER PREMIUM",
     "tag": "NEW 2023",
-    "desc": "Boxer Ring is a premium punch-strength machine with a distinctive ring-inspired silhouette and strong visual lighting. It is intended for professional arcade and leisure operation with configurable difficulty and payment options.",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
     "features": [
-      "Professional punch-strength gameplay",
-      "Distinctive Ring cabinet design",
-      "Adjustable difficulty and free-play mode",
-      "Flexible operator payment options"
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
-        "127 kg / 280 lb"
+        "127 kg / 275 lb"
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2449,32 +2430,33 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-ring",
-    "image": "/assets/products/boxer-ring-red.webp"
+    "image": "/assets/products/boxer-ring-red.webp",
+    "sourceCopyStatus": "matched"
   },
   "boxer-combat-kids": {
     "name": "Boxer Combat Kids",
     "category": "kids",
     "label": "PREMIUM KIDS",
     "tag": "NEW 2024",
-    "desc": "A child-oriented version of Boxer Combat with a lower cabinet, bright artwork and adjustable gameplay. The machine is intended for family entertainment centres and children’s leisure areas while preserving the familiar score-based boxing challenge.",
+    "desc": "One of the latest additions to our lineup, Kids Combat offers an exciting, safe boxing experience for younger players. With its bold design and enhanced features, it’s ideal for arcades and family-friendly venues.",
     "features": [
-      "Lower format for younger players",
-      "Bright child-friendly graphics",
-      "Adjustable difficulty and free-play modes",
-      "Commercial payment configurations"
+      "Brand new Design: Fresh, engaging look tailored for kids.",
+      "Safe and fun Gameplay: Perfect for younger players to safely enjoy the excitement of boxing.",
+      "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+      "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
     ],
     "spec": [
       [
         "Height",
-        "182 cm / 72 in"
+        "182 Cm / 72″"
       ],
       [
         "Width",
-        "70 cm / 28 in"
+        "70 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -2482,11 +2464,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2545,43 +2527,43 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-combat-kids",
-    "image": "/assets/products/boxer-combat-kids-orange.webp"
+    "image": "/assets/products/boxer-combat-kids-orange.webp",
+    "sourceCopyStatus": "matched"
   },
   "boxer-kids": {
     "name": "Boxer Kids",
     "category": "kids",
     "label": "BOXER KIDS",
-    "desc": "A compact Pro Games boxer sized for younger players. Colourful cabinet themes, adjustable difficulty and flexible operating modes make it suitable for family entertainment centres, play areas and children’s attractions.",
+    "desc": "This machine is designed specifically for younger players, providing a fun and safe way to enjoy the excitement of a boxing game. With bright colors and engaging gameplay, it’s perfect for family-oriented locations.",
     "features": [
-      "Child-oriented cabinet dimensions",
-      "Multiple artwork themes",
-      "Adjustable difficulty and free-play mode",
-      "Flexible payment configuration"
+      "Kid-Friendly Design: A smaller size and layout specifically made for children to enjoy.",
+      "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+      "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
     ],
     "spec": [
       [
         "Height",
-        "182 cm / 72 in"
+        "182 Cm / 72″"
       ],
       [
         "Width",
-        "70 cm / 28 in"
+        "70 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
-        "100 kg / 220 lb"
+        "100 kg / 221 lb"
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2748,31 +2730,32 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-kids",
-    "image": "/assets/products/boxer-kids-artwork-01-white.webp"
+    "image": "/assets/products/boxer-kids-artwork-01-white.webp",
+    "sourceCopyStatus": "matched"
   },
   "boxer-flash-gift": {
     "name": "Boxer Flash Gift",
     "category": "boxer",
     "label": "BOXER PREMIUM / PRIZE",
-    "desc": "Boxer Flash Gift adds a prize feature to the high-visibility Flash boxing format. LED lighting, strength scoring and the reward mechanic are designed to increase attraction and replay value in commercial venues.",
+    "desc": "The Boxer Flash Gift offers an exciting twist by combining the classic boxing challenge with a rewarding gift feature. With bright LED lights and engaging gameplay.",
     "features": [
-      "Punch-strength game with prize feature",
-      "LED attraction lighting",
-      "Adjustable difficulty and free-play mode",
-      "Flexible payment configuration"
+      "Strength Challenge + Prizes: Players punch the bag, score high, and win special prizes.",
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Flexible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -2780,11 +2763,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2843,31 +2826,33 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-flash-gift",
-    "image": "/assets/products/boxer-flash-gift-black.webp"
+    "image": "/assets/products/boxer-flash-gift-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "hammer": {
     "name": "Hammer",
     "category": "strength",
     "label": "HAMMER",
-    "desc": "A classic hammer strength tester presented in a bright modern cabinet. The machine is designed for amusement parks, arcades and family entertainment centres, with adjustable difficulty, free-play operation and optional ticket functionality.",
+    "desc": "It is a classic strength-testing game that challenges players to hit as hard as they can. Perfect for amusement parks, arcades, and family entertainment centers (FECs), this timeless game is fun, competitive, and draws in crowds with its vibrant LED lights.",
     "features": [
-      "Classic hammer power challenge",
-      "LED attraction lighting",
-      "Adjustable difficulty and free-play mode",
-      "Ticket functionality available"
+      "Power Strike Challenge: Swing the hammer and see how high you can score.",
+      "Bright LED Lights: Eye-catching lights that enhance the excitement and attract attention.",
+      "Ticket Option: Can be set to reward tickets, making it ideal for redemption venues.",
+      "Adjustable Difficulty & Free Play Mode: Suited for players of all ages and skill levels.",
+      "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency."
     ],
     "spec": [
       [
         "Height",
-        "225 cm / 89 in"
+        "225 Cm / 89″"
       ],
       [
         "Width",
-        "95 cm / 37 in"
+        "95 cm / 38″"
       ],
       [
         "Length",
-        "140 cm / 55 in"
+        "140 cm / 56″"
       ],
       [
         "Weight",
@@ -2875,11 +2860,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -2929,43 +2914,43 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/hammer",
-    "image": "/assets/products/hammer-black.webp"
+    "image": "/assets/products/hammer-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "kicker": {
     "name": "Kicker",
     "category": "strength",
     "label": "KICKER",
-    "desc": "Kicker measures the force and accuracy of a football-style kick. It is aimed at both younger and adult players and works well in arcades, sports bars, events and family entertainment locations.",
+    "desc": "This machine offers a thrilling and dynamic game designed for players who want to test their kicking strength and accuracy Perfect for both kids and adults, it’s a great addition to arcades, sports bars, and family entertainment centers.",
     "features": [
-      "Kick-strength and accuracy challenge",
-      "Suitable for a broad player age range",
-      "Adjustable difficulty and free-play mode",
-      "Flexible payment setup"
+      "Kick Challenge: Players kick the ball to score points, testing their power and precision.",
+      "Adjustable Difficulty & Free Play Mode: Customizable for different ages and skill levels.",
+      "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency."
     ],
     "spec": [
       [
         "Height",
-        "170 cm / 67 in"
+        "170 cm / 67″"
       ],
       [
         "Width",
-        "133 cm / 52 in"
+        "133 cm / 52″"
       ],
       [
         "Length",
-        "66 cm / 26 in"
+        "66 cm / 26″"
       ],
       [
         "Weight",
-        "100 kg / 220 lb"
+        "100 kg / 221 lb"
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -3024,44 +3009,17 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/kicker",
-    "image": "/assets/products/kicker-black.webp"
+    "image": "/assets/products/kicker-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "boxer-flash": {
     "name": "Boxer Flash",
     "category": "boxer",
     "label": "BOXER PREMIUM",
-    "desc": "A high-visibility premium boxer built around vivid LED lighting and a strong arcade presentation. Boxer Flash is designed for busy amusement locations, sports bars and entertainment venues where the machine needs to attract attention from a distance.",
-    "features": [
-      "High-visibility LED presentation",
-      "Commercial punch-strength gameplay",
-      "Adjustable difficulty and free-play mode",
-      "Configurable payment systems"
-    ],
-    "spec": [
-      [
-        "Height",
-        "221 cm / 87 in"
-      ],
-      [
-        "Width",
-        "72 cm / 28 in"
-      ],
-      [
-        "Length",
-        "115 cm / 45 in"
-      ],
-      [
-        "Weight",
-        "121 kg / 265 lb"
-      ]
-    ],
-    "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
-    ],
+    "desc": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+    "features": [],
+    "spec": [],
+    "options": [],
     "variants": [
       {
         "name": "Black",
@@ -3100,31 +3058,32 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/",
-    "image": "/assets/products/boxer-flash-black.webp"
+    "image": "/assets/products/boxer-flash-black.webp",
+    "sourceCopyStatus": "no-description"
   },
   "boxer-gift": {
     "name": "Boxer Gift",
     "category": "boxer",
     "label": "BOXER / PRIZE",
-    "desc": "Boxer Gift combines the familiar punch-strength challenge with a prize feature. It is built for high-traffic operation and can be configured for different payment systems, difficulty levels and free-play use.",
+    "desc": "The Boxer Gift offers an exciting twist by combining the classic boxing challenge with a rewarding gift feature. With bright LED lights and engaging gameplay.",
     "features": [
-      "Punch-strength gameplay with prize feature",
-      "Commercial-duty construction",
-      "Adjustable difficulty and free-play mode",
-      "Flexible payment configuration"
+      "Strength Challenge + Prizes: Players punch the bag, score high, and win special prizes.",
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Flexible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
     ],
     "spec": [
       [
         "Height",
-        "219 cm / 86 in"
+        "219 cm / 86″"
       ],
       [
         "Width",
-        "72 cm / 28 in"
+        "72 cm / 28″"
       ],
       [
         "Length",
-        "115 cm / 45 in"
+        "115 cm / 45″"
       ],
       [
         "Weight",
@@ -3132,11 +3091,11 @@ window.PRODUCTS={
       ]
     ],
     "options": [
-      "Bill acceptor",
-      "Nayax / cashless payment",
-      "Ticket dispenser",
-      "Custom graphics and branding",
-      "Silent mode (advance order)"
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
     ],
     "variants": [
       {
@@ -3195,37 +3154,17 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-gift",
-    "image": "/assets/products/boxer-gift-black.webp"
+    "image": "/assets/products/boxer-gift-black.webp",
+    "sourceCopyStatus": "matched"
   },
   "bouncy-castles-xs": {
     "name": "Bouncy Castles · XS",
     "category": "distributed",
     "label": "DISTRIBUTED / INFLATABLES",
-    "desc": "A range of compact inflatable attractions aimed at younger children. The XS collection includes different themes, shapes and colour schemes, with selected designs incorporating a slide or roof.",
-    "features": [
-      "Compact format for younger children",
-      "Multiple themes and artwork options",
-      "Selected models include integrated slides",
-      "Designed for repeated event and leisure use"
-    ],
-    "spec": [
-      [
-        "Typical standard category",
-        "Approx. 5.5 × 4.5 m"
-      ],
-      [
-        "XS models",
-        "Exact dimensions vary by design"
-      ]
-    ],
-    "options": [
-      "Dino with Slide",
-      "Sea with Slide",
-      "Pirates with Slide",
-      "Sea with Roof",
-      "Princess variants",
-      "Jungle variants"
-    ],
+    "desc": "Small inflatable castles for children\n\nThe Mini XS inflatables are a fantastic attraction for the youngest guests at your event! These colourful inflatables instantly catch children’s attention and quickly become their favourite place to play.\n\nKids know they can enjoy unlimited fun inside. In the compact bouncy castle, they can jump, play, and burn off energy for hours. Some of our children’s inflatables also come with built-in slides.\n\nOur small bouncy castles are always a big hit with children!",
+    "features": [],
+    "spec": [],
+    "options": [],
     "variants": [
       {
         "name": "Dino with Slide",
@@ -3319,38 +3258,46 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/bouncy-castles-size-xs",
-    "image": "/assets/products/bouncy-castles-xs-dino-with-slide.webp"
+    "image": "/assets/products/bouncy-castles-xs-dino-with-slide.webp",
+    "sourceCopyStatus": "matched"
   },
   "air-hockey-golden": {
     "name": "Air Hockey Golden",
     "category": "distributed",
     "label": "DISTRIBUTED / AIR HOCKEY",
-    "desc": "Golden is an indoor commercial air hockey table with an elegant gold-accented design, perforated stainless playfield, LED lighting and configurable operator settings.",
+    "desc": "The Golden air hockey is a new version of our bestseller indoor airhoockey.\n\nGolden table boasts a refined and elegant design that blends seamlessly with any interior. Its subtle color palette, paired with tasteful golden accents, gives it a timeless appeal that never goes out of style. This table is not only a source of entertainment but also a sophisticated addition to any game room or leisure space.\n\nSolid construction proven by over 20 years of experience. Modern software allowing you to easily personalize different settings.\n\nPlease note:\n\nThe lamp shown is an optional accessory - it is not sold as standard equipment.",
     "features": [
-      "Stainless perforated playfield",
-      "LED lighting in playfield and legs",
-      "Digital score display",
-      "260 W air pump"
+      "stainless perforated metal playfield",
+      "system of lighting LED in playfield",
+      "system of lighting LED in legs",
+      "digital score display in standard/LED lamp optional",
+      "polycarbonate barrier in the middle of playfield",
+      "air pump 260 W",
+      "power supply 230v/50Hz",
+      "power consumption 82 W (demo mode), 260 W (game mode)",
+      "accessories included: 4 mallets, 6 pucks, 100 tokens (if programmed for tokens)",
+      "Warranty: 12 months for enterprises, 24 months for consumers"
     ],
     "spec": [
       [
-        "6 ft",
-        "199 × 107 × 85 cm · 165 kg"
+        "Product: LxWxH // Weight",
+        "6ft: 199x107x85 cm // 165 kg"
       ],
       [
-        "8 ft",
-        "238 × 128 × 85 cm · 220 kg"
+        "Product: LxWxH // Weight",
+        "8ft: 238x128x85 cm // 220 kg"
       ],
       [
-        "Power",
-        "230 V / 50 Hz"
+        "Package: LxWxH // Weight",
+        "6ft: 204x115x49 cm // 165 kg"
+      ],
+      [
+        "Package: LxWxH // Weight",
+        "8ft: 243x138x54 cm // 220 kg"
       ]
     ],
     "options": [
-      "Ticket dispenser",
-      "Bill acceptor",
-      "Card reader",
-      "Optional LED lamp"
+      "optional - ticket dispenser, bill acceptor, card reader"
     ],
     "variants": [
       {
@@ -3362,37 +3309,48 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/air-hockey",
-    "image": "/assets/products/air-hockey-golden-golden.webp"
+    "image": "/assets/products/air-hockey-golden-golden.webp",
+    "sourceCopyStatus": "matched"
   },
   "air-hockey-arctic": {
     "name": "Air Hockey Arctic",
     "category": "distributed",
     "label": "DISTRIBUTED / AIR HOCKEY",
-    "desc": "Arctic is presented as a waterproof commercial air hockey table suitable for outdoor as well as indoor operation. It combines an illuminated playfield with digital scoring and configurable coin or cashless options.",
+    "desc": "AIR HOCKEY ARCTIC is a 100% waterproof device that can be used outdoors all year round, just like indoors. It is one of the most popular machines. Solid construction proven by over 20 years of experience. Modern software allows you to easily personalize different settings.",
     "features": [
-      "Waterproof outdoor/indoor concept",
-      "LED playfield and leg lighting",
-      "Digital score displays",
-      "260 W air pump"
+      "COMESTERO RM5 or NRI electronic coin acceptor",
+      "polycarbonate perforated playfield",
+      "polycarbonate top frame around the playfield with a lighting system",
+      "polycarbonate barrier on both sides and in the center of a playfield",
+      "LED lightning system in the playfield",
+      "LED lightning system in the legs",
+      "digital score display for each player",
+      "air pump 260 W",
+      "standard power supply 230v/50Hz",
+      "power consumption 60 W (demo mode), 390 W (game mode)",
+      "accessories included: 4 mallets, 6 pucks, 100 tokens (if token-programmed)",
+      "warranty: 12 months for enterprises, 24 months for consumers"
     ],
     "spec": [
       [
-        "6 ft",
-        "199 × 107 × 85 cm · 165 kg"
+        "Product: LxWxH // Weight",
+        "6ft: 199x107x85 cm // 165 kg"
       ],
       [
-        "8 ft",
-        "238 × 128 × 85 cm · 220 kg"
+        "Product: LxWxH // Weight",
+        "8ft: 238x128x85 cm // 220 kg"
       ],
       [
-        "Power",
-        "230 V / 50 Hz"
+        "Package: LxWxH // Weight",
+        "6ft: 204x115x49 cm // 165 kg"
+      ],
+      [
+        "Package: LxWxH // Weight",
+        "8ft: 243x138x54 cm // 220 kg"
       ]
     ],
     "options": [
-      "Ticket dispenser",
-      "Bill acceptor",
-      "Card reader"
+      "optional - ticket dispenser, bill acceptor, card reader"
     ],
     "variants": [
       {
@@ -3404,33 +3362,35 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/air-hockey",
-    "image": "/assets/products/air-hockey-arctic-arctic.webp"
+    "image": "/assets/products/air-hockey-arctic-arctic.webp",
+    "sourceCopyStatus": "matched"
   },
   "air-hockey-matrix": {
     "name": "Air Hockey Matrix",
     "category": "distributed",
     "label": "DISTRIBUTED / AIR HOCKEY",
-    "desc": "Matrix is a futuristic commercial air hockey table built around animated LED matrix displays. The displays communicate score events and game messages while a sound system and configurable operator settings add to the experience.",
+    "desc": "Check out our brand new airhockey Matrix! LED display isn't only there to look amazing - it also communicates game updates and events, showing 'SCORE!' when a goal is scored, and a commiserating 'OH NO!' when you concede a goal. Countdown timers at each end keep you informed of time left to play, and the whole display flexes, colour-shifts and pulsates in perfect sync with your game. Customisable operator settings allow you to configure the table exactly as you want it and the 260w air pump creates a cushion of air across the playfield for the fastest speeds.\n\nAir hockey has been around for a long time, with only rarely a major paradigm shift in design or functionality. Now the Matrix knocks the sector out of the park with its integrated LED displays and systems. If you're looking for a truly spectacular centrepiece for your venue - or even for your private games room - then take the red pill and enter the Matrix now!",
     "features": [
-      "Integrated LED matrix display",
-      "LED score and game-message updates",
-      "In-game sound system",
-      "Electronic coin acceptor with free-play option"
+      "Futuristic commercial air hockey table.",
+      "Suitable for amusement arcades, commercial venues & homes.",
+      "Unique LED matrix light display incorporating game commentary.",
+      "LED score displays and message updates.",
+      "Sound system with in-game audio.",
+      "Electronic coin acceptor included - freeplay game as an option.",
+      "Includes four pushers and six pucks.",
+      "Warranty: 12 months for enterprises, 24 months for consumers"
     ],
     "spec": [
       [
-        "8 ft",
-        "240 × 130 × 85 cm · 240 kg"
+        "Product: LxWxH // Weight",
+        "8ft: 240x130x85 cm // 240 kg"
       ],
       [
-        "Package",
-        "245 × 140 × 55 cm · 250 kg"
+        "Package: LxWxH // Weight",
+        "8ft: 245x140x55 cm // 250 kg"
       ]
     ],
-    "options": [
-      "Operator game settings",
-      "Free-play mode"
-    ],
+    "options": [],
     "variants": [
       {
         "name": "Matrix",
@@ -3441,37 +3401,39 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/air-hockey",
-    "image": "/assets/products/air-hockey-matrix-matrix.webp"
+    "image": "/assets/products/air-hockey-matrix-matrix.webp",
+    "sourceCopyStatus": "matched"
   },
   "basketball-compact": {
     "name": "Basketball Compact",
     "category": "distributed",
     "label": "DISTRIBUTED / BASKETBALL",
-    "desc": "A compact commercial basketball machine designed to pass through an 80 cm doorway, with adjustable height, moving basket, linking option and digital score, credit and record display.",
+    "desc": "New basketball machine from WIK, compact size allows pass through 80cm wide doorways. Customized height 248-310cm.",
     "features": [
-      "Compact transport-friendly format",
-      "Adjustable height from 248 to 310 cm",
-      "Moving basket and linking option",
-      "Five balls included"
+      "electronic coin acceptor COMESTERO RM5",
+      "construction made of metal and laminated polycarbonate",
+      "digital score, credit and record display",
+      "linking option",
+      "moving basket",
+      "5 balls included",
+      "easy moving system (6 wheels with blockade system)",
+      "easy and fast assembly",
+      "power supply 230V/50Hz",
+      "power consumption: 105 W (demo mode), 180 W (game mode)",
+      "warranty: 12 months"
     ],
     "spec": [
       [
-        "Product",
-        "243 × 109 × 248–310 cm"
+        "Product: LxWxH // Weight",
+        "243x109x248-310 cm // 350 kg"
       ],
       [
-        "Weight",
-        "350 kg"
-      ],
-      [
-        "Power",
-        "230 V / 50 Hz"
+        "Package: LxWxH // Weight",
+        "88x115x194 cm // 370 kg"
       ]
     ],
     "options": [
-      "Ticket dispenser",
-      "Bill acceptor",
-      "Card reader"
+      "optional: ticket dispenser, bill acceptor, card reader"
     ],
     "variants": [
       {
@@ -3483,37 +3445,39 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/basketball",
-    "image": "/assets/products/basketball-compact-compact.webp"
+    "image": "/assets/products/basketball-compact-compact.webp",
+    "sourceCopyStatus": "matched"
   },
   "basketball": {
     "name": "Basketball",
     "category": "distributed",
     "label": "DISTRIBUTED / BASKETBALL",
-    "desc": "A weatherproof basketball arcade machine for year-round outdoor or indoor use. Four difficulty levels, a moving-basket mode and linking support allow both individual and group competition.",
+    "desc": "Our weatherproof basketball arcade machines can be used outdoor all year round. The game has four levels of difficulty and comes with a set of five balls. Depending on the mode selected, the basket can be movable.\n\nIt is very easy to assemble and transport.\n\nBasketball is a game for all ages with both kids and adults loving this game. Players can play in a group and compete for the best score (linking option). It's a high quality long lasting machine. WIK is a leader in making the basketball arcade machines with years of experience. This is a crowd pleaser that never ceases to provide fun.",
     "features": [
-      "Weatherproof construction",
-      "Four difficulty levels",
-      "Moving-basket mode",
-      "Linking for competitive play"
+      "electronic coin acceptor COMESTERO RM5",
+      "construction made of metal and laminated polycarbonate",
+      "digital score, credit and record display",
+      "linking option",
+      "moving basket",
+      "5 balls included",
+      "easy moving system (6 wheels with blockade system)",
+      "east and fast assembly",
+      "power supply 230V/50Hz",
+      "power conumption: 105 W (demo mode), 180 W (game mode)",
+      "warranty: 12 months"
     ],
     "spec": [
       [
-        "Product",
-        "246 × 100 × 250/270 cm"
+        "Product: LxWxH // Weight",
+        "246x100x250/270 cm // 290 kg"
       ],
       [
-        "Weight",
-        "290 kg"
-      ],
-      [
-        "Power",
-        "230 V / 50 Hz"
+        "Package: LxWxH // Weight",
+        "115x134x160 cm // 290 kg"
       ]
     ],
     "options": [
-      "Ticket dispenser",
-      "Bill acceptor",
-      "Card reader"
+      "optional: ticket dispenser, bill acceptor, card reader"
     ],
     "variants": [
       {
@@ -3525,38 +3489,17 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/basketball",
-    "image": "/assets/products/basketball-standard.webp"
+    "image": "/assets/products/basketball-standard.webp",
+    "sourceCopyStatus": "matched"
   },
   "kids-basketball": {
     "name": "Kids Basketball",
     "category": "distributed",
     "label": "DISTRIBUTED / KIDS BASKETBALL",
-    "desc": "A smaller, colourful basketball machine designed for children. It is presented as weather-resistant, with four difficulty levels, a moving basket and a transport-friendly construction.",
-    "features": [
-      "Child-oriented height and styling",
-      "Weather-resistant construction",
-      "Four difficulty levels",
-      "Moving basket and five balls included"
-    ],
-    "spec": [
-      [
-        "Product",
-        "160 × 80 × 210 cm"
-      ],
-      [
-        "Weight",
-        "175 kg"
-      ],
-      [
-        "Power",
-        "230 V / 50 Hz"
-      ]
-    ],
-    "options": [
-      "Ticket dispenser",
-      "Bill acceptor",
-      "Card reader"
-    ],
+    "desc": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+    "features": [],
+    "spec": [],
+    "options": [],
     "variants": [
       {
         "name": "Kids",
@@ -3567,28 +3510,17 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/basketball",
-    "image": "/assets/products/kids-basketball-kids.webp"
+    "image": "/assets/products/kids-basketball-kids.webp",
+    "sourceCopyStatus": "no-description"
   },
   "kiddie-ride": {
     "name": "Kiddie Ride",
     "category": "distributed",
     "label": "DISTRIBUTED MACHINE",
-    "desc": "A children’s ride category currently listed in the Pro Games product range. Exact ride model, dimensions and commercial configuration should be confirmed for the selected unit before ordering.",
-    "features": [
-      "Children’s amusement category",
-      "Commercial venue use",
-      "Model-specific configuration",
-      "Details available from Pro Games sales"
-    ],
-    "spec": [
-      [
-        "Specifications",
-        "Confirm for the selected ride"
-      ]
-    ],
-    "options": [
-      "Ask about current available models"
-    ],
+    "desc": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+    "features": [],
+    "spec": [],
+    "options": [],
     "variants": [
       {
         "name": "Current range",
@@ -3599,28 +3531,17 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/",
-    "image": "/assets/products/kiddie-ride-current-range.webp"
+    "image": "/assets/products/kiddie-ride-current-range.webp",
+    "sourceCopyStatus": "no-description"
   },
   "cyberdart": {
     "name": "Cyberdart",
     "category": "distributed",
     "label": "DISTRIBUTED MACHINE",
-    "desc": "Cyberdart is listed in the current Pro Games range as a distributed entertainment machine. Final technical specification and available configuration should be confirmed with the sales team.",
-    "features": [
-      "Electronic darts entertainment format",
-      "Commercial venue category",
-      "Model-specific configuration",
-      "Details available from Pro Games sales"
-    ],
-    "spec": [
-      [
-        "Specifications",
-        "Confirm current configuration with Pro Games"
-      ]
-    ],
-    "options": [
-      "Ask about current model and payment setup"
-    ],
+    "desc": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+    "features": [],
+    "spec": [],
+    "options": [],
     "variants": [
       {
         "name": "Current model",
@@ -3631,66 +3552,449 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/",
-    "image": "/assets/products/cyberdart-current-model.webp"
+    "image": "/assets/products/cyberdart-current-model.webp",
+    "sourceCopyStatus": "no-description"
   }
 };
 
 window.PRODUCT_ES={
-'monster-3in1-ticket':{desc:'Una atracción tres en uno que combina Boxer, Kicker y Hammer en un solo mueble, con concepto preparado para tickets y centros de redemption. La iluminación LED y los sensores de fuerza hacen que la máquina destaque visualmente manteniendo tres retos distintos en una sola superficie.'},
-'monster-3in1':{desc:'Tres retos de fuerza en una sola máquina. Monster 3 in 1 combina boxeo, golpeo de balón y martillo con una presentación LED llamativa y medición precisa de la puntuación, ofreciendo a los operadores una atracción de alto impacto sin ocupar el espacio de tres máquinas independientes.'},
-'double-hit':{desc:'Double Hit combina dos retos de fuerza competitivos en un mueble compacto: punchball en la parte superior y objetivo de fútbol en la inferior. El formato ofrece dos formas de competir y permite añadir más juego en una superficie reducida.'},
-'double-hit-gift':{desc:'Atracción comercial de tres funciones que combina boxeo, golpeo de balón y premio en un solo mueble. La iluminación LED y la mecánica de recompensa aumentan el atractivo y favorecen la repetición de partidas.'},
-'double-hit-kids':{desc:'Versión de Double Hit adaptada a jugadores jóvenes, con reto de puñetazo y patada en un mueble más bajo y colorido. Está pensada para centros de ocio familiar y zonas infantiles.'},
-'double-hit-kids-gift':{desc:'La versión Kids Gift añade una función de premio al formato compacto de boxeo y patada. Sus gráficos coloridos, iluminación LED y juego con recompensa están orientados a centros de ocio familiar y zonas infantiles.'},
-'double-strike':{desc:'Double Strike 2 reúne boxeo y patada en un mueble comercial más ancho. Sus dos retos de fuerza, la presentación LED y los ajustes para operador están pensados para ubicaciones de entretenimiento con alta afluencia.'},
-'joker':{desc:'Joker es un boxer comercial Pro Games basado en la plataforma Standard. Su diseño gráfico aporta una identidad arcade atrevida al formato clásico de máquina de fuerza.'},
-'pow-boxer':{desc:'POW Boxer es un boxer comercial Pro Games basado en la plataforma Standard. Su gráfica inspirada en cómic aporta un carácter visual muy llamativo manteniendo la configuración de operador de la plataforma Standard.'},
-'champion':{desc:'Champion es un boxer comercial Pro Games basado en la plataforma Standard. Utiliza una estética inspirada en la competición alrededor del sistema de puntuación de fuerza Pro Games.'},
-'easy':{desc:'Easy es un boxer comercial Pro Games basado en la plataforma Standard. Presenta la experiencia de medición de fuerza con un diseño limpio y accesible para una amplia variedad de espacios de ocio.'},
-'cyber-punch':{desc:'Cyber Punch es un boxer comercial Pro Games basado en la plataforma Standard, con una estética tecnológica aplicada al chasis comercial de la marca.'},
-'gladiator':{desc:'Gladiator combina la plataforma Standard con una estética inspirada en el combate, diseñada para destacar visualmente en locales con mucha actividad.'},
-'mma':{desc:'MMA utiliza gráficos inspirados en deportes de combate sobre la arquitectura comercial Standard de Pro Games.'},
-'black-jack':{desc:'Black Jack aporta una estética de juego más oscura a la plataforma Standard de Pro Games, manteniendo la misma base comercial y configuración para operador.'},
-'super-hero':{desc:'Super Hero utiliza gráficos de personajes muy visibles para hacer que el formato Standard destaque especialmente en la sala de juegos.'},
-'power-black':{desc:'Power Black ofrece un acabado oscuro y de alto contraste para la plataforma Standard, especialmente adecuado para bares, clubes y espacios de entretenimiento modernos.'},
-'poison-squad':{desc:'Poison Squad combina gráficos enérgicos con la plataforma de boxeo Standard preparada para operación comercial.'},
-'hacker':{desc:'Hacker aplica una dirección visual digital y tecnológica al chasis comercial Standard de Pro Games.'},
-'strongman':{desc:'Strongman refuerza la idea clásica de prueba de fuerza mediante una gráfica potente sobre la plataforma Standard.'},
-'viking':{desc:'Viking combina arte temático con el formato Standard ajustable y preparado para diferentes sistemas de pago.'},
-'disco':{desc:'Disco aporta una estética orientada a la vida nocturna al boxer comercial Standard, especialmente adecuada para bares y clubes.'},
-'matte-airbrushed':{desc:'Colección actual de boxers Pro Games con acabados mate y aerografiados. Está orientada a locales que buscan una máquina más personalizada y centrada en el diseño.'},
-'boxer-combat':{desc:'Boxer Combat es una máquina premium de prueba de fuerza con un mueble moderno inspirado en el combate. Está diseñada para uso comercial repetido y puede configurarse con distintos sistemas de pago, niveles de dificultad y modo free play.'},
-'boxer-fist':{desc:'Boxer Fist está diseñado para la competición social. El concepto para tres jugadores, los controles iluminados y la presentación de puntuación lo hacen ideal para retos de grupo y juego cara a cara.'},
-'boxer-ring':{desc:'Boxer Ring es una máquina premium de fuerza de golpeo con una silueta inspirada en el ring y una fuerte presencia lumínica. Está pensada para operación profesional en arcades y centros de ocio.'},
-'boxer-combat-kids':{desc:'Versión infantil de Boxer Combat con mueble más bajo, gráficos brillantes y juego ajustable. Está destinada a centros de ocio familiar y zonas infantiles manteniendo el reto clásico de puntuación de boxeo.'},
-'boxer-kids':{desc:'Boxer compacto dimensionado para jugadores jóvenes. Sus temas coloridos, dificultad ajustable y modos de operación flexibles lo hacen adecuado para centros de ocio familiar y áreas de juego.'},
-'boxer-flash-gift':{desc:'Boxer Flash Gift añade una función de premio al formato Flash de alta visibilidad. La iluminación LED, la medición de fuerza y la mecánica de recompensa están diseñadas para aumentar la atracción y la repetición de partidas.'},
-'hammer':{desc:'Prueba de fuerza clásica con martillo en un mueble moderno y llamativo. Diseñada para parques de atracciones, arcades y centros de ocio familiar, con dificultad ajustable, free play y opción de tickets.'},
-'kicker':{desc:'Kicker mide la fuerza y precisión de un golpeo de fútbol. Está orientado tanto a jugadores jóvenes como adultos y funciona especialmente bien en arcades, sports bars, eventos y centros de ocio familiar.'},
-'boxer-flash':{desc:'Boxer premium de alta visibilidad basado en iluminación LED y una presentación arcade potente. Boxer Flash está diseñado para locales con alta afluencia donde la máquina debe atraer la atención desde lejos.'},
-'boxer-gift':{desc:'Boxer Gift combina el conocido reto de fuerza de golpeo con una función de premio. Está diseñado para uso intensivo y puede configurarse con diferentes sistemas de pago, niveles de dificultad y free play.'},
-'bouncy-castles-xs':{desc:'Gama de atracciones hinchables compactas para niños pequeños. La colección XS incluye diferentes temas, formas y combinaciones de color; algunos diseños incorporan tobogán o techo.'},
-'air-hockey-golden':{desc:'Golden es una mesa de air hockey comercial para interiores con diseño elegante de acentos dorados, superficie perforada de acero inoxidable, iluminación LED y ajustes configurables para operador.'},
-'air-hockey-arctic':{desc:'Arctic se presenta como una mesa de air hockey comercial resistente al agua, adecuada para uso exterior e interior. Combina pista iluminada, marcador digital y opciones de pago configurables.'},
-'air-hockey-matrix':{desc:'Matrix es una mesa de air hockey comercial de estética futurista basada en pantallas LED matriciales animadas. Las pantallas comunican eventos y mensajes de juego, acompañadas por sonido y ajustes configurables.'},
-'basketball-compact':{desc:'Máquina de baloncesto comercial compacta diseñada para pasar por una puerta de 80 cm, con altura ajustable, canasta móvil, opción de conexión entre máquinas y marcadores digitales.'},
-'basketball':{desc:'Máquina arcade de baloncesto resistente a la intemperie para uso interior o exterior durante todo el año. Ofrece cuatro niveles de dificultad, modo de canasta móvil y conexión para competición individual o en grupo.'},
-'kids-basketball':{desc:'Máquina de baloncesto más pequeña y colorida diseñada para niños. Se presenta como resistente a la intemperie, con cuatro niveles de dificultad, canasta móvil y construcción pensada para el transporte.'},
-'kiddie-ride':{desc:'Categoría de atracciones infantiles incluida actualmente en la gama Pro Games. El modelo exacto, dimensiones y configuración comercial deben confirmarse para la unidad seleccionada antes del pedido.'},
-'cyberdart':{desc:'Cyberdart forma parte de la gama actual de máquinas distribuidas por Pro Games. La especificación técnica final y la configuración disponible deben confirmarse con el equipo comercial.'}
+  "monster-3in1-ticket": {
+    "desc": "Máquina recreativa 3 en 1: Boxer, Kicker y Hammer\n\nEsta innovadora máquina recreativa 3 en 1 combina tres populares juegos de fuerza en una unidad compacta: Boxer, Kicker y Hammer.\n\nLos jugadores pueden poner a prueba su fuerza eligiendo entre golpear con el puño, dar patadas o golpear con el martillo, todo integrado en una sola estructura resistente y llamativa.\n\nLa máquina presenta un diseño moderno con iluminación LED y sensores de alta calidad para una puntuación precisa\n\nIdeal para bares, centros de ocio y eventos, ofrece el máximo entretenimiento a la vez que ahorra espacio."
+  },
+  "monster-3in1": {
+    "desc": "Máquina recreativa 3 en 1: Boxer, Kicker y Hammer\n\nEsta innovadora máquina recreativa 3 en 1 combina tres populares juegos de fuerza en una unidad compacta: Boxer, Kicker y Hammer.\n\nLos jugadores pueden poner a prueba su fuerza eligiendo entre golpear con el puño, dar patadas o golpear con el martillo, todo integrado en una sola estructura resistente y llamativa.\n\nLa máquina presenta un diseño moderno con iluminación LED y sensores de alta calidad para una puntuación precisa\n\nIdeal para bares, centros de ocio y eventos, ofrece el máximo entretenimiento a la vez que ahorra espacio."
+  },
+  "double-hit": {
+    "desc": "Ofrece dos emocionantes retos en una máquina compacta con luces LED vibrantes que añaden atractivo. Pulsa el botón Start superior para liberar el saco de boxeo y poner a prueba tu fuerza, o el botón inferior para dar una patada al balón y demostrar tu habilidad. ¡El doble de acción en un solo juego!"
+  },
+  "double-hit-gift": {
+    "desc": "Esta versátil máquina ofrece tres emocionantes retos: boxeo, patadas y una función de premios, todo en un diseño compacto. Sus vibrantes luces LED añaden atractivo; los jugadores pueden demostrar fuerza y habilidad golpeando el saco o el balón y ganar premios especiales que aportan motivación y emoción. ¡El triple de acción en un solo juego!"
+  },
+  "double-hit-kids": {
+    "desc": "Esta máquina combina dos juegos emocionantes en uno: ¡boxeo y patadas! Diseñada para los jugadores más jóvenes, ofrece el doble de diversión en una sola unidad, ideal para locales familiares."
+  },
+  "double-hit-kids-gift": {
+    "desc": "Esta máquina combina tres juegos en uno: ¡boxeo, patadas y una función de premios! Diseñada para jugadores jóvenes, mantiene a los niños entretenidos con retos emocionantes y luces LED vibrantes, ideal para locales familiares."
+  },
+  "double-strike": {
+    "desc": "Ofrece dos emocionantes retos en una máquina compacta con luces LED vibrantes que añaden atractivo. Pulsa el botón Start superior para liberar el saco de boxeo y poner a prueba tu fuerza, o el botón inferior para dar una patada al balón y demostrar tu habilidad. ¡El doble de acción en un solo juego!"
+  },
+  "joker": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "pow-boxer": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "champion": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "easy": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "cyber-punch": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "gladiator": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "mma": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "black-jack": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "super-hero": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "power-black": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "poison-squad": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "hacker": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "strongman": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "viking": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "disco": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "matte-airbrushed": {
+    "desc": "Contacta con Pro Games para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+  },
+  "boxer-combat": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "boxer-fist": {
+    "desc": "MÁQUINA DE BOXEO MULTIJUGADOR\n\nBoxer Fist es nuestra nueva y emocionante máquina recreativa de boxeo multijugador, creada para entretener y desafiar a grupos en salones recreativos, centros de ocio familiar y otros locales de entretenimiento. Su iluminación LED llamativa, sus adhesivos modernos y su estructura robusta invitan a competir y repetir la partida."
+  },
+  "boxer-ring": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "boxer-combat-kids": {
+    "desc": "Kids Combat, una de las últimas incorporaciones a nuestra gama, ofrece una experiencia de boxeo emocionante y segura para jugadores jóvenes. Su diseño atrevido y sus funciones mejoradas lo hacen ideal para salones recreativos y locales familiares."
+  },
+  "boxer-kids": {
+    "desc": "Esta máquina está diseñada específicamente para jugadores jóvenes y ofrece una forma divertida y segura de disfrutar de la emoción del boxeo. Sus colores vivos y su juego atractivo son ideales para espacios familiares."
+  },
+  "boxer-flash-gift": {
+    "desc": "Boxer Flash Gift aporta un giro emocionante al combinar el reto clásico del boxeo con una función de premios. Con luces LED brillantes y un juego atractivo."
+  },
+  "hammer": {
+    "desc": "Es un juego clásico de fuerza que reta a los jugadores a golpear lo más fuerte posible. Ideal para parques de atracciones, salones recreativos y centros de ocio familiar, este juego atemporal ofrece diversión y competición y atrae al público con sus vibrantes luces LED."
+  },
+  "kicker": {
+    "desc": "Esta máquina ofrece un juego emocionante y dinámico para quienes quieren poner a prueba la fuerza y precisión de sus patadas. Ideal tanto para niños como para adultos, es una gran incorporación a salones recreativos, bares deportivos y centros de ocio familiar."
+  },
+  "boxer-flash": {
+    "desc": "Contacta con Pro Games para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+  },
+  "boxer-gift": {
+    "desc": "Boxer Gift aporta un giro emocionante al combinar el reto clásico del boxeo con una función de premios. Con luces LED brillantes y un juego atractivo."
+  },
+  "bouncy-castles-xs": {
+    "desc": "Pequeños castillos hinchables para niños\n\n¡Los hinchables Mini XS son una atracción fantástica para los invitados más pequeños de tu evento! Sus colores atraen al instante la atención de los niños y pronto se convierten en su lugar de juego favorito.\n\nLos niños saben que dentro les espera diversión sin límites. En el castillo compacto pueden saltar, jugar y gastar energía durante horas. Algunos de nuestros hinchables infantiles también incorporan toboganes.\n\n¡Nuestros pequeños castillos hinchables siempre triunfan entre los niños!"
+  },
+  "air-hockey-golden": {
+    "desc": "El air hockey Golden es una nueva versión de nuestro superventas para interiores.\n\nLa mesa Golden destaca por un diseño refinado y elegante que se integra en cualquier interior. Su paleta de colores sutil, combinada con elegantes detalles dorados, le aporta un atractivo atemporal que nunca pasa de moda. No solo es una fuente de entretenimiento, sino también un complemento sofisticado para cualquier sala de juegos o espacio de ocio.\n\nConstrucción sólida avalada por más de 20 años de experiencia. Software moderno que permite personalizar fácilmente distintos ajustes.\n\nAtención:\n\nLa lámpara mostrada es un accesorio opcional: no se vende como equipamiento de serie."
+  },
+  "air-hockey-arctic": {
+    "desc": "AIR HOCKEY ARCTIC es un dispositivo 100 % resistente al agua que puede utilizarse al aire libre durante todo el año, igual que en interiores. Es una de las máquinas más populares. Construcción sólida avalada por más de 20 años de experiencia. Su software moderno permite personalizar fácilmente distintos ajustes."
+  },
+  "air-hockey-matrix": {
+    "desc": "¡Descubre nuestro nuevo air hockey Matrix! La pantalla LED no solo tiene un aspecto espectacular: también comunica novedades y eventos de la partida, mostrando «SCORE!» cuando marcas y un solidario «OH NO!» cuando recibes un gol. Los temporizadores en cada extremo indican el tiempo restante, mientras toda la pantalla cambia de forma y color y pulsa en perfecta sincronía con el juego. Los ajustes personalizables del operador permiten configurar la mesa a tu gusto, y la bomba de aire de 260 W crea un colchón de aire sobre el campo para alcanzar las máximas velocidades.\n\nEl air hockey existe desde hace mucho tiempo y rara vez se producen grandes cambios de diseño o funcionalidad. Ahora Matrix revoluciona el sector con sus pantallas y sistemas LED integrados. Si buscas una atracción central realmente espectacular para tu local, o incluso para tu sala de juegos privada, ¡toma la pastilla roja y entra en Matrix ahora!"
+  },
+  "basketball-compact": {
+    "desc": "Nueva máquina de baloncesto de WIK; su tamaño compacto permite pasar por puertas de 80 cm de ancho. Altura adaptable de 248 a 310 cm."
+  },
+  "basketball": {
+    "desc": "Nuestras máquinas recreativas de baloncesto resistentes a la intemperie pueden utilizarse al aire libre durante todo el año. El juego tiene cuatro niveles de dificultad e incluye cinco balones. Según el modo seleccionado, la canasta puede moverse.\n\nEl montaje y el transporte son muy sencillos.\n\nEl baloncesto es un juego para todas las edades que encanta tanto a niños como a adultos. Los jugadores pueden jugar en grupo y competir por la mejor puntuación mediante la opción de conexión. Es una máquina duradera de alta calidad. WIK es líder en la fabricación de máquinas recreativas de baloncesto, con años de experiencia. Una atracción que gusta al público y no deja de ofrecer diversión."
+  },
+  "kids-basketball": {
+    "desc": "Contacta con Pro Games para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+  },
+  "kiddie-ride": {
+    "desc": "Contacta con Pro Games para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+  },
+  "cyberdart": {
+    "desc": "Contacta con Pro Games para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+  }
 };
 
 window.PG_ES={
- labels:{'3-IN-1 / TICKET':'3 EN 1 / TICKETS','3-IN-1':'3 EN 1','BOXER + KICKER':'BOXER + KICKER','BOXER + KICKER + PRIZE':'BOXER + KICKER + PREMIO','KIDS / BOXER + KICKER':'INFANTIL / BOXER + KICKER','KIDS / BOXER + KICKER + PRIZE':'INFANTIL / BOXER + KICKER + PREMIO','DOUBLE CHALLENGE':'DOBLE RETO','BOXER STANDARD':'BOXER STANDARD','MATTE / AIRBRUSHED':'MATE / AEROGRAFIADO','BOXER PREMIUM':'BOXER PREMIUM','MULTIPLAYER BOXER':'BOXER MULTIJUGADOR','PREMIUM KIDS':'PREMIUM INFANTIL','BOXER KIDS':'BOXER INFANTIL','BOXER PREMIUM / PRIZE':'BOXER PREMIUM / PREMIO','HAMMER':'MARTILLO','KICKER':'KICKER','BOXER / PRIZE':'BOXER / PREMIO','DISTRIBUTED / INFLATABLES':'DISTRIBUCIÓN / HINCHABLES','DISTRIBUTED / AIR HOCKEY':'DISTRIBUCIÓN / AIR HOCKEY','DISTRIBUTED / BASKETBALL':'DISTRIBUCIÓN / BALONCESTO','DISTRIBUTED / KIDS BASKETBALL':'DISTRIBUCIÓN / BALONCESTO INFANTIL','DISTRIBUTED MACHINE':'MÁQUINA DISTRIBUIDA'},
- specs:{'Height':'Altura','Width':'Anchura','Length':'Largo','Weight':'Peso','Configuration':'Configuración','Exact dimensions':'Dimensiones exactas','Typical standard category':'Categoría Standard típica','XS models':'Modelos XS','Power':'Potencia','Package':'Embalaje','Product':'Producto','Specifications':'Especificaciones'},
- features:{
- 'Boxer + Kicker + Hammer in one cabinet':'Boxer + Kicker + Hammer en un solo mueble','LED lighting and score sensors':'Iluminación LED y sensores de puntuación','Designed for repeated commercial use':'Diseñada para uso comercial intensivo','Ticket-ready concept for redemption venues':'Concepto preparado para tickets y centros redemption','Boxer + Kicker + Hammer gameplay':'Juego Boxer + Kicker + Hammer','Integrated LED lighting':'Iluminación LED integrada','High-quality score sensing':'Medición de puntuación de alta calidad','Suitable for bars, FECs, arcades and events':'Adecuada para bares, FEC, arcades y eventos','Boxing and kicking challenges in one machine':'Retos de boxeo y patada en una máquina','LED attraction lighting':'Iluminación LED de atracción','Adjustable difficulty and free-play modes':'Dificultad ajustable y modo free play','Payment-ready for bills, coins, cards or tokens depending on configuration':'Preparada para billetes, monedas, tarjetas o fichas según configuración','Boxing + kicking + prize feature':'Boxeo + patada + función de premio','High-visibility LED lighting':'Iluminación LED de alta visibilidad','Supports multiple payment configurations':'Compatible con múltiples configuraciones de pago','Two challenges: punch and kick':'Dos retos: puñetazo y patada','Child-oriented cabinet height and graphics':'Altura y gráficos adaptados a niños','LED lighting':'Iluminación LED','Punch + kick + prize gameplay':'Puñetazo + patada + juego con premio','Designed for younger players':'Diseñada para jugadores jóvenes','Flexible operator settings':'Ajustes flexibles para operador','Boxing and kicking in one attraction':'Boxeo y patada en una sola atracción','LED presentation':'Presentación LED','Adjustable difficulty and free-play mode':'Dificultad ajustable y modo free play','Commercial payment configuration':'Configuración de pago comercial','Commercial strength-test gameplay designed for high-traffic venues':'Juego comercial de prueba de fuerza para locales con alta afluencia','Adjustable difficulty settings and free-play mode':'Dificultad ajustable y modo free play','Supports flexible payment configurations for different markets':'Configuraciones de pago flexibles para distintos mercados','Operator-focused construction with service access and configurable lighting':'Construcción orientada al operador, acceso de servicio e iluminación configurable','Matte airbrushed cabinet finishes':'Acabados mate aerografiados','Multiple artwork variants shown by Pro Games':'Múltiples variantes gráficas mostradas por Pro Games','Commercial boxer platform':'Plataforma boxer comercial','Custom configuration available on request':'Configuración personalizada bajo pedido','Commercial punch-strength gameplay':'Juego comercial de fuerza de golpeo','Robust electronics and mechanics':'Electrónica y mecánica robustas','Multiple payment options depending on market':'Múltiples opciones de pago según mercado','Three-player competition concept':'Concepto de competición para tres jugadores','Integrated LED presentation':'Presentación LED integrada','Reinforced commercial construction':'Construcción comercial reforzada','Cashless-ready operator configuration':'Configuración preparada para pago cashless','Professional punch-strength gameplay':'Juego profesional de fuerza de golpeo','Distinctive Ring cabinet design':'Diseño distintivo de mueble Ring','Flexible operator payment options':'Opciones de pago flexibles para operador','Lower format for younger players':'Formato más bajo para jugadores jóvenes','Bright child-friendly graphics':'Gráficos luminosos adaptados a niños','Commercial payment configurations':'Configuraciones de pago comerciales','Child-oriented cabinet dimensions':'Dimensiones adaptadas a niños','Multiple artwork themes':'Múltiples temas gráficos','Flexible payment configuration':'Configuración de pago flexible','Punch-strength game with prize feature':'Juego de fuerza con función de premio','Classic hammer power challenge':'Reto clásico de fuerza con martillo','Ticket functionality available':'Función de tickets disponible','Kick-strength and accuracy challenge':'Reto de fuerza y precisión de patada','Suitable for a broad player age range':'Adecuado para un amplio rango de edades','Flexible payment setup':'Configuración de pago flexible','High-visibility LED presentation':'Presentación LED de alta visibilidad','Configurable payment systems':'Sistemas de pago configurables','Punch-strength gameplay with prize feature':'Juego de fuerza con función de premio','Commercial-duty construction':'Construcción para uso comercial','Compact format for younger children':'Formato compacto para niños pequeños','Multiple themes and artwork options':'Múltiples temas y opciones gráficas','Selected models include integrated slides':'Algunos modelos incluyen tobogán integrado','Designed for repeated event and leisure use':'Diseñada para uso repetido en eventos y ocio','Stainless perforated playfield':'Pista perforada de acero inoxidable','LED lighting in playfield and legs':'Iluminación LED en pista y patas','Digital score display':'Marcador digital','260 W air pump':'Bomba de aire de 260 W','Waterproof outdoor/indoor concept':'Concepto resistente al agua para exterior/interior','LED playfield and leg lighting':'Iluminación LED en pista y patas','Digital score displays':'Marcadores digitales','Integrated LED matrix display':'Pantalla LED matricial integrada','LED score and game-message updates':'Puntuación y mensajes de juego mediante LED','In-game sound system':'Sistema de sonido integrado','Electronic coin acceptor with free-play option':'Monedero electrónico con opción free play','Compact transport-friendly format':'Formato compacto y fácil de transportar','Adjustable height from 248 to 310 cm':'Altura ajustable de 248 a 310 cm','Moving basket and linking option':'Canasta móvil y opción de conexión','Five balls included':'Cinco balones incluidos','Weatherproof construction':'Construcción resistente a la intemperie','Four difficulty levels':'Cuatro niveles de dificultad','Moving-basket mode':'Modo de canasta móvil','Linking for competitive play':'Conexión para juego competitivo','Child-oriented height and styling':'Altura y estilo adaptados a niños','Weather-resistant construction':'Construcción resistente a la intemperie','Moving basket and five balls included':'Canasta móvil y cinco balones incluidos','Children’s amusement category':'Categoría de entretenimiento infantil','Commercial venue use':'Uso en espacios comerciales','Model-specific configuration':'Configuración específica según modelo','Details available from Pro Games sales':'Detalles disponibles con el equipo comercial Pro Games','Electronic darts entertainment format':'Formato de entretenimiento de dardos electrónicos','Commercial venue category':'Categoría para espacios comerciales'},
- options:{'Bill acceptor':'Aceptador de billetes','Nayax / cashless payment':'Nayax / pago cashless','Ticket dispenser':'Dispensador de tickets','Custom graphics and branding':'Gráficos y branding personalizados','Silent mode (advance order)':'Modo silencioso (pedido anticipado)','Card reader / cashless payment':'Lector de tarjetas / pago cashless','2 m power cable':'Cable de alimentación de 2 m','Protective cover':'Cubierta protectora','LED lighting variation':'Variación de iluminación LED','Custom artwork':'Diseño gráfico personalizado','Payment configuration':'Configuración de pago','LED configuration':'Configuración LED','Dino with Slide':'Dino con tobogán','Sea with Slide':'Mar con tobogán','Pirates with Slide':'Piratas con tobogán','Sea with Roof':'Mar con techo','Princess variants':'Variantes Princesa','Jungle variants':'Variantes Jungla','Card reader':'Lector de tarjetas','Optional LED lamp':'Lámpara LED opcional','Operator game settings':'Ajustes de juego para operador','Free-play mode':'Modo free play','Ask about current available models':'Consultar modelos disponibles','Ask about current model and payment setup':'Consultar modelo actual y sistema de pago'},
- colors:{'White':'Blanco','Orange':'Naranja','Yellow':'Amarillo','Green':'Verde','Blue':'Azul','Red':'Rojo','Black':'Negro','Brown':'Marrón','Graphite':'Grafito','Golden':'Dorado','Arctic':'Arctic','Matrix':'Matrix','Compact':'Compact','Standard':'Standard','Kids':'Infantil','Purple':'Morado','Silver':'Plata','Pink':'Rosa','Current range':'Gama actual','Current model':'Modelo actual','Dino with Slide':'Dino con tobogán','Sea with Slide':'Mar con tobogán','Pirates with Slide':'Piratas con tobogán','Sea with Roof':'Mar con techo'}
+  "labels": {
+    "3-IN-1 / TICKET": "3 EN 1 / TICKETS",
+    "3-IN-1": "3 EN 1",
+    "BOXER + KICKER": "BOXER + KICKER",
+    "BOXER + KICKER + PRIZE": "BOXER + KICKER + PREMIO",
+    "KIDS / BOXER + KICKER": "INFANTIL / BOXER + KICKER",
+    "KIDS / BOXER + KICKER + PRIZE": "INFANTIL / BOXER + KICKER + PREMIO",
+    "DOUBLE CHALLENGE": "DOBLE RETO",
+    "BOXER STANDARD": "BOXER STANDARD",
+    "MATTE / AIRBRUSHED": "MATE / AEROGRAFIADO",
+    "BOXER PREMIUM": "BOXER PREMIUM",
+    "MULTIPLAYER BOXER": "BOXER MULTIJUGADOR",
+    "PREMIUM KIDS": "PREMIUM INFANTIL",
+    "BOXER KIDS": "BOXER INFANTIL",
+    "BOXER PREMIUM / PRIZE": "BOXER PREMIUM / PREMIO",
+    "HAMMER": "MARTILLO",
+    "KICKER": "KICKER",
+    "BOXER / PRIZE": "BOXER / PREMIO",
+    "DISTRIBUTED / INFLATABLES": "DISTRIBUCIÓN / HINCHABLES",
+    "DISTRIBUTED / AIR HOCKEY": "DISTRIBUCIÓN / AIR HOCKEY",
+    "DISTRIBUTED / BASKETBALL": "DISTRIBUCIÓN / BALONCESTO",
+    "DISTRIBUTED / KIDS BASKETBALL": "DISTRIBUCIÓN / BALONCESTO INFANTIL",
+    "DISTRIBUTED MACHINE": "MÁQUINA DISTRIBUIDA"
+  },
+  "specs": {
+    "Height": "Altura",
+    "Width": "Anchura",
+    "Length": "Longitud",
+    "Weight": "Peso",
+    "Configuration": "Configuración",
+    "Exact dimensions": "Dimensiones exactas",
+    "Typical standard category": "Categoría Standard típica",
+    "XS models": "Modelos XS",
+    "Power": "Potencia",
+    "Package": "Embalaje",
+    "Product": "Producto",
+    "Specifications": "Especificaciones",
+    "230 cm / 91″": "230 cm / 91″",
+    "140 cm / 56″": "140 cm / 56″",
+    "250 kg / 552 lb": "250 kg / 552 lb",
+    "219 cm / 86″": "219 cm / 86″",
+    "85 cm / 34″": "85 cm / 34″",
+    "122 cm / 48″": "122 cm / 48″",
+    "175 kg / 386 lb": "175 kg / 386 lb",
+    "190 kg / 419 lb": "190 kg / 419 lb",
+    "186 Cm / 74″": "186 Cm / 74″",
+    "120 cm / 48″": "120 cm / 48″",
+    "182 Cm / 72″": "182 Cm / 72″",
+    "180 kg / 397 lb": "180 kg / 397 lb",
+    "142 cm / 56″": "142 cm / 56″",
+    "170 kg / 375 lb": "170 kg / 375 lb",
+    "72 cm / 28″": "72 cm / 28″",
+    "115 cm / 45″": "115 cm / 45″",
+    "121 kg / 265 lb": "121 kg / 265 lb",
+    "127 kg / 275 lb": "127 kg / 275 lb",
+    "70 cm / 28″": "70 cm / 28″",
+    "120 kg / 265 lb": "120 kg / 265 lb",
+    "100 kg / 221 lb": "100 kg / 221 lb",
+    "140 kg / 309 lb": "140 kg / 309 lb",
+    "225 Cm / 89″": "225 Cm / 89″",
+    "95 cm / 38″": "95 cm / 38″",
+    "125 kg / 276 lb": "125 kg / 276 lb",
+    "170 cm / 67″": "170 cm / 67″",
+    "133 cm / 52″": "133 cm / 52″",
+    "66 cm / 26″": "66 cm / 26″",
+    "Product: LxWxH // Weight": "Producto: largo × ancho × alto // peso",
+    "6ft: 199x107x85 cm // 165 kg": "6ft: 199x107x85 cm // 165 kg",
+    "8ft: 238x128x85 cm // 220 kg": "8ft: 238x128x85 cm // 220 kg",
+    "Package: LxWxH // Weight": "Embalaje: largo × ancho × alto // peso",
+    "6ft: 204x115x49 cm // 165 kg": "6ft: 204x115x49 cm // 165 kg",
+    "8ft: 243x138x54 cm // 220 kg": "8ft: 243x138x54 cm // 220 kg",
+    "8ft: 240x130x85 cm // 240 kg": "8ft: 240x130x85 cm // 240 kg",
+    "8ft: 245x140x55 cm // 250 kg": "8ft: 245x140x55 cm // 250 kg",
+    "243x109x248-310 cm // 350 kg": "243x109x248-310 cm // 350 kg",
+    "88x115x194 cm // 370 kg": "88x115x194 cm // 370 kg",
+    "246x100x250/270 cm // 290 kg": "246x100x250/270 cm // 290 kg",
+    "115x134x160 cm // 290 kg": "115x134x160 cm // 290 kg"
+  },
+  "features": {
+    "Boxer + Kicker + Hammer in one cabinet": "Boxer + Kicker + Hammer en un solo mueble",
+    "LED lighting and score sensors": "Iluminación LED y sensores de puntuación",
+    "Designed for repeated commercial use": "Diseñada para uso comercial intensivo",
+    "Ticket-ready concept for redemption venues": "Concepto preparado para tickets y centros redemption",
+    "Boxer + Kicker + Hammer gameplay": "Juego Boxer + Kicker + Hammer",
+    "Integrated LED lighting": "Iluminación LED integrada",
+    "High-quality score sensing": "Medición de puntuación de alta calidad",
+    "Suitable for bars, FECs, arcades and events": "Adecuada para bares, FEC, arcades y eventos",
+    "Boxing and kicking challenges in one machine": "Retos de boxeo y patada en una máquina",
+    "LED attraction lighting": "Iluminación LED de atracción",
+    "Adjustable difficulty and free-play modes": "Dificultad ajustable y modo free play",
+    "Payment-ready for bills, coins, cards or tokens depending on configuration": "Preparada para billetes, monedas, tarjetas o fichas según configuración",
+    "Boxing + kicking + prize feature": "Boxeo + patada + función de premio",
+    "High-visibility LED lighting": "Iluminación LED de alta visibilidad",
+    "Supports multiple payment configurations": "Compatible con múltiples configuraciones de pago",
+    "Two challenges: punch and kick": "Dos retos: puñetazo y patada",
+    "Child-oriented cabinet height and graphics": "Altura y gráficos adaptados a niños",
+    "LED lighting": "Iluminación LED",
+    "Punch + kick + prize gameplay": "Puñetazo + patada + juego con premio",
+    "Designed for younger players": "Diseñada para jugadores jóvenes",
+    "Flexible operator settings": "Ajustes flexibles para operador",
+    "Boxing and kicking in one attraction": "Boxeo y patada en una sola atracción",
+    "LED presentation": "Presentación LED",
+    "Adjustable difficulty and free-play mode": "Dificultad ajustable y modo free play",
+    "Commercial payment configuration": "Configuración de pago comercial",
+    "Commercial strength-test gameplay designed for high-traffic venues": "Juego comercial de prueba de fuerza para locales con alta afluencia",
+    "Adjustable difficulty settings and free-play mode": "Dificultad ajustable y modo free play",
+    "Supports flexible payment configurations for different markets": "Configuraciones de pago flexibles para distintos mercados",
+    "Operator-focused construction with service access and configurable lighting": "Construcción orientada al operador, acceso de servicio e iluminación configurable",
+    "Matte airbrushed cabinet finishes": "Acabados mate aerografiados",
+    "Multiple artwork variants shown by Pro Games": "Múltiples variantes gráficas mostradas por Pro Games",
+    "Commercial boxer platform": "Plataforma boxer comercial",
+    "Custom configuration available on request": "Configuración personalizada bajo pedido",
+    "Commercial punch-strength gameplay": "Juego comercial de fuerza de golpeo",
+    "Robust electronics and mechanics": "Electrónica y mecánica robustas",
+    "Multiple payment options depending on market": "Múltiples opciones de pago según mercado",
+    "Three-player competition concept": "Concepto de competición para tres jugadores",
+    "Integrated LED presentation": "Presentación LED integrada",
+    "Reinforced commercial construction": "Construcción comercial reforzada",
+    "Cashless-ready operator configuration": "Configuración preparada para pago cashless",
+    "Professional punch-strength gameplay": "Juego profesional de fuerza de golpeo",
+    "Distinctive Ring cabinet design": "Diseño distintivo de mueble Ring",
+    "Flexible operator payment options": "Opciones de pago flexibles para operador",
+    "Lower format for younger players": "Formato más bajo para jugadores jóvenes",
+    "Bright child-friendly graphics": "Gráficos luminosos adaptados a niños",
+    "Commercial payment configurations": "Configuraciones de pago comerciales",
+    "Child-oriented cabinet dimensions": "Dimensiones adaptadas a niños",
+    "Multiple artwork themes": "Múltiples temas gráficos",
+    "Flexible payment configuration": "Configuración de pago flexible",
+    "Punch-strength game with prize feature": "Juego de fuerza con función de premio",
+    "Classic hammer power challenge": "Reto clásico de fuerza con martillo",
+    "Ticket functionality available": "Función de tickets disponible",
+    "Kick-strength and accuracy challenge": "Reto de fuerza y precisión de patada",
+    "Suitable for a broad player age range": "Adecuado para un amplio rango de edades",
+    "Flexible payment setup": "Configuración de pago flexible",
+    "High-visibility LED presentation": "Presentación LED de alta visibilidad",
+    "Configurable payment systems": "Sistemas de pago configurables",
+    "Punch-strength gameplay with prize feature": "Juego de fuerza con función de premio",
+    "Commercial-duty construction": "Construcción para uso comercial",
+    "Compact format for younger children": "Formato compacto para niños pequeños",
+    "Multiple themes and artwork options": "Múltiples temas y opciones gráficas",
+    "Selected models include integrated slides": "Algunos modelos incluyen tobogán integrado",
+    "Designed for repeated event and leisure use": "Diseñada para uso repetido en eventos y ocio",
+    "Stainless perforated playfield": "Pista perforada de acero inoxidable",
+    "LED lighting in playfield and legs": "Iluminación LED en pista y patas",
+    "Digital score display": "Marcador digital",
+    "260 W air pump": "Bomba de aire de 260 W",
+    "Waterproof outdoor/indoor concept": "Concepto resistente al agua para exterior/interior",
+    "LED playfield and leg lighting": "Iluminación LED en pista y patas",
+    "Digital score displays": "Marcadores digitales",
+    "Integrated LED matrix display": "Pantalla LED matricial integrada",
+    "LED score and game-message updates": "Puntuación y mensajes de juego mediante LED",
+    "In-game sound system": "Sistema de sonido integrado",
+    "Electronic coin acceptor with free-play option": "Monedero electrónico con opción free play",
+    "Compact transport-friendly format": "Formato compacto y fácil de transportar",
+    "Adjustable height from 248 to 310 cm": "Altura ajustable de 248 a 310 cm",
+    "Moving basket and linking option": "Canasta móvil y opción de conexión",
+    "Five balls included": "Cinco balones incluidos",
+    "Weatherproof construction": "Construcción resistente a la intemperie",
+    "Four difficulty levels": "Cuatro niveles de dificultad",
+    "Moving-basket mode": "Modo de canasta móvil",
+    "Linking for competitive play": "Conexión para juego competitivo",
+    "Child-oriented height and styling": "Altura y estilo adaptados a niños",
+    "Weather-resistant construction": "Construcción resistente a la intemperie",
+    "Moving basket and five balls included": "Canasta móvil y cinco balones incluidos",
+    "Children’s amusement category": "Categoría de entretenimiento infantil",
+    "Commercial venue use": "Uso en espacios comerciales",
+    "Model-specific configuration": "Configuración específica según modelo",
+    "Details available from Pro Games sales": "Detalles disponibles con el equipo comercial Pro Games",
+    "Electronic darts entertainment format": "Formato de entretenimiento de dardos electrónicos",
+    "Commercial venue category": "Categoría para espacios comerciales",
+    "Built for heavy use, the 3-in-1 Boxer/Kicker/Hammer guarantees fun, competition, and excitement for players of all ages.": "Diseñado para un uso intensivo, el Boxer/Kicker/Hammer 3 en 1 garantiza diversión, competición y emoción a jugadores de todas las edades.",
+    "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.": "Juego emocionante: Cautiva a los jugadores con retos que ponen a prueba su fuerza, manteniendo su interés y animándolos a volver para seguir divirtiéndose.",
+    "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.": "Durabilidad y comodidad incomparables: Electrónica de primera calidad y mecánica resistente, ideales para locales con mucho tráfico. Además, acepta billetes, monedas, tarjetas y fichas para facilitar los pagos.",
+    "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue.": "Aumenta tus beneficios: Ajustes de dificultad y modos de juego gratuito para aumentar la participación y los ingresos.",
+    "2-in-1 Action: Combines boxing and kicking games for double the excitement.": "Acción 2 en 1: Combina boxeo y patadas para duplicar la emoción.",
+    "Kid-Friendly Design: Tailored for children with a safe and easy-to-use layout.": "Diseño para niños: Una distribución segura y fácil de usar, adaptada a los más pequeños.",
+    "Bright LED Lights: Eye-catching lights make gameplay even more fun.": "Luces LED brillantes: Una iluminación llamativa que hace el juego aún más divertido.",
+    "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.": "Opciones de pago flexibles: Admite billetes, monedas, tarjetas y fichas, por lo que se adapta a cualquier moneda.",
+    "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players.": "Modo de juego ajustable: Configura distintos niveles o el modo gratuito según la edad y habilidad de los jugadores.",
+    "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.": "Acción 3 en 1: Boxeo, patadas y una opción de premios para añadir emoción.",
+    "Kid-Friendly Design: Safe, engaging and easy-to-use for children.": "Diseño para niños: Seguro, atractivo y fácil de usar para los pequeños.",
+    "Bright LED Lights: Colorful lights add to the fun and attraction.": "Luces LED brillantes: Las luces de colores añaden diversión y atractivo.",
+    "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.": "Hecha para durar: Electrónica y mecánica robustas, ideales para locales con mucho tráfico que buscan un funcionamiento fiable.",
+    "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.": "Múltiples opciones de pago: Admite billetes, monedas, tarjetas y fichas, adaptándose a cualquier moneda.",
+    "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits.": "Aumento de ingresos: Niveles de dificultad ajustables y modo gratuito para atraer a distintos públicos y maximizar los beneficios.",
+    "Multiplayer Ready: Supports group challenges and head-to-head punching competitions. Perfect for friends, events, and team contests.": "Preparada para multijugador: Admite retos en grupo y competiciones de golpes cara a cara. Ideal para amigos, eventos y torneos por equipos.",
+    "Full LED Integration: Illuminated edges, buttons, and scoring panel to maximize visibility and energy.": "Integración LED completa: Bordes, botones y panel de puntuación iluminados para maximizar la visibilidad y la energía.",
+    "Heavy-Duty Frame: Reinforced body and impact-resistant build for long-term durability.": "Estructura de alta resistencia: Cuerpo reforzado y construcción resistente a impactos para una durabilidad prolongada.",
+    "Operator-Friendly: Reliable electronics, easy maintenance access, and cashless-ready setup.": "Facilidad para el operador: Electrónica fiable, acceso sencillo para mantenimiento y preparación para pagos sin efectivo.",
+    "Brand new Design: Fresh, engaging look tailored for kids.": "Diseño completamente nuevo: Una imagen fresca y atractiva adaptada a los niños.",
+    "Safe and fun Gameplay: Perfect for younger players to safely enjoy the excitement of boxing.": "Juego seguro y divertido: Ideal para que los jugadores jóvenes disfruten con seguridad de la emoción del boxeo.",
+    "Kid-Friendly Design: A smaller size and layout specifically made for children to enjoy.": "Diseño para niños: Tamaño reducido y distribución concebidos específicamente para que disfruten los pequeños.",
+    "Strength Challenge + Prizes: Players punch the bag, score high, and win special prizes.": "Reto de fuerza y premios: Los jugadores golpean el saco, consiguen puntuaciones altas y ganan premios especiales.",
+    "Flexible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens suitable for any currency.": "Opciones de pago flexibles: Admite billetes, monedas, tarjetas y fichas, adaptándose a cualquier moneda.",
+    "Power Strike Challenge: Swing the hammer and see how high you can score.": "Reto de golpe potente: Balancea el martillo y descubre qué puntuación puedes alcanzar.",
+    "Bright LED Lights: Eye-catching lights that enhance the excitement and attract attention.": "Luces LED brillantes: Una iluminación llamativa que aumenta la emoción y atrae la atención.",
+    "Ticket Option: Can be set to reward tickets, making it ideal for redemption venues.": "Opción de tickets: Puede configurarse para entregar tickets como premio, ideal para locales de juegos de canje.",
+    "Adjustable Difficulty & Free Play Mode: Suited for players of all ages and skill levels.": "Dificultad ajustable y modo gratuito: Para jugadores de todas las edades y niveles de habilidad.",
+    "Kick Challenge: Players kick the ball to score points, testing their power and precision.": "Reto de patadas: Los jugadores dan patadas al balón para sumar puntos y poner a prueba su fuerza y precisión.",
+    "Adjustable Difficulty & Free Play Mode: Customizable for different ages and skill levels.": "Dificultad ajustable y modo gratuito: Configurable para distintas edades y niveles de habilidad.",
+    "stainless perforated metal playfield": "Campo de juego de metal inoxidable perforado",
+    "system of lighting LED in playfield": "Sistema de iluminación LED en el campo de juego",
+    "system of lighting LED in legs": "Sistema de iluminación LED en las patas",
+    "digital score display in standard/LED lamp optional": "Marcador digital de serie / lámpara LED opcional",
+    "polycarbonate barrier in the middle of playfield": "Barrera de policarbonato en el centro del campo de juego",
+    "air pump 260 W": "Bomba de aire de 260 W",
+    "power supply 230v/50Hz": "Alimentación de 230 V / 50 Hz",
+    "power consumption 82 W (demo mode), 260 W (game mode)": "Consumo de 82 W (modo demostración), 260 W (modo de juego)",
+    "accessories included: 4 mallets, 6 pucks, 100 tokens (if programmed for tokens)": "Accesorios incluidos: 4 mazos, 6 discos y 100 fichas (si se programa para fichas)",
+    "Warranty: 12 months for enterprises, 24 months for consumers": "Garantía: 12 meses para empresas y 24 meses para consumidores",
+    "COMESTERO RM5 or NRI electronic coin acceptor": "Monedero electrónico COMESTERO RM5 o NRI",
+    "polycarbonate perforated playfield": "Campo de juego de policarbonato perforado",
+    "polycarbonate top frame around the playfield with a lighting system": "Marco superior de policarbonato alrededor del campo de juego con sistema de iluminación",
+    "polycarbonate barrier on both sides and in the center of a playfield": "Barrera de policarbonato en ambos lados y en el centro del campo de juego",
+    "LED lightning system in the playfield": "Sistema de iluminación LED en el campo de juego",
+    "LED lightning system in the legs": "Sistema de iluminación LED en las patas",
+    "digital score display for each player": "Marcador digital para cada jugador",
+    "standard power supply 230v/50Hz": "Alimentación estándar de 230 V / 50 Hz",
+    "power consumption 60 W (demo mode), 390 W (game mode)": "Consumo de 60 W (modo demostración), 390 W (modo de juego)",
+    "accessories included: 4 mallets, 6 pucks, 100 tokens (if token-programmed)": "Accesorios incluidos: 4 mazos, 6 discos y 100 fichas (si se programa para fichas)",
+    "warranty: 12 months for enterprises, 24 months for consumers": "Garantía: 12 meses para empresas y 24 meses para consumidores",
+    "Futuristic commercial air hockey table.": "Mesa de air hockey comercial futurista.",
+    "Suitable for amusement arcades, commercial venues & homes.": "Apta para salones recreativos, locales comerciales y hogares.",
+    "Unique LED matrix light display incorporating game commentary.": "Pantalla de matriz LED exclusiva con comentarios de la partida.",
+    "LED score displays and message updates.": "Marcadores LED y mensajes de actualización.",
+    "Sound system with in-game audio.": "Sistema de sonido con audio durante el juego.",
+    "Electronic coin acceptor included - freeplay game as an option.": "Monedero electrónico incluido; modo gratuito como opción.",
+    "Includes four pushers and six pucks.": "Incluye cuatro mazos y seis discos.",
+    "electronic coin acceptor COMESTERO RM5": "Monedero electrónico COMESTERO RM5",
+    "construction made of metal and laminated polycarbonate": "Construcción de metal y policarbonato laminado",
+    "digital score, credit and record display": "Pantalla digital de puntuación, créditos y récord",
+    "linking option": "Opción de conexión entre máquinas",
+    "moving basket": "Canasta móvil",
+    "5 balls included": "5 balones incluidos",
+    "easy moving system (6 wheels with blockade system)": "Sistema de transporte fácil (6 ruedas con bloqueo)",
+    "easy and fast assembly": "Montaje fácil y rápido",
+    "power supply 230V/50Hz": "Alimentación de 230 V / 50 Hz",
+    "power consumption: 105 W (demo mode), 180 W (game mode)": "Consumo: 105 W (modo demostración), 180 W (modo de juego)",
+    "warranty: 12 months": "Garantía: 12 meses",
+    "east and fast assembly": "Montaje fácil y rápido",
+    "power conumption: 105 W (demo mode), 180 W (game mode)": "Consumo: 105 W (modo demostración), 180 W (modo de juego)"
+  },
+  "options": {
+    "Bill acceptor": "Aceptador de billetes",
+    "Nayax / cashless payment": "Nayax / pago cashless",
+    "Ticket dispenser": "Dispensador de tickets",
+    "Custom graphics and branding": "Gráficos y branding personalizados",
+    "Silent mode (advance order)": "Modo silencioso (pedido anticipado)",
+    "Card reader / cashless payment": "Lector de tarjetas / pago cashless",
+    "2 m power cable": "Cable de alimentación de 2 m",
+    "Protective cover": "Cubierta protectora",
+    "LED lighting variation": "Variación de iluminación LED",
+    "Custom artwork": "Diseño gráfico personalizado",
+    "Payment configuration": "Configuración de pago",
+    "LED configuration": "Configuración LED",
+    "Dino with Slide": "Dino con tobogán",
+    "Sea with Slide": "Mar con tobogán",
+    "Pirates with Slide": "Piratas con tobogán",
+    "Sea with Roof": "Mar con techo",
+    "Princess variants": "Variantes Princesa",
+    "Jungle variants": "Variantes Jungla",
+    "Card reader": "Lector de tarjetas",
+    "Optional LED lamp": "Lámpara LED opcional",
+    "Operator game settings": "Ajustes de juego para operador",
+    "Free-play mode": "Modo free play",
+    "Ask about current available models": "Consultar modelos disponibles",
+    "Ask about current model and payment setup": "Consultar modelo actual y sistema de pago",
+    "Bill acceptor.": "Aceptador de billetes.",
+    "Nayax device.": "Dispositivo Nayax.",
+    "Ticket dispenser.": "Dispensador de tickets.",
+    "Custom sticker and branding (Advance orders).": "Adhesivos y personalización de marca (pedido con antelación).",
+    "Silent mode (Advance orders).": "Modo silencioso (pedido con antelación).",
+    "Card reader.": "Lector de tarjetas.",
+    "2 meter power cable.": "Cable de alimentación de 2 metros.",
+    "Protective cover.": "Funda protectora.",
+    "Custom sticker and branding.": "Adhesivos y personalización de marca.",
+    "LED lighting variation available.": "Variante de iluminación LED disponible.",
+    "optional - ticket dispenser, bill acceptor, card reader": "Opcional: dispensador de tickets, aceptador de billetes y lector de tarjetas",
+    "optional: ticket dispenser, bill acceptor, card reader": "Opcional: dispensador de tickets, aceptador de billetes y lector de tarjetas"
+  },
+  "colors": {
+    "White": "Blanco",
+    "Orange": "Naranja",
+    "Yellow": "Amarillo",
+    "Green": "Verde",
+    "Blue": "Azul",
+    "Red": "Rojo",
+    "Black": "Negro",
+    "Brown": "Marrón",
+    "Graphite": "Grafito",
+    "Golden": "Dorado",
+    "Arctic": "Arctic",
+    "Matrix": "Matrix",
+    "Compact": "Compact",
+    "Standard": "Standard",
+    "Kids": "Infantil",
+    "Purple": "Morado",
+    "Silver": "Plata",
+    "Pink": "Rosa",
+    "Current range": "Gama actual",
+    "Current model": "Modelo actual",
+    "Dino with Slide": "Dino con tobogán",
+    "Sea with Slide": "Mar con tobogán",
+    "Pirates with Slide": "Piratas con tobogán",
+    "Sea with Roof": "Mar con techo"
+  }
 };
-/* === END PG LOCALIZATION === */
 
-// Navigation families are separate from individual machines and their colour variants.
 window.PRODUCT_COLLECTIONS={
   "boxer-standard": {
     "name": "Boxer Standard",

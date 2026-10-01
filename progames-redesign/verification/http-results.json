@@ -1,0 +1,7 @@
+{
+  "requests": 385,
+  "http200": 385,
+  "missingPage404": true,
+  "host": "local Python static server",
+  "productionRedirects": "not tested on deployed host"
+}

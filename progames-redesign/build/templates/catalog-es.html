@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Catálogos — Pro Games Poland</title>
+  <meta name="description" content="Consulta online el catálogo de máquinas y el catálogo de repuestos de Pro Games Poland o descarga los archivos PDF.">
+  <link rel="icon" href="/favicon.svg">
+  
+  
+  
+  <link rel="stylesheet" href="/styles.css">
+<link href="/assets/fonts/fonts.css" rel="stylesheet"><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript></head>
+<body class="catalog-page catalog-page-v2"><a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <header class="site-header compact">
+    <a class="brand" href="/" aria-label="Pro Games home"><span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span></a>
+    <nav class="desktop-nav"><a href="/es.html#machines">Productos</a><a href="/es.html#distributors">Distribuidores</a><a href="/es.html#contact">Contacto</a></nav>
+    <div class="language-switch header-language" aria-label="Language"><a href="/catalog.html">EN</a><a class="active" href="/catalog-es.html">ES</a></div><a class="btn btn-primary header-cta" href="/es.html#contact">Solicitar oferta</a>
+  </header>
+
+  <main id="main-content">
+    <section class="catalog-hero catalog-hero-v2">
+      <p class="kicker">CATÁLOGOS / VISOR ONLINE</p>
+      <h1>CATÁLOGOS<br><span>PRO GAMES.</span></h1>
+      <p>Elige el catálogo que necesitas. Consúltalo directamente en esta página o descarga el PDF para verlo sin conexión.</p>
+    </section>
+
+    <section class="catalog-center" aria-label="Pro Games catalogs">
+      <div class="catalog-choice-grid">
+        <button class="catalog-choice active" type="button" data-catalog="machines" aria-pressed="true">
+          <span class="catalog-choice-index">01</span>
+          <div class="catalog-choice-copy">
+            <small>MÁQUINAS / 40 PÁGINAS</small>
+            <h2>Catálogo de<br>máquinas</h2>
+            <p>Boxers, máquinas combo, modelos infantiles, Kicker, Hammer y una selección de productos distribuidos.</p>
+          </div>
+          <span class="catalog-choice-arrow">VER →</span>
+        </button>
+
+        <button class="catalog-choice" type="button" data-catalog="parts" aria-pressed="false">
+          <span class="catalog-choice-index">02</span>
+          <div class="catalog-choice-copy">
+            <small>REPUESTOS / 10 PÁGINAS</small>
+            <h2>Catálogo de<br>repuestos</h2>
+            <p>Punchballs, electrónica, mecanismos, displays, sensores, cables, piezas de plexiglás y componentes de servicio.</p>
+          </div>
+          <span class="catalog-choice-arrow">VER →</span>
+        </button>
+      </div>
+
+      <div class="catalog-viewer-shell">
+        <div class="catalog-viewer-head">
+          <div>
+            <p class="kicker" id="catalogEyebrow">CATÁLOGO DE MÁQUINAS</p>
+            <h2 id="catalogTitle">Máquinas Pro Games</h2>
+            <p id="catalogDescription">Consulta la gama completa de máquinas sin salir de la web.</p>
+          </div>
+          <div class="catalog-viewer-actions">
+            <a id="catalogOpen" class="btn btn-outline-dark" href="/assets/catalogs/pro-games-machines-catalog.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a>
+            <a id="catalogDownload" class="btn btn-primary" href="/assets/catalogs/pro-games-machines-catalog.pdf" download="">Descargar PDF</a>
+          </div>
+        </div>
+        <div class="pdf-frame pdf-frame-v2">
+          <iframe id="catalogFrame" title="Máquinas Pro Games Catalog" src="/assets/catalogs/pro-games-machines-catalog.pdf#view=FitH"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const catalogLangLinks=[...document.querySelectorAll('.language-switch a')];
+    const initialCatalogParam=new URLSearchParams(location.search).get('catalog')||'machines';
+    catalogLangLinks.forEach(a=>{const base=a.getAttribute('href').split('?')[0];a.href=base+'?catalog='+encodeURIComponent(initialCatalogParam);});
+    const catalogs={
+      machines:{
+        eyebrow:'CATÁLOGO DE MÁQUINAS',
+        title:'Máquinas Pro Games',
+        description:'Consulta la gama completa de máquinas sin salir de la web.',
+        file:'/assets/catalogs/pro-games-machines-catalog.pdf',
+        frameTitle:'Máquinas Pro Games Catalog'
+      },
+      parts:{
+        eyebrow:'CATÁLOGO DE REPUESTOS',
+        title:'Repuestos Pro Games',
+        description:'Consulta repuestos y componentes de sustitución para máquinas Pro Games.',
+        file:'/assets/catalogs/pro-games-spare-parts-catalog.pdf',
+        frameTitle:'Pro Games Spare Parts Catalog'
+      }
+    };
+    const buttons=[...document.querySelectorAll('.catalog-choice')];
+    const frame=document.querySelector('#catalogFrame');
+    const title=document.querySelector('#catalogTitle');
+    const eyebrow=document.querySelector('#catalogEyebrow');
+    const description=document.querySelector('#catalogDescription');
+    const open=document.querySelector('#catalogOpen');
+    const download=document.querySelector('#catalogDownload');
+    function setCatalog(key,scroll=false){
+      key=Object.hasOwn(catalogs,key)?key:'machines';
+      const c=catalogs[key];
+      catalogLangLinks.forEach(a=>{a.href=a.getAttribute('href').split('?')[0]+'?catalog='+key;});
+      buttons.forEach(btn=>{const active=btn.dataset.catalog===key;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));});
+      eyebrow.textContent=c.eyebrow; title.textContent=c.title; description.textContent=c.description;
+      frame.src=c.file+'#view=FitH'; frame.title=c.frameTitle; open.href=c.file; download.href=c.file;
+      history.replaceState(null,'','?catalog='+key);
+      if(scroll) document.querySelector('.catalog-viewer-shell').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    buttons.forEach(btn=>btn.addEventListener('click',()=>setCatalog(btn.dataset.catalog,true)));
+    const initial=new URLSearchParams(location.search).get('catalog');
+    if(initial&&catalogs[initial]) setCatalog(initial,false);
+  </script>
+</body>
+</html>

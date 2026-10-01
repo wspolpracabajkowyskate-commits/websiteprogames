@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-10-01",
+  "productsReviewed": 42,
+  "sourceDescriptionsMatched": 37,
+  "missingSourceDescriptions": [
+    "matte-airbrushed",
+    "boxer-flash",
+    "kids-basketball",
+    "kiddie-ride",
+    "cyberdart"
+  ],
+  "localizedContentChecks": 1971,
+  "status": "PASS"
+}

@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://progames.pl/sitemap.xml
+Disallow: /build/
+Disallow: /verification/
+Sitemap: https://www.progamespoland.com/sitemap.xml

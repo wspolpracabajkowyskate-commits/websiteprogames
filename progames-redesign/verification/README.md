@@ -1,18 +1,20 @@
-# Verification
+# Weryfikacja v8
 
-Run from the site root. Install Node.js, then:
+Z katalogu głównego strony:
 
 ```sh
-npm install --no-save linkedom playwright
-node verification/test-dom.cjs
+npm install
+npm run build
+npm test
+```
+
+Testy DOM, plików i SEO przeszły: publication-results.json oraz trade-map-test-results.json. Lokalna kontrola HTTP: http-results.json. Manifest zasobów: asset-manifest.json.
+
+Opcjonalny test prawdziwej przeglądarki:
+
+```sh
 npx playwright install chromium
 python3 -m http.server 8000
 ```
 
-With the server running, in another terminal run:
-
-```sh
-node verification/test-browser.cjs
-```
-
-DOM tests passed in the delivered environment. Browser tests are provided but were not completed because the available browser runtime could not start and the cloud browser could not access localhost. Do not treat browser layout/mobile checks as passed. The test server must run on port 8000. Browser tests block Google Fonts to make checks independent of external networking.
+W drugim terminalu: `npm run test:browser`. Test blokuje zewnętrzne żądania i sprawdza strony, warianty oraz podstawowy układ. Przeglądarka dostępnego środowiska nie uruchomiła się, więc ten test NIE został zaliczony. Przed publikacją potrzebna jest również kontrola wizualna i ręczne przejście strony na komputerze i telefonie. Lokalny serwer Python nie stosuje reguł vercel.json; domeny i przekierowania wymagają osobnego sprawdzenia na hostingu.

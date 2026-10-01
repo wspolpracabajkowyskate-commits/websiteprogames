@@ -1,0 +1,14 @@
+{
+  "name": "progames-static-site",
+  "private": true,
+  "version": "9.0.0",
+  "scripts": {
+    "build": "node build/generate.cjs && node build/redirects.cjs",
+    "test": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
+    "test:browser": "node verification/test-browser.cjs"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.13",
+    "playwright": "^1.51.1"
+  }
+}

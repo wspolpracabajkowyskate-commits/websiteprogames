@@ -1,0 +1,1252 @@
+[
+  {
+    "path": "assets/hero-champion.webp",
+    "bytes": 296296,
+    "sha256": "6b254f8a348a102151b8944596f65b14b984a4bf6346216b151420a2723aac28"
+  },
+  {
+    "path": "assets/maps/world-outline.svg",
+    "bytes": 81805,
+    "sha256": "5c490f82b3e7e1917188a42de072c20326a963a062b85c50322eb92c9f4589cf"
+  },
+  {
+    "path": "assets/maps/LICENSE-world-atlas.txt",
+    "bytes": 959,
+    "sha256": "3ef6da94ae1408db34d45f1a9cab69e983a97cde9024b6d0a5165fd3d88b6d3c"
+  },
+  {
+    "path": "assets/fonts/manrope-600.woff",
+    "bytes": 41424,
+    "sha256": "b7cf21394bdcc88cbac7d0fe53317463a858245d1c09a4925f3073d1f9e42a13"
+  },
+  {
+    "path": "assets/fonts/manrope-500.woff",
+    "bytes": 41128,
+    "sha256": "7a3301ee887efff45e25682c0b3c7a88183d9c1c88e9d43f836f2607c0339124"
+  },
+  {
+    "path": "assets/fonts/inter-OFL.txt",
+    "bytes": 4377,
+    "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+  },
+  {
+    "path": "assets/fonts/inter-800.woff",
+    "bytes": 157780,
+    "sha256": "52e266944fd8a034be32d2a0da4bf64a95f7c7a6f8ebc44d6d081f4ca0c52f38"
+  },
+  {
+    "path": "assets/fonts/inter-700.woff",
+    "bytes": 157580,
+    "sha256": "e87a4716c6b922228164687a1e705b2e93c7e9960a31e8dff6010429d40d5d8f"
+  },
+  {
+    "path": "assets/fonts/inter-500.woff",
+    "bytes": 156508,
+    "sha256": "5a755890602ff8026acb16ccb5c31765684e3251772cd11710cdcac7df5adc6b"
+  },
+  {
+    "path": "assets/fonts/inter-400.woff",
+    "bytes": 152888,
+    "sha256": "ed853a9b68acc17fbacfbcf84a6d7e94416a5be729e614c19ef1c768f06853d6"
+  },
+  {
+    "path": "assets/fonts/manrope-400.woff",
+    "bytes": 41368,
+    "sha256": "91ba05bb1181dc463b94feea3391117ae733ce72d83d04b0c1585330b13a9483"
+  },
+  {
+    "path": "assets/fonts/manrope-800.woff",
+    "bytes": 40032,
+    "sha256": "efed43b6abb2e6604f84a1073e76ebd04bdda140e686e47fcd9ef7aa73cccba4"
+  },
+  {
+    "path": "assets/fonts/inter-600.woff",
+    "bytes": 157204,
+    "sha256": "aaff2507f2db3d84e65c9859433a5318aa725e820da101c96aad0f566a4a25bc"
+  },
+  {
+    "path": "assets/fonts/fonts.css",
+    "bytes": 1409,
+    "sha256": "3d051925b0703cee4c20d3f20cb37b4b45d510f3a7adca283cdd6bc1ca23a6bb"
+  },
+  {
+    "path": "assets/fonts/manrope-OFL.txt",
+    "bytes": 4387,
+    "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+  },
+  {
+    "path": "assets/fonts/manrope-700.woff",
+    "bytes": 41460,
+    "sha256": "9de29f0b59a342235d53f39163fa7ed0f077267f3b33638c6d17c863e85f43be"
+  },
+  {
+    "path": "assets/catalogs/pro-games-spare-parts-catalog.pdf",
+    "bytes": 2367943,
+    "sha256": "99fa5416e07d339639a46522dfa26627a892ab9bb4fd517b0c66d13a5d5c145f"
+  },
+  {
+    "path": "assets/catalogs/pro-games-machines-catalog.pdf",
+    "bytes": 10257320,
+    "sha256": "d68f5c5fac35596f6924e85b909f5cda6ba306c74996d8b4f00db591611d70f1"
+  },
+  {
+    "path": "assets/distributors/progames-espana.webp",
+    "bytes": 23754,
+    "sha256": "7a81c836a252f2f0ac8e7a3b80c00fa54fd2521740b005a9bce4637547a20a69"
+  },
+  {
+    "path": "assets/distributors/warehouse-of-games.webp",
+    "bytes": 7204,
+    "sha256": "e69a838f4f5603a7959c3b3077d3e8b753b5e988e0c9efd5967b4681312b53d1"
+  },
+  {
+    "path": "assets/distributors/jnc-sales.webp",
+    "bytes": 7728,
+    "sha256": "1cfd557579a4b7e9b52759ca89ad933ae056a472738a288ed9642fa3c065332d"
+  },
+  {
+    "path": "assets/distributors/uplay-america.webp",
+    "bytes": 10094,
+    "sha256": "1157a2cbee995db1bd02b682ba6220b3947ca0974774d8fac8897230ddbeb7b2"
+  },
+  {
+    "path": "assets/distributors/danskeautomater.webp",
+    "bytes": 14832,
+    "sha256": "ae25ee3e9b9de06b3aa97cefe5228dfe4416d45cfb61fd25cffec491e052a4be"
+  },
+  {
+    "path": "assets/distributors/vipa-eventmodule.webp",
+    "bytes": 9312,
+    "sha256": "b8bce219d55ce8d98e91f7e7ec2b9a00398736b2f18a22136fccb3be0d248b90"
+  },
+  {
+    "path": "assets/production/production-line.webp",
+    "bytes": 77824,
+    "sha256": "1d7f6eb66d5ba529c8db1b10ea9d8265aeabd242c43250dfc17117d5488f1d74"
+  },
+  {
+    "path": "assets/production/assembly.webp",
+    "bytes": 59028,
+    "sha256": "a7044940656cc2d50e557140b83a98dfaf3834406494d34f516b3f5398efc481"
+  },
+  {
+    "path": "assets/production/electronics.webp",
+    "bytes": 18830,
+    "sha256": "fd2d7611cd06eab775d2cb44b8407002bfba3d282c783114f73317cdae0766b8"
+  },
+  {
+    "path": "assets/production/testing.webp",
+    "bytes": 17394,
+    "sha256": "31c1bf25990c78a1f2c455def3e8701044c242b25cee231f14943473027ef947"
+  },
+  {
+    "path": "assets/products/monster-3in1-white.webp",
+    "bytes": 114500,
+    "sha256": "dbc023b9e439c614715a0701c2259a6d17bc8db301e61c7487d9e63a56c9997d"
+  },
+  {
+    "path": "assets/products/boxer-flash-gift-black.webp",
+    "bytes": 64928,
+    "sha256": "294aba3fcee3d9c5aca6f130a9db6a1c821053976748c65cae510720fd3f7c18"
+  },
+  {
+    "path": "assets/products/mma-yellow.webp",
+    "bytes": 78926,
+    "sha256": "2cf9036fc1169614d855d0f32bbe670de5b9b4d5b571b77448bff520e25d7a0b"
+  },
+  {
+    "path": "assets/products/easy-blue.webp",
+    "bytes": 82386,
+    "sha256": "01640f5e68e8eef7f18722a070b5cca9b5ded62a064521db7ee0e0223cba19a7"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-red.webp",
+    "bytes": 132860,
+    "sha256": "5fcf210e74d3c5607bcc30d810b36f7e2c6f0e0de45d6cb6b5e182b8aba24b82"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-pirates-with-roof.webp",
+    "bytes": 49764,
+    "sha256": "74ecc3ff7d48db5f3ca37132be059f8303a39eb8942c420ac1dfa773a2c65f03"
+  },
+  {
+    "path": "assets/products/double-strike-yellow.webp",
+    "bytes": 77456,
+    "sha256": "ee4b88cca709656163c455894dc7571ce396ea72b808b37fa32cb07c73b2d7a1"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-pirates-with-slide.webp",
+    "bytes": 33546,
+    "sha256": "65445ff9332b64a8148f965eda2d321dc0a7edb5469b8fe489b709b661642d62"
+  },
+  {
+    "path": "assets/products/poison-squad-black.webp",
+    "bytes": 75794,
+    "sha256": "2632fb6765435694c215d81102ce0a843e5a5f873467e474d1490bffeb8006b9"
+  },
+  {
+    "path": "assets/products/cyber-punch-blue.webp",
+    "bytes": 74306,
+    "sha256": "5371e337e078a78cf6cc9f56eab5f8b4f4615c3aea06c4b98e78a901412d3c20"
+  },
+  {
+    "path": "assets/products/power-black-white.webp",
+    "bytes": 84242,
+    "sha256": "419c291dd54eb3bc9848eb44055dcc51bdaead352684a5fb22823c6376d8597c"
+  },
+  {
+    "path": "assets/products/mma-red.webp",
+    "bytes": 78378,
+    "sha256": "c38391dea38a8013d01670bbea81d37d25ee63944b52466d673706aa20945d1a"
+  },
+  {
+    "path": "assets/products/disco-blue.webp",
+    "bytes": 85390,
+    "sha256": "2aab086d0f3a819beb3b6554e3d8c1193a8ebde2e36dcc4af96388faadda9943"
+  },
+  {
+    "path": "assets/products/pow-boxer-yellow.webp",
+    "bytes": 98186,
+    "sha256": "c5f24a8501c8e06a55bca6865a8033ddec24b11b66ca05fc217dcb8486365ba9"
+  },
+  {
+    "path": "assets/products/air-hockey-matrix-matrix.webp",
+    "bytes": 53150,
+    "sha256": "bb3359b0d708db6e1be2e26a926e2d5c6012cf75759f577f93ea710e23c39342"
+  },
+  {
+    "path": "assets/products/boxer-flash-white.webp",
+    "bytes": 42990,
+    "sha256": "e0566a12a6c7ef68608741e39316eafdae50e5527fa54fe7577fd0fa2a28f7cb"
+  },
+  {
+    "path": "assets/products/boxer-flash-gift-red.webp",
+    "bytes": 66322,
+    "sha256": "a25242feebaf24cfb5be3da61ee3718c5e921c377310d900429041299d3cba14"
+  },
+  {
+    "path": "assets/products/hacker-orange.webp",
+    "bytes": 77522,
+    "sha256": "0ea47618251168592624008bbe87fb171650fe3460a10676ef76145006b5bc1b"
+  },
+  {
+    "path": "assets/products/matte-airbrushed-standard-matte-black.webp",
+    "bytes": 64844,
+    "sha256": "5d835e5b693a6e4737bef147fbcf8447aaed6d0cfc6e4664efa8f62cdbd64b0c"
+  },
+  {
+    "path": "assets/products/double-hit-kids-blue.webp",
+    "bytes": 104548,
+    "sha256": "9e1d8c063b328b78a5b7ea767f025592d8b434be07619415b3383b7439dff7f0"
+  },
+  {
+    "path": "assets/products/boxer-combat-kids-red.webp",
+    "bytes": 74202,
+    "sha256": "1dcdd9012e7ce3f4ef4d6673fbc2c82968c74d20d2b927730057448b8902f2f0"
+  },
+  {
+    "path": "assets/products/double-hit-blue.webp",
+    "bytes": 83428,
+    "sha256": "df9a615b9c8e5484b153286fc0a6bfbefe0ecd3209696412b1979447c6c4c25a"
+  },
+  {
+    "path": "assets/products/hacker-yellow.webp",
+    "bytes": 76312,
+    "sha256": "b9127001354d6bb9c101f968865d48d7ae46e167d6560211c66aa66199e07cbe"
+  },
+  {
+    "path": "assets/products/double-hit-black.webp",
+    "bytes": 76526,
+    "sha256": "e7e59993869c8af9f9e5006bc0547f46db35479510a9bdbd5e4a8ecf1d0db436"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-01-yellow.webp",
+    "bytes": 90254,
+    "sha256": "bccbeda662b6d2a1d8d9b0422ab41beb3b1f737939ba43c31e95866819d66bb5"
+  },
+  {
+    "path": "assets/products/boxer-flash-gift-blue.webp",
+    "bytes": 65892,
+    "sha256": "686b84d893820262cffb0f415996555cf9af9dfbf39108224cce69f71a0a1eae"
+  },
+  {
+    "path": "assets/products/boxer-gift-orange.webp",
+    "bytes": 66868,
+    "sha256": "1ef47169625eee8ce2bd9626770d3a4c506446946ebbaa400efed0a3f3af506b"
+  },
+  {
+    "path": "assets/products/boxer-flash-gift-white.webp",
+    "bytes": 64690,
+    "sha256": "efdefb27b12288820adbc763ae560a4d85364a69fdbb64588f7f46b3af68a85d"
+  },
+  {
+    "path": "assets/products/hacker-black.webp",
+    "bytes": 73378,
+    "sha256": "b4f067419856de6381a5ee93dd8fa43f44fd7a44900807c1dd2f7d02073aefb1"
+  },
+  {
+    "path": "assets/products/joker-white.webp",
+    "bytes": 83494,
+    "sha256": "0132406fb0f72ea92b3db1a4936cd7319301579821f2f57e392d477128c83eda"
+  },
+  {
+    "path": "assets/products/double-hit-gift-blue.webp",
+    "bytes": 88474,
+    "sha256": "745337b22f680c318807047ee62932be2f8e93d8a3fec2692eed2e050124caa8"
+  },
+  {
+    "path": "assets/products/boxer-flash-red.webp",
+    "bytes": 42476,
+    "sha256": "b2cecefc6f68c55aed29f532041bc5b41502d12e977ea6cd0f515d21f1d869d2"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-jungle-with-slide.webp",
+    "bytes": 33606,
+    "sha256": "43c7ba92c94864819d9143b7e3737fd27ac895a20db6b79cc70f62772b6433c7"
+  },
+  {
+    "path": "assets/products/double-strike-black.webp",
+    "bytes": 65626,
+    "sha256": "e53264d4d2cabada39abaf8bdeb84fe55d4a5901eb8dddffc272e995c815ba93"
+  },
+  {
+    "path": "assets/products/joker-green.webp",
+    "bytes": 85512,
+    "sha256": "6563da89b48366f4a60047307b78bb00813ea7385899c4b60a5c917ec2c9148a"
+  },
+  {
+    "path": "assets/products/double-hit-kids-gift-blue.webp",
+    "bytes": 104348,
+    "sha256": "4a26eb4759eee565be327c954848d4c5b936837b6a872dc70e2f147298229aac"
+  },
+  {
+    "path": "assets/products/cyber-punch-black.webp",
+    "bytes": 68730,
+    "sha256": "cd92ee6148a7ae03a175af6919170b1775a2deb14391c9df9d61b7853deba5a2"
+  },
+  {
+    "path": "assets/products/kicker-red.webp",
+    "bytes": 86072,
+    "sha256": "9144b646e6f00774b851c7d11ab93477ecb16f5727e8b4c1efb5bb964ff92aa5"
+  },
+  {
+    "path": "assets/products/boxer-gift-white.webp",
+    "bytes": 65192,
+    "sha256": "a162f6817bbfc0e70a35178c9478d0e0fdfd943eddc41a3b84ab962142486b9e"
+  },
+  {
+    "path": "assets/products/joker-orange.webp",
+    "bytes": 86218,
+    "sha256": "ccfbad883f45e96f2b577f122c00a3c6ae42310dba19f572c55c23114d539fb9"
+  },
+  {
+    "path": "assets/products/double-strike-red.webp",
+    "bytes": 73794,
+    "sha256": "752e4e27c05aa95a12f43c8e52c96f364df28d606e0e2941b47a982b9c472b5e"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-jungle-with-roof.webp",
+    "bytes": 39200,
+    "sha256": "d1005600ab0882cf5dff94e691f5fbf2f76536e763d5b676b5e18e2a2b9378dc"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-02-yellow.webp",
+    "bytes": 74224,
+    "sha256": "2df09d17fe8319c2b57dae8c6a14de96214947c52067788a5a840f9b5eb84d7a"
+  },
+  {
+    "path": "assets/products/boxer-fist-white.webp",
+    "bytes": 69482,
+    "sha256": "14655a3bf2ef7be48a3e44219117905943ea0df651405d17a5facbeab236157c"
+  },
+  {
+    "path": "assets/products/air-hockey-arctic-arctic.webp",
+    "bytes": 32488,
+    "sha256": "33c01b47173e89e2b613c9f28553aca8e0e679c3b7215a84468942d6bf9b0374"
+  },
+  {
+    "path": "assets/products/double-hit-gift-black.webp",
+    "bytes": 81252,
+    "sha256": "6f273b922af036801bcdfe9925b266c4d98cce66db9cf2fd14d9f4ccd11edc14"
+  },
+  {
+    "path": "assets/products/double-hit-kids-gift-orange.webp",
+    "bytes": 100564,
+    "sha256": "080faba4e71c97c8f87b95037040b91abaf195d6c2027bb872292c96ec9ed1bb"
+  },
+  {
+    "path": "assets/products/gladiator-white.webp",
+    "bytes": 89444,
+    "sha256": "214baf26db87ed45e9eff9ae7380788c1fcf8919a37bcfd08c4f834daba6a683"
+  },
+  {
+    "path": "assets/products/boxer-combat-pow-blue.webp",
+    "bytes": 90502,
+    "sha256": "8ee84636dfad14ad66e344b3e6ec3677c5672339c127355c8928c2af3bee1e85"
+  },
+  {
+    "path": "assets/products/easy-red.webp",
+    "bytes": 82308,
+    "sha256": "265fefee98cb106d7bb127f9739a6ab739eacff37735298148d83cfd2e08be83"
+  },
+  {
+    "path": "assets/products/gladiator-red.webp",
+    "bytes": 88364,
+    "sha256": "d1ff7ea6101ee320bd0306378ea35c704e51fd3f2e3d4ac9cce069f3ab990bad"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-dino-with-slide.webp",
+    "bytes": 33914,
+    "sha256": "fee42ae05b9d2c181bf9e2c0d37f8f3d033febe22d95ed51a7a7f44983f262cb"
+  },
+  {
+    "path": "assets/products/cyber-punch-yellow.webp",
+    "bytes": 75324,
+    "sha256": "37a23c9cedc125deedc0506adca23b2a434b15a532a0905f3b27fe8043c04506"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-03-white.webp",
+    "bytes": 79894,
+    "sha256": "1b1571ce32702302aaa03a3de993b68444ebf327bad3765d700d8ef1f9c4d19c"
+  },
+  {
+    "path": "assets/products/hammer-blue.webp",
+    "bytes": 74496,
+    "sha256": "a00cd4396425596132245b28b8a67250586ce79d14ac44562a2384ac1760d449"
+  },
+  {
+    "path": "assets/products/basketball-compact-compact.webp",
+    "bytes": 168124,
+    "sha256": "bf885797c5f8509ee7095102b4893a6e6514f9254392a6ed85f9cc51e944b10f"
+  },
+  {
+    "path": "assets/products/cyber-punch-orange.webp",
+    "bytes": 75502,
+    "sha256": "ca72fd6552427941d2c4bcaa172e2d22fb92ab122fc25df91ca8f4e0f76387ad"
+  },
+  {
+    "path": "assets/products/double-strike-blue.webp",
+    "bytes": 72148,
+    "sha256": "16259e10ccae1e807e379e4bc23f9fcd69a86d0363344bfd2b29fb253ada4f70"
+  },
+  {
+    "path": "assets/products/kiddie-ride-current-range.webp",
+    "bytes": 101708,
+    "sha256": "6996a2d8180c8d6d76ce444375bdb1fe6fb4c872b907e92fb046d5c42394aeff"
+  },
+  {
+    "path": "assets/products/black-jack-white.webp",
+    "bytes": 73156,
+    "sha256": "368b8c85519702de348f4a660c06e430cc80d00f3fe45b51fecce6ca970c16a0"
+  },
+  {
+    "path": "assets/products/double-hit-orange.webp",
+    "bytes": 91008,
+    "sha256": "95a67634717978dab3e5ae1e39439c176ef1d6e3678a5459ea7cfb13fd72f7e7"
+  },
+  {
+    "path": "assets/products/super-hero-white.webp",
+    "bytes": 88236,
+    "sha256": "de86ad5ea120a290609d5b58ae30aafc84cb2aa7b61eb1f1fcd6b03f313e8fd8"
+  },
+  {
+    "path": "assets/products/strongman-orange.webp",
+    "bytes": 79036,
+    "sha256": "2d0e3d96956ccb36d3da38c9ac1f39d44b5addd49a01e43665ab8aeb3bf53292"
+  },
+  {
+    "path": "assets/products/cyber-punch-white.webp",
+    "bytes": 70844,
+    "sha256": "f36e6c5df56bef1c73faebb7d75d64bec669cd1e7f8a4ff6e4adc5bc783a7aa0"
+  },
+  {
+    "path": "assets/products/poison-squad-yellow.webp",
+    "bytes": 78014,
+    "sha256": "298703449b69a25a3af3ddef3b9e1de64e4ee1a88fbecca190555642aadf6fc0"
+  },
+  {
+    "path": "assets/products/monster-3in1-orange.webp",
+    "bytes": 119868,
+    "sha256": "c0059fe4892ecba4f538e630b57ebe2abe862820c62da861c4413f3786a2573f"
+  },
+  {
+    "path": "assets/products/strongman-red.webp",
+    "bytes": 78540,
+    "sha256": "0d52de6a6fb5b5b76bd0124c018a133e7aae627260c686523ba1e3308ca47929"
+  },
+  {
+    "path": "assets/products/double-hit-gift-red.webp",
+    "bytes": 87078,
+    "sha256": "c8293f90c14acad5543e1a44196f6c21080749af0bc65bff109e7d5b9833aad1"
+  },
+  {
+    "path": "assets/products/gladiator-yellow.webp",
+    "bytes": 90366,
+    "sha256": "c541f153cda1ca72f9fda00f2c76e3e8524afd60c3088fbc5b78e24ddd13c7fd"
+  },
+  {
+    "path": "assets/products/double-strike-white.webp",
+    "bytes": 71960,
+    "sha256": "a0f348ab4b5a30c9c39cd3111e2a19c081929248104c79c526d395ebd5f1cf23"
+  },
+  {
+    "path": "assets/products/boxer-combat-white.webp",
+    "bytes": 58278,
+    "sha256": "411ab4e923e752c66490642d2a917d3a7d40cc0e9d733aabf47d73f778e82674"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-02-blue.webp",
+    "bytes": 74984,
+    "sha256": "68fe3cbe9eaca2bd928a89cbb93d663e18115920d2e52c3b948ded338e730b44"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-03-yellow.webp",
+    "bytes": 80110,
+    "sha256": "6b458b8c10e2f34e82457eb16d4071c38868d077fe041d6694640279c5326834"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-02-black.webp",
+    "bytes": 72802,
+    "sha256": "e31f7c5046219e4a15bd49ca78d3e72e211157469483e1d3c4f04a65721f714b"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-green.webp",
+    "bytes": 150580,
+    "sha256": "11dba29ea8894eb4ab9fd39fe1c60cfa1cd23f2eccb1bea4be9815116c8581a5"
+  },
+  {
+    "path": "assets/products/viking-blue.webp",
+    "bytes": 98896,
+    "sha256": "0f7d71128a78b833590bb3ae890bf21a1131e931d4e9f9b07a1810ab58987cad"
+  },
+  {
+    "path": "assets/products/boxer-flash-gift-yellow.webp",
+    "bytes": 67136,
+    "sha256": "d39daaa1b58c55d871c37a40a7637a13da770e73fb2935467ff165fa5cd0574d"
+  },
+  {
+    "path": "assets/products/matte-airbrushed-combat-matte-black.webp",
+    "bytes": 54082,
+    "sha256": "355465594f886fa02d2f0af3a9f13216794e0d016f3a287276deedb4108db0c7"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-blue.webp",
+    "bytes": 150584,
+    "sha256": "03048f9dd349824bf715e2fc547e8a8b957608e4b6d0c4804c70172629f5fa71"
+  },
+  {
+    "path": "assets/products/boxer-fist-blue.webp",
+    "bytes": 66184,
+    "sha256": "ffafd30d01c00cb736731c6c422436bce683591a261d42e84fd1593ed8bb3ed4"
+  },
+  {
+    "path": "assets/products/super-hero-red.webp",
+    "bytes": 86678,
+    "sha256": "ae176ee898ddeed559b9caa02ee86b3ce1a72f65b5bf1099a6c8f73eed8c10f8"
+  },
+  {
+    "path": "assets/products/easy-black.webp",
+    "bytes": 80644,
+    "sha256": "922a25a3b7690333d1e9b85e63a200289847f3399b5bed38d3fbf64b83898ea6"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-03-blue.webp",
+    "bytes": 81002,
+    "sha256": "4d7050e0d195ad2c0f6202f687bb06e7f743f682e9105d28b4d429b05104acc2"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-sea-with-roof.webp",
+    "bytes": 37790,
+    "sha256": "d9bcf569b05d84089a56c31ee5d9e511f97493763ea411bc53d34e66afe7413b"
+  },
+  {
+    "path": "assets/products/strongman-blue.webp",
+    "bytes": 78396,
+    "sha256": "02adec6599326caeb0a51a79cfee6e0fa4131356c5c825fd9a4cbc4bc8074992"
+  },
+  {
+    "path": "assets/products/kicker-blue.webp",
+    "bytes": 86894,
+    "sha256": "0e353df372e06eecb97b83abafde06596c91ca1393aa5114439dc29c2ff220af"
+  },
+  {
+    "path": "assets/products/hacker-blue.webp",
+    "bytes": 75730,
+    "sha256": "93660aa8d4c818b14233c697b4d3f69230168aca1a036e2f237080573e2ac2d7"
+  },
+  {
+    "path": "assets/products/power-black-black.webp",
+    "bytes": 86158,
+    "sha256": "adbe850219cc49bfc5fbf2c20304be04598e169fe3b22e4fb99bdcbacd0b2d8e"
+  },
+  {
+    "path": "assets/products/joker-black.webp",
+    "bytes": 84586,
+    "sha256": "9d4b9615ab3b269a841e9fa51476624658ae01fb7dece7e9b6649ffaafa5ee04"
+  },
+  {
+    "path": "assets/products/basketball-standard.webp",
+    "bytes": 205830,
+    "sha256": "c0f4d481237d8e0adbb64711649a90d3b5988e26d7608fd980733bd66e21e7ba"
+  },
+  {
+    "path": "assets/products/poison-squad-white.webp",
+    "bytes": 74432,
+    "sha256": "0fdf138396e56648cc2d1d7d6ddd83cabd4add5005cecb11927ed25d18ba06a0"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-white.webp",
+    "bytes": 149042,
+    "sha256": "d17bc300a8aeb85f93db3b2fb711979dbd874919119e90b6635558644213863c"
+  },
+  {
+    "path": "assets/products/boxer-combat-kids-orange.webp",
+    "bytes": 81690,
+    "sha256": "969a3405547c318420c1860f378a34701d31bd0b5de6d15aa56ae4f450f7e68b"
+  },
+  {
+    "path": "assets/products/power-black-blue.webp",
+    "bytes": 86656,
+    "sha256": "1e31df62aa4e6e2d8b550b6c247eb81d005b0f0be81f1b703d648ced013c0fbe"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-princess-with-slide.webp",
+    "bytes": 38742,
+    "sha256": "3f75ce48e16dd4cd9f8a64777fd85c5c8db178a89aa03627b8f06f89b5501a3c"
+  },
+  {
+    "path": "assets/products/boxer-combat-kids-yellow.webp",
+    "bytes": 73056,
+    "sha256": "ab1ac91c49f50e7585a6d17b751e3f06a978372e1da2d0d3133481dacd785c2e"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-circus-with-slide.webp",
+    "bytes": 44206,
+    "sha256": "3bf1d5337109b6f55c4568d6a0032937a98c75d9e9e8bfcb31c39da796b8603b"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-03-black.webp",
+    "bytes": 76892,
+    "sha256": "04c51477625b484a6f977bb671efe8f05b3ad33d8c05e9dd19619a6393054902"
+  },
+  {
+    "path": "assets/products/double-hit-kids-gift-white.webp",
+    "bytes": 97588,
+    "sha256": "1c2c41c1348f76b42d5ad3887f3b04d981ca1c7a0e3659a2062836eb73f05917"
+  },
+  {
+    "path": "assets/products/disco-white.webp",
+    "bytes": 82452,
+    "sha256": "e5c7e880ea47f4c74c105fa39a4e3e3d7cc31ac827734223101647c7fbf26a3f"
+  },
+  {
+    "path": "assets/products/boxer-fist-orange.webp",
+    "bytes": 68074,
+    "sha256": "9e5b19e95ce2afb33e03655a40ceaf75589fcb2bf1da414a4aa70433473f7c76"
+  },
+  {
+    "path": "assets/products/matte-airbrushed-double-hit-matte-black.webp",
+    "bytes": 69246,
+    "sha256": "6c6ed7be7a07d8cc3c14ca8fde499e1432c4d7a0ba1660aeea49fe8fab354e24"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-02-red.webp",
+    "bytes": 75498,
+    "sha256": "0c373bb13c59b0b115d0d57087fce622f30ba0aee1a370be41358a561b5d38ed"
+  },
+  {
+    "path": "assets/products/boxer-ring-red.webp",
+    "bytes": 71724,
+    "sha256": "de9212fd9c0e2f3418b8651cc2aef40713be3b982703e117908bc9ed5ff647eb"
+  },
+  {
+    "path": "assets/products/easy-orange.webp",
+    "bytes": 82848,
+    "sha256": "de76e6da5da7ea7b14a660cbebf5762d7759119129138df9533ba3b29c84ac8a"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-yellow.webp",
+    "bytes": 151868,
+    "sha256": "0b58316384bfa503ada8d58a6338822b1de8c40b5d15b0218291a8139ec0c03a"
+  },
+  {
+    "path": "assets/products/hacker-white.webp",
+    "bytes": 73590,
+    "sha256": "bd6c3cd22d47a2e48019b73c17ece5bd68f9db3236a148dfb979450928dd0a7a"
+  },
+  {
+    "path": "assets/products/disco-yellow.webp",
+    "bytes": 84214,
+    "sha256": "6231a40bebe0c9bed2830d04e7f5d3a739cfc19d38249dbc79aa41d7850b881d"
+  },
+  {
+    "path": "assets/products/mma-white.webp",
+    "bytes": 75798,
+    "sha256": "e37a9d09b93d68050c9f0eedf9959472b714042b80c024f4dbffcdb45ac25d1f"
+  },
+  {
+    "path": "assets/products/super-hero-blue.webp",
+    "bytes": 89166,
+    "sha256": "8a9c072c85aab14e167cebd028273178ce926846bd6134b243f18611111f526b"
+  },
+  {
+    "path": "assets/products/boxer-ring-blue.webp",
+    "bytes": 74746,
+    "sha256": "84dfa497a9121a67a87e244db42cd4e2788d146ab44e268b89bd32d6c1038f7d"
+  },
+  {
+    "path": "assets/products/boxer-fist-black.webp",
+    "bytes": 61880,
+    "sha256": "035f84e5678526c54b2f219eebcdf9d3951d2012c99ec48690bb3f63c6bf5f02"
+  },
+  {
+    "path": "assets/products/black-jack-orange.webp",
+    "bytes": 76654,
+    "sha256": "5de59c90121c7490ced53c3c691cf687d44707b1b7096ed3beaece805e75a610"
+  },
+  {
+    "path": "assets/products/easy-white.webp",
+    "bytes": 80876,
+    "sha256": "c8cb71b32b8a7ae8e36967cee9a36fa0ba64fc60a3c49c9fe104eb1be10931aa"
+  },
+  {
+    "path": "assets/products/super-hero-black.webp",
+    "bytes": 87702,
+    "sha256": "be518e48e83e9d90911b5dad573139226fe8c1a89ceacf8020583249e2be051c"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-02-white.webp",
+    "bytes": 71338,
+    "sha256": "6bd4e8808a80b985d9d30280d497b2ad99152b8c27987480956ab35a65c98b75"
+  },
+  {
+    "path": "assets/products/double-strike-orange.webp",
+    "bytes": 75382,
+    "sha256": "7bc6141932fc2bf8c212ca2433de3c7309e1486901c6fa0418356c5c336c08a6"
+  },
+  {
+    "path": "assets/products/boxer-gift-blue.webp",
+    "bytes": 68340,
+    "sha256": "71ae1422a04349d25b79a6c45ad684999871a5ae47af7a5ab2b167a3d6d12903"
+  },
+  {
+    "path": "assets/products/kicker-black.webp",
+    "bytes": 79526,
+    "sha256": "7732a74a7edd4a127ba7477b34f458e55c97cb1358ff7b9c0a7bab7e8c5e3c4a"
+  },
+  {
+    "path": "assets/products/kicker-orange.webp",
+    "bytes": 88126,
+    "sha256": "eed80b0ca06eb0c5bc2c323f2238a366e6cf8a1bafa4d8df08d6fb42e13b7120"
+  },
+  {
+    "path": "assets/products/monster-3in1-red.webp",
+    "bytes": 114506,
+    "sha256": "2229c5db27bdc7054f7a4523029c76746f20159147ab7d06fd0eff19ce4b0950"
+  },
+  {
+    "path": "assets/products/kids-basketball-kids.webp",
+    "bytes": 187476,
+    "sha256": "9392cbdc4add1528899f91cddd496905bb02b15ae363b65524a1a163108b37b3"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-01-red.webp",
+    "bytes": 88752,
+    "sha256": "b56ab48d687224a808f106c47210b9ce3e6002a1e52afd6219560b444d246187"
+  },
+  {
+    "path": "assets/products/boxer-flash-blue.webp",
+    "bytes": 53596,
+    "sha256": "fd98b5b57b7e18f9bb02e91b6484119535343933ccf9ffcc5fab749f03283e41"
+  },
+  {
+    "path": "assets/products/joker-yellow.webp",
+    "bytes": 84312,
+    "sha256": "8e7f94686aae405422f499190d698d035ad47cc3146ff15818707b37c785b61e"
+  },
+  {
+    "path": "assets/products/champion-orange.webp",
+    "bytes": 88242,
+    "sha256": "d60b9578165a8679bdf91a03734cbc44c91d674d5adbada203256fdf3854de2f"
+  },
+  {
+    "path": "assets/products/viking-orange.webp",
+    "bytes": 100032,
+    "sha256": "3a92de861cd9fb517dc74b7a71399cacda94554a87f2517bad730dfffce0990e"
+  },
+  {
+    "path": "assets/products/boxer-combat-red.webp",
+    "bytes": 60632,
+    "sha256": "36cc74691fa41a69c5b6908191430f9d7ab8cf434a4999cefc8f797f3ddebef2"
+  },
+  {
+    "path": "assets/products/double-hit-kids-gift-black.webp",
+    "bytes": 92598,
+    "sha256": "c26dabc09e65e3062fd062d98a403bf7d265b152e3454ec0530291076d693a92"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-orange.webp",
+    "bytes": 151302,
+    "sha256": "2c5041825eb2a2e255a625fc93cdc1a5cf58a0dda2d0191d0eeada8e8c21b945"
+  },
+  {
+    "path": "assets/products/easy-yellow.webp",
+    "bytes": 82038,
+    "sha256": "d3cfe41c0de56f951be64efdb4a6b018392c0697dbdd83ce934b96f29d4ca661"
+  },
+  {
+    "path": "assets/products/hammer-yellow.webp",
+    "bytes": 72984,
+    "sha256": "a00b45e4660cc5c5e188f9aab3e7f9cfcf4240291a5a2d61989c1efcceff57fc"
+  },
+  {
+    "path": "assets/products/boxer-gift-black.webp",
+    "bytes": 61240,
+    "sha256": "93287251b63d0a5800d9158d1f6d579197a5c109c79c61a8b21793fc8df85030"
+  },
+  {
+    "path": "assets/products/poison-squad-orange.webp",
+    "bytes": 77186,
+    "sha256": "7e17027de695e904ef441ca5d8cf316e96106a07e881db1c0228d68aec4ebad7"
+  },
+  {
+    "path": "assets/products/boxer-combat-kids-blue.webp",
+    "bytes": 74278,
+    "sha256": "f1e1160440e04b1716ce158f7001dc858fba3142ea442e4fb45e0b8ceb1ae65e"
+  },
+  {
+    "path": "assets/products/monster-3in1-yellow.webp",
+    "bytes": 119876,
+    "sha256": "42d71b8898a7604489053c9359ca7756a997911e098f4b4cd5fa482c58a190a4"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-03-orange.webp",
+    "bytes": 80424,
+    "sha256": "f07bc7e61341c81336f7f5854f2961fdcfc3ed5db8bc6228b3a2143ad7ae4839"
+  },
+  {
+    "path": "assets/products/kicker-yellow.webp",
+    "bytes": 87526,
+    "sha256": "2311a0d110ad2a11bf7001e28e72ff537143c9727f26d529f62d8929934e62af"
+  },
+  {
+    "path": "assets/products/disco-black.webp",
+    "bytes": 83890,
+    "sha256": "e4ed1dae46c83c0f79319c8408a209c842e0ce18d1c2369c31c4f5d94e6d0d4a"
+  },
+  {
+    "path": "assets/products/disco-red.webp",
+    "bytes": 83304,
+    "sha256": "f971b68f6d38b6b7aa7aa0cf651f7de062ba9ebd7f3049e17c0b0c56553444bf"
+  },
+  {
+    "path": "assets/products/boxer-ring-white.webp",
+    "bytes": 69724,
+    "sha256": "5c3082f5fecf679c734465499c27fbe85ba74d99e5d30ae908caab4086444034"
+  },
+  {
+    "path": "assets/products/double-hit-gift-orange.webp",
+    "bytes": 86762,
+    "sha256": "21e9277cda89399b5f4828b92aa0f43550df1346a114fb344de50fb38efaca82"
+  },
+  {
+    "path": "assets/products/super-hero-green.webp",
+    "bytes": 89678,
+    "sha256": "706d6f29d58b724cf002f3302fabbe93c61609834ae60062fcd11da958347393"
+  },
+  {
+    "path": "assets/products/black-jack-blue.webp",
+    "bytes": 76990,
+    "sha256": "cfa73ddc3aaf89f2d935f89a6302974aceb087af9f75adee00df5b482ad1a3c8"
+  },
+  {
+    "path": "assets/products/boxer-ring-yellow.webp",
+    "bytes": 73852,
+    "sha256": "de627811b40e5f425e49be230f7cb24de4090c7a7b87288e55584a1c5cd85a38"
+  },
+  {
+    "path": "assets/products/double-hit-yellow.webp",
+    "bytes": 84282,
+    "sha256": "904f3132cb02a0c51b1b73e4a4ec41f9597e474b8beb3a80f89db37f88bbf6be"
+  },
+  {
+    "path": "assets/products/disco-orange.webp",
+    "bytes": 83844,
+    "sha256": "abf4b3eb39392e944f6e1f2621a4414b2716858021e16eb460f6e38bf633b738"
+  },
+  {
+    "path": "assets/products/hammer-white.webp",
+    "bytes": 71696,
+    "sha256": "8ac96b0cbf0a8bdf1958044b10ad8465f9e135ada4000c1e225c5dfb2613d43e"
+  },
+  {
+    "path": "assets/products/double-hit-kids-white.webp",
+    "bytes": 105108,
+    "sha256": "973b9ca04fb212dd1855ba80b3614d7ba6ea3e10ee444dda8a3feda1ad42b5f1"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-01-black.webp",
+    "bytes": 88088,
+    "sha256": "1c4b2ba1b976c3eafed620389ab4ceceb48edefa385e5af3a2d0751215579b06"
+  },
+  {
+    "path": "assets/products/black-jack-red.webp",
+    "bytes": 76730,
+    "sha256": "afcdf1fdbd5619b9a489eaf65311532d2a5600efb0a3212bf37bbebf3ee985b4"
+  },
+  {
+    "path": "assets/products/hammer-red.webp",
+    "bytes": 72664,
+    "sha256": "e80e37557bf6243ee75a8c4c33b5c7f0a4fc0edb329e5f3d981246de9a1dfc14"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-02-orange.webp",
+    "bytes": 75708,
+    "sha256": "e057e1a92afc3abc3a59f64d0cd350684b9f40546ccf0a32958693220a45d937"
+  },
+  {
+    "path": "assets/products/viking-yellow.webp",
+    "bytes": 100082,
+    "sha256": "9f9fee8e59b4efe573a5abc24254a98b44d6701b0cb4fdf785e639443338f3f7"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-princess-with-roof.webp",
+    "bytes": 38128,
+    "sha256": "9e8a6aa57e968f4ab4724e030f6d1c12571173b914b66c8b29df9a9f9fcdf990"
+  },
+  {
+    "path": "assets/products/boxer-combat-orange.webp",
+    "bytes": 67634,
+    "sha256": "f756879c63922440c08e68eab4f2d19dedf0166eb77af4fd1c2a69a8b279773c"
+  },
+  {
+    "path": "assets/products/boxer-gift-red.webp",
+    "bytes": 65736,
+    "sha256": "57fdaf1f579410c2cefba98d3dc5aa9eb6ca17be4b758fd614962ef91bd30067"
+  },
+  {
+    "path": "assets/products/boxer-fist-red.webp",
+    "bytes": 66032,
+    "sha256": "b8271046effc196158084b607ef1f2b5b8facc24cfa0bbafbeb5f8da104bb0fa"
+  },
+  {
+    "path": "assets/products/viking-red.webp",
+    "bytes": 99022,
+    "sha256": "484f1784e1b6383310aed68395b54fe2267a03ca971281f98f61a56444518ba1"
+  },
+  {
+    "path": "assets/products/boxer-flash-black.webp",
+    "bytes": 51078,
+    "sha256": "75674873554ddd083bafb82c73026769cbba87e7bd522aea5cce83344d5756e9"
+  },
+  {
+    "path": "assets/products/double-hit-comic-red.webp",
+    "bytes": 113196,
+    "sha256": "6effab016887ee9f71d0af68bae2dd76c0a09fd46a5e758e7f07265b4b9d21d0"
+  },
+  {
+    "path": "assets/products/boxer-combat-kids-white.webp",
+    "bytes": 70274,
+    "sha256": "2c8e36459cdc5f91ee358622dc918645df14cb9c2175929079a376eda5f77730"
+  },
+  {
+    "path": "assets/products/cyberdart-current-model.webp",
+    "bytes": 23364,
+    "sha256": "9de9a6e46e78a4581fbee586291d44e47d129ff8113fc2b2adad647de986e195"
+  },
+  {
+    "path": "assets/products/gladiator-blue.webp",
+    "bytes": 89672,
+    "sha256": "5691e6d8cdf5cb82e2855f0403c3401d39ab78938e4214d293ca1a6f5a9dd008"
+  },
+  {
+    "path": "assets/products/poison-squad-red.webp",
+    "bytes": 77000,
+    "sha256": "57a0a0e1c92dd03fde3fbcf086dcd03d15b29d1bd3c074f96f7cefa9e1479237"
+  },
+  {
+    "path": "assets/products/mma-orange.webp",
+    "bytes": 78594,
+    "sha256": "d557ee4c779413bc5a1045e826b50bcfbdddb2c4a665e5f7c6da3c642dcfbedd"
+  },
+  {
+    "path": "assets/products/gladiator-black.webp",
+    "bytes": 90184,
+    "sha256": "c8a1363c61aac07167260e5cd590df1896c0dd045ed5cda2f746dc9da004d1db"
+  },
+  {
+    "path": "assets/products/viking-black.webp",
+    "bytes": 99102,
+    "sha256": "f26aed199d7f34dee3dce272261f43bbcbed3e1c1893cce2786667c573df2d0f"
+  },
+  {
+    "path": "assets/products/hammer-black.webp",
+    "bytes": 70328,
+    "sha256": "e79ba798ddbb47c39d24085ac69a64959acab19dba0c094e88ad53f215932964"
+  },
+  {
+    "path": "assets/products/double-hit-kids-yellow.webp",
+    "bytes": 105170,
+    "sha256": "646d1d13be4a8beb4424cc9a7e2272bd24e4b5dfe6149aaaeb5cb1bf7dc20bba"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-01-orange.webp",
+    "bytes": 88788,
+    "sha256": "65d09f6bb5ecda538f2e5f4a64def216a6ef9b76f11897d47a5eb37b21ae0124"
+  },
+  {
+    "path": "assets/products/boxer-flash-gift-orange.webp",
+    "bytes": 71562,
+    "sha256": "72947bfc775c40f5cfaadd9cce48da645b82b7acb67b69a3e84bd92ea0803b1d"
+  },
+  {
+    "path": "assets/products/joker-red.webp",
+    "bytes": 85922,
+    "sha256": "ee6c8c96a32bdec23368eba5a2ff1c06cf0e1c78a594fef22c0ba12db3ac56ee"
+  },
+  {
+    "path": "assets/products/boxer-gift-yellow.webp",
+    "bytes": 68462,
+    "sha256": "151099c0b4f8128390d9306e6fc150af4ff2da92a7d6980a8ca6d86266f9b730"
+  },
+  {
+    "path": "assets/products/double-hit-kids-gift-yellow.webp",
+    "bytes": 104474,
+    "sha256": "c0d9babe7620acd9b4522745858227076ba128431a2a335a6e982adc6fc66fe4"
+  },
+  {
+    "path": "assets/products/joker-blue.webp",
+    "bytes": 86284,
+    "sha256": "2be65b9b4a2e61b68e1dfb2cea7ef7aeb02eb7c11e1d0c8bdf0f23d38e474ccb"
+  },
+  {
+    "path": "assets/products/champion-black.webp",
+    "bytes": 80588,
+    "sha256": "e85e813e907355a8df7763318461aad95b15e5aca64937cc970c66cd48ad8429"
+  },
+  {
+    "path": "assets/products/double-hit-kids-orange.webp",
+    "bytes": 112772,
+    "sha256": "18a6df00a1e9569ddd7747de19ae1adf65955914c4c42bb62a67241fd807494b"
+  },
+  {
+    "path": "assets/products/poison-squad-blue.webp",
+    "bytes": 78678,
+    "sha256": "8c185576f3c6e4d408269b6c2d66545f7d8d5c52f96b7f001987e9230f8dedd1"
+  },
+  {
+    "path": "assets/products/mma-black.webp",
+    "bytes": 76390,
+    "sha256": "175434247bb320d3791f0c1fc961aa80867efb28949d180c09a64afe80338a9a"
+  },
+  {
+    "path": "assets/products/double-hit-gift-white.webp",
+    "bytes": 82994,
+    "sha256": "56874a0bff9086ca264b1d6b3e5ec653cfa746c79174b67286b4778ed42534b0"
+  },
+  {
+    "path": "assets/products/double-hit-red.webp",
+    "bytes": 80772,
+    "sha256": "d348d3bd9bf75e5c507249083b34642b37f5fd55a06f130cb053cd65b505a9ef"
+  },
+  {
+    "path": "assets/products/kicker-white.webp",
+    "bytes": 81818,
+    "sha256": "690509bd24ae21d1b4e3bd3065afafdd7cf2e96090d6d9c336530a1dc6ca2aa5"
+  },
+  {
+    "path": "assets/products/monster-3in1-black.webp",
+    "bytes": 109044,
+    "sha256": "74bfafd6fe97350b75ff1f19a7a4ee75c4326ffda1f50230787c45690eb7866b"
+  },
+  {
+    "path": "assets/products/boxer-flash-yellow.webp",
+    "bytes": 54400,
+    "sha256": "6917f575323cc806147cdd65971250e52966df8ca410fd258aa3f12e6ab477ae"
+  },
+  {
+    "path": "assets/products/super-hero-yellow.webp",
+    "bytes": 88924,
+    "sha256": "6a55222ac0db0e1f2649f0673f3e684d4cf95cbc971ad0a99abeb6239704577e"
+  },
+  {
+    "path": "assets/products/champion-yellow.webp",
+    "bytes": 81670,
+    "sha256": "2bc23b3d283d64de31889b833304e578ef96600cb475d7bffcfb05bda42161a9"
+  },
+  {
+    "path": "assets/products/bouncy-castles-xs-sea-with-slide.webp",
+    "bytes": 44150,
+    "sha256": "e5aef3cbbab5d3ec174a1bee868a210daa15a65d150d2f2de195d6ca3d014374"
+  },
+  {
+    "path": "assets/products/super-hero-orange.webp",
+    "bytes": 88548,
+    "sha256": "605e1e5e92ddc4d6a8779153f32c42c740e0ac4302fc21539501c4a02fae51bb"
+  },
+  {
+    "path": "assets/products/black-jack-black.webp",
+    "bytes": 73428,
+    "sha256": "ac7731dfa3f17691168a59d91f3815baa92c96244d83d081e0e5941556d718a7"
+  },
+  {
+    "path": "assets/products/monster-3in1-blue.webp",
+    "bytes": 115956,
+    "sha256": "dfeb74c05eee12d7484632db3f46f4c941780f26db8ba334e101aa1c211b6912"
+  },
+  {
+    "path": "assets/products/champion-white.webp",
+    "bytes": 79166,
+    "sha256": "307c5ab2e51782fb93793d617fc0e65b9691bce147356127daa97dacd236da2d"
+  },
+  {
+    "path": "assets/products/double-hit-kids-gift-red.webp",
+    "bytes": 102298,
+    "sha256": "8a0b4ccf0b7148e6bc2eff681e232948ff163bdf8da90a57e490911582df817e"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-01-white.webp",
+    "bytes": 87820,
+    "sha256": "9f68ccfd03f9bd7495a7d06c587425edc178bf924886ec4d3e2a87e4ec5dc5a3"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-01-blue.webp",
+    "bytes": 87630,
+    "sha256": "6e4dcc891b99ca342c5dbb4cbf48fdceb1f22b808a6483ccc831f67235c5d4d8"
+  },
+  {
+    "path": "assets/products/gladiator-orange.webp",
+    "bytes": 89374,
+    "sha256": "74490e1323aee80a22b8d4b718521a6a9ff9023b5d6360a8873c29fbbe91b651"
+  },
+  {
+    "path": "assets/products/champion-red.webp",
+    "bytes": 79420,
+    "sha256": "3d647af5ba67473d1ada9dbbb2cf8aadd3a2e5c3e5988e99cad35f431b42a673"
+  },
+  {
+    "path": "assets/products/double-hit-kids-black.webp",
+    "bytes": 100782,
+    "sha256": "ae87217e3d0f22631bf1adb0d2dd56c253ddc25f54cb5b5fafcf461348e09772"
+  },
+  {
+    "path": "assets/products/cyber-punch-red.webp",
+    "bytes": 74390,
+    "sha256": "62bffef45e12b9e416062557ed81d12a07402b500d2b43eace153793aee78a8b"
+  },
+  {
+    "path": "assets/products/boxer-combat-black.webp",
+    "bytes": 56986,
+    "sha256": "1ffe1e671f6db80794be7c9c6289642cddc1a34155c6c8cc0d7e6ebbf03da75c"
+  },
+  {
+    "path": "assets/products/power-black-orange.webp",
+    "bytes": 86788,
+    "sha256": "42155916848f3513a1b7134b155bc8c8684f6c6647c32a0eb4ffe77d6d8300f4"
+  },
+  {
+    "path": "assets/products/strongman-yellow.webp",
+    "bytes": 79108,
+    "sha256": "da5bd76dfd0e888669617652f676b05136de2507c320756f46c4afd53c3fefc7"
+  },
+  {
+    "path": "assets/products/power-black-red.webp",
+    "bytes": 88168,
+    "sha256": "d12846f48a52deec770c8b3a05332ee7ab6b890ab447f9cfaf1609e97f6267f2"
+  },
+  {
+    "path": "assets/products/hacker-red.webp",
+    "bytes": 74862,
+    "sha256": "df9ed36d42843218a5b1f6847322119ad5dbda84e737d9e2dffb59eeb1afb868"
+  },
+  {
+    "path": "assets/products/champion-blue.webp",
+    "bytes": 78748,
+    "sha256": "f5fc05cfda2c6d1dd0217773eae5c3f3c717b49b4ac933eb40b5c7c5d5cab72b"
+  },
+  {
+    "path": "assets/products/air-hockey-golden-golden.webp",
+    "bytes": 38092,
+    "sha256": "3a3a6bf5a65710d4267b40c2e5ea4391dcdd79c5a573558893cdfd251bcd56c5"
+  },
+  {
+    "path": "assets/products/boxer-combat-kids-black.webp",
+    "bytes": 72350,
+    "sha256": "dcd1ec698ca8967356485b6e7d877c6572516b5d06435ddb23e921857ef72546"
+  },
+  {
+    "path": "assets/products/boxer-kids-artwork-03-red.webp",
+    "bytes": 81058,
+    "sha256": "9c49e19a0fa14ead5d4b85b67c05967aea9683b2a9c256d215883a75354cc823"
+  },
+  {
+    "path": "assets/products/power-black-yellow.webp",
+    "bytes": 87166,
+    "sha256": "fb469006d08d9f3ed93563301c352c79c061d66eee0bb17f14fbf7b4f29cf9bb"
+  },
+  {
+    "path": "assets/products/double-hit-gift-yellow.webp",
+    "bytes": 88698,
+    "sha256": "034233093e3d5c3be90ecc34daa38911361b02eb97d462ed31ba0ff7357194f7"
+  },
+  {
+    "path": "assets/products/boxer-ring-black.webp",
+    "bytes": 66430,
+    "sha256": "a9718250fe3e7c5b4d703f274043225c50cebd6d1418312c94e5cd8e091d1fa4"
+  },
+  {
+    "path": "assets/products/double-hit-white.webp",
+    "bytes": 82750,
+    "sha256": "3bb68626b3612f1eb68b8c23f38d0287b5812ab1c123848b03a6499e17b65bc2"
+  },
+  {
+    "path": "assets/products/strongman-black.webp",
+    "bytes": 75310,
+    "sha256": "b580786f88e103413a20166c9139bbd206ebf9e93fbf47e3f0c2d6785504203e"
+  },
+  {
+    "path": "assets/products/strongman-white.webp",
+    "bytes": 76768,
+    "sha256": "361eae6f82e10d99f73a5740e10c3c44c3ef3b16eed661c05270a3ba52cf6832"
+  },
+  {
+    "path": "assets/products/black-jack-yellow.webp",
+    "bytes": 76174,
+    "sha256": "84b68a48545f45968055180317dd757ed7e56b2e8cad4c00581432d623a2760b"
+  },
+  {
+    "path": "assets/products/boxer-fist-yellow.webp",
+    "bytes": 71508,
+    "sha256": "cac0ca331db64eb61332a365b0e835237f85579115095578a510f1c8c299f213"
+  },
+  {
+    "path": "assets/products/monster-3in1-ticket-black.webp",
+    "bytes": 147100,
+    "sha256": "ece0375f517533acc5fbe1e595b706eb92c226c0c47f7897b479b7b4a9fbe532"
+  },
+  {
+    "path": "assets/products/boxer-combat-yellow.webp",
+    "bytes": 61652,
+    "sha256": "890ec0e7acfeb62de3d28b385447f0cb885647b1581031a2a3140c9c6d2af691"
+  },
+  {
+    "path": "assets/products/mma-blue.webp",
+    "bytes": 79498,
+    "sha256": "a7fe84b59853e4e304fbfa47d1a6adb33f87fa6b97840c1b9fb42a18ce962d45"
+  },
+  {
+    "path": "assets/products/viking-white.webp",
+    "bytes": 97708,
+    "sha256": "c940eb53b1c7836b16740a675903e3adbc9a68aaa8e4b5f15aff170809f80e07"
+  },
+  {
+    "path": "assets/products/double-hit-kids-red.webp",
+    "bytes": 103340,
+    "sha256": "9bef0280b4733ceaf0b4e068c9cd8f89f21b0c43c3fee487c31fc342fdd8ddc5"
+  },
+  {
+    "path": "assets/products/boxer-combat-blue.webp",
+    "bytes": 61614,
+    "sha256": "fb9588a1311a6a9c3e979dc061d66a961408ed038e42e0938122c244d4ff4704"
+  }
+]

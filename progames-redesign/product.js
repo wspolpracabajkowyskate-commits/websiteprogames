@@ -1,19 +1,29 @@
 (()=>{
 const products=window.PRODUCTS||{};
 const params=new URLSearchParams(location.search);
-const requested=params.get('model')||'champion';
+const requested=document.body.dataset.model||params.get('model')||'champion';
 const key=Object.hasOwn(products,requested)?requested:null;
 if(!key){ document.title='Product not found | Pro Games Poland'; document.querySelector('#productDetail').innerHTML=document.documentElement.lang==='es'?'<section class="section"><h1>Producto no encontrado</h1><a href="/es.html#machines">Ver productos</a></section>':'<section class="section"><h1>Product not found</h1><a href="/#machines">View products</a></section>'; return; }
 const p=products[key];
-const isES=document.documentElement.lang==='es';
-const es=window.PG_ES||{labels:{},specs:{},features:{},options:{},colors:{}};
-const pEs=(window.PRODUCT_ES||{})[key]||{};
-const CATALOG_URL=isES?'/catalog-es.html?catalog=machines':'/catalog.html?catalog=machines';
-const HOME_URL=isES?'/es.html':'/';
+const lang=document.documentElement.lang;
+const isES=lang==='es';
+const isPL=lang==='pl';
+const routes=window.PG_ROUTES;
+const es=(isPL?window.PG_PL:window.PG_ES)||{labels:{},specs:{},features:{},options:{},colors:{}};
+const pEs=((isPL?window.PRODUCT_PL:window.PRODUCT_ES)||{})[key]||{};
+const CATALOG_URL=routes.catalog(lang)+'?catalog=machines';
+const HOME_URL=routes.home(lang);
 const standardFamily=window.PRODUCT_COLLECTIONS?.['boxer-standard'];
 const isStandard=standardFamily?.slugs.includes(key)||false;
-const FAMILY_URL=isES?'/boxer-standard-es.html':'/boxer-standard.html';
-const txt=isES?{
+const FAMILY_URL=routes.collection(lang);
+const txt=isPL?{
+ all:'Wszystkie produkty',allMachines:'Wszystkie automaty',request:'Zapytaj o ofertę',catalog:'Zobacz pełny katalog →',price:'Cena i ostateczna konfiguracja są ustalane indywidualnie.',
+ colour:'KOLOR / WZÓR',current:'Wybrane wykończenie',colourNote:'Wybierz kolor lub wzór, aby zobaczyć zdjęcie tej wersji urządzenia. Dostępność i szczegóły konfiguracji potwierdza dział sprzedaży.',
+ finish:'WYKOŃCZENIE / WZÓR',currentImage:'Zdjęcie produktu',currentNote:'Zapytaj Pro Games o dostępne wykończenia, kolory i możliwości personalizacji tego modelu.',
+ details:'SZCZEGÓŁY PRODUKTU',built:'DO INTENSYWNEJ\nEKSPLOATACJI.',features:'Najważniejsze cechy',specs:'Dane techniczne',options:'Dostępne opcje i wyposażenie',
+ operator:'KONFIGURACJA DLA OPERATORA',one:'TWÓJ AUTOMAT.\nDOPASOWANY DO LOKALU.',operatorText:'System płatności, grafika, oświetlenie, funkcje biletowe i nagrodowe oraz szczegóły techniczne zależą od modelu, rynku i zamówienia. Skontaktuj się z Pro Games, aby potwierdzić konfigurację odpowiednią dla Twojego obiektu.',
+ explore:'POZNAJ WIĘCEJ',related:'POWIĄZANE AUTOMATY',viewAll:'Zobacz wszystkie produkty ↗',ready:'POROZMAWIAJMY',build:'STWÓRZMY TWOJĄ\nNOWĄ ATRAKCJĘ.',send:'Wyślij zapytanie'
+}:isES?{
   all:'Todos los productos', allMachines:'Todas las máquinas', request:'Solicitar oferta', catalog:'Ver catálogo completo →', price:'El precio y la configuración final se cotizan individualmente.',
   colour:'COLOR / ACABADO', current:'Acabado actual', colourNote:'Selecciona un color o acabado. La foto principal cambia automáticamente para mostrar la variante real de Pro Games. El color, el diseño y la disponibilidad final se confirman con el equipo comercial.',
   finish:'ACABADO / DISEÑO', currentImage:'Imagen actual del producto', currentNote:'Consulta con el equipo comercial de Pro Games las opciones actuales de diseño, color y personalización para este modelo.',
@@ -28,33 +38,35 @@ const txt=isES?{
   operator:'OPERATOR CONFIGURATION', one:'ONE MACHINE.\nCONFIGURED FOR YOUR VENUE.', operatorText:'Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact Pro Games for the current specification of the exact version you need.',
   explore:'EXPLORE MORE', related:'RELATED MACHINES', viewAll:'View all products ↗', ready:'READY TO TALK?', build:"LET'S BUILD YOUR NEXT\nENTERTAINMENT EXPERIENCE.", send:'Send an inquiry'
 };
-const label=isES?(es.labels[p.label]||p.label):p.label;
-const desc=isES?(pEs.desc||p.desc):p.desc;
-const localFeature=x=>isES?(es.features[x]||x):x;
-const localOption=x=>isES?(es.options[x]||x):x;
-const localSpec=x=>isES?(es.specs[x]||x):x;
-const localColor=x=>isES?(es.colors[x]||x):x;
+const label=(isES||isPL)?(es.labels[p.label]||p.label):p.label;
+const desc=(isES||isPL)?(pEs.desc||p.desc):p.desc;
+const escapeCopy=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const descriptionHTML=desc.split('\n\n').map(text=>`<p>${escapeCopy(text)}</p>`).join('\n');
+const localFeature=x=>(isES||isPL)?(es.features[x]||x):x;
+const localOption=x=>(isES||isPL)?(es.options[x]||x):x;
+const localSpec=x=>(isES||isPL)?(es.specs[x]||x):x;
+const localColor=x=>(isES||isPL)?(es.colors[x]||x):x;
 
-document.title=`${p.name} | Pro Games Poland`;
+if(!document.body.dataset.model) document.title=`${p.name} | Pro Games Poland`;
 const meta=document.querySelector('meta[name="description"]');
-if(meta) meta.content=isES?`${p.name} de Pro Games Poland. Descripción, especificaciones, colores disponibles y configuración para operadores.`:`${p.name} by Pro Games Poland. Product overview, verified dimensions, available finishes and operator configuration.`;
+if(meta&&!document.body.dataset.model) meta.content=isPL?`${p.name} — automat Pro Games. Kolory, zdjęcia, dane techniczne i konfiguracja dla operatorów.`:isES?`${p.name} de Pro Games Poland. Descripción, especificaciones, colores disponibles y configuración para operadores.`:`${p.name} by Pro Games Poland. Product overview, verified dimensions, available finishes and operator configuration.`;
 
 const detail=document.querySelector('#productDetail');
 const variantList=(p.variants||[]).filter(v=>v&&v.image);
 let selectedIndex=Math.max(0,variantList.findIndex(v=>v.id===params.get('variant')));
 const mainVariant=variantList[selectedIndex]||{name:'Product',image:p.image};
-const spec=(p.spec||[]).map(([label,value])=>`<div><span>${localSpec(label)}</span><b>${value}</b></div>`).join('');
+const spec=(p.spec||[]).map(([label,value])=>`<div><span>${localSpec(label)}</span><b>${localSpec(value)}</b></div>`).join('');
 const features=(p.features||[]).map(x=>`<li>${localFeature(x)}</li>`).join('');
 const options=(p.options||[]).map(o=>`<div><span>${localOption(o)}</span><b>+</b></div>`).join('');
 const related=Object.entries(products)
   .filter(([slug,item])=>slug!==key && item.category===p.category && (!isStandard||standardFamily.slugs.includes(slug)))
   .slice(0,4)
-  .map(([slug,item])=>`<a class="related-card" href="${isES?'/product-es.html':'/product.html'}?model=${slug}"><img src="${item.image}" alt="${item.name} by Pro Games" loading="lazy" referrerpolicy="no-referrer"><span>${isES?(es.labels[item.label]||item.label):item.label}</span><h3>${item.name}</h3></a>`).join('');
+  .map(([slug,item])=>`<a class="related-card" href="${routes.product(lang,slug)}"><img src="${item.image}" alt="${item.name} by Pro Games" loading="lazy" referrerpolicy="no-referrer"><span>${(isES||isPL)?(es.labels[item.label]||item.label):item.label}</span><h3>${item.name}</h3></a>`).join('');
 
 const swatchColor={White:'#f4f4f1',Orange:'#ff7a18',Yellow:'#ffd329',Green:'#27ae60',Blue:'#1976d2',Red:'#ef3123',Black:'#17191c',Brown:'#84543a',Graphite:'#4b4f55',Golden:'#c49b38',Arctic:'#d9f4ff',Matrix:'#4d56a8',Compact:'#7f8c8d',Standard:'#777',Kids:'#4fa3ff',Purple:'#7b4cb8',Silver:'#bfc3c7',Pink:'#e85e9f'};
 const isGenericVariantName=(name='')=>/^Variant\s+\d+$/i.test(name);
-const displayVariantName=(v,i)=>isES&&v.nameES?v.nameES:isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
-const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="${isES?'Elegir color o diseño':'Choose colour or artwork variant'}"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName" aria-live="polite">${displayVariantName(mainVariant,selectedIndex)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=Boolean(swatchColor[v.color||v.name]);return `<button type="button" class="gallery-swatch ${i===selectedIndex?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-pressed="${i===selectedIndex}" aria-label="${isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.color||v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
+const displayVariantName=(v,i)=>isPL?(es.colors[v.name]||v.name):isES&&v.nameES?v.nameES:isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
+const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="${isPL?'Wybierz kolor lub wzór':isES?'Elegir color o diseño':'Choose colour or artwork variant'}"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName" aria-live="polite">${displayVariantName(mainVariant,selectedIndex)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=Boolean(swatchColor[v.color||v.name]);return `<button type="button" class="gallery-swatch ${i===selectedIndex?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-pressed="${i===selectedIndex}" aria-label="${isPL?'Pokaż':isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.color||v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
 const finishBlock=variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
 detail.innerHTML=`
@@ -62,7 +74,7 @@ detail.innerHTML=`
   <div class="product-gallery-panel">
     <div class="product-main-stage reveal in">
       <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${displayVariantName(mainVariant,selectedIndex)}" fetchpriority="high" referrerpolicy="no-referrer">
-      ${p.tag?`<span class="product-tag">${p.tag}</span>`:''}
+      ${p.tag?`<span class="product-tag">${isPL?p.tag.replace('NEW','NOWOŚĆ'):p.tag}</span>`:''}
     </div>
     ${variantSelector}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
   </div>
@@ -70,7 +82,7 @@ detail.innerHTML=`
     <a class="product-back-link" href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">← ${isStandard?'Boxer Standard':txt.allMachines}</a>
     <p class="kicker">${label}</p>
     <h1>${p.name}</h1>
-    <p class="detail-lead">${desc}</p>
+    <div class="detail-lead">${descriptionHTML}</div>
     <div class="detail-actions">
       <a class="btn btn-primary" href="${HOME_URL}#contact">${txt.request}</a>
       <a class="btn btn-outline-dark" href="${CATALOG_URL}">${txt.catalog}</a>
@@ -80,12 +92,12 @@ detail.innerHTML=`
   </div>
 </section>
 
-<section class="product-facts section">
+${(p.features.length||p.spec.length||p.options.length)?`<section class="product-facts section">
   <div class="product-facts-title"><p class="kicker">${txt.details}</p><h2>${txt.built.replace('\n','<br>')}</h2></div>
-  <div class="product-facts-column"><h3>${txt.features}</h3><ul class="feature-list">${features}</ul></div>
-  <div class="spec-table light"><h3>${txt.specs}</h3>${spec}</div>
-  <div class="spec-table light"><h3>${txt.options}</h3>${options}</div>
-</section>
+  ${p.features.length?`<div class="product-facts-column"><h3>${txt.features}</h3><ul class="feature-list">${features}</ul></div>`:''}
+  ${p.spec.length?`<div class="spec-table light"><h3>${txt.specs}</h3>${spec}</div>`:''}
+  ${p.options.length?`<div class="spec-table light"><h3>${txt.options}</h3>${options}</div>`:''}
+</section>`:''}
 
 <section class="operator-note section section-dark">
   <p class="kicker">${txt.operator}</p>
@@ -95,7 +107,7 @@ detail.innerHTML=`
 
 <section class="related section">
   <p class="kicker">${txt.explore}</p>
-  <div class="related-heading"><h2>${txt.related}</h2><a href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">${isStandard?(isES?'Ver todos los Boxer Standard ↗':'View all Boxer Standard models ↗'):txt.viewAll}</a></div>
+  <div class="related-heading"><h2>${txt.related}</h2><a href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">${isStandard?(isPL?'Wszystkie modele Boxer Standard ↗':isES?'Ver todos los Boxer Standard ↗':'View all Boxer Standard models ↗'):txt.viewAll}</a></div>
   <div class="related-grid">${related}</div>
 </section>
 
@@ -108,7 +120,7 @@ detail.innerHTML=`
 let variantRequest=0;
 function updateVariantLinks(){
   const query=new URLSearchParams({model:key,variant:variantList[selectedIndex].id});
-  document.querySelectorAll('[data-lang-link]').forEach(a=>{a.href=(a.dataset.langLink==='es'?'/product-es.html':'/product.html')+'?'+query;});
+  document.querySelectorAll('[data-lang-link]').forEach(a=>{a.href=routes.product(a.dataset.langLink,key)+'?variant='+encodeURIComponent(variantList[selectedIndex].id);});
   document.querySelectorAll('.detail-actions a:first-child, .product-cta .btn').forEach(a=>{a.href=HOME_URL+'?'+query+'#contact';});
 }
 function setVariant(index){
@@ -119,7 +131,7 @@ function setVariant(index){
   const status=document.querySelector('#variantStatus');
   img.classList.add('switching');
   img.setAttribute('aria-busy','true');
-  status.textContent=isES?'Cargando imagen…':'Loading image…';
+  status.textContent=isPL?'Ładowanie zdjęcia…':isES?'Cargando imagen…':'Loading image…';
   const preload=new Image();
   preload.onload=()=>{
     if(token!==variantRequest) return;
@@ -140,23 +152,13 @@ function setVariant(index){
   preload.onerror=()=>{
     if(token!==variantRequest) return;
     img.classList.remove('switching');img.setAttribute('aria-busy','false');
-    status.textContent=isES?'No se pudo cargar la imagen. Vuelve a intentarlo.':'The image could not be loaded. Please try again.';
+    status.textContent=isPL?'Nie udało się wczytać zdjęcia. Spróbuj ponownie.':isES?'No se pudo cargar la imagen. Vuelve a intentarlo.':'The image could not be loaded. Please try again.';
   };
   preload.src=variant.image;
 }
 updateVariantLinks();
 
-const schema=document.createElement('script');
-schema.type='application/ld+json';
-schema.textContent=JSON.stringify({
-  '@context':'https://schema.org','@type':'Product',name:p.name,
-  description:desc,image:variantList.map(v=>v.image),
-  brand:{'@type':'Brand',name:'Pro Games Poland'},
-  manufacturer:{'@type':'Organization',name:'PRO GAMES POLAND Sp. z o.o.'},
-  offers:{'@type':'Offer',url:location.href,priceSpecification:{'@type':'PriceSpecification',description:isES?'Precio bajo consulta':'Price on request'}}
-});
-document.head.append(schema);
-
+// Product and breadcrumb structured data are included in the generated HTML.
 document.querySelectorAll('[data-index]').forEach(btn=>btn.addEventListener('click',()=>setVariant(Number(btn.dataset.index))));
 
 })();
