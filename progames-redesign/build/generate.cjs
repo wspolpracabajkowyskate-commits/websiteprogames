@@ -2,6 +2,14 @@
 const fs=require('fs'),path=require('path'),vm=require('vm'),{parseHTML}=require('linkedom');
 const read=f=>fs.readFileSync(f,'utf8');const data={window:{}};vm.createContext(data);for(const f of ['site-config.js','products.js'])vm.runInContext(read(f),data);
 const {PRODUCTS:products,PG_SITE:site,PG_ROUTES:routes,PRODUCT_PL:pl,PRODUCT_ES:es,PG_PL:plLabels,PG_ES:esLabels}=data.window;
+// Browser payloads omit source provenance used only by build/audit tooling.
+fs.mkdirSync('assets/data',{recursive:true});
+for(const language of ['en','es']){
+ const clean=JSON.parse(JSON.stringify(products,(key,value)=>['source','sourceImage'].includes(key)?undefined:value));
+ const payload={PRODUCTS:clean,PRODUCT_COLLECTIONS:data.window.PRODUCT_COLLECTIONS};
+ if(language==='es'){payload.PRODUCT_ES=es;payload.PG_ES=esLabels;}
+ fs.writeFileSync('assets/data/products-'+language+'.js',Object.entries(payload).map(([key,value])=>'window.'+key+'='+JSON.stringify(value)+';').join('\n'));
+}
 const origin=site.origin;const output=[];const langs=['en','es'];
 const titles={home:{en:'Boxer & Arcade Machine Manufacturer | Pro Games Poland',pl:'Boksery i automaty rozrywkowe — producent | Pro Games Poland',es:'Fabricante de máquinas recreativas y boxers | Pro Games Poland'},collection:{en:'Boxer Standard — 15 Boxing Machine Designs | Pro Games',pl:'Boksery Standard — 15 modeli automatów bokserskich | Pro Games',es:'Boxer Standard — 15 diseños de máquinas de boxeo | Pro Games'},catalog:{en:'Arcade Machines & Spare Parts Catalogs | Pro Games Poland',pl:'Katalogi automatów i części zamiennych | Pro Games Poland',es:'Catálogos de máquinas y repuestos | Pro Games Poland'}};
 const descriptions={home:{en:'Polish manufacturer of boxer and arcade machines. Explore boxing, kicker, hammer and combo games, colours, specifications, spare parts and B2B enquiries.',pl:'Producent bokserów i automatów rozrywkowych z Polski. Poznaj boksery, kopacze, młoty i urządzenia 3 w 1, dostępne kolory, części zamienne i ofertę B2B.',es:'Fabricante polaco de boxers y máquinas recreativas. Descubre modelos, colores, especificaciones, repuestos y opciones para operadores y distribuidores.'},collection:{en:'Explore all 15 Boxer Standard designs from Pro Games: Joker, Champion, MMA, Viking and more. Compare photos and choose your model and cabinet colour.',pl:'Poznaj 15 bokserów Standard Pro Games: Joker, Champion, MMA, Viking i inne. Zobacz zdjęcia, wybierz model, kolor obudowy i konfigurację do swojego lokalu.',es:'Explora los 15 diseños Boxer Standard de Pro Games: Joker, Champion, MMA, Viking y más. Elige tu modelo y consulta colores, fotos y especificaciones.'},catalog:{en:'Browse and download Pro Games arcade machine and spare parts catalogs as local PDF files. Find models, components and information for operators.',pl:'Przeglądaj i pobierz katalog automatów Pro Games oraz katalog części zamiennych PDF. Modele, podzespoły i informacje dla operatorów w jednym miejscu.',es:'Consulta y descarga los catálogos PDF de máquinas Pro Games y repuestos. Modelos, componentes e información para operadores en un solo lugar.'}};
@@ -35,7 +43,7 @@ function render(kind,lang,key){
  setMeta(document,'meta[property="og:locale:alternate"]',{property:'og:locale:alternate',content:lang==='es'?'en_GB':'es_ES'});
  setMeta(document,'meta[name="robots"]',{name:'robots',content:'index,follow,max-image-preview:large'});
  const org={'@context':'https://schema.org','@type':'Organization','@id':origin+'/#organization',name:'PRO GAMES POLAND Sp. z o.o.',url:origin+'/',email:'office@progames.pl',telephone:'+48 536 068 912',address:{'@type':'PostalAddress',streetAddress:'ul. Rybnicka 19A',postalCode:'44-335',addressLocality:'Jastrzębie-Zdrój',addressCountry:'PL'}};
- org.logo=origin+'/assets/progames-emblem.png';org.sameAs=['https://www.facebook.com/BoxerProgames','https://www.instagram.com/progames.pl/'];org.contactPoint=[{'@type':'ContactPoint',contactType:'sales',email:'office@progames.pl',telephone:'+48 536 068 912'},{'@type':'ContactPoint',contactType:'customer service',email:'service@progames.pl',telephone:'+48 789 108 086'}];
+ org.logo=origin+'/assets/progames-emblem.webp';org.sameAs=['https://www.facebook.com/BoxerProgames','https://www.instagram.com/progames.pl/'];org.contactPoint=[{'@type':'ContactPoint',contactType:'sales',email:'office@progames.pl',telephone:'+48 536 068 912'},{'@type':'ContactPoint',contactType:'customer service',email:'service@progames.pl',telephone:'+48 789 108 086'}];
  addSchema(document,{'@context':'https://schema.org','@type':kind==='collection'?'CollectionPage':'WebPage','@id':origin+url+'#webpage',url:origin+url,name:document.title,description:document.querySelector('meta[name="description"]').content,inLanguage:lang,isPartOf:{'@id':origin+'/#website'},publisher:{'@id':origin+'/#organization'},...(product?{mainEntity:{'@id':origin+url+'#product'}}:{})});
  if(kind==='home'){addSchema(document,org);addSchema(document,{'@context':'https://schema.org','@type':'WebSite','@id':origin+'/#website',url:origin+'/',name:'Pro Games Poland',inLanguage:langs,publisher:{'@id':origin+'/#organization'}})}
  if(product){
@@ -48,7 +56,14 @@ function render(kind,lang,key){
   addSchema(document,{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:crumbs.map((c,i)=>({'@type':'ListItem',position:i+1,...c}))});
  }
  if(kind==='collection')addSchema(document,{'@context':'https://schema.org','@type':'ItemList',name:'Boxer Standard',itemListElement:data.window.PRODUCT_COLLECTIONS['boxer-standard'].slugs.map((slug,i)=>({'@type':'ListItem',position:i+1,name:products[slug].name,url:origin+routes.product(lang,slug)}))});
- // Reserve layout for product images; the file dimensions are optional for contained card artwork.
+ for(const script of document.querySelectorAll('script[src]')){
+ if(script.getAttribute('src').startsWith('/products.js')) script.setAttribute('src','/assets/data/products-'+lang+'.js?v=20');
+}
+for(const img of document.querySelectorAll('img[src="/assets/progames-emblem.webp"]')){
+ img.setAttribute('src','/assets/progames-emblem-256.webp');
+ img.setAttribute('width','1254');img.setAttribute('height','1254');
+}
+// Reserve layout for product images; the file dimensions are optional for contained card artwork.
  for(const img of document.querySelectorAll('img')){img.setAttribute('decoding','async');if(!img.alt&&!['trade-world-outline','header-emblem'].includes(img.className)&&!img.closest('.swatch-dot'))img.alt=lang==='es'?'Máquina recreativa Pro Games':'Pro Games amusement machine'}
  const filename=url.endsWith('/')?url.slice(1)+'index.html':url.slice(1);fs.mkdirSync(path.dirname(filename),{recursive:true});fs.writeFileSync(filename,'<!doctype html>\n'+document.documentElement.outerHTML);output.push({kind,lang,key,url,filename,title:document.title});
 }

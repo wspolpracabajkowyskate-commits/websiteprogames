@@ -1,0 +1,10 @@
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{const b=await chromium.launch({executablePath:process.env.PG_CHROMIUM_PATH||undefined,args:['--no-sandbox']});let out=[];
+for(const width of [390,1440])for(const path of ['/','/en/products/boxer-flash.html','/catalog.html?catalog=parts'])for(let i=0;i<3;i++){
+ const ctx=await b.newContext({viewport:{width,height:900}});const p=await ctx.newPage();let errors=[];p.on('pageerror',e=>errors.push(e.message));
+ await p.addInitScript(()=>{window.stats={long:0,lcp:0,cls:0};new PerformanceObserver(l=>l.getEntries().forEach(e=>window.stats.long+=e.duration)).observe({type:'longtask',buffered:true});new PerformanceObserver(l=>l.getEntries().forEach(e=>window.stats.lcp=e.startTime)).observe({type:'largest-contentful-paint',buffered:true});new PerformanceObserver(l=>l.getEntries().forEach(e=>{if(!e.hadRecentInput)window.stats.cls+=e.value})).observe({type:'layout-shift',buffered:true});});
+ const cd=await ctx.newCDPSession(p);await cd.send('Network.enable');await cd.send('Network.emulateNetworkConditions',{offline:false,latency:80,downloadThroughput:2000000/8,uploadThroughput:1000000/8});await cd.send('Emulation.setCPUThrottlingRate',{rate:4});
+ await p.goto('http://127.0.0.1:'+process.argv[2]+path);await p.waitForTimeout(1800);await p.evaluate(()=>document.fonts.ready);
+ out.push({width,path,run:i,...await p.evaluate(()=>({...stats,dcl:performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd,bytes:performance.getEntriesByType('resource').reduce((s,e)=>s+e.encodedBodySize,0),requests:performance.getEntriesByType('resource').length,resources:performance.getEntriesByType('resource').map(e=>({name:new URL(e.name).pathname,bytes:e.encodedBodySize})),overflow:document.documentElement.scrollWidth>innerWidth})),errors});
+ if(i===0)await p.screenshot({path:`${process.argv[3]}-${width}-${path.includes('products')?'product':path.includes('catalog')?'catalog':'home'}.png`});await ctx.close();
+}fs.writeFileSync(process.argv[3]+'.json',JSON.stringify(out,null,2));await b.close()})();

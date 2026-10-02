@@ -1,0 +1,26 @@
+{
+  "files": 407,
+  "asset_bytes": 48456060,
+  "duplicates": [
+    [
+      "assets/products/boxer-flash-black.webp",
+      "assets/products/boxer-flash-black-clean-v18.webp"
+    ]
+  ],
+  "runtime_files": [
+    "site-config.js",
+    "script.js",
+    "trade-map.js",
+    "product.js",
+    "products.js"
+  ],
+  "media_extensions": [
+    ".css",
+    ".pdf",
+    ".png",
+    ".svg",
+    ".txt",
+    ".webp",
+    ".woff"
+  ]
+}

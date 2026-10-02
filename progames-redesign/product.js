@@ -69,7 +69,8 @@ const displayVariantName=(v,i)=>isPL?(es.colors[v.name]||v.name):isES&&v.nameES?
 const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="${isPL?'Wybierz kolor lub wzór':isES?'Elegir color o diseño':'Choose colour or artwork variant'}"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName" aria-live="polite">${displayVariantName(mainVariant,selectedIndex)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=Boolean(swatchColor[v.color||v.name]);return `<button type="button" class="gallery-swatch ${i===selectedIndex?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-pressed="${i===selectedIndex}" aria-label="${isPL?'Pokaż':isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.color||v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
 const finishBlock=p.availableColors?'':variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
-detail.innerHTML=`
+const hasStaticDetail=Boolean(detail.querySelector('#productMainImage'));
+if(!hasStaticDetail) detail.innerHTML=`
 <section class="product-detail-v2">
   <div class="product-gallery-panel">
     <div class="product-main-stage reveal in">
@@ -156,6 +157,7 @@ function setVariant(index){
   };
   preload.src=variant.image;
 }
+if(hasStaticDetail&&selectedIndex!==0) setVariant(selectedIndex);
 updateVariantLinks();
 
 // Product and breadcrumb structured data are included in the generated HTML.

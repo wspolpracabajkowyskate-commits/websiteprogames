@@ -1,0 +1,1604 @@
+[
+  {
+    "width": 390,
+    "path": "/",
+    "run": 0,
+    "long": 1318,
+    "lcp": 6216,
+    "cls": 0.08750877789648624,
+    "dcl": 4030.899999999907,
+    "bytes": 4361310,
+    "requests": 27,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/hero-champion.webp",
+        "bytes": 296296
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/script.js",
+        "bytes": 9640
+      },
+      {
+        "name": "/trade-map.js",
+        "bytes": 4723
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/assets/fonts/inter-500.woff",
+        "bytes": 156508
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/manrope-700.woff",
+        "bytes": 41460
+      },
+      {
+        "name": "/assets/fonts/inter-600.woff",
+        "bytes": 157204
+      },
+      {
+        "name": "/assets/fonts/manrope-600.woff",
+        "bytes": 41424
+      },
+      {
+        "name": "/assets/products/monster-3in1-ticket-white.webp",
+        "bytes": 149042
+      },
+      {
+        "name": "/assets/products/monster-3in1-red.webp",
+        "bytes": 114506
+      },
+      {
+        "name": "/assets/products/double-hit-red.webp",
+        "bytes": 80772
+      },
+      {
+        "name": "/assets/products/double-hit-gift-black.webp",
+        "bytes": 81252
+      },
+      {
+        "name": "/assets/products/double-hit-kids-white.webp",
+        "bytes": 105108
+      },
+      {
+        "name": "/assets/products/double-hit-kids-gift-white.webp",
+        "bytes": 97588
+      },
+      {
+        "name": "/assets/products/double-strike-black.webp",
+        "bytes": 65626
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-red.webp",
+        "bytes": 79420
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/",
+    "run": 1,
+    "long": 1434,
+    "lcp": 6208,
+    "cls": 0.08750877789648624,
+    "dcl": 4000.0999999998603,
+    "bytes": 4361310,
+    "requests": 27,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/hero-champion.webp",
+        "bytes": 296296
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/script.js",
+        "bytes": 9640
+      },
+      {
+        "name": "/trade-map.js",
+        "bytes": 4723
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/assets/fonts/inter-500.woff",
+        "bytes": 156508
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/manrope-700.woff",
+        "bytes": 41460
+      },
+      {
+        "name": "/assets/fonts/inter-600.woff",
+        "bytes": 157204
+      },
+      {
+        "name": "/assets/fonts/manrope-600.woff",
+        "bytes": 41424
+      },
+      {
+        "name": "/assets/products/monster-3in1-ticket-white.webp",
+        "bytes": 149042
+      },
+      {
+        "name": "/assets/products/monster-3in1-red.webp",
+        "bytes": 114506
+      },
+      {
+        "name": "/assets/products/double-hit-red.webp",
+        "bytes": 80772
+      },
+      {
+        "name": "/assets/products/double-hit-gift-black.webp",
+        "bytes": 81252
+      },
+      {
+        "name": "/assets/products/double-hit-kids-white.webp",
+        "bytes": 105108
+      },
+      {
+        "name": "/assets/products/double-hit-kids-gift-white.webp",
+        "bytes": 97588
+      },
+      {
+        "name": "/assets/products/double-strike-black.webp",
+        "bytes": 65626
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-red.webp",
+        "bytes": 79420
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/",
+    "run": 2,
+    "long": 1238,
+    "lcp": 6220,
+    "cls": 0.08750877789648624,
+    "dcl": 4039,
+    "bytes": 4361310,
+    "requests": 27,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/hero-champion.webp",
+        "bytes": 296296
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/script.js",
+        "bytes": 9640
+      },
+      {
+        "name": "/trade-map.js",
+        "bytes": 4723
+      },
+      {
+        "name": "/assets/fonts/inter-500.woff",
+        "bytes": 156508
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/manrope-700.woff",
+        "bytes": 41460
+      },
+      {
+        "name": "/assets/fonts/inter-600.woff",
+        "bytes": 157204
+      },
+      {
+        "name": "/assets/fonts/manrope-600.woff",
+        "bytes": 41424
+      },
+      {
+        "name": "/assets/products/monster-3in1-ticket-white.webp",
+        "bytes": 149042
+      },
+      {
+        "name": "/assets/products/monster-3in1-red.webp",
+        "bytes": 114506
+      },
+      {
+        "name": "/assets/products/double-hit-red.webp",
+        "bytes": 80772
+      },
+      {
+        "name": "/assets/products/double-hit-gift-black.webp",
+        "bytes": 81252
+      },
+      {
+        "name": "/assets/products/double-hit-kids-white.webp",
+        "bytes": 105108
+      },
+      {
+        "name": "/assets/products/double-hit-kids-gift-white.webp",
+        "bytes": 97588
+      },
+      {
+        "name": "/assets/products/double-strike-black.webp",
+        "bytes": 65626
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-red.webp",
+        "bytes": 79420
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/en/products/boxer-flash.html",
+    "run": 0,
+    "long": 98,
+    "lcp": 12160,
+    "cls": 0.14428873061095285,
+    "dcl": 3485.4000000001397,
+    "bytes": 3904066,
+    "requests": 14,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/products/boxer-flash-black-clean-v18.webp",
+        "bytes": 1008926
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/product.js",
+        "bytes": 14399
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/en/products/boxer-flash.html",
+    "run": 1,
+    "long": 100,
+    "lcp": 12160,
+    "cls": 0.14428873061095285,
+    "dcl": 3504.6999999999534,
+    "bytes": 3904066,
+    "requests": 14,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/products/boxer-flash-black-clean-v18.webp",
+        "bytes": 1008926
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/product.js",
+        "bytes": 14399
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/en/products/boxer-flash.html",
+    "run": 2,
+    "long": 147,
+    "lcp": 12156,
+    "cls": 0.14428873061095285,
+    "dcl": 3517.0999999998603,
+    "bytes": 3904066,
+    "requests": 14,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/products/boxer-flash-black-clean-v18.webp",
+        "bytes": 1008926
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/product.js",
+        "bytes": 14399
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/catalog.html?catalog=parts",
+    "run": 0,
+    "long": 59,
+    "lcp": 972,
+    "cls": 0.0024268882557771446,
+    "dcl": 957.9000000001397,
+    "bytes": 2530502,
+    "requests": 10,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/catalogs/pro-games-machines-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/catalogs/pro-games-spare-parts-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/catalog.html?catalog=parts",
+    "run": 1,
+    "long": 65,
+    "lcp": 964,
+    "cls": 0.0024268882557771446,
+    "dcl": 979,
+    "bytes": 2530502,
+    "requests": 10,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/catalogs/pro-games-machines-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/catalogs/pro-games-spare-parts-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "path": "/catalog.html?catalog=parts",
+    "run": 2,
+    "long": 80,
+    "lcp": 1004,
+    "cls": 0.0024268882557771446,
+    "dcl": 989.6999999999534,
+    "bytes": 2530502,
+    "requests": 10,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/catalogs/pro-games-machines-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/catalogs/pro-games-spare-parts-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/",
+    "run": 0,
+    "long": 1317,
+    "lcp": 6232,
+    "cls": 0.002373556020393947,
+    "dcl": 4018.5999999998603,
+    "bytes": 4862430,
+    "requests": 34,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/hero-champion.webp",
+        "bytes": 296296
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/script.js",
+        "bytes": 9640
+      },
+      {
+        "name": "/trade-map.js",
+        "bytes": 4723
+      },
+      {
+        "name": "/assets/fonts/inter-500.woff",
+        "bytes": 156508
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/manrope-700.woff",
+        "bytes": 41460
+      },
+      {
+        "name": "/assets/fonts/inter-600.woff",
+        "bytes": 157204
+      },
+      {
+        "name": "/assets/fonts/manrope-600.woff",
+        "bytes": 41424
+      },
+      {
+        "name": "/assets/products/monster-3in1-ticket-white.webp",
+        "bytes": 149042
+      },
+      {
+        "name": "/assets/products/monster-3in1-red.webp",
+        "bytes": 114506
+      },
+      {
+        "name": "/assets/products/double-hit-red.webp",
+        "bytes": 80772
+      },
+      {
+        "name": "/assets/products/double-hit-gift-black.webp",
+        "bytes": 81252
+      },
+      {
+        "name": "/assets/products/double-hit-kids-white.webp",
+        "bytes": 105108
+      },
+      {
+        "name": "/assets/products/double-hit-kids-gift-white.webp",
+        "bytes": 97588
+      },
+      {
+        "name": "/assets/products/double-strike-black.webp",
+        "bytes": 65626
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-red.webp",
+        "bytes": 79420
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/assets/products/matte-airbrushed-standard-matte-black.webp",
+        "bytes": 64844
+      },
+      {
+        "name": "/assets/products/boxer-combat-red.webp",
+        "bytes": 60632
+      },
+      {
+        "name": "/assets/products/boxer-fist-white.webp",
+        "bytes": 69482
+      },
+      {
+        "name": "/assets/products/boxer-ring-red.webp",
+        "bytes": 71724
+      },
+      {
+        "name": "/assets/products/boxer-combat-kids-orange.webp",
+        "bytes": 81690
+      },
+      {
+        "name": "/assets/products/boxer-kids-artwork-01-white.webp",
+        "bytes": 87820
+      },
+      {
+        "name": "/assets/products/boxer-flash-gift-black.webp",
+        "bytes": 64928
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/",
+    "run": 1,
+    "long": 1261,
+    "lcp": 6256,
+    "cls": 0.002373556020393947,
+    "dcl": 4038,
+    "bytes": 4862430,
+    "requests": 34,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/hero-champion.webp",
+        "bytes": 296296
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/script.js",
+        "bytes": 9640
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/trade-map.js",
+        "bytes": 4723
+      },
+      {
+        "name": "/assets/fonts/inter-500.woff",
+        "bytes": 156508
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/manrope-700.woff",
+        "bytes": 41460
+      },
+      {
+        "name": "/assets/fonts/inter-600.woff",
+        "bytes": 157204
+      },
+      {
+        "name": "/assets/fonts/manrope-600.woff",
+        "bytes": 41424
+      },
+      {
+        "name": "/assets/products/monster-3in1-ticket-white.webp",
+        "bytes": 149042
+      },
+      {
+        "name": "/assets/products/monster-3in1-red.webp",
+        "bytes": 114506
+      },
+      {
+        "name": "/assets/products/double-hit-red.webp",
+        "bytes": 80772
+      },
+      {
+        "name": "/assets/products/double-hit-gift-black.webp",
+        "bytes": 81252
+      },
+      {
+        "name": "/assets/products/double-hit-kids-white.webp",
+        "bytes": 105108
+      },
+      {
+        "name": "/assets/products/double-hit-kids-gift-white.webp",
+        "bytes": 97588
+      },
+      {
+        "name": "/assets/products/double-strike-black.webp",
+        "bytes": 65626
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-red.webp",
+        "bytes": 79420
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/assets/products/matte-airbrushed-standard-matte-black.webp",
+        "bytes": 64844
+      },
+      {
+        "name": "/assets/products/boxer-combat-red.webp",
+        "bytes": 60632
+      },
+      {
+        "name": "/assets/products/boxer-fist-white.webp",
+        "bytes": 69482
+      },
+      {
+        "name": "/assets/products/boxer-ring-red.webp",
+        "bytes": 71724
+      },
+      {
+        "name": "/assets/products/boxer-combat-kids-orange.webp",
+        "bytes": 81690
+      },
+      {
+        "name": "/assets/products/boxer-kids-artwork-01-white.webp",
+        "bytes": 87820
+      },
+      {
+        "name": "/assets/products/boxer-flash-gift-black.webp",
+        "bytes": 64928
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/",
+    "run": 2,
+    "long": 1480,
+    "lcp": 6192,
+    "cls": 0.002373556020393947,
+    "dcl": 4004.6999999999534,
+    "bytes": 4862430,
+    "requests": 34,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/hero-champion.webp",
+        "bytes": 296296
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/script.js",
+        "bytes": 9640
+      },
+      {
+        "name": "/trade-map.js",
+        "bytes": 4723
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/assets/fonts/inter-500.woff",
+        "bytes": 156508
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/manrope-700.woff",
+        "bytes": 41460
+      },
+      {
+        "name": "/assets/fonts/inter-600.woff",
+        "bytes": 157204
+      },
+      {
+        "name": "/assets/fonts/manrope-600.woff",
+        "bytes": 41424
+      },
+      {
+        "name": "/assets/products/monster-3in1-ticket-white.webp",
+        "bytes": 149042
+      },
+      {
+        "name": "/assets/products/monster-3in1-red.webp",
+        "bytes": 114506
+      },
+      {
+        "name": "/assets/products/double-hit-red.webp",
+        "bytes": 80772
+      },
+      {
+        "name": "/assets/products/double-hit-gift-black.webp",
+        "bytes": 81252
+      },
+      {
+        "name": "/assets/products/double-hit-kids-white.webp",
+        "bytes": 105108
+      },
+      {
+        "name": "/assets/products/double-hit-kids-gift-white.webp",
+        "bytes": 97588
+      },
+      {
+        "name": "/assets/products/double-strike-black.webp",
+        "bytes": 65626
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-red.webp",
+        "bytes": 79420
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/assets/products/matte-airbrushed-standard-matte-black.webp",
+        "bytes": 64844
+      },
+      {
+        "name": "/assets/products/boxer-combat-red.webp",
+        "bytes": 60632
+      },
+      {
+        "name": "/assets/products/boxer-fist-white.webp",
+        "bytes": 69482
+      },
+      {
+        "name": "/assets/products/boxer-ring-red.webp",
+        "bytes": 71724
+      },
+      {
+        "name": "/assets/products/boxer-combat-kids-orange.webp",
+        "bytes": 81690
+      },
+      {
+        "name": "/assets/products/boxer-flash-gift-black.webp",
+        "bytes": 64928
+      },
+      {
+        "name": "/assets/products/boxer-kids-artwork-01-white.webp",
+        "bytes": 87820
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/en/products/boxer-flash.html",
+    "run": 0,
+    "long": 171,
+    "lcp": 12864,
+    "cls": 0.020270988993912893,
+    "dcl": 3541.2000000001863,
+    "bytes": 4073184,
+    "requests": 16,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/products/boxer-flash-black-clean-v18.webp",
+        "bytes": 1008926
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/product.js",
+        "bytes": 14399
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/champion-orange.webp",
+        "bytes": 88242
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/assets/products/easy-white.webp",
+        "bytes": 80876
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/en/products/boxer-flash.html",
+    "run": 1,
+    "long": 203,
+    "lcp": 12840,
+    "cls": 0.020270988993912893,
+    "dcl": 3464.7999999998137,
+    "bytes": 4073184,
+    "requests": 16,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/products/boxer-flash-black-clean-v18.webp",
+        "bytes": 1008926
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/product.js",
+        "bytes": 14399
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/assets/products/champion-orange.webp",
+        "bytes": 88242
+      },
+      {
+        "name": "/assets/products/easy-white.webp",
+        "bytes": 80876
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/en/products/boxer-flash.html",
+    "run": 2,
+    "long": 151,
+    "lcp": 12864,
+    "cls": 0.020270988993912893,
+    "dcl": 3520.1999999999534,
+    "bytes": 4073184,
+    "requests": 16,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/products/boxer-flash-black-clean-v18.webp",
+        "bytes": 1008926
+      },
+      {
+        "name": "/site-config.js",
+        "bytes": 378
+      },
+      {
+        "name": "/products.js",
+        "bytes": 168181
+      },
+      {
+        "name": "/product.js",
+        "bytes": 14399
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/products/joker-white.webp",
+        "bytes": 83494
+      },
+      {
+        "name": "/assets/products/pow-boxer-yellow.webp",
+        "bytes": 98186
+      },
+      {
+        "name": "/assets/products/champion-orange.webp",
+        "bytes": 88242
+      },
+      {
+        "name": "/assets/products/easy-white.webp",
+        "bytes": 80876
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/catalog.html?catalog=parts",
+    "run": 0,
+    "long": 66,
+    "lcp": 1000,
+    "cls": 0.006365430625214334,
+    "dcl": 976,
+    "bytes": 2530502,
+    "requests": 10,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/catalogs/pro-games-machines-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/catalogs/pro-games-spare-parts-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/catalog.html?catalog=parts",
+    "run": 1,
+    "long": 56,
+    "lcp": 1024,
+    "cls": 0.006365430625214334,
+    "dcl": 966.8999999999069,
+    "bytes": 2530502,
+    "requests": 10,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/catalogs/pro-games-machines-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/assets/catalogs/pro-games-spare-parts-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "path": "/catalog.html?catalog=parts",
+    "run": 2,
+    "long": 139,
+    "lcp": 992,
+    "cls": 0.006365430625214334,
+    "dcl": 949.9000000001397,
+    "bytes": 2530502,
+    "requests": 10,
+    "resources": [
+      {
+        "name": "/styles.css",
+        "bytes": 85407
+      },
+      {
+        "name": "/assets/fonts/fonts.css",
+        "bytes": 1409
+      },
+      {
+        "name": "/assets/catalogs/pro-games-machines-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/progames-emblem.png",
+        "bytes": 1935174
+      },
+      {
+        "name": "/assets/catalogs/pro-games-spare-parts-catalog.pdf",
+        "bytes": 0
+      },
+      {
+        "name": "/assets/fonts/inter-700.woff",
+        "bytes": 157580
+      },
+      {
+        "name": "/assets/fonts/manrope-800.woff",
+        "bytes": 40032
+      },
+      {
+        "name": "/assets/fonts/inter-400.woff",
+        "bytes": 152888
+      },
+      {
+        "name": "/assets/fonts/inter-800.woff",
+        "bytes": 157780
+      },
+      {
+        "name": "/favicon.svg",
+        "bytes": 232
+      }
+    ],
+    "overflow": false,
+    "errors": []
+  }
+]

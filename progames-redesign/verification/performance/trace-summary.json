@@ -1,0 +1,30 @@
+[
+  {
+    "event": "RunTask",
+    "ms": 146.45
+  },
+  {
+    "event": "Layout",
+    "ms": 108.05
+  },
+  {
+    "event": "RunTask",
+    "ms": 86.46
+  },
+  {
+    "event": "Layout",
+    "ms": 70.22
+  },
+  {
+    "event": "RunTask",
+    "ms": 131.13
+  },
+  {
+    "event": "Layout",
+    "ms": 58.63
+  },
+  {
+    "event": "RunTask",
+    "ms": 51.33
+  }
+]

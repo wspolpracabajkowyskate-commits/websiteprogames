@@ -14,7 +14,7 @@
 <link href="/assets/fonts/fonts.css" rel="stylesheet"><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript></head>
 <body class="catalog-page catalog-page-v2"><a href="#main-content" class="skip-link">Skip to content</a>
   <header class="site-header compact">
-    <a class="brand" href="/" aria-label="Pro Games home"><img class="header-emblem" src="/assets/progames-emblem.png" alt="" width="44" height="44"><span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span></a>
+    <a class="brand" href="/" aria-label="Pro Games home"><img class="header-emblem" src="/assets/progames-emblem-256.webp" alt="" width="44" height="44"><span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span></a>
     <nav class="desktop-nav"><a href="/#machines">Products</a><a href="/#distributors">Distributors</a><a href="/#contact">Contact</a></nav>
     <div class="language-switch header-language" aria-label="Language"><a class="active" href="/catalog.html">EN</a><a href="/catalog-es.html">ES</a></div><a class="btn btn-primary header-cta" href="/#contact">Request a quote</a>
   </header>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="pdf-frame pdf-frame-v2">
-          <iframe id="catalogFrame" title="Pro Games Machines Catalog" src="/assets/catalogs/pro-games-machines-catalog.pdf#view=FitH"></iframe>
+          <iframe id="catalogFrame" title="Pro Games Machines Catalog" data-src="/assets/catalogs/pro-games-machines-catalog.pdf#view=FitH"></iframe><noscript><iframe title="PDF catalog" src="/assets/catalogs/pro-games-machines-catalog.pdf#view=FitH"></iframe></noscript>
         </div>
       </div>
     </section>
@@ -101,13 +101,13 @@
       catalogLangLinks.forEach(a=>{a.href=a.getAttribute('href').split('?')[0]+'?catalog='+key;});
       buttons.forEach(btn=>{const active=btn.dataset.catalog===key;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active));});
       eyebrow.textContent=c.eyebrow; title.textContent=c.title; description.textContent=c.description;
-      frame.src=c.file+'#view=FitH'; frame.title=c.frameTitle; open.href=c.file; download.href=c.file;
+      if(frame.getAttribute('src')!==c.file+'#view=FitH') frame.src=c.file+'#view=FitH'; frame.title=c.frameTitle; open.href=c.file; download.href=c.file;
       history.replaceState(null,'','?catalog='+key);
       if(scroll) document.querySelector('.catalog-viewer-shell').scrollIntoView({behavior:'smooth',block:'start'});
     }
     buttons.forEach(btn=>btn.addEventListener('click',()=>setCatalog(btn.dataset.catalog,true)));
     const initial=new URLSearchParams(location.search).get('catalog');
-    if(initial&&catalogs[initial]) setCatalog(initial,false);
+    setCatalog(initial&&catalogs[initial]?initial:'machines',false);
   </script>
 </body>
 </html>

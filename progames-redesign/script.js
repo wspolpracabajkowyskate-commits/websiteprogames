@@ -10,7 +10,8 @@ const UI=isPL?{view:'Zobacz produkt ↗',shownSingular:'automat',shownPlural:'au
 const es=(isPL?window.PG_PL:window.PG_ES)||{labels:{}};
 const translations=(isPL?window.PRODUCT_PL:window.PRODUCT_ES)||{};
 const header=document.querySelector('#header');
-addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>40),{passive:true});
+let headerScrolled=header?.classList.contains('scrolled');
+addEventListener('scroll',()=>{const next=scrollY>40;if(next!==headerScrolled){header?.classList.toggle('scrolled',next);headerScrolled=next;}},{passive:true});
 
 const toggle=document.querySelector('.menu-toggle');
 const mobile=document.querySelector('#mobileNav');
@@ -48,9 +49,9 @@ if(collection){
     if(!shownCollections.has(family[0])){listing.push([family[0],family[1],true]);shownCollections.add(family[0]);}
   });
 }
-if(!collection)listing.push(['parts-list',{name:isES?'Repuestos':'Parts list',category:'parts',label:isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.png',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
+if(!collection)listing.push(['parts-list',{name:isES?'Repuestos':'Parts list',category:'parts',label:isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.webp',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
 const escapeAttribute=value=>String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-if(grid){
+if(grid&&!grid.querySelector('.product-card')){
   grid.innerHTML=listing.map(([slug,p,isCollection])=>{
     const label=(isES||isPL)?(es.labels[p.label]||p.label):p.label;
     const desc=(isES||isPL)?(translations[slug]?.desc||p.desc||''):p.desc||'';
@@ -67,8 +68,8 @@ if(grid){
   }).join('');
 }
 
+const cards=[...document.querySelectorAll('.product-card')];
 function applyProductFilters(){
-  const cards=[...document.querySelectorAll('.product-card')];
   let visible=0;
   cards.forEach(card=>{
     const categoryMatch=activeCategory==='all'||card.dataset.category===activeCategory;
@@ -103,7 +104,7 @@ clearProductFilters?.addEventListener('click',()=>{
 applyProductFilters();
 
 const productInterest=document.querySelector('#productInterest');
-if(productInterest){
+if(productInterest&&productInterest.options.length<=1){
   [...productInterest.querySelectorAll('option')].slice(1).forEach(option=>option.remove());
   Object.values(products).forEach(p=>{
     const option=document.createElement('option');
@@ -116,7 +117,7 @@ if(productInterest){
 
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -30px'});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('.reveal').forEach(el=>{if(el.classList.contains('product-card'))el.classList.remove('in');io.observe(el)});
 }else{
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
 }
