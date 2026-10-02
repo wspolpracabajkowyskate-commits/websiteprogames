@@ -3014,7 +3014,7 @@ window.PRODUCTS={
     "variants": [
       {
         "name": "Black",
-        "image": "/assets/products/boxer-flash-black.webp",
+        "image": "/assets/products/boxer-flash-black-clean-v18.webp",
         "id": "black",
         "sourceImage": "https://www.uplayamerica.com/wp-content/uploads/2024/10/flashnegra-1-1-1-500x1016.webp",
         "sourceFileName": "flashnegra-1-1-1-500x1016.webp"
@@ -3049,7 +3049,7 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/",
-    "image": "/assets/products/boxer-flash-black.webp",
+    "image": "/assets/products/boxer-flash-black-clean-v18.webp",
     "sourceCopyStatus": "no-description"
   },
   "boxer-gift": {
