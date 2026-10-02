@@ -57,7 +57,7 @@ function render(kind,lang,key){
  }
  if(kind==='collection')addSchema(document,{'@context':'https://schema.org','@type':'ItemList',name:'Boxer Standard',itemListElement:data.window.PRODUCT_COLLECTIONS['boxer-standard'].slugs.map((slug,i)=>({'@type':'ListItem',position:i+1,name:products[slug].name,url:origin+routes.product(lang,slug)}))});
  for(const script of document.querySelectorAll('script[src]')){
- if(script.getAttribute('src').startsWith('/products.js')) script.setAttribute('src','/assets/data/products-'+lang+'.js?v=23');
+ if(script.getAttribute('src').startsWith('/products.js')) script.setAttribute('src','/assets/data/products-'+lang+'.js?v=24');
 }
 for(const img of document.querySelectorAll('img[src="/assets/progames-emblem.webp"]')){
  img.setAttribute('src','/assets/progames-emblem-256.webp');

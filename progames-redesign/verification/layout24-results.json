@@ -1,0 +1,407 @@
+[
+  {
+    "width": 390,
+    "model": "double-hit-gift",
+    "photo": {
+      "x": 14,
+      "y": 197.546875,
+      "bottom": 567.546875,
+      "width": 362,
+      "height": 370
+    },
+    "config": {
+      "x": 14,
+      "y": 583.546875,
+      "bottom": 1519.046875,
+      "width": 362,
+      "height": 935.5
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1794.125,
+      "width": 390,
+      "height": 1716.125
+    },
+    "facts": {
+      "x": 0,
+      "y": 1794.125,
+      "bottom": 2908.46875,
+      "width": 390,
+      "height": 1114.34375
+    },
+    "cta": {
+      "x": 29,
+      "y": 1410.046875,
+      "bottom": 1458.046875,
+      "width": 332,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 251.078125,
+      "factsGap": 0,
+      "scrollable": true
+    }
+  },
+  {
+    "width": 390,
+    "model": "leader-rank",
+    "photo": {
+      "x": 14,
+      "y": 197.546875,
+      "bottom": 567.546875,
+      "width": 362,
+      "height": 370
+    },
+    "config": {
+      "x": 14,
+      "y": 583.546875,
+      "bottom": 1519.046875,
+      "width": 362,
+      "height": 935.5
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1853.71875,
+      "width": 390,
+      "height": 1775.71875
+    },
+    "facts": {
+      "x": 0,
+      "y": 1853.71875,
+      "bottom": 2270.0625,
+      "width": 390,
+      "height": 416.34375
+    },
+    "cta": {
+      "x": 29,
+      "y": 1410.046875,
+      "bottom": 1458.046875,
+      "width": 332,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 310.671875,
+      "factsGap": 0,
+      "scrollable": true
+    }
+  },
+  {
+    "width": 390,
+    "model": "hammer-2026",
+    "photo": {
+      "x": 14,
+      "y": 197.546875,
+      "bottom": 567.546875,
+      "width": 362,
+      "height": 370
+    },
+    "config": {
+      "x": 14,
+      "y": 583.546875,
+      "bottom": 1436.046875,
+      "width": 362,
+      "height": 852.5
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1746.921875,
+      "width": 390,
+      "height": 1668.921875
+    },
+    "facts": {
+      "x": 0,
+      "y": 1746.921875,
+      "bottom": 2163.265625,
+      "width": 390,
+      "height": 416.34375
+    },
+    "cta": {
+      "x": 29,
+      "y": 1327.046875,
+      "bottom": 1375.046875,
+      "width": 332,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 286.875,
+      "factsGap": 0,
+      "scrollable": null
+    }
+  },
+  {
+    "width": 768,
+    "model": "double-hit-gift",
+    "photo": {
+      "x": 22,
+      "y": 271.390625,
+      "bottom": 892.125,
+      "width": 351,
+      "height": 620.734375
+    },
+    "config": {
+      "x": 395,
+      "y": 174,
+      "bottom": 1143.203125,
+      "width": 351,
+      "height": 969.203125
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1169.203125,
+      "width": 768,
+      "height": 1091.203125
+    },
+    "facts": {
+      "x": 0,
+      "y": 1169.203125,
+      "bottom": 1889.796875,
+      "width": 768,
+      "height": 720.59375
+    },
+    "cta": {
+      "x": 412,
+      "y": 1034.203125,
+      "bottom": 1082.203125,
+      "width": 317,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 0,
+      "factsGap": 0,
+      "scrollable": false
+    }
+  },
+  {
+    "width": 768,
+    "model": "leader-rank",
+    "photo": {
+      "x": 22,
+      "y": 271.390625,
+      "bottom": 853.734375,
+      "width": 351,
+      "height": 582.34375
+    },
+    "config": {
+      "x": 395,
+      "y": 174,
+      "bottom": 1188.203125,
+      "width": 351,
+      "height": 1014.203125
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1214.203125,
+      "width": 768,
+      "height": 1136.203125
+    },
+    "facts": {
+      "x": 0,
+      "y": 1214.203125,
+      "bottom": 1600.796875,
+      "width": 768,
+      "height": 386.59375
+    },
+    "cta": {
+      "x": 412,
+      "y": 1079.203125,
+      "bottom": 1127.203125,
+      "width": 317,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 0,
+      "factsGap": 0,
+      "scrollable": false
+    }
+  },
+  {
+    "width": 768,
+    "model": "hammer-2026",
+    "photo": {
+      "x": 22,
+      "y": 271.390625,
+      "bottom": 741.390625,
+      "width": 351,
+      "height": 470
+    },
+    "config": {
+      "x": 395,
+      "y": 174,
+      "bottom": 1016.203125,
+      "width": 351,
+      "height": 842.203125
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1054.265625,
+      "width": 768,
+      "height": 976.265625
+    },
+    "facts": {
+      "x": 0,
+      "y": 1054.265625,
+      "bottom": 1440.859375,
+      "width": 768,
+      "height": 386.59375
+    },
+    "cta": {
+      "x": 412,
+      "y": 907.203125,
+      "bottom": 955.203125,
+      "width": 317,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 12.0625,
+      "factsGap": 0,
+      "scrollable": null
+    }
+  },
+  {
+    "width": 1440,
+    "model": "double-hit-gift",
+    "photo": {
+      "x": 32,
+      "y": 216.671875,
+      "bottom": 805.828125,
+      "width": 670,
+      "height": 589.15625
+    },
+    "config": {
+      "x": 738,
+      "y": 102,
+      "bottom": 985.515625,
+      "width": 670,
+      "height": 883.515625
+    },
+    "detail": {
+      "x": 0,
+      "y": 0,
+      "bottom": 1017.515625,
+      "width": 1440,
+      "height": 1017.515625
+    },
+    "facts": {
+      "x": 0,
+      "y": 1017.515625,
+      "bottom": 1515.609375,
+      "width": 1440,
+      "height": 498.09375
+    },
+    "cta": {
+      "x": 759,
+      "y": 888.515625,
+      "bottom": 936.515625,
+      "width": 628,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 0,
+      "factsGap": 0.015625,
+      "scrollable": false
+    }
+  },
+  {
+    "width": 1440,
+    "model": "leader-rank",
+    "photo": {
+      "x": 32,
+      "y": 216.671875,
+      "bottom": 746.234375,
+      "width": 670,
+      "height": 529.5625
+    },
+    "config": {
+      "x": 738,
+      "y": 102,
+      "bottom": 985.515625,
+      "width": 670,
+      "height": 883.515625
+    },
+    "detail": {
+      "x": 0,
+      "y": 0,
+      "bottom": 1017.515625,
+      "width": 1440,
+      "height": 1017.515625
+    },
+    "facts": {
+      "x": 0,
+      "y": 1017.515625,
+      "bottom": 1415.609375,
+      "width": 1440,
+      "height": 398.09375
+    },
+    "cta": {
+      "x": 759,
+      "y": 888.515625,
+      "bottom": 936.515625,
+      "width": 628,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 0,
+      "factsGap": 0,
+      "scrollable": false
+    }
+  },
+  {
+    "width": 1440,
+    "model": "hammer-2026",
+    "photo": {
+      "x": 32,
+      "y": 216.671875,
+      "bottom": 705.828125,
+      "width": 670,
+      "height": 489.15625
+    },
+    "config": {
+      "x": 738,
+      "y": 102,
+      "bottom": 897.515625,
+      "width": 670,
+      "height": 795.515625
+    },
+    "detail": {
+      "x": 0,
+      "y": 0,
+      "bottom": 929.515625,
+      "width": 1440,
+      "height": 929.515625
+    },
+    "facts": {
+      "x": 0,
+      "y": 929.515625,
+      "bottom": 1327.609375,
+      "width": 1440,
+      "height": 398.09375
+    },
+    "cta": {
+      "x": 759,
+      "y": 800.515625,
+      "bottom": 848.515625,
+      "width": 628,
+      "height": 48
+    },
+    "overflow": false,
+    "extra": {
+      "bottomGap": 0,
+      "factsGap": 0,
+      "scrollable": null
+    }
+  }
+]

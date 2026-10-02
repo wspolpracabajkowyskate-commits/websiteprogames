@@ -99,7 +99,7 @@ if(!hasStaticDetail) detail.innerHTML=`
   </div>
 </section>
 
-${(p.features.length||p.spec.length||p.options.length)?`<section class="product-facts section">
+${(p.features.length||p.spec.length||p.options.length)?`<section class="product-facts section" style="--facts-columns:${[p.features,p.spec,p.options].filter(items=>items.length).length}">
   <div class="product-facts-title"><p class="kicker">${txt.details}</p><h2>${isES?'Especificaciones y características':'Specifications & features'}</h2></div>
   ${p.features.length?`<div class="product-facts-column"><h3>${txt.features}</h3><ul class="feature-list">${features}</ul></div>`:''}
   ${p.spec.length?`<div class="spec-table light"><h3>${txt.specs}</h3>${spec}</div>`:''}
