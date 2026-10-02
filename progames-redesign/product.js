@@ -67,16 +67,21 @@ const swatchColor={White:'#f4f4f1',Orange:'#ff7a18',Yellow:'#ffd329',Green:'#27a
 const isGenericVariantName=(name='')=>/^Variant\s+\d+$/i.test(name);
 const displayVariantName=(v,i)=>isPL?(es.colors[v.name]||v.name):isES&&v.nameES?v.nameES:isGenericVariantName(v.name)?`${isES?'Variante':'Variant'} ${String(i+1).padStart(2,'0')}`:localColor(v.name);
 const variantSelector=variantList.length>1?`<div class="gallery-variant-selector" aria-label="${isPL?'Wybierz kolor lub wzór':isES?'Elegir color o diseño':'Choose colour or artwork variant'}"><div class="gallery-variant-head"><span>${txt.colour}</span><strong id="variantName" aria-live="polite">${displayVariantName(mainVariant,selectedIndex)}</strong></div><div class="gallery-variant-swatches">${variantList.map((v,i)=>{const label=displayVariantName(v,i);const named=Boolean(swatchColor[v.color||v.name]);return `<button type="button" class="gallery-swatch ${i===selectedIndex?'active':''} ${named?'has-colour-name':'photo-variant'}" data-index="${i}" aria-pressed="${i===selectedIndex}" aria-label="${isPL?'Pokaż':isES?'Mostrar':'Show'} ${label}" title="${label}" style="--swatch:${swatchColor[v.color||v.name]||'#f2f2ef'}"><span class="swatch-dot">${named?'':`<img src="${v.image}" alt="" loading="lazy" referrerpolicy="no-referrer">`}</span><span class="swatch-label">${label}</span></button>`}).join('')}</div></div>`:'';
-const quoteLabels=isES?{title:'CONFIGURA TU MÁQUINA',intro:'Elige el equipamiento para tu solicitud de presupuesto.',payment:'Sistema de pago',paymentNote:'Selecciona una o ambas opciones, o déjalas sin marcar para consultar la configuración estándar.',extras:'Opciones adicionales',summary:'Tu configuración',model:'Modelo',color:'Color / acabado',none:'Sin opciones adicionales',standard:'Configuración estándar · por confirmar',cta:'Solicitar esta configuración ↗',note:'El equipo de ventas confirmará la compatibilidad, la disponibilidad y el precio para este modelo.'}:{title:'CONFIGURE YOUR MACHINE',intro:'Choose the equipment to include in your quote request.',payment:'Payment system',paymentNote:'Select one or both options, or leave them unchecked to discuss the standard configuration.',extras:'Additional options',summary:'Your configuration',model:'Model',color:'Colour / finish',none:'No additional options',standard:'Standard configuration · to be confirmed',cta:'Request this configuration ↗',note:'Our sales team will confirm compatibility, availability and pricing for this model.'};
+const quoteLabels=isES?{title:'CONFIGURA TU MÁQUINA',intro:'Selecciona las opciones, revisa el resumen y solicita un presupuesto.',payment:'Pago y dispensación',paymentNote:'Elige las opciones de pago y dispensación. Puedes seleccionar varias.',extras:'Opciones adicionales',summary:'Tu configuración',model:'Modelo',color:'Color / acabado',none:'Sin opciones adicionales',standard:'Configuración estándar · por confirmar',cta:'Solicitar esta configuración ↗',note:'El equipo de ventas confirmará la compatibilidad, la disponibilidad y el precio para este modelo.'}:{title:'CONFIGURE YOUR MACHINE',intro:'Select your options, review the summary and request a quote.',payment:'Payment & dispensing',paymentNote:'Choose the payment and dispensing options for your machine. Multiple selections are possible.',extras:'Additional options',summary:'Your configuration',model:'Model',color:'Colour / finish',none:'No additional options',standard:'Standard configuration · to be confirmed',cta:'Request this configuration ↗',note:'Our sales team will confirm compatibility, availability and pricing for this model.'};
 const quoteOptions=window.PG_QUOTE_OPTIONS;
 const selectedOptions=new Set(window.PG_QUOTE_SELECTION(params).map(o=>o.id));
 const optionCards=group=>quoteOptions.filter(o=>o.group===group).map(o=>`<label class="config-option"><input type="checkbox" name="equipment" value="${o.id}" ${selectedOptions.has(o.id)?'checked':''}><span class="config-option-content"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${o.icon}</svg><span>${isES?o.es:o.en}</span><span class="config-check" aria-hidden="true"></span></span></label>`).join('');
-const configurationHTML=`<section class="machine-config" aria-labelledby="configTitle"><div class="config-heading"><p class="kicker">${quoteLabels.title}</p><h2 id="configTitle">${isES?'Hazla tuya.':'Make it yours.'}</h2><p>${quoteLabels.intro}</p></div><fieldset><legend>${quoteLabels.payment}</legend><p class="config-helper">${quoteLabels.paymentNote}</p><div class="config-grid">${optionCards('payment')}</div></fieldset><fieldset><legend>${quoteLabels.extras}</legend><div class="config-grid">${optionCards('extras')}</div></fieldset><div class="config-summary"><h3>${quoteLabels.summary}</h3><dl><div><dt>${quoteLabels.model}</dt><dd>${p.name}</dd></div><div><dt>${quoteLabels.color}</dt><dd id="configFinish"></dd></div><div><dt>${quoteLabels.payment}</dt><dd id="configPayment"></dd></div><div><dt>${quoteLabels.extras}</dt><dd id="configExtras"></dd></div></dl><a class="btn btn-primary config-quote" href="${HOME_URL}#contact">${quoteLabels.cta}</a><p class="config-footnote">${quoteLabels.note}</p><span id="configAnnouncement" class="config-sr" role="status" aria-live="polite"></span></div><noscript><p>${isES?'Activa JavaScript para añadir las opciones a tu consulta. También puedes escribirlas en el formulario de contacto.':'Enable JavaScript to include selected options in your enquiry, or list them in the contact form.'}</p></noscript></section>`;
+const configurationHTML=`<section class="machine-config" aria-labelledby="configTitle"><div class="config-heading"><p class="kicker">${quoteLabels.title}</p><h2 id="configTitle">${isES?'Elige tu equipamiento.':'Choose your equipment.'}</h2><p>${quoteLabels.intro}</p></div><fieldset><legend>${quoteLabels.payment}</legend><p class="config-helper">${quoteLabels.paymentNote}</p><div class="config-grid">${optionCards('payment')}</div></fieldset><fieldset><legend>${quoteLabels.extras}</legend><div class="config-grid">${optionCards('extras')}</div></fieldset><div class="config-summary"><h3>${quoteLabels.summary}</h3><dl><div><dt>${quoteLabels.model}</dt><dd>${p.name}</dd></div><div><dt>${quoteLabels.color}</dt><dd id="configFinish"></dd></div><div><dt>${quoteLabels.payment}</dt><dd id="configPayment"></dd></div><div><dt>${quoteLabels.extras}</dt><dd id="configExtras"></dd></div></dl><a class="btn btn-primary config-quote" href="${HOME_URL}#contact">${quoteLabels.cta}</a><p class="config-footnote">${quoteLabels.note}</p><span id="configAnnouncement" class="config-sr" role="status" aria-live="polite"></span></div><noscript><p>${isES?'Activa JavaScript para añadir las opciones a tu consulta. También puedes escribirlas en el formulario de contacto.':'Enable JavaScript to include selected options in your enquiry, or list them in the contact form.'}</p></noscript></section>`;
 const finishBlock=p.availableColors?'':variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
 const hasStaticDetail=Boolean(detail.querySelector('#productMainImage'));
 if(!hasStaticDetail) detail.innerHTML=`
 <section class="product-detail-v2">
+  <div class="product-intro">
+    <a class="product-back-link" href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">← ${isStandard?'Boxer Standard':txt.allMachines}</a>
+    <p class="kicker">${label}</p>
+    <h1>${p.name}</h1>
+  </div>
   <div class="product-gallery-panel">
     <div class="product-main-stage reveal in">
       <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${displayVariantName(mainVariant,selectedIndex)}" fetchpriority="high" referrerpolicy="no-referrer">
@@ -86,14 +91,8 @@ if(!hasStaticDetail) detail.innerHTML=`
     ${configurationHTML}
   </div>
   <div class="product-info-panel">
-    <a class="product-back-link" href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">← ${isStandard?'Boxer Standard':txt.allMachines}</a>
-    <p class="kicker">${label}</p>
-    <h1>${p.name}</h1>
     <div class="detail-lead">${descriptionHTML}</div>
-    <div class="detail-actions">
-      <a class="btn btn-primary" href="${HOME_URL}#contact">${txt.request}</a>
-      <a class="btn btn-outline-dark" href="${CATALOG_URL}">${txt.catalog}</a>
-    </div>
+    <a class="product-catalog-link" href="${CATALOG_URL}">${txt.catalog}</a>
     <p class="quote-note">${txt.price}</p>
     ${finishBlock}
   </div>
@@ -117,12 +116,7 @@ ${(p.features.length||p.spec.length||p.options.length)?`<section class="product-
   <div class="related-heading"><h2>${txt.related}</h2><a href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">${isStandard?(isPL?'Wszystkie modele Boxer Standard ↗':isES?'Ver todos los Boxer Standard ↗':'View all Boxer Standard models ↗'):txt.viewAll}</a></div>
   <div class="related-grid">${related}</div>
 </section>
-
-<section class="product-cta section-dark">
-  <p class="kicker">${txt.ready}</p>
-  <h2>${txt.build.replace('\n','<br>')}</h2>
-  <a class="btn btn-primary" href="${HOME_URL}#contact">${txt.send}</a>
-</section>`;
+`;
 
 let variantRequest=0;
 function updateVariantLinks(){
@@ -132,7 +126,7 @@ function updateVariantLinks(){
   if(selected.length)query.set('options',selected.map(o=>o.id).join(','));
   const productQuery=new URLSearchParams(query);productQuery.delete('model');
   document.querySelectorAll('[data-lang-link]').forEach(a=>{a.href=routes.product(a.dataset.langLink,key)+'?'+productQuery;});
-  document.querySelectorAll('.detail-actions a:first-child, .product-cta .btn, .config-quote').forEach(a=>{a.href=HOME_URL+'?'+query+'#inquiry';});
+  document.querySelectorAll('.config-quote').forEach(a=>{a.href=HOME_URL+'?'+query+'#inquiry';});
   document.querySelector('#configFinish').textContent=displayVariantName(variant,selectedIndex);
   document.querySelector('#configPayment').textContent=selected.filter(o=>o.group==='payment').map(o=>isES?o.es:o.en).join(', ')||quoteLabels.standard;
   document.querySelector('#configExtras').textContent=selected.filter(o=>o.group==='extras').map(o=>isES?o.es:o.en).join(', ')||quoteLabels.none;

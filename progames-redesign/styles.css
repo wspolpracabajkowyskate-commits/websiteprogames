@@ -884,3 +884,12 @@ main,.section,.hero,.business-head,.contact-copy,.contact-form,.production-copy,
 .trade-map-pin[data-event="las-vegas"] .trade-pin-label{left:auto;right:28px;top:-10px}
 @media(max-width:600px){.trade-map-pin[data-event="las-vegas"] .trade-pin-label{left:0;right:auto;top:-40px}}
 #inquiry{scroll-margin-top:110px}
+/* v22: one clear enquiry action after the configuration. */
+.product-intro{grid-column:1/-1;padding:26px 34px 18px;background:#fff;min-width:0}
+.product-intro .product-back-link{margin:0 0 18px;font-size:11px}
+.product-intro .kicker{margin:0 0 8px;font-size:10px}
+.product-intro h1{font:800 clamp(30px,4vw,54px)/1.08 Manrope,sans-serif;letter-spacing:-.05em;margin:0;overflow-wrap:anywhere}
+.product-page-v2 .product-info-panel{padding-top:28px}
+.product-catalog-link{display:inline-block;font-size:12px;font-weight:600;margin-top:20px;text-decoration:underline;text-underline-offset:4px;color:#555d66}
+@media(max-width:600px){.product-intro{padding:22px 20px 14px}.product-intro h1{font-size:32px}.product-intro .product-back-link{margin-bottom:15px}.product-page-v2 .product-info-panel{padding-top:24px}}
+.config-grid .config-option:last-child:nth-child(odd){grid-column:1/-1}

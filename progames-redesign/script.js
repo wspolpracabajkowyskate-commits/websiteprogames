@@ -49,6 +49,8 @@ if(collection){
     if(!shownCollections.has(family[0])){listing.push([family[0],family[1],true]);shownCollections.add(family[0]);}
   });
 }
+// Prioritise the new 2026 models without changing the Standard collection order.
+if(!collection){const featured=['hammer-2026','win-a-toy','leader-rank'];listing.sort((a,b)=>{const rank=id=>{const i=featured.indexOf(id);return i<0?featured.length:i;};return rank(a[0])-rank(b[0]);});}
 if(!collection)listing.push(['parts-list',{name:isES?'Repuestos':'Parts list',category:'parts',label:isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.webp',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
 const escapeAttribute=value=>String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 if(grid&&!grid.querySelector('.product-card')){
@@ -132,7 +134,7 @@ if(productInterest&&quoteProduct){
   const chosen=window.PG_QUOTE_SELECTION(quoteParams);
   const color=isES?(variant.nameES||es.colors?.[variant.name]||variant.name):variant.name;
   const lines=[(isES?'Modelo: ':'Model: ')+quoteProduct.name,(isES?'Color / acabado: ':'Colour / finish: ')+color,
-    (isES?'Sistema de pago: ':'Payment system: ')+(chosen.filter(o=>o.group==='payment').map(o=>isES?o.es:o.en).join(', ')||(isES?'Configuración estándar · por confirmar':'Standard configuration · to be confirmed'))];
+    (isES?'Pago y dispensación: ':'Payment & dispensing: ')+(chosen.filter(o=>o.group==='payment').map(o=>isES?o.es:o.en).join(', ')||(isES?'Configuración estándar · por confirmar':'Standard configuration · to be confirmed'))];
   window.PG_QUOTE_OPTIONS.filter(o=>o.group==='extras').forEach(o=>lines.push((isES?o.es:o.en)+': '+(chosen.some(c=>c.id===o.id)?(isES?'Sí':'Yes'):'No')));
   configurationText=lines.join('\n');
   const summary=document.createElement('section');summary.className='quote-request-summary';
