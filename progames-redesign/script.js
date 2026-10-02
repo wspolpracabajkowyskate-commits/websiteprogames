@@ -125,18 +125,37 @@ if('IntersectionObserver' in window){
 // Preserve the quoted product and finish when entering the contact form.
 const quoteParams=new URLSearchParams(location.search);
 const quoteProduct=Object.hasOwn(products,quoteParams.get('model'))?products[quoteParams.get('model')]:null;
+let configurationText='';
 if(productInterest&&quoteProduct){
   productInterest.value=quoteProduct.name;
-  const variant=quoteProduct.variants.find(v=>v.id===quoteParams.get('variant'));
-  if(variant){const message=document.querySelector('[name="message"]');message.value=(isPL?'Wykończenie: ':isES?'Acabado: ':'Finish: ')+(isPL?(es.colors?.[variant.name]||variant.name):isES?(variant.nameES||es.colors?.[variant.name]||variant.name):variant.name)+'\n';}
+  const variant=quoteProduct.variants.find(v=>v.id===quoteParams.get('variant'))||quoteProduct.variants[0];
+  const chosen=window.PG_QUOTE_SELECTION(quoteParams);
+  const color=isES?(variant.nameES||es.colors?.[variant.name]||variant.name):variant.name;
+  const lines=[(isES?'Modelo: ':'Model: ')+quoteProduct.name,(isES?'Color / acabado: ':'Colour / finish: ')+color,
+    (isES?'Sistema de pago: ':'Payment system: ')+(chosen.filter(o=>o.group==='payment').map(o=>isES?o.es:o.en).join(', ')||(isES?'Configuración estándar · por confirmar':'Standard configuration · to be confirmed'))];
+  window.PG_QUOTE_OPTIONS.filter(o=>o.group==='extras').forEach(o=>lines.push((isES?o.es:o.en)+': '+(chosen.some(c=>c.id===o.id)?(isES?'Sí':'Yes'):'No')));
+  configurationText=lines.join('\n');
+  const summary=document.createElement('section');summary.className='quote-request-summary';
+  const title=document.createElement('h3');title.textContent=isES?'Tu solicitud de configuración':'Your configuration request';
+  const copy=document.createElement('p');copy.textContent=configurationText;
+  const edit=document.createElement('a');edit.textContent=isES?'Editar configuración ↗':'Edit configuration ↗';
+  const query=new URLSearchParams({variant:variant.id});if(chosen.length)query.set('options',chosen.map(o=>o.id).join(','));
+  edit.href=routes.product(lang,quoteParams.get('model'))+'?'+query;
+  summary.append(title,copy,edit);document.querySelector('.contact-form').prepend(summary);
+  productInterest.addEventListener('change',()=>{if(productInterest.value!==quoteProduct.name){configurationText='';summary.remove();}});
+  document.querySelectorAll('.language-switch a,.mobile-language a').forEach(a=>{
+    const language=a.getAttribute('lang')||a.getAttribute('hreflang');if(!['en','es'].includes(language))return;
+    const homeQuery=new URLSearchParams(query);homeQuery.set('model',quoteParams.get('model'));
+    a.href=routes.home(language)+'?'+homeQuery+'#inquiry';
+  });
 }
 const contactForm=document.querySelector('.contact-form');
 contactForm?.addEventListener('submit',event=>{
   event.preventDefault();
   if(!contactForm.reportValidity()) return;
   const data=new FormData(contactForm);
-  const body=[...data].map(([name,value])=>`${name}: ${value}`).join('\r\n');
-  location.href='mailto:office@progames.pl?subject='+encodeURIComponent('Pro Games inquiry — '+(data.get('product')||'General'))+'&body='+encodeURIComponent(body);
+  if(configurationText)data.set('configuration',configurationText);
+  location.href=window.PG_INQUIRY_URL(data);
 });
 addEventListener('keydown',event=>{if(event.key==='Escape'){mobile?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');}});
 // Announce empty results and selected categories without leaving a blank grid.

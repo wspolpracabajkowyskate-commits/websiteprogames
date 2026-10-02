@@ -846,3 +846,41 @@ main,.section,.hero,.business-head,.contact-copy,.contact-form,.production-copy,
 .footer-social a{position:relative;z-index:1;min-height:44px}.footer-social a svg,.footer-social a span{pointer-events:none}
 @media(max-width:1100px){.site-header{gap:18px}.site-header .header-emblem{width:38px;height:38px;margin-right:5px}}
 @media(max-width:600px){.site-header .header-emblem{width:32px;height:32px;margin-right:4px}.site-header .brand{font-size:20px!important;column-gap:2px!important;min-width:0!important}.site-header .brand-sub{font-size:7px!important}.footer-identity .footer-emblem{width:80px;height:80px}.product-header-actions .btn{font-size:9px;padding:9px 12px}.site-header.product-header{padding:12px!important}.product-header-actions{min-width:0}.gallery-variant-swatches{touch-action:pan-x pan-y;overscroll-behavior-x:contain}}
+
+/* v21: native, accessible product configuration and enquiry summary. */
+.machine-config{width:100%;min-width:0;margin:20px 0 0;padding:24px;background:#fff;border:1px solid #e1e3e5;border-radius:20px;color:#15171b;text-align:left}
+.machine-config .config-heading .kicker{color:#cf3d0c;font-size:10px;letter-spacing:.14em;margin:0 0 8px}
+.machine-config .config-heading h2{font:800 clamp(24px,3vw,34px)/1.1 Manrope,sans-serif;letter-spacing:-.045em;margin:0 0 8px}
+.config-heading>p:last-child,.config-helper{font:400 12px/1.6 Inter,sans-serif;color:#686d75;margin:0 0 16px}
+.machine-config fieldset{min-width:0;margin:22px 0 0;padding:0;border:0}
+.machine-config legend{padding:0;margin:0 0 12px;font:700 13px/1.4 Inter,sans-serif}
+.config-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.config-option{position:relative;display:block;min-width:0;cursor:pointer}
+.config-option input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer;z-index:1}
+.config-option-content{display:grid;grid-template-columns:28px 1fr 16px;align-items:center;gap:10px;min-height:78px;padding:14px 12px;border:1px solid #dedfe3;border-radius:13px;background:#fafafa;transition:border-color .15s,background-color .15s}
+.config-option-content>svg{width:27px;height:27px;color:#737982}
+.config-option-content>span:not(.config-check){font:600 11px/1.45 Inter,sans-serif;overflow-wrap:anywhere}
+.config-check{width:16px;height:16px;border:1px solid #c8ccd1;border-radius:5px;background:white;display:grid;place-items:center}
+.config-option input:checked+.config-option-content{border-color:#ed4b19;background:#fff5ef}
+.config-option input:checked+.config-option-content>svg{color:#d63c0b}
+.config-option input:checked+.config-option-content .config-check{background:#ed4b19;border-color:#ed4b19}
+.config-option input:checked+.config-option-content .config-check:after{content:'';width:7px;height:4px;border-left:2px solid white;border-bottom:2px solid white;transform:translateY(-1px) rotate(-45deg)}
+.config-option input:focus-visible+.config-option-content{outline:3px solid #15171b;outline-offset:3px}
+.config-option:hover .config-option-content{border-color:#a5aab1}
+.config-summary{margin-top:24px;padding-top:22px;border-top:1px solid #e5e6e8}
+.config-summary h3,.quote-request-summary h3{font:750 16px/1.4 Manrope,sans-serif;margin:0 0 14px;color:#15171b}
+.config-summary dl{margin:0 0 20px;display:grid;gap:10px}
+.config-summary dl>div{display:grid;grid-template-columns:105px minmax(0,1fr);gap:12px;font:400 11px/1.6 Inter,sans-serif}
+.config-summary dt{color:#717780}.config-summary dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.config-summary .config-quote{width:100%;min-height:48px;white-space:normal;text-align:center;padding:12px;font-size:10px}
+.config-footnote{font:400 10px/1.6 Inter,sans-serif;color:#7a7f85;margin:12px 0 0}
+.config-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.quote-request-summary{background:#fff6f0;border:1px solid #f3c4af;border-radius:14px;padding:18px;margin:0 0 22px;min-width:0}
+.quote-request-summary p{white-space:pre-line;font:400 12px/1.7 Inter,sans-serif;color:#353940;overflow-wrap:anywhere;margin:0 0 12px}
+.quote-request-summary a{font:700 11px/1.5 Inter,sans-serif;color:#b63710;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.machine-config{margin-top:16px;padding:18px 14px;border-radius:16px}.config-option-content{grid-template-columns:24px 1fr 14px;gap:7px;padding:12px 9px;min-height:88px}.config-option-content>svg{width:24px;height:24px}.config-option-content>span:not(.config-check){font-size:10px}.config-summary dl>div{grid-template-columns:90px minmax(0,1fr);gap:8px}}
+@media(prefers-reduced-motion:reduce){.config-option-content{transition:none}}
+.trade-map-pin[data-event="london"] .trade-pin-label{left:auto;right:28px;top:-20px}
+.trade-map-pin[data-event="las-vegas"] .trade-pin-label{left:auto;right:28px;top:-10px}
+@media(max-width:600px){.trade-map-pin[data-event="las-vegas"] .trade-pin-label{left:0;right:auto;top:-40px}}
+#inquiry{scroll-margin-top:110px}

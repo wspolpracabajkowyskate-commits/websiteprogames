@@ -1270,6 +1270,93 @@
       "statusCode": 301
     },
     {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "hammer-2026"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/hammer-2026.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "hammer-2026"
+        }
+      ],
+      "destination": "/en/products/hammer-2026.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "win-a-toy"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/win-a-toy.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "win-a-toy"
+        }
+      ],
+      "destination": "/en/products/win-a-toy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "leader-rank"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/leader-rank.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "leader-rank"
+        }
+      ],
+      "destination": "/en/products/leader-rank.html",
+      "statusCode": 301
+    },
+    {
       "source": "/product-pl.html",
       "has": [
         {
@@ -2488,6 +2575,93 @@
       "statusCode": 301
     },
     {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "hammer-2026"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/hammer-2026.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "hammer-2026"
+        }
+      ],
+      "destination": "/en/products/hammer-2026.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "win-a-toy"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/win-a-toy.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "win-a-toy"
+        }
+      ],
+      "destination": "/en/products/win-a-toy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "leader-rank"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/leader-rank.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "leader-rank"
+        }
+      ],
+      "destination": "/en/products/leader-rank.html",
+      "statusCode": 301
+    },
+    {
       "source": "/product-es.html",
       "has": [
         {
@@ -3703,6 +3877,93 @@
         }
       ],
       "destination": "/es/productos/cyberdart.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "hammer-2026"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/es/productos/hammer-2026.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "hammer-2026"
+        }
+      ],
+      "destination": "/es/productos/hammer-2026.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "win-a-toy"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/es/productos/win-a-toy.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "win-a-toy"
+        }
+      ],
+      "destination": "/es/productos/win-a-toy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "leader-rank"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/es/productos/leader-rank.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "leader-rank"
+        }
+      ],
+      "destination": "/es/productos/leader-rank.html",
       "statusCode": 301
     },
     {

@@ -6,8 +6,8 @@ for(const language of ['en','es']){
   class Clock extends Date{constructor(...args){super(...(args.length?args:[date]))}}
   vm.runInNewContext(fs.readFileSync('trade-map.js','utf8'),{document,Intl,Date:Clock,setInterval:f=>{interval=f}});
   const map=document.querySelector('#tradeMap');assert.equal(map.hidden,false);
-  const pins=[...document.querySelectorAll('.trade-map-pin')];assert.equal(pins.length,2);
-  assert.equal(document.querySelectorAll('.trade-map-tabs button').length,2);
+  const pins=[...document.querySelectorAll('.trade-map-pin')];assert.equal(pins.length,4);
+  assert.equal(document.querySelectorAll('.trade-map-tabs button').length,4);
   const orlando=document.querySelector('.trade-map-pin[data-event="orlando"]');const london=document.querySelector('.trade-map-pin[data-event="london"]');
   const expected=date.startsWith('2026-10')?'upcoming':date==='2026-11-17T12:00:00Z'||date==='2026-11-20T22:59:00Z'?'live':'past';
   assert.equal(orlando.dataset.state,expected);assert.equal(london.dataset.state,'past');

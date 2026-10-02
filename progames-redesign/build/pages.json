@@ -357,6 +357,30 @@
     "title": "Cyberdart — DISTRIBUTED MACHINE | Pro Games"
   },
   {
+    "kind": "product",
+    "lang": "en",
+    "key": "hammer-2026",
+    "url": "/en/products/hammer-2026.html",
+    "filename": "en/products/hammer-2026.html",
+    "title": "Hammer 2026 — STRENGTH GAME | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "en",
+    "key": "win-a-toy",
+    "url": "/en/products/win-a-toy.html",
+    "filename": "en/products/win-a-toy.html",
+    "title": "Win a toy — BOXER PREMIUM | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "en",
+    "key": "leader-rank",
+    "url": "/en/products/leader-rank.html",
+    "filename": "en/products/leader-rank.html",
+    "title": "Boxer Leader Rank — BOXER PREMIUM | Pro Games"
+  },
+  {
     "kind": "home",
     "lang": "es",
     "url": "/es.html",
@@ -712,5 +736,29 @@
     "url": "/es/productos/cyberdart.html",
     "filename": "es/productos/cyberdart.html",
     "title": "Cyberdart — MÁQUINA DISTRIBUIDA | Catálogo Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "hammer-2026",
+    "url": "/es/productos/hammer-2026.html",
+    "filename": "es/productos/hammer-2026.html",
+    "title": "Hammer 2026 — JUEGO DE FUERZA | Catálogo Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "win-a-toy",
+    "url": "/es/productos/win-a-toy.html",
+    "filename": "es/productos/win-a-toy.html",
+    "title": "Win a toy — BOXER PREMIUM | Catálogo Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "leader-rank",
+    "url": "/es/productos/leader-rank.html",
+    "filename": "es/productos/leader-rank.html",
+    "title": "Boxer Leader Rank — BOXER PREMIUM | Catálogo Pro Games"
   }
 ]

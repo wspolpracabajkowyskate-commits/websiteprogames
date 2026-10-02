@@ -4023,3 +4023,229 @@ window.PRODUCT_COLLECTIONS={
     }
   }
 };
+
+// v21: user-supplied 2026 models. Original images and verified colour mapping.
+Object.assign(window.PRODUCTS,{
+  "hammer-2026": {
+    "name": "Hammer 2026",
+    "category": "strength",
+    "label": "STRENGTH GAME",
+    "tag": "NEW 2026",
+    "image": "/assets/products/hammer-2026-multicolour.jpg",
+    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in the single multicolour finish shown. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
+    "features": [],
+    "spec": [
+      [
+        "Dimensions",
+        "To be confirmed"
+      ],
+      [
+        "Weight",
+        "To be confirmed"
+      ],
+      [
+        "Power supply",
+        "To be confirmed"
+      ],
+      [
+        "Power consumption",
+        "To be confirmed"
+      ]
+    ],
+    "options": [],
+    "variants": [
+      {
+        "id": "multicolour",
+        "name": "Multicolour",
+        "nameES": "Multicolor",
+        "color": "Multicolour",
+        "image": "/assets/products/hammer-2026-multicolour.jpg"
+      }
+    ],
+    "source": "https://www.progamespoland.com/",
+    "editorialStatus": "Draft description; technical specifications pending confirmation"
+  },
+  "win-a-toy": {
+    "name": "Win a toy",
+    "category": "boxer",
+    "label": "BOXER PREMIUM",
+    "tag": "NEW 2026",
+    "image": "/assets/products/win-a-toy-black.jpg",
+    "desc": "Win a toy brings a prize-themed presentation to a boxing machine. The illuminated cabinet combines a punch target, score display and a visible toy compartment to create an eye-catching attraction for entertainment venues.\n\nChoose from the eight cabinet colours shown and select the equipment you would like us to quote. Prize operation, payment setup and final technical specifications are confirmed individually by our sales team.",
+    "features": [],
+    "spec": [
+      [
+        "Dimensions",
+        "To be confirmed"
+      ],
+      [
+        "Weight",
+        "To be confirmed"
+      ],
+      [
+        "Power supply",
+        "To be confirmed"
+      ],
+      [
+        "Power consumption",
+        "To be confirmed"
+      ]
+    ],
+    "options": [],
+    "variants": [
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/win-a-toy-black.jpg"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/win-a-toy-red.jpg"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/win-a-toy-blue.jpg"
+      },
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/win-a-toy-yellow.jpg"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/win-a-toy-green.jpg"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/win-a-toy-orange.jpg"
+      },
+      {
+        "id": "white",
+        "name": "White",
+        "nameES": "Blanco",
+        "color": "White",
+        "image": "/assets/products/win-a-toy-white.jpg"
+      },
+      {
+        "id": "pink",
+        "name": "Pink",
+        "nameES": "Rosa",
+        "color": "Pink",
+        "image": "/assets/products/win-a-toy-pink.jpg"
+      }
+    ],
+    "source": "https://www.progamespoland.com/",
+    "editorialStatus": "Draft description; technical specifications pending confirmation"
+  },
+  "leader-rank": {
+    "name": "Boxer Leader Rank",
+    "category": "boxer",
+    "label": "BOXER PREMIUM",
+    "tag": "NEW 2026",
+    "image": "/assets/products/leader-rank-black.jpg",
+    "desc": "Boxer Leader Rank introduces a bold 2026 cabinet design with a prominent front display, illuminated accents and a raised boxing target. Its competition-inspired artwork makes it a distinctive addition to an arcade or entertainment venue.\n\nSelect one of the seven available cabinet colours and build your enquiry with the optional equipment below. Game functions, display specification and final technical details will be confirmed in your quotation.",
+    "features": [],
+    "spec": [
+      [
+        "Dimensions",
+        "To be confirmed"
+      ],
+      [
+        "Weight",
+        "To be confirmed"
+      ],
+      [
+        "Power supply",
+        "To be confirmed"
+      ],
+      [
+        "Power consumption",
+        "To be confirmed"
+      ]
+    ],
+    "options": [],
+    "variants": [
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/leader-rank-black.jpg"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/leader-rank-red.jpg"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/leader-rank-blue.jpg"
+      },
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/leader-rank-yellow.jpg"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/leader-rank-green.jpg"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/leader-rank-orange.jpg"
+      },
+      {
+        "id": "white",
+        "name": "White",
+        "nameES": "Blanco",
+        "color": "White",
+        "image": "/assets/products/leader-rank-white.jpg"
+      }
+    ],
+    "source": "https://www.progamespoland.com/",
+    "editorialStatus": "Draft description; technical specifications pending confirmation"
+  }
+});
+Object.assign(window.PRODUCT_ES,{
+  "hammer-2026": {
+    "desc": "Un nuevo juego de fuerza de martillo para 2026, con una estructura vertical iluminada y una zona de golpeo. Su diseño alto destaca en salones recreativos y espacios de ocio.\n\nDisponible en el único acabado multicolor mostrado. Consulta la configuración de funcionamiento y el equipamiento opcional para tu local. Las especificaciones técnicas definitivas se confirmarán con el presupuesto."
+  },
+  "win-a-toy": {
+    "desc": "Win a toy combina un juego de boxeo con una presentación centrada en premios. El mueble iluminado integra un objetivo de golpeo, un marcador y un compartimento visible para juguetes, creando una atracción llamativa para espacios de ocio.\n\nElige entre los ocho colores mostrados y selecciona el equipamiento que deseas incluir en el presupuesto. El funcionamiento de los premios, el sistema de pago y las especificaciones técnicas se confirman individualmente."
+  },
+  "leader-rank": {
+    "desc": "Boxer Leader Rank presenta un nuevo diseño para 2026 con una pantalla frontal destacada, detalles iluminados y un objetivo de boxeo elevado. Su gráfica inspirada en la competición aporta una presencia distintiva a salones recreativos y espacios de ocio.\n\nSelecciona uno de los siete colores disponibles y prepara tu consulta con las opciones de equipamiento. Las funciones del juego, la especificación de la pantalla y los datos técnicos definitivos se confirmarán en el presupuesto."
+  }
+});
+Object.assign(window.PG_ES.specs,{"To be confirmed":"Por confirmar","Dimensions":"Dimensiones","Weight":"Peso","Power supply":"Alimentación","Power consumption":"Consumo eléctrico"});
+Object.assign(window.PG_ES.colors,{"Multicolour":"Multicolor"});
+Object.assign(window.PG_ES.labels,{'STRENGTH GAME':'JUEGO DE FUERZA'});

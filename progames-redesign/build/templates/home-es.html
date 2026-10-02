@@ -15,7 +15,7 @@
   
   
   
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=21">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -160,6 +160,8 @@
       <div class="trade-show-list reveal">
         <article class="trade-show-card next" id="show-orlando" data-event="orlando" data-city="Orlando" data-lat="28.424" data-lon="-81.469" data-start="2026-11-17" data-end="2026-11-20"><div class="trade-date"><strong>17–20</strong><span>NOV 2026</span></div><div class="trade-main"><span class="trade-status">PRÓXIMA FERIA</span><h3>IAAPA EXPO ORLANDO 2026</h3><p>Orange County Convention Center · Orlando, Florida, EE. UU.</p></div><a class="trade-contact" href="https://iaapa.org/expos-and-events/iaapa-expo" target="_blank" rel="noopener noreferrer">Detalles del evento ↗</a></article>
         <article class="trade-show-card featured" id="show-london" data-event="london" data-city="Londres" data-lat="51.508" data-lon="0.030" data-start="2026-09-22" data-end="2026-09-24"><div class="trade-date"><strong>22–24</strong><span>SEP 2026</span></div><div class="trade-main"><span class="trade-status">RECIENTE / CONFIRMADA</span><h3>IAAPA EXPO EUROPE 2026</h3><p>ExCeL London · Reino Unido</p></div><div class="trade-booth"><span>STAND</span><strong>S2201</strong></div></article>
+<article class="trade-show-card" id="show-las-vegas" data-event="las-vegas" data-city="Las Vegas" data-lat="36.17" data-lon="-115.14" data-start="2026-03-18" data-end="2026-03-19"><div class="trade-date"><strong>18–19</strong><span>MAR 2026</span></div><div class="trade-main"><span class="trade-status">FERIA ANTERIOR</span><h3>AMUSEMENT EXPO INTERNATIONAL 2026</h3><p>Las Vegas Convention Center · Las Vegas, USA</p></div><div class="trade-booth"><span>STAND</span><strong>1901</strong></div></article>
+<article class="trade-show-card" id="show-bergamo" data-event="bergamo" data-city="Bergamo" data-lat="45.683" data-lon="9.705" data-start="2026-02-24" data-end="2026-02-26"><div class="trade-date"><strong>24–26</strong><span>FEB 2026</span></div><div class="trade-main"><span class="trade-status">FERIA ANTERIOR</span><h3>FAMILY ENTERTAINMENT EXPO 2026</h3><p>Fiera di Bergamo · Bergamo, Italy</p></div><div class="trade-booth"><span>STAND</span><strong>B9</strong></div></article>
       </div>
       <div class="trade-map" id="tradeMap" hidden>
         <div class="trade-map-heading"><div><p class="kicker">PRO GAMES EN EL MUNDO</p><h3>Nos vemos por el mundo.</h3></div><div class="trade-map-legend"><span><i class="legend-dot upcoming"></i>Próximas</span><span><i class="legend-dot past"></i>Anteriores</span></div></div>
@@ -182,7 +184,7 @@
 
     <section class="contact section" id="contact">
       <div class="contact-copy reveal"><p class="kicker">HABLEMOS</p><h2>CREEMOS TU PRÓXIMA<br><span>EXPERIENCIA DE ENTRETENIMIENTO.</span></h2><div class="contact-details contact-groups"><section class="contact-group company-contact"><h3>Sede y fabricación</h3><p><strong>PRO GAMES POLAND Sp. z o.o.</strong><br>ul. Rybnicka 19A<br>44-335 Jastrzębie-Zdrój, Poland</p></section><section class="contact-group"><h3>Responsable de ventas</h3><a href="mailto:office@progames.pl">office@progames.pl</a><a href="tel:+48536068912">+48 536 068 912</a><a href="tel:+48604978462">+48 604 978 462</a></section><section class="contact-group"><h3>Servicio técnico y repuestos</h3><a href="mailto:service@progames.pl">service@progames.pl</a><a href="tel:+48789108086">+48 789 108 086</a></section></div></div>
-      <form class="contact-form reveal" action="mailto:office@progames.pl" method="post" enctype="text/plain">
+      <form id="inquiry" class="contact-form reveal" action="mailto:office@progames.pl" method="post" enctype="text/plain">
         <div class="field-row"><label>Nombre y apellidos<input name="name" required placeholder="Tu nombre"></label><label>Empresa<input name="company" placeholder="Empresa name"></label></div>
         <div class="field-row"><label>Email<input type="email" name="email" required placeholder="name@company.com"></label><label>Teléfono<input type="tel" name="phone" placeholder="+48 ..."></label></div>
         <label>Producto de interés<select name="product" id="productInterest"><option value="">Selecciona un producto</option></select></label>
@@ -195,8 +197,8 @@
 
   <footer class="footer"><div class="footer-identity"><img class="footer-emblem" src="/assets/progames-emblem-256.webp" alt="Pro Games international emblem"><div class="brand footer-brand"><span class="brand-mark">PRO</span><span class="brand-word">GAMES</span><span class="brand-sub">POLAND</span></div></div><div class="footer-links"><a href="#machines">Productos</a><a href="/catalog-es.html?catalog=machines">Catálogos</a><a href="#about">Empresa</a><a href="#business">Para empresas</a><a href="#distributors">Distribuidores</a><a href="#trade-shows">Ferias</a><a href="#parts">Repuestos</a><a href="#contact">Contacto</a></div><div class="footer-social"><a href="https://www.facebook.com/BoxerProgames" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1 .3-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 2-5 5v3H7v4h3v9z"/></svg><span>Facebook</span></a><a href="https://www.instagram.com/progames.pl/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg><span>Instagram</span></a></div><div class="footer-bottom"><span>© 2026 PRO GAMES POLAND Sp. z o.o.</span><span>Hecho en Polonia / Creado para operadores</span></div></footer>
 
-  <script defer src="/site-config.js"></script><script src="/products.js?v=18" defer></script>
-  <script src="/script.js" defer></script>
-  <script src="/trade-map.js" defer></script>
+  <script defer src="/site-config.js?v=21"></script><script src="/products.js?v=18" defer></script>
+  <script src="/script.js?v=21" defer></script>
+  <script src="/trade-map.js?v=21" defer></script>
 </body>
 </html>
