@@ -1,0 +1,242 @@
+[
+  {
+    "width": 390,
+    "model": "double-hit-gift",
+    "photo": {
+      "x": 14,
+      "y": 197.546875,
+      "bottom": 567.546875,
+      "width": 362,
+      "height": 370
+    },
+    "config": {
+      "x": 14,
+      "y": 583.546875,
+      "bottom": 1563.046875,
+      "width": 362,
+      "height": 979.5
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1856.125,
+      "width": 390,
+      "height": 1778.125
+    },
+    "facts": {
+      "x": 0,
+      "y": 1856.125,
+      "bottom": 2970.46875,
+      "width": 390,
+      "height": 1114.34375
+    },
+    "cta": {
+      "x": 29,
+      "y": 1454.046875,
+      "bottom": 1502.046875,
+      "width": 332,
+      "height": 48
+    },
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "model": "leader-rank",
+    "photo": {
+      "x": 14,
+      "y": 197.546875,
+      "bottom": 567.546875,
+      "width": 362,
+      "height": 370
+    },
+    "config": {
+      "x": 14,
+      "y": 583.546875,
+      "bottom": 1563.046875,
+      "width": 362,
+      "height": 979.5
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1915.71875,
+      "width": 390,
+      "height": 1837.71875
+    },
+    "facts": {
+      "x": 0,
+      "y": 1915.71875,
+      "bottom": 2332.0625,
+      "width": 390,
+      "height": 416.34375
+    },
+    "cta": {
+      "x": 29,
+      "y": 1454.046875,
+      "bottom": 1502.046875,
+      "width": 332,
+      "height": 48
+    },
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "model": "double-hit-gift",
+    "photo": {
+      "x": 22,
+      "y": 271.390625,
+      "bottom": 741.390625,
+      "width": 351,
+      "height": 470
+    },
+    "config": {
+      "x": 395,
+      "y": 174,
+      "bottom": 1143.203125,
+      "width": 351,
+      "height": 969.203125
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1169.203125,
+      "width": 768,
+      "height": 1091.203125
+    },
+    "facts": {
+      "x": 0,
+      "y": 1169.203125,
+      "bottom": 2006.796875,
+      "width": 768,
+      "height": 837.59375
+    },
+    "cta": {
+      "x": 412,
+      "y": 1034.203125,
+      "bottom": 1082.203125,
+      "width": 317,
+      "height": 48
+    },
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "model": "leader-rank",
+    "photo": {
+      "x": 22,
+      "y": 271.390625,
+      "bottom": 741.390625,
+      "width": 351,
+      "height": 470
+    },
+    "config": {
+      "x": 395,
+      "y": 174,
+      "bottom": 1188.203125,
+      "width": 351,
+      "height": 1014.203125
+    },
+    "detail": {
+      "x": 0,
+      "y": 78,
+      "bottom": 1214.203125,
+      "width": 768,
+      "height": 1136.203125
+    },
+    "facts": {
+      "x": 0,
+      "y": 1214.203125,
+      "bottom": 1600.796875,
+      "width": 768,
+      "height": 386.59375
+    },
+    "cta": {
+      "x": 412,
+      "y": 1079.203125,
+      "bottom": 1127.203125,
+      "width": 317,
+      "height": 48
+    },
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "model": "double-hit-gift",
+    "photo": {
+      "x": 32,
+      "y": 216.671875,
+      "bottom": 686.671875,
+      "width": 670,
+      "height": 470
+    },
+    "config": {
+      "x": 738,
+      "y": 102,
+      "bottom": 985.515625,
+      "width": 670,
+      "height": 883.515625
+    },
+    "detail": {
+      "x": 0,
+      "y": 0,
+      "bottom": 1017.515625,
+      "width": 1440,
+      "height": 1017.515625
+    },
+    "facts": {
+      "x": 0,
+      "y": 1017.515625,
+      "bottom": 1632.609375,
+      "width": 1440,
+      "height": 615.09375
+    },
+    "cta": {
+      "x": 759,
+      "y": 888.515625,
+      "bottom": 936.515625,
+      "width": 628,
+      "height": 48
+    },
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "model": "leader-rank",
+    "photo": {
+      "x": 32,
+      "y": 216.671875,
+      "bottom": 686.671875,
+      "width": 670,
+      "height": 470
+    },
+    "config": {
+      "x": 738,
+      "y": 102,
+      "bottom": 985.515625,
+      "width": 670,
+      "height": 883.515625
+    },
+    "detail": {
+      "x": 0,
+      "y": 0,
+      "bottom": 1017.515625,
+      "width": 1440,
+      "height": 1017.515625
+    },
+    "facts": {
+      "x": 0,
+      "y": 1017.515625,
+      "bottom": 1433.609375,
+      "width": 1440,
+      "height": 416.09375
+    },
+    "cta": {
+      "x": 759,
+      "y": 888.515625,
+      "bottom": 936.515625,
+      "width": 628,
+      "height": 48
+    },
+    "overflow": false
+  }
+]

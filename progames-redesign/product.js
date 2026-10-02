@@ -76,7 +76,7 @@ const finishBlock=p.availableColors?'':variantList.length>1?`<div class="finish-
 
 const hasStaticDetail=Boolean(detail.querySelector('#productMainImage'));
 if(!hasStaticDetail) detail.innerHTML=`
-<section class="product-detail-v2">
+<section class="product-detail-v2 product-layout-v23">
   <div class="product-intro">
     <a class="product-back-link" href="${isStandard?FAMILY_URL:HOME_URL+'#machines'}">← ${isStandard?'Boxer Standard':txt.allMachines}</a>
     <p class="kicker">${label}</p>
@@ -87,19 +87,20 @@ if(!hasStaticDetail) detail.innerHTML=`
       <img id="productMainImage" src="${mainVariant.image}" alt="${p.name} — ${displayVariantName(mainVariant,selectedIndex)}" fetchpriority="high" referrerpolicy="no-referrer">
       ${p.tag?`<span class="product-tag">${isES?p.tag.replace('NEW','NUEVO').replace('BESTSELLER','MÁS VENDIDO'):p.tag}</span>`:''}
     </div>
-    ${variantSelector}${p.availableColors?`<div class="gallery-variant-selector"><div class="gallery-variant-head"><span>${isES?'COLORES DISPONIBLES':'AVAILABLE COLORS'}</span></div><div class="gallery-variant-swatches">${p.availableColors.map(color=>`<span class="gallery-swatch" style="--swatch:${swatchColor[color]}"><span class="swatch-dot"></span><span class="swatch-label">${localColor(color)}</span></span>`).join('')}</div></div>`:''}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
-    ${configurationHTML}
   </div>
   <div class="product-info-panel">
     <div class="detail-lead">${descriptionHTML}</div>
     <a class="product-catalog-link" href="${CATALOG_URL}">${txt.catalog}</a>
     <p class="quote-note">${txt.price}</p>
-    ${finishBlock}
+  </div>
+  <div class="product-config-panel">
+    ${variantSelector}${p.availableColors?`<div class="gallery-variant-selector"><div class="gallery-variant-head"><span>${isES?'COLORES DISPONIBLES':'AVAILABLE COLORS'}</span></div><div class="gallery-variant-swatches">${p.availableColors.map(color=>`<span class="gallery-swatch" style="--swatch:${swatchColor[color]}"><span class="swatch-dot"></span><span class="swatch-label">${localColor(color)}</span></span>`).join('')}</div></div>`:''}<p id="variantStatus" class="variant-status" role="status" aria-live="polite"></p>
+    ${configurationHTML}
   </div>
 </section>
 
 ${(p.features.length||p.spec.length||p.options.length)?`<section class="product-facts section">
-  <div class="product-facts-title"><p class="kicker">${txt.details}</p><h2>${txt.built.replace('\n','<br>')}</h2></div>
+  <div class="product-facts-title"><p class="kicker">${txt.details}</p><h2>${isES?'Especificaciones y características':'Specifications & features'}</h2></div>
   ${p.features.length?`<div class="product-facts-column"><h3>${txt.features}</h3><ul class="feature-list">${features}</ul></div>`:''}
   ${p.spec.length?`<div class="spec-table light"><h3>${txt.specs}</h3>${spec}</div>`:''}
   ${p.options.length?`<div class="spec-table light"><h3>${txt.options}</h3>${options}</div>`:''}
