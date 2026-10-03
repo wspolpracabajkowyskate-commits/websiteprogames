@@ -1,12 +1,12 @@
 const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('assert'),{parseHTML}=require('linkedom');
 const read=f=>fs.readFileSync(f,'utf8');const pages=JSON.parse(read('build/pages.json'));let variantChecks=0;const assetPaths=new Set(),hrefs=[];const problems=[];
 function localFile(url,from){const u=new URL(url,'https://www.progamespoland.com/'+from);if(u.origin!=='https://www.progamespoland.com')return null;let p=decodeURIComponent(u.pathname.slice(1));return {file:p.endsWith('/')?p+'index.html':p||'index.html',hash:u.hash}}
-function context(file,search='',auto=true){const{window}=parseHTML(read(file));const document=window.document,pending=[];let location=new URL('https://www.progamespoland.com/'+file+search);const ctx={window,document,location,URL,URLSearchParams,Intl,Date,console,requestAnimationFrame:f=>f(),setInterval:()=>{},addEventListener:()=>{},scrollY:0,history:{replaceState:(_,__,u)=>{ctx.location=new URL(u,ctx.location)}},Image:class{set src(src){assert(fs.existsSync('.'+src),src);pending.push(this);if(auto)this.onload?.()}},FormData:class{}};vm.createContext(ctx);for(const f of ['site-config.js','products.js'])vm.runInContext(read(f),ctx);return{ctx,document,pending,run:f=>vm.runInContext(read(f),ctx)}}
+function context(file,search='',auto=true){const{window}=parseHTML(read(file));const document=window.document,pending=[];let location=new URL('https://www.progamespoland.com/'+file+search);const ctx={window,document,location,URL,URLSearchParams,Intl,Date,console,requestAnimationFrame:f=>f(),setInterval:()=>{},addEventListener:()=>{},scrollY:0,history:{replaceState:(_,__,u)=>{ctx.location=new URL(u,ctx.location)}},Image:class{set src(src){assert(fs.existsSync('.'+src),src);pending.push(this);if(auto)this.onload?.()}},FormData:class{}};vm.createContext(ctx);for(const f of ['site-config.js','products.js','pl-content.js'])vm.runInContext(read(f),ctx);return{ctx,document,pending,run:f=>vm.runInContext(read(f),ctx)}}
 for(const p of pages){
  const t=context(p.filename),d=t.document;
  assert.equal(d.documentElement.lang,p.lang);assert.equal(d.querySelectorAll('h1').length,1,p.filename+' H1');assert(d.querySelector('h1').textContent.trim());
  assert.equal(d.querySelector('link[rel="canonical"]').href,'https://www.progamespoland.com'+p.url);
- assert.equal(d.querySelectorAll('link[hreflang]').length,3);
+ assert.equal(d.querySelectorAll('link[hreflang]').length,4);
  assert(d.querySelector('meta[name="description"]').content.length>=50);assert(!d.querySelector('meta[name="robots"]').content.includes('noindex'));
  for(const a of d.querySelectorAll('link[hreflang]')){const f=localFile(a.href,p.filename);assert(fs.existsSync(f.file),a.href);const{document}=parseHTML(read(f.file));assert([...document.querySelectorAll('link[hreflang]')].some(x=>x.href==='https://www.progamespoland.com'+p.url),'reciprocal '+a.href)}
  for(const s of d.querySelectorAll('script[type="application/ld+json"]')){const data=JSON.parse(s.textContent);assert(data['@type']);if(data['@type']==='Product'){assert(!data.offers);assert(!data.aggregateRating)}}
@@ -20,7 +20,7 @@ for(const p of pages){
   for(let i=0;i<product.variants.length;i++){
    const v=product.variants[i];assetPaths.add(v.image.slice(1));assert(fs.statSync('.'+v.image).size>0,v.image);if(product.variants.length>1)d.querySelectorAll('.gallery-swatch')[i].click();assert.equal(d.querySelector('#productMainImage').getAttribute('src'),v.image);if(product.variants.length>1)assert.equal(d.querySelectorAll('.gallery-swatch[aria-pressed="true"]').length,1);variantChecks++;
   }
-  assert.equal(d.querySelectorAll('.language-switch a').length,2);
+  assert.equal(d.querySelectorAll('.language-switch a').length,3);
  }
  if(p.kind==='home'||p.kind==='collection'){
   const expected=p.kind==='home'?32:15;assert.equal(d.querySelectorAll('.product-card').length,expected);t.run('script.js');assert.equal(d.querySelectorAll('.product-card').length,expected);assert.equal(d.querySelectorAll('.product-empty').length,1);

@@ -43,12 +43,17 @@
     },
     {
       "source": "/pl/index.html",
-      "destination": "/",
+      "destination": "/pl.html",
       "statusCode": 301
     },
     {
       "source": "/pl",
-      "destination": "/",
+      "destination": "/pl.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/pl/",
+      "destination": "/pl.html",
       "statusCode": 301
     },
     {
@@ -1370,7 +1375,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/monster-3in1-ticket.html?variant=:variant",
+      "destination": "/pl/produkty/monster-3in1-ticket.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1382,7 +1387,7 @@
           "value": "monster-3in1-ticket"
         }
       ],
-      "destination": "/en/products/monster-3in1-ticket.html",
+      "destination": "/pl/produkty/monster-3in1-ticket.html",
       "statusCode": 301
     },
     {
@@ -1399,7 +1404,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/monster-3in1.html?variant=:variant",
+      "destination": "/pl/produkty/monster-3in1.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1411,7 +1416,7 @@
           "value": "monster-3in1"
         }
       ],
-      "destination": "/en/products/monster-3in1.html",
+      "destination": "/pl/produkty/monster-3in1.html",
       "statusCode": 301
     },
     {
@@ -1428,7 +1433,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/double-hit.html?variant=:variant",
+      "destination": "/pl/produkty/double-hit.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1440,7 +1445,7 @@
           "value": "double-hit"
         }
       ],
-      "destination": "/en/products/double-hit.html",
+      "destination": "/pl/produkty/double-hit.html",
       "statusCode": 301
     },
     {
@@ -1457,7 +1462,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/double-hit-gift.html?variant=:variant",
+      "destination": "/pl/produkty/double-hit-gift.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1469,7 +1474,7 @@
           "value": "double-hit-gift"
         }
       ],
-      "destination": "/en/products/double-hit-gift.html",
+      "destination": "/pl/produkty/double-hit-gift.html",
       "statusCode": 301
     },
     {
@@ -1486,7 +1491,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/double-hit-kids.html?variant=:variant",
+      "destination": "/pl/produkty/double-hit-kids.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1498,7 +1503,7 @@
           "value": "double-hit-kids"
         }
       ],
-      "destination": "/en/products/double-hit-kids.html",
+      "destination": "/pl/produkty/double-hit-kids.html",
       "statusCode": 301
     },
     {
@@ -1515,7 +1520,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/double-hit-kids-gift.html?variant=:variant",
+      "destination": "/pl/produkty/double-hit-kids-gift.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1527,7 +1532,7 @@
           "value": "double-hit-kids-gift"
         }
       ],
-      "destination": "/en/products/double-hit-kids-gift.html",
+      "destination": "/pl/produkty/double-hit-kids-gift.html",
       "statusCode": 301
     },
     {
@@ -1544,7 +1549,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/double-strike.html?variant=:variant",
+      "destination": "/pl/produkty/double-strike.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1556,7 +1561,7 @@
           "value": "double-strike"
         }
       ],
-      "destination": "/en/products/double-strike.html",
+      "destination": "/pl/produkty/double-strike.html",
       "statusCode": 301
     },
     {
@@ -1573,7 +1578,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/joker.html?variant=:variant",
+      "destination": "/pl/produkty/joker.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1585,7 +1590,7 @@
           "value": "joker"
         }
       ],
-      "destination": "/en/products/joker.html",
+      "destination": "/pl/produkty/joker.html",
       "statusCode": 301
     },
     {
@@ -1602,7 +1607,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/pow-boxer.html?variant=:variant",
+      "destination": "/pl/produkty/pow-boxer.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1614,7 +1619,7 @@
           "value": "pow-boxer"
         }
       ],
-      "destination": "/en/products/pow-boxer.html",
+      "destination": "/pl/produkty/pow-boxer.html",
       "statusCode": 301
     },
     {
@@ -1631,7 +1636,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/champion.html?variant=:variant",
+      "destination": "/pl/produkty/champion.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1643,7 +1648,7 @@
           "value": "champion"
         }
       ],
-      "destination": "/en/products/champion.html",
+      "destination": "/pl/produkty/champion.html",
       "statusCode": 301
     },
     {
@@ -1660,7 +1665,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/easy.html?variant=:variant",
+      "destination": "/pl/produkty/easy.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1672,7 +1677,7 @@
           "value": "easy"
         }
       ],
-      "destination": "/en/products/easy.html",
+      "destination": "/pl/produkty/easy.html",
       "statusCode": 301
     },
     {
@@ -1689,7 +1694,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/cyber-punch.html?variant=:variant",
+      "destination": "/pl/produkty/cyber-punch.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1701,7 +1706,7 @@
           "value": "cyber-punch"
         }
       ],
-      "destination": "/en/products/cyber-punch.html",
+      "destination": "/pl/produkty/cyber-punch.html",
       "statusCode": 301
     },
     {
@@ -1718,7 +1723,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/gladiator.html?variant=:variant",
+      "destination": "/pl/produkty/gladiator.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1730,7 +1735,7 @@
           "value": "gladiator"
         }
       ],
-      "destination": "/en/products/gladiator.html",
+      "destination": "/pl/produkty/gladiator.html",
       "statusCode": 301
     },
     {
@@ -1747,7 +1752,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/mma.html?variant=:variant",
+      "destination": "/pl/produkty/mma.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1759,7 +1764,7 @@
           "value": "mma"
         }
       ],
-      "destination": "/en/products/mma.html",
+      "destination": "/pl/produkty/mma.html",
       "statusCode": 301
     },
     {
@@ -1776,7 +1781,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/black-jack.html?variant=:variant",
+      "destination": "/pl/produkty/black-jack.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1788,7 +1793,7 @@
           "value": "black-jack"
         }
       ],
-      "destination": "/en/products/black-jack.html",
+      "destination": "/pl/produkty/black-jack.html",
       "statusCode": 301
     },
     {
@@ -1805,7 +1810,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/super-hero.html?variant=:variant",
+      "destination": "/pl/produkty/super-hero.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1817,7 +1822,7 @@
           "value": "super-hero"
         }
       ],
-      "destination": "/en/products/super-hero.html",
+      "destination": "/pl/produkty/super-hero.html",
       "statusCode": 301
     },
     {
@@ -1834,7 +1839,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/power-black.html?variant=:variant",
+      "destination": "/pl/produkty/power-black.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1846,7 +1851,7 @@
           "value": "power-black"
         }
       ],
-      "destination": "/en/products/power-black.html",
+      "destination": "/pl/produkty/power-black.html",
       "statusCode": 301
     },
     {
@@ -1863,7 +1868,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/poison-squad.html?variant=:variant",
+      "destination": "/pl/produkty/poison-squad.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1875,7 +1880,7 @@
           "value": "poison-squad"
         }
       ],
-      "destination": "/en/products/poison-squad.html",
+      "destination": "/pl/produkty/poison-squad.html",
       "statusCode": 301
     },
     {
@@ -1892,7 +1897,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/hacker.html?variant=:variant",
+      "destination": "/pl/produkty/hacker.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1904,7 +1909,7 @@
           "value": "hacker"
         }
       ],
-      "destination": "/en/products/hacker.html",
+      "destination": "/pl/produkty/hacker.html",
       "statusCode": 301
     },
     {
@@ -1921,7 +1926,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/strongman.html?variant=:variant",
+      "destination": "/pl/produkty/strongman.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1933,7 +1938,7 @@
           "value": "strongman"
         }
       ],
-      "destination": "/en/products/strongman.html",
+      "destination": "/pl/produkty/strongman.html",
       "statusCode": 301
     },
     {
@@ -1950,7 +1955,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/viking.html?variant=:variant",
+      "destination": "/pl/produkty/viking.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1962,7 +1967,7 @@
           "value": "viking"
         }
       ],
-      "destination": "/en/products/viking.html",
+      "destination": "/pl/produkty/viking.html",
       "statusCode": 301
     },
     {
@@ -1979,7 +1984,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/disco.html?variant=:variant",
+      "destination": "/pl/produkty/disco.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -1991,7 +1996,7 @@
           "value": "disco"
         }
       ],
-      "destination": "/en/products/disco.html",
+      "destination": "/pl/produkty/disco.html",
       "statusCode": 301
     },
     {
@@ -2008,7 +2013,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/matte-airbrushed.html?variant=:variant",
+      "destination": "/pl/produkty/matte-airbrushed.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2020,7 +2025,7 @@
           "value": "matte-airbrushed"
         }
       ],
-      "destination": "/en/products/matte-airbrushed.html",
+      "destination": "/pl/produkty/matte-airbrushed.html",
       "statusCode": 301
     },
     {
@@ -2037,7 +2042,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-combat.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-combat.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2049,7 +2054,7 @@
           "value": "boxer-combat"
         }
       ],
-      "destination": "/en/products/boxer-combat.html",
+      "destination": "/pl/produkty/boxer-combat.html",
       "statusCode": 301
     },
     {
@@ -2066,7 +2071,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-fist.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-fist.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2078,7 +2083,7 @@
           "value": "boxer-fist"
         }
       ],
-      "destination": "/en/products/boxer-fist.html",
+      "destination": "/pl/produkty/boxer-fist.html",
       "statusCode": 301
     },
     {
@@ -2095,7 +2100,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-ring.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-ring.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2107,7 +2112,7 @@
           "value": "boxer-ring"
         }
       ],
-      "destination": "/en/products/boxer-ring.html",
+      "destination": "/pl/produkty/boxer-ring.html",
       "statusCode": 301
     },
     {
@@ -2124,7 +2129,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-combat-kids.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-combat-kids.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2136,7 +2141,7 @@
           "value": "boxer-combat-kids"
         }
       ],
-      "destination": "/en/products/boxer-combat-kids.html",
+      "destination": "/pl/produkty/boxer-combat-kids.html",
       "statusCode": 301
     },
     {
@@ -2153,7 +2158,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-kids.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-kids.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2165,7 +2170,7 @@
           "value": "boxer-kids"
         }
       ],
-      "destination": "/en/products/boxer-kids.html",
+      "destination": "/pl/produkty/boxer-kids.html",
       "statusCode": 301
     },
     {
@@ -2182,7 +2187,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-flash-gift.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-flash-gift.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2194,7 +2199,7 @@
           "value": "boxer-flash-gift"
         }
       ],
-      "destination": "/en/products/boxer-flash-gift.html",
+      "destination": "/pl/produkty/boxer-flash-gift.html",
       "statusCode": 301
     },
     {
@@ -2211,7 +2216,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/hammer.html?variant=:variant",
+      "destination": "/pl/produkty/hammer.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2223,7 +2228,7 @@
           "value": "hammer"
         }
       ],
-      "destination": "/en/products/hammer.html",
+      "destination": "/pl/produkty/hammer.html",
       "statusCode": 301
     },
     {
@@ -2240,7 +2245,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/kicker.html?variant=:variant",
+      "destination": "/pl/produkty/kicker.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2252,7 +2257,7 @@
           "value": "kicker"
         }
       ],
-      "destination": "/en/products/kicker.html",
+      "destination": "/pl/produkty/kicker.html",
       "statusCode": 301
     },
     {
@@ -2269,7 +2274,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-flash.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-flash.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2281,7 +2286,7 @@
           "value": "boxer-flash"
         }
       ],
-      "destination": "/en/products/boxer-flash.html",
+      "destination": "/pl/produkty/boxer-flash.html",
       "statusCode": 301
     },
     {
@@ -2298,7 +2303,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/boxer-gift.html?variant=:variant",
+      "destination": "/pl/produkty/boxer-gift.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2310,7 +2315,7 @@
           "value": "boxer-gift"
         }
       ],
-      "destination": "/en/products/boxer-gift.html",
+      "destination": "/pl/produkty/boxer-gift.html",
       "statusCode": 301
     },
     {
@@ -2327,7 +2332,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/bouncy-castles-xs.html?variant=:variant",
+      "destination": "/pl/produkty/bouncy-castles-xs.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2339,7 +2344,7 @@
           "value": "bouncy-castles-xs"
         }
       ],
-      "destination": "/en/products/bouncy-castles-xs.html",
+      "destination": "/pl/produkty/bouncy-castles-xs.html",
       "statusCode": 301
     },
     {
@@ -2356,7 +2361,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/air-hockey-golden.html?variant=:variant",
+      "destination": "/pl/produkty/air-hockey-golden.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2368,7 +2373,7 @@
           "value": "air-hockey-golden"
         }
       ],
-      "destination": "/en/products/air-hockey-golden.html",
+      "destination": "/pl/produkty/air-hockey-golden.html",
       "statusCode": 301
     },
     {
@@ -2385,7 +2390,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/air-hockey-arctic.html?variant=:variant",
+      "destination": "/pl/produkty/air-hockey-arctic.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2397,7 +2402,7 @@
           "value": "air-hockey-arctic"
         }
       ],
-      "destination": "/en/products/air-hockey-arctic.html",
+      "destination": "/pl/produkty/air-hockey-arctic.html",
       "statusCode": 301
     },
     {
@@ -2414,7 +2419,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/air-hockey-matrix.html?variant=:variant",
+      "destination": "/pl/produkty/air-hockey-matrix.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2426,7 +2431,7 @@
           "value": "air-hockey-matrix"
         }
       ],
-      "destination": "/en/products/air-hockey-matrix.html",
+      "destination": "/pl/produkty/air-hockey-matrix.html",
       "statusCode": 301
     },
     {
@@ -2443,7 +2448,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/basketball-compact.html?variant=:variant",
+      "destination": "/pl/produkty/basketball-compact.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2455,7 +2460,7 @@
           "value": "basketball-compact"
         }
       ],
-      "destination": "/en/products/basketball-compact.html",
+      "destination": "/pl/produkty/basketball-compact.html",
       "statusCode": 301
     },
     {
@@ -2472,7 +2477,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/basketball.html?variant=:variant",
+      "destination": "/pl/produkty/basketball.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2484,7 +2489,7 @@
           "value": "basketball"
         }
       ],
-      "destination": "/en/products/basketball.html",
+      "destination": "/pl/produkty/basketball.html",
       "statusCode": 301
     },
     {
@@ -2501,7 +2506,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/kids-basketball.html?variant=:variant",
+      "destination": "/pl/produkty/kids-basketball.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2513,7 +2518,7 @@
           "value": "kids-basketball"
         }
       ],
-      "destination": "/en/products/kids-basketball.html",
+      "destination": "/pl/produkty/kids-basketball.html",
       "statusCode": 301
     },
     {
@@ -2530,7 +2535,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/kiddie-ride.html?variant=:variant",
+      "destination": "/pl/produkty/kiddie-ride.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2542,7 +2547,7 @@
           "value": "kiddie-ride"
         }
       ],
-      "destination": "/en/products/kiddie-ride.html",
+      "destination": "/pl/produkty/kiddie-ride.html",
       "statusCode": 301
     },
     {
@@ -2559,7 +2564,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/cyberdart.html?variant=:variant",
+      "destination": "/pl/produkty/cyberdart.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2571,7 +2576,7 @@
           "value": "cyberdart"
         }
       ],
-      "destination": "/en/products/cyberdart.html",
+      "destination": "/pl/produkty/cyberdart.html",
       "statusCode": 301
     },
     {
@@ -2588,7 +2593,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/hammer-2026.html?variant=:variant",
+      "destination": "/pl/produkty/hammer-2026.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2600,7 +2605,7 @@
           "value": "hammer-2026"
         }
       ],
-      "destination": "/en/products/hammer-2026.html",
+      "destination": "/pl/produkty/hammer-2026.html",
       "statusCode": 301
     },
     {
@@ -2617,7 +2622,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/win-a-toy.html?variant=:variant",
+      "destination": "/pl/produkty/win-a-toy.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2629,7 +2634,7 @@
           "value": "win-a-toy"
         }
       ],
-      "destination": "/en/products/win-a-toy.html",
+      "destination": "/pl/produkty/win-a-toy.html",
       "statusCode": 301
     },
     {
@@ -2646,7 +2651,7 @@
           "value": "(?<variant>[a-z0-9-]+)"
         }
       ],
-      "destination": "/en/products/leader-rank.html?variant=:variant",
+      "destination": "/pl/produkty/leader-rank.html?variant=:variant",
       "statusCode": 301
     },
     {
@@ -2658,7 +2663,7 @@
           "value": "leader-rank"
         }
       ],
-      "destination": "/en/products/leader-rank.html",
+      "destination": "/pl/produkty/leader-rank.html",
       "statusCode": 301
     },
     {
@@ -3967,23 +3972,13 @@
       "statusCode": 301
     },
     {
-      "source": "/pl/produkty/:slug.html",
-      "destination": "/en/products/:slug.html",
-      "statusCode": 301
-    },
-    {
       "source": "/pl/boxer-standard.html",
-      "destination": "/boxer-standard.html",
+      "destination": "/boxer-standard-pl.html",
       "statusCode": 301
     },
     {
       "source": "/pl/katalog.html",
-      "destination": "/catalog.html",
-      "statusCode": 301
-    },
-    {
-      "source": "/pl/:path*",
-      "destination": "/",
+      "destination": "/catalog-pl.html",
       "statusCode": 301
     },
     {

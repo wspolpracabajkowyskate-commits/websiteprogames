@@ -51,7 +51,7 @@ if(collection){
 }
 // Prioritise the new 2026 models without changing the Standard collection order.
 if(!collection){const featured=['hammer-2026','win-a-toy','leader-rank'];listing.sort((a,b)=>{const rank=id=>{const i=featured.indexOf(id);return i<0?featured.length:i;};return rank(a[0])-rank(b[0]);});}
-if(!collection)listing.push(['parts-list',{name:isES?'Repuestos':'Parts list',category:'parts',label:isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.webp',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
+if(!collection)listing.push(['parts-list',{name:isPL?'Części zamienne':isES?'Repuestos':'Parts list',category:'parts',label:isPL?'KATALOG CZĘŚCI ZAMIENNYCH':isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.webp',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
 const escapeAttribute=value=>String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 if(grid&&!grid.querySelector('.product-card')){
   grid.innerHTML=listing.map(([slug,p,isCollection])=>{
@@ -65,8 +65,8 @@ if(grid&&!grid.querySelector('.product-card')){
       const model=products[id];const photo=model.variants.find(v=>v.id===p.coverVariants[id])||model.variants[0];
       return `<img loading="lazy" src="${photo.image}" alt="${model.name}">`;
     }).join(''):`<img loading="lazy" src="${variant?.image||p.image}" alt="${p.name} by Pro Games">`;
-    const cta=p.directURL?(isES?'Ver catálogo de repuestos ↗':'View parts catalog ↗'):isCollection?(isPL?`Zobacz ${p.slugs.length} modeli ↗`:isES?`Ver ${p.slugs.length} modelos ↗`:`Explore ${p.slugs.length} models ↗`):UI.view;
-    return `<article class="product-card reveal ${isCollection?'collection-card':''}" data-slug="${slug}" data-category="${p.category}" data-search="${escapeAttribute(`${p.name} ${label} ${desc} ${members}`.toLowerCase())}"><a href="${url}" aria-label="${isPL?'Zobacz':isES?'Ver':'View'} ${p.name}"><div class="card-media ${isCollection?'collection-cover':''}">${cover}${p.tag?`<span class="tag">${isES?p.tag.replace('NEW','NUEVO').replace('BESTSELLER','MÁS VENDIDO'):p.tag}</span>`:''}${isCollection?`<span class="tag">${p.slugs.length} ${isPL?'MODELI':isES?'MODELOS':'MODELS'}</span>`:''}</div><div class="card-body"><p>${isCollection?(isPL?'KOLEKCJA / BOKSERY':isES?'COLECCIÓN / BOXERS':'COLLECTION / BOXERS'):label}</p><h3>${p.name}</h3><span>${cta}</span></div></a></article>`;
+    const cta=p.directURL?(isPL?'Zobacz katalog części ↗':isES?'Ver catálogo de repuestos ↗':'View parts catalog ↗'):isCollection?(isPL?`Zobacz ${p.slugs.length} modeli ↗`:isES?`Ver ${p.slugs.length} modelos ↗`:`Explore ${p.slugs.length} models ↗`):UI.view;
+    return `<article class="product-card reveal ${isCollection?'collection-card':''}" data-slug="${slug}" data-category="${p.category}" data-search="${escapeAttribute(`${p.name} ${label} ${desc} ${members}`.toLowerCase())}"><a href="${url}" aria-label="${isPL?'Zobacz':isES?'Ver':'View'} ${p.name}"><div class="card-media ${isCollection?'collection-cover':''}">${cover}${p.tag?`<span class="tag">${isPL?p.tag.replace('NEW','NOWOŚĆ'):isES?p.tag.replace('NEW','NUEVO').replace('BESTSELLER','MÁS VENDIDO'):p.tag}</span>`:''}${isCollection?`<span class="tag">${p.slugs.length} ${isPL?'MODELI':isES?'MODELOS':'MODELS'}</span>`:''}</div><div class="card-body"><p>${isCollection?(isPL?'KOLEKCJA / BOKSERY':isES?'COLECCIÓN / BOXERS':'COLLECTION / BOXERS'):label}</p><h3>${p.name}</h3><span>${cta}</span></div></a></article>`;
   }).join('');
 }
 
@@ -132,21 +132,22 @@ if(productInterest&&quoteProduct){
   productInterest.value=quoteProduct.name;
   const variant=quoteProduct.variants.find(v=>v.id===quoteParams.get('variant'))||quoteProduct.variants[0];
   const chosen=window.PG_QUOTE_SELECTION(quoteParams);
-  const color=isES?(variant.nameES||es.colors?.[variant.name]||variant.name):variant.name;
-  const lines=[(isES?'Modelo: ':'Model: ')+quoteProduct.name,(isES?'Color / acabado: ':'Colour / finish: ')+color,
-    (isES?'Pago y dispensación: ':'Payment & dispensing: ')+(chosen.filter(o=>o.group==='payment').map(o=>isES?o.es:o.en).join(', ')||(isES?'Configuración estándar · por confirmar':'Standard configuration · to be confirmed'))];
-  window.PG_QUOTE_OPTIONS.filter(o=>o.group==='extras').forEach(o=>lines.push((isES?o.es:o.en)+': '+(chosen.some(c=>c.id===o.id)?(isES?'Sí':'Yes'):'No')));
+  const color=isPL?(es.colors?.[variant.name]||variant.name):isES?(variant.nameES||es.colors?.[variant.name]||variant.name):variant.name;
+  const optionName=o=>isPL?(o.pl||o.en):isES?o.es:o.en;
+  const lines=[(isPL?'Model: ':isES?'Modelo: ':'Model: ')+quoteProduct.name,(isPL?'Kolor / wykończenie: ':isES?'Color / acabado: ':'Colour / finish: ')+color,
+    (isPL?'Płatności i wydawanie: ':isES?'Pago y dispensación: ':'Payment & dispensing: ')+(chosen.filter(o=>o.group==='payment').map(optionName).join(', ')||(isPL?'Konfiguracja standardowa · do potwierdzenia':isES?'Configuración estándar · por confirmar':'Standard configuration · to be confirmed'))];
+  window.PG_QUOTE_OPTIONS.filter(o=>o.group==='extras').forEach(o=>lines.push(optionName(o)+': '+(chosen.some(c=>c.id===o.id)?(isPL?'Tak':isES?'Sí':'Yes'):(isPL?'Nie':'No'))));
   configurationText=lines.join('\n');
   const summary=document.createElement('section');summary.className='quote-request-summary';
-  const title=document.createElement('h3');title.textContent=isES?'Tu solicitud de configuración':'Your configuration request';
+  const title=document.createElement('h3');title.textContent=isPL?'Twoje zapytanie o konfigurację':isES?'Tu solicitud de configuración':'Your configuration request';
   const copy=document.createElement('p');copy.textContent=configurationText;
-  const edit=document.createElement('a');edit.textContent=isES?'Editar configuración ↗':'Edit configuration ↗';
+  const edit=document.createElement('a');edit.textContent=isPL?'Edytuj konfigurację ↗':isES?'Editar configuración ↗':'Edit configuration ↗';
   const query=new URLSearchParams({variant:variant.id});if(chosen.length)query.set('options',chosen.map(o=>o.id).join(','));
   edit.href=routes.product(lang,quoteParams.get('model'))+'?'+query;
   summary.append(title,copy,edit);document.querySelector('.contact-form').prepend(summary);
   productInterest.addEventListener('change',()=>{if(productInterest.value!==quoteProduct.name){configurationText='';summary.remove();}});
   document.querySelectorAll('.language-switch a,.mobile-language a').forEach(a=>{
-    const language=a.getAttribute('lang')||a.getAttribute('hreflang');if(!['en','es'].includes(language))return;
+    const language=a.getAttribute('lang')||a.getAttribute('hreflang');if(!['en','pl','es'].includes(language))return;
     const homeQuery=new URLSearchParams(query);homeQuery.set('model',quoteParams.get('model'));
     a.href=routes.home(language)+'?'+homeQuery+'#inquiry';
   });
