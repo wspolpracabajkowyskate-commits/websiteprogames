@@ -1,0 +1,562 @@
+{
+  "model": "DOUBLE_STRIKE",
+  "version": "double-strike-reference-1.0",
+  "triangles": 27564,
+  "nodes": [
+    {
+      "name": "DOUBLE_STRIKE",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "METAL_ELEMENTS",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "PLATFORM",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "TREAD_PLATE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BASE_HOUSING",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LOWER_BACK",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LOWER_LEFT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LOWER_RIGHT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LOWER_CROWN",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LOWER_SILL",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "RECESS_BACK",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "ROUNDED_FRONT_FRAME",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "RECESS_TOP",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "RECESS_FLOOR",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BODY_MAIN",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CENTRAL_CABINET",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FRONT_PANEL",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "GAME_RULES",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LEFT_PANEL",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LEFT_REAR_TRIM",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "RIGHT_PANEL",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "RIGHT_REAR_TRIM",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BACK_PANEL",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BACK_PANEL_BATCH_0",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BACK_PANEL_BATCH_1",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BACK_PANEL_BATCH_2",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FACTORY_GRAPHICS",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FRONT_FACTORY",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "REAR_FACTORY",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "HEADER_FACTORY",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FACTORY_GRAPHICS_BATCH_0",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FACTORY_GRAPHICS_BATCH_1",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FACTORY_GRAPHICS_BATCH_2",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FACTORY_GRAPHICS_BATCH_3",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FACTORY_GRAPHICS_BATCH_4",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "TOP_SECTION",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BAG_CAVITY",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "TOP_SECTION_BATCH_0",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "PUNCHING_BAG",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "PUNCHING_BAG_BATCH_0",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "PUNCHING_BAG_BATCH_1",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "KICKER_BALL",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "FOOTBALL",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "KICKER_MOUNT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "KICKER_BALL_BATCH_0",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "DISPLAY",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "DISPLAY_SCREEN",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "DISPLAY_GLASS",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BUTTONS",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "START_BUTTON",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "START_BUTTON",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "PAYMENT_PANEL",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "STANDARD_COIN_PANEL",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "STANDARD_COIN_SLOT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "COIN_RETURN",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LED_LIGHTS",
+      "type": "Group",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LED_STRIP_0",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LED_STRIP_1",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LED_STRIP_2",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "LED_STRIP_3",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "DOWNLIGHT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "DOWNLIGHT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "COIN_ACCEPTOR",
+      "type": "Group",
+      "optional": true,
+      "branding": false
+    },
+    {
+      "name": "COIN_ACCEPTOR_CASE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "COIN_ACCEPTOR_FACE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "COIN_ACCEPTOR_SLOT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BANKNOTE_ACCEPTOR",
+      "type": "Group",
+      "optional": true,
+      "branding": false
+    },
+    {
+      "name": "BANKNOTE_ACCEPTOR_CASE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BANKNOTE_ACCEPTOR_FACE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "BANKNOTE_ACCEPTOR_SLOT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CARD_READER",
+      "type": "Group",
+      "optional": true,
+      "branding": false
+    },
+    {
+      "name": "CARD_READER_CASE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CARD_READER_FACE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CARD_SCREEN",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CARD_CONTACTLESS",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "TICKET_DISPENSER",
+      "type": "Group",
+      "optional": true,
+      "branding": false
+    },
+    {
+      "name": "TICKET_DISPENSER_CASE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "TICKET_DISPENSER_FACE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "TICKET_DISPENSER_SLOT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CAPSULE_DISPENSER",
+      "type": "Group",
+      "optional": true,
+      "branding": false
+    },
+    {
+      "name": "CAPSULE_DISPENSER_CASE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CAPSULE_DISPENSER_FACE",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CAPSULE_OUTLET",
+      "type": "Mesh",
+      "optional": false,
+      "branding": false
+    },
+    {
+      "name": "CUSTOM_FRONT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": true
+    },
+    {
+      "name": "CUSTOM_LEFT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": true
+    },
+    {
+      "name": "CUSTOM_RIGHT",
+      "type": "Mesh",
+      "optional": false,
+      "branding": true
+    }
+  ],
+  "materials": [
+    "MATTE_BLACK",
+    "CHECKER_PLATE",
+    "PAINT_BLUE",
+    "GAME_RULES_INK",
+    "BRUSHED_METAL",
+    "FRONT_FACTORY_INK",
+    "REAR_FACTORY_INK",
+    "HEADER_PRINT",
+    "LEFT_FACTORY_INK",
+    "LEFT_KICKER_GRAPHIC_INK",
+    "CANOPY_LEFT_BOXER_INK",
+    "CANOPY_MOTIF_0_INK",
+    "CANOPY_MOTIF_1_INK",
+    "LEATHER_RED",
+    "RUBBER_BLACK",
+    "BALL_WHITE",
+    "DISPLAY_SCREEN_INK",
+    "DISPLAY_GLASS",
+    "MeshStandardMaterial",
+    "LED_0",
+    "LED_1",
+    "LED_2",
+    "LED_3",
+    "DOWNLIGHT",
+    "CUSTOM_FRONT_MATERIAL",
+    "CUSTOM_LEFT_MATERIAL",
+    "CUSTOM_RIGHT_MATERIAL"
+  ],
+  "defaultHidden": [
+    "COIN_ACCEPTOR",
+    "BANKNOTE_ACCEPTOR",
+    "CARD_READER",
+    "TICKET_DISPENSER",
+    "CAPSULE_DISPENSER",
+    "CUSTOM_FRONT",
+    "CUSTOM_LEFT",
+    "CUSTOM_RIGHT"
+  ]
+}
