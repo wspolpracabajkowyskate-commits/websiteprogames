@@ -1,0 +1,8 @@
+node_modules
+verification
+build
+*.md
+KONTROLA_WARIANTOW.html
+variant-audit.json
+package.json
+package-lock.json
