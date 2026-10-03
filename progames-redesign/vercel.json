@@ -3967,11 +3967,6 @@
       "statusCode": 301
     },
     {
-      "source": "/creator",
-      "destination": "/creator/",
-      "statusCode": 308
-    },
-    {
       "source": "/pl/produkty/:slug.html",
       "destination": "/en/products/:slug.html",
       "statusCode": 301
@@ -4210,24 +4205,6 @@
         {
           "key": "X-Robots-Tag",
           "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
-      "source": "/creator/model/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/creator/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
         }
       ]
     }

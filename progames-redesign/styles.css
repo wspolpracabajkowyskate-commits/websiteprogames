@@ -936,3 +936,26 @@ body.product-page-v2 .product-config-panel .gallery-variant-swatches{flex-wrap:w
  body.product-page-v2 .product-layout-v23 .product-main-stage{position:relative;inset:auto}
  .product-layout-v23+.product-facts{grid-template-columns:minmax(0,1fr)}
 }
+
+/* v25 official branding, company branch and standard equipment */
+.site-header .brand,.footer-brand{display:flex!important;align-items:center;gap:10px!important;min-width:0!important;flex-shrink:0}
+.brand-logo{display:block;width:230px;height:auto;object-fit:contain}
+.site-header .header-emblem{flex-shrink:0;margin:0!important}
+.footer-identity{display:flex;align-items:center;gap:16px}.footer-brand .brand-logo{width:260px;max-width:100%}
+.company-registration{font-size:13px;line-height:1.8}
+.spain-branch{background:#fff;padding-top:24px;padding-bottom:64px;color:#111}
+.spain-branch-card{max-width:1376px;margin:auto;border:1px solid #e3e5e8;border-top:3px solid #ff580a;border-radius:24px;display:grid;grid-template-columns:minmax(200px,.65fr) minmax(0,1.35fr);gap:40px;padding:40px;background:linear-gradient(120deg,#fff7f0,#fff 55%);align-items:center}
+.spain-branch-visual img{display:block;width:100%;max-width:280px;height:auto;margin:auto}
+.spain-branch-content .kicker{color:#dc4900;font-size:11px;margin:0 0 14px}
+.spain-branch-content h2{font-size:clamp(28px,3vw,44px);line-height:1.1;letter-spacing:-.04em;margin:0 0 12px}
+.spain-branch-intro{color:#666d74;font-size:14px;line-height:1.6;margin:0 0 25px}
+.spain-branch-content h3{font-size:17px;line-height:1.4;margin:0 0 6px}
+.branch-person{font-size:13px;font-weight:700;margin:0 0 22px}
+.spain-branch-details{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;font-size:14px;line-height:1.8}
+.spain-branch-details address{font-style:normal;color:#606870}
+.branch-services{font-weight:700;margin:0 0 8px}.spain-branch-details a{display:block;overflow-wrap:anywhere;text-underline-offset:4px}
+.config-standard{font-size:12px;line-height:1.6;color:#59616b;background:#f6f7f8;border-radius:8px;padding:10px 12px;margin:16px 0 0}
+@media(max-width:1100px){.site-header .brand-logo{width:185px}.site-header .brand{gap:7px!important}}
+@media(max-width:760px){.spain-branch{padding:24px 18px 40px}.spain-branch-card{grid-template-columns:1fr;gap:22px;padding:24px}.spain-branch-visual img{max-width:170px}.spain-branch-details{grid-template-columns:1fr;gap:18px}.footer-identity{gap:12px}.footer-brand .brand-logo{width:215px}}
+@media(max-width:600px){.site-header .brand-logo{width:145px}.site-header .brand{gap:5px!important}.site-header .header-emblem{width:30px;height:30px}.product-header-actions .btn{padding:8px;font-size:8px}.product-header-actions{gap:6px}}
+@media(max-width:370px){.site-header .brand-logo{width:125px}.site-header .header-emblem{width:26px;height:26px}}
