@@ -959,3 +959,75 @@ body.product-page-v2 .product-config-panel .gallery-variant-swatches{flex-wrap:w
 @media(max-width:760px){.spain-branch{padding:24px 18px 40px}.spain-branch-card{grid-template-columns:1fr;gap:22px;padding:24px}.spain-branch-visual img{max-width:170px}.spain-branch-details{grid-template-columns:1fr;gap:18px}.footer-identity{gap:12px}.footer-brand .brand-logo{width:215px}}
 @media(max-width:600px){.site-header .brand-logo{width:145px}.site-header .brand{gap:5px!important}.site-header .header-emblem{width:30px;height:30px}.product-header-actions .btn{padding:8px;font-size:8px}.product-header-actions{gap:6px}}
 @media(max-width:370px){.site-header .brand-logo{width:125px}.site-header .header-emblem{width:26px;height:26px}}
+
+
+/* 2026-10-03 — PL final copy/mobile polish */
+html[lang="pl"] h1,
+html[lang="pl"] h2,
+html[lang="pl"] h3,
+html[lang="pl"] .btn{
+  -webkit-hyphens:none!important;
+  hyphens:none!important;
+  word-break:normal!important;
+}
+@media (max-width:640px){
+  html[lang="pl"] .hero.hero-cinematic .hero-copy{max-width:100%}
+  html[lang="pl"] .hero.hero-cinematic h1{
+    font-size:clamp(50px,15.2vw,72px)!important;
+    line-height:.92!important;
+    letter-spacing:-.06em!important;
+    margin:18px 0!important;
+  }
+  html[lang="pl"] .hero.hero-cinematic .lead{
+    font-size:16px!important;
+    line-height:1.5!important;
+    max-width:320px!important;
+  }
+  html[lang="pl"] .hero.hero-cinematic .hero-actions{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    width:100%;
+    max-width:360px;
+    margin-top:28px;
+    flex-wrap:nowrap!important;
+  }
+  html[lang="pl"] .hero.hero-cinematic .hero-actions .btn{
+    min-height:46px;
+    padding:0 12px!important;
+    font-size:9.5px!important;
+    letter-spacing:.065em!important;
+    line-height:1.1!important;
+    white-space:nowrap;
+  }
+  html[lang="pl"] .contact-copy h2,
+  html[lang="pl"] .contact-copy h2 span,
+  html[lang="pl"] .contact-title-pl,
+  html[lang="pl"] .contact-title-pl span{
+    -webkit-hyphens:none!important;
+    hyphens:none!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+  }
+  html[lang="pl"] .contact-copy h2,
+  html[lang="pl"] .contact-title-pl{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(30px,8.6vw,39px)!important;
+    line-height:.96!important;
+    letter-spacing:-.05em!important;
+    text-wrap:balance;
+  }
+}
+@media (max-width:430px){
+  html[lang="pl"] .hero.hero-cinematic h1{font-size:clamp(48px,14.2vw,64px)!important}
+  html[lang="pl"] .hero.hero-cinematic .hero-actions{max-width:340px;gap:8px}
+  html[lang="pl"] .hero.hero-cinematic .hero-actions .btn{font-size:9px!important;padding:0 10px!important}
+  html[lang="pl"] .contact-copy h2,
+  html[lang="pl"] .contact-title-pl{font-size:clamp(29px,8.2vw,35px)!important}
+}
+@media (max-width:360px){
+  html[lang="pl"] .hero.hero-cinematic .hero-actions .btn{font-size:8.2px!important;letter-spacing:.05em!important;padding:0 8px!important}
+  html[lang="pl"] .contact-copy h2,
+  html[lang="pl"] .contact-title-pl{font-size:27px!important}
+}

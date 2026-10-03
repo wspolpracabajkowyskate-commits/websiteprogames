@@ -21,61 +21,61 @@ window.PRODUCT_PL={
     "desc": "Dwa ekscytujące wyzwania w jednym kompaktowym automacie, z intensywnym oświetleniem LED, które dodatkowo przyciąga uwagę. Naciśnij górny przycisk Start, aby zwolnić gruszkę bokserską i sprawdzić swoją siłę, lub dolny przycisk, aby kopnąć piłkę i pokazać swoje umiejętności. Podwójna akcja w jednej grze!"
   },
   "joker": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "pow-boxer": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "champion": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "easy": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "cyber-punch": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "gladiator": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "mma": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "black-jack": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "super-hero": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "power-black": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "poison-squad": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "hacker": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "strongman": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "viking": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "disco": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "matte-airbrushed": {
-    "desc": "Skontaktuj się z Pro Games, aby otrzymać aktualny opis produktu, dane techniczne i informacje o wyposażeniu dostępnym dla tego modelu."
+    "desc": "Matte Airbrushed to propozycja dla obiektów, które stawiają na bardziej stonowaną, premium stylistykę. Matowe czarne wykończenie nadaje automatom nowoczesny charakter, a do wyboru są warianty Standard, Combat i Double Hit. Wybierz wersję, a nasz zespół pomoże dobrać wyposażenie i konfigurację odpowiednią do Twojego obiektu."
   },
   "boxer-combat": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "boxer-fist": {
     "desc": "WIELOOSOBOWY AUTOMAT BOKSERSKI\n\nBoxer Fist to nasz nowy, ekscytujący wieloosobowy automat bokserski, stworzony, by bawić i stawiać wyzwania grupom w salonach gier, rodzinnych centrach rozrywki i innych obiektach rozrywkowych. Przyciągające wzrok oświetlenie LED, nowoczesne naklejki i solidna konstrukcja zachęcają do rywalizacji i kolejnych rozgrywek."
   },
   "boxer-ring": {
-    "desc": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów."
+    "desc": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek."
   },
   "boxer-combat-kids": {
     "desc": "Kids Combat, jeden z najnowszych modeli w naszej ofercie, zapewnia młodszym graczom ekscytującą i bezpieczną zabawę bokserską. Dzięki wyrazistemu wzornictwu i udoskonalonym funkcjom idealnie nadaje się do salonów gier i obiektów rodzinnych."
@@ -93,7 +93,7 @@ window.PRODUCT_PL={
     "desc": "Ten automat oferuje ekscytującą, dynamiczną grę dla osób, które chcą sprawdzić siłę i celność kopnięcia. Idealny zarówno dla dzieci, jak i dorosłych, stanowi świetne uzupełnienie salonów gier, barów sportowych i rodzinnych centrów rozrywki."
   },
   "boxer-flash": {
-    "desc": "Skontaktuj się z Pro Games, aby otrzymać aktualny opis produktu, dane techniczne i informacje o wyposażeniu dostępnym dla tego modelu."
+    "desc": "Boxer Flash łączy klasyczną rywalizację na wynik z wyrazistą, nowoczesną stylistyką. Kilka wariantów kolorystycznych ułatwia dopasowanie automatu do charakteru salonu gier, baru, klubu lub strefy rozrywki. Wybierz kolor i wyposażenie, a nasz dział sprzedaży przygotuje konfigurację dopasowaną do Twojego obiektu."
   },
   "boxer-gift": {
     "desc": "Boxer Gift urozmaica klasyczne wyzwanie bokserskie funkcją zdobywania nagród. Oferuje jasne oświetlenie LED i angażującą rozgrywkę."
@@ -117,13 +117,13 @@ window.PRODUCT_PL={
     "desc": "Nasze odporne na warunki atmosferyczne automaty do koszykówki mogą być używane na zewnątrz przez cały rok. Gra ma cztery poziomy trudności i jest dostarczana z zestawem pięciu piłek. W zależności od wybranego trybu kosz może się poruszać.\n\nMontaż i transport są bardzo łatwe.\n\nKoszykówka to gra dla osób w każdym wieku, uwielbiana zarówno przez dzieci, jak i dorosłych. Gracze mogą grać w grupie i rywalizować o najlepszy wynik (opcja łączenia urządzeń). To wysokiej jakości, trwały automat. WIK jest liderem produkcji automatów do koszykówki z wieloletnim doświadczeniem. To atrakcja lubiana przez publiczność, która nie przestaje dostarczać zabawy."
   },
   "kids-basketball": {
-    "desc": "Skontaktuj się z Pro Games, aby otrzymać aktualny opis produktu, dane techniczne i informacje o wyposażeniu dostępnym dla tego modelu."
+    "desc": "Kids Basketball to kompaktowa wersja automatu koszykarskiego przygotowana z myślą o młodszych graczach. Kolorowa i czytelna forma dobrze wpisuje się w rodzinne strefy rozrywki oraz miejsca nastawione na dzieci. Skontaktuj się z naszym zespołem, aby potwierdzić aktualną konfigurację i dostępność."
   },
   "kiddie-ride": {
-    "desc": "Skontaktuj się z Pro Games, aby otrzymać aktualny opis produktu, dane techniczne i informacje o wyposażeniu dostępnym dla tego modelu."
+    "desc": "Kiddie Ride to klasyczna atrakcja dla najmłodszych, dobrze pasująca do rodzinnych stref rozrywki, galerii handlowych i innych obiektów odwiedzanych przez rodziny. Dostępne wzory i konfiguracje mogą się zmieniać, dlatego aktualną ofertę potwierdzi nasz dział sprzedaży."
   },
   "cyberdart": {
-    "desc": "Skontaktuj się z Pro Games, aby otrzymać aktualny opis produktu, dane techniczne i informacje o wyposażeniu dostępnym dla tego modelu."
+    "desc": "Cyberdart to elektroniczny automat do gry w rzutki, który łączy klasyczną rywalizację z czytelnym panelem wyników i samoobsługową formą rozgrywki. To uniwersalna atrakcja do salonów gier, pubów, klubów i stref rozrywki. Aktualną konfigurację i dostępność potwierdzi nasz dział sprzedaży."
   },
   "hammer-2026": {
     "desc": "Nowa odsłona gry siłowej Hammer na 2026 rok — wysoka, podświetlana konstrukcja z wyraźnie wydzieloną strefą uderzenia. Pionowa forma sprawia, że automat świetnie prezentuje się w salonach gier, parkach rozrywki i innych obiektach entertainment.\n\nModel dostępny jest w pokazanym, wielokolorowym wykończeniu. Skontaktuj się z naszym zespołem, aby dobrać konfigurację działania i wyposażenie opcjonalne do Twojego obiektu. Ostateczne dane techniczne potwierdzimy w przygotowanej ofercie."
@@ -192,7 +192,7 @@ window.PG_PL={
     "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.": "Akcja 3 w 1: Boksowanie, kopanie i możliwość zdobywania nagród zapewniają dodatkowe emocje.",
     "Kid-Friendly Design: Safe, engaging and easy-to-use for children.": "Konstrukcja przyjazna dzieciom: Bezpieczna, angażująca i łatwa w obsłudze dla dzieci.",
     "Bright LED Lights: Colorful lights add to the fun and attraction.": "Jasne oświetlenie LED: Kolorowe światła zwiększają atrakcyjność i radość z gry.",
-    "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów.",
+    "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek.",
     "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.": "Trwała konstrukcja: Solidna elektronika i mechanika, idealne dla obiektów o dużym ruchu, którym zależy na niezawodnym działaniu.",
     "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.": "Różne opcje płatności: Obsługuje banknoty, monety, karty i żetony — z możliwością dostosowania do dowolnej waluty.",
     "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits.": "Zwiększanie przychodów: Regulowane poziomy trudności i tryb gry bezpłatnej angażują różne grupy odbiorców i maksymalizują zyski.",
@@ -321,7 +321,7 @@ window.PG_PL={
     "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.": "Akcja 3 w 1: Boksowanie, kopanie i możliwość zdobywania nagród zapewniają dodatkowe emocje.",
     "Kid-Friendly Design: Safe, engaging and easy-to-use for children.": "Konstrukcja przyjazna dzieciom: Bezpieczna, angażująca i łatwa w obsłudze dla dzieci.",
     "Bright LED Lights: Colorful lights add to the fun and attraction.": "Jasne oświetlenie LED: Kolorowe światła zwiększają atrakcyjność i radość z gry.",
-    "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów.",
+    "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek.",
     "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.": "Trwała konstrukcja: Solidna elektronika i mechanika, idealne dla obiektów o dużym ruchu, którym zależy na niezawodnym działaniu.",
     "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.": "Różne opcje płatności: Obsługuje banknoty, monety, karty i żetony — z możliwością dostosowania do dowolnej waluty.",
     "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits.": "Zwiększanie przychodów: Regulowane poziomy trudności i tryb gry bezpłatnej angażują różne grupy odbiorców i maksymalizują zyski.",
@@ -446,7 +446,7 @@ window.PG_PL={
     "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.": "Akcja 3 w 1: Boksowanie, kopanie i możliwość zdobywania nagród zapewniają dodatkowe emocje.",
     "Kid-Friendly Design: Safe, engaging and easy-to-use for children.": "Konstrukcja przyjazna dzieciom: Bezpieczna, angażująca i łatwa w obsłudze dla dzieci.",
     "Bright LED Lights: Colorful lights add to the fun and attraction.": "Jasne oświetlenie LED: Kolorowe światła zwiększają atrakcyjność i radość z gry.",
-    "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.": "Wciągająca rozgrywka: Gra sprawdzająca siłę angażuje klientów i zachęca ich do kolejnych powrotów.",
+    "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.": "Rywalizacja na wynik, która od razu angażuje graczy. Klasyczny pomiar siły zachęca do bicia rekordów, porównywania rezultatów i kolejnych rozgrywek.",
     "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.": "Trwała konstrukcja: Solidna elektronika i mechanika, idealne dla obiektów o dużym ruchu, którym zależy na niezawodnym działaniu.",
     "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.": "Różne opcje płatności: Obsługuje banknoty, monety, karty i żetony — z możliwością dostosowania do dowolnej waluty.",
     "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits.": "Zwiększanie przychodów: Regulowane poziomy trudności i tryb gry bezpłatnej angażują różne grupy odbiorców i maksymalizują zyski.",
