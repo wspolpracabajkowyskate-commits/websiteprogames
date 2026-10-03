@@ -1,3 +1,5 @@
+Aktualizacja v27: ujednolicono mobilny nagłówek w pięciu językach. Szczegóły i propozycje dodatków: `RAPORT-v27-MOBILE.md`.
+
 Aktualizacja v26: strona obsługuje EN / ES / PL / DE / FR. Instrukcja publikacji i edycji: `README-WIELOJEZYCZNOSC.md`.
 
 # Pro Games Poland v9

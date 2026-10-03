@@ -44,8 +44,14 @@ function render(p,l){
    if(script.textContent.includes('function setCatalog'))script.textContent=script.textContent.replace('      if(scroll)',"      window.PG_LOCALIZE?.(document.querySelector('.catalog-viewer-shell'));\n      if(scroll)");
   }
  }
+ if(p.kind==='home'){
+  const heading=document.querySelector('.hero h1');
+  const first=heading.firstChild;
+  const line=document.createElement('span');line.className='hero-title-line hero-title-first';line.textContent=first.textContent;
+  heading.replaceChild(line,first);heading.querySelector('em').classList.add('hero-title-line','hero-title-second');
+ }
  for(const box of document.querySelectorAll('.language-switch,.mobile-language')){box.innerHTML=menu(p,l);box.setAttribute('aria-label',isNew?t('Language'):l==='es'?'Idioma':'Language');}
- const style=document.createElement('link');style.rel='stylesheet';style.href='/i18n.css?v=26';document.head.append(style);
+ const style=document.createElement('link');style.rel='stylesheet';style.href='/i18n.css?v=27';document.head.append(style);
  const script=document.createElement('script');script.defer=true;script.src='/language.js?v=26';document.body.append(script);
  for(const e of document.querySelectorAll('link[hreflang]'))e.remove();
  for(const x of [...langs,'x-default']){const a=document.createElement('link');a.rel='alternate';a.hreflang=x;a.href=site.origin+route(p,x==='x-default'?'en':x);document.head.append(a);}
@@ -77,7 +83,7 @@ function render(p,l){
 for(const p of original)render(p,p.lang);
 for(const l of added)for(const p of english)render(p,l);
 // Legacy links preserve models via Vercel redirects; client fallback covers static hosting.
-for(const l of langs){const p={kind:'product',key:'champion'},file=l==='en'?'product.html':`product-${l}.html`;const {document}=parseHTML(read('build/templates/product-'+(l==='es'?'es':'en')+'.html'));document.documentElement.lang=l;document.body.dataset.pageKind='product';for(const box of document.querySelectorAll('.language-switch'))box.innerHTML=menu(p,l);if(added.includes(l)){const s=document.createElement('script');s.src='/i18n/'+l+'.js?v=26';document.head.append(s);translator(document,l).PG_LOCALIZE();}const css=document.createElement('link');css.rel='stylesheet';css.href='/i18n.css?v=26';document.head.append(css);const s=document.createElement('script');s.src='/language.js?v=26';s.defer=true;document.body.append(s);const m=document.createElement('meta');m.name='robots';m.content='noindex,follow';document.head.append(m);for(const a of document.querySelectorAll('a[href]:not([hreflang])'))a.href=remap(a.getAttribute('href'),l);for(const script of document.querySelectorAll('script[src]'))if(/^\/(script|product|site-config|trade-map)\.js/.test(script.src))script.src=script.src.split('?')[0]+'?v=26';fs.writeFileSync(file,'<!doctype html>\n'+document.documentElement.outerHTML);}
+for(const l of langs){const p={kind:'product',key:'champion'},file=l==='en'?'product.html':`product-${l}.html`;const {document}=parseHTML(read('build/templates/product-'+(l==='es'?'es':'en')+'.html'));document.documentElement.lang=l;document.body.dataset.pageKind='product';for(const box of document.querySelectorAll('.language-switch'))box.innerHTML=menu(p,l);if(added.includes(l)){const s=document.createElement('script');s.src='/i18n/'+l+'.js?v=26';document.head.append(s);translator(document,l).PG_LOCALIZE();}const css=document.createElement('link');css.rel='stylesheet';css.href='/i18n.css?v=27';document.head.append(css);const s=document.createElement('script');s.src='/language.js?v=26';s.defer=true;document.body.append(s);const m=document.createElement('meta');m.name='robots';m.content='noindex,follow';document.head.append(m);for(const a of document.querySelectorAll('a[href]:not([hreflang])'))a.href=remap(a.getAttribute('href'),l);for(const script of document.querySelectorAll('script[src]'))if(/^\/(script|product|site-config|trade-map)\.js/.test(script.src))script.src=script.src.split('?')[0]+'?v=26';fs.writeFileSync(file,'<!doctype html>\n'+document.documentElement.outerHTML);}
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
 fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'+output.map(p=>`<url><loc>${site.origin+p.url}</loc>${[...langs,'x-default'].map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${esc(site.origin+route(p,l==='x-default'?'en':l))}"/>`).join('')}${p.key?`<image:image><image:loc>${site.origin+products[p.key].image}</image:loc></image:image>`:''}</url>`).join('\n')+'\n</urlset>');
 fs.writeFileSync('build/pages.json',JSON.stringify(output,null,2));

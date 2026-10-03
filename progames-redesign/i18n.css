@@ -42,3 +42,47 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 .catalog-hero h1{color:#fff}
 @media(max-width:390px){html:is(:lang(en),:lang(es)) .catalog-hero h1{font-size:clamp(46px,12.5vw,52px);line-height:.95}}
 @media(min-width:981px){html:is(:lang(en),:lang(es)) .contact h2{font-size:clamp(44px,4.1vw,66px);line-height:1.02}}
+/* v27: one mobile hero grid for all five locales.
+   Text length never controls the position of the eyebrow, title, lead or CTAs. */
+@media(max-width:640px){
+ html .hero.hero-cinematic{
+  min-height:690px;padding:130px 20px 58px;align-items:flex-end;
+ }
+ html .hero.hero-cinematic .hero-copy{
+  --hero-title-size:clamp(52px,17vw,78px);
+  --hero-line-height:calc(var(--hero-title-size) * .96);
+  display:grid;grid-template-columns:minmax(0,1fr);
+  grid-template-rows:32px calc(var(--hero-line-height) * 2) 76.5px 48px;
+  row-gap:20px;width:100%;max-width:100%;min-width:0;
+ }
+ html .hero.hero-cinematic .eyebrow{
+  position:relative;margin:0;padding-left:32px;height:32px;
+  font-size:9.5px;line-height:16px;letter-spacing:.12em;
+ }
+ html .hero.hero-cinematic .eyebrow>span{
+  position:absolute;left:0;top:7px;width:22px;height:2px;margin:0;
+ }
+ html:is(:lang(en),:lang(es),:lang(pl),:lang(de),:lang(fr)) .hero.hero-cinematic h1{
+  display:grid;grid-template-rows:repeat(2,var(--hero-line-height));
+  margin:0;font-size:var(--hero-title-size);line-height:var(--hero-line-height);min-width:0;
+ }
+ html .hero.hero-cinematic h1>br{display:none}
+ html .hero.hero-cinematic .hero-title-line{
+  display:block;min-width:0;height:var(--hero-line-height);
+  line-height:var(--hero-line-height);white-space:nowrap;
+ }
+ html:lang(pl) .hero.hero-cinematic .hero-title-first,
+ html:lang(pl) .hero.hero-cinematic .hero-title-second{font-size:calc(var(--hero-title-size) * .92)}
+ html:lang(de) .hero.hero-cinematic .hero-title-second{font-size:calc(var(--hero-title-size) * .88)}
+ html:lang(fr) .hero.hero-cinematic .hero-title-first{font-size:calc(var(--hero-title-size) * .82)}
+ html .hero.hero-cinematic .lead{
+  margin:0;max-width:100%;height:76.5px;font-size:17px;line-height:25.5px;
+ }
+ html:is(:lang(en),:lang(es),:lang(pl),:lang(de),:lang(fr)) .hero.hero-cinematic .hero-actions{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;min-width:0;height:48px;
+ }
+ html:is(:lang(en),:lang(es),:lang(pl),:lang(de),:lang(fr)) .hero.hero-cinematic .hero-actions .btn{
+  width:100%;min-width:0;min-height:48px;height:48px;padding:8px 10px;
+  font-size:10px;line-height:14px;letter-spacing:.035em;white-space:normal;text-align:center;
+ }
+}
