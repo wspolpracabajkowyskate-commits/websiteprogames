@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "languages": 5,
+  "tests": [
+    "variant image",
+    "equipment",
+    "same product after language switch",
+    "query state",
+    "inquiry summary",
+    "mobile menu",
+    "search/filter reset",
+    "catalog PDF switch",
+    "keyboard Escape"
+  ],
+  "errors": []
+}

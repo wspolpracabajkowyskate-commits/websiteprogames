@@ -1,0 +1,10 @@
+const assert=require('assert/strict'),fs=require('fs'),vm=require('vm'),{parseHTML}=require('linkedom');
+const pages=JSON.parse(fs.readFileSync('build/pages.json')),langs=['en','es','pl','de','fr'];
+assert.equal(pages.length,240);const data={window:{}};vm.runInNewContext(fs.readFileSync('products.js','utf8'),data);const products=data.window.PRODUCTS;const errors=[];
+for(const l of ['pl','de','fr']){const {document}=parseHTML(`<html lang="${l}"></html>`),ctx={window:{},document};vm.createContext(ctx);vm.runInContext(fs.readFileSync('i18n/'+l+'.js','utf8'),ctx);for(const p of Object.values(products)){for(const s of [...p.desc.split('\n\n'),...p.features,...p.options])assert.ok(Object.hasOwn(ctx.window.PG_DICTIONARY,s),`Missing ${l}: ${s}`);}}
+for(const p of pages){const {document}=parseHTML(fs.readFileSync(p.filename,'utf8'));assert.equal(document.documentElement.lang,p.lang);assert.equal(document.querySelectorAll('link[hreflang]').length,6);assert.ok(document.querySelector('link[rel=canonical]').href.endsWith(p.url));for(const box of document.querySelectorAll('.pg-language')){assert.equal(box.querySelectorAll('a').length,5);assert.equal(box.querySelector('a[aria-current=page]').lang,p.lang);}
+ for(const a of document.querySelectorAll('a[href]')){const href=a.getAttribute('href');if(!href.startsWith('/'))continue;const pathname=href.split(/[?#]/)[0];const file=pathname.endsWith('/')?pathname.slice(1)+'index.html':pathname.slice(1);assert.ok(fs.existsSync(file),`Missing target ${href} on ${p.url}`);}
+ for(const script of document.querySelectorAll('script[type="application/ld+json"]')){const obj=JSON.parse(script.textContent);if(['WebPage','CollectionPage'].includes(obj['@type']))assert.equal(obj.inLanguage,p.lang);}
+}
+const redirects=JSON.parse(fs.readFileSync('vercel.json')).redirects;assert.ok(!redirects.some(x=>x.source==='/pl/:path*'));assert.ok(!redirects.some(x=>x.source==='/pl/produkty/:slug.html'));
+console.log('PASS: 240 pages; complete product translations; five-language navigation; canonical/hreflang/schema; internal links; PL redirects.');

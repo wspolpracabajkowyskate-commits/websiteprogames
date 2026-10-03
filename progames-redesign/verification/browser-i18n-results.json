@@ -1,0 +1,1225 @@
+{
+  "results": [
+    {
+      "width": 360,
+      "lang": "en",
+      "kind": "home",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          ALL\n          BOXERS\n          COMBO / 3-IN-1\n          KIDS\n   ",
+          "scroll": 627,
+          "client": 332,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "en",
+      "kind": "collection",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "en",
+      "kind": "catalog",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "H1",
+          "class": "",
+          "text": "PRO GAMESCATALOGS.",
+          "scroll": 347,
+          "client": 312,
+          "rect": {
+            "left": 24,
+            "right": 336
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            SPARE PARTS / 10 PAGES\n            Spa",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "en",
+      "kind": "product",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "es",
+      "kind": "home",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          TODOS\n          BOXERS\n          COMBO / 3 EN 1\n          INFANT",
+          "scroll": 688,
+          "client": 332,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "es",
+      "kind": "collection",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "es",
+      "kind": "catalog",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "H1",
+          "class": "",
+          "text": "CATÁLOGOSPRO GAMES.",
+          "scroll": 380,
+          "client": 312,
+          "rect": {
+            "left": 24,
+            "right": 336
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MÁQUINAS / 40 PÁGINAS\n            Catá",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            REPUESTOS / 10 PÁGINAS\n            Cat",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "es",
+      "kind": "product",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "pl",
+      "kind": "home",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          WSZYSTKIE\n          BOKSERY\n          COMBO / 3 W 1\n          DL",
+          "scroll": 720,
+          "client": 332,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "pl",
+      "kind": "collection",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "pl",
+      "kind": "catalog",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATY / 40 STRON\n            Automa",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            CZĘŚCI ZAMIENNE / 10 STRON\n           ",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "pl",
+      "kind": "product",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "de",
+      "kind": "home",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          ALLE\n          BOXAUTOMATEN\n          KOMBI / 3-IN-1\n          K",
+          "scroll": 745,
+          "client": 332,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "de",
+      "kind": "collection",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "de",
+      "kind": "catalog",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATEN / 40 SEITEN\n            Auto",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            ERSATZTEILE / 10 SEITEN\n            Er",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "de",
+      "kind": "product",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "fr",
+      "kind": "home",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          TOUT\n          BOXE\n          COMBINÉS / 3-EN-1\n          ENFANT",
+          "scroll": 675,
+          "client": 332,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "fr",
+      "kind": "collection",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 360,
+      "lang": "fr",
+      "kind": "catalog",
+      "scrollWidth": 360,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            PIÈCES DÉTACHÉES / 10 PAGES\n          ",
+          "scroll": 390,
+          "client": 330,
+          "rect": {
+            "left": 14,
+            "right": 346
+          }
+        }
+      ]
+    },
+    {
+      "width": 360,
+      "lang": "fr",
+      "kind": "product",
+      "scrollWidth": 360,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "kind": "home",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          ALL\n          BOXERS\n          COMBO / 3-IN-1\n          KIDS\n   ",
+          "scroll": 627,
+          "client": 354,
+          "rect": {
+            "left": 18,
+            "right": 372
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "kind": "collection",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "kind": "catalog",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "H1",
+          "class": "",
+          "text": "PRO GAMESCATALOGS.",
+          "scroll": 347,
+          "client": 342,
+          "rect": {
+            "left": 24,
+            "right": 366
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            SPARE PARTS / 10 PAGES\n            Spa",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "kind": "product",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "es",
+      "kind": "home",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          TODOS\n          BOXERS\n          COMBO / 3 EN 1\n          INFANT",
+          "scroll": 688,
+          "client": 354,
+          "rect": {
+            "left": 18,
+            "right": 372
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "es",
+      "kind": "collection",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "es",
+      "kind": "catalog",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "H1",
+          "class": "",
+          "text": "CATÁLOGOSPRO GAMES.",
+          "scroll": 380,
+          "client": 342,
+          "rect": {
+            "left": 24,
+            "right": 366
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MÁQUINAS / 40 PÁGINAS\n            Catá",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            REPUESTOS / 10 PÁGINAS\n            Cat",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "es",
+      "kind": "product",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "pl",
+      "kind": "home",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          WSZYSTKIE\n          BOKSERY\n          COMBO / 3 W 1\n          DL",
+          "scroll": 720,
+          "client": 354,
+          "rect": {
+            "left": 18,
+            "right": 372
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "pl",
+      "kind": "collection",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "pl",
+      "kind": "catalog",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATY / 40 STRON\n            Automa",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            CZĘŚCI ZAMIENNE / 10 STRON\n           ",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "pl",
+      "kind": "product",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "de",
+      "kind": "home",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          ALLE\n          BOXAUTOMATEN\n          KOMBI / 3-IN-1\n          K",
+          "scroll": 745,
+          "client": 354,
+          "rect": {
+            "left": 18,
+            "right": 372
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "de",
+      "kind": "collection",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "de",
+      "kind": "catalog",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATEN / 40 SEITEN\n            Auto",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            ERSATZTEILE / 10 SEITEN\n            Er",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "de",
+      "kind": "product",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "fr",
+      "kind": "home",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "DIV",
+          "class": "category-tabs",
+          "text": "\n          TOUT\n          BOXE\n          COMBINÉS / 3-EN-1\n          ENFANT",
+          "scroll": 675,
+          "client": 354,
+          "rect": {
+            "left": 18,
+            "right": 372
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "fr",
+      "kind": "collection",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 390,
+      "lang": "fr",
+      "kind": "catalog",
+      "scrollWidth": 390,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            PIÈCES DÉTACHÉES / 10 PAGES\n          ",
+          "scroll": 420,
+          "client": 360,
+          "rect": {
+            "left": 14,
+            "right": 376
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "lang": "fr",
+      "kind": "product",
+      "scrollWidth": 390,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "kind": "home",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "kind": "collection",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "kind": "catalog",
+      "scrollWidth": 768,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            SPARE PARTS / 10 PAGES\n            Spa",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "en",
+      "kind": "product",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "es",
+      "kind": "home",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "es",
+      "kind": "collection",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "es",
+      "kind": "catalog",
+      "scrollWidth": 768,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MÁQUINAS / 40 PÁGINAS\n            Catá",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            REPUESTOS / 10 PÁGINAS\n            Cat",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "es",
+      "kind": "product",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "pl",
+      "kind": "home",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "pl",
+      "kind": "collection",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "pl",
+      "kind": "catalog",
+      "scrollWidth": 768,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATY / 40 STRON\n            Automa",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            CZĘŚCI ZAMIENNE / 10 STRON\n           ",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "pl",
+      "kind": "product",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "de",
+      "kind": "home",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "de",
+      "kind": "collection",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "de",
+      "kind": "catalog",
+      "scrollWidth": 768,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATEN / 40 SEITEN\n            Auto",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            ERSATZTEILE / 10 SEITEN\n            Er",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "de",
+      "kind": "product",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "fr",
+      "kind": "home",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "fr",
+      "kind": "collection",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 768,
+      "lang": "fr",
+      "kind": "catalog",
+      "scrollWidth": 768,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            PIÈCES DÉTACHÉES / 10 PAGES\n          ",
+          "scroll": 778,
+          "client": 718,
+          "rect": {
+            "left": 24,
+            "right": 744
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "lang": "fr",
+      "kind": "product",
+      "scrollWidth": 768,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "kind": "home",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "",
+          "text": "LET'S BUILD YOUR NEXTENTERTAINMENT EXPERIENCE.",
+          "scroll": 736,
+          "client": 656,
+          "rect": {
+            "left": 24,
+            "right": 680
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "kind": "collection",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "kind": "catalog",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 24,
+            "right": 710
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            SPARE PARTS / 10 PAGES\n            Spa",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 730,
+            "right": 1416
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "kind": "product",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "es",
+      "kind": "home",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "",
+          "text": "CREEMOS TU PRÓXIMAEXPERIENCIA DE ENTRETENIMIENTO.",
+          "scroll": 843,
+          "client": 656,
+          "rect": {
+            "left": 24,
+            "right": 680
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "es",
+      "kind": "collection",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "es",
+      "kind": "catalog",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MÁQUINAS / 40 PÁGINAS\n            Catá",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 24,
+            "right": 710
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            REPUESTOS / 10 PÁGINAS\n            Cat",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 730,
+            "right": 1416
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "es",
+      "kind": "product",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "pl",
+      "kind": "home",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "",
+          "text": "PRODUKUJEMYW POLSCE.",
+          "scroll": 679,
+          "client": 496,
+          "rect": {
+            "left": 920.25,
+            "right": 1416
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "pl",
+      "kind": "collection",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "pl",
+      "kind": "catalog",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATY / 40 STRON\n            Automa",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 24,
+            "right": 710
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            CZĘŚCI ZAMIENNE / 10 STRON\n           ",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 730,
+            "right": 1416
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "pl",
+      "kind": "product",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "de",
+      "kind": "home",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "de",
+      "kind": "collection",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "de",
+      "kind": "catalog",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            AUTOMATEN / 40 SEITEN\n            Auto",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 24,
+            "right": 710
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            ERSATZTEILE / 10 SEITEN\n            Er",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 730,
+            "right": 1416
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "de",
+      "kind": "product",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "fr",
+      "kind": "home",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "fr",
+      "kind": "collection",
+      "scrollWidth": 1440,
+      "overflows": []
+    },
+    {
+      "width": 1440,
+      "lang": "fr",
+      "kind": "catalog",
+      "scrollWidth": 1440,
+      "overflows": [
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice active",
+          "text": "\n          01\n          \n            MACHINES / 40 PAGES\n            Machin",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 24,
+            "right": 710
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "class": "catalog-choice",
+          "text": "\n          02\n          \n            PIÈCES DÉTACHÉES / 10 PAGES\n          ",
+          "scroll": 744,
+          "client": 684,
+          "rect": {
+            "left": 730,
+            "right": 1416
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "lang": "fr",
+      "kind": "product",
+      "scrollWidth": 1440,
+      "overflows": []
+    }
+  ],
+  "errors": []
+}
