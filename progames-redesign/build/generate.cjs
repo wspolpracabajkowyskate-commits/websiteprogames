@@ -1,17 +1,16 @@
 /* Rebuild static multilingual pages: run npm run build from the project root. */
 const fs=require('fs'),path=require('path'),vm=require('vm'),{parseHTML}=require('linkedom');
-const read=f=>fs.readFileSync(f,'utf8');const data={window:{}};vm.createContext(data);for(const f of ['site-config.js','products.js','pl-content.js'])vm.runInContext(read(f),data);
+const read=f=>fs.readFileSync(f,'utf8');const data={window:{}};vm.createContext(data);for(const f of ['site-config.js','products.js'])vm.runInContext(read(f),data);
 const {PRODUCTS:products,PG_SITE:site,PG_ROUTES:routes,PRODUCT_PL:pl,PRODUCT_ES:es,PG_PL:plLabels,PG_ES:esLabels}=data.window;
 // Browser payloads omit source provenance used only by build/audit tooling.
 fs.mkdirSync('assets/data',{recursive:true});
-for(const language of ['en','pl','es']){
+for(const language of ['en','es']){
  const clean=JSON.parse(JSON.stringify(products,(key,value)=>['source','sourceImage'].includes(key)?undefined:value));
  const payload={PRODUCTS:clean,PRODUCT_COLLECTIONS:data.window.PRODUCT_COLLECTIONS};
- if(language==='pl'){payload.PRODUCT_PL=pl;payload.PG_PL=plLabels;}
  if(language==='es'){payload.PRODUCT_ES=es;payload.PG_ES=esLabels;}
  fs.writeFileSync('assets/data/products-'+language+'.js',Object.entries(payload).map(([key,value])=>'window.'+key+'='+JSON.stringify(value)+';').join('\n'));
 }
-const origin=site.origin;const output=[];const langs=['en','pl','es'];
+const origin=site.origin;const output=[];const langs=['en','es'];
 const titles={home:{en:'Boxer & Arcade Machine Manufacturer | Pro Games Poland',pl:'Boksery i automaty rozrywkowe — producent | Pro Games Poland',es:'Fabricante de máquinas recreativas y boxers | Pro Games Poland'},collection:{en:'Boxer Standard — 15 Boxing Machine Designs | Pro Games',pl:'Boksery Standard — 15 modeli automatów bokserskich | Pro Games',es:'Boxer Standard — 15 diseños de máquinas de boxeo | Pro Games'},catalog:{en:'Arcade Machines & Spare Parts Catalogs | Pro Games Poland',pl:'Katalogi automatów i części zamiennych | Pro Games Poland',es:'Catálogos de máquinas y repuestos | Pro Games Poland'}};
 const descriptions={home:{en:'Polish manufacturer of boxer and arcade machines. Explore boxing, kicker, hammer and combo games, colours, specifications, spare parts and B2B enquiries.',pl:'Producent bokserów i automatów rozrywkowych z Polski. Poznaj boksery, kopacze, młoty i urządzenia 3 w 1, dostępne kolory, części zamienne i ofertę B2B.',es:'Fabricante polaco de boxers y máquinas recreativas. Descubre modelos, colores, especificaciones, repuestos y opciones para operadores y distribuidores.'},collection:{en:'Explore all 15 Boxer Standard designs from Pro Games: Joker, Champion, MMA, Viking and more. Compare photos and choose your model and cabinet colour.',pl:'Poznaj 15 bokserów Standard Pro Games: Joker, Champion, MMA, Viking i inne. Zobacz zdjęcia, wybierz model, kolor obudowy i konfigurację do swojego lokalu.',es:'Explora los 15 diseños Boxer Standard de Pro Games: Joker, Champion, MMA, Viking y más. Elige tu modelo y consulta colores, fotos y especificaciones.'},catalog:{en:'Browse and download Pro Games arcade machine and spare parts catalogs as local PDF files. Find models, components and information for operators.',pl:'Przeglądaj i pobierz katalog automatów Pro Games oraz katalog części zamiennych PDF. Modele, podzespoły i informacje dla operatorów w jednym miejscu.',es:'Consulta y descarga los catálogos PDF de máquinas Pro Games y repuestos. Modelos, componentes e información para operadores en un solo lugar.'}};
 const pageURL=(kind,lang,key)=>kind==='home'?routes.home(lang):kind==='collection'?routes.collection(lang):kind==='catalog'?routes.catalog(lang):routes.product(lang,key);
@@ -24,7 +23,7 @@ function render(kind,lang,key){
   box.innerHTML=langs.map(l=>`<a href="${alternates[l]}" hreflang="${l}" lang="${l}" ${kind==='product'?`data-lang-link="${l}"`:''} ${l===lang?'class="active" aria-current="page"':''}>${l.toUpperCase()}</a>`).join('');
  }
  const ctx={window,document,location:new URL(origin+url),URL,URLSearchParams,Intl,Date,console,addEventListener:()=>{},requestAnimationFrame:f=>f(),setInterval:()=>{},history:{replaceState:()=>{}},scrollY:0,Image:class{},FormData:class{}};vm.createContext(ctx);
- for(const f of ['site-config.js','products.js','pl-content.js'])vm.runInContext(read(f),ctx);
+ for(const f of ['site-config.js','products.js'])vm.runInContext(read(f),ctx);
  if(kind==='home'||kind==='collection')vm.runInContext(read('script.js'),ctx);
  if(kind==='home')vm.runInContext(read('trade-map.js'),ctx);
  if(kind==='product')vm.runInContext(read('product.js'),ctx);
@@ -41,7 +40,7 @@ function render(kind,lang,key){
  setMeta(document,'meta[name="twitter:card"]',{name:'twitter:card',content:'summary_large_image'});
  for(const k of ['title','description','image'])setMeta(document,`meta[name="twitter:${k}"]`,{name:'twitter:'+k,content:og[k]});
  setMeta(document,'meta[property="og:image:alt"]',{property:'og:image:alt',content:product?product.name+' — Pro Games Poland':'Pro Games Poland'});
- for(const locale of ({en:['pl_PL','es_ES'],pl:['en_GB','es_ES'],es:['en_GB','pl_PL']}[lang]||[])){const e=document.createElement('meta');e.setAttribute('property','og:locale:alternate');e.setAttribute('content',locale);document.head.append(e)}
+ setMeta(document,'meta[property="og:locale:alternate"]',{property:'og:locale:alternate',content:lang==='es'?'en_GB':'es_ES'});
  setMeta(document,'meta[name="robots"]',{name:'robots',content:'index,follow,max-image-preview:large'});
  const org={'@context':'https://schema.org','@type':'Organization','@id':origin+'/#organization',name:'PRO GAMES POLAND Sp. z o.o.',url:origin+'/',email:'office@progames.pl',telephone:'+48 536 068 912',address:{'@type':'PostalAddress',streetAddress:'ul. Rybnicka 19A',postalCode:'44-335',addressLocality:'Jastrzębie-Zdrój',addressCountry:'PL'}};
  org.taxID='633-224-54-91';org.identifier={'@type':'PropertyValue',propertyID:'REGON',value:'520986702'};org.logo=origin+'/assets/progames-wordmark.webp';org.sameAs=['https://www.facebook.com/BoxerProgames','https://www.instagram.com/progames.pl/'];org.contactPoint=[{'@type':'ContactPoint',contactType:'sales',email:'office@progames.pl',telephone:'+48 536 068 912'},{'@type':'ContactPoint',contactType:'customer service',email:'service@progames.pl',telephone:'+48 789 108 086'}];
@@ -75,4 +74,4 @@ fs.writeFileSync('robots.txt',`User-agent: *\nAllow: /\nDisallow: /build/\nDisal
 fs.writeFileSync('build/pages.json',JSON.stringify(output,null,2));
 // Compatibility templates for previously shared ?model= URLs, also covered by server redirects.
 for(const lang of langs){const{document}=parseHTML(read(`build/templates/product-${lang}.html`));setMeta(document,'meta[name="robots"]',{name:'robots',content:'noindex,follow'});for(const box of document.querySelectorAll('.language-switch'))box.innerHTML=langs.map(l=>`<a data-lang-link="${l}" href="${routes.home(l)}">${l.toUpperCase()}</a>`).join('');fs.writeFileSync(lang==='en'?'product.html':`product-${lang}.html`,'<!doctype html>\n'+document.documentElement.outerHTML)}
-console.log('Generated',output.length,'indexable pages:',Object.keys(products).length,'products × 3 languages + 9 landing pages.');
+console.log('Generated',output.length,'indexable pages:',Object.keys(products).length,'products × 2 languages + 6 landing pages.');

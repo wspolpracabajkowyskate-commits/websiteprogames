@@ -1,6 +1,6 @@
 # Pro Games Poland v9
 
-Statyczna strona PL/EN/ES: 45 produkty, 222 warianty, kolekcja 15 Boxer Standard, mapa targów i 144 indeksowalne strony HTML. Wszystkie zdjęcia, fonty, mapa i katalogi są lokalne.
+Statyczna strona PL/EN/ES: 42 produkty, 222 warianty, kolekcja 15 Boxer Standard, mapa targów i 135 indeksowalnych stron HTML. Wszystkie zdjęcia, fonty, mapa i katalogi są lokalne.
 
 Uruchomienie: `python3 -m http.server 8000`, następnie http://localhost:8000. Publikuj w katalogu głównym domeny, zachowując strukturę plików. Serwer nie wymaga Node.js; gotowe HTML są już w paczce.
 
