@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07090d">
+  <meta name="robots" content="noindex,nofollow">
+  <title>PRO GAMES CREATOR — Double Strike 2 prototype</title>
+  <meta name="description" content="Standalone PRO GAMES CREATOR prototype for Double Strike 2.">
+  <link rel="stylesheet" href="../assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+<main id="page">
+  <section id="hero" class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="brand-pill">PRO GAMES / CREATOR LAB</div>
+      <p class="eyebrow">INTERACTIVE 3D PRODUCT CONFIGURATOR</p>
+      <h1>PRO GAMES<br><span>CREATOR</span></h1>
+      <p class="hero-kicker">CREATE YOUR MACHINE.</p>
+      <p class="hero-copy">Choose the color. Select the equipment. Add your branding. Create your PRO GAMES machine.</p>
+      <div class="hero-actions">
+        <button id="startCreating" class="btn btn-primary">START CREATING <span>→</span></button>
+        <a class="btn btn-ghost" href="#prototype-notes">PROTOTYPE NOTES</a>
+      </div>
+      <div class="hero-meta"><span>DOUBLE STRIKE 2</span><span>360° VIEW</span><span>REAL-TIME MATERIALS</span><span>CUSTOM BRANDING</span></div>
+    </div>
+  </section>
+
+  <section id="creator" class="creator is-hidden" aria-label="PRO GAMES CREATOR">
+    <header class="creator-header">
+      <div class="creator-title"><span class="creator-logo">PRO GAMES</span><strong>CREATOR</strong></div>
+      <div class="status-line"><span class="status-dot"></span><span id="modelStatus">Waiting to load…</span></div>
+      <button id="resetTop" class="text-btn">RESET DESIGN</button>
+    </header>
+
+    <div class="creator-layout">
+      <section id="viewerShell" class="viewer-shell">
+        <div id="viewer" class="viewer" aria-label="3D machine viewer">
+          <div id="loader" class="model-loader"><div class="loader-ring"></div><strong>LOADING DOUBLE STRIKE 2</strong><span>Preparing web-optimized GLB</span></div>
+          <div class="viewer-badge">DOUBLE STRIKE 2 / 142 × 122 × 219 CM</div>
+          <div class="viewer-controls" aria-label="3D view controls">
+            <button id="zoomIn" title="Zoom in" aria-label="Zoom in">＋</button><button id="zoomOut" title="Zoom out" aria-label="Zoom out">−</button><button id="cameraReset" title="Reset camera" aria-label="Reset camera">↺</button><button id="fullPreview" title="Full preview" aria-label="Full preview">⛶</button>
+          </div>
+          <button id="closePreview" class="close-preview is-hidden">CLOSE PREVIEW ×</button>
+        </div>
+        <div class="viewer-footer"><span>DRAG TO ROTATE</span><span>SCROLL / PINCH TO ZOOM</span><span>REAL-TIME PREVIEW</span></div>
+      </section>
+
+      <aside id="panel" class="config-panel">
+        <div class="panel-head"><p>MODEL</p><h2>DOUBLE STRIKE 2</h2><span>Boxer + Kicker</span></div>
+        <details class="config-section" open><summary><span>01</span>MACHINE</summary><div class="section-body compact-info"><div><small>Size</small><strong>142 × 122 × 219 cm</strong></div><div><small>Model</small><strong>Optimized GLB</strong></div></div></details>
+        <details class="config-section" open><summary><span>02</span>COLOR</summary><div class="section-body"><div id="colorSwatches" class="swatches" aria-label="Machine color"></div><div class="inline-value"><span>Selected</span><strong id="selectedColorName">Blue</strong></div></div></details>
+        <details class="config-section" open><summary><span>03</span>EQUIPMENT</summary><div class="section-body check-list">
+          <label><input data-equipment="coin_acceptor" type="checkbox" checked><span>Coin acceptor</span><em>reference</em></label>
+          <label><input data-equipment="banknote_acceptor" type="checkbox"><span>Banknote acceptor</span><em>option</em></label>
+          <label><input data-equipment="card_reader" type="checkbox"><span>Card reader / Nayax</span><em>option</em></label>
+          <label><input data-equipment="ticket_dispenser" type="checkbox"><span>Ticket dispenser</span><em>option</em></label>
+          <label><input data-equipment="capsule_dispenser" type="checkbox"><span>Capsule dispenser</span><em>prototype mount</em></label>
+        </div></details>
+        <details class="config-section" open><summary><span>04</span>BRANDING</summary><div class="section-body">
+          <div class="surface-tabs" role="tablist"><button class="surface-tab active" data-surface="front">FRONT</button><button class="surface-tab" data-surface="left">LEFT SIDE</button><button class="surface-tab" data-surface="right">RIGHT SIDE</button></div>
+          <label class="upload-zone" for="brandingUpload"><input id="brandingUpload" type="file" accept="image/png,image/jpeg,image/svg+xml" hidden><span class="upload-icon">＋</span><strong>UPLOAD LOGO / GRAPHIC</strong><small>PNG, JPG or SVG · separate design per surface</small></label>
+          <div id="brandFileInfo" class="brand-file-info">No branding uploaded for this surface.</div>
+        </div></details>
+        <details class="config-section" open><summary><span>05</span>CUSTOM DESIGN</summary><div class="section-body range-stack">
+          <label><span>Horizontal</span><output id="xOut">0</output><input id="brandX" type="range" min="-100" max="100" value="0"></label>
+          <label><span>Vertical</span><output id="yOut">0</output><input id="brandY" type="range" min="-100" max="100" value="0"></label>
+          <label><span>Scale</span><output id="scaleOut">100%</output><input id="brandScale" type="range" min="25" max="240" value="100"></label>
+          <label><span>Rotation</span><output id="rotationOut">0°</output><input id="brandRotation" type="range" min="-180" max="180" value="0"></label>
+          <div class="two-buttons"><button id="replaceBranding" class="subtle-btn">REPLACE FILE</button><button id="resetBranding" class="subtle-btn danger">RESET SURFACE</button></div>
+        </div></details>
+        <details class="config-section"><summary><span>06</span>PREVIEW</summary><div class="section-body button-stack"><button id="previewFullPanel" class="panel-btn">FULL PREVIEW</button><button id="downloadPreview" class="panel-btn">DOWNLOAD PREVIEW PNG</button></div></details>
+        <details class="config-section" open><summary><span>07</span>SUMMARY</summary><div class="section-body summary-grid">
+          <div><span>MODEL</span><strong>DOUBLE STRIKE 2</strong></div><div><span>COLOR</span><strong id="summaryColor">Blue</strong></div><div><span>EQUIPMENT</span><strong id="summaryEquipment">Coin acceptor</strong></div><div><span>BRANDING</span><strong id="summaryBranding">None</strong></div>
+          <div class="summary-id"><span>CONFIGURATION ID</span><strong id="configId">PGC-DS2-000000</strong></div><div class="two-buttons"><button id="saveConfig" class="subtle-btn">SAVE JSON</button><label class="subtle-btn file-btn">LOAD JSON<input id="loadConfig" type="file" accept="application/json" hidden></label></div>
+        </div></details>
+        <div class="panel-final-actions"><button id="requestConfig" class="btn btn-primary wide">REQUEST THIS CONFIGURATION <span>→</span></button><button id="resetDesign" class="text-btn full">RESET DESIGN</button></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="prototype-notes" class="prototype-notes"><p class="eyebrow">PROTOTYPE / BUILD NOTES</p><h2>Isolated by design.</h2><p>This proof-of-concept is intentionally separate from the current product cards. The 3D model is based on the supplied Double Strike 2 reference photos and the 142 × 122 × 219 cm specification already present in the supplied website files. The model and Three.js stack are only loaded after entering the creator.</p></section>
+</main>
+
+<div id="requestModal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="requestTitle"><div class="modal-card"><button id="closeModal" class="modal-close">×</button><p class="eyebrow">PRO GAMES CREATOR</p><h2 id="requestTitle">Configuration ready for inquiry.</h2><p>This prototype prepares a complete inquiry payload. It can later be wired to the existing contact form or CRM without changing the creator state format.</p><pre id="requestPayload"></pre><div class="modal-actions"><button id="copyPayload" class="btn btn-ghost">COPY PAYLOAD</button><button id="downloadRequest" class="btn btn-primary">DOWNLOAD INQUIRY JSON</button></div></div></div>
+<script type="module" src="./bootstrap.js"></script>
+</body></html>

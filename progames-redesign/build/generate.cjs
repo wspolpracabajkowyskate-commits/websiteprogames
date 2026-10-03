@@ -43,7 +43,7 @@ function render(kind,lang,key){
  setMeta(document,'meta[property="og:locale:alternate"]',{property:'og:locale:alternate',content:lang==='es'?'en_GB':'es_ES'});
  setMeta(document,'meta[name="robots"]',{name:'robots',content:'index,follow,max-image-preview:large'});
  const org={'@context':'https://schema.org','@type':'Organization','@id':origin+'/#organization',name:'PRO GAMES POLAND Sp. z o.o.',url:origin+'/',email:'office@progames.pl',telephone:'+48 536 068 912',address:{'@type':'PostalAddress',streetAddress:'ul. Rybnicka 19A',postalCode:'44-335',addressLocality:'Jastrzębie-Zdrój',addressCountry:'PL'}};
- org.taxID='633-224-54-91';org.identifier={'@type':'PropertyValue',propertyID:'REGON',value:'520986702'};org.logo=origin+'/assets/progames-wordmark.webp';org.sameAs=['https://www.facebook.com/BoxerProgames','https://www.instagram.com/progames.pl/'];org.contactPoint=[{'@type':'ContactPoint',contactType:'sales',email:'office@progames.pl',telephone:'+48 536 068 912'},{'@type':'ContactPoint',contactType:'customer service',email:'service@progames.pl',telephone:'+48 789 108 086'}];
+ org.logo=origin+'/assets/progames-emblem.webp';org.sameAs=['https://www.facebook.com/BoxerProgames','https://www.instagram.com/progames.pl/'];org.contactPoint=[{'@type':'ContactPoint',contactType:'sales',email:'office@progames.pl',telephone:'+48 536 068 912'},{'@type':'ContactPoint',contactType:'customer service',email:'service@progames.pl',telephone:'+48 789 108 086'}];
  addSchema(document,{'@context':'https://schema.org','@type':kind==='collection'?'CollectionPage':'WebPage','@id':origin+url+'#webpage',url:origin+url,name:document.title,description:document.querySelector('meta[name="description"]').content,inLanguage:lang,isPartOf:{'@id':origin+'/#website'},publisher:{'@id':origin+'/#organization'},...(product?{mainEntity:{'@id':origin+url+'#product'}}:{})});
  if(kind==='home'){addSchema(document,org);addSchema(document,{'@context':'https://schema.org','@type':'WebSite','@id':origin+'/#website',url:origin+'/',name:'Pro Games Poland',inLanguage:langs,publisher:{'@id':origin+'/#organization'}})}
  if(product){
@@ -57,7 +57,7 @@ function render(kind,lang,key){
  }
  if(kind==='collection')addSchema(document,{'@context':'https://schema.org','@type':'ItemList',name:'Boxer Standard',itemListElement:data.window.PRODUCT_COLLECTIONS['boxer-standard'].slugs.map((slug,i)=>({'@type':'ListItem',position:i+1,name:products[slug].name,url:origin+routes.product(lang,slug)}))});
  for(const script of document.querySelectorAll('script[src]')){
- if(script.getAttribute('src').startsWith('/products.js')) script.setAttribute('src','/assets/data/products-'+lang+'.js?v=25');
+ if(script.getAttribute('src').startsWith('/products.js')) script.setAttribute('src','/assets/data/products-'+lang+'.js?v=24');
 }
 for(const img of document.querySelectorAll('img[src="/assets/progames-emblem.webp"]')){
  img.setAttribute('src','/assets/progames-emblem-256.webp');
