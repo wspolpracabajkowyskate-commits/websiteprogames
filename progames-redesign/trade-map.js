@@ -13,6 +13,22 @@
     venue:card.querySelector('.trade-main p').textContent,booth:card.querySelector('.trade-booth strong')?.textContent
   })).filter(e=>Number.isFinite(e.lat)&&Number.isFinite(e.lon));
   if(!events.length) return;
+  const meetingLabel=isES?'Concertar una reunión':(window.PG_T?.('Arrange a meeting')||'Arrange a meeting');
+  const meetingIntro=isES?'Me gustaría concertar una reunión durante:':(window.PG_T?.('I would like to arrange a meeting at:')||'I would like to arrange a meeting at:');
+  const meetingTime=isES?'Fecha y hora preferidas:':(window.PG_T?.('Preferred date and time:')||'Preferred date and time:');
+  events.forEach(event=>{
+    const link=event.card.querySelector('.trade-meeting')||document.createElement('a');
+    link.className='trade-meeting';link.href='#inquiry';link.textContent=meetingLabel;
+    event.card.querySelector('.trade-main').append(link);event.meeting=link;
+    link.addEventListener('click',()=>{
+      const message=document.querySelector('#inquiry textarea[name="message"]');
+      if(!message)return;
+      const request=`${meetingIntro} ${event.name} (${event.date}).`;
+      if(!message.value.includes(request))message.value=[message.value.trim(),request,meetingTime+' '].filter(Boolean).join('\n\n');
+      message.dispatchEvent(new Event('input',{bubbles:true}));
+      message.focus({preventScroll:true});
+    });
+  });
   const pins=map.querySelector('.trade-map-pins');
   const tabs=map.querySelector('.trade-map-tabs');
   const detail=map.querySelector('.trade-map-detail');
@@ -51,6 +67,7 @@
     const date=today();
     events.forEach(event=>{
       event.state=stateOf(event,date);
+      event.meeting.hidden=event.state==='past';
       event.pin.dataset.state=event.state;event.tab.dataset.state=event.state;
       event.pin.setAttribute('aria-label',`${event.city} — ${event.name}, ${event.date}. ${labels[event.state]}`);
       event.pin.title=`${event.city} · ${event.date}`;

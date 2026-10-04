@@ -15,7 +15,7 @@ html:is(:lang(pl),:lang(de),:lang(fr)) :is(.section-head h2,.business h2,.global
 html:is(:lang(pl),:lang(de),:lang(fr)) :is(.section-head,.section-head>*,.contact-grid>*,.config-summary dl>div,.catalog-choice-copy,.trade-main,.trade-map-detail-copy){min-width:0}
 html:is(:lang(pl),:lang(de),:lang(fr)) .btn{line-height:1.35;padding-top:12px;padding-bottom:12px;text-align:center;white-space:normal}
 html:is(:lang(pl),:lang(de),:lang(fr)) .card-body p{min-height:2.8em;line-height:1.4}
-html:is(:lang(pl),:lang(de),:lang(fr)) :is(.config-option-content,.gallery-swatch,.category-tabs button){white-space:normal;overflow-wrap:break-word}
+html:is(:lang(pl),:lang(de),:lang(fr)) :is(.config-option-content,.gallery-swatch){white-space:normal;overflow-wrap:break-word}
 html:is(:lang(pl),:lang(de),:lang(fr)) .config-option-content{min-height:80px}
 html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice h2{font-size:clamp(27px,3.5vw,48px);line-height:1.08;overflow-wrap:break-word}
 html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-hero h1{font-size:clamp(52px,8vw,120px);line-height:.95}
@@ -37,7 +37,7 @@ html:is(:lang(pl),:lang(de),:lang(fr)) :is(.config-summary dd,.spec-table b,.tra
 html:is(:lang(pl),:lang(de),:lang(fr)) .production-copy h2{font-size:clamp(36px,4.3vw,64px);line-height:1.04;overflow-wrap:break-word}
 html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-hero h1{color:#fff}
 html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
-@media(max-width:640px){html:is(:lang(pl),:lang(de),:lang(fr)) .category-tabs{flex-wrap:wrap;overflow:visible;gap:7px}html:is(:lang(pl),:lang(de),:lang(fr)) .category-tabs button{flex:0 1 auto;max-width:100%}html:is(:lang(pl),:lang(de),:lang(fr)) .production-copy h2{font-size:clamp(31px,8.5vw,48px)}}
+@media(max-width:640px){html:is(:lang(pl),:lang(de),:lang(fr)) .production-copy h2{font-size:clamp(31px,8.5vw,48px)}}
 /* Existing EN/ES headings: fix measured overflow without changing their copy. */
 .catalog-hero h1{color:#fff}
 @media(max-width:390px){html:is(:lang(en),:lang(es)) .catalog-hero h1{font-size:clamp(46px,12.5vw,52px);line-height:.95}}
@@ -86,3 +86,12 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
   font-size:10px;line-height:14px;letter-spacing:.035em;white-space:normal;text-align:center;
  }
 }
+
+/* Shared horizontal category rail in every language. */
+.category-tabs{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;max-width:100%;min-width:0;overscroll-behavior-x:contain}
+.category-tabs button{flex:0 0 auto;white-space:nowrap;overflow-wrap:normal}
+.trade-meeting{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;padding:8px 14px;border:1px solid #ff601f;border-radius:6px;color:inherit;font-size:13px;font-weight:700;line-height:1.4;text-decoration:none}
+.trade-meeting:hover{background:#ff601f18}.trade-meeting:focus-visible{outline:2px solid #ff601f;outline-offset:3px}.trade-meeting[hidden]{display:none}
+@keyframes colour-confirm{0%{box-shadow:0 0 0 0 #ff601f60}100%{box-shadow:0 0 0 7px #ff601f00}}
+.gallery-swatch.selection-confirmed{animation:colour-confirm .38s ease-out}
+@media(prefers-reduced-motion:reduce){.gallery-swatch.selection-confirmed{animation:none}}

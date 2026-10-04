@@ -1,0 +1,6 @@
+v28 — 2026-10-04
+Horizontal category filters shared by EN/ES/PL/DE/FR.
+Arrange a meeting: active/upcoming trade shows only; prefills editable enquiry, preserves existing text, does not send or confirm a booking.
+Subtle colour selection feedback after successful image load; reduced motion supported.
+Validation: npm test, npm run test:i18n; features-v28.cjs (five mobile locales, scroll, no overflow, meeting draft preservation and deduplication, colour feedback/reduced motion); hero-v27.cjs (40 mobile layouts, matching coordinates); preserve-en-es.cjs (original text unchanged apart from additive meeting links).
+No configuration sharing or videos added.
