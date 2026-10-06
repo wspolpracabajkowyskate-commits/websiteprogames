@@ -92,8 +92,5 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 .category-tabs button{flex:0 0 auto;white-space:nowrap;overflow-wrap:normal}
 .trade-meeting{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;padding:8px 14px;border:1px solid #ff601f;border-radius:6px;color:inherit;font-size:13px;font-weight:700;line-height:1.4;text-decoration:none}
 .trade-meeting:hover{background:#ff601f18}.trade-meeting:focus-visible{outline:2px solid #ff601f;outline-offset:3px}.trade-meeting[hidden]{display:none}
-@keyframes colour-confirm{0%{box-shadow:0 0 0 0 #ff601f60}100%{box-shadow:0 0 0 7px #ff601f00}}
-.gallery-swatch.selection-confirmed{animation:colour-confirm .38s ease-out}
-@media(prefers-reduced-motion:reduce){.gallery-swatch.selection-confirmed{animation:none}}
 
 .config-standard.config-standard-coins{margin:0 0 18px}

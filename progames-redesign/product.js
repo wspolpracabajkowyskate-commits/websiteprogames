@@ -146,7 +146,7 @@ document.querySelectorAll('.config-option input').forEach(input=>{
     document.querySelector('#configAnnouncement').textContent=isES?'Configuración actualizada.':(window.PG_T?.('Configuration updated.')||'Configuration updated.');
   });
 });
-function setVariant(index,animate=false){
+function setVariant(index){
   const variant=variantList[index];
   if(!variant) return;
   const token=++variantRequest;
@@ -165,7 +165,6 @@ function setVariant(index,animate=false){
     document.querySelectorAll('.gallery-swatch').forEach(btn=>{
       const active=Number(btn.dataset.index)===index;
       btn.classList.toggle('active',active);
-      btn.classList.toggle('selection-confirmed',active&&animate);
       btn.setAttribute('aria-pressed',String(active));
     });
     img.classList.remove('switching');img.setAttribute('aria-busy','false');status.textContent='';
@@ -184,7 +183,7 @@ if(hasStaticDetail&&selectedIndex!==0) setVariant(selectedIndex);
 updateVariantLinks();
 
 // Product and breadcrumb structured data are included in the generated HTML.
-document.querySelectorAll('[data-index]').forEach(btn=>btn.addEventListener('click',()=>setVariant(Number(btn.dataset.index),true)));
+document.querySelectorAll('[data-index]').forEach(btn=>btn.addEventListener('click',()=>setVariant(Number(btn.dataset.index))));
 
 window.PG_LOCALIZE?.();
 })();
