@@ -4257,3 +4257,7 @@ window.PRODUCT_ES["double-hit-gift-2"]={"desc": "Double Hit Gift 2 combina boxeo
 window.PG_ES.labels['BOXER + KICKER + PRIZE']='BOXEO + FÚTBOL + PREMIO';
 
 window.PRODUCTS['double-hit-gift-2'].source='https://www.progamespoland.com/';
+
+// v36: supplied Boxer Toy photographs, pink remains the default.
+for(const v of window.PRODUCTS['win-a-toy'].variants)v.image='/assets/products/boxer-toy-v36-'+v.id+'.jpg';
+window.PRODUCTS['win-a-toy'].image=window.PRODUCTS['win-a-toy'].variants[0].image;
