@@ -115,3 +115,22 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 @media(max-width:600px){.site-header .header-emblem{width:46px;height:46px}.site-header .brand-logo{width:118px}.footer-emblem{width:96px;height:96px}.footer-brand .brand-logo{width:160px}.footer-identity{gap:12px}.branch-instagram{font-size:13px}.country-fields{grid-template-columns:minmax(0,1fr)}}
 .footer-identity .footer-emblem{width:124px;height:124px}
 @media(max-width:600px){.footer-identity .footer-emblem{width:96px;height:96px}}
+/* v35: unified phone field and single distributor presentation. */
+.argentina-visual{background:transparent}
+.branch-instagram{font-size:13px;gap:8px}
+.branch-instagram svg{width:19px;height:19px}
+.branch-whatsapp{display:block;width:fit-content;margin-top:18px}
+.phone-control{display:flex;align-items:center;min-width:0;border:1px solid #d4d8df;border-radius:16px;background:#f7f8fa;overflow:hidden}
+.phone-prefix{padding:0 0 0 16px;font-size:14px;flex-shrink:0;color:#161616}
+.contact-form .phone-control input{border:0;background:transparent;box-shadow:none;flex:1;width:0;min-width:0;padding-left:12px;margin:0}
+.phone-control:focus-within{outline:2px solid #ff570d;outline-offset:2px}
+.contact-form .phone-control input:focus{outline:none}
+.single-partner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px}
+.single-partner .partners-head{display:flex;flex-direction:column;align-items:flex-start;gap:22px;margin:0}
+.single-partner .partners-head>p{max-width:520px;margin:0}
+.single-partner .distributor-grid{display:block;width:100%;margin:0}
+.single-partner .distributor-card{width:100%;padding:28px;border-radius:24px;border:1px solid #e2e3e7;background:#fff;box-shadow:none}
+.single-partner .distributor-logo{height:190px;padding:20px 12px;display:flex;align-items:center;justify-content:center}
+.single-partner .distributor-logo img{width:100%;max-width:330px;max-height:150px;object-fit:contain}
+.single-partner .distributor-foot{gap:16px;flex-wrap:wrap}
+@media(max-width:900px){.single-partner{grid-template-columns:1fr;gap:24px}.single-partner .distributor-grid{max-width:620px;margin:auto}.single-partner .partners-head{margin-bottom:0!important}.single-partner .distributor-card{padding:22px}.single-partner .distributor-logo{height:160px}.single-partner .distributor-logo img{max-width:300px;max-height:130px}}

@@ -12,7 +12,7 @@ Odbiorca wszystkich zapytań: office@progames.pl. Funkcja Vercel: api/contact.js
 
 Do czasu konfiguracji formularz uczciwie działa jak wcześniej: przygotowuje wiadomość w aplikacji pocztowej. Nie pokazuje potwierdzenia wysłania wiadomości z serwera. Po aktywacji automatycznie zmienia przycisk na „Wyślij zapytanie”. Testy w paczce używają symulacji, nie wysyłają rzeczywistych wiadomości.
 
-Kraj i kierunkowy domyślnie odpowiadają językowi (EN: Wielka Brytania, ES: Hiszpania, PL: Polska, DE: Niemcy, FR: Francja). W Vercel przybliżona lokalizacja kraju może zastąpić ten wybór, dopóki użytkownik sam nie zmieni pola. Kraj i numer kierunkowy pozostają edytowalne. Nie jest wymagane udostępnienie lokalizacji GPS.
+Kraj i kierunkowy domyślnie odpowiadają językowi (EN: Wielka Brytania, ES: Hiszpania, PL: Polska, DE: Niemcy, FR: Francja). W Vercel przybliżona lokalizacja kraju może zastąpić ten wybór, dopóki użytkownik sam nie zmieni pola. Kraj pozostaje edytowalny. Kierunkowy wyświetla się wewnątrz pola telefonu i automatycznie zmienia się po wyborze kraju; klient dopisuje numer. Nie jest wymagane udostępnienie lokalizacji GPS.
 
 Zabezpieczenia: walidacja serwerowa, stały odbiorca, kontrola Origin, pole pułapka, limit długości, czas oczekiwania, klucz idempotencji. Limit liczby prób działa na instancję funkcji; przy dużym spamie należy dodatkowo ustawić limit w Vercel Firewall.
 Dokumentacja: https://resend.com/docs/api-reference/emails/send-email
