@@ -3,15 +3,30 @@
   "private": true,
   "version": "9.0.0",
   "scripts": {
-    "build": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/redirects.cjs",
+    "build": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/redirects.cjs && npm run build:creator",
     "test": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
     "test:browser": "node verification/test-browser.cjs",
     "test:i18n": "node verification/check-i18n.cjs",
-    "test:seo": "node verification/check-seo.cjs"
+    "test:seo": "node verification/check-seo.cjs",
+    "build:creator": "node build/creator.cjs && node build/creator-bundle.cjs",
+    "test:creator": "node verification/test-creator.cjs",
+    "build:creator-model": "node build/creator-model.mjs && node build/creator-optimize.mjs",
+    "test:creator:browser": "node verification/test-creator-browser.cjs"
   },
   "devDependencies": {
+    "@gltf-transform/core": "4.2.1",
+    "@gltf-transform/extensions": "4.2.1",
+    "@gltf-transform/functions": "4.2.1",
+    "esbuild": "0.25.10",
     "libphonenumber-js": "^1.13.14",
     "linkedom": "0.18.13",
+    "meshoptimizer": "0.24.0",
     "playwright": "1.51.1"
+  },
+  "dependencies": {
+    "@react-three/fiber": "9.3.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "three": "0.180.0"
   }
 }
