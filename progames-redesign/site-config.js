@@ -9,7 +9,7 @@ window.PG_ROUTES={
 // Shared catalogue of enquiry options. Selection requests a quote; availability is confirmed by sales.
 window.PG_QUOTE_OPTIONS=[
  {id:'banknotes',group:'payment',en:'Additional bank-note acceptor',es:'Aceptador adicional de billetes',icon:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M6 9h12M6 15h3m6 0h3"/><circle cx="12" cy="12" r="2"/>'},
- {id:'coins',group:'payment',en:'Additional coin slot',es:'Ranura adicional para monedas',icon:'<rect x="13" y="3" width="8" height="18" rx="3"/><path d="M17 7v5"/><circle cx="7" cy="14" r="5"/><path d="M7 12v4"/>'},
+ {id:'coins',group:'payment',en:'Additional coin slot',es:'Monedero adicional',icon:'<rect x="13" y="3" width="8" height="18" rx="3"/><path d="M17 7v5"/><circle cx="7" cy="14" r="5"/><path d="M7 12v4"/>'},
  {id:'capsules',group:'payment',en:'Capsule dispenser',es:'Dispensador de cápsulas',icon:'<rect x="4" y="3" width="16" height="18" rx="3"/><path d="M4 14h16M9 18h6"/><circle cx="12" cy="8" r="3"/><path d="M9 8h6"/>'},
  {id:'tickets',group:'payment',en:'Ticket Dispenser',es:'Dispensador de tickets',icon:'<rect x="3" y="3" width="18" height="10" rx="3"/><path d="M7 8h10v13l-2-1-3 1-3-1-2 1V8Zm3 4h4m-4 4h4"/>'},
  {id:'stickers',group:'extras',en:'Custom stickers',es:'Adhesivos personalizados',icon:'<path d="M14 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h8l7-7V6a3 3 0 0 0-3-3h-4ZM14 21v-4a3 3 0 0 1 3-3h4M7 8h7M7 12h3"/>'},

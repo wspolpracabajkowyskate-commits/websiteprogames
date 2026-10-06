@@ -95,3 +95,5 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 @keyframes colour-confirm{0%{box-shadow:0 0 0 0 #ff601f60}100%{box-shadow:0 0 0 7px #ff601f00}}
 .gallery-swatch.selection-confirmed{animation:colour-confirm .38s ease-out}
 @media(prefers-reduced-motion:reduce){.gallery-swatch.selection-confirmed{animation:none}}
+
+.config-standard.config-standard-coins{margin:0 0 18px}
