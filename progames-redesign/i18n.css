@@ -141,3 +141,8 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 .footer-brand .brand-logo{width:202px}
 @media(max-width:1100px){.site-header .header-emblem{width:58px;height:58px}.site-header .brand-logo{width:148px}}
 @media(max-width:600px){.site-header .header-emblem{width:52px;height:52px}.site-header .brand-logo{width:108px}.footer-identity .footer-emblem{width:108px;height:108px}.footer-brand .brand-logo{width:146px}}
+/* v37: header emblem emphasis. Footer retains approved v36 proportions. */
+.site-header .header-emblem{width:80px;height:80px}
+.site-header .brand-logo{width:174px}
+@media(max-width:1100px){.site-header .header-emblem{width:64px;height:64px}.site-header .brand-logo{width:140px}}
+@media(max-width:600px){.site-header .header-emblem{width:58px;height:58px}.site-header .brand-logo{width:102px}}

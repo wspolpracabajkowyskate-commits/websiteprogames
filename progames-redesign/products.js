@@ -4261,3 +4261,5 @@ window.PRODUCTS['double-hit-gift-2'].source='https://www.progamespoland.com/';
 // v36: supplied Boxer Toy photographs, pink remains the default.
 for(const v of window.PRODUCTS['win-a-toy'].variants)v.image='/assets/products/boxer-toy-v36-'+v.id+'.jpg';
 window.PRODUCTS['win-a-toy'].image=window.PRODUCTS['win-a-toy'].variants[0].image;
+// v37: requested opening colours; explicit variant links still take precedence.
+for(const [id,colour]of [['double-hit-gift-2','yellow'],['double-hit-gift','blue'],['double-hit-kids','orange']]){const p=window.PRODUCTS[id],first=p.variants.find(v=>v.id===colour);if(!first)throw Error('Missing variant '+id+':'+colour);p.variants=[first,...p.variants.filter(v=>v!==first)];p.image=first.image;}
