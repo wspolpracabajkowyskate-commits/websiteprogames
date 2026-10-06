@@ -146,3 +146,8 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 .site-header .brand-logo{width:174px}
 @media(max-width:1100px){.site-header .header-emblem{width:64px;height:64px}.site-header .brand-logo{width:140px}}
 @media(max-width:600px){.site-header .header-emblem{width:58px;height:58px}.site-header .brand-logo{width:102px}}
+/* v38: stronger header emblem hierarchy. */
+.site-header .header-emblem{width:88px;height:88px}
+.site-header .brand-logo{width:160px}
+@media(max-width:1100px){.site-header .header-emblem{width:70px;height:70px}.site-header .brand-logo{width:128px}}
+@media(max-width:600px){.site-header .header-emblem{width:64px;height:64px}.site-header .brand-logo{width:94px}}
