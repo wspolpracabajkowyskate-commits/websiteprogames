@@ -6,6 +6,7 @@ export async function makeTexture(zone,state){
  if(g?.mode==='none')return texture(c);
  if(g?.mode==='custom'&&g.src){const im=await image(g.src);ctx.translate(c.width*(.5+g.x*.5),c.height*(.5+g.y*.5));ctx.rotate(g.rotation*Math.PI/180);const s=(g.fit==='fill'?Math.max:Math.min)(c.width/im.width,c.height/im.height)*g.scale;ctx.drawImage(im,-im.width*s/2,-im.height*s/2,im.width*s,im.height*s);return texture(c)}
  const preset=g?.mode==='factory'?'Original':state.graphicsPreset;
+ if(preset==='Original'&&!zone.factoryTexture)return texture(c);
  if(preset==='Custom Branding')return texture(c);
  if(zone.factoryTexture&&preset==='Original'){ctx.drawImage(await image(zone.factoryTexture),0,0,c.width,c.height);return texture(c)}
  const original=preset==='Original',neon=preset==='Neon';

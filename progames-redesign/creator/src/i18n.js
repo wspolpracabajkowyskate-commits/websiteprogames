@@ -1,4 +1,15 @@
 const rows={
+lower_left:['Lower left panel','Dolny lewy panel','Panel inferior izquierdo','Untere linke Verkleidung','Panneau inférieur gauche'],
+lower_right:['Lower right panel','Dolny prawy panel','Panel inferior derecho','Untere rechte Verkleidung','Panneau inférieur droit'],
+studio:['PRODUCT DESIGN STUDIO','STUDIO KONFIGURACJI','ESTUDIO DE DISEÑO','PRODUKTDESIGN-STUDIO','STUDIO DE DESIGN'],
+live:['Live 3D preview','Podgląd 3D na żywo','Vista 3D en vivo','Live-3D-Vorschau','Aperçu 3D en direct'],
+finish:['Gloss finish · powder-coated steel','Połysk · lakierowana obudowa','Acabado brillante','Glänzende Oberfläche','Finition brillante'],
+configure:['Make it yours.','Stwórz własną wersję.','Hazla tuya.','Ihre eigene Version.','Créez votre version.'],
+configuration:['Configuration','Konfiguracja','Configuración','Konfiguration','Configuration'],
+reference:['Reference','Wzorzec','Referencia','Referenz','Référence'],
+render:['3D studio','Studio 3D','Estudio 3D','3D-Studio','Studio 3D'],
+referenceNote:['Reference image — selected changes appear in the 3D studio.','Zdjęcie referencyjne — zmiany konfiguracji zobaczysz w studiu 3D.','Imagen de referencia — cambios en el estudio 3D.','Referenzbild — Änderungen im 3D-Studio.','Image de référence — modifications dans le studio 3D.'],
+
 subtitle:['Your machine. Your signature.','Twój automat. Twój styl.','Tu máquina. Tu estilo.','Ihr Automat. Ihr Stil.','Votre machine. Votre style.'],
 model:['Choose your machine','Wybierz automat','Elige tu máquina','Automat wählen','Choisir votre machine'],
 color:['Body color','Kolor obudowy','Color de la carcasa','Gehäusefarbe','Couleur du boîtier'],

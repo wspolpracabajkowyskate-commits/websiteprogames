@@ -17,7 +17,7 @@ module.exports=async(req,res)=>{
  if(b.website||!b.name?.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email||'')||!countries[b.country]||!/^\+\d{1,4}$/.test(b.dialCode||'')||!/^[a-f0-9-]{36}$/i.test(b.requestId||''))return res.status(400).json({ok:false});
  let creatorText='';
  if(b.creatorConfiguration!=null){
-  const c=b.creatorConfiguration,zones=['top_front','front_panel','score_panel','left_side','right_side','lower_front','kicker_panel','top_side'];
+  const c=b.creatorConfiguration,zones=['top_front','front_panel','score_panel','left_side','right_side','lower_front','kicker_panel','top_side','lower_left','lower_right'];
   if(!c||c.selectedProduct!=='double-strike'||!/^#[a-f0-9]{6}$/i.test(c.bodyColor||'')||!['Original','Minimal','Sport','Neon','Custom Branding'].includes(c.graphicsPreset)||!['Original RGB','White','Blue','Red','Rainbow'].includes(c.ledMode)||!Array.isArray(c.selectedOptions)||c.selectedOptions.length>6||c.selectedOptions.some(o=>!['banknote','coin','capsule','ticket','stickers','wifi'].includes(o))||!/^[a-f0-9-]{36}$/i.test(c.configurationId||'')||!c.customGraphics||typeof c.customGraphics!=='object'||Array.isArray(c.customGraphics))return res.status(400).json({ok:false});
   const clean={schemaVersion:1,selectedProduct:c.selectedProduct,configurationId:c.configurationId,bodyColor:c.bodyColor,graphicsPreset:c.graphicsPreset,ledMode:c.ledMode,selectedOptions:c.selectedOptions,customGraphics:{}};
   for(const [zone,g]of Object.entries(c.customGraphics)){
