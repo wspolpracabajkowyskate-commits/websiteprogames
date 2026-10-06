@@ -6953,47 +6953,5 @@
         }
       ]
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/creator",
-      "destination": "/creator/index.html"
-    },
-    {
-      "source": "/creator/config/:id",
-      "destination": "/creator/index.html"
-    },
-    {
-      "source": "/es/creator",
-      "destination": "/es/creator/index.html"
-    },
-    {
-      "source": "/es/creator/config/:id",
-      "destination": "/es/creator/index.html"
-    },
-    {
-      "source": "/pl/creator",
-      "destination": "/pl/creator/index.html"
-    },
-    {
-      "source": "/pl/creator/config/:id",
-      "destination": "/pl/creator/index.html"
-    },
-    {
-      "source": "/de/creator",
-      "destination": "/de/creator/index.html"
-    },
-    {
-      "source": "/de/creator/config/:id",
-      "destination": "/de/creator/index.html"
-    },
-    {
-      "source": "/fr/creator",
-      "destination": "/fr/creator/index.html"
-    },
-    {
-      "source": "/fr/creator/config/:id",
-      "destination": "/fr/creator/index.html"
-    }
   ]
 }
