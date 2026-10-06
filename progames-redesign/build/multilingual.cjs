@@ -39,7 +39,7 @@ function render(p,l){
   }
   for(const card of document.querySelectorAll('.product-card')){const item=products[card.dataset.slug]||collections[card.dataset.slug];card.dataset.search=(card.textContent+' '+(item?.desc||'').split('\n\n').map(t).join(' ')+' '+(item?.slugs||[]).map(x=>products[x].name).join(' ')).toLocaleLowerCase(l);}
   // Translations run before deferred application scripts. Static copy is already translated.
-  const script=document.createElement('script');script.src='/i18n/'+l+'.js?v=38';document.head.append(script);
+  const script=document.createElement('script');script.src='/i18n/'+l+'.js?v=39';document.head.append(script);
   for(const script of document.querySelectorAll('script:not([src]):not([type="application/ld+json"])')){
    if(script.textContent.includes('function setCatalog'))script.textContent=script.textContent.replace('      if(scroll)',"      window.PG_LOCALIZE?.(document.querySelector('.catalog-viewer-shell'));\n      if(scroll)");
   }
@@ -51,8 +51,8 @@ function render(p,l){
   heading.replaceChild(line,first);heading.querySelector('em').classList.add('hero-title-line','hero-title-second');
  }
  for(const box of document.querySelectorAll('.language-switch,.mobile-language')){box.innerHTML=menu(p,l);box.setAttribute('aria-label',isNew?t('Language'):l==='es'?'Idioma':'Language');}
- const style=document.createElement('link');style.rel='stylesheet';style.href='/i18n.css?v=38';document.head.append(style);
- const script=document.createElement('script');script.defer=true;script.src='/language.js?v=38';document.body.append(script);
+ const style=document.createElement('link');style.rel='stylesheet';style.href='/i18n.css?v=39';document.head.append(style);
+ const script=document.createElement('script');script.defer=true;script.src='/language.js?v=39';document.body.append(script);
  for(const e of document.querySelectorAll('link[hreflang]'))e.remove();
  for(const x of [...langs,'x-default']){const a=document.createElement('link');a.rel='alternate';a.hreflang=x;a.href=site.origin+route(p,x==='x-default'?'en':x);document.head.append(a);}
  const url=route(p,l);document.querySelector('link[rel="canonical"]').href=site.origin+url;
@@ -76,7 +76,7 @@ function render(p,l){
   for(const s of document.querySelectorAll('script[type="application/ld+json"]')){const obj=schemaTranslate(JSON.parse(s.textContent),t,l);if(obj['@type']==='WebPage'||obj['@type']==='CollectionPage'){obj.name=document.title;obj.description=description;}s.textContent=JSON.stringify(obj);}
  }else{for(const s of document.querySelectorAll('script[type="application/ld+json"]')){const obj=JSON.parse(s.textContent);if(obj['@type']==='WebSite'){obj.inLanguage=langs;s.textContent=JSON.stringify(obj);}}}
  // Cache bust shared scripts after hydration enhancements.
- for(const s of document.querySelectorAll('script[src]'))if(/^\/(script|product|site-config|trade-map)\.js/.test(s.src))s.src=s.src.split('?')[0]+'?v=38';
+ for(const s of document.querySelectorAll('script[src]'))if(/^\/(script|product|site-config|trade-map)\.js/.test(s.src))s.src=s.src.split('?')[0]+'?v=39';
  const countrySelect=document.querySelector('select[name="country"]');if(countrySelect){const names=new Intl.DisplayNames([l],{type:'region'}),defaultCountry={en:'GB',es:'ES',pl:'PL',de:'DE',fr:'FR'}[l];for(const o of countrySelect.options){o.textContent=names.of(o.value);if(o.value===defaultCountry)o.setAttribute('selected','');else o.removeAttribute('selected');}const dial=document.querySelector('[name="dialCode"]');dial.setAttribute('value',require('../assets/data/countries.json')[defaultCountry]);document.querySelector('.phone-prefix').textContent=dial.getAttribute('value');}
  const file=filename(url);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,'<!doctype html>\n'+document.documentElement.outerHTML);
  output.push({...p,lang:l,url,filename:file,title:document.title});
@@ -84,7 +84,7 @@ function render(p,l){
 for(const p of original)render(p,p.lang);
 for(const l of added)for(const p of english)render(p,l);
 // Legacy links preserve models via Vercel redirects; client fallback covers static hosting.
-for(const l of langs){const p={kind:'product',key:'champion'},file=l==='en'?'product.html':`product-${l}.html`;const {document}=parseHTML(read('build/templates/product-'+(l==='es'?'es':'en')+'.html'));document.documentElement.lang=l;document.body.dataset.pageKind='product';for(const box of document.querySelectorAll('.language-switch'))box.innerHTML=menu(p,l);if(added.includes(l)){const s=document.createElement('script');s.src='/i18n/'+l+'.js?v=38';document.head.append(s);translator(document,l).PG_LOCALIZE();}const css=document.createElement('link');css.rel='stylesheet';css.href='/i18n.css?v=38';document.head.append(css);const s=document.createElement('script');s.src='/language.js?v=38';s.defer=true;document.body.append(s);const m=document.createElement('meta');m.name='robots';m.content='noindex,follow';document.head.append(m);for(const a of document.querySelectorAll('a[href]:not([hreflang])'))a.href=remap(a.getAttribute('href'),l);for(const script of document.querySelectorAll('script[src]'))if(/^\/(script|product|site-config|trade-map)\.js/.test(script.src))script.src=script.src.split('?')[0]+'?v=38';fs.writeFileSync(file,'<!doctype html>\n'+document.documentElement.outerHTML);}
+for(const l of langs){const p={kind:'product',key:'champion'},file=l==='en'?'product.html':`product-${l}.html`;const {document}=parseHTML(read('build/templates/product-'+(l==='es'?'es':'en')+'.html'));document.documentElement.lang=l;document.body.dataset.pageKind='product';for(const box of document.querySelectorAll('.language-switch'))box.innerHTML=menu(p,l);if(added.includes(l)){const s=document.createElement('script');s.src='/i18n/'+l+'.js?v=39';document.head.append(s);translator(document,l).PG_LOCALIZE();}const css=document.createElement('link');css.rel='stylesheet';css.href='/i18n.css?v=39';document.head.append(css);const s=document.createElement('script');s.src='/language.js?v=39';s.defer=true;document.body.append(s);const m=document.createElement('meta');m.name='robots';m.content='noindex,follow';document.head.append(m);for(const a of document.querySelectorAll('a[href]:not([hreflang])'))a.href=remap(a.getAttribute('href'),l);for(const script of document.querySelectorAll('script[src]'))if(/^\/(script|product|site-config|trade-map)\.js/.test(script.src))script.src=script.src.split('?')[0]+'?v=39';fs.writeFileSync(file,'<!doctype html>\n'+document.documentElement.outerHTML);}
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
 fs.writeFileSync('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'+output.map(p=>`<url><loc>${site.origin+p.url}</loc>${[...langs,'x-default'].map(l=>`<xhtml:link rel="alternate" hreflang="${l}" href="${esc(site.origin+route(p,l==='x-default'?'en':l))}"/>`).join('')}${p.key?`<image:image><image:loc>${site.origin+products[p.key].image}</image:loc></image:image>`:''}</url>`).join('\n')+'\n</urlset>');
 fs.writeFileSync('build/pages.json',JSON.stringify(output,null,2));
