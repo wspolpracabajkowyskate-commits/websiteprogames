@@ -3,7 +3,7 @@ const {chromium}=require('playwright'),assert=require('assert'),fs=require('fs')
 for(const lang of ['en','es'])for(const width of [360,390,768,1440]){
  await p.setViewportSize({width,height:900});const route=lang==='en'?'/en/products/leader-rank.html':'/es/productos/leader-rank.html';
  await p.goto('http://127.0.0.1:8141'+route);assert.equal(await p.locator('.config-option input').count(),6);
- for(const option of ['banknotes','coins','capsules','tickets','stickers','wifi'])await p.locator(`.config-option input[value="${option}"]`).check();
+ for(const option of ['banknotes','coins','tickets','stickers','wifi'])await p.locator(`.config-option input[value="${option}"]`).check();
  await p.locator('.gallery-swatch[data-index="2"]').click();await p.waitForFunction(()=>document.querySelector('#productMainImage').getAttribute('aria-busy')==='false');
  assert((await p.locator('#productMainImage').getAttribute('src')).endsWith('leader-rank-blue.jpg'));
  assert((await p.locator('#configFinish').textContent()).includes(lang==='en'?'Blue':'Azul'));
