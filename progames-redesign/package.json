@@ -10,7 +10,8 @@
     "test:seo": "node verification/check-seo.cjs"
   },
   "devDependencies": {
+    "libphonenumber-js": "^1.13.14",
     "linkedom": "0.18.13",
-    "playwright": "^1.51.1"
+    "playwright": "1.51.1"
   }
 }

@@ -94,3 +94,24 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 .trade-meeting:hover{background:#ff601f18}.trade-meeting:focus-visible{outline:2px solid #ff601f;outline-offset:3px}.trade-meeting[hidden]{display:none}
 
 .config-standard.config-standard-coins{margin:0 0 18px}
+/* v34: branch contacts, accessible country fields and recognisable emblem. */
+.distributor-grid{grid-template-columns:minmax(0,540px);justify-content:center}
+.branch-instagram{display:inline-flex;align-items:center;gap:10px;margin-top:20px;max-width:100%;overflow-wrap:anywhere}
+.branch-instagram svg{width:24px;height:24px;flex-shrink:0}
+.argentina-contact{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.argentina-visual{background:#000}
+.argentina-visual img{object-fit:contain}
+.site-header .header-emblem{width:64px;height:64px;flex-shrink:0}
+.site-header .brand-logo{width:200px}
+.footer-emblem{width:124px;height:124px}
+.footer-brand .brand-logo{width:220px}
+.contact-form select,.contact-form input{min-width:0;max-width:100%}
+.country-fields{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+.contact-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.contact-status:empty{display:none}
+.contact-status{font-size:14px;line-height:1.5}
+.contact-form button:disabled{opacity:.6;cursor:wait}
+@media(max-width:1100px){.site-header .header-emblem{width:52px;height:52px}.site-header .brand-logo{width:160px}}
+@media(max-width:600px){.site-header .header-emblem{width:46px;height:46px}.site-header .brand-logo{width:118px}.footer-emblem{width:96px;height:96px}.footer-brand .brand-logo{width:160px}.footer-identity{gap:12px}.branch-instagram{font-size:13px}.country-fields{grid-template-columns:minmax(0,1fr)}}
+.footer-identity .footer-emblem{width:124px;height:124px}
+@media(max-width:600px){.footer-identity .footer-emblem{width:96px;height:96px}}

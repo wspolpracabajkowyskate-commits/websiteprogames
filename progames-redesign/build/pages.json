@@ -362,7 +362,7 @@
     "key": "hammer-2026",
     "url": "/en/products/hammer-2026.html",
     "filename": "en/products/hammer-2026.html",
-    "title": "Hammer 2026 | Hammer strength tester | Pro Games"
+    "title": "Hammer 2 | Hammer strength tester | Pro Games"
   },
   {
     "kind": "product",
@@ -370,7 +370,7 @@
     "key": "win-a-toy",
     "url": "/en/products/win-a-toy.html",
     "filename": "en/products/win-a-toy.html",
-    "title": "Win a toy | Boxing machine | Pro Games"
+    "title": "Boxer Toy | Boxing machine | Pro Games"
   },
   {
     "kind": "product",
@@ -378,7 +378,15 @@
     "key": "leader-rank",
     "url": "/en/products/leader-rank.html",
     "filename": "en/products/leader-rank.html",
-    "title": "Boxer Leader Rank | Boxing machine | Pro Games"
+    "title": "Boxer TV | Boxing machine | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "en",
+    "key": "double-hit-gift-2",
+    "url": "/en/products/double-hit-gift-2.html",
+    "filename": "en/products/double-hit-gift-2.html",
+    "title": "Double Hit Gift 2 | Boxing & kicking machine | Pro Games"
   },
   {
     "kind": "home",
@@ -743,7 +751,7 @@
     "key": "hammer-2026",
     "url": "/es/productos/hammer-2026.html",
     "filename": "es/productos/hammer-2026.html",
-    "title": "Hammer 2026 | Máquina de fuerza con martillo | Pro Games"
+    "title": "Hammer 2 | Máquina de fuerza con martillo | Pro Games"
   },
   {
     "kind": "product",
@@ -751,7 +759,7 @@
     "key": "win-a-toy",
     "url": "/es/productos/win-a-toy.html",
     "filename": "es/productos/win-a-toy.html",
-    "title": "Win a toy | Máquina de boxeo | Pro Games"
+    "title": "Boxer Toy | Máquina de boxeo | Pro Games"
   },
   {
     "kind": "product",
@@ -759,7 +767,15 @@
     "key": "leader-rank",
     "url": "/es/productos/leader-rank.html",
     "filename": "es/productos/leader-rank.html",
-    "title": "Boxer Leader Rank | Máquina de boxeo | Pro Games"
+    "title": "Boxer TV | Máquina de boxeo | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "double-hit-gift-2",
+    "url": "/es/productos/double-hit-gift-2.html",
+    "filename": "es/productos/double-hit-gift-2.html",
+    "title": "Double Hit Gift 2 | Máquina de boxeo y patadas | Pro Games"
   },
   {
     "kind": "home",
@@ -1124,7 +1140,7 @@
     "key": "hammer-2026",
     "url": "/pl/produkty/hammer-2026.html",
     "filename": "pl/produkty/hammer-2026.html",
-    "title": "Hammer 2026 | Automat siłowy młot | Pro Games"
+    "title": "Hammer 2 | Automat siłowy młot | Pro Games"
   },
   {
     "kind": "product",
@@ -1132,7 +1148,7 @@
     "key": "win-a-toy",
     "url": "/pl/produkty/win-a-toy.html",
     "filename": "pl/produkty/win-a-toy.html",
-    "title": "Win a toy | Automat bokserski | Pro Games"
+    "title": "Boxer Toy | Automat bokserski | Pro Games"
   },
   {
     "kind": "product",
@@ -1140,7 +1156,15 @@
     "key": "leader-rank",
     "url": "/pl/produkty/leader-rank.html",
     "filename": "pl/produkty/leader-rank.html",
-    "title": "Boxer Leader Rank | Automat bokserski | Pro Games"
+    "title": "Boxer TV | Automat bokserski | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "pl",
+    "key": "double-hit-gift-2",
+    "url": "/pl/produkty/double-hit-gift-2.html",
+    "filename": "pl/produkty/double-hit-gift-2.html",
+    "title": "Double Hit Gift 2 | Automat boksersko-piłkarski | Pro Games"
   },
   {
     "kind": "home",
@@ -1505,7 +1529,7 @@
     "key": "hammer-2026",
     "url": "/de/produkte/hammer-2026.html",
     "filename": "de/produkte/hammer-2026.html",
-    "title": "Hammer 2026 | Hammerautomat | Pro Games"
+    "title": "Hammer 2 | Hammerautomat | Pro Games"
   },
   {
     "kind": "product",
@@ -1513,7 +1537,7 @@
     "key": "win-a-toy",
     "url": "/de/produkte/win-a-toy.html",
     "filename": "de/produkte/win-a-toy.html",
-    "title": "Win a toy | Boxautomat | Pro Games"
+    "title": "Boxer Toy | Boxautomat | Pro Games"
   },
   {
     "kind": "product",
@@ -1521,7 +1545,15 @@
     "key": "leader-rank",
     "url": "/de/produkte/leader-rank.html",
     "filename": "de/produkte/leader-rank.html",
-    "title": "Boxer Leader Rank | Boxautomat | Pro Games"
+    "title": "Boxer TV | Boxautomat | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "de",
+    "key": "double-hit-gift-2",
+    "url": "/de/produkte/double-hit-gift-2.html",
+    "filename": "de/produkte/double-hit-gift-2.html",
+    "title": "Double Hit Gift 2 | Box- und Kickautomat | Pro Games"
   },
   {
     "kind": "home",
@@ -1886,7 +1918,7 @@
     "key": "hammer-2026",
     "url": "/fr/produits/hammer-2026.html",
     "filename": "fr/produits/hammer-2026.html",
-    "title": "Hammer 2026 | Machine de force à marteau | Pro Games"
+    "title": "Hammer 2 | Machine de force à marteau | Pro Games"
   },
   {
     "kind": "product",
@@ -1894,7 +1926,7 @@
     "key": "win-a-toy",
     "url": "/fr/produits/win-a-toy.html",
     "filename": "fr/produits/win-a-toy.html",
-    "title": "Win a toy | Machine de boxe | Pro Games"
+    "title": "Boxer Toy | Machine de boxe | Pro Games"
   },
   {
     "kind": "product",
@@ -1902,6 +1934,14 @@
     "key": "leader-rank",
     "url": "/fr/produits/leader-rank.html",
     "filename": "fr/produits/leader-rank.html",
-    "title": "Boxer Leader Rank | Machine de boxe | Pro Games"
+    "title": "Boxer TV | Machine de boxe | Pro Games"
+  },
+  {
+    "kind": "product",
+    "lang": "fr",
+    "key": "double-hit-gift-2",
+    "url": "/fr/produits/double-hit-gift-2.html",
+    "filename": "fr/produits/double-hit-gift-2.html",
+    "title": "Double Hit Gift 2 | Machine de boxe et de football | Pro Games"
   }
 ]

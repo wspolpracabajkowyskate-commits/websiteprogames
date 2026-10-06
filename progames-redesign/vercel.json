@@ -1367,6 +1367,35 @@
       "statusCode": 301
     },
     {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/products/double-hit-gift-2.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        }
+      ],
+      "destination": "/en/products/double-hit-gift-2.html",
+      "statusCode": 301
+    },
+    {
       "source": "/product-es.html",
       "has": [
         {
@@ -2669,6 +2698,35 @@
         }
       ],
       "destination": "/es/productos/leader-rank.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/es/productos/double-hit-gift-2.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-es.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        }
+      ],
+      "destination": "/es/productos/double-hit-gift-2.html",
       "statusCode": 301
     },
     {
@@ -3977,6 +4035,35 @@
       "statusCode": 301
     },
     {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/pl/produkty/double-hit-gift-2.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-pl.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        }
+      ],
+      "destination": "/pl/produkty/double-hit-gift-2.html",
+      "statusCode": 301
+    },
+    {
       "source": "/product-de.html",
       "has": [
         {
@@ -5282,6 +5369,35 @@
       "statusCode": 301
     },
     {
+      "source": "/product-de.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/de/produkte/double-hit-gift-2.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-de.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        }
+      ],
+      "destination": "/de/produkte/double-hit-gift-2.html",
+      "statusCode": 301
+    },
+    {
       "source": "/product-fr.html",
       "has": [
         {
@@ -6584,6 +6700,35 @@
         }
       ],
       "destination": "/fr/produits/leader-rank.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-fr.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        },
+        {
+          "type": "query",
+          "key": "variant",
+          "value": "(?<variant>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/fr/produits/double-hit-gift-2.html?variant=:variant",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-fr.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "model",
+          "value": "double-hit-gift-2"
+        }
+      ],
+      "destination": "/fr/produits/double-hit-gift-2.html",
       "statusCode": 301
     },
     {

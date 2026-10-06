@@ -51,6 +51,7 @@ if(collection){
 }
 // Prioritise the new 2026 models without changing the Standard collection order.
 if(!collection){const featured=['hammer-2026','win-a-toy','leader-rank'];listing.sort((a,b)=>{const rank=id=>{const i=featured.indexOf(id);return i<0?featured.length:i;};return rank(a[0])-rank(b[0]);});}
+if(!collection){const i=listing.findIndex(x=>x[0]==='double-hit-gift-2');if(i>=0){const item=listing.splice(i,1)[0];listing.splice(listing.findIndex(x=>x[0]==='double-hit-kids-gift')+1,0,item);}}
 if(!collection)listing.push(['parts-list',{name:isES?'Repuestos':'Parts list',category:'parts',label:isES?'CATÁLOGO DE REPUESTOS':'SPARE PARTS CATALOG',image:'/assets/products/parts-list.webp',directURL:routes.catalog(lang)+'?catalog=parts'},false]);
 const escapeAttribute=value=>String(value).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 if(grid&&!grid.querySelector('.product-card')){
@@ -158,7 +159,7 @@ contactForm?.addEventListener('submit',event=>{
   if(!contactForm.reportValidity()) return;
   const data=new FormData(contactForm);
   if(configurationText)data.set('configuration',configurationText);
-  location.href=window.PG_INQUIRY_URL(data);
+  if(window.PG_SEND_INQUIRY)window.PG_SEND_INQUIRY(data);else location.href=window.PG_INQUIRY_URL(data);
 });
 addEventListener('keydown',event=>{if(event.key==='Escape'){mobile?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');}});
 // Announce empty results and selected categories without leaving a blank grid.
