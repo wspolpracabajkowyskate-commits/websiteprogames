@@ -1,13 +1,13 @@
 {
   "name": "progames-static-site",
   "private": true,
-  "version": "9.0.0",
+  "version": "42.0.0",
   "scripts": {
-    "build": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/redirects.cjs",
+    "build": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/seo-v42.cjs && node build/redirects.cjs",
     "test": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
     "test:browser": "node verification/test-browser.cjs",
     "test:i18n": "node verification/check-i18n.cjs",
-    "test:seo": "node verification/check-seo.cjs"
+    "test:seo": "node verification/check-seo.cjs && node verification/check-v42.cjs"
   },
   "devDependencies": {
     "libphonenumber-js": "^1.13.14",

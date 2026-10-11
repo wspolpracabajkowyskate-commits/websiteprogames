@@ -61,7 +61,7 @@ const options=(p.options||[]).map(o=>`<div><span>${localOption(o)}</span><b>+</b
 const related=Object.entries(products)
   .filter(([slug,item])=>slug!==key && item.category===p.category && (!isStandard||standardFamily.slugs.includes(slug)))
   .slice(0,4)
-  .map(([slug,item])=>`<a class="related-card" href="${routes.product(lang,slug)}"><img src="${item.image}" alt="${item.name} by Pro Games" loading="lazy" referrerpolicy="no-referrer"><span>${(isES||isPL)?(es.labels[item.label]||item.label):item.label}</span><h3>${item.name}</h3></a>`).join('');
+  .map(([slug,item])=>`<a class="related-card" href="${routes.product(lang,slug)}"><img src="${item.image}" alt="${item.name}" loading="lazy" referrerpolicy="no-referrer"><span>${(isES||isPL)?(es.labels[item.label]||item.label):item.label}</span><h3>${item.name}</h3></a>`).join('');
 
 const swatchColor={White:'#f4f4f1',Orange:'#ff7a18',Yellow:'#ffd329',Green:'#27ae60',Blue:'#1976d2',Red:'#ef3123',Black:'#17191c',Brown:'#84543a',Graphite:'#4b4f55',Golden:'#c49b38',Arctic:'#d9f4ff',Matrix:'#4d56a8',Compact:'#7f8c8d',Standard:'#777',Kids:'#4fa3ff',Purple:'#7b4cb8',Silver:'#bfc3c7',Pink:'#e85e9f'};
 const isGenericVariantName=(name='')=>/^Variant\s+\d+$/i.test(name);

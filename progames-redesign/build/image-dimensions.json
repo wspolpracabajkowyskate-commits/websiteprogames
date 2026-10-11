@@ -1,0 +1,290 @@
+{
+  "assets/progames-emblem-256.webp": [
+    256,
+    256
+  ],
+  "assets/progames-wordmark.webp": [
+    720,
+    223
+  ],
+  "assets/hero-champion.webp": [
+    1983,
+    793
+  ],
+  "assets/products/hammer-2026-multicolour.jpg": [
+    245,
+    1080
+  ],
+  "assets/products/boxer-toy-v36-pink.jpg": [
+    538,
+    1080
+  ],
+  "assets/products/leader-rank-blue.jpg": [
+    504,
+    1080
+  ],
+  "assets/products/monster-3in1-ticket-white.webp": [
+    626,
+    850
+  ],
+  "assets/products/monster-3in1-red.webp": [
+    580,
+    850
+  ],
+  "assets/products/double-hit-red.webp": [
+    462,
+    850
+  ],
+  "assets/products/double-hit-gift-blue.webp": [
+    465,
+    850
+  ],
+  "assets/products/double-hit-kids-orange.webp": [
+    537,
+    850
+  ],
+  "assets/products/double-hit-kids-gift-white.webp": [
+    551,
+    850
+  ],
+  "assets/products/double-hit-gift-2-yellow.jpg": [
+    571,
+    1080
+  ],
+  "assets/products/double-strike-black.webp": [
+    537,
+    850
+  ],
+  "assets/products/joker-white.webp": [
+    440,
+    850
+  ],
+  "assets/products/champion-red.webp": [
+    417,
+    850
+  ],
+  "assets/products/pow-boxer-yellow.webp": [
+    447,
+    850
+  ],
+  "assets/products/matte-airbrushed-standard-matte-black.webp": [
+    422,
+    850
+  ],
+  "assets/products/boxer-combat-red.webp": [
+    416,
+    850
+  ],
+  "assets/products/boxer-fist-white.webp": [
+    443,
+    850
+  ],
+  "assets/products/boxer-ring-red.webp": [
+    452,
+    850
+  ],
+  "assets/products/boxer-combat-kids-orange.webp": [
+    445,
+    850
+  ],
+  "assets/products/boxer-kids-artwork-01-white.webp": [
+    503,
+    850
+  ],
+  "assets/products/boxer-flash-gift-black.webp": [
+    457,
+    850
+  ],
+  "assets/products/hammer-black.webp": [
+    439,
+    850
+  ],
+  "assets/products/kicker-black.webp": [
+    555,
+    850
+  ],
+  "assets/products/boxer-flash-black-clean-v18.webp": [
+    879,
+    1790
+  ],
+  "assets/products/boxer-gift-black.webp": [
+    445,
+    850
+  ],
+  "assets/products/bouncy-castles-xs-dino-with-slide.webp": [
+    650,
+    650
+  ],
+  "assets/products/air-hockey-golden-golden.webp": [
+    1000,
+    667
+  ],
+  "assets/products/air-hockey-arctic-arctic.webp": [
+    800,
+    476
+  ],
+  "assets/products/air-hockey-matrix-matrix.webp": [
+    1000,
+    667
+  ],
+  "assets/products/basketball-compact-compact.webp": [
+    800,
+    1169
+  ],
+  "assets/products/basketball-standard.webp": [
+    669,
+    1200
+  ],
+  "assets/products/kids-basketball-kids.webp": [
+    800,
+    1146
+  ],
+  "assets/products/kiddie-ride-current-range.webp": [
+    745,
+    1200
+  ],
+  "assets/products/cyberdart-current-model.webp": [
+    800,
+    800
+  ],
+  "assets/products/parts-list.webp": [
+    1254,
+    1254
+  ],
+  "assets/production/assembly.webp": [
+    647,
+    516
+  ],
+  "assets/production/electronics.webp": [
+    382,
+    260
+  ],
+  "assets/production/testing.webp": [
+    380,
+    224
+  ],
+  "assets/production/production-line.webp": [
+    1049,
+    233
+  ],
+  "assets/distributors/uplay-america-v41.webp": [
+    660,
+    384
+  ],
+  "assets/progames-spain-branch.webp": [
+    560,
+    532
+  ],
+  "assets/progames-argentina-v41.webp": [
+    548,
+    604
+  ],
+  "assets/products/easy-white.webp": [
+    418,
+    850
+  ],
+  "assets/products/cyber-punch-orange.webp": [
+    417,
+    850
+  ],
+  "assets/products/gladiator-black.webp": [
+    440,
+    850
+  ],
+  "assets/products/mma-white.webp": [
+    421,
+    850
+  ],
+  "assets/products/black-jack-red.webp": [
+    405,
+    850
+  ],
+  "assets/products/super-hero-green.webp": [
+    441,
+    850
+  ],
+  "assets/products/power-black-black.webp": [
+    427,
+    850
+  ],
+  "assets/products/poison-squad-yellow.webp": [
+    421,
+    850
+  ],
+  "assets/products/hacker-white.webp": [
+    416,
+    850
+  ],
+  "assets/products/strongman-yellow.webp": [
+    420,
+    850
+  ],
+  "assets/products/viking-red.webp": [
+    461,
+    850
+  ],
+  "assets/products/disco-black.webp": [
+    418,
+    850
+  ],
+  "assets/products/champion-orange.webp": [
+    417,
+    850
+  ],
+  "assets/products/gladiator-white.webp": [
+    440,
+    850
+  ],
+  "assets/products/black-jack-orange.webp": [
+    405,
+    850
+  ],
+  "assets/products/hacker-yellow.webp": [
+    416,
+    850
+  ],
+  "assets/products/viking-orange.webp": [
+    461,
+    850
+  ],
+  "assets/products/disco-white.webp": [
+    418,
+    850
+  ],
+  "assets/products/bouncy-castles-xs-sea-with-slide.webp": [
+    650,
+    650
+  ],
+  "assets/products/bouncy-castles-xs-pirates-with-slide.webp": [
+    650,
+    650
+  ],
+  "assets/products/bouncy-castles-xs-sea-with-roof.webp": [
+    650,
+    650
+  ],
+  "assets/products/bouncy-castles-xs-princess-with-roof.webp": [
+    650,
+    650
+  ],
+  "assets/products/bouncy-castles-xs-pirates-with-roof.webp": [
+    649,
+    649
+  ],
+  "assets/products/bouncy-castles-xs-jungle-with-roof.webp": [
+    650,
+    650
+  ],
+  "assets/products/bouncy-castles-xs-princess-with-slide.webp": [
+    650,
+    650
+  ],
+  "assets/products/bouncy-castles-xs-circus-with-slide.webp": [
+    650,
+    487
+  ],
+  "assets/products/bouncy-castles-xs-jungle-with-slide.webp": [
+    650,
+    650
+  ]
+}
