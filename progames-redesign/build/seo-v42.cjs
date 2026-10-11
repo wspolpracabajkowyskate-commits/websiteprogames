@@ -20,7 +20,7 @@ for(const [key,name]of [['kids-basketball','Kids Basketball'],['kiddie-ride','Ki
 function meta(d,key,value){let e=d.querySelector(`meta[${key.includes(':')?'property':'name'}="${key}"]`);if(!e){e=d.createElement('meta');e.setAttribute(key.includes(':')?'property':'name',key);d.head.append(e)}e.content=value;}
 function add(d,html,target=d.body){const t=d.createElement('div');t.innerHTML=html;for(const n of [...t.childNodes])target.append(n);}
 function schema(d,obj){const e=d.createElement('script');e.type='application/ld+json';e.textContent=JSON.stringify({'@context':'https://schema.org',...obj}).replaceAll('<','\\u003c');d.head.append(e);}
-function attrs(d){let e=d.createElement('link');e.rel='stylesheet';e.href='/seo-v42.css?v=42';d.head.append(e);}
+function attrs(d){let e=d.createElement('link');e.rel='stylesheet';e.href='/seo-v42.css?v=43';d.head.append(e);}
 const imageSizes={};
 function imageSize(src){const f=src.split('?')[0].replace(/^\//,'');if(!fs.existsSync(f)||!/\.(webp|png|jpe?g)$/i.test(f))return null;if(!imageSizes[f]){try{imageSizes[f]=cp.execFileSync('identify',['-ping','-format','%w %h',f],{encoding:'utf8'}).trim().split(' ').map(Number)}catch{}}return imageSizes[f];}
 // Use cached dimensions when ImageMagick is unavailable on the deployment builder.
