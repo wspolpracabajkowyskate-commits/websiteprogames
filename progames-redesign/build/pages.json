@@ -782,14 +782,14 @@
     "lang": "pl",
     "url": "/pl/",
     "filename": "pl/index.html",
-    "title": "Producent automatów bokserskich i rozrywkowych | ProGames"
+    "title": "Automaty bokserskie i rozrywkowe – producent z Polski | ProGames"
   },
   {
     "kind": "collection",
     "lang": "pl",
     "url": "/pl/boxer-standard.html",
     "filename": "pl/boxer-standard.html",
-    "title": "Boksery Standard: 15 modeli automatów | ProGames"
+    "title": "Automaty bokserskie Boxer Standard – 15 modeli | ProGames"
   },
   {
     "kind": "catalog",
@@ -1951,7 +1951,8 @@
     "url": "/en/boxing-machines.html",
     "filename": "en/boxing-machines.html",
     "title": "Commercial Boxing Arcade Machines | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "category",
@@ -1960,7 +1961,8 @@
     "url": "/en/arcade-machines.html",
     "filename": "en/arcade-machines.html",
     "title": "Arcade & Amusement Machine Range | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "about",
@@ -1969,7 +1971,8 @@
     "url": "/en/manufacturer.html",
     "filename": "en/manufacturer.html",
     "title": "Boxing Arcade Machine Manufacturer in Poland | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "b2b",
@@ -1978,7 +1981,8 @@
     "url": "/en/distributors-wholesale.html",
     "filename": "en/distributors-wholesale.html",
     "title": "Boxing Machine Wholesale & Distribution | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "hub",
@@ -1987,7 +1991,8 @@
     "url": "/en/knowledge/",
     "filename": "en/knowledge/index.html",
     "title": "Boxing Arcade Machine Guides for Operators | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "article",
@@ -1996,7 +2001,8 @@
     "url": "/en/knowledge/what-is-a-boxing-arcade-machine.html",
     "filename": "en/knowledge/what-is-a-boxing-arcade-machine.html",
     "title": "What Is a Boxing Arcade Machine? | ProGames Guide",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "article",
@@ -2005,7 +2011,8 @@
     "url": "/en/knowledge/choosing-a-commercial-boxing-machine.html",
     "filename": "en/knowledge/choosing-a-commercial-boxing-machine.html",
     "title": "How to Choose a Commercial Boxing Machine | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
   },
   {
     "kind": "article",
@@ -2014,6 +2021,107 @@
     "url": "/en/knowledge/installation-and-maintenance.html",
     "filename": "en/knowledge/installation-and-maintenance.html",
     "title": "Boxing Machine Installation & Maintenance Planning | ProGames",
-    "editorial": true
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "category",
+    "lang": "pl",
+    "key": "boxing",
+    "url": "/pl/automaty-bokserskie.html",
+    "filename": "pl/automaty-bokserskie.html",
+    "title": "Automaty bokserskie – boksery i siłomierze | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "category",
+    "lang": "pl",
+    "key": "arcade",
+    "url": "/pl/automaty-rozrywkowe.html",
+    "filename": "pl/automaty-rozrywkowe.html",
+    "title": "Automaty rozrywkowe: młot, kopacz, cymbergaje | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "about",
+    "lang": "pl",
+    "key": "manufacturer",
+    "url": "/pl/producent-automatow-bokserskich.html",
+    "filename": "pl/producent-automatow-bokserskich.html",
+    "title": "Producent automatów bokserskich w Polsce | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "b2b",
+    "lang": "pl",
+    "key": "b2b",
+    "url": "/pl/sprzedaz-hurtowa-i-dystrybucja.html",
+    "filename": "pl/sprzedaz-hurtowa-i-dystrybucja.html",
+    "title": "Automaty bokserskie hurtowo – sprzedaż i dystrybucja | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "hub",
+    "lang": "pl",
+    "key": "hub",
+    "url": "/pl/poradniki/",
+    "filename": "pl/poradniki/index.html",
+    "title": "Poradniki: automaty bokserskie dla operatorów | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "article",
+    "lang": "pl",
+    "key": "definition",
+    "url": "/pl/poradniki/co-to-jest-automat-bokserski.html",
+    "filename": "pl/poradniki/co-to-jest-automat-bokserski.html",
+    "title": "Co to jest automat bokserski (bokser, siłomierz)? | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "article",
+    "lang": "pl",
+    "key": "choose",
+    "url": "/pl/poradniki/jak-wybrac-automat-bokserski.html",
+    "filename": "pl/poradniki/jak-wybrac-automat-bokserski.html",
+    "title": "Jak wybrać automat bokserski do lokalu? Poradnik | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "article",
+    "lang": "pl",
+    "key": "care",
+    "url": "/pl/poradniki/montaz-i-serwis-automatu-bokserskiego.html",
+    "filename": "pl/poradniki/montaz-i-serwis-automatu-bokserskiego.html",
+    "title": "Montaż i serwis automatu bokserskiego – poradnik | ProGames",
+    "editorial": true,
+    "alternates": 3
+  },
+  {
+    "kind": "article",
+    "lang": "pl",
+    "key": "pl-price",
+    "url": "/pl/poradniki/ile-kosztuje-automat-bokserski.html",
+    "filename": "pl/poradniki/ile-kosztuje-automat-bokserski.html",
+    "title": "Ile kosztuje automat bokserski? Od czego zależy cena | ProGames",
+    "editorial": true,
+    "alternates": 0
+  },
+  {
+    "kind": "article",
+    "lang": "pl",
+    "key": "pl-bar",
+    "url": "/pl/poradniki/automat-bokserski-do-baru.html",
+    "filename": "pl/poradniki/automat-bokserski-do-baru.html",
+    "title": "Automat bokserski do baru i pubu – na co uważać | ProGames",
+    "editorial": true,
+    "alternates": 0
   }
 ]

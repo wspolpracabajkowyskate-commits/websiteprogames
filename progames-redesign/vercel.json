@@ -5,6 +5,842 @@
   "redirects": [
     {
       "source": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/monster-3in1-ticket",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/monster-3in1-ticket.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/monster-3w1",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/monster-3in1.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit-kids",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit-kids.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit-kids-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit-kids-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-strike",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-strike.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/joker",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/joker.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-powboxer",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/pow-boxer.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-champion",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/champion.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-easy",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/easy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-cyberpunch",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/cyber-punch.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-gladiator",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/gladiator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-mma",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/mma.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-blackjack",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/black-jack.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/super-hero",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/super-hero.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-powerblack",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/power-black.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-poisonsquad",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/poison-squad.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-hacker",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/hacker.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-strongman",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/strongman.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-viking",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/viking.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-disco",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/disco.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/matte-airbrushed-boxer",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/matte-airbrushed.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-combat",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-combat.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-fist-3-player",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-fist.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-ring",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-ring.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-combat-kids",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-combat-kids.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-kids",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-kids.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-flash-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-flash-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hammer",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/hammer.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/kicker",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/kicker.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/bouncy-castles-size-xs",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/bouncy-castles-xs.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/air-hockey",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/automaty-rozrywkowe.html#cymbergaj",
+      "statusCode": 301
+    },
+    {
+      "source": "/basketball",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/automaty-rozrywkowe.html#koszykowka",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/boxer-standard.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-flash",
+      "has": [
+        {
+          "type": "host",
+          "value": "progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-flash.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/monster-3in1-ticket",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/monster-3in1-ticket.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/monster-3w1",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/monster-3in1.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit-kids",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit-kids.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-hit-kids-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-hit-kids-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/double-strike",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/double-strike.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/joker",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/joker.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-powboxer",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/pow-boxer.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-champion",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/champion.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-easy",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/easy.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-cyberpunch",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/cyber-punch.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-gladiator",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/gladiator.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-mma",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/mma.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-blackjack",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/black-jack.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/super-hero",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/super-hero.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-powerblack",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/power-black.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-poisonsquad",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/poison-squad.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-hacker",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/hacker.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-strongman",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/strongman.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-viking",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/viking.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard-disco",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/disco.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/matte-airbrushed-boxer",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/matte-airbrushed.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-combat",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-combat.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-fist-3-player",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-fist.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-ring",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-ring.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-combat-kids",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-combat-kids.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-kids",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-kids.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-flash-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-flash-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hammer",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/hammer.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/kicker",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/kicker.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-gift",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-gift.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/bouncy-castles-size-xs",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/bouncy-castles-xs.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/air-hockey",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/automaty-rozrywkowe.html#cymbergaj",
+      "statusCode": 301
+    },
+    {
+      "source": "/basketball",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/automaty-rozrywkowe.html#koszykowka",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-standard",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/boxer-standard.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/boxer-flash",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.progames.pl"
+        }
+      ],
+      "destination": "https://www.progamespoland.com/pl/produkty/boxer-flash.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
       "destination": "https://www.progamespoland.com/",
       "statusCode": 301
     },
@@ -6891,7 +7727,7 @@
           "value": "progames.pl"
         }
       ],
-      "destination": "https://www.progamespoland.com/",
+      "destination": "https://www.progamespoland.com/pl/",
       "statusCode": 301
     },
     {
@@ -6946,7 +7782,7 @@
           "value": "www.progames.pl"
         }
       ],
-      "destination": "https://www.progamespoland.com/",
+      "destination": "https://www.progamespoland.com/pl/",
       "statusCode": 301
     },
     {

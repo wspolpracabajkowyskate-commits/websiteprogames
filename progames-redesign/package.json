@@ -1,9 +1,9 @@
 {
   "name": "progames-static-site",
   "private": true,
-  "version": "42.0.0",
+  "version": "43.0.0",
   "scripts": {
-    "build": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/seo-v42.cjs && node build/redirects.cjs",
+    "build": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/seo-v42.cjs && node build/redirects.cjs && node build/seo-pl-v43.cjs",
     "test": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
     "test:browser": "node verification/test-browser.cjs",
     "test:i18n": "node verification/check-i18n.cjs",

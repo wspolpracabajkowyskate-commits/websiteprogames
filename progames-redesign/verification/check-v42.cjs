@@ -1,6 +1,6 @@
 const fs=require('fs'),assert=require('assert/strict'),vm=require('vm'),{parseHTML}=require('linkedom');
 const origin='https://www.progamespoland.com',pages=JSON.parse(fs.readFileSync('build/pages.json')),config=JSON.parse(fs.readFileSync('vercel.json'));
-const oldPages=pages.filter(p=>!p.editorial),newPages=pages.filter(p=>p.editorial);assert.equal(oldPages.length,245);assert.equal(newPages.length,8);
+const oldPages=pages.filter(p=>!p.editorial),newPages=pages.filter(p=>p.editorial&&p.lang==='en');assert.equal(oldPages.length,245);assert.equal(newPages.length,8);
 const source={window:{}};vm.runInNewContext(fs.readFileSync('products.js','utf8'),source);const products=source.window.PRODUCTS;
 const docs=new Map(pages.map(p=>[p.url,parseHTML(fs.readFileSync(p.filename,'utf8')).document]));let references=0,schemas=0,images=0,specs=0;
 for(const p of pages){const d=docs.get(p.url),json=[...d.querySelectorAll('script[type="application/ld+json"]')].map(s=>JSON.parse(s.textContent));schemas+=json.length;
@@ -14,7 +14,7 @@ for(const p of pages){const d=docs.get(p.url),json=[...d.querySelectorAll('scrip
  for(const img of d.querySelectorAll('img')){assert(img.hasAttribute('alt'),p.url+' missing alt');if(!img.src.endsWith('.svg')){assert(+img.getAttribute('width')>0,p.url+' width '+img.src);assert(+img.getAttribute('height')>0,p.url+' height '+img.src);}images++;}
  for(const o of json){assert(!o.offers&&!o.review&&!o.aggregateRating);if(o['@type']==='Product'){const own=products[p.key].category!=='distributed';assert.equal(Boolean(o.manufacturer),own);if(own)assert.equal(o.manufacturer['@id'],origin+'/#organization');assert.equal(o.description.replace(/\s+/g,' ').trim(),d.querySelector('.detail-lead').textContent.replace(/\s+/g,' ').trim());}if(o['@type']==='Organization'){assert.equal(o.name,'ProGames');assert.equal(o['@id'],origin+'/#organization');}}
  if(p.kind==='product'){const product=products[p.key];if(product.spec.length){const rows=d.querySelectorAll('.seo-specs tbody tr');assert.equal(rows.length,product.spec.length);assert.equal(d.querySelectorAll('.seo-specs th[scope="row"]').length,rows.length);specs+=rows.length;}assert(d.querySelector('.config-quote'));assert(d.querySelector('.seo-product-support'));}
- if(p.editorial){assert.equal(d.querySelectorAll('script[src]').length,0);assert.equal(d.querySelectorAll('link[hreflang]').length,2);}
+ if(p.editorial){assert.equal(d.querySelectorAll('script[src]').length,0);assert.equal(d.querySelectorAll('link[hreflang]').length,p.alternates??2);}
  for(const a of d.querySelectorAll('a[href]')){const u=new URL(a.getAttribute('href'),origin+p.url);if(u.origin!==origin)continue;const f=u.pathname.endsWith('/')?u.pathname.slice(1)+'index.html':u.pathname.slice(1);assert(fs.existsSync(f),p.url+' '+u.href);if(u.hash){const t=docs.get(u.pathname)||parseHTML(fs.readFileSync(f,'utf8')).document;assert(t.getElementById(decodeURIComponent(u.hash.slice(1))),p.url+' '+u.href);}references++;}
 }
 // Execute the ordered config with representative paths, host conditions and query conditions.
