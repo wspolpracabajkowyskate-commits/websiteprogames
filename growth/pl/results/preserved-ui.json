@@ -1,0 +1,1133 @@
+{
+  "checked_at": "2026-10-14T09:51:09.696Z",
+  "checks": [
+    {
+      "file": "pl/index.html",
+      "selector": "form",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/index.html",
+      "selector": ".hero img",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/index.html",
+      "selector": ".hero-actions",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/index.html",
+      "selector": "#machines .product-grid",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1-ticket.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1-ticket.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1-ticket.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1-ticket.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/monster-3in1.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids-gift.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids-gift.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids-gift.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-kids-gift.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-strike.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-strike.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-strike.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-strike.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/joker.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/joker.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/joker.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/joker.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/pow-boxer.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/pow-boxer.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/pow-boxer.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/pow-boxer.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/champion.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/champion.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/champion.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/champion.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/easy.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/easy.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/easy.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/easy.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/cyber-punch.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/cyber-punch.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/cyber-punch.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/cyber-punch.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/gladiator.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/gladiator.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/gladiator.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/gladiator.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/mma.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/mma.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/mma.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/mma.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/black-jack.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/black-jack.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/black-jack.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/black-jack.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/super-hero.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/super-hero.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/super-hero.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/super-hero.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/power-black.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/power-black.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/power-black.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/power-black.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/poison-squad.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/poison-squad.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/poison-squad.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/poison-squad.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hacker.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hacker.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hacker.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hacker.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/strongman.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/strongman.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/strongman.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/strongman.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/viking.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/viking.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/viking.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/viking.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/disco.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/disco.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/disco.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/disco.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/matte-airbrushed.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/matte-airbrushed.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/matte-airbrushed.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/matte-airbrushed.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/boxer-combat.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-fist.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-fist.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-fist.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-fist.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-ring.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-ring.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-ring.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-ring.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat-kids.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat-kids.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat-kids.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-combat-kids.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-kids.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-kids.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-kids.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-kids.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash-gift.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash-gift.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash-gift.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash-gift.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hammer.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hammer.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hammer.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hammer.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kicker.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kicker.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kicker.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kicker.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-flash.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/boxer-gift.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-gift.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-gift.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/boxer-gift.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/bouncy-castles-xs.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/bouncy-castles-xs.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/bouncy-castles-xs.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/bouncy-castles-xs.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/air-hockey-golden.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-golden.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/air-hockey-golden.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-golden.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-arctic.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-arctic.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/air-hockey-arctic.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-arctic.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-matrix.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-matrix.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/air-hockey-matrix.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/air-hockey-matrix.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/basketball-compact.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/basketball-compact.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/basketball-compact.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/basketball-compact.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/basketball.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/basketball.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/basketball.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/basketball.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kids-basketball.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kids-basketball.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/kids-basketball.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kids-basketball.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/kiddie-ride.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kiddie-ride.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/kiddie-ride.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/kiddie-ride.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/cyberdart.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/cyberdart.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/cyberdart.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/cyberdart.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/hammer-2026.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hammer-2026.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": false
+    },
+    {
+      "file": "pl/produkty/hammer-2026.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/hammer-2026.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/win-a-toy.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/win-a-toy.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/win-a-toy.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/win-a-toy.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/leader-rank.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/leader-rank.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/leader-rank.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/leader-rank.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift-2.html",
+      "selector": ".machine-config",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift-2.html",
+      "selector": ".gallery-variant-selector",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift-2.html",
+      "selector": "#productMainImage",
+      "preserved": true,
+      "present": true
+    },
+    {
+      "file": "pl/produkty/double-hit-gift-2.html",
+      "selector": ".seo-specs",
+      "preserved": true,
+      "present": true
+    }
+  ]
+}

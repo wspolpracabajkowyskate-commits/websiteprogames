@@ -47,9 +47,9 @@ def extract(provider,r):
  walk(r)
  return answer,sorted(urls)
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--provider',choices=KEYS,required=True);ap.add_argument('--model',required=True);ap.add_argument('--mode',choices=['base','instructions','rag','fine_tuned','search'],default='search');ap.add_argument('--out',required=True);ap.add_argument('--execute',action='store_true');ap.add_argument('--paid-approved',action='store_true');ap.add_argument('--budget-usd',type=float,default=0);ap.add_argument('--reserved-usd-per-request',type=float,default=0);ap.add_argument('--limit',type=int,default=60);ap.add_argument('--repeat',type=int,default=1);a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('--questions',default=str(KB/'ai-training/evaluation-questions.json'));ap.add_argument('--provider',choices=KEYS,required=True);ap.add_argument('--model',required=True);ap.add_argument('--mode',choices=['base','instructions','rag','fine_tuned','search'],default='search');ap.add_argument('--out',required=True);ap.add_argument('--execute',action='store_true');ap.add_argument('--paid-approved',action='store_true');ap.add_argument('--budget-usd',type=float,default=0);ap.add_argument('--reserved-usd-per-request',type=float,default=0);ap.add_argument('--limit',type=int,default=60);ap.add_argument('--repeat',type=int,default=1);a=ap.parse_args()
  if a.limit<1 or a.limit>60 or a.repeat<1 or a.repeat>3:ap.error('limit 1..60, repeat 1..3')
- qs=json.loads((KB/'ai-training/evaluation-questions.json').read_text())['questions'][:a.limit]
+ qs=json.loads(Path(a.questions).read_text())['questions'][:a.limit]
  if a.execute and (not a.paid_approved or a.reserved_usd_per_request<=0 or a.budget_usd<a.reserved_usd_per_request*len(qs)*a.repeat):ap.error('Explicit paid approval and sufficient reserved budget required')
  if a.execute and not os.getenv(KEYS[a.provider]):ap.error('Missing '+KEYS[a.provider])
  if a.mode=='fine_tuned' and not os.getenv('FINE_TUNED_MODEL_CONFIRMED'):ap.error('Set FINE_TUNED_MODEL_CONFIRMED after confirming an actually trained model ID; this runner never trains')

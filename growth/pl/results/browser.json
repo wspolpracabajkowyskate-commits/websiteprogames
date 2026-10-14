@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-14T09:51:41.703Z",
+  "rows": [
+    {
+      "page": "home",
+      "width": 390,
+      "overflow": false,
+      "title": "Producent automatów bokserskich w Polsce | ProGames",
+      "lead": "ProGames to polski producent automatów bokserskich i rozrywkowych. Wybierz model do swojego obiektu i zapytaj nas bezpośrednio o ofertę.",
+      "errors": []
+    },
+    {
+      "page": "joker",
+      "width": 390,
+      "overflow": false,
+      "description": "Joker to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Żółty, Czerwony, Zielony, Niebieski, Czarny, Pomarańczowy. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+      "color": "ŻÓŁTY",
+      "option": true,
+      "errors": []
+    },
+    {
+      "page": "home",
+      "width": 1440,
+      "overflow": false,
+      "title": "Producent automatów bokserskich w Polsce | ProGames",
+      "lead": "ProGames to polski producent automatów bokserskich i rozrywkowych. Wybierz model do swojego obiektu i zapytaj nas bezpośrednio o ofertę.",
+      "errors": []
+    },
+    {
+      "page": "joker",
+      "width": 1440,
+      "overflow": false,
+      "description": "Joker to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Żółty, Czerwony, Zielony, Niebieski, Czarny, Pomarańczowy. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+      "color": "ŻÓŁTY",
+      "option": true,
+      "errors": []
+    }
+  ]
+}
