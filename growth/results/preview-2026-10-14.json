@@ -1,0 +1,28 @@
+{
+  "commit": "120d00c32f9a5f400077df1044caba9ffe3b06c3",
+  "deployment": "dpl_EEd9y8xr7h6zxoToJmaufijrPoZ5",
+  "checks": [
+    {
+      "path": "en/boxing-machines.html",
+      "status": 200,
+      "new_section_present": true,
+      "single_h1": true,
+      "canonical_present": true
+    },
+    {
+      "path": "en/manufacturer.html",
+      "status": 200,
+      "new_section_present": true,
+      "single_h1": true,
+      "canonical_present": true
+    },
+    {
+      "path": "pl/producent-automatow-bokserskich.html",
+      "status": 200,
+      "new_section_present": true,
+      "single_h1": true,
+      "canonical_present": true
+    }
+  ],
+  "checked_at": "2026-10-14T09:22:35.671Z"
+}

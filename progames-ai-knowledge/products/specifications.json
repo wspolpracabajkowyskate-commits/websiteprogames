@@ -1,0 +1,561 @@
+{
+  "as_of": "2026-10-13",
+  "specifications": [
+    {
+      "product_id": "monster-3in1-ticket",
+      "values": {
+        "Height": "230 cm / 91″",
+        "Width": "140 cm / 56″",
+        "Length": "140 cm / 56″",
+        "Weight": "250 kg / 552 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "monster-3in1",
+      "values": {
+        "Height": "230 cm / 91″",
+        "Width": "140 cm / 56″",
+        "Length": "140 cm / 56″",
+        "Weight": "250 kg / 552 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "double-hit",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "85 cm / 34″",
+        "Length": "122 cm / 48″",
+        "Weight": "175 kg / 386 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "double-hit-gift",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "85 cm / 34″",
+        "Length": "122 cm / 48″",
+        "Weight": "190 kg / 419 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "double-hit-kids",
+      "values": {
+        "Height": "186 Cm / 74″",
+        "Width": "85 cm / 34″",
+        "Length": "120 cm / 48″",
+        "Weight": "175 kg / 386 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "double-hit-kids-gift",
+      "values": {
+        "Height": "182 Cm / 72″",
+        "Width": "85 cm / 34″",
+        "Length": "120 cm / 48″",
+        "Weight": "180 kg / 397 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "double-strike",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "142 cm / 56″",
+        "Length": "122 cm / 48″",
+        "Weight": "170 kg / 375 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "joker",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "pow-boxer",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "champion",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "easy",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "cyber-punch",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "gladiator",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "mma",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "black-jack",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "super-hero",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "power-black",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "poison-squad",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "hacker",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "strongman",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "viking",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "disco",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "matte-airbrushed",
+      "values": null,
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-combat",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-fist",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-ring",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "127 kg / 275 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-combat-kids",
+      "values": {
+        "Height": "182 Cm / 72″",
+        "Width": "70 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "120 kg / 265 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-kids",
+      "values": {
+        "Height": "182 Cm / 72″",
+        "Width": "70 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "100 kg / 221 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-flash-gift",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "140 kg / 309 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "hammer",
+      "values": {
+        "Height": "225 Cm / 89″",
+        "Width": "95 cm / 38″",
+        "Length": "140 cm / 56″",
+        "Weight": "125 kg / 276 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "kicker",
+      "values": {
+        "Height": "170 cm / 67″",
+        "Width": "133 cm / 52″",
+        "Length": "66 cm / 26″",
+        "Weight": "100 kg / 221 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-flash",
+      "values": null,
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "boxer-gift",
+      "values": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "140 kg / 309 lb"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "bouncy-castles-xs",
+      "values": null,
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "air-hockey-golden",
+      "values": {
+        "Product: LxWxH // Weight": "8ft: 238x128x85 cm // 220 kg",
+        "Package: LxWxH // Weight": "8ft: 243x138x54 cm // 220 kg"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "air-hockey-arctic",
+      "values": {
+        "Product: LxWxH // Weight": "8ft: 238x128x85 cm // 220 kg",
+        "Package: LxWxH // Weight": "8ft: 243x138x54 cm // 220 kg"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "air-hockey-matrix",
+      "values": {
+        "Product: LxWxH // Weight": "8ft: 240x130x85 cm // 240 kg",
+        "Package: LxWxH // Weight": "8ft: 245x140x55 cm // 250 kg"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "basketball-compact",
+      "values": {
+        "Product: LxWxH // Weight": "243x109x248-310 cm // 350 kg",
+        "Package: LxWxH // Weight": "88x115x194 cm // 370 kg"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "basketball",
+      "values": {
+        "Product: LxWxH // Weight": "246x100x250/270 cm // 290 kg",
+        "Package: LxWxH // Weight": "115x134x160 cm // 290 kg"
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "kids-basketball",
+      "values": null,
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "kiddie-ride",
+      "values": null,
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "cyberdart",
+      "values": null,
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "hammer-2026",
+      "values": {
+        "Dimensions": null,
+        "Weight": null,
+        "Power supply": null,
+        "Power consumption": null
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "win-a-toy",
+      "values": {
+        "Dimensions": null,
+        "Weight": null,
+        "Power supply": null,
+        "Power consumption": null
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "leader-rank",
+      "values": {
+        "Dimensions": null,
+        "Weight": null,
+        "Power supply": null,
+        "Power consumption": null
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    },
+    {
+      "product_id": "double-hit-gift-2",
+      "values": {
+        "Dimensions": null,
+        "Weight": null
+      },
+      "source_ids": [
+        "official-products-js"
+      ],
+      "approval_status": "source_verified_human_pending"
+    }
+  ]
+}

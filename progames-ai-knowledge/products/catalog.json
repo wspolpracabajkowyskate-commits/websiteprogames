@@ -1,0 +1,4439 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-10-13",
+  "scope": "46 records resolved from public products.js; not independent manufacturer validation",
+  "products": [
+    {
+      "id": "monster-3in1-ticket",
+      "name": "Monster 3 in 1 Ticket",
+      "category": "combo",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "3-in-1 Amusement Machine: Boxer, Kicker & Hammer\n\nThis innovative 3-in-1 arcade machine combines three popular strength-testing games in one compact unit — Boxer, Kicker, and Hammer.\n\nPlayers can test their power by choosing between punching, kicking, or hammering modes, all integrated into a single durable and eye-catching cabinet.\n\nThe machine features a modern design with LED lighting, high-quality sensors for accurate scoring\n\nPerfect for bars, amusement centers, and events, it offers maximum entertainment value while saving space.",
+      "applications": null,
+      "features": [
+        "Built for heavy use, the 3-in-1 Boxer/Kicker/Hammer guarantees fun, competition, and excitement for players of all ages."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/monster-3in1-ticket-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/monster-3in1-ticket-orange.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/monster-3in1-ticket-yellow.webp"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/monster-3in1-ticket-green.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/monster-3in1-ticket-blue.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/monster-3in1-ticket-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/monster-3in1-ticket-black.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "230 cm / 91″",
+        "Width": "140 cm / 56″",
+        "Length": "140 cm / 56″",
+        "Weight": "250 kg / 552 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/monster-3in1-ticket.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/monster-3in1-ticket.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1-ticket'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/monster-3in1-ticket",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "monster-3in1",
+      "name": "Monster 3 in 1",
+      "category": "combo",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "3-in-1 Amusement Machine: Boxer, Kicker & Hammer\n\nThis innovative 3-in-1 arcade machine combines three popular strength-testing games in one compact unit — Boxer, Kicker, and Hammer.\n\nPlayers can test their power by choosing between punching, kicking, or hammering modes, all integrated into a single durable and eye-catching cabinet.\n\nThe machine features a modern design with LED lighting, high-quality sensors for accurate scoring\n\nPerfect for bars, amusement centers, and events, it offers maximum entertainment value while saving space.",
+      "applications": null,
+      "features": [
+        "Built for heavy use, the 3-in-1 Boxer/Kicker/Hammer guarantees fun, competition, and excitement for players of all ages."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/monster-3in1-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/monster-3in1-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/monster-3in1-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/monster-3in1-yellow.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/monster-3in1-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/monster-3in1-orange.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "230 cm / 91″",
+        "Width": "140 cm / 56″",
+        "Length": "140 cm / 56″",
+        "Weight": "250 kg / 552 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/monster-3in1.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/monster-3in1.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['monster-3in1'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/monster-3w1",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "double-hit",
+      "name": "Double Hit",
+      "category": "combo",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Offers two exciting challenges in one compact machine with vibrant LED lights that bring extra attraction. Press the top Start button to release the punchball and test your strength or hit the bottom button to kick the football and show off your skills. Double the action, all in one game!",
+      "applications": null,
+      "features": [
+        "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+        "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+        "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/double-hit-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/double-hit-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/double-hit-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/double-hit-orange.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/double-hit-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/double-hit-yellow.webp"
+        },
+        {
+          "id": "comic-red",
+          "name": "Comic artwork · Red",
+          "image": "/assets/products/double-hit-comic-red.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "85 cm / 34″",
+        "Length": "122 cm / 48″",
+        "Weight": "175 kg / 386 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/double-hit.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/double-hit.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/double-hit",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "double-hit-gift",
+      "name": "Double Hit Gift",
+      "category": "combo",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "This versatile machine offers three exciting challenges boxing, kicking and a prize feature all in one compact design. Equipped with vibrant LED lights for added attraction, players can showcase their strength and skill by hitting the punchball or football and get special prizes with extra motivation and excitement. It’s triple the action in one game!",
+      "applications": null,
+      "features": [
+        "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+        "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+        "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/double-hit-gift-blue.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/double-hit-gift-black.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/double-hit-gift-red.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/double-hit-gift-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/double-hit-gift-orange.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/double-hit-gift-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "85 cm / 34″",
+        "Length": "122 cm / 48″",
+        "Weight": "190 kg / 419 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/double-hit-gift.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/double-hit-gift.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/double-hit-gift",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "double-hit-kids",
+      "name": "Double Hit Kids",
+      "category": "kids",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "This machine combines two exciting games in one: boxing and kicking! Perfectly designed for younger players, this machine brings twice the fun in a single unit, making it ideal for family-friendly venues.",
+      "applications": null,
+      "features": [
+        "2-in-1 Action: Combines boxing and kicking games for double the excitement.",
+        "Kid-Friendly Design: Tailored for children with a safe and easy-to-use layout.",
+        "Bright LED Lights: Eye-catching lights make gameplay even more fun.",
+        "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+        "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/double-hit-kids-orange.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/double-hit-kids-white.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/double-hit-kids-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/double-hit-kids-blue.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/double-hit-kids-red.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/double-hit-kids-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "186 Cm / 74″",
+        "Width": "85 cm / 34″",
+        "Length": "120 cm / 48″",
+        "Weight": "175 kg / 386 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/double-hit-kids.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/double-hit-kids.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/double-hit-kids",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "double-hit-kids-gift",
+      "name": "Double Hit Kids Gift",
+      "category": "kids",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "This machine combines three fun games in one: boxing, kicking and a prize feature! Designed for young players, it keeps kids engaged with exciting challenges and vibrant LED lights, making it a perfect fit for family venues.",
+      "applications": null,
+      "features": [
+        "3-in-1 Action: Offers boxing, kicking a prize reward option for extra excitement.",
+        "Kid-Friendly Design: Safe, engaging and easy-to-use for children.",
+        "Bright LED Lights: Colorful lights add to the fun and attraction.",
+        "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+        "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/double-hit-kids-gift-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/double-hit-kids-gift-orange.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/double-hit-kids-gift-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/double-hit-kids-gift-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/double-hit-kids-gift-yellow.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/double-hit-kids-gift-black.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "182 Cm / 72″",
+        "Width": "85 cm / 34″",
+        "Length": "120 cm / 48″",
+        "Weight": "180 kg / 397 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/double-hit-kids-gift.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/double-hit-kids-gift.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-kids-gift'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/double-hit-kids-gift",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "double-strike",
+      "name": "Double Strike 2",
+      "category": "combo",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Offers two exciting challenges in one compact machine with vibrant LED lights that bring extra attraction. Press the top Start button to release the punchball and test your strength or hit the bottom button to kick the football and show off your skills. Double the action, all in one game!",
+      "applications": null,
+      "features": [
+        "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+        "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+        "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/double-strike-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/double-strike-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/double-strike-red.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/double-strike-orange.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/double-strike-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/double-strike-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "142 cm / 56″",
+        "Length": "122 cm / 48″",
+        "Weight": "170 kg / 375 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/double-strike.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/double-strike.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-strike'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/double-strike",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "joker",
+      "name": "Joker",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/joker-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/joker-yellow.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/joker-red.webp"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/joker-green.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/joker-blue.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/joker-black.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/joker-orange.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/joker.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/joker.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['joker'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/joker",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "pow-boxer",
+      "name": "POW Boxer",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/pow-boxer-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/pow-boxer.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/pow-boxer.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['pow-boxer'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-powboxer",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "champion",
+      "name": "Champion",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/champion-orange.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/champion-yellow.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/champion-red.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/champion-white.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/champion-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/champion-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/champion.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/champion.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['champion'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-champion",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "easy",
+      "name": "Easy",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/easy-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/easy-yellow.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/easy-orange.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/easy-black.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/easy-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/easy-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/easy.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/easy.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['easy'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-easy",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "cyber-punch",
+      "name": "Cyber Punch",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/cyber-punch-orange.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/cyber-punch-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/cyber-punch-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/cyber-punch-black.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/cyber-punch-yellow.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/cyber-punch-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/cyber-punch.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/cyber-punch.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyber-punch'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-cyberpunch",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "gladiator",
+      "name": "Gladiator",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/gladiator-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/gladiator-yellow.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/gladiator-black.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/gladiator-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/gladiator-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/gladiator-orange.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/gladiator.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/gladiator.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['gladiator'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-gladiator",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "mma",
+      "name": "MMA",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/mma-white.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/mma-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/mma-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/mma-orange.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/mma-red.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/mma-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/mma.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/mma.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['mma'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-mma",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "black-jack",
+      "name": "Black Jack",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/black-jack-orange.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/black-jack-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/black-jack-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/black-jack-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/black-jack-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/black-jack-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/black-jack.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/black-jack.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['black-jack'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-blackjack",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "super-hero",
+      "name": "Super Hero",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/super-hero-green.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/super-hero-orange.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/super-hero-yellow.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/super-hero-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/super-hero-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/super-hero-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/super-hero-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/super-hero.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/super-hero.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['super-hero'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/super-hero",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "power-black",
+      "name": "Power Black",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/power-black-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/power-black-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/power-black-yellow.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/power-black-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/power-black-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/power-black-orange.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/power-black.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/power-black.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['power-black'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-powerblack",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "poison-squad",
+      "name": "Poison Squad",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/poison-squad-yellow.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/poison-squad-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/poison-squad-orange.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/poison-squad-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/poison-squad-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/poison-squad-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/poison-squad.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/poison-squad.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['poison-squad'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-poisonsquad",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "hacker",
+      "name": "Hacker",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/hacker-yellow.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/hacker-white.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/hacker-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/hacker-orange.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/hacker-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/hacker-black.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/hacker.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/hacker.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hacker'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-hacker",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "strongman",
+      "name": "Strongman",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/strongman-yellow.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/strongman-white.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/strongman-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/strongman-orange.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/strongman-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/strongman-black.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/strongman.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/strongman.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['strongman'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-strongman",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "viking",
+      "name": "Viking",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/viking-orange.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/viking-yellow.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/viking-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/viking-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/viking-blue.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/viking-black.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/viking.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/viking.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['viking'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-viking",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "disco",
+      "name": "Disco",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Card reader.",
+        "2 meter power cable.",
+        "Protective cover.",
+        "Custom sticker and branding.",
+        "LED lighting variation available."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/disco-white.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/disco-black.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/disco-yellow.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/disco-orange.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/disco-blue.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/disco-red.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/disco.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/disco.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['disco'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-standard-disco",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "matte-airbrushed",
+      "name": "Matte Airbrushed",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "standard-matte-black",
+          "name": "Standard · Matte black",
+          "image": "/assets/products/matte-airbrushed-standard-matte-black.webp"
+        },
+        {
+          "id": "combat-matte-black",
+          "name": "Combat · Matte black",
+          "image": "/assets/products/matte-airbrushed-combat-matte-black.webp"
+        },
+        {
+          "id": "double-hit-matte-black",
+          "name": "Double Hit · Matte black",
+          "image": "/assets/products/matte-airbrushed-double-hit-matte-black.webp"
+        }
+      ],
+      "technical_specifications": null,
+      "official_url": "https://www.progamespoland.com/en/products/matte-airbrushed.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/matte-airbrushed.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['matte-airbrushed'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/matte-airbrushed-boxer",
+      "source_copy_status_unverified": "no-description",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-combat",
+      "name": "Boxer Combat",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-combat-red.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-combat-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/boxer-combat-orange.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-combat-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-combat-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-combat-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-combat.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-combat.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-combat",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-fist",
+      "name": "Boxer Fist · 3 Player",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "MULTIPLAYER BOXER MACHINE\n\nBoxer Fist is our new exciting multiplayer boxing arcade machine, built to entertain and challenge groups in any arcade, FEC, or entertainment venue. With its eye-catching LED lighting, modern decals, and robust construction, this machine invites competitive fun and repeat play.",
+      "applications": null,
+      "features": [
+        "Multiplayer Ready: Supports group challenges and head-to-head punching competitions. Perfect for friends, events, and team contests.",
+        "Full LED Integration: Illuminated edges, buttons, and scoring panel to maximize visibility and energy.",
+        "Heavy-Duty Frame: Reinforced body and impact-resistant build for long-term durability.",
+        "Operator-Friendly: Reliable electronics, easy maintenance access, and cashless-ready setup."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-fist-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-fist-yellow.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-fist-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-fist-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-fist-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/boxer-fist-orange.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "121 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-fist.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-fist.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-fist'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-fist-3-player",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-ring",
+      "name": "Boxer Ring",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+      "applications": null,
+      "features": [
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-ring-red.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-ring-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-ring-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-ring-yellow.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-ring-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "127 kg / 275 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-ring.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-ring.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-ring'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-ring",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-combat-kids",
+      "name": "Boxer Combat Kids",
+      "category": "kids",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "One of the latest additions to our lineup, Kids Combat offers an exciting, safe boxing experience for younger players. With its bold design and enhanced features, it’s ideal for arcades and family-friendly venues.",
+      "applications": null,
+      "features": [
+        "Brand new Design: Fresh, engaging look tailored for kids.",
+        "Safe and fun Gameplay: Perfect for younger players to safely enjoy the excitement of boxing.",
+        "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+        "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/boxer-combat-kids-orange.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-combat-kids-yellow.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-combat-kids-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-combat-kids-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-combat-kids-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-combat-kids-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "182 Cm / 72″",
+        "Width": "70 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "120 kg / 265 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-combat-kids.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-combat-kids.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-combat-kids'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-combat-kids",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-kids",
+      "name": "Boxer Kids",
+      "category": "kids",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "This machine is designed specifically for younger players, providing a fun and safe way to enjoy the excitement of a boxing game. With bright colors and engaging gameplay, it’s perfect for family-oriented locations.",
+      "applications": null,
+      "features": [
+        "Kid-Friendly Design: A smaller size and layout specifically made for children to enjoy.",
+        "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency.",
+        "Adjustable Play Mode: Set the game to different levels or free play mode to match the age and skill level of the players."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "artwork-01-white",
+          "name": "Artwork 01 · White",
+          "image": "/assets/products/boxer-kids-artwork-01-white.webp"
+        },
+        {
+          "id": "artwork-01-yellow",
+          "name": "Artwork 01 · Yellow",
+          "image": "/assets/products/boxer-kids-artwork-01-yellow.webp"
+        },
+        {
+          "id": "artwork-01-blue",
+          "name": "Artwork 01 · Blue",
+          "image": "/assets/products/boxer-kids-artwork-01-blue.webp"
+        },
+        {
+          "id": "artwork-01-red",
+          "name": "Artwork 01 · Red",
+          "image": "/assets/products/boxer-kids-artwork-01-red.webp"
+        },
+        {
+          "id": "artwork-01-orange",
+          "name": "Artwork 01 · Orange",
+          "image": "/assets/products/boxer-kids-artwork-01-orange.webp"
+        },
+        {
+          "id": "artwork-01-black",
+          "name": "Artwork 01 · Black",
+          "image": "/assets/products/boxer-kids-artwork-01-black.webp"
+        },
+        {
+          "id": "artwork-02-white",
+          "name": "Artwork 02 · White",
+          "image": "/assets/products/boxer-kids-artwork-02-white.webp"
+        },
+        {
+          "id": "artwork-02-yellow",
+          "name": "Artwork 02 · Yellow",
+          "image": "/assets/products/boxer-kids-artwork-02-yellow.webp"
+        },
+        {
+          "id": "artwork-02-orange",
+          "name": "Artwork 02 · Orange",
+          "image": "/assets/products/boxer-kids-artwork-02-orange.webp"
+        },
+        {
+          "id": "artwork-02-black",
+          "name": "Artwork 02 · Black",
+          "image": "/assets/products/boxer-kids-artwork-02-black.webp"
+        },
+        {
+          "id": "artwork-02-red",
+          "name": "Artwork 02 · Red",
+          "image": "/assets/products/boxer-kids-artwork-02-red.webp"
+        },
+        {
+          "id": "artwork-02-blue",
+          "name": "Artwork 02 · Blue",
+          "image": "/assets/products/boxer-kids-artwork-02-blue.webp"
+        },
+        {
+          "id": "artwork-03-yellow",
+          "name": "Artwork 03 · Yellow",
+          "image": "/assets/products/boxer-kids-artwork-03-yellow.webp"
+        },
+        {
+          "id": "artwork-03-white",
+          "name": "Artwork 03 · White",
+          "image": "/assets/products/boxer-kids-artwork-03-white.webp"
+        },
+        {
+          "id": "artwork-03-orange",
+          "name": "Artwork 03 · Orange",
+          "image": "/assets/products/boxer-kids-artwork-03-orange.webp"
+        },
+        {
+          "id": "artwork-03-red",
+          "name": "Artwork 03 · Red",
+          "image": "/assets/products/boxer-kids-artwork-03-red.webp"
+        },
+        {
+          "id": "artwork-03-black",
+          "name": "Artwork 03 · Black",
+          "image": "/assets/products/boxer-kids-artwork-03-black.webp"
+        },
+        {
+          "id": "artwork-03-blue",
+          "name": "Artwork 03 · Blue",
+          "image": "/assets/products/boxer-kids-artwork-03-blue.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "182 Cm / 72″",
+        "Width": "70 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "100 kg / 221 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-kids.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-kids.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-kids'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-kids",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-flash-gift",
+      "name": "Boxer Flash Gift",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "The Boxer Flash Gift offers an exciting twist by combining the classic boxing challenge with a rewarding gift feature. With bright LED lights and engaging gameplay.",
+      "applications": null,
+      "features": [
+        "Strength Challenge + Prizes: Players punch the bag, score high, and win special prizes.",
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Flexible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-flash-gift-black.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/boxer-flash-gift-orange.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-flash-gift-blue.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-flash-gift-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-flash-gift-yellow.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-flash-gift-red.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "140 kg / 309 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-flash-gift.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-flash-gift.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash-gift'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-flash-gift",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "hammer",
+      "name": "Hammer",
+      "category": "strength",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "It is a classic strength-testing game that challenges players to hit as hard as they can. Perfect for amusement parks, arcades, and family entertainment centers (FECs), this timeless game is fun, competitive, and draws in crowds with its vibrant LED lights.",
+      "applications": null,
+      "features": [
+        "Power Strike Challenge: Swing the hammer and see how high you can score.",
+        "Bright LED Lights: Eye-catching lights that enhance the excitement and attract attention.",
+        "Ticket Option: Can be set to reward tickets, making it ideal for redemption venues.",
+        "Adjustable Difficulty & Free Play Mode: Suited for players of all ages and skill levels.",
+        "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/hammer-black.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/hammer-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/hammer-blue.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/hammer-white.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/hammer-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "225 Cm / 89″",
+        "Width": "95 cm / 38″",
+        "Length": "140 cm / 56″",
+        "Weight": "125 kg / 276 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/hammer.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/hammer.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/hammer",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "kicker",
+      "name": "Kicker",
+      "category": "strength",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "This machine offers a thrilling and dynamic game designed for players who want to test their kicking strength and accuracy Perfect for both kids and adults, it’s a great addition to arcades, sports bars, and family entertainment centers.",
+      "applications": null,
+      "features": [
+        "Kick Challenge: Players kick the ball to score points, testing their power and precision.",
+        "Adjustable Difficulty & Free Play Mode: Customizable for different ages and skill levels.",
+        "Flexible Payment Options: Supports multiple payment types, including bills, coins, cards, and tokens, making it adaptable to any currency."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/kicker-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/kicker-white.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/kicker-orange.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/kicker-blue.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/kicker-red.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/kicker-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "170 cm / 67″",
+        "Width": "133 cm / 52″",
+        "Length": "66 cm / 26″",
+        "Weight": "100 kg / 221 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/kicker.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/kicker.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kicker'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/kicker",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-flash",
+      "name": "Boxer Flash",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-flash-black-clean-v18.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-flash-red.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-flash-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-flash-yellow.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-flash-white.webp"
+        }
+      ],
+      "technical_specifications": null,
+      "official_url": "https://www.progamespoland.com/en/products/boxer-flash.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-flash.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-flash'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": "no-description",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "boxer-gift",
+      "name": "Boxer Gift",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "The Boxer Gift offers an exciting twist by combining the classic boxing challenge with a rewarding gift feature. With bright LED lights and engaging gameplay.",
+      "applications": null,
+      "features": [
+        "Strength Challenge + Prizes: Players punch the bag, score high, and win special prizes.",
+        "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+        "Flexible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens suitable for any currency.",
+        "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Nayax device.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders).",
+        "Silent mode (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-gift-black.webp"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-gift-white.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-gift-red.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/boxer-gift-orange.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-gift-blue.webp"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-gift-yellow.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Height": "219 cm / 86″",
+        "Width": "72 cm / 28″",
+        "Length": "115 cm / 45″",
+        "Weight": "140 kg / 309 lb"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/boxer-gift.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/boxer-gift.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['boxer-gift'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/boxer-gift",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "bouncy-castles-xs",
+      "name": "Bouncy Castles · XS",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "Small inflatable castles for children\n\nThe Mini XS inflatables are a fantastic attraction for the youngest guests at your event! These colourful inflatables instantly catch children’s attention and quickly become their favourite place to play.\n\nKids know they can enjoy unlimited fun inside. In the compact bouncy castle, they can jump, play, and burn off energy for hours. Some of our children’s inflatables also come with built-in slides.\n\nOur small bouncy castles are always a big hit with children!",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "dino-with-slide",
+          "name": "Dino with Slide",
+          "image": "/assets/products/bouncy-castles-xs-dino-with-slide.webp"
+        },
+        {
+          "id": "sea-with-slide",
+          "name": "Sea with Slide",
+          "image": "/assets/products/bouncy-castles-xs-sea-with-slide.webp"
+        },
+        {
+          "id": "pirates-with-slide",
+          "name": "Pirates with Slide",
+          "image": "/assets/products/bouncy-castles-xs-pirates-with-slide.webp"
+        },
+        {
+          "id": "sea-with-roof",
+          "name": "Sea with Roof",
+          "image": "/assets/products/bouncy-castles-xs-sea-with-roof.webp"
+        },
+        {
+          "id": "princess-with-roof",
+          "name": "Princess with Roof",
+          "image": "/assets/products/bouncy-castles-xs-princess-with-roof.webp"
+        },
+        {
+          "id": "pirates-with-roof",
+          "name": "Pirates with Roof",
+          "image": "/assets/products/bouncy-castles-xs-pirates-with-roof.webp"
+        },
+        {
+          "id": "jungle-with-roof",
+          "name": "Jungle with Roof",
+          "image": "/assets/products/bouncy-castles-xs-jungle-with-roof.webp"
+        },
+        {
+          "id": "princess-with-slide",
+          "name": "Princess with Slide",
+          "image": "/assets/products/bouncy-castles-xs-princess-with-slide.webp"
+        },
+        {
+          "id": "circus-with-slide",
+          "name": "Circus with Slide",
+          "image": "/assets/products/bouncy-castles-xs-circus-with-slide.webp"
+        },
+        {
+          "id": "jungle-with-slide",
+          "name": "Jungle with Slide",
+          "image": "/assets/products/bouncy-castles-xs-jungle-with-slide.webp"
+        }
+      ],
+      "technical_specifications": null,
+      "official_url": "https://www.progamespoland.com/en/products/bouncy-castles-xs.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/bouncy-castles-xs.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['bouncy-castles-xs'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/bouncy-castles-size-xs",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "air-hockey-golden",
+      "name": "Air Hockey Golden",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "The Golden air hockey is a new version of our bestseller indoor airhoockey.\n\nGolden table boasts a refined and elegant design that blends seamlessly with any interior. Its subtle color palette, paired with tasteful golden accents, gives it a timeless appeal that never goes out of style. This table is not only a source of entertainment but also a sophisticated addition to any game room or leisure space.\n\nSolid construction proven by over 20 years of experience. Modern software allowing you to easily personalize different settings.\n\nPlease note:\n\nThe lamp shown is an optional accessory - it is not sold as standard equipment.",
+      "applications": null,
+      "features": [
+        "stainless perforated metal playfield",
+        "system of lighting LED in playfield",
+        "system of lighting LED in legs",
+        "digital score display in standard/LED lamp optional",
+        "polycarbonate barrier in the middle of playfield",
+        "air pump 260 W",
+        "power supply 230v/50Hz",
+        "power consumption 82 W (demo mode), 260 W (game mode)",
+        "accessories included: 4 mallets, 6 pucks, 100 tokens (if programmed for tokens)",
+        "Warranty: 12 months for enterprises, 24 months for consumers"
+      ],
+      "options": [
+        "optional - ticket dispenser, bill acceptor, card reader"
+      ],
+      "colors": [
+        {
+          "id": "golden",
+          "name": "Golden",
+          "image": "/assets/products/air-hockey-golden-golden.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Product: LxWxH // Weight": "8ft: 238x128x85 cm // 220 kg",
+        "Package: LxWxH // Weight": "8ft: 243x138x54 cm // 220 kg"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/air-hockey-golden.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/air-hockey-golden.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-golden'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/air-hockey",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "air-hockey-arctic",
+      "name": "Air Hockey Arctic",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "AIR HOCKEY ARCTIC is a 100% waterproof device that can be used outdoors all year round, just like indoors. It is one of the most popular machines. Solid construction proven by over 20 years of experience. Modern software allows you to easily personalize different settings.",
+      "applications": null,
+      "features": [
+        "COMESTERO RM5 or NRI electronic coin acceptor",
+        "polycarbonate perforated playfield",
+        "polycarbonate top frame around the playfield with a lighting system",
+        "polycarbonate barrier on both sides and in the center of a playfield",
+        "LED lightning system in the playfield",
+        "LED lightning system in the legs",
+        "digital score display for each player",
+        "air pump 260 W",
+        "standard power supply 230v/50Hz",
+        "power consumption 60 W (demo mode), 390 W (game mode)",
+        "accessories included: 4 mallets, 6 pucks, 100 tokens (if token-programmed)",
+        "warranty: 12 months for enterprises, 24 months for consumers"
+      ],
+      "options": [
+        "optional - ticket dispenser, bill acceptor, card reader"
+      ],
+      "colors": [
+        {
+          "id": "arctic",
+          "name": "Arctic",
+          "image": "/assets/products/air-hockey-arctic-arctic.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Product: LxWxH // Weight": "8ft: 238x128x85 cm // 220 kg",
+        "Package: LxWxH // Weight": "8ft: 243x138x54 cm // 220 kg"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/air-hockey-arctic.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/air-hockey-arctic.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-arctic'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/air-hockey",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "air-hockey-matrix",
+      "name": "Air Hockey Matrix",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "Check out our brand new airhockey Matrix! LED display isn't only there to look amazing - it also communicates game updates and events, showing 'SCORE!' when a goal is scored, and a commiserating 'OH NO!' when you concede a goal. Countdown timers at each end keep you informed of time left to play, and the whole display flexes, colour-shifts and pulsates in perfect sync with your game. Customisable operator settings allow you to configure the table exactly as you want it and the 260w air pump creates a cushion of air across the playfield for the fastest speeds.\n\nAir hockey has been around for a long time, with only rarely a major paradigm shift in design or functionality. Now the Matrix knocks the sector out of the park with its integrated LED displays and systems. If you're looking for a truly spectacular centrepiece for your venue - or even for your private games room - then take the red pill and enter the Matrix now!",
+      "applications": null,
+      "features": [
+        "Futuristic commercial air hockey table.",
+        "Suitable for amusement arcades, commercial venues & homes.",
+        "Unique LED matrix light display incorporating game commentary.",
+        "LED score displays and message updates.",
+        "Sound system with in-game audio.",
+        "Electronic coin acceptor included - freeplay game as an option.",
+        "Includes four pushers and six pucks.",
+        "Warranty: 12 months for enterprises, 24 months for consumers"
+      ],
+      "options": null,
+      "colors": [
+        {
+          "id": "matrix",
+          "name": "Matrix",
+          "image": "/assets/products/air-hockey-matrix-matrix.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Product: LxWxH // Weight": "8ft: 240x130x85 cm // 240 kg",
+        "Package: LxWxH // Weight": "8ft: 245x140x55 cm // 250 kg"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/air-hockey-matrix.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/air-hockey-matrix.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['air-hockey-matrix'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/air-hockey",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "basketball-compact",
+      "name": "Basketball Compact",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "New basketball machine from WIK, compact size allows pass through 80cm wide doorways. Customized height 248-310cm.",
+      "applications": null,
+      "features": [
+        "electronic coin acceptor COMESTERO RM5",
+        "construction made of metal and laminated polycarbonate",
+        "digital score, credit and record display",
+        "linking option",
+        "moving basket",
+        "5 balls included",
+        "easy moving system (6 wheels with blockade system)",
+        "easy and fast assembly",
+        "power supply 230V/50Hz",
+        "power consumption: 105 W (demo mode), 180 W (game mode)",
+        "warranty: 12 months"
+      ],
+      "options": [
+        "optional: ticket dispenser, bill acceptor, card reader"
+      ],
+      "colors": [
+        {
+          "id": "compact",
+          "name": "Compact",
+          "image": "/assets/products/basketball-compact-compact.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Product: LxWxH // Weight": "243x109x248-310 cm // 350 kg",
+        "Package: LxWxH // Weight": "88x115x194 cm // 370 kg"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/basketball-compact.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/basketball-compact.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball-compact'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/basketball",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "basketball",
+      "name": "Basketball",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "Our weatherproof basketball arcade machines can be used outdoor all year round. The game has four levels of difficulty and comes with a set of five balls. Depending on the mode selected, the basket can be movable.\n\nIt is very easy to assemble and transport.\n\nBasketball is a game for all ages with both kids and adults loving this game. Players can play in a group and compete for the best score (linking option). It's a high quality long lasting machine. WIK is a leader in making the basketball arcade machines with years of experience. This is a crowd pleaser that never ceases to provide fun.",
+      "applications": null,
+      "features": [
+        "electronic coin acceptor COMESTERO RM5",
+        "construction made of metal and laminated polycarbonate",
+        "digital score, credit and record display",
+        "linking option",
+        "moving basket",
+        "5 balls included",
+        "easy moving system (6 wheels with blockade system)",
+        "east and fast assembly",
+        "power supply 230V/50Hz",
+        "power conumption: 105 W (demo mode), 180 W (game mode)",
+        "warranty: 12 months"
+      ],
+      "options": [
+        "optional: ticket dispenser, bill acceptor, card reader"
+      ],
+      "colors": [
+        {
+          "id": "standard",
+          "name": "Standard",
+          "image": "/assets/products/basketball-standard.webp"
+        }
+      ],
+      "technical_specifications": {
+        "Product: LxWxH // Weight": "246x100x250/270 cm // 290 kg",
+        "Package: LxWxH // Weight": "115x134x160 cm // 290 kg"
+      },
+      "official_url": "https://www.progamespoland.com/en/products/basketball.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/basketball.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['basketball'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/basketball",
+      "source_copy_status_unverified": "matched",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "kids-basketball",
+      "name": "Kids Basketball",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "kids",
+          "name": "Kids",
+          "image": "/assets/products/kids-basketball-kids.webp"
+        }
+      ],
+      "technical_specifications": null,
+      "official_url": "https://www.progamespoland.com/en/products/kids-basketball.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/kids-basketball.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kids-basketball'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/basketball",
+      "source_copy_status_unverified": "no-description",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "kiddie-ride",
+      "name": "Kiddie Ride",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "current-range",
+          "name": "Current range",
+          "image": "/assets/products/kiddie-ride-current-range.webp"
+        }
+      ],
+      "technical_specifications": null,
+      "official_url": "https://www.progamespoland.com/en/products/kiddie-ride.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/kiddie-ride.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['kiddie-ride'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": "no-description",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "cyberdart",
+      "name": "Cyberdart",
+      "category": "distributed",
+      "relationship": "distributed",
+      "manufacturer": null,
+      "short_description": "Contact Pro Games for the product description, technical specifications and available equipment for this model.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "current-model",
+          "name": "Current model",
+          "image": "/assets/products/cyberdart-current-model.webp"
+        }
+      ],
+      "technical_specifications": null,
+      "official_url": "https://www.progamespoland.com/en/products/cyberdart.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/cyberdart.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['cyberdart'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": "no-description",
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "hammer-2026",
+      "name": "Hammer 2",
+      "category": "strength",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in the single multicolour finish shown. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "multicolour",
+          "name": "Multicolour",
+          "image": "/assets/products/hammer-2026-multicolour.jpg"
+        }
+      ],
+      "technical_specifications": {
+        "Dimensions": null,
+        "Weight": null,
+        "Power supply": null,
+        "Power consumption": null
+      },
+      "official_url": "https://www.progamespoland.com/en/products/hammer-2026.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/hammer-2026.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['hammer-2026'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": null,
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "win-a-toy",
+      "name": "Boxer Toy",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Boxer Toy brings a prize-themed presentation to a boxing machine. The illuminated cabinet combines a punch target, score display and a visible toy compartment to create an eye-catching attraction for entertainment venues.\n\nChoose from the eight cabinet colours shown and select the equipment you would like us to quote. Prize operation, payment setup and final technical specifications are confirmed individually by our sales team.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "pink",
+          "name": "Pink",
+          "image": "/assets/products/boxer-toy-v36-pink.jpg"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/boxer-toy-v36-black.jpg"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/boxer-toy-v36-red.jpg"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/boxer-toy-v36-blue.jpg"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/boxer-toy-v36-yellow.jpg"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/boxer-toy-v36-green.jpg"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/boxer-toy-v36-orange.jpg"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/boxer-toy-v36-white.jpg"
+        }
+      ],
+      "technical_specifications": {
+        "Dimensions": null,
+        "Weight": null,
+        "Power supply": null,
+        "Power consumption": null
+      },
+      "official_url": "https://www.progamespoland.com/en/products/win-a-toy.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/win-a-toy.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['win-a-toy'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": null,
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "leader-rank",
+      "name": "Boxer TV",
+      "category": "boxer",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Boxer TV introduces a bold 2026 cabinet design with a prominent front display, illuminated accents and a raised boxing target. Its competition-inspired artwork makes it a distinctive addition to an arcade or entertainment venue.\n\nSelect one of the seven available cabinet colours and build your enquiry with the optional equipment below. Game functions, display specification and final technical details will be confirmed in your quotation.",
+      "applications": null,
+      "features": null,
+      "options": null,
+      "colors": [
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/leader-rank-blue.jpg"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/leader-rank-black.jpg"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/leader-rank-red.jpg"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/leader-rank-yellow.jpg"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/leader-rank-green.jpg"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/leader-rank-orange.jpg"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/leader-rank-white.jpg"
+        }
+      ],
+      "technical_specifications": {
+        "Dimensions": null,
+        "Weight": null,
+        "Power supply": null,
+        "Power consumption": null
+      },
+      "official_url": "https://www.progamespoland.com/en/products/leader-rank.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/leader-rank.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['leader-rank'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": null,
+      "availability": null,
+      "price": null,
+      "certifications": null
+    },
+    {
+      "id": "double-hit-gift-2",
+      "name": "Double Hit Gift 2",
+      "category": "combo",
+      "relationship": "manufacturer_site_catalogue",
+      "manufacturer": null,
+      "short_description": "Double Hit Gift 2 combines boxing, kicking and a prize challenge in one machine. Bright LED lighting and three ways to play make it an engaging attraction for family entertainment venues.\n\nTo play for a prize, press the button to draw the target digits. The player then aims to match the drawn digits with their score to win a prize.",
+      "applications": null,
+      "features": [
+        "Bright LED Lights: Colorful lights add to the fun and attraction."
+      ],
+      "options": [
+        "Bill acceptor.",
+        "Ticket dispenser.",
+        "Custom sticker and branding (Advance orders)."
+      ],
+      "colors": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/double-hit-gift-2-yellow.jpg"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/double-hit-gift-2-white.jpg"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/double-hit-gift-2-blue.jpg"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/double-hit-gift-2-red.jpg"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/double-hit-gift-2-green.jpg"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/double-hit-gift-2-orange.jpg"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/double-hit-gift-2-black.jpg"
+        }
+      ],
+      "technical_specifications": {
+        "Dimensions": null,
+        "Weight": null
+      },
+      "official_url": "https://www.progamespoland.com/en/products/double-hit-gift-2.html",
+      "polish_url": "https://www.progamespoland.com/pl/produkty/double-hit-gift-2.html",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "confidence": "high_for_source_transcription_not_independent_product_certification",
+      "evidence": {
+        "name": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].name"
+        },
+        "category": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].category"
+        },
+        "short_description": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].desc"
+        },
+        "features": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].features"
+        },
+        "options": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].options"
+        },
+        "colors": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].variants"
+        },
+        "technical_specifications": {
+          "source_id": "official-products-js",
+          "locator": "window.PRODUCTS['double-hit-gift-2'].spec"
+        }
+      },
+      "legacy_source_url_unverified": "https://www.progamespoland.com/",
+      "source_copy_status_unverified": null,
+      "availability": null,
+      "price": null,
+      "certifications": null
+    }
+  ]
+}

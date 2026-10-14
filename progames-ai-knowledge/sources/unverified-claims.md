@@ -1,0 +1,11 @@
+# Braki i twierdzenia wymagające potwierdzenia
+- Wszystkie opisy są zweryfikowaną transkrypcją aktualnej publikacji firmowej, nie niezależnym potwierdzeniem parametrów. sourceCopyStatus w kodzie jest deklaracją autora i nie stanowi dowodu.
+- Ceny, bieżące stany, terminy realizacji, certyfikaty, warunki gwarancji, rzeczywisty zwrot z inwestycji: brak danych.
+- Brak pola producenta konkretnego modelu; category distributed wyklucza automatyczne przypisywanie produkcji ProGames.
+- Globalna lista opcji zapytania nie dowodzi kompatybilności opcji ze wszystkimi modelami.
+- Legacy source URLs nie zostały sprawdzone jako aktualne strony produktowe; nie używać jako canonical.
+- Angielska nazwa i warianty pobrane z products.js; poprawność tłumaczeń PL/ES/DE/FR nie została zatwierdzona.
+- Nie potwierdzono zgodności kolorów zdjęć z etykietami wizualnie.
+- UPlay potwierdza relację wyłącznego dystrybutora w Amerykach (EXT-03, EXT-04), a IAAPA identyfikuje ProGames jako producenta (EXT-01, EXT-02). To publiczne potwierdzenia źródłowe, nie audyt umów. Nie potwierdzono wszystkich oddziałów, danych rejestrowych i wszystkich wydarzeń. Zewnętrzne identyfikatory EXT-* należą do sources/external-register.json, nie source-register.json.
+- Pole applications pozostaje null; zastosowań nie wywnioskowano automatycznie z reklamowego opisu.
+- Daty i statusy dotyczą kontroli źródła 2026-10-13, nie dat produkcji ani ostatniej aktualizacji producenta.

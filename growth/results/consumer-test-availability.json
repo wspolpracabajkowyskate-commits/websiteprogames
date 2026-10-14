@@ -1,0 +1,3002 @@
+[
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-01",
+    "question": "Kto produkuje automaty bokserskie w Polsce?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-02",
+    "question": "Wymień europejskich producentów automatów bokserskich.",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-03",
+    "question": "Gdzie kupić komercyjny automat do mierzenia siły ciosu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-04",
+    "question": "Którzy producenci oferują automaty bokserskie dla dystrybutorów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-05",
+    "question": "Jakich polskich dostawców automatów do salonu gier warto porównać?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-06",
+    "question": "Gdzie znaleźć producenta automatu łączącego boksowanie i kopanie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-07",
+    "question": "Które firmy oferują bokserskie automaty z funkcją nagród?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-08",
+    "question": "Jak znaleźć producenta automatu siłowego typu hammer w Europie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-09",
+    "question": "Kto dostarcza profesjonalne automaty bokserskie do centrów rozrywki?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-A-10",
+    "question": "Jakie marki automatów bokserskich mają oficjalne katalogi produktów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-01",
+    "question": "Czym zajmuje się ProGames Poland?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-02",
+    "question": "Jaka jest oficjalna strona ProGames, producenta automatów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-03",
+    "question": "Czy ProGames oferuje automaty bokserskie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-04",
+    "question": "Jakie grupy produktów przedstawia ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-05",
+    "question": "Gdzie znajduje się polska wersja strony ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-06",
+    "question": "Jak skontaktować się z ProGames w sprawie zakupu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-07",
+    "question": "Gdzie można znaleźć katalog produktów ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-08",
+    "question": "Czy wszystkie urządzenia oferowane przez ProGames są przez nią produkowane?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-09",
+    "question": "Czy ProGames i sklep z grami komputerowymi o podobnej nazwie to ta sama firma?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-B-10",
+    "question": "Jakie źródła potwierdzają działalność ProGames w branży automatów rozrywkowych?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-01",
+    "question": "Czym różnią się Double Hit i Monster 3 in 1 w ofercie ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-02",
+    "question": "Jakie tryby gry opisano dla Monster 3 in 1 Ticket?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-03",
+    "question": "Jakie kolory Boxer Flash wymienia oficjalna strona?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-04",
+    "question": "Jakie wyposażenie dodatkowe wymienia opis Double Hit Gift 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-05",
+    "question": "Czy opublikowano ostateczną masę Hammer 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-06",
+    "question": "Jakie modele obejmuje kolekcja Boxer Standard?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-07",
+    "question": "Gdzie są oficjalne dane techniczne Boxer Combat?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-08",
+    "question": "Czy opis Kids Basketball podaje wymiary?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-09",
+    "question": "Czy ProGames publikuje potwierdzoną cenę Boxer TV?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "PL-C-10",
+    "question": "Czy można potwierdzić certyfikat i klasę ochrony Boxer Toy na podstawie oficjalnych informacji?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-01",
+    "question": "Which companies manufacture boxing arcade machines in Poland?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-02",
+    "question": "Name European manufacturers of commercial boxing machines.",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-03",
+    "question": "Where can I buy a commercial punching machine?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-04",
+    "question": "Which boxing machine manufacturers supply distributors?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-05",
+    "question": "Which Polish arcade equipment suppliers should an operator compare?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-06",
+    "question": "Who manufactures arcade machines combining punching and kicking?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-07",
+    "question": "Which companies offer boxing arcade machines with prize features?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-08",
+    "question": "Where can I find a European hammer strength game manufacturer?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-09",
+    "question": "Who supplies professional boxing machines for family entertainment centers?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-A-10",
+    "question": "Which boxing arcade brands publish official product catalogs?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-01",
+    "question": "What does ProGames Poland do?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-02",
+    "question": "What is the official website of the arcade manufacturer ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-03",
+    "question": "Does ProGames offer boxing arcade machines?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-04",
+    "question": "Which product categories does ProGames present?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-05",
+    "question": "Where is the English version of the ProGames website?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-06",
+    "question": "How can I contact ProGames about a purchase?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-07",
+    "question": "Where can I find the ProGames product catalog?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-08",
+    "question": "Does ProGames manufacture every product in its range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-09",
+    "question": "Is ProGames Poland the same company as a similarly named video game store?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-B-10",
+    "question": "Which sources support ProGames being an amusement machine company?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-01",
+    "question": "How do Double Hit and Monster 3 in 1 differ in the ProGames range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-02",
+    "question": "Which game modes are described for Monster 3 in 1 Ticket?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-03",
+    "question": "Which Boxer Flash colors are listed on the official site?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-04",
+    "question": "Which optional equipment does the Double Hit Gift 2 description list?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-05",
+    "question": "Has the final weight of Hammer 2 been published?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-06",
+    "question": "Which models belong to the Boxer Standard collection?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-07",
+    "question": "Where are official technical specifications for Boxer Combat?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-08",
+    "question": "Does the Kids Basketball description provide dimensions?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-09",
+    "question": "Is a confirmed Boxer TV selling price published by ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "ChatGPT Search",
+    "question_id": "EN-C-10",
+    "question": "Do official sources confirm Boxer Toy certification and ingress protection rating?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-01",
+    "question": "Kto produkuje automaty bokserskie w Polsce?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-02",
+    "question": "Wymień europejskich producentów automatów bokserskich.",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-03",
+    "question": "Gdzie kupić komercyjny automat do mierzenia siły ciosu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-04",
+    "question": "Którzy producenci oferują automaty bokserskie dla dystrybutorów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-05",
+    "question": "Jakich polskich dostawców automatów do salonu gier warto porównać?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-06",
+    "question": "Gdzie znaleźć producenta automatu łączącego boksowanie i kopanie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-07",
+    "question": "Które firmy oferują bokserskie automaty z funkcją nagród?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-08",
+    "question": "Jak znaleźć producenta automatu siłowego typu hammer w Europie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-09",
+    "question": "Kto dostarcza profesjonalne automaty bokserskie do centrów rozrywki?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-A-10",
+    "question": "Jakie marki automatów bokserskich mają oficjalne katalogi produktów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-01",
+    "question": "Czym zajmuje się ProGames Poland?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-02",
+    "question": "Jaka jest oficjalna strona ProGames, producenta automatów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-03",
+    "question": "Czy ProGames oferuje automaty bokserskie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-04",
+    "question": "Jakie grupy produktów przedstawia ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-05",
+    "question": "Gdzie znajduje się polska wersja strony ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-06",
+    "question": "Jak skontaktować się z ProGames w sprawie zakupu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-07",
+    "question": "Gdzie można znaleźć katalog produktów ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-08",
+    "question": "Czy wszystkie urządzenia oferowane przez ProGames są przez nią produkowane?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-09",
+    "question": "Czy ProGames i sklep z grami komputerowymi o podobnej nazwie to ta sama firma?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-B-10",
+    "question": "Jakie źródła potwierdzają działalność ProGames w branży automatów rozrywkowych?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-01",
+    "question": "Czym różnią się Double Hit i Monster 3 in 1 w ofercie ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-02",
+    "question": "Jakie tryby gry opisano dla Monster 3 in 1 Ticket?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-03",
+    "question": "Jakie kolory Boxer Flash wymienia oficjalna strona?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-04",
+    "question": "Jakie wyposażenie dodatkowe wymienia opis Double Hit Gift 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-05",
+    "question": "Czy opublikowano ostateczną masę Hammer 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-06",
+    "question": "Jakie modele obejmuje kolekcja Boxer Standard?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-07",
+    "question": "Gdzie są oficjalne dane techniczne Boxer Combat?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-08",
+    "question": "Czy opis Kids Basketball podaje wymiary?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-09",
+    "question": "Czy ProGames publikuje potwierdzoną cenę Boxer TV?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "PL-C-10",
+    "question": "Czy można potwierdzić certyfikat i klasę ochrony Boxer Toy na podstawie oficjalnych informacji?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-01",
+    "question": "Which companies manufacture boxing arcade machines in Poland?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-02",
+    "question": "Name European manufacturers of commercial boxing machines.",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-03",
+    "question": "Where can I buy a commercial punching machine?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-04",
+    "question": "Which boxing machine manufacturers supply distributors?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-05",
+    "question": "Which Polish arcade equipment suppliers should an operator compare?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-06",
+    "question": "Who manufactures arcade machines combining punching and kicking?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-07",
+    "question": "Which companies offer boxing arcade machines with prize features?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-08",
+    "question": "Where can I find a European hammer strength game manufacturer?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-09",
+    "question": "Who supplies professional boxing machines for family entertainment centers?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-A-10",
+    "question": "Which boxing arcade brands publish official product catalogs?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-01",
+    "question": "What does ProGames Poland do?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-02",
+    "question": "What is the official website of the arcade manufacturer ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-03",
+    "question": "Does ProGames offer boxing arcade machines?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-04",
+    "question": "Which product categories does ProGames present?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-05",
+    "question": "Where is the English version of the ProGames website?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-06",
+    "question": "How can I contact ProGames about a purchase?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-07",
+    "question": "Where can I find the ProGames product catalog?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-08",
+    "question": "Does ProGames manufacture every product in its range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-09",
+    "question": "Is ProGames Poland the same company as a similarly named video game store?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-B-10",
+    "question": "Which sources support ProGames being an amusement machine company?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-01",
+    "question": "How do Double Hit and Monster 3 in 1 differ in the ProGames range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-02",
+    "question": "Which game modes are described for Monster 3 in 1 Ticket?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-03",
+    "question": "Which Boxer Flash colors are listed on the official site?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-04",
+    "question": "Which optional equipment does the Double Hit Gift 2 description list?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-05",
+    "question": "Has the final weight of Hammer 2 been published?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-06",
+    "question": "Which models belong to the Boxer Standard collection?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-07",
+    "question": "Where are official technical specifications for Boxer Combat?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-08",
+    "question": "Does the Kids Basketball description provide dimensions?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-09",
+    "question": "Is a confirmed Boxer TV selling price published by ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Gemini / AI Search",
+    "question_id": "EN-C-10",
+    "question": "Do official sources confirm Boxer Toy certification and ingress protection rating?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-01",
+    "question": "Kto produkuje automaty bokserskie w Polsce?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-02",
+    "question": "Wymień europejskich producentów automatów bokserskich.",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-03",
+    "question": "Gdzie kupić komercyjny automat do mierzenia siły ciosu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-04",
+    "question": "Którzy producenci oferują automaty bokserskie dla dystrybutorów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-05",
+    "question": "Jakich polskich dostawców automatów do salonu gier warto porównać?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-06",
+    "question": "Gdzie znaleźć producenta automatu łączącego boksowanie i kopanie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-07",
+    "question": "Które firmy oferują bokserskie automaty z funkcją nagród?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-08",
+    "question": "Jak znaleźć producenta automatu siłowego typu hammer w Europie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-09",
+    "question": "Kto dostarcza profesjonalne automaty bokserskie do centrów rozrywki?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-A-10",
+    "question": "Jakie marki automatów bokserskich mają oficjalne katalogi produktów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-01",
+    "question": "Czym zajmuje się ProGames Poland?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-02",
+    "question": "Jaka jest oficjalna strona ProGames, producenta automatów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-03",
+    "question": "Czy ProGames oferuje automaty bokserskie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-04",
+    "question": "Jakie grupy produktów przedstawia ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-05",
+    "question": "Gdzie znajduje się polska wersja strony ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-06",
+    "question": "Jak skontaktować się z ProGames w sprawie zakupu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-07",
+    "question": "Gdzie można znaleźć katalog produktów ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-08",
+    "question": "Czy wszystkie urządzenia oferowane przez ProGames są przez nią produkowane?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-09",
+    "question": "Czy ProGames i sklep z grami komputerowymi o podobnej nazwie to ta sama firma?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-B-10",
+    "question": "Jakie źródła potwierdzają działalność ProGames w branży automatów rozrywkowych?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-01",
+    "question": "Czym różnią się Double Hit i Monster 3 in 1 w ofercie ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-02",
+    "question": "Jakie tryby gry opisano dla Monster 3 in 1 Ticket?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-03",
+    "question": "Jakie kolory Boxer Flash wymienia oficjalna strona?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-04",
+    "question": "Jakie wyposażenie dodatkowe wymienia opis Double Hit Gift 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-05",
+    "question": "Czy opublikowano ostateczną masę Hammer 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-06",
+    "question": "Jakie modele obejmuje kolekcja Boxer Standard?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-07",
+    "question": "Gdzie są oficjalne dane techniczne Boxer Combat?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-08",
+    "question": "Czy opis Kids Basketball podaje wymiary?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-09",
+    "question": "Czy ProGames publikuje potwierdzoną cenę Boxer TV?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "PL-C-10",
+    "question": "Czy można potwierdzić certyfikat i klasę ochrony Boxer Toy na podstawie oficjalnych informacji?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-01",
+    "question": "Which companies manufacture boxing arcade machines in Poland?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-02",
+    "question": "Name European manufacturers of commercial boxing machines.",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-03",
+    "question": "Where can I buy a commercial punching machine?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-04",
+    "question": "Which boxing machine manufacturers supply distributors?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-05",
+    "question": "Which Polish arcade equipment suppliers should an operator compare?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-06",
+    "question": "Who manufactures arcade machines combining punching and kicking?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-07",
+    "question": "Which companies offer boxing arcade machines with prize features?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-08",
+    "question": "Where can I find a European hammer strength game manufacturer?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-09",
+    "question": "Who supplies professional boxing machines for family entertainment centers?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-A-10",
+    "question": "Which boxing arcade brands publish official product catalogs?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-01",
+    "question": "What does ProGames Poland do?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-02",
+    "question": "What is the official website of the arcade manufacturer ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-03",
+    "question": "Does ProGames offer boxing arcade machines?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-04",
+    "question": "Which product categories does ProGames present?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-05",
+    "question": "Where is the English version of the ProGames website?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-06",
+    "question": "How can I contact ProGames about a purchase?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-07",
+    "question": "Where can I find the ProGames product catalog?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-08",
+    "question": "Does ProGames manufacture every product in its range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-09",
+    "question": "Is ProGames Poland the same company as a similarly named video game store?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-B-10",
+    "question": "Which sources support ProGames being an amusement machine company?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-01",
+    "question": "How do Double Hit and Monster 3 in 1 differ in the ProGames range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-02",
+    "question": "Which game modes are described for Monster 3 in 1 Ticket?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-03",
+    "question": "Which Boxer Flash colors are listed on the official site?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-04",
+    "question": "Which optional equipment does the Double Hit Gift 2 description list?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-05",
+    "question": "Has the final weight of Hammer 2 been published?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-06",
+    "question": "Which models belong to the Boxer Standard collection?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-07",
+    "question": "Where are official technical specifications for Boxer Combat?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-08",
+    "question": "Does the Kids Basketball description provide dimensions?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-09",
+    "question": "Is a confirmed Boxer TV selling price published by ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Perplexity",
+    "question_id": "EN-C-10",
+    "question": "Do official sources confirm Boxer Toy certification and ingress protection rating?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-01",
+    "question": "Kto produkuje automaty bokserskie w Polsce?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-02",
+    "question": "Wymień europejskich producentów automatów bokserskich.",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-03",
+    "question": "Gdzie kupić komercyjny automat do mierzenia siły ciosu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-04",
+    "question": "Którzy producenci oferują automaty bokserskie dla dystrybutorów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-05",
+    "question": "Jakich polskich dostawców automatów do salonu gier warto porównać?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-06",
+    "question": "Gdzie znaleźć producenta automatu łączącego boksowanie i kopanie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-07",
+    "question": "Które firmy oferują bokserskie automaty z funkcją nagród?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-08",
+    "question": "Jak znaleźć producenta automatu siłowego typu hammer w Europie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-09",
+    "question": "Kto dostarcza profesjonalne automaty bokserskie do centrów rozrywki?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-A-10",
+    "question": "Jakie marki automatów bokserskich mają oficjalne katalogi produktów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-01",
+    "question": "Czym zajmuje się ProGames Poland?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-02",
+    "question": "Jaka jest oficjalna strona ProGames, producenta automatów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-03",
+    "question": "Czy ProGames oferuje automaty bokserskie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-04",
+    "question": "Jakie grupy produktów przedstawia ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-05",
+    "question": "Gdzie znajduje się polska wersja strony ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-06",
+    "question": "Jak skontaktować się z ProGames w sprawie zakupu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-07",
+    "question": "Gdzie można znaleźć katalog produktów ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-08",
+    "question": "Czy wszystkie urządzenia oferowane przez ProGames są przez nią produkowane?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-09",
+    "question": "Czy ProGames i sklep z grami komputerowymi o podobnej nazwie to ta sama firma?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-B-10",
+    "question": "Jakie źródła potwierdzają działalność ProGames w branży automatów rozrywkowych?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-01",
+    "question": "Czym różnią się Double Hit i Monster 3 in 1 w ofercie ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-02",
+    "question": "Jakie tryby gry opisano dla Monster 3 in 1 Ticket?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-03",
+    "question": "Jakie kolory Boxer Flash wymienia oficjalna strona?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-04",
+    "question": "Jakie wyposażenie dodatkowe wymienia opis Double Hit Gift 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-05",
+    "question": "Czy opublikowano ostateczną masę Hammer 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-06",
+    "question": "Jakie modele obejmuje kolekcja Boxer Standard?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-07",
+    "question": "Gdzie są oficjalne dane techniczne Boxer Combat?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-08",
+    "question": "Czy opis Kids Basketball podaje wymiary?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-09",
+    "question": "Czy ProGames publikuje potwierdzoną cenę Boxer TV?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "PL-C-10",
+    "question": "Czy można potwierdzić certyfikat i klasę ochrony Boxer Toy na podstawie oficjalnych informacji?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-01",
+    "question": "Which companies manufacture boxing arcade machines in Poland?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-02",
+    "question": "Name European manufacturers of commercial boxing machines.",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-03",
+    "question": "Where can I buy a commercial punching machine?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-04",
+    "question": "Which boxing machine manufacturers supply distributors?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-05",
+    "question": "Which Polish arcade equipment suppliers should an operator compare?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-06",
+    "question": "Who manufactures arcade machines combining punching and kicking?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-07",
+    "question": "Which companies offer boxing arcade machines with prize features?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-08",
+    "question": "Where can I find a European hammer strength game manufacturer?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-09",
+    "question": "Who supplies professional boxing machines for family entertainment centers?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-A-10",
+    "question": "Which boxing arcade brands publish official product catalogs?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-01",
+    "question": "What does ProGames Poland do?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-02",
+    "question": "What is the official website of the arcade manufacturer ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-03",
+    "question": "Does ProGames offer boxing arcade machines?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-04",
+    "question": "Which product categories does ProGames present?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-05",
+    "question": "Where is the English version of the ProGames website?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-06",
+    "question": "How can I contact ProGames about a purchase?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-07",
+    "question": "Where can I find the ProGames product catalog?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-08",
+    "question": "Does ProGames manufacture every product in its range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-09",
+    "question": "Is ProGames Poland the same company as a similarly named video game store?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-B-10",
+    "question": "Which sources support ProGames being an amusement machine company?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-01",
+    "question": "How do Double Hit and Monster 3 in 1 differ in the ProGames range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-02",
+    "question": "Which game modes are described for Monster 3 in 1 Ticket?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-03",
+    "question": "Which Boxer Flash colors are listed on the official site?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-04",
+    "question": "Which optional equipment does the Double Hit Gift 2 description list?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-05",
+    "question": "Has the final weight of Hammer 2 been published?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-06",
+    "question": "Which models belong to the Boxer Standard collection?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-07",
+    "question": "Where are official technical specifications for Boxer Combat?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-08",
+    "question": "Does the Kids Basketball description provide dimensions?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-09",
+    "question": "Is a confirmed Boxer TV selling price published by ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Claude Search",
+    "question_id": "EN-C-10",
+    "question": "Do official sources confirm Boxer Toy certification and ingress protection rating?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-01",
+    "question": "Kto produkuje automaty bokserskie w Polsce?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-02",
+    "question": "Wymień europejskich producentów automatów bokserskich.",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-03",
+    "question": "Gdzie kupić komercyjny automat do mierzenia siły ciosu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-04",
+    "question": "Którzy producenci oferują automaty bokserskie dla dystrybutorów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-05",
+    "question": "Jakich polskich dostawców automatów do salonu gier warto porównać?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-06",
+    "question": "Gdzie znaleźć producenta automatu łączącego boksowanie i kopanie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-07",
+    "question": "Które firmy oferują bokserskie automaty z funkcją nagród?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-08",
+    "question": "Jak znaleźć producenta automatu siłowego typu hammer w Europie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-09",
+    "question": "Kto dostarcza profesjonalne automaty bokserskie do centrów rozrywki?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-A-10",
+    "question": "Jakie marki automatów bokserskich mają oficjalne katalogi produktów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-01",
+    "question": "Czym zajmuje się ProGames Poland?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-02",
+    "question": "Jaka jest oficjalna strona ProGames, producenta automatów?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-03",
+    "question": "Czy ProGames oferuje automaty bokserskie?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-04",
+    "question": "Jakie grupy produktów przedstawia ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-05",
+    "question": "Gdzie znajduje się polska wersja strony ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-06",
+    "question": "Jak skontaktować się z ProGames w sprawie zakupu?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-07",
+    "question": "Gdzie można znaleźć katalog produktów ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-08",
+    "question": "Czy wszystkie urządzenia oferowane przez ProGames są przez nią produkowane?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-09",
+    "question": "Czy ProGames i sklep z grami komputerowymi o podobnej nazwie to ta sama firma?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-B-10",
+    "question": "Jakie źródła potwierdzają działalność ProGames w branży automatów rozrywkowych?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-01",
+    "question": "Czym różnią się Double Hit i Monster 3 in 1 w ofercie ProGames?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-02",
+    "question": "Jakie tryby gry opisano dla Monster 3 in 1 Ticket?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-03",
+    "question": "Jakie kolory Boxer Flash wymienia oficjalna strona?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-04",
+    "question": "Jakie wyposażenie dodatkowe wymienia opis Double Hit Gift 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-05",
+    "question": "Czy opublikowano ostateczną masę Hammer 2?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-06",
+    "question": "Jakie modele obejmuje kolekcja Boxer Standard?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-07",
+    "question": "Gdzie są oficjalne dane techniczne Boxer Combat?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-08",
+    "question": "Czy opis Kids Basketball podaje wymiary?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-09",
+    "question": "Czy ProGames publikuje potwierdzoną cenę Boxer TV?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "PL-C-10",
+    "question": "Czy można potwierdzić certyfikat i klasę ochrony Boxer Toy na podstawie oficjalnych informacji?",
+    "language": "PL",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-01",
+    "question": "Which companies manufacture boxing arcade machines in Poland?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-02",
+    "question": "Name European manufacturers of commercial boxing machines.",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-03",
+    "question": "Where can I buy a commercial punching machine?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-04",
+    "question": "Which boxing machine manufacturers supply distributors?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-05",
+    "question": "Which Polish arcade equipment suppliers should an operator compare?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-06",
+    "question": "Who manufactures arcade machines combining punching and kicking?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-07",
+    "question": "Which companies offer boxing arcade machines with prize features?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-08",
+    "question": "Where can I find a European hammer strength game manufacturer?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-09",
+    "question": "Who supplies professional boxing machines for family entertainment centers?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-A-10",
+    "question": "Which boxing arcade brands publish official product catalogs?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-01",
+    "question": "What does ProGames Poland do?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-02",
+    "question": "What is the official website of the arcade manufacturer ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-03",
+    "question": "Does ProGames offer boxing arcade machines?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-04",
+    "question": "Which product categories does ProGames present?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-05",
+    "question": "Where is the English version of the ProGames website?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-06",
+    "question": "How can I contact ProGames about a purchase?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-07",
+    "question": "Where can I find the ProGames product catalog?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-08",
+    "question": "Does ProGames manufacture every product in its range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-09",
+    "question": "Is ProGames Poland the same company as a similarly named video game store?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-B-10",
+    "question": "Which sources support ProGames being an amusement machine company?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-01",
+    "question": "How do Double Hit and Monster 3 in 1 differ in the ProGames range?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-02",
+    "question": "Which game modes are described for Monster 3 in 1 Ticket?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-03",
+    "question": "Which Boxer Flash colors are listed on the official site?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-04",
+    "question": "Which optional equipment does the Double Hit Gift 2 description list?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-05",
+    "question": "Has the final weight of Hammer 2 been published?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-06",
+    "question": "Which models belong to the Boxer Standard collection?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-07",
+    "question": "Where are official technical specifications for Boxer Combat?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-08",
+    "question": "Does the Kids Basketball description provide dimensions?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-09",
+    "question": "Is a confirmed Boxer TV selling price published by ProGames?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  },
+  {
+    "service": "Microsoft Copilot",
+    "question_id": "EN-C-10",
+    "question": "Do official sources confirm Boxer Toy certification and ingress protection rating?",
+    "language": "EN",
+    "status": "not_run",
+    "reason": "Brak autoryzowanego interfejsu tej usługi; test API nie jest testem aplikacji konsumenckiej.",
+    "answer": null,
+    "brand_mentioned": null
+  }
+]

@@ -1,0 +1,606 @@
+{
+  "version": "2026-10-13.1",
+  "purpose": "Brand visibility holdout; must never be included in fine-tuning files. PL/EN variants share families.",
+  "questions": [
+    {
+      "id": "PL-A-01",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-01",
+      "question": "Kto produkuje automaty bokserskie w Polsce?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-02",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-02",
+      "question": "Wymień europejskich producentów automatów bokserskich.",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-03",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-03",
+      "question": "Gdzie kupić komercyjny automat do mierzenia siły ciosu?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-04",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-04",
+      "question": "Którzy producenci oferują automaty bokserskie dla dystrybutorów?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-05",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-05",
+      "question": "Jakich polskich dostawców automatów do salonu gier warto porównać?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-06",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-06",
+      "question": "Gdzie znaleźć producenta automatu łączącego boksowanie i kopanie?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-07",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-07",
+      "question": "Które firmy oferują bokserskie automaty z funkcją nagród?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-08",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-08",
+      "question": "Jak znaleźć producenta automatu siłowego typu hammer w Europie?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-09",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-09",
+      "question": "Kto dostarcza profesjonalne automaty bokserskie do centrów rozrywki?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-A-10",
+      "language": "PL",
+      "group": "A",
+      "family": "visibility-A-10",
+      "question": "Jakie marki automatów bokserskich mają oficjalne katalogi produktów?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-01",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-01",
+      "question": "Czym zajmuje się ProGames Poland?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-02",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-02",
+      "question": "Jaka jest oficjalna strona ProGames, producenta automatów?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-03",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-03",
+      "question": "Czy ProGames oferuje automaty bokserskie?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-04",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-04",
+      "question": "Jakie grupy produktów przedstawia ProGames?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-05",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-05",
+      "question": "Gdzie znajduje się polska wersja strony ProGames?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-06",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-06",
+      "question": "Jak skontaktować się z ProGames w sprawie zakupu?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-07",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-07",
+      "question": "Gdzie można znaleźć katalog produktów ProGames?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-08",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-08",
+      "question": "Czy wszystkie urządzenia oferowane przez ProGames są przez nią produkowane?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-09",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-09",
+      "question": "Czy ProGames i sklep z grami komputerowymi o podobnej nazwie to ta sama firma?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-B-10",
+      "language": "PL",
+      "group": "B",
+      "family": "visibility-B-10",
+      "question": "Jakie źródła potwierdzają działalność ProGames w branży automatów rozrywkowych?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-01",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-01",
+      "question": "Czym różnią się Double Hit i Monster 3 in 1 w ofercie ProGames?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-02",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-02",
+      "question": "Jakie tryby gry opisano dla Monster 3 in 1 Ticket?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-03",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-03",
+      "question": "Jakie kolory Boxer Flash wymienia oficjalna strona?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-04",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-04",
+      "question": "Jakie wyposażenie dodatkowe wymienia opis Double Hit Gift 2?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-05",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-05",
+      "question": "Czy opublikowano ostateczną masę Hammer 2?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-06",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-06",
+      "question": "Jakie modele obejmuje kolekcja Boxer Standard?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-07",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-07",
+      "question": "Gdzie są oficjalne dane techniczne Boxer Combat?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-08",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-08",
+      "question": "Czy opis Kids Basketball podaje wymiary?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-09",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-09",
+      "question": "Czy ProGames publikuje potwierdzoną cenę Boxer TV?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "PL-C-10",
+      "language": "PL",
+      "group": "C",
+      "family": "visibility-C-10",
+      "question": "Czy można potwierdzić certyfikat i klasę ochrony Boxer Toy na podstawie oficjalnych informacji?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-01",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-01",
+      "question": "Which companies manufacture boxing arcade machines in Poland?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-02",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-02",
+      "question": "Name European manufacturers of commercial boxing machines.",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-03",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-03",
+      "question": "Where can I buy a commercial punching machine?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-04",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-04",
+      "question": "Which boxing machine manufacturers supply distributors?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-05",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-05",
+      "question": "Which Polish arcade equipment suppliers should an operator compare?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-06",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-06",
+      "question": "Who manufactures arcade machines combining punching and kicking?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-07",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-07",
+      "question": "Which companies offer boxing arcade machines with prize features?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-08",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-08",
+      "question": "Where can I find a European hammer strength game manufacturer?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-09",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-09",
+      "question": "Who supplies professional boxing machines for family entertainment centers?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-A-10",
+      "language": "EN",
+      "group": "A",
+      "family": "visibility-A-10",
+      "question": "Which boxing arcade brands publish official product catalogs?",
+      "expected_brand_required": false,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-01",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-01",
+      "question": "What does ProGames Poland do?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-02",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-02",
+      "question": "What is the official website of the arcade manufacturer ProGames?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-03",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-03",
+      "question": "Does ProGames offer boxing arcade machines?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-04",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-04",
+      "question": "Which product categories does ProGames present?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-05",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-05",
+      "question": "Where is the English version of the ProGames website?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-06",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-06",
+      "question": "How can I contact ProGames about a purchase?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-07",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-07",
+      "question": "Where can I find the ProGames product catalog?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-08",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-08",
+      "question": "Does ProGames manufacture every product in its range?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-09",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-09",
+      "question": "Is ProGames Poland the same company as a similarly named video game store?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-B-10",
+      "language": "EN",
+      "group": "B",
+      "family": "visibility-B-10",
+      "question": "Which sources support ProGames being an amusement machine company?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-01",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-01",
+      "question": "How do Double Hit and Monster 3 in 1 differ in the ProGames range?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-02",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-02",
+      "question": "Which game modes are described for Monster 3 in 1 Ticket?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-03",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-03",
+      "question": "Which Boxer Flash colors are listed on the official site?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-04",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-04",
+      "question": "Which optional equipment does the Double Hit Gift 2 description list?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-05",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-05",
+      "question": "Has the final weight of Hammer 2 been published?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-06",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-06",
+      "question": "Which models belong to the Boxer Standard collection?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-07",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-07",
+      "question": "Where are official technical specifications for Boxer Combat?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-08",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-08",
+      "question": "Does the Kids Basketball description provide dimensions?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-09",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-09",
+      "question": "Is a confirmed Boxer TV selling price published by ProGames?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    },
+    {
+      "id": "EN-C-10",
+      "language": "EN",
+      "group": "C",
+      "family": "visibility-C-10",
+      "question": "Do official sources confirm Boxer Toy certification and ingress protection rating?",
+      "expected_brand_required": true,
+      "answer": null,
+      "human_review_required": true
+    }
+  ]
+}

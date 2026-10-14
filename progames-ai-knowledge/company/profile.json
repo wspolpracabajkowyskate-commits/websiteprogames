@@ -1,0 +1,57 @@
+{
+  "name": "ProGames",
+  "legal_name": "PRO GAMES POLAND Sp. z o.o.",
+  "description": "Manufacturer of commercial boxing arcade machines and amusement equipment in Poland.",
+  "url": "https://www.progamespoland.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Rybnicka 19A",
+    "postalCode": "44-335",
+    "addressLocality": "Jastrzębie-Zdrój",
+    "addressCountry": "PL"
+  },
+  "tax_id": "633-224-54-91",
+  "regon": "520986702",
+  "sales": {
+    "email": "office@progames.pl",
+    "phone": "+48 536 068 912"
+  },
+  "contacts": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "office@progames.pl",
+      "telephone": "+48 536 068 912",
+      "availableLanguage": [
+        "en",
+        "es",
+        "pl",
+        "de",
+        "fr"
+      ]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "service@progames.pl",
+      "telephone": "+48 789 108 086",
+      "availableLanguage": [
+        "en",
+        "es",
+        "pl",
+        "de",
+        "fr"
+      ]
+    }
+  ],
+  "social_profiles": [
+    "https://www.facebook.com/BoxerProgames",
+    "https://www.instagram.com/progames.pl/"
+  ],
+  "source_ids": [
+    "official-home"
+  ],
+  "verified_at": "2026-10-13",
+  "approval_status": "source_verified_human_pending",
+  "confidence": "official_first_party_statement_not_registry_verified"
+}
