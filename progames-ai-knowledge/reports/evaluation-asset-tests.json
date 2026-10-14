@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "kind": "structural_and_synthetic_unit_tests_not_model_benchmark",
+  "question_count": 60,
+  "training_records": 16,
+  "validation_records": 6,
+  "checks": [
+    "balanced PL/EN groups",
+    "unique IDs/questions",
+    "unbranded A prompts",
+    "family split",
+    "conversation envelope",
+    "provenance URL",
+    "null unreviewed accuracy",
+    "duplicate rejection"
+  ]
+}

@@ -1,0 +1,9 @@
+# Source-grounded pilot, not a trained model
+
+Status: prepared, not submitted; human product approval required. 16 training records, 6 validation records. These are small behavioral examples showing how to use cited evidence and preserve unknowns, not enough to establish a reliable production fine-tune. Training is not recommended before measuring a grounded retrieval baseline.
+
+The files use the conversation JSONL envelope (messages with system/user/assistant roles). This is an OpenAI-style supervised fine-tuning candidate format; current model support and provider validation must be checked before upload. Do not submit the same file unchanged to Google or Anthropic. No compatibility or training completion is claimed. The adjacent source map keeps provenance outside the provider payload.
+
+Each example supplies evidence in context. It trains citation/abstention behavior, not memorization of changing product facts. Technical values are transcribed source claims, not certified measurements. The user must approve them before paid training. Validation families are disjoint by target field/task and products; PL/EN translations are kept in the same split. Evaluation question families remain separate. Small sample size and related product facts mean these splits are not independent proof of model generalization.
+
+Run `python scripts/build_training_pilot.py` after validated source updates, then `python tests/test_evaluation_assets.py`. Regeneration overwrites the pilot, so retain reviewed versions in Git. For any real fine-tune, first enlarge diverse human-reviewed examples, reserve an untouched evaluation set, compare base/system/RAG against identical tasks, obtain a budget, and verify the provider's current requirements and prices. Retain dataset hashes, model/checkpoint IDs, training cost, inference cost, and actual factual review results.

@@ -1,0 +1,357 @@
+{
+  "status": "pilot_human_review_required_not_submitted",
+  "records": [
+    {
+      "record_id": "training-height-PL",
+      "split": "train",
+      "line": 1,
+      "family": "training-height",
+      "language": "PL",
+      "product_id": "double-hit",
+      "field": "Height",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/double-hit.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "38fdafcee2703a193f5011d9a45f043e5003f0e250a92b23b2cfa627068f4b0e"
+    },
+    {
+      "record_id": "training-height-EN",
+      "split": "train",
+      "line": 2,
+      "family": "training-height",
+      "language": "EN",
+      "product_id": "double-hit",
+      "field": "Height",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/double-hit.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "38fdafcee2703a193f5011d9a45f043e5003f0e250a92b23b2cfa627068f4b0e"
+    },
+    {
+      "record_id": "training-width-PL",
+      "split": "train",
+      "line": 3,
+      "family": "training-width",
+      "language": "PL",
+      "product_id": "boxer-flash",
+      "field": "Width",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/boxer-flash.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "9cf3aa70649d00d5be6509e7c241fd9f2ad5d6de6d063a5ff73a62e0a88b9524"
+    },
+    {
+      "record_id": "training-width-EN",
+      "split": "train",
+      "line": 4,
+      "family": "training-width",
+      "language": "EN",
+      "product_id": "boxer-flash",
+      "field": "Width",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/boxer-flash.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "9cf3aa70649d00d5be6509e7c241fd9f2ad5d6de6d063a5ff73a62e0a88b9524"
+    },
+    {
+      "record_id": "training-weight-PL",
+      "split": "train",
+      "line": 5,
+      "family": "training-weight",
+      "language": "PL",
+      "product_id": "boxer-combat",
+      "field": "Weight",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/boxer-combat.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "020e8df717e33a3d251f806b4ecc24991f4accd8bb53dbd60483e8f99793af0f"
+    },
+    {
+      "record_id": "training-weight-EN",
+      "split": "train",
+      "line": 6,
+      "family": "training-weight",
+      "language": "EN",
+      "product_id": "boxer-combat",
+      "field": "Weight",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/boxer-combat.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "020e8df717e33a3d251f806b4ecc24991f4accd8bb53dbd60483e8f99793af0f"
+    },
+    {
+      "record_id": "training-length-PL",
+      "split": "train",
+      "line": 7,
+      "family": "training-length",
+      "language": "PL",
+      "product_id": "monster-3in1",
+      "field": "Length",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/monster-3in1.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "01a3278f91b8c9ecf5355c139b38a033a0b83c5d3beddc1464c35c26d71d9e8a"
+    },
+    {
+      "record_id": "training-length-EN",
+      "split": "train",
+      "line": 8,
+      "family": "training-length",
+      "language": "EN",
+      "product_id": "monster-3in1",
+      "field": "Length",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/monster-3in1.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "01a3278f91b8c9ecf5355c139b38a033a0b83c5d3beddc1464c35c26d71d9e8a"
+    },
+    {
+      "record_id": "training-missing-price-PL",
+      "split": "train",
+      "line": 9,
+      "family": "training-missing-price",
+      "language": "PL",
+      "product_id": "hammer-2026",
+      "field": "price",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/hammer-2026.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "57afa3f343ab6c41baeb9f2e5009b6c5e2bd10eb18ad140400800933e4be6b44"
+    },
+    {
+      "record_id": "training-missing-price-EN",
+      "split": "train",
+      "line": 10,
+      "family": "training-missing-price",
+      "language": "EN",
+      "product_id": "hammer-2026",
+      "field": "price",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/hammer-2026.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "57afa3f343ab6c41baeb9f2e5009b6c5e2bd10eb18ad140400800933e4be6b44"
+    },
+    {
+      "record_id": "training-missing-certification-PL",
+      "split": "train",
+      "line": 11,
+      "family": "training-missing-certification",
+      "language": "PL",
+      "product_id": "leader-rank",
+      "field": "certifications",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/leader-rank.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "e9ee6b146a729b3d3cd0b4e55ab4b517570b64521d535b5cb20840d11169a1e9"
+    },
+    {
+      "record_id": "training-missing-certification-EN",
+      "split": "train",
+      "line": 12,
+      "family": "training-missing-certification",
+      "language": "EN",
+      "product_id": "leader-rank",
+      "field": "certifications",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/leader-rank.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "e9ee6b146a729b3d3cd0b4e55ab4b517570b64521d535b5cb20840d11169a1e9"
+    },
+    {
+      "record_id": "training-distributed-maker-PL",
+      "split": "train",
+      "line": 13,
+      "family": "training-distributed-maker",
+      "language": "PL",
+      "product_id": "cyberdart",
+      "field": "manufacturer",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/cyberdart.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "9c25c3095952fb7e61bf82e2ce0beba2dd448420e3632384a3fcbec4a348a120"
+    },
+    {
+      "record_id": "training-distributed-maker-EN",
+      "split": "train",
+      "line": 14,
+      "family": "training-distributed-maker",
+      "language": "EN",
+      "product_id": "cyberdart",
+      "field": "manufacturer",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/cyberdart.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "9c25c3095952fb7e61bf82e2ce0beba2dd448420e3632384a3fcbec4a348a120"
+    },
+    {
+      "record_id": "training-source-status-PL",
+      "split": "train",
+      "line": 15,
+      "family": "training-source-status",
+      "language": "PL",
+      "product_id": "boxer-kids",
+      "field": "approval_status",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/boxer-kids.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "8822a2f53f777cc8cb52ffefb8ed08309c291005b9c47da939fb4b3b3bb58b54"
+    },
+    {
+      "record_id": "training-source-status-EN",
+      "split": "train",
+      "line": 16,
+      "family": "training-source-status",
+      "language": "EN",
+      "product_id": "boxer-kids",
+      "field": "approval_status",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/boxer-kids.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "8822a2f53f777cc8cb52ffefb8ed08309c291005b9c47da939fb4b3b3bb58b54"
+    },
+    {
+      "record_id": "validation-payment-options-PL",
+      "split": "validation",
+      "line": 1,
+      "family": "validation-payment-options",
+      "language": "PL",
+      "product_id": "kicker",
+      "field": "options",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/kicker.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "0b16cbac25c016a2cbd43bf95ba97f1374737d3d6ac3b277e16e14876b77ba10"
+    },
+    {
+      "record_id": "validation-payment-options-EN",
+      "split": "validation",
+      "line": 2,
+      "family": "validation-payment-options",
+      "language": "EN",
+      "product_id": "kicker",
+      "field": "options",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/kicker.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "0b16cbac25c016a2cbd43bf95ba97f1374737d3d6ac3b277e16e14876b77ba10"
+    },
+    {
+      "record_id": "validation-color-list-PL",
+      "split": "validation",
+      "line": 3,
+      "family": "validation-color-list",
+      "language": "PL",
+      "product_id": "double-hit-gift",
+      "field": "colors",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/double-hit-gift.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "f49e33bc67d3ddfd36d6c3acda941c8a08f61c3b8e0f07d38416009e37b9743d"
+    },
+    {
+      "record_id": "validation-color-list-EN",
+      "split": "validation",
+      "line": 4,
+      "family": "validation-color-list",
+      "language": "EN",
+      "product_id": "double-hit-gift",
+      "field": "colors",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/double-hit-gift.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "f49e33bc67d3ddfd36d6c3acda941c8a08f61c3b8e0f07d38416009e37b9743d"
+    },
+    {
+      "record_id": "validation-unknown-availability-PL",
+      "split": "validation",
+      "line": 5,
+      "family": "validation-unknown-availability",
+      "language": "PL",
+      "product_id": "win-a-toy",
+      "field": "availability",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/win-a-toy.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "a3b6662d1ad4fef51c14c89fb6f07b7975ce36fde38a3bf1a52bc42ef20e9fca"
+    },
+    {
+      "record_id": "validation-unknown-availability-EN",
+      "split": "validation",
+      "line": 6,
+      "family": "validation-unknown-availability",
+      "language": "EN",
+      "product_id": "win-a-toy",
+      "field": "availability",
+      "source_ids": [
+        "official-products-js"
+      ],
+      "official_url": "https://www.progamespoland.com/en/products/win-a-toy.html",
+      "verified_at": "2026-10-13",
+      "approval_status": "source_verified_human_pending",
+      "evidence_sha256": "a3b6662d1ad4fef51c14c89fb6f07b7975ce36fde38a3bf1a52bc42ef20e9fca"
+    }
+  ]
+}

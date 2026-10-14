@@ -3,7 +3,7 @@
   "private": true,
   "version": "43.0.0",
   "scripts": {
-    "build": "node build/recover-static.cjs && npm run test:seo",
+    "build": "node build/recover-static.cjs && node build/growth-content.cjs && npm run test:seo",
     "test": "npm run test:seo",
     "test:browser": "node verification/test-browser.cjs",
     "test:i18n": "node verification/check-i18n.cjs",
