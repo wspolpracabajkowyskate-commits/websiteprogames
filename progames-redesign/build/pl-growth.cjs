@@ -4,6 +4,7 @@ const patches=JSON.parse(fs.readFileSync('build/pl-growth.json'));
 for(const [file,changes] of Object.entries(patches)){
  let html=fs.readFileSync(file,'utf8');
  for(const {oldText,newText} of changes){
+  if(html.includes(newText))continue;
   if(html.includes(oldText))html=html.split(oldText).join(newText);
   else if(!html.includes(newText))throw Error('Source changed: review Polish copy in '+file);
  }
