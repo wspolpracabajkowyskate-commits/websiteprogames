@@ -35,3 +35,6 @@ Workflow .github/workflows/progames-monitor.yml: walidacja bazy, testy, lokalny 
 
 ## Wiarygodność zewnętrzna
 Priorytet: aktualne modele i oficjalny link w istniejącym profilu IAAPA oraz materiałach UPlay; uzgodnienie spójnego zapisu marki i roli dystrybutora. Przygotuj dla partnerów nazwę firmy, adres oficjalny, link do kategorii, aktualny katalog i potwierdzone parametry. Nie wysłano korespondencji ani nie stworzono sztucznych publikacji.
+
+## Weryfikacja wykonana 14.10.2026
+Publiczna kontrola HTTP: 263/263 stron PASS, canonical/H1/sitemap i zgodność katalogu PASS (results/live-2026-10-14.json). PR #2: https://github.com/wspolpracabajkowyskate-commits/websiteprogames/pull/2 . Pierwszy rzeczywisty przebieg Actions nr 38541735199 zakończony success (testy PR; bez kroku live). Podgląd Vercel dpl_EEd9y8xr7h6zxoToJmaufijrPoZ5 READY; 3 zmienione strony HTTP 200. Nie jest to pomiar zmiany pozycji ani widoczności AI.

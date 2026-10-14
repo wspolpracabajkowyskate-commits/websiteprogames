@@ -1,3 +1,5 @@
+> Stan historyczny. Naprawa wdrożona w PR #1, commit 0911ba3. Patch pozostaje w oryginalnej paczce ZIP; nie dublujemy go w tym repozytorium. Bieżący monitoring: ../../growth/README.md.
+
 # Poprawka publikacji statycznej
 
 Status: przygotowane i lokalnie zweryfikowane, **niewdrożone**.
