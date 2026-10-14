@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-14",
+  "commit": "e08308a65fc0d45bf2358f3a9897f11874f8b719",
+  "preview": {
+    "url": "https://websiteprogames-i35xiqao3-progames1.vercel.app",
+    "state": "READY",
+    "pages_http_200": 2,
+    "new_sections_verified": 2
+  },
+  "github_actions": {
+    "run_id": 38581574628,
+    "conclusion": "success"
+  },
+  "browser": {
+    "date": "2026-10-14T14:34:00.348Z",
+    "rows": [
+      {
+        "name": "jak-wybrac-automat-bokserski",
+        "width": 390,
+        "status": 200,
+        "section": 1,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "name": "ile-kosztuje-automat-bokserski",
+        "width": 390,
+        "status": 200,
+        "section": 1,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "name": "jak-wybrac-automat-bokserski",
+        "width": 1440,
+        "status": 200,
+        "section": 1,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "name": "ile-kosztuje-automat-bokserski",
+        "width": 1440,
+        "status": 200,
+        "section": 1,
+        "overflow": false,
+        "errors": []
+      }
+    ]
+  },
+  "production": "Pending merge; verify production separately"
+}
