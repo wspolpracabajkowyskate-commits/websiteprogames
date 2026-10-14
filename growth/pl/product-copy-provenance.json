@@ -1,0 +1,230 @@
+[
+  {
+    "id": "monster-3in1-ticket",
+    "name": "Monster 3 in 1 Ticket",
+    "description": "Monster 3 in 1 Ticket łączy boks, kopanie i uderzenie młotem w jednym automacie. To wersja z rodziny Monster oznaczona Ticket, przeznaczona do oferty z biletami. Warunki działania systemu biletowego i wyposażenie dla Twojego obiektu potwierdza dział sprzedaży. Porównaj ją z modelem Monster 3 in 1 i wybierz wariant do zapytania.",
+    "source": "/pl/produkty/monster-3in1-ticket.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "double-strike",
+    "name": "Double Strike 2",
+    "description": "Double Strike 2 to model ProGames łączący grę bokserską z kopaczem. Górny przycisk Start uruchamia grę z gruszką, a dolny pozwala wybrać kopanie. Automat ma oświetlenie LED. Porównaj jego opublikowane wymiary i wykończenia z Double Hit, aby dobrać urządzenie do planowanego miejsca.",
+    "source": "/pl/produkty/double-strike.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "joker",
+    "name": "Joker",
+    "description": "Joker to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Żółty, Czerwony, Zielony, Niebieski, Czarny, Pomarańczowy. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/joker.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "pow-boxer",
+    "name": "POW Boxer",
+    "description": "POW Boxer to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: . Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/pow-boxer.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "champion",
+    "name": "Champion",
+    "description": "Champion to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Pomarańczowy, Żółty, Czerwony, Biały, Czarny, Niebieski. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/champion.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "easy",
+    "name": "Easy",
+    "description": "Easy to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Żółty, Pomarańczowy, Czarny, Czerwony, Niebieski. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/easy.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "cyber-punch",
+    "name": "Cyber Punch",
+    "description": "Cyber Punch to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Pomarańczowy, Biały, Czerwony, Czarny, Żółty, Niebieski. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/cyber-punch.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "gladiator",
+    "name": "Gladiator",
+    "description": "Gladiator to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Żółty, Czarny, Czerwony, Niebieski, Pomarańczowy. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/gladiator.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "mma",
+    "name": "MMA",
+    "description": "MMA to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Czarny, Niebieski, Pomarańczowy, Czerwony, Żółty. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/mma.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "black-jack",
+    "name": "Black Jack",
+    "description": "Black Jack to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Pomarańczowy, Czarny, Biały, Czerwony, Niebieski, Żółty. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/black-jack.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "super-hero",
+    "name": "Super Hero",
+    "description": "Super Hero to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Zielony, Pomarańczowy, Żółty, Biały, Czerwony, Czarny, Niebieski. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/super-hero.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "power-black",
+    "name": "Power Black",
+    "description": "Power Black to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Czarny, Biały, Żółty, Czerwony, Niebieski, Pomarańczowy. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/power-black.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "poison-squad",
+    "name": "Poison Squad",
+    "description": "Poison Squad to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Żółty, Biały, Pomarańczowy, Czerwony, Czarny, Niebieski. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/poison-squad.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "hacker",
+    "name": "Hacker",
+    "description": "Hacker to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Żółty, Biały, Niebieski, Pomarańczowy, Czerwony, Czarny. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/hacker.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "strongman",
+    "name": "Strongman",
+    "description": "Strongman to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Żółty, Biały, Niebieski, Pomarańczowy, Czerwony, Czarny. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/strongman.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "viking",
+    "name": "Viking",
+    "description": "Viking to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Pomarańczowy, Żółty, Biały, Czerwony, Niebieski, Czarny. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/viking.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "disco",
+    "name": "Disco",
+    "description": "Disco to automat bokserski ProGames z kolekcji Boxer Standard. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Biały, Czarny, Żółty, Pomarańczowy, Niebieski, Czerwony. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/disco.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "boxer-combat",
+    "name": "Boxer Combat",
+    "description": "Boxer Combat to automat bokserski ProGames z gamy Premium. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Czerwony, Biały, Pomarańczowy, Czarny, Niebieski, Żółty. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/boxer-combat.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  },
+  {
+    "id": "boxer-ring",
+    "name": "Boxer Ring",
+    "description": "Boxer Ring to automat bokserski ProGames z gamy Premium. Gracz uderza w gruszkę i porównuje wynik gry. Na tej stronie prezentujemy wykończenia: Czerwony, Czarny, Biały, Żółty, Niebieski. Wskaż wybrany wariant w konfiguratorze i zapytaj o ofertę dla swojego obiektu.",
+    "source": "/pl/produkty/boxer-ring.html",
+    "source_fields": [
+      "existing PL description",
+      "visible color labels",
+      "existing category"
+    ],
+    "verified_at": "2026-10-14"
+  }
+]

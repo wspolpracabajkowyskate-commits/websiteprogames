@@ -1,7 +1,7 @@
 name: ProGames SEO and knowledge monitoring
 on:
   push:
-    branches: [main, 'ai/stage3-growth']
+    branches: [main, 'ai/stage3-growth', 'ai/polish-growth']
     paths: ['growth/**', 'progames-ai-knowledge/**', 'progames-redesign/**', '.github/workflows/progames-monitor.yml']
   pull_request:
     paths: ['growth/**', 'progames-ai-knowledge/**', 'progames-redesign/**', '.github/workflows/progames-monitor.yml']
@@ -27,6 +27,12 @@ jobs:
         run: |
           python3 -m unittest discover -s progames-ai-knowledge/tests -v
           python3 -m unittest discover -s growth/tests -v
+      - name: Full site and Polish regression checks
+        run: |
+          npm ci --prefix progames-redesign
+          npm run test:seo --prefix progames-redesign
+          npm run test:i18n --prefix progames-redesign
+          npm run test:pl --prefix progames-redesign
       - name: Local SEO checks
         run: python3 growth/scripts/monitor.py --out growth/results/local-${{ github.run_id }}.json
       - name: Live read-only monitoring
