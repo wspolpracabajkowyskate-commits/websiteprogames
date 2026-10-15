@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>PRO GAMES Creator – preview</title>
+<meta name="description" content="Internal development preview of the PRO GAMES 3D machine configurator.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/manrope-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/creator/creator.css">
+<link rel="modulepreload" href="/creator/vendor/three/three.module.min.js">
+<script type="importmap">
+{ "imports": { "three": "/creator/vendor/three/three.module.min.js", "three/addons/": "/creator/vendor/three/addons/" } }
+</script>
+</head>
+<body>
+<header class="cr-top">
+  <a class="cr-brand" href="/" aria-label="PRO GAMES home">
+    <img src="/assets/progames-emblem-256.webp" alt="" width="28" height="28">
+    <span class="cr-word"><b>PRO</b>GAMES</span>
+  </a>
+  <span class="cr-sep" aria-hidden="true"></span>
+  <span class="cr-app">Creator</span>
+  <span class="cr-product" id="productName">Double Strike <em>Boxer + Kicker</em></span>
+  <span class="cr-chip" title="Not linked from the site, not indexed">Dev preview</span>
+</header>
+
+<main class="cr-main">
+  <section class="cr-viewer" id="viewer" aria-label="3D viewer">
+    <div class="cr-stage" id="stage"></div>
+    <div class="cr-title" aria-hidden="true">
+      <span class="cr-kicker">PRO GAMES · Configurator</span>
+      <strong id="viewerTitle">Double Strike</strong>
+      <span class="cr-spec">Boxer + Kicker · H 219 cm</span>
+    </div>
+    <div class="cr-views" role="group" aria-label="Camera views" id="views">
+      <button type="button" data-view="front">Front</button>
+      <button type="button" data-view="left">Left</button>
+      <button type="button" data-view="right">Right</button>
+      <button type="button" data-view="back">Back</button>
+      <button type="button" data-view="q34">3/4</button>
+    </div>
+    <p class="cr-hint" id="hint">Drag to rotate · Scroll or pinch to zoom · Click a graphic to edit it</p>
+    <div class="cr-loading" id="loading" role="status" aria-live="polite">
+      <div class="cr-spinner" aria-hidden="true"></div>
+      <span id="loadingText">Loading 3D model…</span>
+      <div class="cr-bar"><i id="loadingBar"></i></div>
+    </div>
+    <div class="cr-toast" id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <aside class="cr-panel" aria-label="Configuration">
+    <div class="cr-scroll">
+      <section class="cr-sec" aria-labelledby="secColor">
+        <h2 id="secColor"><span>01</span>Body colour</h2>
+        <div class="cr-swatches" id="swatches" role="radiogroup" aria-label="Body colour"></div>
+        <div class="cr-colorname"><span id="colorName">PRO GAMES Blue</span><code id="colorHex">#0052D6</code></div>
+      </section>
+
+      <section class="cr-sec" aria-labelledby="secGfx">
+        <h2 id="secGfx"><span>02</span>Graphics</h2>
+        <p class="cr-note">Choose a zone (or click it on the machine) and upload your artwork.</p>
+        <div class="cr-zones" id="zones" role="listbox" aria-label="Graphic zones"></div>
+        <div class="cr-editor" id="editor">
+          <div class="cr-editor-head">
+            <div><strong id="zoneLabel">Score panel</strong><span id="zoneHint"></span></div>
+            <span class="cr-status" id="zoneStatus">Factory artwork</span>
+          </div>
+          <label class="cr-drop" id="drop">
+            <input type="file" id="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg">
+            <span class="cr-drop-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+            </span>
+            <span><b>Upload graphic</b><small>PNG · JPG · WEBP · SVG — drop here or browse</small></span>
+          </label>
+          <fieldset class="cr-tf" id="transform" disabled>
+            <legend class="sr-only">Graphic position</legend>
+            <div class="cr-row"><label for="tScale">Scale</label><input type="range" id="tScale" min="0.1" max="3" step="0.01" value="1"><output id="oScale">100%</output></div>
+            <div class="cr-row"><label for="tX">X position</label><input type="range" id="tX" min="-1" max="1" step="0.005" value="0"><output id="oX">0</output></div>
+            <div class="cr-row"><label for="tY">Y position</label><input type="range" id="tY" min="-1" max="1" step="0.005" value="0"><output id="oY">0</output></div>
+            <div class="cr-row"><label for="tRot">Rotation</label><input type="range" id="tRot" min="-180" max="180" step="1" value="0"><output id="oRot">0°</output></div>
+            <div class="cr-btns">
+              <button type="button" data-act="fit">Fit</button>
+              <button type="button" data-act="fill">Fill</button>
+              <button type="button" data-act="center">Center</button>
+              <button type="button" data-act="reset">Reset</button>
+            </div>
+          </fieldset>
+          <div class="cr-btns cr-btns-2">
+            <button type="button" data-act="restore" class="ghost">Restore original</button>
+            <button type="button" data-act="remove" class="ghost danger">Remove graphic</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cr-sec" aria-labelledby="secOpt">
+        <h2 id="secOpt"><span>03</span>Options</h2>
+        <div class="cr-options" id="options"></div>
+      </section>
+    </div>
+    <footer class="cr-actions">
+      <button type="button" class="cr-primary" id="savePreview">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="4"/></svg>
+        Save preview
+      </button>
+      <button type="button" class="cr-secondary" id="resetAll">Reset</button>
+    </footer>
+  </aside>
+</main>
+<noscript><p class="cr-noscript">PRO GAMES Creator needs JavaScript and WebGL.</p></noscript>
+<script type="module" src="/creator/js/app.js"></script>
+</body>
+</html>
