@@ -22,8 +22,13 @@ if HERE not in sys.path:
 import importlib
 import meshlib, double_strike_model, materials
 importlib.reload(meshlib); importlib.reload(double_strike_model); importlib.reload(materials)
-from double_strike_model import build_all, GROUPS, ZONES
-from materials import MATERIALS
+# which machine to build: DS_MODEL=double_strike_model (default) | champion_model
+MODEL_NAME = os.environ.get('DS_MODEL', 'double_strike_model')
+_mod = importlib.reload(importlib.import_module(MODEL_NAME))
+build_all, GROUPS, ZONES = _mod.build_all, _mod.GROUPS, _mod.ZONES
+MATERIALS = materials.CHAMPION_MATERIALS if MODEL_NAME == 'champion_model' else materials.MATERIALS
+SLUG = 'boxer-champion' if MODEL_NAME == 'champion_model' else 'double-strike'
+ROOT_NAME = 'BoxerChampion' if MODEL_NAME == 'champion_model' else 'DoubleStrike'
 
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
 OUT_DIR = os.environ.get('DS_OUT', os.path.join(HERE, '..'))
@@ -34,8 +39,8 @@ for i, a in enumerate(argv):
     if a == '--no-render':
         RENDER = False
 TEX_DIR = os.path.join(OUT_DIR, 'textures')
-BLEND_PATH = os.path.join(OUT_DIR, 'blender', 'double-strike.blend')
-GLB_PATH = os.path.join(OUT_DIR, 'models', 'double-strike.glb')
+BLEND_PATH = os.path.join(OUT_DIR, 'blender', SLUG + '.blend')
+GLB_PATH = os.path.join(OUT_DIR, 'models', SLUG + '.glb')
 os.makedirs(os.path.dirname(BLEND_PATH), exist_ok=True)
 os.makedirs(os.path.dirname(GLB_PATH), exist_ok=True)
 B4 = bpy.app.version >= (4, 0, 0)
@@ -100,7 +105,7 @@ def make_material(name, d):
     if d.get('clearcoat'):
         set_input(bsdf, ['Coat Weight', 'Clearcoat'], d['clearcoat'])
         set_input(bsdf, ['Coat Roughness', 'Clearcoat Roughness'], d.get('clearcoat_roughness', 0.05))
-    tex = lambda p: os.path.join(TEX_DIR, os.path.basename(p))
+    tex = lambda p: os.path.join(TEX_DIR, 'champion' if '/champion/' in p else '', os.path.basename(p))
     x = -600
     if 'base_tex' in d:
         n = nt.nodes.new('ShaderNodeTexImage'); n.image = image(tex(d['base_tex'])); n.location = (x, 300)
@@ -147,12 +152,12 @@ MATS = {name: make_material(name, d) for name, d in MATERIALS.items()}
 
 # ----------------------------------------------------------------------------- objects
 nodes, leds = build_all()
-root = bpy.data.objects.new('DoubleStrike', None)
+root = bpy.data.objects.new(ROOT_NAME, None)
 scene.collection.objects.link(root)
-root['product'] = 'double-strike'
+root['product'] = SLUG
 root['zones'] = json.dumps(ZONES)
 root['units'] = 'm'
-coll_main = bpy.data.collections.new('DoubleStrike'); scene.collection.children.link(coll_main)
+coll_main = bpy.data.collections.new(ROOT_NAME); scene.collection.children.link(coll_main)
 groups = {}
 for gname in GROUPS:
     e = bpy.data.objects.new(gname, None)
@@ -257,7 +262,7 @@ if RENDER:
         if only and k not in only:
             continue
         cam.location = loc; look_at(cam, tgt)
-        scene.render.filepath = os.path.join(rdir, f'control_{k}.png')
+        scene.render.filepath = os.path.join(rdir, (f'{SLUG}_' if SLUG != 'double-strike' else '') + f'control_{k}.png')
         bpy.ops.render.render(write_still=True)
         renders[k] = scene.render.filepath
 

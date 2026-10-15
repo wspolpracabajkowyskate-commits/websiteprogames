@@ -7,8 +7,10 @@ usage: python3 export_glb.py <out.glb> <textures_dir>
 """
 import json, struct, sys, os, math
 import numpy as np
-from double_strike_model import build_all, GROUPS, ZONES, D
-from materials import MATERIALS
+import importlib
+import materials as _materials
+MODEL = 'double_strike_model'
+MATERIALS = _materials.MATERIALS
 
 
 def pad4(b, fill=b'\x00'):
@@ -63,8 +65,13 @@ class GLB:
         return self.tex_cache[key]
 
 
-def build(out_path, tex_dir):
-    nodes, leds = build_all()
+def build(out_path, tex_dir, model=None):
+    global MATERIALS
+    model = model or MODEL
+    mod = importlib.import_module(model)
+    MATERIALS = _materials.CHAMPION_MATERIALS if model == 'champion_model' else _materials.MATERIALS
+    nodes, leds = mod.build_all()
+    GROUPS, ZONES = mod.GROUPS, mod.ZONES
     g = GLB()
     mat_index = {}
 
@@ -78,7 +85,8 @@ def build(out_path, tex_dir):
         ext = {}
         rep = name in ('DIAMOND_PLATE', 'BOXING_BAG_RED', 'BOXING_BAG_BLACK', 'LEATHER_BLACK')
         def tp(p):
-            return os.path.join(tex_dir, os.path.basename(p))
+            sub = 'champion' if '/champion/' in p else ''
+            return os.path.join(tex_dir, sub, os.path.basename(p))
         if 'base_tex' in d:
             pbr['baseColorTexture'] = dict(index=g.texture(tp(d['base_tex']), rep))
         if 'roughness_tex' in d:
@@ -103,7 +111,7 @@ def build(out_path, tex_dir):
         return mat_index[name]
 
     root = dict(name='DoubleStrike', children=[], extras=dict(
-        product='double-strike', units='m', height_m=2.19,
+        product=model.replace('_model', '').replace('_', '-'), units='m', height_m=2.19,
         zones={k: dict(v) for k, v in ZONES.items()},
         led_groups={k: v.count for k, v in leds.items()}))
     g.j['nodes'].append(root)
@@ -151,7 +159,7 @@ def build(out_path, tex_dir):
 
 
 if __name__ == '__main__':
-    stats, total = build(sys.argv[1], sys.argv[2])
+    stats, total = build(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None)
     for k, v in stats.items():
         print(f'{k:28s} {v:7d}')
     print('TOTAL triangles', total, 'size', os.path.getsize(sys.argv[1]))

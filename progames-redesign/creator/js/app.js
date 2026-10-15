@@ -2,14 +2,17 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=4';
-import { Studio, detectQuality } from './studio.js?v=4';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=4';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=4';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=5';
+import { Studio, detectQuality } from './studio.js?v=5';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=5';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=5';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
-const product = PRODUCTS[params.get('model')] || PRODUCTS[DEFAULT_PRODUCT];
+const LAST_KEY = 'progames-creator:last-model';
+const lastModel = (() => { try { return localStorage.getItem(LAST_KEY); } catch (e) { return null; } })();
+const product = PRODUCTS[params.get('model')] || PRODUCTS[lastModel] || PRODUCTS[DEFAULT_PRODUCT];
+try { localStorage.setItem(LAST_KEY, product.id); } catch (e) { /* ignore */ }
 const ACCEPT = ['image/png', 'image/jpeg', 'image/webp', 'image/svg+xml'];
 
 // ------------------------------------------------------------------ state
@@ -19,10 +22,10 @@ function defaultState() {
   return {
     version: 1,
     model: product.id,
-    bodyColor: { id: BODY_COLORS[0].id, hex: BODY_COLORS[0].hex },
+    bodyColor: (() => { const c = BODY_COLORS.find((b) => b.id === product.defaultColor) || BODY_COLORS[0]; return { id: c.id, hex: c.hex }; })(),
     graphics: {},            // zoneId -> { type: 'factory'|'custom'|'none', imageId?, name? }
     graphicsTransforms: {},  // zoneId -> { scale, x, y, rotation, mode }
-    selectedZone: product.zones[1]?.id || product.zones[0].id,
+    selectedZone: product.defaultZone || product.zones[0].id,
     cameraPreset: product.defaultPreset,
     camera: null,            // { pos, target } when the user orbited freely
     options,
@@ -96,7 +99,7 @@ function onLoaded(gltf) {
 
   // the camera may never enter these volumes
   const boxes = [];
-  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'metal_platform']) {
+  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform']) {
     const obj = modelRoot.getObjectByName(name);
     if (obj) boxes.push(new THREE.Box3().setFromObject(obj).expandByScalar(0.12));
   }
@@ -331,6 +334,14 @@ async function savePreview() {
 // ------------------------------------------------------------------ UI
 function buildUI() {
   $('#viewerTitle').textContent = product.name;
+  document.title = `${product.name} – PRO GAMES Creator (preview)`;
+  $('#productSpec').textContent = product.spec || '';
+  const sel = $('#modelSelect');
+  if (sel && !sel.options.length) {
+    for (const p of Object.values(PRODUCTS)) sel.add(new Option(`${p.name} — ${p.subtitle}`, p.id));
+    sel.value = product.id;
+    sel.addEventListener('change', () => { location.search = `?model=${encodeURIComponent(sel.value)}`; });
+  }
   // swatches
   const sw = $('#swatches');
   sw.innerHTML = '';

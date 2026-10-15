@@ -10,7 +10,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/manrope-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/creator/creator.css?v=3">
+<link rel="stylesheet" href="/creator/creator.css?v=5">
 </head>
 <body>
 <header class="cr-top">
@@ -20,7 +20,7 @@
   </a>
   <span class="cr-sep" aria-hidden="true"></span>
   <span class="cr-app">Creator</span>
-  <span class="cr-product" id="productName">Double Strike <em>Boxer + Kicker</em></span>
+  <label class="cr-model"><span class="sr-only">Machine</span><select id="modelSelect" aria-label="Machine to configure"></select></label>
   <span class="cr-chip" title="Not linked from the site, not indexed">Dev preview</span>
 </header>
 
@@ -29,8 +29,8 @@
     <div class="cr-stage" id="stage"></div>
     <div class="cr-title" aria-hidden="true">
       <span class="cr-kicker">PRO GAMES · Configurator</span>
-      <strong id="viewerTitle">Double Strike</strong>
-      <span class="cr-spec">Boxer + Kicker · H 219 cm</span>
+      <strong id="viewerTitle">Boxer Champion</strong>
+      <span class="cr-spec" id="productSpec"></span>
     </div>
     <div class="cr-views" role="group" aria-label="Camera views" id="views">
       <button type="button" data-view="front">Front</button>
@@ -123,7 +123,7 @@
   })();
 </script>
 <script type="module">
-  import('/creator/js/app.js?v=4').catch(function (e) {
+  import('/creator/js/app.js?v=5').catch(function (e) {
     var l = document.getElementById('loading'), t = document.getElementById('loadingText');
     window.__creatorFailed = true; l.classList.add('error');
     t.textContent = 'Could not load the viewer scripts: ' + (e && e.message ? e.message : e);

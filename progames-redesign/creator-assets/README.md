@@ -1,6 +1,6 @@
 # PRO GAMES Creator – assets (dev preview)
 
-Hidden configurator: **/creator** (not linked anywhere, `noindex, nofollow`, not in `sitemap.xml`).
+Hidden configurator: **/creator** (default machine: Boxer Champion; `/creator/?model=double-strike` for Double Strike) (not linked anywhere, `noindex, nofollow`, not in `sitemap.xml`).
 
 ```
 creator/                      web app (static, vanilla ES modules, three.js r170 vendored)
@@ -13,8 +13,11 @@ creator/                      web app (static, vanilla ES modules, three.js r170
   js/storage.js               localStorage (config) + IndexedDB (uploaded images)
   vendor/three/               three.module.min.js + OrbitControls, GLTFLoader, RoomEnvironment
 creator-assets/
-  blender/double-strike.blend source Blender project (built in Blender 5.2.2)
+  blender/boxer-champion.blend source Blender project – Boxer Champion (Blender 5.2.2)
+  blender/double-strike.blend source Blender project – Double Strike (Blender 5.2.2)
   blender/src/                build pipeline (Python)
+    champion_model.py         Boxer Champion geometry (reference photos + 219 x 72 x 115 cm)
+    make_champion_textures.py Boxer Champion graphics from the photos (bag removed via 3/4 photo)
     double_strike_model.py    parametric geometry reconstructed from the reference photos
     meshlib.py                mesh toolkit (rounded boxes, sweeps, lathes, conforming decals, UVs)
     materials.py              PBR material library (shared by Blender + GLB writer)
@@ -22,7 +25,8 @@ creator-assets/
     build_double_strike_blend.py  builds the .blend, control renders, exports the GLB
     export_glb.py             pure-python GLB writer (CI / fallback, same geometry)
   blender/renders/            control renders from Blender (front / left / right / back / 3-4, .webp)
-  models/double-strike.glb    web model exported from Blender
+  models/boxer-champion.glb   Boxer Champion web model (Blender export)
+  models/double-strike.glb    Double Strike web model (Blender export)
   textures/                   all texture sources
   reference/                  reference photos used for modelling (.webp)
 ```
@@ -34,6 +38,9 @@ creator-assets/
 python3 creator-assets/blender/src/make_textures.py creator-assets/reference creator-assets/textures
 # 2. Blender: geometry + materials + UV + .blend + GLB + control renders
 blender -b -P creator-assets/blender/src/build_double_strike_blend.py -- --out creator-assets
+# Boxer Champion:
+python3 creator-assets/blender/src/make_champion_textures.py creator-assets/reference creator-assets/textures/champion
+DS_MODEL=champion_model blender -b -P creator-assets/blender/src/build_double_strike_blend.py -- --out creator-assets
 ```
 Dimensions live in `D = dict(...)` at the top of `double_strike_model.py`
 (height is normalised to 219 cm). Change a value, re-run step 2, deploy the new GLB.

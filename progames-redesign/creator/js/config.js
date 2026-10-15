@@ -24,10 +24,42 @@ export const CAMERA_PRESETS = {
 };
 
 export const PRODUCTS = {
+  'boxer-champion': {
+    id: 'boxer-champion',
+    name: 'Boxer Champion',
+    subtitle: 'Boxing machine',
+    spec: 'Boxer · H 219 cm · 72 × 115 cm',
+    model: '/creator-assets/models/boxer-champion.glb',
+    defaultColor: 'red',
+    paintMaterials: ['BODY_PAINT'],
+    ledMaterials: ['LED_RGB', 'LED_WHITE'],
+    defaultPreset: 'q34',
+    zones: [
+      { id: 'front', label: 'Front panel', hint: 'Full-height door graphic around the score shield', material: 'GFX_FRONT', size: [0.566, 1.755],
+        camera: { pos: [0.6, 1.25, 4.4], target: [0, 1.0, 0.14] } },
+      { id: 'band', label: 'Canopy band', hint: 'Wraps the canopy: left side, front, right side', material: 'GFX_BAND', size: [2.41, 0.156],
+        camera: { pos: [-1.6, 2.35, 2.6], target: [0, 1.95, 0.4] } },
+      { id: 'left', label: 'Left side', hint: 'Full-height side panel', material: 'GFX_LEFT', size: [0.209, 1.815],
+        camera: { pos: [-4.5, 1.3, 1.3], target: [-0.31, 1.0, 0.0] } },
+      { id: 'right', label: 'Right side', hint: 'Full-height side panel', material: 'GFX_RIGHT', size: [0.209, 1.815],
+        camera: { pos: [4.5, 1.3, 1.3], target: [0.31, 1.0, 0.0] } },
+    ],
+    options: [
+      { id: 'ledEffect', label: 'LED effect', type: 'select', default: 'factory',
+        choices: [{ id: 'factory', label: 'Factory colours' }, { id: 'chase', label: 'RGB chase' }, { id: 'pulse', label: 'Pulse' }, { id: 'off', label: 'Off' }] },
+      { id: 'ledBrightness', label: 'LED brightness', type: 'range', min: 0, max: 1.5, step: 0.05, default: 1 },
+      { id: 'screens', label: 'Score displays on', type: 'toggle', default: true },
+      { id: 'ticketDispenser', label: 'Ticket dispenser', type: 'toggle', default: false, model: null, anchor: 'body', comingSoon: true },
+      { id: 'billAcceptor', label: 'Banknote acceptor', type: 'toggle', default: false, model: null, anchor: 'body', comingSoon: true },
+    ],
+  },
   'double-strike': {
     id: 'double-strike',
     name: 'Double Strike',
     subtitle: 'Boxer + Kicker',
+    spec: 'Boxer + Kicker · H 219 cm',
+    defaultColor: 'blue',
+    defaultZone: 'score',
     model: '/creator-assets/models/double-strike.glb',
     dimensions: { height: 2.19, note: 'Height 219 cm (published spec)' },
     // only materials listed here are recoloured by the body colour picker
@@ -66,4 +98,4 @@ export const PRODUCTS = {
   },
 };
 
-export const DEFAULT_PRODUCT = 'double-strike';
+export const DEFAULT_PRODUCT = 'boxer-champion';

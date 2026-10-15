@@ -48,3 +48,20 @@ MATERIALS = {
     'GFX_TOP_SIDE': dict(base=[1, 1, 1], roughness=0.3, clearcoat=0.8, clearcoat_roughness=0.08, base_tex=TEX + 'zone_top_side.webp', alpha='BLEND'),
     'GFX_BACK': dict(base=[1, 1, 1], roughness=0.3, clearcoat=0.8, clearcoat_roughness=0.08, base_tex=TEX + 'zone_back.webp', alpha='BLEND'),
 }
+
+
+# ---------------------------------------------------------------- Boxer Champion
+_CH = TEX + 'champion/'
+CHAMPION_MATERIALS = {k: dict(v) for k, v in MATERIALS.items() if k in (
+    'BLACK_PLASTIC', 'RUBBER', 'METAL', 'DIAMOND_PLATE', 'BOXING_BAG_RED', 'BOXING_BAG_BLACK', 'LEATHER_BLACK',
+    'SCREEN', 'LED_RGB', 'LED_WHITE')}
+CHAMPION_MATERIALS['BODY_PAINT'] = dict(base=srgb('#c40d1a'), metallic=0.0, roughness=0.34, clearcoat=1.0, clearcoat_roughness=0.04, specular=0.5)
+CHAMPION_MATERIALS['DIAMOND_PLATE'] = dict(base=srgb('#c3c6cb'), metallic=1.0, roughness=1.0, normal=TEX + 'diamond_plate_normal.png',
+                                          roughness_tex=TEX + 'diamond_plate_orm.png', normal_scale=1.0)
+CHAMPION_MATERIALS['SCREEN'] = dict(MATERIALS['SCREEN'], emissive_tex=_CH + 'champion_screen_digits.webp')
+CHAMPION_MATERIALS['DECALS'] = dict(base=[1, 1, 1], metallic=0.0, roughness=0.3, clearcoat=0.6, clearcoat_roughness=0.1,
+                                    base_tex=_CH + 'champion_atlas.webp', alpha='BLEND')
+for _k, _f in (('GFX_FRONT', 'champion_zone_front.webp'), ('GFX_BAND', 'champion_zone_band.webp'),
+               ('GFX_LEFT', 'champion_zone_left.webp'), ('GFX_RIGHT', 'champion_zone_right.webp')):
+    CHAMPION_MATERIALS[_k] = dict(base=[1, 1, 1], roughness=0.26, clearcoat=0.9, clearcoat_roughness=0.06,
+                                  base_tex=_CH + _f, alpha='BLEND')
