@@ -2,10 +2,11 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=8';
-import { Studio, detectQuality } from './studio.js?v=8';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=8';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=8';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=9';
+import { Studio, detectQuality } from './studio.js?v=9';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=9';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=9';
+import { ARView } from './ar.js?v=9';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -33,6 +34,12 @@ function defaultState() {
 }
 let state = Object.assign(defaultState(), loadState(product.id) || {});
 state.options = Object.assign(defaultState().options, state.options || {});
+// colour handed over from another device (QR code of "View in your room")
+if (/^[0-9a-f]{6}$/i.test(params.get('color') || '')) {
+  const hex = `#${params.get('color').toLowerCase()}`;
+  const preset = BODY_COLORS.find((c) => c.hex.toLowerCase() === hex);
+  state.bodyColor = { id: preset ? preset.id : 'custom', hex };
+}
 const persist = () => saveState(product.id, state);
 
 // ------------------------------------------------------------------ studio
@@ -123,6 +130,12 @@ function onLoaded(gltf) {
   markPreset(state.cameraPreset);
   selectZone(state.selectedZone, { fly: false, flash: false });
   window.__creator.ready = true;
+  ar.init($('#arButton')).then((mode) => {
+    if (params.get('ar') === '1' && (mode === 'quicklook' || mode === 'webxr')) {
+      $('#arButton').classList.add('cr-attn');
+      toast('Tap “View in your room” to place the machine on your floor', 4500);
+    }
+  });
 }
 
 // ------------------------------------------------------------------ LEDs
@@ -576,14 +589,15 @@ function toggleOptionModel(o, on) {
 }
 
 // ------------------------------------------------------------------ loop
+const ar = new ARView({ studio, product, getModel: () => modelRoot, getState: () => state, toast });
 let last = performance.now();
-function frame(now) {
+function frame(now, xrFrame) {
   const dt = Math.min((now - last) / 1000, 0.1); last = now;
   if (modelRoot) { animateLeds(now / 1000); graphics.tick(dt); }
-  studio.update(now);
-  requestAnimationFrame(frame);
+  if (ar.active) { ar.onFrame(xrFrame); renderer.render(scene, camera); } // WebXR: the headset/phone pose drives the camera
+  else studio.update(now);
 }
-requestAnimationFrame(frame);
+renderer.setAnimationLoop(frame); // (instead of requestAnimationFrame: required for WebXR sessions)
 document.addEventListener('visibilitychange', () => { last = performance.now(); });
 
-window.__creator = { get state() { return state; }, studio, product, get graphics() { return graphics; }, selectZone, goPreset, applyColor, handleFile, savePreview, ready: false };
+window.__creator = { get state() { return state; }, studio, product, get graphics() { return graphics; }, selectZone, goPreset, applyColor, handleFile, savePreview, ar, ready: false };

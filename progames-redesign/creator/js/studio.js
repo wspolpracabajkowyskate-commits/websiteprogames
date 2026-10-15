@@ -54,7 +54,7 @@ export class Studio {
     key.shadow.normalBias = 0.02;
     key.shadow.radius = 4;
     scene.add(key);
-    const fill = new THREE.DirectionalLight(0xdfe8ff, 0.35);
+    const fill = this.fill = new THREE.DirectionalLight(0xdfe8ff, 0.35);
     fill.position.set(-4, 2.5, -1.5);
     scene.add(fill);
 
@@ -81,7 +81,7 @@ export class Studio {
 
   resize() {
     const w = this.container.clientWidth, h = this.container.clientHeight;
-    if (!w || !h) return;
+    if (!w || !h || this.renderer.xr.isPresenting) return;
     this.renderer.setSize(w, h, false);
     this.camera.aspect = w / h;
     // keep the whole machine in frame on narrow (portrait) viewports
@@ -96,6 +96,7 @@ export class Studio {
     const plane = new THREE.Mesh(new THREE.PlaneGeometry(size, size).rotateX(-Math.PI / 2),
       new THREE.MeshBasicMaterial({ map: rt.texture, transparent: true, opacity, depthWrite: false, side: THREE.DoubleSide }));
     plane.position.y = 0.001; plane.renderOrder = -1;
+    this.contactPlane = plane;
     plane.scale.z = -1; // render target v axis runs towards +Z
     this.scene.add(plane);
     const cam = new THREE.OrthographicCamera(-size / 2, size / 2, size / 2, -size / 2, 0, 0.9);
