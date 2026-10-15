@@ -2,10 +2,10 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=6';
-import { Studio, detectQuality } from './studio.js?v=6';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=6';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=6';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=7';
+import { Studio, detectQuality } from './studio.js?v=7';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=7';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=7';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -126,17 +126,65 @@ function onLoaded(gltf) {
 }
 
 // ------------------------------------------------------------------ LEDs
+let glowTexture = null;
+function getGlowTexture() {
+  if (glowTexture) return glowTexture;
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d');
+  const grd = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+  grd.addColorStop(0, 'rgba(255,255,255,1)'); grd.addColorStop(0.18, 'rgba(255,255,255,0.55)');
+  grd.addColorStop(0.45, 'rgba(255,255,255,0.12)'); grd.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
+  glowTexture = new THREE.CanvasTexture(c); glowTexture.colorSpace = THREE.SRGBColorSpace;
+  return glowTexture;
+}
 function setupRgbLeds(mesh) {
   const g = mesh.geometry;
-  const col = g.getAttribute('color');
+  const col0 = g.getAttribute('color');
   const id = g.getAttribute('_led');
-  if (!col || !id) return;
-  const base = Float32Array.from(col.array);
-  const n = col.count;
-  const ids = new Float32Array(n);
-  for (let i = 0; i < n; i++) ids[i] = id.getX(i);
+  if (!col0 || !id) return;
+  // exporters may store COLOR_0 as normalized integers: switch to a float attribute we can animate
+  const col = new THREE.BufferAttribute(new Float32Array(col0.count * 3), 3);
+  for (let i = 0; i < col0.count; i++) col.setXYZ(i, col0.getX(i), col0.getY(i), col0.getZ(i));
+  col.setUsage(THREE.DynamicDrawUsage);
+  g.setAttribute('color', col);
+  const pos = g.getAttribute('position'), nor = g.getAttribute('normal');
+  const nv = col.count;
+  const vid = new Uint16Array(nv);
+  let n = 0;
+  for (let i = 0; i < nv; i++) { vid[i] = Math.round(id.getX(i)); n = Math.max(n, vid[i] + 1); }
+  // per-bulb centre, mean normal and factory colour
+  const cen = new Float32Array(n * 3), nrm = new Float32Array(n * 3), base = new Float32Array(n * 3), cnt = new Uint16Array(n);
+  for (let i = 0; i < nv; i++) {
+    const k = vid[i]; cnt[k]++;
+    cen[k * 3] += pos.getX(i); cen[k * 3 + 1] += pos.getY(i); cen[k * 3 + 2] += pos.getZ(i);
+    nrm[k * 3] += nor.getX(i); nrm[k * 3 + 1] += nor.getY(i); nrm[k * 3 + 2] += nor.getZ(i);
+    base[k * 3] = col.getX(i); base[k * 3 + 1] = col.getY(i); base[k * 3 + 2] = col.getZ(i);
+  }
+  const glowPos = new Float32Array(n * 3);
+  for (let k = 0; k < n; k++) {
+    const c = Math.max(cnt[k], 1);
+    const v = new THREE.Vector3(nrm[k * 3], nrm[k * 3 + 1], nrm[k * 3 + 2]).normalize();
+    nrm.set([v.x, v.y, v.z], k * 3);
+    for (let j = 0; j < 3; j++) { cen[k * 3 + j] /= c; glowPos[k * 3 + j] = cen[k * 3 + j] + nrm[k * 3 + j] * 0.012; }
+  }
+  // frosted dome: hot centre, darker rim
+  const shade = new Float32Array(nv);
+  for (let i = 0; i < nv; i++) {
+    const k = vid[i];
+    const d = nor.getX(i) * nrm[k * 3] + nor.getY(i) * nrm[k * 3 + 1] + nor.getZ(i) * nrm[k * 3 + 2];
+    shade[i] = 0.38 + 0.62 * Math.pow(Math.max(d, 0), 1.6);
+  }
   mesh.material = new THREE.MeshBasicMaterial({ vertexColors: true, toneMapped: false, name: 'LED_RGB' });
-  leds.rgb.push({ mesh, col, base, ids, offset: leds.rgb.length * 0.13 });
+  const pg = new THREE.BufferGeometry();
+  pg.setAttribute('position', new THREE.BufferAttribute(glowPos, 3));
+  const gcol = new THREE.BufferAttribute(new Float32Array(n * 3), 3);
+  pg.setAttribute('color', gcol);
+  const glow = new THREE.Points(pg, new THREE.PointsMaterial({ size: 0.085, map: getGlowTexture(), vertexColors: true, transparent: true,
+    depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true, toneMapped: false, opacity: 0.9 }));
+  glow.renderOrder = 5; glow.raycast = () => {};
+  mesh.add(glow);
+  leds.rgb.push({ mesh, col, vid, shade, base, n, gcol, cur: new Float32Array(n * 3), offset: leds.rgb.length * 0.13 });
 }
 function setupStrip(mesh) {
   const map = mesh.material.emissiveMap || mesh.material.map;
@@ -153,11 +201,10 @@ function animateLeds(t) {
   const fx = state.options.ledEffect;
   const br = state.options.ledBrightness;
   for (const L of leds.rgb) {
-    const a = L.col.array;
-    for (let i = 0; i < L.ids.length; i++) {
-      const k = L.ids[i];
+    const c = L.cur;
+    for (let k = 0; k < L.n; k++) {
       let r, g, b;
-      if (fx === 'off') { r = g = b = 0.16; }
+      if (fx === 'off') { r = g = b = 0.1; }
       else if (fx === 'chase') {
         const hue = (((k * 0.083 + L.offset - t * 0.22) % 1) + 1) % 1;
         tmpColor.setHSL(hue, 0.85, 0.62);
@@ -165,12 +212,19 @@ function animateLeds(t) {
         r = tmpColor.r * wave * br; g = tmpColor.g * wave * br; b = tmpColor.b * wave * br;
       } else {
         const pulse = fx === 'pulse' ? 0.45 + 0.55 * (0.5 + 0.5 * Math.sin(t * 2.4 + k * 0.35)) : 1;
-        r = L.base[i * 3] * pulse * br; g = L.base[i * 3 + 1] * pulse * br; b = L.base[i * 3 + 2] * pulse * br;
+        r = L.base[k * 3] * pulse * br; g = L.base[k * 3 + 1] * pulse * br; b = L.base[k * 3 + 2] * pulse * br;
       }
-      if (fx === 'off') { r = g = b = 0.16; }
-      a[i * 3] = r; a[i * 3 + 1] = g; a[i * 3 + 2] = b;
+      c[k * 3] = r; c[k * 3 + 1] = g; c[k * 3 + 2] = b;
+    }
+    const a = L.col.array;
+    for (let i = 0; i < L.vid.length; i++) {
+      const k = L.vid[i], s = L.shade[i];
+      a[i * 3] = c[k * 3] * s + (fx === 'off' ? 0 : 0.12 * s * s); a[i * 3 + 1] = c[k * 3 + 1] * s + (fx === 'off' ? 0 : 0.12 * s * s); a[i * 3 + 2] = c[k * 3 + 2] * s + (fx === 'off' ? 0 : 0.12 * s * s);
     }
     L.col.needsUpdate = true;
+    const ga = L.gcol.array, gk = fx === 'off' ? 0 : 0.55;
+    for (let j = 0; j < ga.length; j++) ga[j] = c[j] * gk;
+    L.gcol.needsUpdate = true;
   }
   for (const s of leds.strips) {
     if (s.material.map) s.material.map.offset.x = fx === 'chase' ? -t * 0.18 : 0;

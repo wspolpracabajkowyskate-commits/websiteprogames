@@ -107,6 +107,17 @@ def make_material(name, d):
         set_input(bsdf, ['Coat Roughness', 'Clearcoat Roughness'], d.get('clearcoat_roughness', 0.05))
     tex = lambda p: os.path.join(TEX_DIR, 'champion' if '/champion/' in p else '', os.path.basename(p))
     x = -600
+    mapping = None
+    if d.get('uv_scale'):
+        tc = nt.nodes.new('ShaderNodeTexCoord'); tc.location = (x - 500, -200)
+        mapping = nt.nodes.new('ShaderNodeMapping'); mapping.location = (x - 300, -200)
+        mapping.inputs['Scale'].default_value = (d['uv_scale'], d['uv_scale'], 1.0)
+        nt.links.new(tc.outputs['UV'], mapping.inputs['Vector'])
+
+    def tiled(node):
+        if mapping is not None:
+            nt.links.new(mapping.outputs['Vector'], node.inputs['Vector'])
+        return node
     if 'base_tex' in d:
         n = nt.nodes.new('ShaderNodeTexImage'); n.image = image(tex(d['base_tex'])); n.location = (x, 300)
         nt.links.new(n.outputs['Color'], bsdf.inputs['Base Color'])
@@ -123,16 +134,20 @@ def make_material(name, d):
                 m.shadow_method = 'HASHED'
             m.use_backface_culling = True
     if 'roughness_tex' in d:
-        n = nt.nodes.new('ShaderNodeTexImage'); n.image = image(tex(d['roughness_tex']), True); n.location = (x, 0)
+        n = tiled(nt.nodes.new('ShaderNodeTexImage')); n.image = image(tex(d['roughness_tex']), True); n.location = (x, 0)
         sep = nt.nodes.new('ShaderNodeSeparateColor' if B4 or bpy.app.version >= (3, 3, 0) else 'ShaderNodeSeparateRGB'); sep.location = (x + 300, 0)
         nt.links.new(n.outputs['Color'], sep.inputs[0])
         nt.links.new(sep.outputs[1], bsdf.inputs['Roughness'])
         nt.links.new(sep.outputs[2], bsdf.inputs['Metallic'])
     if 'normal' in d:
-        n = nt.nodes.new('ShaderNodeTexImage'); n.image = image(tex(d['normal']), True); n.location = (x, -300)
+        n = tiled(nt.nodes.new('ShaderNodeTexImage')); n.image = image(tex(d['normal']), True); n.location = (x, -300)
         nm = nt.nodes.new('ShaderNodeNormalMap'); nm.location = (x + 300, -300); nm.inputs['Strength'].default_value = d.get('normal_scale', 1.0)
         nt.links.new(n.outputs['Color'], nm.inputs['Color'])
         nt.links.new(nm.outputs['Normal'], bsdf.inputs['Normal'])
+        if name == 'BODY_PAINT':  # orange peel lives in the clear coat
+            cn = bsdf.inputs.get('Coat Normal') or bsdf.inputs.get('Clearcoat Normal')
+            if cn is not None:
+                nt.links.new(nm.outputs['Normal'], cn)
     if 'emissive' in d:
         emis_in = bsdf.inputs.get('Emission Color') or bsdf.inputs.get('Emission')
         set_input(bsdf, ['Emission Strength'], d.get('emissive_strength', 1.0))

@@ -58,15 +58,27 @@ def erase_circles(img, circles):
 
 
 def upscale(img, w, h):
-    big = img.resize((w, h), Image.LANCZOS)
-    return big.filter(ImageFilter.UnsharpMask(radius=1.6, percent=60, threshold=2))
+    """Photo crop -> print-like texture: Lanczos x4, edge-preserving denoise of JPEG/photo noise,
+    gentle local contrast (CLAHE on L) and a thresholded unsharp mask for crisp lettering."""
+    import cv2
+    a = np.asarray(img.convert('RGB'))
+    a = cv2.resize(a, (w, h), interpolation=cv2.INTER_LANCZOS4)
+    a = cv2.bilateralFilter(a, 7, 28, 5)
+    lab = cv2.cvtColor(a, cv2.COLOR_RGB2LAB)
+    lab[..., 0] = cv2.createCLAHE(clipLimit=1.6, tileGridSize=(8, 8)).apply(lab[..., 0])
+    a = cv2.cvtColor(lab, cv2.COLOR_LAB2RGB)
+    hsv = cv2.cvtColor(a, cv2.COLOR_RGB2HSV).astype(np.float32)
+    hsv[..., 1] = np.clip(hsv[..., 1] * 1.08, 0, 255)  # printed vinyl is a touch more saturated than the photo
+    a = cv2.cvtColor(hsv.astype(np.uint8), cv2.COLOR_HSV2RGB)
+    out = Image.fromarray(a)
+    return out.filter(ImageFilter.UnsharpMask(radius=2.2, percent=85, threshold=3))
 
 
 # ------------------------------------------------------------------ SCORE panel
 r1 = ref(1)
 x0, y0, x1, y1 = SCORE_CROP_PX
 score = r1.crop((x0, y0, x1, y1))
-score = upscale(score, 1024, int(1024 * (y1 - y0) / (x1 - x0)))
+score = upscale(score, 1320, int(1320 * (y1 - y0) / (x1 - x0)))
 # fill the area outside the shield with the panel colour to avoid seams
 m, W, H = shield_mask(grow_px=4)
 mk = Image.fromarray((m * 255).astype(np.uint8)).crop((int(W / 2 - SHIELD_PX['cx'] + x0), y0, int(W / 2 - SHIELD_PX['cx'] + x1), y1)).resize(score.size)
@@ -76,26 +88,26 @@ save(score_rgba, 'zone_score.webp', 92)
 # ------------------------------------------------------------------ side panels (BOXER VS KICKER)
 r3 = ref(3)
 side = r3.crop((357, 330, 461, 863))
-side = upscale(side, 300, 1500)
+side = upscale(side, 400, 2000)
 save(side.convert('RGBA'), 'zone_side.webp', 92)
 
 # ------------------------------------------------------------------ KICKER lightning (lower body sides)
 kick = r3.crop((294, 928, 513, 1300))
-kick = upscale(kick, 600, 1020)
+kick = upscale(kick, 900, 1530)
 kick = key_blue(kick)
 save(kick, 'zone_kicker.webp', 92)
 
 # ------------------------------------------------------------------ TOP SIDE (BOXER lightning on canopy flanks)
 tops = r3.crop((345, 140, 575, 280))
-tops = upscale(tops, 920, 560)
+tops = upscale(tops, 1380, 840)
 tops = key_blue(tops)
-tops = erase_circles(tops, [(775, 516, 34)])
+tops = erase_circles(tops, [(1162, 774, 50)])
 save(tops, 'zone_top_side.webp', 92)
 
 # ------------------------------------------------------------------ BACK logo
 r6 = ref(6)
 back = r6.crop((398, 300, 728, 520))
-back = upscale(back, 990, 660)
+back = upscale(back, 1320, 880)
 back = key_blue(back)
 save(back, 'zone_back.webp', 92)
 
@@ -223,8 +235,9 @@ vv = np.linspace(-1, 1, SH)[:, None, None]
 img = img * (0.75 + 0.25 * (1 - vv ** 2))
 save(Image.fromarray((np.clip(img, 0, 1) * 255).astype(np.uint8)), 'led_strip_rgb.webp', 92)
 
-# ------------------------------------------------------------------ diamond plate (tiling: 12 x 12 bosses per tile)
-N = 1024; cells = 12
+# ------------------------------------------------------------------ diamond plate v2 (tiling, 14 x 14 bosses per tile)
+import cv2 as _cv2
+N = 2048; cells = 14
 yy, xx = np.mgrid[0:N, 0:N].astype(np.float32) / N * cells
 height = np.zeros((N, N), np.float32)
 for oy in (-1, 0, 1):
@@ -234,20 +247,20 @@ for oy in (-1, 0, 1):
         par = ((np.floor(xx) + ox + np.floor(yy) + oy) % 2)
         ang = np.where(par == 0, math.radians(45), math.radians(-45))
         lx = dx * np.cos(ang) + dy * np.sin(ang); ly = -dx * np.sin(ang) + dy * np.cos(ang)
-        dd = (lx / 0.40) ** 2 + (ly / 0.085) ** 2
-        height = np.maximum(height, np.sqrt(np.clip(1 - dd, 0, 1)))
-height = np.asarray(Image.fromarray((height * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))).astype(np.float32) / 255
-gy, gx = np.gradient(height)
-strength = 9.0
-nx, ny, nz = -gx * strength, gy * strength, np.ones_like(gx)
+        dd = (lx / 0.40) ** 2 + (ly / 0.075) ** 2
+        height = np.maximum(height, np.clip(1 - dd, 0, 1) ** 0.35)
+height = _cv2.GaussianBlur(height, (0, 0), 1.6)
+brushed = _cv2.GaussianBlur(rng.random((N, N)).astype(np.float32), (0, 0), sigmaX=24, sigmaY=0.6)
+brushed = (brushed - brushed.mean()) / (brushed.std() + 1e-6)
+gy, gx = np.gradient(height * 1.0 + brushed * 0.004)
+nx, ny, nz = -gx * 14.0, gy * 14.0, np.ones_like(gx)
 ln = np.sqrt(nx ** 2 + ny ** 2 + nz ** 2)
-nrm = np.dstack([nx / ln, ny / ln, nz / ln]) * 0.5 + 0.5
-save(Image.fromarray((nrm * 255).astype(np.uint8)), 'diamond_plate_normal.png')
-noise = np.asarray(Image.fromarray((rng.random((N // 8, N // 8)) * 255).astype(np.uint8)).resize((N, N), Image.BICUBIC)).astype(np.float32) / 255
-rough = np.clip(0.34 - height * 0.12 + (noise - 0.5) * 0.10, 0.05, 1)
-ao = np.clip(1 - (np.asarray(Image.fromarray((height * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(6))).astype(np.float32) / 255 - height) * 0.8, 0, 1)
-orm = np.dstack([ao, rough, np.ones_like(rough)])
-save(Image.fromarray((orm * 255).astype(np.uint8)), 'diamond_plate_orm.png')
+save(Image.fromarray(((np.dstack([nx / ln, ny / ln, nz / ln]) * 0.5 + 0.5) * 255).astype(np.uint8)), 'diamond_plate_normal.png')
+wear = np.clip(_cv2.GaussianBlur(rng.random((N // 16, N // 16)).astype(np.float32), (0, 0), 2), 0, 1)
+wear = _cv2.resize(wear, (N, N), interpolation=_cv2.INTER_CUBIC)
+rough = np.clip(0.34 - height * 0.16 + (wear - 0.5) * 0.18 + brushed * 0.02, 0.06, 1)  # boss tops polished by shoes
+ao = np.clip(1 - np.clip(_cv2.GaussianBlur(height, (0, 0), 10) - height, 0, 1) * 1.4, 0, 1)
+save(Image.fromarray((np.dstack([ao, rough, np.ones_like(rough)]) * 255).astype(np.uint8)), 'diamond_plate_orm.png')
 
 # glow of the RGB LEDs under the perforated plate (emissive, tiles with the plate UVs)
 glow = np.zeros((256, 256, 3), np.float32)
@@ -303,18 +316,79 @@ for i, c in enumerate(ico):
     if c[2] > 0.85 or (abs(c[2]) < 0.6 and (i % 2 == 0)) or c[2] < -0.85:
         white_set.add(i)
 is_white = np.isin(best, list(white_set))
-col = np.where(is_white[..., None], np.array([238, 238, 236.0]), np.array([22, 22, 24.0]))
-seam = np.clip(edge / 0.02, 0, 1)
-col = col * (0.35 + 0.65 * seam[..., None])
-# subtle grain
-grain = rng.normal(0, 3, col.shape[:2])[..., None]
-col = np.clip(col + grain, 0, 255)
-save(Image.fromarray(col.astype(np.uint8)), 'kicker_ball_basecolor.webp', 90)
-hgt = np.clip(edge / 0.03, 0, 1) ** 0.6
+col = np.where(is_white[..., None], np.array([236, 234, 228.0]), np.array([20, 20, 22.0]))
+# leather: pebble grain (equirect noise), panels pillow towards the seams, double stitching, light scuffs
+import cv2 as _cv
+def _wrapnoise(h, w, cell, seed):
+    r = np.random.default_rng(seed)
+    sm = r.random((h // cell + 3, w // cell + 3)).astype(np.float32)
+    sm[:, -3:] = sm[:, :3]
+    return _cv.resize(sm, ((w // cell + 3) * cell, (h // cell + 3) * cell), interpolation=_cv.INTER_CUBIC)[:h, :w]
+pebble = _wrapnoise(BH, BW, 3, 41) * 0.6 + _wrapnoise(BH, BW, 7, 42) * 0.4
+seam = np.clip(edge / 0.022, 0, 1)
+pillow = np.sin(np.clip(edge / 0.09, 0, 1) * math.pi / 2)
+k = np.array([0.37, 0.81, 0.45]); k /= np.linalg.norm(k)
+stitch_band = np.exp(-((edge - 0.032) / 0.006) ** 2)
+stitch = stitch_band * (np.sin((dirs @ k) * 700 + (dirs @ np.array([0.8, -0.2, 0.55])) * 300) > 0.35)
+scuff = np.clip(_wrapnoise(BH, BW, 40, 43) - 0.62, 0, 1) * 2.2 * (dirs[..., 2] > 0.2)
+shade = (0.30 + 0.70 * seam)[..., None] * (0.93 + 0.07 * pillow[..., None])
+col = col * shade + (pebble[..., None] - 0.5) * np.where(is_white[..., None], 10.0, 6.0)
+col = np.where(is_white[..., None], col - scuff[..., None] * np.array([38, 40, 46.0]), col)
+col = col * (1 - 0.55 * stitch[..., None]) + stitch[..., None] * np.where(is_white[..., None], 40.0, 70.0)
+col = np.clip(col, 0, 255)
+save(Image.fromarray(col.astype(np.uint8)), 'kicker_ball_basecolor.webp', 92)
+hgt = pillow * 1.0 + pebble * 0.08 - stitch * 0.25
 gy, gx = np.gradient(hgt)
-nx, ny, nz = -gx * 4, gy * 4, np.ones_like(gx)
+nx, ny, nz = -gx * 9, gy * 9, np.ones_like(gx)
 ln = np.sqrt(nx ** 2 + ny ** 2 + nz ** 2)
 save(Image.fromarray(((np.dstack([nx / ln, ny / ln, nz / ln]) * 0.5 + 0.5) * 255).astype(np.uint8)), 'kicker_ball_normal.png')
+rough = np.clip(np.where(is_white, 0.42, 0.36) + (1 - seam) * 0.3 + scuff * 0.2 + (pebble - 0.5) * 0.1, 0.05, 1)
+save(Image.fromarray((np.dstack([np.ones_like(rough), rough, np.zeros_like(rough)]) * 255).astype(np.uint8)), 'kicker_ball_orm.png')
+
+# ------------------------------------------------------------------ realism maps (v2)
+import cv2
+
+
+def height_to_normal(h, strength, name):
+    gy, gx = np.gradient(h.astype(np.float32))
+    nx, ny, nz = -gx * strength, gy * strength, np.ones_like(gx)
+    ln = np.sqrt(nx ** 2 + ny ** 2 + nz ** 2)
+    save(Image.fromarray(((np.dstack([nx / ln, ny / ln, nz / ln]) * 0.5 + 0.5) * 255).astype(np.uint8)), name)
+
+
+def tile_noise(n, scale, seed):
+    r = np.random.default_rng(seed)
+    small = r.random((max(n // scale, 2), max(n // scale, 2))).astype(np.float32)
+    small = np.pad(small, 2, mode='wrap')
+    big = cv2.resize(small, ((small.shape[1]) * scale, (small.shape[0]) * scale), interpolation=cv2.INTER_CUBIC)
+    o = 2 * scale
+    return big[o:o + n, o:o + n]
+
+
+# car-paint "orange peel": very soft, low-frequency waviness of the clear coat (tiles every 0.2 m)
+N = 1024
+peel = tile_noise(N, 32, 11) * 0.7 + tile_noise(N, 16, 12) * 0.3
+height_to_normal(cv2.GaussianBlur(peel, (0, 0), 3), 3.0, 'paint_finish_normal.png')
+# textured ABS / powder-coat grain for black plastic parts
+grain = tile_noise(N, 2, 21) * 0.6 + tile_noise(N, 4, 22) * 0.4
+height_to_normal(cv2.GaussianBlur(grain, (0, 0), 0.8), 1.6, 'plastic_grain_normal.png')
+
+# punch-bag leather: pebbled grain + double stitch lines along both gore edges (UV u = across the gore)
+BW, BH = 512, 1024
+g = tile_noise(1024, 3, 31)[:BH, :BW] * 0.55 + tile_noise(1024, 9, 32)[:BH, :BW] * 0.45
+uu = (np.arange(BW) + 0.5) / BW
+edge = np.minimum(uu, 1 - uu)  # 0 at the seams
+seam_groove = np.exp(-(edge / 0.018) ** 2)
+stitch_rows = (np.sin((np.arange(BH)[:, None] + 0.5) / BH * 2 * math.pi * 70) > 0.15).astype(np.float32)
+stitch = np.exp(-((edge - 0.045) / 0.008) ** 2)[None, :] * stitch_rows
+bagh = g * 0.35 - seam_groove[None, :] * 1.2 + stitch * 0.7
+height_to_normal(cv2.GaussianBlur(bagh.astype(np.float32), (0, 0), 0.9), 3.5, 'bag_leather_normal.png')
+# roughness: worn shine on the most hit areas (centre of the front gores), matte in the seams
+br = np.clip(0.42 - 0.10 * np.exp(-(((np.arange(BH)[:, None] / BH) - 0.55) / 0.18) ** 2) + seam_groove[None, :] * 0.25 + (g - 0.5) * 0.08, 0.1, 1)
+save(Image.fromarray((np.dstack([np.ones_like(br), br, np.zeros_like(br)]) * 255).astype(np.uint8)), 'bag_leather_orm.png')
+
+# kicker ball v2: seams + stitching dots + leather grain (equirect, same panel layout as v1)
+seam_mask = np.clip(edge_b := (1 - np.clip(edge / 0.02, 0, 1)), 0, 1) if False else None
 print('textures written to', OUT)
 for fn in sorted(os.listdir(OUT)):
     print(f'{fn:34s} {os.path.getsize(os.path.join(OUT, fn)) / 1024:8.1f} KB')
