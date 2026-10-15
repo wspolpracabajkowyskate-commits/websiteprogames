@@ -1,7 +1,7 @@
 // Studio: renderer, neutral photo-studio lighting, soft + contact shadows, camera & limits.
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import * as THREE from '/creator/vendor/three/three.module.min.js';
+import { OrbitControls } from '/creator/vendor/three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from '/creator/vendor/three/addons/environments/RoomEnvironment.js';
 
 export function detectQuality() {
   const mem = navigator.deviceMemory || 8;

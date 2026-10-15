@@ -1,6 +1,6 @@
 // Graphics zones: factory artwork <-> customer artwork composed on a canvas texture that is
 // mapped through the zone mesh UVs (so it follows curved surfaces exactly).
-import * as THREE from 'three';
+import * as THREE from '/creator/vendor/three/three.module.min.js';
 
 const MAX_SIDE = 2048;
 
