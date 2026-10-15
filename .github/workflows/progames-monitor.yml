@@ -1,0 +1,47 @@
+name: ProGames SEO and knowledge monitoring
+on:
+  push:
+    branches: [main, 'ai/stage3-growth', 'ai/polish-growth']
+    paths: ['growth/**', 'progames-ai-knowledge/**', 'progames-redesign/**', '.github/workflows/progames-monitor.yml']
+  pull_request:
+    paths: ['growth/**', 'progames-ai-knowledge/**', 'progames-redesign/**', '.github/workflows/progames-monitor.yml']
+  schedule:
+    - cron: '20 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: progames-monitor-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Validate canonical knowledge
+        run: python3 progames-ai-knowledge/scripts/validate_knowledge.py
+      - name: Retrieval and benchmark tests
+        run: |
+          python3 -m unittest discover -s progames-ai-knowledge/tests -v
+          python3 -m unittest discover -s growth/tests -v
+      - name: Full site and Polish regression checks
+        run: |
+          npm ci --prefix progames-redesign
+          npm run test:seo --prefix progames-redesign
+          npm run test:i18n --prefix progames-redesign
+          npm run test:pl --prefix progames-redesign
+      - name: Local SEO checks
+        run: python3 growth/scripts/monitor.py --out growth/results/local-${{ github.run_id }}.json
+      - name: Live read-only monitoring
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+        run: python3 growth/scripts/monitor.py --live --out growth/results/live-${{ github.run_id }}.json
+      - name: Preserve dated measurements
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: progames-monitor-${{ github.run_id }}
+          path: growth/results/*-${{ github.run_id }}.json
+          retention-days: 90

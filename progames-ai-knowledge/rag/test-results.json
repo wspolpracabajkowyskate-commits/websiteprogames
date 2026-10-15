@@ -1,0 +1,303 @@
+{
+  "executed_at": "2026-10-13T16:00:08.058674+00:00",
+  "scope": "Local evidence retrieval and local HTTP API only; no external LLM evaluation",
+  "documents": 50,
+  "unit_tests": {
+    "run": 8,
+    "failures": 0,
+    "errors": 0
+  },
+  "http_tests": [
+    {
+      "route": "/health",
+      "http_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "elapsed_ms": 9.919,
+      "result_status": "ok",
+      "results_count": 0
+    },
+    {
+      "route": "/products",
+      "http_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "elapsed_ms": 7.448,
+      "result_status": null,
+      "results_count": 46
+    },
+    {
+      "route": "/search?q=Boxer%20Flash&limit=2",
+      "http_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "elapsed_ms": 21.421,
+      "result_status": "retrieved",
+      "results_count": 2
+    },
+    {
+      "route": "/search?q=price",
+      "http_status": 200,
+      "expected_status": 200,
+      "passed": true,
+      "elapsed_ms": 0.658,
+      "result_status": "insufficient_evidence",
+      "results_count": 0
+    },
+    {
+      "route": "/search?q=boxer&limit=11",
+      "http_status": 400,
+      "expected_status": 400,
+      "passed": true,
+      "elapsed_ms": 1.014,
+      "result_status": null,
+      "results_count": 0
+    },
+    {
+      "route": "/missing",
+      "http_status": 404,
+      "expected_status": 404,
+      "passed": true,
+      "elapsed_ms": 0.473,
+      "result_status": null,
+      "results_count": 0
+    }
+  ],
+  "exact_model_name_retrieval": {
+    "count": 46,
+    "correct": 46,
+    "cases": [
+      {
+        "id": "monster-3in1-ticket",
+        "query": "Monster 3 in 1 Ticket",
+        "top1_correct": true
+      },
+      {
+        "id": "monster-3in1",
+        "query": "Monster 3 in 1",
+        "top1_correct": true
+      },
+      {
+        "id": "double-hit",
+        "query": "Double Hit",
+        "top1_correct": true
+      },
+      {
+        "id": "double-hit-gift",
+        "query": "Double Hit Gift",
+        "top1_correct": true
+      },
+      {
+        "id": "double-hit-kids",
+        "query": "Double Hit Kids",
+        "top1_correct": true
+      },
+      {
+        "id": "double-hit-kids-gift",
+        "query": "Double Hit Kids Gift",
+        "top1_correct": true
+      },
+      {
+        "id": "double-strike",
+        "query": "Double Strike 2",
+        "top1_correct": true
+      },
+      {
+        "id": "joker",
+        "query": "Joker",
+        "top1_correct": true
+      },
+      {
+        "id": "pow-boxer",
+        "query": "POW Boxer",
+        "top1_correct": true
+      },
+      {
+        "id": "champion",
+        "query": "Champion",
+        "top1_correct": true
+      },
+      {
+        "id": "easy",
+        "query": "Easy",
+        "top1_correct": true
+      },
+      {
+        "id": "cyber-punch",
+        "query": "Cyber Punch",
+        "top1_correct": true
+      },
+      {
+        "id": "gladiator",
+        "query": "Gladiator",
+        "top1_correct": true
+      },
+      {
+        "id": "mma",
+        "query": "MMA",
+        "top1_correct": true
+      },
+      {
+        "id": "black-jack",
+        "query": "Black Jack",
+        "top1_correct": true
+      },
+      {
+        "id": "super-hero",
+        "query": "Super Hero",
+        "top1_correct": true
+      },
+      {
+        "id": "power-black",
+        "query": "Power Black",
+        "top1_correct": true
+      },
+      {
+        "id": "poison-squad",
+        "query": "Poison Squad",
+        "top1_correct": true
+      },
+      {
+        "id": "hacker",
+        "query": "Hacker",
+        "top1_correct": true
+      },
+      {
+        "id": "strongman",
+        "query": "Strongman",
+        "top1_correct": true
+      },
+      {
+        "id": "viking",
+        "query": "Viking",
+        "top1_correct": true
+      },
+      {
+        "id": "disco",
+        "query": "Disco",
+        "top1_correct": true
+      },
+      {
+        "id": "matte-airbrushed",
+        "query": "Matte Airbrushed",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-combat",
+        "query": "Boxer Combat",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-fist",
+        "query": "Boxer Fist · 3 Player",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-ring",
+        "query": "Boxer Ring",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-combat-kids",
+        "query": "Boxer Combat Kids",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-kids",
+        "query": "Boxer Kids",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-flash-gift",
+        "query": "Boxer Flash Gift",
+        "top1_correct": true
+      },
+      {
+        "id": "hammer",
+        "query": "Hammer",
+        "top1_correct": true
+      },
+      {
+        "id": "kicker",
+        "query": "Kicker",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-flash",
+        "query": "Boxer Flash",
+        "top1_correct": true
+      },
+      {
+        "id": "boxer-gift",
+        "query": "Boxer Gift",
+        "top1_correct": true
+      },
+      {
+        "id": "bouncy-castles-xs",
+        "query": "Bouncy Castles · XS",
+        "top1_correct": true
+      },
+      {
+        "id": "air-hockey-golden",
+        "query": "Air Hockey Golden",
+        "top1_correct": true
+      },
+      {
+        "id": "air-hockey-arctic",
+        "query": "Air Hockey Arctic",
+        "top1_correct": true
+      },
+      {
+        "id": "air-hockey-matrix",
+        "query": "Air Hockey Matrix",
+        "top1_correct": true
+      },
+      {
+        "id": "basketball-compact",
+        "query": "Basketball Compact",
+        "top1_correct": true
+      },
+      {
+        "id": "basketball",
+        "query": "Basketball",
+        "top1_correct": true
+      },
+      {
+        "id": "kids-basketball",
+        "query": "Kids Basketball",
+        "top1_correct": true
+      },
+      {
+        "id": "kiddie-ride",
+        "query": "Kiddie Ride",
+        "top1_correct": true
+      },
+      {
+        "id": "cyberdart",
+        "query": "Cyberdart",
+        "top1_correct": true
+      },
+      {
+        "id": "hammer-2026",
+        "query": "Hammer 2",
+        "top1_correct": true
+      },
+      {
+        "id": "win-a-toy",
+        "query": "Boxer Toy",
+        "top1_correct": true
+      },
+      {
+        "id": "leader-rank",
+        "query": "Boxer TV",
+        "top1_correct": true
+      },
+      {
+        "id": "double-hit-gift-2",
+        "query": "Double Hit Gift 2",
+        "top1_correct": true
+      }
+    ]
+  },
+  "limits": "Exact-name queries derived from catalog test ingestion/ranking wiring, not independent semantic retrieval performance. Timing is single-run local CPU latency, not LLM latency."
+}

@@ -1,0 +1,2644 @@
+{
+  "checked_at": "2026-10-14T09:16:16.806364+00:00",
+  "kind": "live",
+  "manifest_count": 263,
+  "sitemap_matches_manifest": true,
+  "duplicate_sitemap_urls": false,
+  "pages": [
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/",
+      "final_url": "https://www.progamespoland.com/",
+      "canonical": [
+        "https://www.progamespoland.com/"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/boxer-standard.html",
+      "final_url": "https://www.progamespoland.com/boxer-standard.html",
+      "canonical": [
+        "https://www.progamespoland.com/boxer-standard.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/catalog.html",
+      "final_url": "https://www.progamespoland.com/catalog.html",
+      "canonical": [
+        "https://www.progamespoland.com/catalog.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/monster-3in1-ticket.html",
+      "final_url": "https://www.progamespoland.com/en/products/monster-3in1-ticket.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/monster-3in1-ticket.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/monster-3in1.html",
+      "final_url": "https://www.progamespoland.com/en/products/monster-3in1.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/monster-3in1.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/double-hit.html",
+      "final_url": "https://www.progamespoland.com/en/products/double-hit.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/double-hit.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/double-hit-gift.html",
+      "final_url": "https://www.progamespoland.com/en/products/double-hit-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/double-hit-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/double-hit-kids.html",
+      "final_url": "https://www.progamespoland.com/en/products/double-hit-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/double-hit-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/double-hit-kids-gift.html",
+      "final_url": "https://www.progamespoland.com/en/products/double-hit-kids-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/double-hit-kids-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/double-strike.html",
+      "final_url": "https://www.progamespoland.com/en/products/double-strike.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/double-strike.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/joker.html",
+      "final_url": "https://www.progamespoland.com/en/products/joker.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/joker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/pow-boxer.html",
+      "final_url": "https://www.progamespoland.com/en/products/pow-boxer.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/pow-boxer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/champion.html",
+      "final_url": "https://www.progamespoland.com/en/products/champion.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/champion.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/easy.html",
+      "final_url": "https://www.progamespoland.com/en/products/easy.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/easy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/cyber-punch.html",
+      "final_url": "https://www.progamespoland.com/en/products/cyber-punch.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/cyber-punch.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/gladiator.html",
+      "final_url": "https://www.progamespoland.com/en/products/gladiator.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/gladiator.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/mma.html",
+      "final_url": "https://www.progamespoland.com/en/products/mma.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/mma.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/black-jack.html",
+      "final_url": "https://www.progamespoland.com/en/products/black-jack.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/black-jack.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/super-hero.html",
+      "final_url": "https://www.progamespoland.com/en/products/super-hero.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/super-hero.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/power-black.html",
+      "final_url": "https://www.progamespoland.com/en/products/power-black.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/power-black.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/poison-squad.html",
+      "final_url": "https://www.progamespoland.com/en/products/poison-squad.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/poison-squad.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/hacker.html",
+      "final_url": "https://www.progamespoland.com/en/products/hacker.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/hacker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/strongman.html",
+      "final_url": "https://www.progamespoland.com/en/products/strongman.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/strongman.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/viking.html",
+      "final_url": "https://www.progamespoland.com/en/products/viking.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/viking.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/disco.html",
+      "final_url": "https://www.progamespoland.com/en/products/disco.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/disco.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/matte-airbrushed.html",
+      "final_url": "https://www.progamespoland.com/en/products/matte-airbrushed.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/matte-airbrushed.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-combat.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-combat.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-combat.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-fist.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-fist.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-fist.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-ring.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-ring.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-ring.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-combat-kids.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-combat-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-combat-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-kids.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-flash-gift.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-flash-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-flash-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/hammer.html",
+      "final_url": "https://www.progamespoland.com/en/products/hammer.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/hammer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/kicker.html",
+      "final_url": "https://www.progamespoland.com/en/products/kicker.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/kicker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-flash.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-flash.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-flash.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/boxer-gift.html",
+      "final_url": "https://www.progamespoland.com/en/products/boxer-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/boxer-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/bouncy-castles-xs.html",
+      "final_url": "https://www.progamespoland.com/en/products/bouncy-castles-xs.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/bouncy-castles-xs.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/air-hockey-golden.html",
+      "final_url": "https://www.progamespoland.com/en/products/air-hockey-golden.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/air-hockey-golden.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/air-hockey-arctic.html",
+      "final_url": "https://www.progamespoland.com/en/products/air-hockey-arctic.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/air-hockey-arctic.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/air-hockey-matrix.html",
+      "final_url": "https://www.progamespoland.com/en/products/air-hockey-matrix.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/air-hockey-matrix.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/basketball-compact.html",
+      "final_url": "https://www.progamespoland.com/en/products/basketball-compact.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/basketball-compact.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/basketball.html",
+      "final_url": "https://www.progamespoland.com/en/products/basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/kids-basketball.html",
+      "final_url": "https://www.progamespoland.com/en/products/kids-basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/kids-basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/kiddie-ride.html",
+      "final_url": "https://www.progamespoland.com/en/products/kiddie-ride.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/kiddie-ride.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/cyberdart.html",
+      "final_url": "https://www.progamespoland.com/en/products/cyberdart.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/cyberdart.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/hammer-2026.html",
+      "final_url": "https://www.progamespoland.com/en/products/hammer-2026.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/hammer-2026.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/win-a-toy.html",
+      "final_url": "https://www.progamespoland.com/en/products/win-a-toy.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/win-a-toy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/leader-rank.html",
+      "final_url": "https://www.progamespoland.com/en/products/leader-rank.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/leader-rank.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/products/double-hit-gift-2.html",
+      "final_url": "https://www.progamespoland.com/en/products/double-hit-gift-2.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/products/double-hit-gift-2.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es.html",
+      "final_url": "https://www.progamespoland.com/es.html",
+      "canonical": [
+        "https://www.progamespoland.com/es.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/boxer-standard-es.html",
+      "final_url": "https://www.progamespoland.com/boxer-standard-es.html",
+      "canonical": [
+        "https://www.progamespoland.com/boxer-standard-es.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/catalog-es.html",
+      "final_url": "https://www.progamespoland.com/catalog-es.html",
+      "canonical": [
+        "https://www.progamespoland.com/catalog-es.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/monster-3in1-ticket.html",
+      "final_url": "https://www.progamespoland.com/es/productos/monster-3in1-ticket.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/monster-3in1-ticket.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/monster-3in1.html",
+      "final_url": "https://www.progamespoland.com/es/productos/monster-3in1.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/monster-3in1.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/double-hit.html",
+      "final_url": "https://www.progamespoland.com/es/productos/double-hit.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/double-hit.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/double-hit-gift.html",
+      "final_url": "https://www.progamespoland.com/es/productos/double-hit-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/double-hit-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/double-hit-kids.html",
+      "final_url": "https://www.progamespoland.com/es/productos/double-hit-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/double-hit-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/double-hit-kids-gift.html",
+      "final_url": "https://www.progamespoland.com/es/productos/double-hit-kids-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/double-hit-kids-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/double-strike.html",
+      "final_url": "https://www.progamespoland.com/es/productos/double-strike.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/double-strike.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/joker.html",
+      "final_url": "https://www.progamespoland.com/es/productos/joker.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/joker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/pow-boxer.html",
+      "final_url": "https://www.progamespoland.com/es/productos/pow-boxer.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/pow-boxer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/champion.html",
+      "final_url": "https://www.progamespoland.com/es/productos/champion.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/champion.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/easy.html",
+      "final_url": "https://www.progamespoland.com/es/productos/easy.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/easy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/cyber-punch.html",
+      "final_url": "https://www.progamespoland.com/es/productos/cyber-punch.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/cyber-punch.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/gladiator.html",
+      "final_url": "https://www.progamespoland.com/es/productos/gladiator.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/gladiator.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/mma.html",
+      "final_url": "https://www.progamespoland.com/es/productos/mma.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/mma.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/black-jack.html",
+      "final_url": "https://www.progamespoland.com/es/productos/black-jack.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/black-jack.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/super-hero.html",
+      "final_url": "https://www.progamespoland.com/es/productos/super-hero.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/super-hero.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/power-black.html",
+      "final_url": "https://www.progamespoland.com/es/productos/power-black.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/power-black.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/poison-squad.html",
+      "final_url": "https://www.progamespoland.com/es/productos/poison-squad.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/poison-squad.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/hacker.html",
+      "final_url": "https://www.progamespoland.com/es/productos/hacker.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/hacker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/strongman.html",
+      "final_url": "https://www.progamespoland.com/es/productos/strongman.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/strongman.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/viking.html",
+      "final_url": "https://www.progamespoland.com/es/productos/viking.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/viking.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/disco.html",
+      "final_url": "https://www.progamespoland.com/es/productos/disco.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/disco.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/matte-airbrushed.html",
+      "final_url": "https://www.progamespoland.com/es/productos/matte-airbrushed.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/matte-airbrushed.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-combat.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-combat.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-combat.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-fist.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-fist.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-fist.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-ring.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-ring.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-ring.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-combat-kids.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-combat-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-combat-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-kids.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-flash-gift.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-flash-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-flash-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/hammer.html",
+      "final_url": "https://www.progamespoland.com/es/productos/hammer.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/hammer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/kicker.html",
+      "final_url": "https://www.progamespoland.com/es/productos/kicker.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/kicker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-flash.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-flash.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-flash.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/boxer-gift.html",
+      "final_url": "https://www.progamespoland.com/es/productos/boxer-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/boxer-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/bouncy-castles-xs.html",
+      "final_url": "https://www.progamespoland.com/es/productos/bouncy-castles-xs.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/bouncy-castles-xs.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/air-hockey-golden.html",
+      "final_url": "https://www.progamespoland.com/es/productos/air-hockey-golden.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/air-hockey-golden.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/air-hockey-arctic.html",
+      "final_url": "https://www.progamespoland.com/es/productos/air-hockey-arctic.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/air-hockey-arctic.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/air-hockey-matrix.html",
+      "final_url": "https://www.progamespoland.com/es/productos/air-hockey-matrix.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/air-hockey-matrix.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/basketball-compact.html",
+      "final_url": "https://www.progamespoland.com/es/productos/basketball-compact.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/basketball-compact.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/basketball.html",
+      "final_url": "https://www.progamespoland.com/es/productos/basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/kids-basketball.html",
+      "final_url": "https://www.progamespoland.com/es/productos/kids-basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/kids-basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/kiddie-ride.html",
+      "final_url": "https://www.progamespoland.com/es/productos/kiddie-ride.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/kiddie-ride.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/cyberdart.html",
+      "final_url": "https://www.progamespoland.com/es/productos/cyberdart.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/cyberdart.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/hammer-2026.html",
+      "final_url": "https://www.progamespoland.com/es/productos/hammer-2026.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/hammer-2026.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/win-a-toy.html",
+      "final_url": "https://www.progamespoland.com/es/productos/win-a-toy.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/win-a-toy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/leader-rank.html",
+      "final_url": "https://www.progamespoland.com/es/productos/leader-rank.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/leader-rank.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/es/productos/double-hit-gift-2.html",
+      "final_url": "https://www.progamespoland.com/es/productos/double-hit-gift-2.html",
+      "canonical": [
+        "https://www.progamespoland.com/es/productos/double-hit-gift-2.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/",
+      "final_url": "https://www.progamespoland.com/pl/",
+      "canonical": [
+        "https://www.progamespoland.com/pl/"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/boxer-standard.html",
+      "final_url": "https://www.progamespoland.com/pl/boxer-standard.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/boxer-standard.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/katalog.html",
+      "final_url": "https://www.progamespoland.com/pl/katalog.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/katalog.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/monster-3in1-ticket.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/monster-3in1-ticket.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/monster-3in1-ticket.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/monster-3in1.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/monster-3in1.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/monster-3in1.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/double-hit.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/double-hit.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/double-hit.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/double-hit-gift.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/double-hit-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/double-hit-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/double-hit-kids.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/double-hit-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/double-hit-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/double-hit-kids-gift.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/double-hit-kids-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/double-hit-kids-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/double-strike.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/double-strike.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/double-strike.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/joker.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/joker.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/joker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/pow-boxer.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/pow-boxer.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/pow-boxer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/champion.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/champion.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/champion.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/easy.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/easy.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/easy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/cyber-punch.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/cyber-punch.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/cyber-punch.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/gladiator.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/gladiator.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/gladiator.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/mma.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/mma.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/mma.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/black-jack.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/black-jack.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/black-jack.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/super-hero.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/super-hero.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/super-hero.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/power-black.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/power-black.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/power-black.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/poison-squad.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/poison-squad.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/poison-squad.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/hacker.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/hacker.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/hacker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/strongman.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/strongman.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/strongman.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/viking.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/viking.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/viking.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/disco.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/disco.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/disco.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/matte-airbrushed.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/matte-airbrushed.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/matte-airbrushed.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-combat.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-combat.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-combat.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-fist.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-fist.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-fist.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-ring.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-ring.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-ring.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-combat-kids.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-combat-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-combat-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-kids.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-flash-gift.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-flash-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-flash-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/hammer.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/hammer.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/hammer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/kicker.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/kicker.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/kicker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-flash.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-flash.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-flash.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/boxer-gift.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/boxer-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/boxer-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/bouncy-castles-xs.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/bouncy-castles-xs.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/bouncy-castles-xs.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/air-hockey-golden.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/air-hockey-golden.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/air-hockey-golden.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/air-hockey-arctic.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/air-hockey-arctic.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/air-hockey-arctic.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/air-hockey-matrix.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/air-hockey-matrix.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/air-hockey-matrix.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/basketball-compact.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/basketball-compact.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/basketball-compact.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/basketball.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/kids-basketball.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/kids-basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/kids-basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/kiddie-ride.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/kiddie-ride.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/kiddie-ride.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/cyberdart.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/cyberdart.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/cyberdart.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/hammer-2026.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/hammer-2026.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/hammer-2026.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/win-a-toy.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/win-a-toy.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/win-a-toy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/leader-rank.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/leader-rank.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/leader-rank.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/produkty/double-hit-gift-2.html",
+      "final_url": "https://www.progamespoland.com/pl/produkty/double-hit-gift-2.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/produkty/double-hit-gift-2.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/",
+      "final_url": "https://www.progamespoland.com/de/",
+      "canonical": [
+        "https://www.progamespoland.com/de/"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/boxer-standard.html",
+      "final_url": "https://www.progamespoland.com/de/boxer-standard.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/boxer-standard.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/katalog.html",
+      "final_url": "https://www.progamespoland.com/de/katalog.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/katalog.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/monster-3in1-ticket.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/monster-3in1-ticket.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/monster-3in1-ticket.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/monster-3in1.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/monster-3in1.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/monster-3in1.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/double-hit.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/double-hit.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/double-hit.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/double-hit-gift.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/double-hit-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/double-hit-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/double-hit-kids.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/double-hit-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/double-hit-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/double-hit-kids-gift.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/double-hit-kids-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/double-hit-kids-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/double-strike.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/double-strike.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/double-strike.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/joker.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/joker.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/joker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/pow-boxer.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/pow-boxer.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/pow-boxer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/champion.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/champion.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/champion.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/easy.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/easy.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/easy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/cyber-punch.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/cyber-punch.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/cyber-punch.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/gladiator.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/gladiator.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/gladiator.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/mma.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/mma.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/mma.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/black-jack.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/black-jack.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/black-jack.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/super-hero.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/super-hero.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/super-hero.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/power-black.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/power-black.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/power-black.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/poison-squad.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/poison-squad.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/poison-squad.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/hacker.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/hacker.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/hacker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/strongman.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/strongman.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/strongman.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/viking.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/viking.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/viking.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/disco.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/disco.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/disco.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/matte-airbrushed.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/matte-airbrushed.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/matte-airbrushed.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-combat.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-combat.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-combat.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-fist.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-fist.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-fist.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-ring.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-ring.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-ring.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-combat-kids.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-combat-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-combat-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-kids.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-flash-gift.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-flash-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-flash-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/hammer.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/hammer.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/hammer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/kicker.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/kicker.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/kicker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-flash.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-flash.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-flash.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/boxer-gift.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/boxer-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/boxer-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/bouncy-castles-xs.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/bouncy-castles-xs.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/bouncy-castles-xs.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/air-hockey-golden.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/air-hockey-golden.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/air-hockey-golden.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/air-hockey-arctic.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/air-hockey-arctic.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/air-hockey-arctic.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/air-hockey-matrix.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/air-hockey-matrix.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/air-hockey-matrix.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/basketball-compact.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/basketball-compact.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/basketball-compact.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/basketball.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/kids-basketball.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/kids-basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/kids-basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/kiddie-ride.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/kiddie-ride.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/kiddie-ride.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/cyberdart.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/cyberdart.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/cyberdart.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/hammer-2026.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/hammer-2026.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/hammer-2026.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/win-a-toy.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/win-a-toy.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/win-a-toy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/leader-rank.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/leader-rank.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/leader-rank.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/de/produkte/double-hit-gift-2.html",
+      "final_url": "https://www.progamespoland.com/de/produkte/double-hit-gift-2.html",
+      "canonical": [
+        "https://www.progamespoland.com/de/produkte/double-hit-gift-2.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/",
+      "final_url": "https://www.progamespoland.com/fr/",
+      "canonical": [
+        "https://www.progamespoland.com/fr/"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/boxer-standard.html",
+      "final_url": "https://www.progamespoland.com/fr/boxer-standard.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/boxer-standard.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/catalogue.html",
+      "final_url": "https://www.progamespoland.com/fr/catalogue.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/catalogue.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/monster-3in1-ticket.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/monster-3in1-ticket.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/monster-3in1-ticket.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/monster-3in1.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/monster-3in1.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/monster-3in1.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/double-hit.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/double-hit.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/double-hit.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/double-hit-gift.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/double-hit-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/double-hit-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/double-hit-kids.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/double-hit-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/double-hit-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/double-hit-kids-gift.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/double-hit-kids-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/double-hit-kids-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/double-strike.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/double-strike.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/double-strike.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/joker.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/joker.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/joker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/pow-boxer.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/pow-boxer.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/pow-boxer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/champion.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/champion.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/champion.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/easy.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/easy.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/easy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/cyber-punch.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/cyber-punch.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/cyber-punch.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/gladiator.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/gladiator.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/gladiator.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/mma.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/mma.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/mma.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/black-jack.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/black-jack.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/black-jack.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/super-hero.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/super-hero.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/super-hero.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/power-black.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/power-black.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/power-black.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/poison-squad.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/poison-squad.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/poison-squad.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/hacker.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/hacker.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/hacker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/strongman.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/strongman.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/strongman.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/viking.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/viking.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/viking.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/disco.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/disco.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/disco.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/matte-airbrushed.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/matte-airbrushed.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/matte-airbrushed.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-combat.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-combat.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-combat.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-fist.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-fist.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-fist.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-ring.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-ring.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-ring.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-combat-kids.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-combat-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-combat-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-kids.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-kids.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-kids.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-flash-gift.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-flash-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-flash-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/hammer.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/hammer.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/hammer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/kicker.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/kicker.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/kicker.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-flash.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-flash.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-flash.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/boxer-gift.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/boxer-gift.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/boxer-gift.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/bouncy-castles-xs.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/bouncy-castles-xs.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/bouncy-castles-xs.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/air-hockey-golden.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/air-hockey-golden.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/air-hockey-golden.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/air-hockey-arctic.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/air-hockey-arctic.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/air-hockey-arctic.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/air-hockey-matrix.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/air-hockey-matrix.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/air-hockey-matrix.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/basketball-compact.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/basketball-compact.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/basketball-compact.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/basketball.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/kids-basketball.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/kids-basketball.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/kids-basketball.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/kiddie-ride.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/kiddie-ride.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/kiddie-ride.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/cyberdart.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/cyberdart.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/cyberdart.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/hammer-2026.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/hammer-2026.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/hammer-2026.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/win-a-toy.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/win-a-toy.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/win-a-toy.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/leader-rank.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/leader-rank.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/leader-rank.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/fr/produits/double-hit-gift-2.html",
+      "final_url": "https://www.progamespoland.com/fr/produits/double-hit-gift-2.html",
+      "canonical": [
+        "https://www.progamespoland.com/fr/produits/double-hit-gift-2.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/boxing-machines.html",
+      "final_url": "https://www.progamespoland.com/en/boxing-machines.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/boxing-machines.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/arcade-machines.html",
+      "final_url": "https://www.progamespoland.com/en/arcade-machines.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/arcade-machines.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/manufacturer.html",
+      "final_url": "https://www.progamespoland.com/en/manufacturer.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/manufacturer.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/distributors-wholesale.html",
+      "final_url": "https://www.progamespoland.com/en/distributors-wholesale.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/distributors-wholesale.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/knowledge/",
+      "final_url": "https://www.progamespoland.com/en/knowledge/",
+      "canonical": [
+        "https://www.progamespoland.com/en/knowledge/"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/knowledge/what-is-a-boxing-arcade-machine.html",
+      "final_url": "https://www.progamespoland.com/en/knowledge/what-is-a-boxing-arcade-machine.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/knowledge/what-is-a-boxing-arcade-machine.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/knowledge/choosing-a-commercial-boxing-machine.html",
+      "final_url": "https://www.progamespoland.com/en/knowledge/choosing-a-commercial-boxing-machine.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/knowledge/choosing-a-commercial-boxing-machine.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/en/knowledge/installation-and-maintenance.html",
+      "final_url": "https://www.progamespoland.com/en/knowledge/installation-and-maintenance.html",
+      "canonical": [
+        "https://www.progamespoland.com/en/knowledge/installation-and-maintenance.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/automaty-bokserskie.html",
+      "final_url": "https://www.progamespoland.com/pl/automaty-bokserskie.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/automaty-bokserskie.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/automaty-rozrywkowe.html",
+      "final_url": "https://www.progamespoland.com/pl/automaty-rozrywkowe.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/automaty-rozrywkowe.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/producent-automatow-bokserskich.html",
+      "final_url": "https://www.progamespoland.com/pl/producent-automatow-bokserskich.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/producent-automatow-bokserskich.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/sprzedaz-hurtowa-i-dystrybucja.html",
+      "final_url": "https://www.progamespoland.com/pl/sprzedaz-hurtowa-i-dystrybucja.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/sprzedaz-hurtowa-i-dystrybucja.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/poradniki/",
+      "final_url": "https://www.progamespoland.com/pl/poradniki/",
+      "canonical": [
+        "https://www.progamespoland.com/pl/poradniki/"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/poradniki/co-to-jest-automat-bokserski.html",
+      "final_url": "https://www.progamespoland.com/pl/poradniki/co-to-jest-automat-bokserski.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/poradniki/co-to-jest-automat-bokserski.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/poradniki/jak-wybrac-automat-bokserski.html",
+      "final_url": "https://www.progamespoland.com/pl/poradniki/jak-wybrac-automat-bokserski.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/poradniki/jak-wybrac-automat-bokserski.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/poradniki/montaz-i-serwis-automatu-bokserskiego.html",
+      "final_url": "https://www.progamespoland.com/pl/poradniki/montaz-i-serwis-automatu-bokserskiego.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/poradniki/montaz-i-serwis-automatu-bokserskiego.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/poradniki/ile-kosztuje-automat-bokserski.html",
+      "final_url": "https://www.progamespoland.com/pl/poradniki/ile-kosztuje-automat-bokserski.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/poradniki/ile-kosztuje-automat-bokserski.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    },
+    {
+      "status": 200,
+      "url": "https://www.progamespoland.com/pl/poradniki/automat-bokserski-do-baru.html",
+      "final_url": "https://www.progamespoland.com/pl/poradniki/automat-bokserski-do-baru.html",
+      "canonical": [
+        "https://www.progamespoland.com/pl/poradniki/automat-bokserski-do-baru.html"
+      ],
+      "h1_count": 1,
+      "passed": true
+    }
+  ],
+  "live_sitemap_matches_manifest": true,
+  "product_source_hash": "ee401484cba7b0118a52e1c0338d0742aaf5981ae475bef34624725b9036b58f",
+  "knowledge_source_hash": "ee401484cba7b0118a52e1c0338d0742aaf5981ae475bef34624725b9036b58f",
+  "knowledge_matches_published_products": true,
+  "passed": true
+}

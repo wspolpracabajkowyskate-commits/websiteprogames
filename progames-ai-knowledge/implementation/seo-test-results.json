@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "pages": 263,
+  "originalURLs": 245,
+  "newEnglishPages": 8,
+  "internalReferences": 6082,
+  "jsonLdObjects": 755,
+  "imagesWithDimensions": 2033,
+  "specificationRows": 760,
+  "redirectCases": 30,
+  "redirectTest": "configuration simulation; deployed HTTP not tested",
+  "mobile": "responsive CSS and DOM checked; visual browser QA unavailable"
+}

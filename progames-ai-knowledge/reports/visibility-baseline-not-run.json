@@ -1,0 +1,11 @@
+{
+  "status": "not_run",
+  "records": [],
+  "summary": [],
+  "limitations": [
+    "String presence is not factual correctness or citation validity.",
+    "Judged rates use reviewed records only; report coverage.",
+    "No observation means null/empty results, never zero performance.",
+    "Compare repeated runs with identical question and prompt versions; base/system/RAG/search remain separate."
+  ]
+}
