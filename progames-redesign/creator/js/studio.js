@@ -4,16 +4,21 @@ import { OrbitControls } from '/creator/vendor/three/addons/controls/OrbitContro
 import { RoomEnvironment } from '/creator/vendor/three/addons/environments/RoomEnvironment.js';
 
 export function detectQuality() {
+  const ua = navigator.userAgent;
+  const mobile = /Android|iPhone|iPad|iPod/i.test(ua) || window.matchMedia('(pointer: coarse)').matches;
+  // iOS Safari hides real core / memory counts, but every supported iPhone/iPad GPU handles this scene;
+  // only clearly weak Android / old devices get the reduced profile.
+  const apple = /iPhone|iPad|iPod|Macintosh/i.test(ua);
   const mem = navigator.deviceMemory || 8;
   const cores = navigator.hardwareConcurrency || 8;
-  const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.matchMedia('(pointer: coarse)').matches;
-  const low = mem <= 4 || cores <= 4;
+  const low = !apple && (mem <= 2 || cores <= 4);
   return {
     mobile,
     low,
-    dpr: Math.min(window.devicePixelRatio || 1, low ? 1.25 : mobile ? 1.6 : 2),
-    shadows: !low,
-    shadowMap: mobile ? 1024 : 2048,
+    dpr: Math.min(window.devicePixelRatio || 1, low ? 1.3 : 2),
+    shadows: true,                       // soft key-light shadow behind the machine on every device
+    softShadows: !low,
+    shadowMap: low ? 1024 : mobile ? 1536 : 2048,
   };
 }
 
@@ -27,7 +32,7 @@ export class Studio {
     r.toneMapping = THREE.ACESFilmicToneMapping;
     r.toneMappingExposure = 1.0;
     r.shadowMap.enabled = quality.shadows;
-    r.shadowMap.type = THREE.PCFSoftShadowMap;
+    r.shadowMap.type = quality.softShadows ? THREE.PCFSoftShadowMap : THREE.PCFShadowMap;
     r.setClearColor(0x000000, 0);
     container.appendChild(r.domElement);
     r.domElement.setAttribute('aria-label', '3D view of the machine');
