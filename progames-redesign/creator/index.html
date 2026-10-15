@@ -10,7 +10,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/manrope-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/creator/creator.css?v=5">
+<link rel="stylesheet" href="/creator/creator.css?v=6">
 </head>
 <body>
 <header class="cr-top">
@@ -20,7 +20,7 @@
   </a>
   <span class="cr-sep" aria-hidden="true"></span>
   <span class="cr-app">Creator</span>
-  <label class="cr-model"><span class="sr-only">Machine</span><select id="modelSelect" aria-label="Machine to configure"></select></label>
+  <span class="cr-product" id="productName"></span>
   <span class="cr-chip" title="Not linked from the site, not indexed">Dev preview</span>
 </header>
 
@@ -50,14 +50,19 @@
 
   <aside class="cr-panel" aria-label="Configuration">
     <div class="cr-scroll">
+      <section class="cr-sec" aria-labelledby="secModel">
+        <h2 id="secModel"><span>01</span>Machine</h2>
+        <div class="cr-models" id="models" role="radiogroup" aria-label="Machine to configure"></div>
+      </section>
+
       <section class="cr-sec" aria-labelledby="secColor">
-        <h2 id="secColor"><span>01</span>Body colour</h2>
+        <h2 id="secColor"><span>02</span>Body colour</h2>
         <div class="cr-swatches" id="swatches" role="radiogroup" aria-label="Body colour"></div>
         <div class="cr-colorname"><span id="colorName">PRO GAMES Blue</span><code id="colorHex">#0052D6</code></div>
       </section>
 
       <section class="cr-sec" aria-labelledby="secGfx">
-        <h2 id="secGfx"><span>02</span>Graphics</h2>
+        <h2 id="secGfx"><span>03</span>Graphics</h2>
         <p class="cr-note">Choose a zone (or click it on the machine) and upload your artwork.</p>
         <div class="cr-zones" id="zones" role="listbox" aria-label="Graphic zones"></div>
         <div class="cr-editor" id="editor">
@@ -93,7 +98,7 @@
       </section>
 
       <section class="cr-sec" aria-labelledby="secOpt">
-        <h2 id="secOpt"><span>03</span>Options</h2>
+        <h2 id="secOpt"><span>04</span>Options</h2>
         <div class="cr-options" id="options"></div>
       </section>
     </div>
@@ -123,7 +128,7 @@
   })();
 </script>
 <script type="module">
-  import('/creator/js/app.js?v=5').catch(function (e) {
+  import('/creator/js/app.js?v=6').catch(function (e) {
     var l = document.getElementById('loading'), t = document.getElementById('loadingText');
     window.__creatorFailed = true; l.classList.add('error');
     t.textContent = 'Could not load the viewer scripts: ' + (e && e.message ? e.message : e);

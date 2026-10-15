@@ -2,10 +2,10 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=5';
-import { Studio, detectQuality } from './studio.js?v=5';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=5';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=5';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=6';
+import { Studio, detectQuality } from './studio.js?v=6';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=6';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=6';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -336,11 +336,17 @@ function buildUI() {
   $('#viewerTitle').textContent = product.name;
   document.title = `${product.name} – PRO GAMES Creator (preview)`;
   $('#productSpec').textContent = product.spec || '';
-  const sel = $('#modelSelect');
-  if (sel && !sel.options.length) {
-    for (const p of Object.values(PRODUCTS)) sel.add(new Option(`${p.name} — ${p.subtitle}`, p.id));
-    sel.value = product.id;
-    sel.addEventListener('change', () => { location.search = `?model=${encodeURIComponent(sel.value)}`; });
+  $('#productName').innerHTML = `${product.name} <em>${product.subtitle}</em>`;
+  const ml = $('#models');
+  if (ml && !ml.children.length) {
+    for (const p of Object.values(PRODUCTS)) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'cr-machine'; b.setAttribute('role', 'radio');
+      b.setAttribute('aria-checked', String(p.id === product.id));
+      b.innerHTML = `<img src="${p.thumb}" alt="" width="64" height="64" loading="lazy"><span><b>${p.name}</b><small>${p.subtitle}</small></span>`;
+      b.addEventListener('click', () => { if (p.id !== product.id) location.search = `?model=${encodeURIComponent(p.id)}`; });
+      ml.appendChild(b);
+    }
   }
   // swatches
   const sw = $('#swatches');
