@@ -111,6 +111,21 @@
   </aside>
 </main>
 <noscript><p class="cr-noscript">PRO GAMES Creator needs JavaScript and WebGL.</p></noscript>
+<script>
+  // Show the real reason on screen instead of an endless spinner (WebGL off, old browser, blocked file…)
+  (function () {
+    function fail(msg) {
+      var l = document.getElementById('loading'), t = document.getElementById('loadingText');
+      if (!l || l.classList.contains('done')) return;
+      l.classList.add('error'); t.textContent = 'Could not start the 3D viewer: ' + msg + ' — try Cmd+Shift+R or another browser.';
+    }
+    window.addEventListener('error', function (e) { fail(e.message || 'script error'); });
+    window.addEventListener('unhandledrejection', function (e) { fail((e.reason && e.reason.message) || String(e.reason)); });
+    if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) fail('this browser is too old (no import maps)');
+    try { var c = document.createElement('canvas'); if (!(c.getContext('webgl2') || c.getContext('webgl'))) fail('WebGL is disabled in this browser'); } catch (e) { fail('WebGL unavailable'); }
+    setTimeout(function () { if (!(window.__creator && window.__creator.ready)) fail('loading timed out after 45 s'); }, 45000);
+  })();
+</script>
 <script type="module" src="/creator/js/app.js"></script>
 </body>
 </html>

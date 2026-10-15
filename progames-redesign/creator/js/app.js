@@ -50,7 +50,8 @@ function toast(msg, ms = 2200) {
 // ------------------------------------------------------------------ load model
 const loader = new GLTFLoader();
 loader.load(product.model, onLoaded, (e) => {
-  if (e.total) $('#loadingBar').style.width = `${Math.round((e.loaded / e.total) * 100)}%`;
+  const total = e.total || 3.6e6; // server may gzip and hide the length
+  $('#loadingBar').style.width = `${Math.min(99, Math.round((e.loaded / total) * 100))}%`;
 }, (err) => {
   console.error(err);
   $('#loading').classList.add('error');
