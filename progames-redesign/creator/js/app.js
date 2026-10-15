@@ -49,13 +49,23 @@ function toast(msg, ms = 2200) {
 
 // ------------------------------------------------------------------ load model
 const loader = new GLTFLoader();
-loader.load(product.model, onLoaded, (e) => {
+const stage = (t) => { window.__creatorStage = t; const el = $('#loadingText'); if (el && !$('#loading').classList.contains('error')) el.textContent = t; };
+const showError = (where, err) => {
+  console.error('[creator]', where, err);
+  window.__creatorFailed = true;
+  $('#loading').classList.add('error');
+  $('#loadingText').textContent = `Error (${where}): ${(err && (err.message || err)) || 'unknown'}`;
+};
+stage('Downloading 3D model…');
+loader.load(product.model, (g) => {
+  try { stage('Building the scene…'); onLoaded(g); }
+  catch (e) { showError('scene setup', e); }
+}, (e) => {
+  stage(`Downloading 3D model… ${(e.loaded / 1048576).toFixed(1)} MB`);
   const total = e.total || 3.6e6; // server may gzip and hide the length
   $('#loadingBar').style.width = `${Math.min(99, Math.round((e.loaded / total) * 100))}%`;
 }, (err) => {
-  console.error(err);
-  $('#loading').classList.add('error');
-  $('#loadingText').textContent = 'The 3D model could not be loaded.';
+  showError('model download/parse', err);
 });
 
 function onLoaded(gltf) {
@@ -96,7 +106,9 @@ function onLoaded(gltf) {
   buildUI();
   applyColor(state.bodyColor.hex, false);
   applyOptions();
-  restoreGraphics().then(() => { $('#loading').classList.add('done'); });
+  stage('Applying saved configuration…');
+  const done = () => $('#loading').classList.add('done');
+  Promise.race([restoreGraphics(), new Promise((r) => setTimeout(r, 4000))]).then(done, (e) => { console.warn(e); done(); });
   if (state.cameraPreset === 'custom' && state.camera) {
     camera.position.fromArray(state.camera.pos); controls.target.fromArray(state.camera.target);
   } else {

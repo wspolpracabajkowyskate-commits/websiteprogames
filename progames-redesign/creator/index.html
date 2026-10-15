@@ -10,7 +10,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/manrope-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/creator/creator.css">
+<link rel="stylesheet" href="/creator/creator.css?v=3">
 <link rel="modulepreload" href="/creator/vendor/three/three.module.min.js">
 <script type="importmap">
 { "imports": { "three": "/creator/vendor/three/three.module.min.js", "three/addons/": "/creator/vendor/three/addons/" } }
@@ -116,8 +116,9 @@
   (function () {
     function fail(msg) {
       var l = document.getElementById('loading'), t = document.getElementById('loadingText');
-      if (!l || l.classList.contains('done')) return;
-      l.classList.add('error'); t.textContent = 'Could not start the 3D viewer: ' + msg + ' — try Cmd+Shift+R or another browser.';
+      if (!l || l.classList.contains('done') || window.__creatorFailed) return;
+      window.__creatorFailed = true;
+      l.classList.add('error'); t.textContent = 'Could not start the 3D viewer: ' + msg + (window.__creatorStage ? ' [step: ' + window.__creatorStage + ']' : ' [app script did not start]') + ' — ' + navigator.userAgent.replace(/^Mozilla\/5\.0 /, '');
     }
     window.addEventListener('error', function (e) { fail(e.message || 'script error'); });
     window.addEventListener('unhandledrejection', function (e) { fail((e.reason && e.reason.message) || String(e.reason)); });
@@ -126,6 +127,12 @@
     setTimeout(function () { if (!(window.__creator && window.__creator.ready)) fail('loading timed out after 45 s'); }, 45000);
   })();
 </script>
-<script type="module" src="/creator/js/app.js"></script>
+<script type="module">
+  import('/creator/js/app.js?v=3').catch(function (e) {
+    var l = document.getElementById('loading'), t = document.getElementById('loadingText');
+    window.__creatorFailed = true; l.classList.add('error');
+    t.textContent = 'Could not load the viewer scripts: ' + (e && e.message ? e.message : e);
+  });
+</script>
 </body>
 </html>
