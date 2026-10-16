@@ -15,39 +15,58 @@ from meshlib import (Mesh, RoundedBox, sweep, cap, ring_cap, lathe, uv_sphere, q
 from double_strike_model import (plan_point, arc_param_at, contour_strip, _outward_from_plan, LedGroup,
                                  X3, Y3, Z3)
 
-# Dimensions re-measured on the real machine (photo set IMG_0507-0526, side view IMG_0508 is
-# almost orthographic; height 2.19 m is the scale reference).
+# Dimensions from a joint bundle adjustment of four calibrated photos (IMG_0507, 0508, 0516, 0571;
+# iPhone 15 Pro, known focal length) with ~1000 matched points on the front panel; height 2.19 m
+# (top of the lid) is the scale reference.  See blender/src/calib/.
 D = dict(
-    # platform: diamond plate on a black steel frame, as wide as the column, ramp at the front
-    plat_x=0.315, plat_z0=-0.165, plat_z1=0.92, plat_h=0.045, ramp=0.10, chamfer=0.012,
+    # platform: diamond plate on a black steel frame, a little wider than the column, ramp at the front
+    plat_x=0.345, plat_z0=-0.175, plat_z1=0.868, plat_h=0.045, ramp=0.10, chamfer=0.012,
     # column: flat graphic front, rounded red corner rails, graphics on both sides, red back with doors
-    col_x=0.31, col_z0=-0.15, col_z1=0.15, col_y0=0.045, col_y1=1.80, col_box_y1=1.91,
-    frame_w=0.02, side_red=0.042, back_trim=0.02,
+    col_x=0.3225, col_z0=-0.158, col_z1=0.15, col_y0=0.045, col_y1=1.80, col_box_y1=1.91,
+    frame_w=0.036, side_red=0.042, back_trim=0.028,
     # canopy: lower brim (red) with a 'chin' that runs down into the score shield,
-    # graphics band (drum), lid (thin flared shell, recessed top)
-    lb_y0=1.845, lb_y1=1.91, lb_x=0.318, lb_z1=0.845, lb_r=0.23,
-    chin_y=1.75, chin_z=0.255,
-    drum_x=0.318, drum_z1=0.85, drum_r=0.24,
-    top_x=0.46, top_xb=0.395, top_z0=-0.20, top_z1=0.97, top_r=0.38, top_y_back=2.07, top_rise=0.04, top_y=2.19,
+    # graphics band (drum), lid (thin flared shell)
+    lb_y0=1.84, lb_y1=1.91, lb_x=0.331, lb_z1=0.898, lb_r=0.24,
+    chin_y=1.77, chin_z=0.31,
+    drum_x=0.331, drum_z1=0.902, drum_r=0.25,
+    top_x=0.425, top_xb=0.40, top_z0=-0.215, top_z1=1.02, top_r=0.40, top_y_back=2.103, top_rise=0.04, top_y=2.19,
     # punch bag (folded up into the canopy, as the machine stands when idle)
-    bag_r=0.116, pivot=(0.0, 1.975, 0.72), ball=(0.0, 1.885, 0.40),
+    bag_r=0.116, pivot=(0.0, 1.985, 0.76), ball=(0.0, 1.925, 0.46),
     # slot in the brim underside the bag folds into
-    slot_x=0.135, slot_z0=0.265, slot_z1=0.75,
+    slot_x=0.19, slot_z0=0.33, slot_z1=0.75,
+    # canopy down-lights
+    light_x=0.152, light_z=0.674,
 )
 TOP_DEPTH = D['top_z1'] - D['top_z0']
 TARGET_HEIGHT = 2.19
 MODEL_SCALE = 1.0
 
 
-def top_bottom(z):
-    return D['top_y_back'] + D['top_rise'] * (z - D['top_z0']) / TOP_DEPTH
+def top_bottom(z, x=0.0):
+    """Height of the lid underside where it meets the graphics band (measured on 4 photos):
+    level ~2.097 m along the sides and back, rising to ~2.132 m at the front centre."""
+    t = min(max((z - 0.60) / 0.28, 0.0), 1.0)
+    t = t * t * (3 - 2 * t)
+    return 2.097 + 0.035 * math.exp(-(x / 0.2) ** 2) * t
 
 
-def brim_bottom(z):
-    """Underside height of the lower brim: flat at the front, concave 'chin' down to the shield top."""
-    t = (D['chin_z'] - z) / (D['chin_z'] - D['col_z1'])
+def chin_low(x):
+    """Lowest point of the chin at the column front: the shield top in the middle, rising in an arc
+    to the brim at the corner rails (measured on the rectified front photo)."""
+    ax = abs(x)
+    if ax <= 0.25:
+        return D['chin_y']
+    t = min((ax - 0.25) / (D['col_x'] - 0.25), 1.0)
+    return D['chin_y'] + (D['lb_y0'] - D['chin_y']) * (1.0 - math.sqrt(max(1.0 - t * t, 0.0)))
+
+
+def brim_bottom(z, x=0.0):
+    """Underside height of the lower brim: flat, with a concave 'chin' between the rails that runs
+    down into the score shield."""
+    zf = D['col_z1'] + 0.021          # the chin lands on the front of the shield bezel
+    t = (D['chin_z'] - z) / (D['chin_z'] - zf)
     t = min(max(t, 0.0), 1.0)
-    return D['lb_y0'] - (D['lb_y0'] - D['chin_y']) * (1.0 - math.sqrt(max(1.0 - t * t, 0.0)))
+    return D['lb_y0'] - (D['lb_y0'] - chin_low(x)) * (1.0 - math.sqrt(max(1.0 - t * t, 0.0)))
 
 
 def rrect_plan(x, z0, z1, r_front, r_back, n=220):
@@ -100,24 +119,35 @@ def fpx(px, py):
     return x, y
 
 
-SHIELD_HALF_PX = [(512, 333), (560, 333), (612, 334), (648, 337), (668, 352), (678, 380), (683, 420), (685, 470),
-                  (685, 530), (684, 600), (678, 660), (665, 712), (645, 760), (615, 805), (577, 837), (542, 852), (512, 858)]
+# Score shield (outer edge of the red bezel), measured on the rectified front photo
+# (x half-width at height y, metres).  Top edge disappears into the brim chin.
+SHIELD_HW = [(1.775, 0.280), (1.76, 0.275), (1.74, 0.265), (1.72, 0.260), (1.70, 0.254), (1.68, 0.248), (1.66, 0.242),
+             (1.64, 0.236), (1.62, 0.231), (1.60, 0.229), (1.58, 0.228), (1.56, 0.228), (1.54, 0.233), (1.52, 0.236),
+             (1.50, 0.240), (1.48, 0.245), (1.46, 0.249), (1.44, 0.253), (1.42, 0.256), (1.40, 0.261), (1.38, 0.267),
+             (1.36, 0.270), (1.34, 0.272), (1.32, 0.274), (1.30, 0.275), (1.27, 0.275), (1.24, 0.273), (1.21, 0.271),
+             (1.18, 0.266), (1.15, 0.261), (1.12, 0.252), (1.10, 0.246), (1.08, 0.238), (1.06, 0.228), (1.04, 0.218),
+             (1.02, 0.206), (1.00, 0.193), (0.98, 0.176), (0.96, 0.152), (0.94, 0.115), (0.92, 0.062), (0.905, 0.0)]
 
 
-def shield_outline(n=200):
-    right = [fpx(px, py) for px, py in SHIELD_HALF_PX]
+def shield_outline(n=220):
+    right = [(hw, y) for y, hw in SHIELD_HW]
     left = [(-x, y) for x, y in right[::-1]]
-    pts = np.array(right + left[1:-1])
+    pts = np.array(right + left[1:])
     return ccw(resample_closed(pts, n))
+
+
+# front panel features (metres, x right / y up), measured on the same photo
+FRONT_GFX = dict(x0=-0.335, x1=0.335, y0=0.045, y1=1.85)
+SCREENS = {'score': (-0.137, 1.313, 0.129, 1.431), 'high': (-0.077, 1.187, 0.071, 1.265), 'credit': (-0.023, 1.120, 0.019, 1.153)}
+COIN = (-0.278, 0.856, -0.204, 0.980)
+RULES = (0.211, 0.822, 0.303, 0.963)
 
 
 ATLAS_SIZE = 2048
 ATLAS = {
-    'coin': (0, 0, 256, 600),
-    'rules': (300, 0, 700, 520),
-    'bill': (720, 0, 1220, 180),
+    'coin': (0, 0, 288, 512),
+    'rules': (300, 0, 700, 612),
     'lock': (720, 220, 976, 476),
-    'badge': (1000, 220, 1256, 476),
 }
 
 
@@ -133,7 +163,7 @@ SCREEN_ATLAS = {'score': (0, 0, 1024, 420), 'high': (0, 460, 560, 740), 'credit'
 SCREEN_TEXT = {'score': '777', 'high': '649', 'credit': '5'}
 
 # graphics band (drum wrap) layout, in metres of arc: [left side | front | right side]
-BAND_Y = (1.913, 2.066)
+BAND_Y = (1.906, 2.135)   # printed band; along the sides its upper edge disappears under the lid
 
 
 # ----------------------------------------------------------------------------
@@ -145,7 +175,7 @@ def build_platform():
     zr = z1 - ramp
     base = Mesh('metal_platform', smooth_angle=30)
     dp = Mesh('diamond_plate', smooth_angle=20)
-    K = 3.0  # diamond pattern tiling (same as before)
+    K = 5.4   # 5-bar tread: ~14 cells across the 69 cm plate, as on the real platform
 
     def plate(P, up):
         P = np.array(P, float)
@@ -210,58 +240,47 @@ def build_column(stick):
     fw = D['frame_w']
     # FRONT graphic (whole front panel between the corner rails)
     fm = Mesh('decal_front', smooth_angle=60)
-    xa, xb = -cx + fw - 0.001, cx - fw + 0.001
-    Pq, UVq = quad([0, (y0 + y1) / 2, z1 + 0.0012], X3, Y3, xb - xa, y1 - y0, nx=4, ny=16)
-    # UV from the photo frame so bezel / screens line up with the artwork
+    G = FRONT_GFX
+    Pq, UVq = quad([(G['x0'] + G['x1']) / 2, (G['y0'] + G['y1']) / 2, z1 + 0.0012], X3, Y3, G['x1'] - G['x0'], G['y1'] - G['y0'], nx=4, ny=16)
     xy = Pq.reshape(-1, 3)[:, :2]
-    UVf = front_uv(xy).reshape(-1, 3, 2)
+    UVf = np.stack([(xy[:, 0] - G['x0']) / (G['x1'] - G['x0']), (G['y1'] - xy[:, 1]) / (G['y1'] - G['y0'])], 1).reshape(-1, 3, 2)
     fm.add('GFX_FRONT', Pq, UVf)
     nodes.append(('decal_front', 'decals', fm))
 
     # raised shield bezel around the score area
     sb = Mesh('score_panel', smooth_angle=50)
     sh = shield_outline()
-    rim = 0.026
-    prof = [(0.004, 0.0), (0.002, 0.010), (-0.004, 0.019), (-rim / 2, 0.0225), (-rim + 0.005, 0.019), (-rim, 0.009), (-rim - 0.001, 0.0)]
+    rim = 0.022
+    prof = [(0.003, 0.0), (0.002, 0.009), (-0.003, 0.016), (-rim / 2, 0.019), (-rim + 0.004, 0.016), (-rim, 0.008), (-rim - 0.001, 0.0)]
     P, UV, _ = sweep(sh, prof, X3, Y3, Z3, origin=[0, 0, z1 + 0.0012])
     P, UV = orient_volume(P, UV, [0, 1.2, z1 - 0.05])
     sb.add('BODY_PAINT', P, UV)
     nodes.append(('score_panel', 'body', sb))
 
-    # LED displays
+    # LED displays: flush behind the acrylic, lit digits on top of the printed windows
     sc = Mesh('screen_score', smooth_angle=10)
-    def scr(px0, py0, px1, py1, region):
-        xa_, ya_ = fpx(px0, py1); xb_, yb_ = fpx(px1, py0)
-        w, h = xb_ - xa_, yb_ - ya_
-        cx_, cy_ = (xa_ + xb_) / 2, (ya_ + yb_) / 2
-        Pf = rounded_box_tris([cx_ - w / 2, cy_ - h / 2, z1 + 0.0005], [cx_ + w / 2, cy_ + h / 2, z1 + 0.004], 0.002, seg=2, step=1)
-        sc.add('BLACK_PLASTIC', Pf)
-        Pq, UVq = quad([cx_, cy_, z1 + 0.0042], X3, Y3, w * 0.94, h * 0.86)
+    for region, (xa_, ya_, xb_, yb_) in SCREENS.items():
+        Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0022], X3, Y3, (xb_ - xa_) * 0.97, (yb_ - ya_) * 0.92)
         u0, v0, u1, v1 = [c / 1024.0 for c in SCREEN_ATLAS[region]]
         UVq[..., 0] = u0 + UVq[..., 0] * (u1 - u0); UVq[..., 1] = v0 + UVq[..., 1] * (v1 - v0)
         sc.add('SCREEN', Pq, UVq)
-    scr(430, 515, 596, 583, 'score')
-    scr(467, 612, 558, 657, 'high')
-    scr(499, 680, 527, 703, 'credit')
     nodes.append(('screen_score', 'body', sc))
 
-    # coin acceptor, rules plate, bill slot
+    # coin mechanism (black face plate with red reject button) and the game-rules plate
     ca = Mesh('coin_acceptor', smooth_angle=40)
-    (xa_, ya_), (xb_, yb_) = fpx(335, 848), fpx(376, 755)
-    Pf = rounded_box_tris([xa_, ya_, z1 - 0.004], [xb_, yb_, z1 + 0.010], 0.004, seg=4, step=1)
-    ca.add('METAL', Pf)
-    Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0103], X3, Y3, (xb_ - xa_) * 0.96, (yb_ - ya_) * 0.97)
+    xa_, ya_, xb_, yb_ = COIN
+    Pf = rounded_box_tris([xa_, ya_, z1 - 0.004], [xb_, yb_, z1 + 0.012], 0.003, seg=4, step=1)
+    ca.add('BLACK_PLASTIC', Pf)
+    Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0123], X3, Y3, (xb_ - xa_) * 0.97, (yb_ - ya_) * 0.98)
     ca.add('DECALS', Pq, atlas_uv('coin', UVq))
-    (xa_, ya_), (xb_, yb_) = fpx(636, 853), fpx(703, 770)
-    Pr = rounded_box_tris([xa_, ya_, z1 - 0.001], [xb_, yb_, z1 + 0.004], 0.003, seg=4, step=1)
+    bx, by = xa_ + (xb_ - xa_) * 0.55, ya_ + (yb_ - ya_) * 0.68
+    Pb = rounded_box_tris([bx - 0.011, by - 0.007, z1 + 0.011], [bx + 0.011, by + 0.007, z1 + 0.019], 0.002, seg=3, step=1)
+    ca.add('BUTTON_RED', Pb)
+    xa_, ya_, xb_, yb_ = RULES
+    Pr = rounded_box_tris([xa_, ya_, z1 - 0.001], [xb_, yb_, z1 + 0.004], 0.002, seg=3, step=1)
     ca.add('BLACK_PLASTIC', Pr)
-    Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0043], X3, Y3, (xb_ - xa_) * 0.97, (yb_ - ya_) * 0.97)
+    Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0043], X3, Y3, (xb_ - xa_) * 0.98, (yb_ - ya_) * 0.98)
     ca.add('DECALS', Pq, atlas_uv('rules', UVq))
-    (xa_, ya_), (xb_, yb_) = fpx(563, 926), fpx(637, 899)
-    Pb = rounded_box_tris([xa_, ya_, z1 - 0.002], [xb_, yb_, z1 + 0.012], 0.004, seg=4, step=1)
-    ca.add('BLACK_PLASTIC', Pb)
-    Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0123], X3, Y3, (xb_ - xa_) * 0.95, (yb_ - ya_) * 0.9)
-    ca.add('DECALS', Pq, atlas_uv('bill', UVq))
     nodes.append(('coin_acceptor', 'body', ca))
 
     # SIDE graphics (column sides, between the black back trim and the red front band)
@@ -282,12 +301,17 @@ def build_column(stick):
 def corner_rail(sx, n_vert=40):
     """Sweep of the rounded corner bead along: front edge (vertical) -> chin curve -> brim underside."""
     cx, z1 = D['col_x'], D['col_z1']
-    path = [(y, z1) for y in np.linspace(D['col_y0'], D['chin_y'], n_vert)]
-    for z in np.linspace(z1, D['chin_z'] + 0.06, 30)[1:]:
-        path.append((brim_bottom(z), z))
+    rr = 0.035
+    yb = D['lb_y0'] - rr
+    path = [(y, z1) for y in np.linspace(D['col_y0'], yb, n_vert)]
+    for a in np.linspace(0, math.pi / 2, 12)[1:]:
+        path.append((yb + rr * math.sin(a), z1 + rr * (1 - math.cos(a))))
+    for z in np.linspace(z1 + rr, D['lb_z1'] - D['lb_r'], 16)[1:]:
+        path.append((D['lb_y0'], z))
     path = np.array(path)
     # cross-section (q: outward along x, p: along the front-facing normal)
-    sec = [(-0.022, 0.0), (-0.022, 0.003), (-0.017, 0.007), (-0.009, 0.0085)]
+    fw = D['frame_w']
+    sec = [(-fw, 0.0), (-fw, 0.003), (-fw + 0.006, 0.0068), (-0.016, 0.0085), (-0.009, 0.0088)]
     cq, cp, r = -0.004, -0.004, 0.0125
     for ang in np.linspace(math.pi / 2, 0, 9)[1:]:
         sec.append((cq + r * math.cos(ang), cp + r * math.sin(ang)))
@@ -343,13 +367,13 @@ def build_back(stick):
         stick.add('METAL', Pl, UVl)
         Pk = rounded_box_tris([lx - 0.0012, lock_y - 0.005, z0 - 0.0172], [lx + 0.0012, lock_y + 0.005, z0 - 0.0162], 0.0005, seg=1, step=1)
         stick.add('BLACK_PLASTIC', Pk)
-    door(-0.04, 1.30, 0.43, 0.50, 1.43)
-    door(-0.05, 0.66, 0.22, 0.28, 0.72)
+    door(-0.025, 1.12, 0.427, 0.427, 1.12)
+    door(0.0, 0.528, 0.208, 0.236, 0.52)
     # IEC power socket + switch
-    P = rounded_box_tris([-0.13, 0.955, z0 - 0.012], [-0.10, 1.005, z0 + 0.001], 0.003, seg=2, step=1)
+    P = rounded_box_tris([-0.131, 0.825, z0 - 0.012], [-0.096, 0.875, z0 + 0.001], 0.003, seg=2, step=1)
     bk.add('BLACK_PLASTIC', P)
     # rating plate
-    P = rounded_box_tris([0.085, 0.975, z0 - 0.0015], [0.14, 1.012, z0 + 0.001], 0.001, seg=1, step=1)
+    P = rounded_box_tris([0.113, 0.852, z0 - 0.0015], [0.177, 0.902, z0 + 0.001], 0.001, seg=1, step=1)
     stick.add('METAL', P)
     # black L-trims on the vertical back edges
     cx = D['col_x']
@@ -363,7 +387,7 @@ def build_back(stick):
     # transport castors at the top corners (bracket on the back face, wheel sticking out backwards)
     cs = Mesh('castors', smooth_angle=40)
     for sx in (-1, 1):
-        xw, yw = sx * 0.235, 1.985
+        xw, yw = sx * 0.245, 1.99
         P = rounded_box_tris([xw - 0.04, yw - 0.032, z0 - 0.004], [xw + 0.04, yw + 0.032, z0 + 0.001], 0.003, seg=2, step=1)
         cs.add('METAL', P)
         for side in (-1, 1):  # fork plates
@@ -389,16 +413,22 @@ def front_uv(xy):
     return np.stack([(px - x0) / (x1 - x0), (py - y0) / (y1 - y0)], 1)
 
 
-def slot_outline(n=120):
-    """Opening in the brim underside the folded punch bag sits in (wider at the front)."""
-    zc = (D['slot_z0'] + D['slot_z1']) / 2; hz = (D['slot_z1'] - D['slot_z0']) / 2
-    pts = []
-    for a in np.linspace(0, 2 * math.pi, n, endpoint=False):
-        c, s_ = math.cos(a), math.sin(a)
-        z = zc + hz * math.copysign(abs(s_) ** 0.75, s_)
-        w = D['slot_x'] * (0.80 + 0.20 * (z - D['slot_z0']) / (2 * hz))   # narrower at the back
-        pts.append([w * math.copysign(abs(c) ** 0.6, c), z])
-    return ccw(np.array(pts))
+def slot_outline(n=140):
+    """Opening in the brim underside the folded punch bag sits in: wide at the back where the
+    ball rests, narrowing towards the hinge at the front (between the two down-lights)."""
+    z0, z1 = D['slot_z0'], D['slot_z1']
+    def hw(z):
+        t = (z - z0) / (z1 - z0)
+        return D['slot_x'] * (1.0 - 0.45 * max(0.0, (t - 0.30) / 0.70) ** 1.2)
+    zs = np.linspace(z0, z1, 60)
+    right = [(hw(z) * math.sqrt(max(0.0, 1 - ((z - z0) / 0.12 - 1) ** 2)) if z < z0 + 0.12 else hw(z), z) for z in zs]
+    right[-1] = (hw(z1) * 0.6, z1)
+    pts = [(x, z) for x, z in right[1:]] + [(-x, z) for x, z in right[::-1][:-1]] + [(0.0, z0)]
+    pts = np.array(pts)
+    keep = np.r_[True, np.linalg.norm(np.diff(pts, axis=0), axis=1) > 1e-6]
+    pts = pts[keep]
+    pts = fillet(pts, lambda p: 0.03, seg=6)
+    return ccw(resample_closed(pts, n))
 
 
 def build_canopy(leds, stick):
@@ -409,9 +439,8 @@ def build_canopy(leds, stick):
     lb = Mesh('top_canopy_lower', smooth_angle=45)
     C = LB_PLAN
     prof = [(-0.03, 0.0), (-0.018, 0.0), (-0.007, 0.003), (-0.001, 0.014), (0.0, 0.028), (0.0, H - 0.006), (-0.004, H)]
-    def side_h(a_, b_, h):
-        bot = brim_bottom(b_)
-        return bot + (h / H) * (y1 - bot)
+    def side_h(a_, b_, h):   # outer walls: flat bottom edge (the chin only sits between the rails)
+        return y0 + (h / H) * (y1 - y0)
     P, UV, _ = sweep(C, prof, X3, Z3, Y3, origin=[0, 0, 0], hfunc=side_h)
     P, UV = orient_with_uv(P, UV, lambda c: _outward_from_plan(C, c) + np.array([0, -0.4, 0]))
     lb.add('BODY_PAINT', P, UV)
@@ -425,7 +454,7 @@ def build_canopy(leds, stick):
     rout = ray_polygon(oc, angs, offset_contour(C, -0.03))
     outer = oc + np.stack([np.cos(angs), np.sin(angs)], 1) * rout[:, None]
     rings = [outer + (hole - outer) * k for k in np.linspace(0, 1, 9)]
-    under_h = lambda a_, b_, h: brim_bottom(b_)
+    under_h = lambda a_, b_, h: brim_bottom(b_, a_)
     for ra, rb_ in zip(rings[:-1], rings[1:]):
         Pu, UVu = ring_cap(ra, rb_, X3, Z3, Y3, hfunc=under_h, facing=-1)
         lb.add('BODY_PAINT', Pu, UVu)
@@ -434,7 +463,7 @@ def build_canopy(leds, stick):
     walls = []
     for k in range(len(hole)):
         q = (k + 1) % len(hole)
-        a = [hole[k][0], brim_bottom(hole[k][1]), hole[k][1]]; b = [hole[q][0], brim_bottom(hole[q][1]), hole[q][1]]
+        a = [hole[k][0], brim_bottom(hole[k][1], hole[k][0]), hole[k][1]]; b = [hole[q][0], brim_bottom(hole[q][1], hole[q][0]), hole[q][1]]
         c = [hole[q][0], y0 + depth, hole[q][1]]; d = [hole[k][0], y0 + depth, hole[k][1]]
         walls += [[a, b, c], [a, c, d]]
     Pw = np.array(walls)
@@ -453,7 +482,7 @@ def build_canopy(leds, stick):
         row = []
         for i in range(len(Cd)):
             a, b = Cd[i] + Nn[i] * off
-            row.append([a, top_bottom(b) + 0.01 if yy is None else yy, b])
+            row.append([a, top_bottom(b, a) + 0.01 if yy is None else yy, b])
         rows.append(row)
     G = np.array(rows)
     G = np.concatenate([G, G[:, :1]], 1).transpose(1, 0, 2)
@@ -472,41 +501,70 @@ def build_canopy(leds, stick):
     if b < a:
         b += 1.0
     bm = Mesh('decal_band', smooth_angle=60)
-    P, UV = contour_strip(Cd, a, b, BAND_Y[0], BAND_Y[1], 0.0016, nu=220, nv=6)
+    P, UV = contour_strip(Cd, a, b, BAND_Y[0], lambda x_, z_: min(top_bottom(z_, x_) - 0.002, BAND_Y[1]), 0.0016, nu=220, nv=6)
+    # physical v (the print is a constant-height strip; the lid simply covers more of it on the sides)
+    yy = P[..., 1]
+    UV = UV.copy(); UV[..., 1] = (BAND_Y[1] - yy) / (BAND_Y[1] - BAND_Y[0])
     bm.add('GFX_BAND', P, UV)
     nodes.append(('decal_band', 'decals', bm))
 
-    # ---- lid: thin shell with a flared, slightly drooping lip and a recessed flat top
-    tb = Mesh('top_canopy', smooth_angle=38)
+    # ---- lid: thin moulded shell.  A short collar sits on the band, the underside flares out like a
+    # bell (steep at the band, almost flat at the rim), rounded rim ~3 cm thick, flat top.
+    tb = Mesh('top_canopy', smooth_angle=42)
     S = TOP_PLAN
     TOP = D['top_y']
-    def lid_h(a_, b_, f):   # f in [0,1]: 0 = underside level at this z, 1 = flat top
-        bot = top_bottom(b_)
-        # the lip sweeps up towards the front (spoiler-like), droops at the back
-        t = min(max((b_ - D['top_z0']) / TOP_DEPTH, 0.0), 1.0)
-        rise = 0.4 * t * t * (3 - 2 * t)
-        f = f + rise * (1 - f) * f * 2
-        return bot + min(f, 1.0) * (TOP - bot)
-    prof = [(-0.10, 0.0), (-0.05, 0.02), (-0.015, 0.10), (0.004, 0.22), (0.013, 0.36), (0.016, 0.45),
-            (0.014, 0.52), (0.006, 0.57), (-0.02, 0.64), (-0.06, 0.78), (-0.085, 0.92), (-0.095, 0.985), (-0.105, 1.0), (-0.12, 1.0)]
-    P, UV, _ = sweep(S, prof, X3, Z3, Y3, hfunc=lid_h)
-    P, UV = orient_with_uv(P, UV, lambda c: _outward_from_plan(S, c) + np.array([0, 0.3, 0]))
+    oc = np.array([0.0, 0.38])
+    angs = np.linspace(0, 2 * math.pi, 240, endpoint=False)
+    dirs = np.stack([np.cos(angs), np.sin(angs)], 1)
+    rin = ray_polygon(oc, angs, offset_contour(Cd, 0.004))   # just outside the band
+    rout = ray_polygon(oc, angs, S)
+    nrm = dirs
+    rows = []
+    rim_t = 0.040
+    def rimbot(z):
+        t = min(max((z - D['top_z0']) / TOP_DEPTH, 0.0), 1.0)
+        return TOP - rim_t - 0.015 * t          # rolled lip slightly deeper towards the front
+    # (radius fraction s, height fraction along the bell, extra outward offset)
+    for k in range(13):
+        sfr = k / 12.0
+        rows.append(('bell', sfr))
+    rimpts = [(0.000, 0.00), (0.006, 0.12), (0.010, 0.35), (0.011, 0.55), (0.009, 0.75), (0.004, 0.92), (-0.004, 1.0), (-0.03, 1.0), (-0.08, 1.0)]
+    G = []
+    for i in range(len(angs)):
+        d = dirs[i]; p_in = oc + d * rin[i]; p_out = oc + d * rout[i]
+        zin = p_in[1]
+        col = []
+        bot = top_bottom(zin, p_in[0])
+        # collar: 2 cm vertical ring on the band
+        col.append([p_in[0], bot - 0.004, p_in[1]])
+        col.append([p_in[0], bot + 0.006, p_in[1]])
+        for k in range(1, 13):
+            sfr = k / 12.0
+            q = p_in + (p_out - p_in) * sfr
+            hb = max(rimbot(q[1]), bot + 0.014)
+            h = (bot + 0.006) + (hb - bot - 0.006) * (1 - (1 - sfr) ** 2.4)   # trumpet flare
+            col.append([q[0], h, q[1]])
+        hb = max(rimbot(p_out[1]), bot + 0.014)
+        for off, fr in rimpts[1:]:
+            q = p_out + d * off
+            col.append([q[0], hb + (TOP - hb) * fr, q[1]])
+        G.append(col)
+    G = np.array(G); G = np.concatenate([G, G[:1]], 0)
+    P, UV = grid_tris(G, np.zeros(G.shape[:2] + (2,)))
+    P, UV = orient_with_uv(P, UV, lambda c: np.array([c[0] - oc[0], 0.0, c[2] - oc[1]]) + np.array([0, -0.6 if c[1] < TOP - 0.02 else 0.6, 0]), per_triangle=False)
     tb.add('BODY_PAINT', P, UV)
-    Si = offset_contour(S, -0.12)
-    Pt, UVt = cap(Si, X3, Z3, Y3, h=1.0, hfunc=lid_h, facing=+1)
+    Si = np.array([oc + dirs[i] * (rout[i] - 0.08) for i in range(len(angs))])
+    Pt, UVt = cap(Si, X3, Z3, Y3, h=TOP, facing=+1, center=oc)
     tb.add('BODY_PAINT', Pt, UVt)
-    Sb = offset_contour(S, -0.10)
-    Pb, UVb = cap(Sb, X3, Z3, Y3, h=0.0, hfunc=lid_h, facing=-1)
-    tb.add('BODY_PAINT', Pb, UVb)
     nodes.append(('top_canopy', 'canopy', tb))
 
     # ---- details: two down-lights at the front of the brim, START button in the brim front
     for sx in (-1, 1):
-        zz = 0.66
+        zz = D['light_z']
         yb = brim_bottom(zz)
-        Pm, UVm = lathe([(0.0, 0.0), (0.028, 0.0), (0.032, 0.003), (0.034, 0.0)], 24, M=mat_translate(sx * 0.205, yb, zz) @ mat_rot('x', 180))
+        Pm, UVm = lathe([(0.0, 0.0), (0.028, 0.0), (0.032, 0.003), (0.034, 0.0)], 24, M=mat_translate(sx * D['light_x'], yb, zz) @ mat_rot('x', 180))
         stick.add('METAL', Pm, UVm)
-        Pd, UVd = disc(0.025, 24, M=mat_translate(sx * 0.205, yb - 0.0035, zz) @ mat_rot('x', 90))
+        Pd, UVd = disc(0.025, 24, M=mat_translate(sx * D['light_x'], yb - 0.0035, zz) @ mat_rot('x', 90))
         leds['led_spot'].mesh.add('LED_WHITE', Pd, UVd, np.ones((len(Pd), 3, 3)), np.full((len(Pd), 3), float(leds['led_spot'].count)))
         leds['led_spot'].count += 1
     p, n = plan_point(C, arc_param_at(C, [0, D['lb_z1']]))
@@ -596,8 +654,8 @@ def build_all():
 GROUPS = ['body', 'canopy', 'boxer', 'platform', 'decals', 'leds']
 
 ZONES = {
-    'front': dict(label='FRONT PANEL', material='GFX_FRONT', meshes=['decal_front'], size=[0.58, 1.755]),
-    'band': dict(label='CANOPY BAND', material='GFX_BAND', meshes=['decal_band'], size=[2.39, 0.153]),
+    'front': dict(label='FRONT PANEL', material='GFX_FRONT', meshes=['decal_front'], size=[0.67, 1.805]),
+    'band': dict(label='CANOPY BAND', material='GFX_BAND', meshes=['decal_band'], size=[2.39, 0.229]),
     'left': dict(label='LEFT SIDE', material='GFX_LEFT', meshes=['decal_left'], size=[0.238, 1.86]),
     'right': dict(label='RIGHT SIDE', material='GFX_RIGHT', meshes=['decal_right'], size=[0.238, 1.86]),
 }
