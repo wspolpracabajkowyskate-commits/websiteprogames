@@ -7,7 +7,7 @@
     "test": "npm run test:seo",
     "test:browser": "node verification/test-browser.cjs",
     "test:i18n": "node verification/check-i18n.cjs",
-    "test:seo": "node verification/check-seo.cjs && node verification/check-v42.cjs",
+    "test:seo": "node verification/check-seo.cjs && node verification/check-v42.cjs && node verification/check-contact-label.cjs",
     "build:legacy": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/seo-v42.cjs && node build/redirects.cjs && node build/seo-pl-v43.cjs",
     "test:legacy": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
     "test:pl": "node verification/check-pl-growth.cjs"
