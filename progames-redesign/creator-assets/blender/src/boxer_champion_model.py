@@ -431,8 +431,8 @@ def corner_rail(sx, n_vert=40):
     return P, UVt
 
 
-def lock_and_key(name, pos, z_face, key=True):
-    """Cylinder lock: round chrome rosette, keyway; key with ring hanging from it (D01/D02)."""
+def lock_and_key(name, pos, z_face, key=False):
+    """Cylinder lock: round chrome rosette, keyway (D01/D02).  Keys are left out on request."""
     lk = Mesh(name, smooth_angle=35)
     x, y = pos
     B = look_basis(np.array([x, y, z_face]), [0, 0, -1]) @ mat_rot('x', 90)
@@ -682,15 +682,14 @@ def build_canopy(leds):
         TOPz = max(top_h(p_out[1]), bot + 0.045)
         span = max(rout[i] - rin[i], 0.03)
         col = [[p_in[0], bot - 0.004, p_in[1]], [p_in[0], bot + 0.002, p_in[1]]]
-        # rolled-under lower lip (IMG_0575): convex bead from the band out and up, then a small groove
+        # lower edge (IMG_0575): a concave cove cut into the lid - the arc runs from the band up and
+        # out, its middle recessed into the body relative to its ends (centre of the arc outside)
         rb = min(0.02, span * 0.35)
-        for k in range(1, 6):
-            t = k / 5.0 * math.pi / 2
-            q = oc + d * (rin[i] + rb * math.sin(t))
-            col.append([q[0], bot + 0.002 + rb * (1 - math.cos(t)), q[1]])
-        q = oc + d * (rin[i] + rb - 0.003); col.append([q[0], bot + 0.002 + rb + 0.005, q[1]])     # groove
-        f0 = oc + d * (rin[i] + rb); h0 = bot + 0.002 + rb + 0.009
-        col.append([f0[0], h0, f0[1]])
+        for k in range(1, 7):
+            t = k / 6.0 * math.pi / 2
+            q = oc + d * (rin[i] + rb * (1 - math.cos(t)))
+            col.append([q[0], bot + 0.002 + rb * math.sin(t), q[1]])
+        f0 = oc + d * (rin[i] + rb); h0 = bot + 0.002 + rb
         hf = TOPz - ch_v
         for k in range(1, 6):                                   # straight inclined face
             f = k / 5.0
@@ -850,9 +849,7 @@ META = {
     'D04_lower_door_frame': ('F31', 'high', 'F31 frontal', 'D04'),
     'D04_lower_door_leaf': ('F31', 'high', 'F31 frontal', 'D04'),
     'D01_upper_lock': ('F31,F18,F19', 'medium', 'estimated size', 'D01'),
-    'D01_upper_lock_key': ('F31', 'low', 'estimated', 'D01'),
     'D02_lower_lock': ('F31,F18,F19', 'medium', 'estimated size', 'D02'),
-    'D02_lower_lock_key': ('F31', 'low', 'estimated', 'D02'),
     'D22_power_socket': ('F31', 'medium', 'F31 frontal', 'D22'),
     'D23_rating_plate': ('F31', 'medium', 'F31 frontal; texture from photo', 'D23'),
     'D05_rear_profiles': ('F31,F32', 'medium', 'section estimated; only visible screws', 'D05'),

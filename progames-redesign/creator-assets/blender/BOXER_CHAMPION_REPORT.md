@@ -11,9 +11,13 @@
 | `blender/renders/` | Orthographic front, back, left, right and top views (one common scale, 2.6 m frame); 3/4 views front-right, front-left, back-right and back-left; neutral versions without graphics or emission; renders through the four source cameras. |
 | `blender/renders/compare/*_source_overlay_render.webp` | Photo, photo with the model silhouette, and model render, all from the same calibrated camera and crop. |
 
+## v8 changes
+- **Lid lower edge (IMG_0575):** a concave cove, the arc recessed into the lid between its ends, replaces the bead.
+- **Rear doors:** the keys are removed. Locks and doors are unchanged (D01_upper_lock_key and D02_lower_lock_key no longer exist).
+- **Front artwork above the shield:** made transparent above the sticker edge, so the dark bag neck from the photo no longer shows there. The body paint shows instead and follows the chosen body colour.
+
 ## v7 changes
 - **Score shield bezel:** the top edge is no longer straight. It follows the wavy top of the sticker as measured on the front bake (IMG_0513 / studio set): highest in the middle (1.773 m), dipping about 2.5 cm on both sides of centre, then rising again to the shoulders. The brim chin follows the same line.
-- **Lid lower edge (IMG_0575):** a rolled-under bead about 20 mm runs from the band outwards. A small groove separates it from the inclined face.
 - **Front graphics:** the factory front artwork has stronger contrast and saturation (levels, contrast, colour, light unsharp mask). The sides and band got a milder pass. The acrylic over the shield is clearer (6 % dark tint instead of 10 % grey).
 
 ## v6 changes
@@ -37,7 +41,7 @@
 - One punch bag, lowered vertically (F34/F35). The four-panel egg-shaped ball has black panels front and back and red panels at the sides; the black neck cover has one fold and a cuff over the ball. The cavity behind it is only dark – no mechanism is invented.
 - Displays show 777 / 649 / 5. These are separate emissive fields with 7-segment polygons; dark inactive segments are kept and there are no decimal points. A thin glass layer covers the shield.
 - Two round lamps, plus the START BOXER rosette with a thin warm glowing ring.
-- Doors are closed. Each has a frame, a recessed leaf and a geometric gap, plus a lock rosette with the key hanging on its ring (D01/D02).
+- Doors are closed. Each has a frame, a recessed leaf and a geometric gap, plus a lock rosette (D01/D02, keys left out).
 - There are two transport wheels on the upper rear corners. Each has a base plate with 4 bolts, a fork, a grey wheel and an axle (D06/D07).
 - Rear: power inlet with switch (D22) and rating plate 116 KG (D23), both textured from the F31 crops.
 - Black rear profiles carry only the screw heads that are visible (D05).
