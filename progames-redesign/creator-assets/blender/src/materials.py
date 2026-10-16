@@ -65,7 +65,7 @@ CHAMPION_MATERIALS['DIAMOND_PLATE'] = dict(base=srgb('#b4b8be'), metallic=1.0, r
 CHAMPION_MATERIALS['BLACK_STEEL'] = dict(base=srgb('#0d0e10'), metallic=0.2, roughness=0.5, clearcoat=0.25, clearcoat_roughness=0.4, specular=0.5,
                                          normal=TEX + 'plastic_grain_normal.png', normal_scale=0.3, uv_scale=8.0)   # powder coat
 CHAMPION_MATERIALS['LEATHER_BLACK'] = dict(MATERIALS['LEATHER_BLACK'], normal_scale=0.25, roughness=0.5)
-CHAMPION_MATERIALS['GLASS'] = dict(base=srgb('#d8dde3'), metallic=0.0, roughness=0.04, alpha='BLEND', opacity=0.10, specular=0.5)
+CHAMPION_MATERIALS['GLASS'] = dict(base=srgb('#20242a'), metallic=0.0, roughness=0.03, alpha='BLEND', opacity=0.06, specular=0.5)
 CHAMPION_MATERIALS['GAP_DARK'] = dict(base=srgb('#050506'), metallic=0.0, roughness=0.8)
 CHAMPION_MATERIALS['CAVITY_DARK'] = dict(base=srgb('#060607'), metallic=0.0, roughness=0.9)
 CHAMPION_MATERIALS['START_GLOW'] = dict(base=srgb('#ffd27a'), metallic=0.0, roughness=0.3, emissive=[1.0, 0.78, 0.38], emissive_strength=1.4)

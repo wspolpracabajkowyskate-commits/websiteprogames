@@ -106,9 +106,21 @@ def chin_low(x):
     to the brim at the corner rails (measured on the rectified front photo)."""
     ax = abs(x)
     if ax <= 0.25:
-        return D['chin_y']
+        return shield_top(ax) - 0.004
+    c0 = shield_top(0.25) - 0.004
     t = min((ax - 0.25) / (D['col_x'] - 0.25), 1.0)
-    return D['chin_y'] + (D['lb_y0'] - D['chin_y']) * (1.0 - math.sqrt(max(1.0 - t * t, 0.0)))
+    return c0 + (D['lb_y0'] - c0) * (1.0 - math.sqrt(max(1.0 - t * t, 0.0)))
+
+
+# top edge of the printed score sticker (measured on the front bake, IMG_0513 / studio set): a wave
+# that is highest in the middle, dips either side of centre and rises again to the shoulders.
+_STICKER_TOP = ([0.0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.25, 0.28],
+                [1.7546, 1.7535, 1.746, 1.7384, 1.7335, 1.7305, 1.7308, 1.7335, 1.738, 1.742])
+
+
+def shield_top(x):
+    """Outer edge of the bezel along the top: follows the sticker edge (bezel rim overlaps it)."""
+    return float(np.interp(abs(x), *_STICKER_TOP)) + 0.018
 
 
 def brim_bottom(z, x=0.0):
@@ -197,7 +209,7 @@ def fpx(px, py):
 
 # Score shield (outer edge of the red bezel), measured on the rectified front photo
 # (x half-width at height y, metres).  Top edge disappears into the brim chin.
-SHIELD_HW = [(1.775, 0.280), (1.76, 0.275), (1.74, 0.265), (1.72, 0.260), (1.70, 0.254), (1.68, 0.248), (1.66, 0.242),
+SHIELD_HW = [(1.76, 0.280), (1.74, 0.265), (1.72, 0.260), (1.70, 0.254), (1.68, 0.248), (1.66, 0.242),
              (1.64, 0.236), (1.62, 0.231), (1.60, 0.229), (1.58, 0.228), (1.56, 0.228), (1.54, 0.233), (1.52, 0.236),
              (1.50, 0.240), (1.48, 0.245), (1.46, 0.249), (1.44, 0.253), (1.42, 0.256), (1.40, 0.261), (1.38, 0.267),
              (1.36, 0.270), (1.34, 0.272), (1.32, 0.274), (1.30, 0.275), (1.27, 0.275), (1.24, 0.273), (1.21, 0.271),
@@ -208,7 +220,8 @@ SHIELD_HW = [(1.775, 0.280), (1.76, 0.275), (1.74, 0.265), (1.72, 0.260), (1.70,
 def shield_outline(n=220):
     right = [(hw, y) for y, hw in SHIELD_HW]
     left = [(-x, y) for x, y in right[::-1]]
-    pts = np.array(right + left[1:])
+    top = [(x, shield_top(x)) for x in np.linspace(-0.28, 0.28, 29)[1:-1]]   # wavy top, follows the sticker
+    pts = np.array(right + left[1:] + top)
     return ccw(resample_closed(pts, n))
 
 
@@ -666,10 +679,17 @@ def build_canopy(leds):
     for i in range(len(angs)):
         d = dirs[i]; p_in = oc + d * rin[i]; p_out = oc + d * rout[i]
         bot = top_bottom(p_in[1], p_in[0])
-        TOPz = max(top_h(p_out[1]), bot + 0.03)
+        TOPz = max(top_h(p_out[1]), bot + 0.045)
+        span = max(rout[i] - rin[i], 0.03)
         col = [[p_in[0], bot - 0.004, p_in[1]], [p_in[0], bot + 0.002, p_in[1]]]
-        q = oc + d * (rin[i] + 0.004); col.append([q[0], bot + 0.0045, q[1]])   # roll
-        f0 = oc + d * (rin[i] + 0.009); h0 = bot + 0.0065
+        # rolled-under lower lip (IMG_0575): convex bead from the band out and up, then a small groove
+        rb = min(0.02, span * 0.35)
+        for k in range(1, 6):
+            t = k / 5.0 * math.pi / 2
+            q = oc + d * (rin[i] + rb * math.sin(t))
+            col.append([q[0], bot + 0.002 + rb * (1 - math.cos(t)), q[1]])
+        q = oc + d * (rin[i] + rb - 0.003); col.append([q[0], bot + 0.002 + rb + 0.005, q[1]])     # groove
+        f0 = oc + d * (rin[i] + rb); h0 = bot + 0.002 + rb + 0.009
         col.append([f0[0], h0, f0[1]])
         hf = TOPz - ch_v
         for k in range(1, 6):                                   # straight inclined face

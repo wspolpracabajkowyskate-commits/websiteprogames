@@ -11,6 +11,11 @@
 | `blender/renders/` | Orthographic front, back, left, right and top views (one common scale, 2.6 m frame); 3/4 views front-right, front-left, back-right and back-left; neutral versions without graphics or emission; renders through the four source cameras. |
 | `blender/renders/compare/*_source_overlay_render.webp` | Photo, photo with the model silhouette, and model render, all from the same calibrated camera and crop. |
 
+## v7 changes
+- **Score shield bezel:** the top edge is no longer straight. It follows the wavy top of the sticker as measured on the front bake (IMG_0513 / studio set): highest in the middle (1.773 m), dipping about 2.5 cm on both sides of centre, then rising again to the shoulders. The brim chin follows the same line.
+- **Lid lower edge (IMG_0575):** a rolled-under bead about 20 mm runs from the band outwards. A small groove separates it from the inclined face.
+- **Front graphics:** the factory front artwork has stronger contrast and saturation (levels, contrast, colour, light unsharp mask). The sides and band got a milder pass. The acrylic over the shield is clearer (6 % dark tint instead of 10 % grey).
+
 ## v6 changes
 - **Crown fitted to the photos:** the lid plan and its top line were fitted to the top silhouette of the lid in the 4 calibrated photos F01, F02, F10 and F26 (mean error 7.9 px before, 4.1 px after).
   - The lid top rises like a visor, from about 2.11 m at the back to 2.196 m at the front.
