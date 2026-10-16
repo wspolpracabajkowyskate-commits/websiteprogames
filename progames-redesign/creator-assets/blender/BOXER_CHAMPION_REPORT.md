@@ -1,4 +1,4 @@
-# Boxer Champion – model report (v5: crown, rear layout, tread plate, studio lighting)
+# Boxer Champion – model report (v6: crown fitted to photos, continuous rear profiles)
 
 ## Deliverables
 
@@ -11,8 +11,17 @@
 | `blender/renders/` | Orthographic front, back, left, right and top views (one common scale, 2.6 m frame); 3/4 views front-right, front-left, back-right and back-left; neutral versions without graphics or emission; renders through the four source cameras. |
 | `blender/renders/compare/*_source_overlay_render.webp` | Photo, photo with the model silhouette, and model render, all from the same calibrated camera and crop. |
 
+## v6 changes
+- **Crown fitted to the photos:** the lid plan and its top line were fitted to the top silhouette of the lid in the 4 calibrated photos F01, F02, F10 and F26 (mean error 7.9 px before, 4.1 px after).
+  - The lid top rises like a visor, from about 2.11 m at the back to 2.196 m at the front.
+  - The sides flare out right behind the band. The lid is 0.74 m wide at the back and about 0.95 m at the widest point.
+  - The face runs from the band at a steep incline up to the rim and ends in a 13 mm chamfer ("cut off at the top"). Its lower edge tucks in towards the band (IMG_0575).
+  - The underside follows the slope towards the back, leaving a rear face of about 55 mm above the wheels.
+- **Black rear profiles:** one continuous piece per edge from the base to the lid. The band drum is now flush with the column at the back, so there is no step.
+- **Side graphics:** the band print now runs right up to the black profile. There is no strip of body colour between them.
+- **No rescaling:** the model stays in the photogrammetric metric frame. Lid top 2.196 m; the catalogue gives 2.19 m.
+
 ## v5 changes (studio product photos + IMG_0514/0515/0518/0519/0520, 0566–0570, 0577)
-- **Crown:** rebuilt. From the band the lid rolls out in a convex curve into a tall face that leans slightly outward up to the rim, so the outermost point is the very top edge. That edge is sharp (1.5 mm break) and the top is flat. Lid plan: 0.91 m wide at the front, 0.72 m at the rear (checked against the calibrated F26 overlay).
 - **Rear layout:** upper door centre 1.39 m, lower door 0.765 m. The rating plate, power inlet and locks moved with them. Source: F32 shows the upper frame top level with the side flag stripe (≈1.62 m), consistent with the studio rear photo. Screw heads are now at 0.15 / 0.735 / 1.38 / 2.05 m, matching the door levels as in F31.
 - **Black rear profiles** run full height to the crown underside.
 - **Tread plate:** classic 5-bar pattern at 45° to the plate edges, 59 mm lattice (measured on rectified bakes of F01/F02/F10).

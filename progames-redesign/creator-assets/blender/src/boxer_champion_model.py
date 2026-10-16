@@ -36,7 +36,10 @@ D = dict(
     lb_y0=1.84, lb_y1=1.91, lb_x=0.331, lb_z1=0.898, lb_r=0.24,
     chin_y=1.77, chin_z=0.31,
     drum_x=0.331, drum_z1=0.902, drum_r=0.25,
-    top_x=0.455, top_xb=0.36, top_z0=-0.215, top_z1=1.02, top_r=0.40, top_y_back=2.103, top_rise=0.04, top_y=2.19,
+    # lid: plan + visor line fitted to the top silhouette in the 4 calibrated photos (F01/F02/F10/F26)
+    top_x=0.3877, top_xb=0.37, top_z0=-0.1998, top_z1=1.0552, top_r=0.5648,
+    top_xm=0.4753, top_zm=0.091, top_rm=0.3474,
+    top_y_back=2.1109, top_pow=1.7425, top_y=2.196,
     # punch bag LOWERED (F34/F35, P01): neck hangs from the front of the opening, egg-shaped ball
     bag_rx=0.12, bag_ry=0.14, bag_hang=(0.0, 0.70), neck_len=0.225, neck_top_r=0.030, neck_skirt_r=0.098,
     # slot in the brim underside the bag folds into
@@ -78,7 +81,7 @@ PARAMS = {
 }
 
 TOP_DEPTH = D['top_z1'] - D['top_z0']
-TARGET_HEIGHT = 2.19
+TARGET_HEIGHT = D['top_y']      # no rescale: the photogrammetric metric frame is kept (lid top 2.196 m, catalogue 2.19 m)
 MODEL_SCALE = 1.0
 
 
@@ -87,7 +90,15 @@ def top_bottom(z, x=0.0):
     level ~2.097 m along the sides and back, rising to ~2.132 m at the front centre."""
     t = min(max((z - 0.60) / 0.28, 0.0), 1.0)
     t = t * t * (3 - 2 * t)
-    return 2.097 + 0.035 * math.exp(-(x / 0.2) ** 2) * t
+    # towards the back the lid underside follows the sloping visor line down (constant ~55 mm face;
+    # F32 / studio rear: the rear face sits just above the transport wheels)
+    return min(2.097, lid_top(z) - 0.055) + 0.035 * math.exp(-(x / 0.2) ** 2) * t
+
+
+def lid_top(z):
+    """Height of the lid top: it rises from the back to the front like a visor."""
+    t = min(max((z - D['top_z0']) / (D['top_z1'] - D['top_z0']), 0.0), 1.0)
+    return D['top_y_back'] + (D['top_y'] - D['top_y_back']) * t ** D['top_pow']
 
 
 def chin_low(x):
@@ -132,12 +143,37 @@ def neck_plan(n=260):
     return ccw(resample_closed(pts, n))
 
 
-DRUM_PLAN = rrect_plan(D['drum_x'], D['col_z0'], D['drum_z1'], D['drum_r'], 0.02)
+def exact_arc_param(contour, target_xz, side_sign=None):
+    """Arc-length fraction of the exact closest point on the closed contour (not just a vertex)."""
+    C = np.vstack([contour, contour[:1]]); t = np.asarray(target_xz, float)
+    seg = np.diff(C, axis=0); L = np.linalg.norm(seg, axis=1); s0 = np.concatenate([[0], np.cumsum(L)])
+    best = (1e9, 0.0)
+    for i in range(len(seg)):
+        if side_sign is not None and np.sign(C[i, 0]) != side_sign:
+            continue
+        u = np.clip(np.dot(t - C[i], seg[i]) / max(L[i] ** 2, 1e-12), 0, 1)
+        dd = np.linalg.norm(C[i] + seg[i] * u - t)
+        if dd < best[0]:
+            best = (dd, (s0[i] + u * L[i]) / s0[-1])
+    return best[1]
+
+
+def drum_plan(n=220):
+    """Band drum: flush with the column at the back (sharp rear corners under the black profiles),
+    a few mm wider at the front where the band was measured."""
+    cx, x, z0, z1 = D['col_x'], D['drum_x'], D['col_z0'], D['drum_z1']
+    pts = np.array([[-cx, z0], [cx, z0], [x, z1], [-x, z1]], float)
+    pts = fillet(pts, lambda p: D['drum_r'] if p[1] > (z0 + z1) / 2 else 0.0, seg=16)
+    return ccw(resample_closed(pts, n))
+
+
+DRUM_PLAN = drum_plan()
 def lid_plan(n=240):
     """Lid outline: narrower at the back, flaring out towards the rounded front."""
     xb, xf, z0, z1 = D['top_xb'], D['top_x'], D['top_z0'], D['top_z1']
-    pts = np.array([[-xb, z0], [xb, z0], [xf, z1], [-xf, z1]], float)
-    pts = fillet(pts, lambda p: D['top_r'] if p[1] > (z0 + z1) / 2 else 0.06, seg=16)
+    xm, zm = D['top_xm'], z0 + D['top_zm']          # sides flare out quickly behind the band
+    pts = np.array([[-xb, z0], [xb, z0], [xm, zm], [xf, z1], [-xf, z1], [-xm, zm]], float)
+    pts = fillet(pts, lambda p: D['top_r'] if p[1] > z1 - 0.01 else (D['top_rm'] if p[1] > z0 + 0.01 else 0.04), seg=16)
     return ccw(resample_closed(pts, n))
 
 
@@ -467,24 +503,19 @@ def build_back():
     nodes.append(('D23_rating_plate', 'DETAILS', rp))
     # D05 black rear profiles (L section over both vertical rear edges) + visible screw heads
     pr = Mesh('D05_rear_profiles', smooth_angle=30)
-    # black L profiles on both rear edges, from the base all the way up to the crown underside
-    # (IMG_0523 / F17 / F32): column part, then the band part (the band is a few mm wider)
+    # black L profiles on both rear edges: one continuous piece from the base up to the crown
+    # underside (IMG_0523 / F17 / F32 / studio rear) - the drum is flush with the column at the back
     ytop = top_bottom(z0, cx) + 0.004
-    segs = ((D['col_y0'], D['col_box_y1'], cx), (D['col_box_y1'], ytop, D['drum_x']))
+    ya, yb = D['col_y0'], ytop
+    ym, hh = (ya + yb) / 2, yb - ya
     for sx in (-1, 1):
-        for ya, yb, xx in segs:
-            ym, hh = (ya + yb) / 2, yb - ya
-            Pq, UVq = quad([sx * (xx - D['back_trim'] / 2), ym, z0 - 0.0009], X3, Y3, D['back_trim'], hh)
-            Pq, UVq = orient_with_uv(Pq, UVq, [0, 0, -1]); pr.add('BLACK_STEEL', Pq, UVq)
-            Pq, UVq = quad([sx * (xx + 0.0009), ym, z0 + D['back_trim'] / 2], Z3, Y3, D['back_trim'], hh)
-            Pq, UVq = orient_with_uv(Pq, UVq, [sx, 0, 0]); pr.add('BLACK_STEEL', Pq, UVq)
-        # step where the band is wider than the column
-        Pq, UVq = quad([sx * (cx + D['drum_x']) / 2, D['col_box_y1'], z0 + D['back_trim'] / 2], X3, Z3, D['drum_x'] - cx + 0.002, D['back_trim'])
-        Pq, UVq = orient_with_uv(Pq, UVq, [0, -1, 0]); pr.add('BLACK_STEEL', Pq, UVq)
+        Pq, UVq = quad([sx * (cx - D['back_trim'] / 2), ym, z0 - 0.0009], X3, Y3, D['back_trim'], hh)
+        Pq, UVq = orient_with_uv(Pq, UVq, [0, 0, -1]); pr.add('BLACK_STEEL', Pq, UVq)
+        Pq, UVq = quad([sx * (cx + 0.0009), ym, z0 + D['back_trim'] / 2], Z3, Y3, D['back_trim'], hh)
+        Pq, UVq = orient_with_uv(Pq, UVq, [sx, 0, 0]); pr.add('BLACK_STEEL', Pq, UVq)
         for yy in D['rear_screws_y']:
-            xx = cx if yy < D['col_box_y1'] else D['drum_x']
             Ps, UVs = lathe([(0, 0), (0.0032, 0), (0.0032, 0.0008), (0.0022, 0.0016), (0, 0.0018)], 12,
-                            M=look_basis(np.array([sx * (xx - D['back_trim'] * 0.55), yy, z0 - 0.001]), [0, 0, -1]) @ mat_rot('x', 90))
+                            M=look_basis(np.array([sx * (cx - D['back_trim'] * 0.55), yy, z0 - 0.001]), [0, 0, -1]) @ mat_rot('x', 90))
             pr.add('METAL', Ps, UVs)
     nodes.append(('D05_rear_profiles', 'BODY', pr))
     # D06 / D07 transport wheels: base plate with 4 bolts on the rear face, fixed fork, grey wheel, axle nut
@@ -596,8 +627,10 @@ def build_canopy(leds):
     P, UV = orient_with_uv(P, UV, lambda c: _outward_from_plan(Cd, c))
     dr.add('BODY_PAINT', P, None)
     nodes.append(('B02_canopy_drum', 'CANOPY', dr))
-    fL = arc_param_at(Cd, [-D['drum_x'], D['col_z0'] + 0.03], side_sign=-1)
-    fR = arc_param_at(Cd, [D['drum_x'], D['col_z0'] + 0.03], side_sign=1)
+    # the band print runs back along the sides right up to the black rear profiles (no paint strip)
+    zb = D['col_z0'] + D['back_trim'] - 0.003
+    fL = exact_arc_param(Cd, [-D['col_x'], zb], side_sign=-1)
+    fR = exact_arc_param(Cd, [D['col_x'], zb], side_sign=1)
     fF = arc_param_at(Cd, [0, D['drum_z1']])
     a, b = fL, fR
     def between(f0, f1, f):
@@ -624,47 +657,37 @@ def build_canopy(leds):
     dirs = np.stack([np.cos(angs), np.sin(angs)], 1)
     rin = ray_polygon(oc, angs, offset_contour(Cd, 0.004))   # just outside the band
     rout = ray_polygon(oc, angs, S)
-    # crown (studio set; IMG_0514/0515/0518/0520/0566/0569/0571 overlay): from the band the lid rolls
-    # out in a convex curve and turns into a tall, slightly outward-leaning face that runs straight up
-    # to the rim, so the outermost point of the lid is its very top edge.  That edge is sharp
-    # (1.5 mm break) and the top behind it is flat.
+    # crown (studio close-ups + IMG_0514/0515/0518/0566/0569/0571): from a small roll above the band
+    # the lid face runs straight and steeply inclined (wide angle) out and up to the rim; the rim is
+    # cut off by a ~14 mm chamfer before the flat top.
     G = []
-    brk = 0.0015
-    lean = 0.010
+    ch_v, ch_h = 0.013, 0.013          # chamfer height / depth
+    top_h = lid_top
     for i in range(len(angs)):
         d = dirs[i]; p_in = oc + d * rin[i]; p_out = oc + d * rout[i]
         bot = top_bottom(p_in[1], p_in[0])
-        span = max(rout[i] - rin[i], 0.03)
-        hgt = TOP - bot
-        r = min(0.032, span * 0.55, hgt * 0.45)
+        TOPz = max(top_h(p_out[1]), bot + 0.03)
         col = [[p_in[0], bot - 0.004, p_in[1]], [p_in[0], bot + 0.002, p_in[1]]]
-        # convex roll: quarter ellipse from the shelf (horizontal) to the face (vertical)
-        fx = rout[i] - lean - r            # radius where the roll starts
-        fx = max(fx, rin[i] + 0.004)
-        rx = rout[i] - lean - fx
-        for k in range(0, 9):
-            t = k / 8.0 * math.pi / 2
-            rr = fx + rx * math.sin(t)
-            hh = bot + 0.002 + r * (1 - math.cos(t))
-            q = oc + d * rr
-            col.append([q[0], hh, q[1]])
-        for k in range(1, 4):              # face leaning out up to the rim
-            f = k / 3.0
-            rr = rout[i] - lean + (lean - brk) * f
-            hh = bot + 0.002 + r + (TOP - brk - bot - 0.002 - r) * f
-            q = oc + d * rr
-            col.append([q[0], hh, q[1]])
-        q = p_out - d * brk
-        col.append([q[0], TOP, q[1]])                           # sharp top edge
+        q = oc + d * (rin[i] + 0.004); col.append([q[0], bot + 0.0045, q[1]])   # roll
+        f0 = oc + d * (rin[i] + 0.009); h0 = bot + 0.0065
+        col.append([f0[0], h0, f0[1]])
+        hf = TOPz - ch_v
+        for k in range(1, 6):                                   # straight inclined face
+            f = k / 5.0
+            q = f0 + (p_out - f0) * f
+            col.append([q[0], h0 + (hf - h0) * f, q[1]])
+        q = p_out - d * ch_h
+        col.append([q[0], TOPz, q[1]])                          # chamfer -> top
         q = p_out - d * 0.05
-        col.append([q[0], TOP, q[1]])
+        col.append([q[0], TOPz, q[1]])
         G.append(col)
     G = np.array(G); G = np.concatenate([G, G[:1]], 0)
     P, UV = grid_tris(G, np.zeros(G.shape[:2] + (2,)))
-    P, UV = orient_with_uv(P, UV, lambda c: np.array([c[0] - oc[0], 0.0, c[2] - oc[1]]) + np.array([0, -0.6 if c[1] < TOP - 0.002 else 0.6, 0]), per_triangle=False)
+    P, UV = orient_with_uv(P, UV, lambda c: np.array([c[0] - oc[0], 0.0, c[2] - oc[1]]) + np.array([0, -0.6 if c[1] < top_h(c[2]) - 0.002 else 0.6, 0]), per_triangle=False)
     tb.add('BODY_PAINT', P, UV)
     Si = np.array([oc + dirs[i] * (rout[i] - 0.05) for i in range(len(angs))])
     Pt, UVt = cap(Si, X3, Z3, Y3, h=TOP, facing=+1, center=oc)
+    Pt = Pt.copy(); Pt[..., 1] = np.vectorize(top_h)(Pt[..., 2])
     tb.add('BODY_PAINT', Pt, UVt)
     nodes.append(('B02_canopy_crown', 'CANOPY', tb))
 
