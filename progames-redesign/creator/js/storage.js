@@ -1,5 +1,5 @@
 // Configuration state -> localStorage, uploaded images -> IndexedDB (too big for localStorage).
-import { STORAGE_KEY } from './config.js?v=11';
+import { STORAGE_KEY } from './config.js?v=12';
 
 export function loadState(productId) {
   try {

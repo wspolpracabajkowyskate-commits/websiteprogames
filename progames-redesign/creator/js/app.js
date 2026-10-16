@@ -2,11 +2,11 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=11';
-import { Studio, detectQuality } from './studio.js?v=11';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=11';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=11';
-import { ARView } from './ar.js?v=11';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=12';
+import { Studio, detectQuality } from './studio.js?v=12';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=12';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=12';
+import { ARView } from './ar.js?v=12';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -88,7 +88,12 @@ function onLoaded(gltf) {
     if (!o.isMesh) return;
     const m = o.material;
     if (product.paintMaterials.includes(m.name)) paintMaterials.includes(m) || paintMaterials.push(m);
-    if (m.name === 'SCREEN') screenMaterials.includes(m) || screenMaterials.push(m);
+    if (m.name === 'SCREEN') {
+      screenMaterials.includes(m) || screenMaterials.push(m);
+      // LED fields sit a few mm in front of the printed panel: keep them above the (offset) decals
+      m.polygonOffset = true; m.polygonOffsetFactor = -6; m.polygonOffsetUnits = -6; o.renderOrder = 4;
+    }
+    if (m.name === 'GLASS') { m.depthWrite = false; o.renderOrder = 5; o.castShadow = false; o.raycast = () => {}; }
     if (m.name === 'LED_RGB') setupRgbLeds(o);
     else if (m.name === 'LED_STRIP') setupStrip(o);
     else if (m.name === 'LED_WHITE') setupWhite(o);
@@ -109,7 +114,7 @@ function onLoaded(gltf) {
 
   // the camera may never enter these volumes
   const boxes = [];
-  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform']) {
+  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform', 'B01_body', 'B02_canopy_drum', 'B02_canopy_crown', 'B03_canopy_underside', 'B04_base_frame']) {
     const obj = modelRoot.getObjectByName(name);
     if (obj) boxes.push(new THREE.Box3().setFromObject(obj).expandByScalar(0.12));
   }

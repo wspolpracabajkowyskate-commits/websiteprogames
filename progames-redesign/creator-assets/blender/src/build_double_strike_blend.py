@@ -26,9 +26,10 @@ importlib.reload(meshlib); importlib.reload(double_strike_model); importlib.relo
 MODEL_NAME = os.environ.get('DS_MODEL', 'double_strike_model')
 _mod = importlib.reload(importlib.import_module(MODEL_NAME))
 build_all, GROUPS, ZONES = _mod.build_all, _mod.GROUPS, _mod.ZONES
-MATERIALS = materials.CHAMPION_MATERIALS if MODEL_NAME == 'champion_model' else materials.MATERIALS
-SLUG = 'boxer-champion' if MODEL_NAME == 'champion_model' else 'double-strike'
-ROOT_NAME = 'BoxerChampion' if MODEL_NAME == 'champion_model' else 'DoubleStrike'
+CHAMP = MODEL_NAME in ('champion_model', 'boxer_champion_model')
+MATERIALS = materials.CHAMPION_MATERIALS if CHAMP else materials.MATERIALS
+SLUG = 'boxer-champion' if CHAMP else 'double-strike'
+ROOT_NAME = getattr(_mod, 'ROOT_NAME', 'BoxerChampion' if CHAMP else 'DoubleStrike')
 
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
 OUT_DIR = os.environ.get('DS_OUT', os.path.join(HERE, '..'))
@@ -133,6 +134,14 @@ def make_material(name, d):
             if hasattr(m, 'shadow_method'):
                 m.shadow_method = 'HASHED'
             m.use_backface_culling = True
+    if d.get('opacity', 1.0) < 1.0 and 'base_tex' not in d:
+        set_input(bsdf, ['Alpha'], d['opacity'])
+        for attr, val in (('surface_render_method', 'BLENDED'), ('blend_method', 'BLEND')):
+            if hasattr(m, attr):
+                try:
+                    setattr(m, attr, val)
+                except Exception:
+                    pass
     if 'roughness_tex' in d:
         n = tiled(nt.nodes.new('ShaderNodeTexImage')); n.image = image(tex(d['roughness_tex']), True); n.location = (x, 0)
         sep = nt.nodes.new('ShaderNodeSeparateColor' if B4 or bpy.app.version >= (3, 3, 0) else 'ShaderNodeSeparateRGB'); sep.location = (x + 300, 0)
@@ -172,6 +181,9 @@ scene.collection.objects.link(root)
 root['product'] = SLUG
 root['zones'] = json.dumps(ZONES)
 root['units'] = 'm'
+for k, (v, status) in getattr(_mod, 'PARAMS', {}).items():
+    root['param_' + k] = json.dumps({'value': v, 'status': status})
+META = getattr(_mod, 'META', {})
 coll_main = bpy.data.collections.new(ROOT_NAME); scene.collection.children.link(coll_main)
 groups = {}
 for gname in GROUPS:
@@ -205,7 +217,7 @@ for (name, parent, mesh) in nodes:
     if not B41:
         me.use_auto_smooth = True
     me.normals_split_custom_set([to_blender(n) for n in ln])
-    if name.startswith('led_'):
+    if name.startswith('led_') or name in leds:
         col = me.color_attributes.new('Col', 'FLOAT_COLOR', 'CORNER') if hasattr(me, 'color_attributes') else me.vertex_colors.new(name='Col')
         lc = topo['loop_colors'].reshape(-1, 3)
         for li in range(len(me.loops)):
@@ -216,9 +228,41 @@ for (name, parent, mesh) in nodes:
             at.data[loop.vertex_index].value = float(ll[li])
     me.update()
     ob = bpy.data.objects.new(name, me)
+    if name in META:
+        src, conf, status, did = META[name]
+        ob['source_ids'] = src; ob['confidence'] = conf; ob['measurement_status'] = status; ob['detail_id'] = did
     ob.parent = groups[parent][0]
     groups[parent][1].objects.link(ob)
     stats[name] = len(me.polygons)
+
+# ----------------------------------------------------------------------------- calibrated source cameras
+CAL_DIR = os.path.join(HERE, 'calib')
+if CHAMP and os.path.isdir(CAL_DIR):
+    from mathutils import Matrix
+    cc = bpy.data.collections.new('SOURCE_CAMERAS'); coll_main.children.link(cc)
+    photo_ids = {'0507': 'F01', '0508': 'F02', '0516': 'F10', '0571': 'F26'}
+    for f in sorted(os.listdir(CAL_DIR)):
+        if not (f.startswith('ba_') and f.endswith('.json')) or 'model' in f:
+            continue
+        c = json.load(open(os.path.join(CAL_DIR, f)))
+        k = f[3:-5]
+        R = Matrix([c['R'][0:3], c['R'][3:6], c['R'][6:9]]); t = c['t']
+        # world(glTF) -> cam(OpenCV); camera to world (glTF), then glTF -> Blender axes, OpenCV -> Blender camera axes
+        Rt = R.transposed()
+        C = -(Rt @ __import__('mathutils').Vector(t))
+        G2B = Matrix(((1, 0, 0), (0, 0, -1), (0, 1, 0)))
+        CV2BL = Matrix(((1, 0, 0), (0, -1, 0), (0, 0, -1)))
+        rot = G2B @ Rt @ CV2BL
+        M = rot.to_4x4(); M.translation = G2B @ C
+        cd = bpy.data.cameras.new(f'CAM_{photo_ids.get(k, k)}_IMG_{k}')
+        cd.sensor_fit = 'HORIZONTAL'; cd.sensor_width = 36.0
+        cd.lens = c['fx'] / c['W'] * 36.0
+        co = bpy.data.objects.new(cd.name, cd); co.matrix_world = M
+        co['source_photo'] = f'IMG_{k}'; co['resolution'] = f"{c['W']}x{c['H']} (working copy, aspect of the original)"
+        cc.objects.link(co)
+    unc = bpy.data.collections.new('UNCERTAIN'); coll_main.children.link(unc)
+    note = bpy.data.objects.new('NOTE_roof_and_base_underside_not_documented', None); unc.objects.link(note)
+    note['info'] = 'Q01: roof surface and base underside are not photographed - crown top and base underside are estimates.'
 
 # ----------------------------------------------------------------------------- studio for control renders
 def look_at(obj, target):
@@ -272,6 +316,9 @@ if RENDER:
     VIEWS = {'front': ((0, -6.2, 1.2), (0, 0, 1.1)), 'left': ((-6.2, -0.25, 1.3), (0, -0.25, 1.1)),
              'right': ((6.2, -0.25, 1.3), (0, -0.25, 1.1)), 'q34': ((3.4, -5.1, 1.9), (0, -0.15, 1.08)),
              'back': ((0, 6.2, 1.25), (0, 0, 1.1))}
+    if CHAMP:
+        VIEWS.update({'q34_front_left': ((-3.4, -5.1, 1.9), (0, -0.15, 1.08)), 'q34_back_right': ((3.4, 5.1, 1.9), (0, -0.15, 1.08)),
+                      'q34_back_left': ((-3.4, 5.1, 1.9), (0, -0.15, 1.08))})
     only = [v for v in os.environ.get('DS_VIEWS', '').split(',') if v]
     for k, (loc, tgt) in VIEWS.items():
         if only and k not in only:
@@ -280,6 +327,23 @@ if RENDER:
         scene.render.filepath = os.path.join(rdir, (f'{SLUG}_' if SLUG != 'double-strike' else '') + f'control_{k}.png')
         bpy.ops.render.render(write_still=True)
         renders[k] = scene.render.filepath
+
+    if CHAMP and os.environ.get('DS_ORTHO', '1') != '0':
+        # orthographic projections with ONE common scale (2.6 m frame height)
+        cam_data.type = 'ORTHO'; cam_data.ortho_scale = 2.6
+        scene.render.resolution_x = 1300; scene.render.resolution_y = 1300
+        ORTHO = {'front': ((0, -8, 1.1), (0, 0, 1.1)), 'back': ((0, 8, 1.1), (0, 0, 1.1)), 'left': ((-8, -0.35, 1.1), (0, -0.35, 1.1)),
+                 'right': ((8, -0.35, 1.1), (0, -0.35, 1.1)), 'top': ((0, -0.35, 9), (0, -0.35, 0))}
+        for k, (loc, tgt) in ORTHO.items():
+            if only and ('ortho_' + k) not in only:
+                continue
+            cam.location = loc; look_at(cam, tgt)
+            if k == 'top':
+                cam.rotation_euler = (0, 0, 0)
+            scene.render.filepath = os.path.join(rdir, f'{SLUG}_ortho_{k}.png')
+            bpy.ops.render.render(write_still=True)
+            renders['ortho_' + k] = scene.render.filepath
+        cam_data.type = 'PERSP'
 
 # ----------------------------------------------------------------------------- save + export
 bpy.ops.wm.save_as_mainfile(filepath=BLEND_PATH)

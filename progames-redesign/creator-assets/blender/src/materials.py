@@ -63,6 +63,11 @@ CHAMPION_MATERIALS['BODY_PAINT'] = dict(base=srgb('#c40d1a'), metallic=0.0, roug
 CHAMPION_MATERIALS['DIAMOND_PLATE'] = dict(base=srgb('#d9dce0'), metallic=1.0, roughness=1.0, normal=_CH + 'tread_plate_normal.png', normal_scale=1.0,
                                           roughness_tex=_CH + 'tread_plate_orm.png')
 CHAMPION_MATERIALS['BLACK_STEEL'] = dict(base=srgb('#0f1012'), metallic=0.25, roughness=0.42, clearcoat=0.35, clearcoat_roughness=0.3, specular=0.5)
+CHAMPION_MATERIALS['LEATHER_BLACK'] = dict(MATERIALS['LEATHER_BLACK'], normal_scale=0.25, roughness=0.5)
+CHAMPION_MATERIALS['GLASS'] = dict(base=srgb('#d8dde3'), metallic=0.0, roughness=0.04, alpha='BLEND', opacity=0.10, specular=0.5)
+CHAMPION_MATERIALS['GAP_DARK'] = dict(base=srgb('#050506'), metallic=0.0, roughness=0.8)
+CHAMPION_MATERIALS['CAVITY_DARK'] = dict(base=srgb('#060607'), metallic=0.0, roughness=0.9)
+CHAMPION_MATERIALS['START_GLOW'] = dict(base=srgb('#ffd27a'), metallic=0.0, roughness=0.3, emissive=[1.0, 0.78, 0.38], emissive_strength=1.4)
 CHAMPION_MATERIALS['BUTTON_RED'] = dict(base=srgb('#d21a1a'), metallic=0.0, roughness=0.35, clearcoat=0.5, clearcoat_roughness=0.15)
 CHAMPION_MATERIALS['TYRE_GREY'] = dict(base=srgb('#6d7075'), metallic=0.0, roughness=0.6, specular=0.4)
 CHAMPION_MATERIALS['SCREEN'] = dict(MATERIALS['SCREEN'], emissive_tex=_CH + 'champion_screen_digits.webp')

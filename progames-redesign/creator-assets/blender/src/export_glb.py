@@ -75,7 +75,7 @@ def build(out_path, tex_dir, model=None):
     global MATERIALS
     model = model or MODEL
     mod = importlib.import_module(model)
-    MATERIALS = _materials.CHAMPION_MATERIALS if model == 'champion_model' else _materials.MATERIALS
+    MATERIALS = _materials.CHAMPION_MATERIALS if model in ('champion_model', 'boxer_champion_model') else _materials.MATERIALS
     nodes, leds = mod.build_all()
     GROUPS, ZONES = mod.GROUPS, mod.ZONES
     g = GLB()
@@ -85,7 +85,7 @@ def build(out_path, tex_dir, model=None):
         if name in mat_index:
             return mat_index[name]
         d = MATERIALS[name]
-        pbr = dict(baseColorFactor=list(d.get('base', [1, 1, 1])) + [1.0], metallicFactor=d.get('metallic', 0.0),
+        pbr = dict(baseColorFactor=list(d.get('base', [1, 1, 1])) + [d.get('opacity', 1.0)], metallicFactor=d.get('metallic', 0.0),
                    roughnessFactor=d.get('roughness', 0.5))
         m = dict(name=name, pbrMetallicRoughness=pbr)
         ext = {}
@@ -119,8 +119,11 @@ def build(out_path, tex_dir, model=None):
         mat_index[name] = len(g.j['materials']) - 1
         return mat_index[name]
 
-    root = dict(name='DoubleStrike', children=[], extras=dict(
-        product=model.replace('_model', '').replace('_', '-'), units='m', height_m=2.19,
+    root_name = getattr(mod, 'ROOT_NAME', 'DoubleStrike')
+    g.j['scenes'][0]['name'] = root_name
+    root = dict(name=root_name, children=[], extras=dict(
+        product='boxer-champion' if 'champion' in model else model.replace('_model', '').replace('_', '-'), units='m', height_m=2.19,
+        params={k: (v[0] if not isinstance(v[0], tuple) else list(v[0]), v[1]) for k, v in getattr(mod, 'PARAMS', {}).items()},
         zones={k: dict(v) for k, v in ZONES.items()},
         led_groups={k: v.count for k, v in leds.items()}))
     g.j['nodes'].append(root)
@@ -149,7 +152,11 @@ def build(out_path, tex_dir, model=None):
             prims.append(dict(attributes=attrs, indices=ia, material=material(mname)))
             tris += len(idx) // 3
         g.j['meshes'].append(dict(name=name, primitives=prims))
-        g.j['nodes'].append(dict(name=name, mesh=len(g.j['meshes']) - 1))
+        nd = dict(name=name, mesh=len(g.j['meshes']) - 1)
+        meta = getattr(mod, 'META', {}).get(name)
+        if meta:
+            nd['extras'] = dict(source_ids=meta[0], confidence=meta[1], measurement_status=meta[2], detail_id=meta[3])
+        g.j['nodes'].append(nd)
         g.j['nodes'][group_idx[parent]]['children'].append(len(g.j['nodes']) - 1)
         stats[name] = tris
         total_tris += tris
