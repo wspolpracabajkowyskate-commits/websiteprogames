@@ -29,7 +29,7 @@ export const PRODUCTS = {
     name: 'Boxer Champion',
     subtitle: 'Boxing machine',
     thumb: '/creator-assets/thumbs/boxer-champion.webp',
-    spec: 'Boxer · H 219 cm · 69 × 109 cm',
+    spec: 'Boxer · H 219 cm · 72 × 115 cm',
     model: '/creator-assets/models/boxer-champion.glb',
     defaultColor: 'red',
     paintMaterials: ['BODY_PAINT'],

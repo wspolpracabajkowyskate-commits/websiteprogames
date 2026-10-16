@@ -3,6 +3,7 @@
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 
 const MAX_SIDE = 2048;
+const MAX_SIDE_WIDE = 4096;   // long thin zones (canopy band) get a wider canvas
 
 export const DEFAULT_TRANSFORM = Object.freeze({ scale: 1, x: 0, y: 0, rotation: 0, mode: 'fit' });
 
@@ -22,8 +23,9 @@ export class ZoneGraphics {
       const hit = byMat.get(z.material);
       if (!hit) { console.warn('[creator] zone material missing in model:', z.material); continue; }
       const [w, h] = z.size;
-      const cw = w >= h ? MAX_SIDE : Math.round(MAX_SIDE * w / h);
-      const ch = h > w ? MAX_SIDE : Math.round(MAX_SIDE * h / w);
+      const side = Math.max(w, h) / Math.min(w, h) > 4 ? MAX_SIDE_WIDE : MAX_SIDE;
+      const cw = w >= h ? side : Math.round(side * w / h);
+      const ch = h > w ? side : Math.round(side * h / w);
       const canvas = document.createElement('canvas'); canvas.width = cw; canvas.height = ch;
       const tex = new THREE.CanvasTexture(canvas);
       tex.flipY = false; tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
@@ -89,13 +91,15 @@ export class ZoneGraphics {
     const cw = canvas.width, ch = canvas.height;
     ctx.clearRect(0, 0, cw, ch);
     const iw = image.naturalWidth || image.width || 1024, ih = image.naturalHeight || image.height || 1024;
+    // fit: whole image visible; fill: cover the zone (crop); stretch: exactly the zone size
     const base = t.mode === 'fill' ? Math.max(cw / iw, ch / ih) : Math.min(cw / iw, ch / ih);
-    const s = base * t.scale;
+    const dw = t.mode === 'stretch' ? cw * t.scale : iw * base * t.scale;
+    const dh = t.mode === 'stretch' ? ch * t.scale : ih * base * t.scale;
     ctx.save();
     ctx.translate(cw / 2 + t.x * cw / 2, ch / 2 - t.y * ch / 2);
     ctx.rotate(t.rotation * Math.PI / 180);
     ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(image, -iw * s / 2, -ih * s / 2, iw * s, ih * s);
+    ctx.drawImage(image, -dw / 2, -dh / 2, dw, dh);
     ctx.restore();
     z.tex.needsUpdate = true;
   }

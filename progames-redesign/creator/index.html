@@ -10,7 +10,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/manrope-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/creator/creator.css?v=8">
+<link rel="stylesheet" href="/creator/creator.css?v=9">
 </head>
 <body>
 <header class="cr-top">
@@ -83,13 +83,14 @@
           </label>
           <fieldset class="cr-tf" id="transform" disabled>
             <legend class="sr-only">Graphic position</legend>
-            <div class="cr-row"><label for="tScale">Scale</label><input type="range" id="tScale" min="0.1" max="3" step="0.01" value="1"><output id="oScale">100%</output></div>
+            <div class="cr-row"><label for="tScale">Scale</label><input type="range" id="tScale" min="0.1" max="6" step="0.01" value="1"><output id="oScale">100%</output></div>
             <div class="cr-row"><label for="tX">X position</label><input type="range" id="tX" min="-1" max="1" step="0.005" value="0"><output id="oX">0</output></div>
             <div class="cr-row"><label for="tY">Y position</label><input type="range" id="tY" min="-1" max="1" step="0.005" value="0"><output id="oY">0</output></div>
             <div class="cr-row"><label for="tRot">Rotation</label><input type="range" id="tRot" min="-180" max="180" step="1" value="0"><output id="oRot">0°</output></div>
             <div class="cr-btns">
               <button type="button" data-act="fit">Fit</button>
               <button type="button" data-act="fill">Fill</button>
+              <button type="button" data-act="stretch" title="Stretch the graphic over the whole zone">Stretch</button>
               <button type="button" data-act="center">Center</button>
               <button type="button" data-act="reset">Reset</button>
             </div>
@@ -142,7 +143,7 @@
   })();
 </script>
 <script type="module">
-  import('/creator/js/app.js?v=16').catch(function (e) {
+  import('/creator/js/app.js?v=17').catch(function (e) {
     var l = document.getElementById('loading'), t = document.getElementById('loadingText');
     window.__creatorFailed = true; l.classList.add('error');
     t.textContent = 'Could not load the viewer scripts: ' + (e && e.message ? e.message : e);

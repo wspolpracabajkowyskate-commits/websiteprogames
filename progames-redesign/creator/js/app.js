@@ -2,11 +2,11 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=16';
-import { Studio, detectQuality } from './studio.js?v=16';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=16';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=16';
-import { ARView } from './ar.js?v=16';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=17';
+import { Studio, detectQuality } from './studio.js?v=17';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=17';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=17';
+import { ARView } from './ar.js?v=17';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -343,7 +343,7 @@ function refreshZoneUI() {
   const t = { ...DEFAULT_TRANSFORM, ...(state.graphicsTransforms[id] || {}) };
   $('#tScale').value = t.scale; $('#tX').value = t.x; $('#tY').value = t.y; $('#tRot').value = t.rotation;
   outputs(t);
-  document.querySelectorAll('#transform [data-act=fit], #transform [data-act=fill]').forEach((b) => b.classList.toggle('active', g.type === 'custom' && b.dataset.act === t.mode));
+  document.querySelectorAll('#transform [data-act=fit], #transform [data-act=fill], #transform [data-act=stretch]').forEach((b) => b.classList.toggle('active', g.type === 'custom' && b.dataset.act === t.mode));
   document.querySelector('[data-act=restore]').disabled = g.type === 'factory';
   document.querySelector('[data-act=remove]').disabled = g.type === 'none';
   document.querySelectorAll('.cr-zone').forEach((b) => {
@@ -481,6 +481,7 @@ function buildUI() {
     switch (b.dataset.act) {
       case 'fit': setTransform({ mode: 'fit', scale: 1, x: 0, y: 0 }); break;
       case 'fill': setTransform({ mode: 'fill', scale: 1, x: 0, y: 0 }); break;
+      case 'stretch': setTransform({ mode: 'stretch', scale: 1, x: 0, y: 0, rotation: 0 }); break;
       case 'center': setTransform({ x: 0, y: 0 }); break;
       case 'reset': setTransform({ ...DEFAULT_TRANSFORM }); break;
       case 'restore': {

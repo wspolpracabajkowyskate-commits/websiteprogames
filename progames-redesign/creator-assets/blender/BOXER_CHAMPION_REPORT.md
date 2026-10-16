@@ -11,6 +11,17 @@
 | `blender/renders/` | Orthographic front, back, left, right and top views (one common scale, 2.6 m frame); 3/4 views front-right, front-left, back-right and back-left; neutral versions without graphics or emission; renders through the four source cameras. |
 | `blender/renders/compare/*_source_overlay_render.webp` | Photo, photo with the model silhouette, and model render, all from the same calibrated camera and crop. |
 
+## v9 changes
+- **Front corner profiles (D09, IMG_0575 as marked):** the front face of the profile is now a concave channel. An inner lip and an outer lip frame a trough recessed about 5 mm into the profile, and a small radius turns the corner onto the side. The run and the sizes are unchanged.
+- **Height:** the model is scaled to exactly 2.19 m, the catalogue height, so AR shows the published height. The scale factor is 0.997.
+  - The overall envelope taken from the photos stays 94 cm wide (lid) × 130 cm long (lid front to rear wheels).
+  - Base plate 69 × 104 cm.
+  - The catalogue states 72 × 115 cm.
+- **Canopy band upload:**
+  - New "Stretch" mode stretches the upload over the whole band: left side, front and right side, up to the rear profiles.
+  - The scale range now goes to 600 %.
+  - Long zones get a 4096 px canvas.
+
 ## v8 changes
 - **Lid lower edge (IMG_0575):** a concave cove, the arc recessed into the lid between its ends, replaces the bead.
 - **Rear doors:** the keys are removed. Locks and doors are unchanged (D01_upper_lock_key and D02_lower_lock_key no longer exist).

@@ -81,7 +81,7 @@ PARAMS = {
 }
 
 TOP_DEPTH = D['top_z1'] - D['top_z0']
-TARGET_HEIGHT = D['top_y']      # no rescale: the photogrammetric metric frame is kept (lid top 2.196 m, catalogue 2.19 m)
+TARGET_HEIGHT = 2.19            # catalogue height (K01); the photogrammetric model (2.196 m) is scaled by 0.997
 MODEL_SCALE = 1.0
 
 
@@ -390,7 +390,7 @@ def build_column():
 
 
 def corner_rail(sx, n_vert=40):
-    """Sweep of the rounded corner bead along: front edge (vertical) -> chin curve -> brim underside."""
+    """Sweep of the corner profile (concave front channel) along: front edge (vertical) -> chin curve -> brim underside."""
     cx, z1 = D['col_x'], D['col_z1']
     rr = 0.035
     yb = D['lb_y0'] - rr
@@ -402,9 +402,14 @@ def corner_rail(sx, n_vert=40):
     path = np.array(path)
     # cross-section (q: outward along x, p: along the front-facing normal)
     fw = D['frame_w']
-    sec = [(-fw, 0.0), (-fw, 0.003), (-fw + 0.006, 0.0068), (-0.016, 0.0085), (-0.009, 0.0088)]
-    cq, cp, r = -0.004, -0.004, 0.0125
-    for ang in np.linspace(math.pi / 2, 0, 9)[1:]:
+    # front face is a concave channel (IMG_0575): inner lip, a trough recessed ~5 mm into the
+    # profile, outer lip, then a small radius round the corner onto the side
+    sec = [(-fw, 0.0), (-fw, 0.003), (-fw + 0.004, 0.0075), (-0.029, 0.0095)]
+    for t in np.linspace(0, 1, 11)[1:-1]:
+        sec.append((-0.029 + 0.025 * t, 0.0095 - 0.005 * math.sin(math.pi * t)))
+    sec += [(-0.004, 0.0095)]
+    cq, cp, r = 0.0045, 0.0055, 0.004
+    for ang in np.linspace(math.pi / 2, 0, 6)[1:]:
         sec.append((cq + r * math.cos(ang), cp + r * math.sin(ang)))
     sec += [(0.0085, -0.012), (0.0072, -0.034), (0.003, -0.042), (0.0, -0.043)]
     sec = np.array(sec)
@@ -682,8 +687,8 @@ def build_canopy(leds):
         TOPz = max(top_h(p_out[1]), bot + 0.045)
         span = max(rout[i] - rin[i], 0.03)
         col = [[p_in[0], bot - 0.004, p_in[1]], [p_in[0], bot + 0.002, p_in[1]]]
-        # lower edge (IMG_0575): a concave cove cut into the lid - the arc runs from the band up and
-        # out, its middle recessed into the body relative to its ends (centre of the arc outside)
+        # lower edge: a concave cove cut into the lid - the arc runs from the band up and out, its
+        # middle recessed into the body relative to its ends (as published in v8, kept on request)
         rb = min(0.02, span * 0.35)
         for k in range(1, 7):
             t = k / 6.0 * math.pi / 2
