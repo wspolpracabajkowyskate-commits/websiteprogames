@@ -60,9 +60,10 @@ CHAMPION_MATERIALS = {k: dict(v) for k, v in MATERIALS.items() if k in (
     'SCREEN', 'LED_RGB', 'LED_WHITE')}
 CHAMPION_MATERIALS['BODY_PAINT'] = dict(base=srgb('#c40d1a'), metallic=0.0, roughness=0.34, clearcoat=1.0, clearcoat_roughness=0.04, specular=0.5,
                                         normal=TEX + 'paint_finish_normal.png', normal_scale=0.18, uv_scale=5.0)
-CHAMPION_MATERIALS['DIAMOND_PLATE'] = dict(base=srgb('#d9dce0'), metallic=1.0, roughness=1.0, normal=_CH + 'tread_plate_normal.png', normal_scale=1.0,
+CHAMPION_MATERIALS['DIAMOND_PLATE'] = dict(base=srgb('#b4b8be'), metallic=1.0, roughness=1.0, normal=_CH + 'tread_plate_normal.png', normal_scale=1.0,
                                           roughness_tex=_CH + 'tread_plate_orm.png')
-CHAMPION_MATERIALS['BLACK_STEEL'] = dict(base=srgb('#0f1012'), metallic=0.25, roughness=0.42, clearcoat=0.35, clearcoat_roughness=0.3, specular=0.5)
+CHAMPION_MATERIALS['BLACK_STEEL'] = dict(base=srgb('#0d0e10'), metallic=0.2, roughness=0.5, clearcoat=0.25, clearcoat_roughness=0.4, specular=0.5,
+                                         normal=TEX + 'plastic_grain_normal.png', normal_scale=0.3, uv_scale=8.0)   # powder coat
 CHAMPION_MATERIALS['LEATHER_BLACK'] = dict(MATERIALS['LEATHER_BLACK'], normal_scale=0.25, roughness=0.5)
 CHAMPION_MATERIALS['GLASS'] = dict(base=srgb('#d8dde3'), metallic=0.0, roughness=0.04, alpha='BLEND', opacity=0.10, specular=0.5)
 CHAMPION_MATERIALS['GAP_DARK'] = dict(base=srgb('#050506'), metallic=0.0, roughness=0.8)

@@ -1,4 +1,4 @@
-# Boxer Champion – model report (v4, rebuilt from BOXER_CHAMPION_REFERENCES_CLAUDE_2)
+# Boxer Champion – model report (v5: crown, rear layout, tread plate, studio lighting)
 
 ## Deliverables
 
@@ -10,6 +10,14 @@
 | `blender/src/calib/ba_*.json` | Calibrated cameras of F01, F02, F10, F26 (bundle adjustment). They are also in the .blend as `SOURCE_CAMERAS/CAM_F01_IMG_0507` and so on. |
 | `blender/renders/` | Orthographic front, back, left, right and top views (one common scale, 2.6 m frame); 3/4 views front-right, front-left, back-right and back-left; neutral versions without graphics or emission; renders through the four source cameras. |
 | `blender/renders/compare/*_source_overlay_render.webp` | Photo, photo with the model silhouette, and model render, all from the same calibrated camera and crop. |
+
+## v5 changes (studio product photos + IMG_0514/0515/0518/0519/0520, 0566–0570, 0577)
+- **Crown:** rebuilt. From the band the lid rolls out in a convex curve into a tall face that leans slightly outward up to the rim, so the outermost point is the very top edge. That edge is sharp (1.5 mm break) and the top is flat. Lid plan: 0.91 m wide at the front, 0.72 m at the rear (checked against the calibrated F26 overlay).
+- **Rear layout:** upper door centre 1.39 m, lower door 0.765 m. The rating plate, power inlet and locks moved with them. Source: F32 shows the upper frame top level with the side flag stripe (≈1.62 m), consistent with the studio rear photo. Screw heads are now at 0.15 / 0.735 / 1.38 / 2.05 m, matching the door levels as in F31.
+- **Black rear profiles** run full height to the crown underside.
+- **Tread plate:** classic 5-bar pattern at 45° to the plate edges, 59 mm lattice (measured on rectified bakes of F01/F02/F10).
+- **Web viewer:** photo-studio light set (grey sweep, overhead softbox, two tall strip boxes, back rims), Khronos Neutral tone mapping so the red stays saturated, darker contact shadow.
+- `renders/*_neutral_*` and `renders/*_camera_*` and `compare/` are from v4 (silhouette unchanged except crown and rear details).
 
 ## State
 - One punch bag, lowered vertically (F34/F35). The four-panel egg-shaped ball has black panels front and back and red panels at the sides; the black neck cover has one fold and a cuff over the ball. The cavity behind it is only dark – no mechanism is invented.
@@ -34,8 +42,8 @@
 | base_thickness | 0.045 m | estimated (F33) |
 | canopy band height (front) | 0.229 m | photogrammetry |
 | lid underside | 2.097 m at the sides → 2.132 m at the front centre | photogrammetry |
-| upper door (outer frame) | 0.45 × 0.45 m, centre x −0.032 m, y 1.12 m | F31 frontal |
-| lower door | 0.222 × 0.246 m, centre y 0.495 m | F31 frontal |
+| upper door (outer frame) | 0.45 × 0.45 m, centre x −0.032 m, y 1.39 m | F31 frontal (size), F32 + studio rear (height) |
+| lower door | 0.222 × 0.246 m, centre y 0.765 m | F31 frontal (spacing to upper door) |
 | bag | ball 0.24 × 0.28 m, neck 0.225 m, ball bottom ≈1.37 m | estimated (F34/F35/P01) |
 | wheels | Ø 77 mm, 28 mm wide | estimated |
 

@@ -36,7 +36,7 @@ D = dict(
     lb_y0=1.84, lb_y1=1.91, lb_x=0.331, lb_z1=0.898, lb_r=0.24,
     chin_y=1.77, chin_z=0.31,
     drum_x=0.331, drum_z1=0.902, drum_r=0.25,
-    top_x=0.425, top_xb=0.40, top_z0=-0.215, top_z1=1.02, top_r=0.40, top_y_back=2.103, top_rise=0.04, top_y=2.19,
+    top_x=0.455, top_xb=0.36, top_z0=-0.215, top_z1=1.02, top_r=0.40, top_y_back=2.103, top_rise=0.04, top_y=2.19,
     # punch bag LOWERED (F34/F35, P01): neck hangs from the front of the opening, egg-shaped ball
     bag_rx=0.12, bag_ry=0.14, bag_hang=(0.0, 0.70), neck_len=0.225, neck_top_r=0.030, neck_skirt_r=0.098,
     # slot in the brim underside the bag folds into
@@ -46,11 +46,11 @@ D = dict(
 )
 # visible fasteners / lock / wheel positions (F31, F32; D01-D07) - all 'estimated'
 D.update(
-    door_upper=(-0.032, 1.12, 0.450, 0.450),      # centre x, centre y, w, h (outer frame) - F31 frontal, 814 px/m
-    door_lower=(-0.005, 0.495, 0.222, 0.246),
-    lock_upper=(-0.194, 1.105), lock_lower=(-0.055, 0.473),
-    rating_plate=(0.149, 0.868, 0.066, 0.053), power_socket=(-0.128, 0.835, 0.044, 0.057),
-    rear_screws_y=(0.14, 0.81, 1.86),               # visible screw heads on each black rear profile
+    door_upper=(-0.032, 1.39, 0.450, 0.450),      # centre x, centre y, w, h (outer frame) - F31 frontal 814 px/m; height from F32 (frame top = side flag stripe) + studio set
+    door_lower=(-0.005, 0.765, 0.222, 0.246),
+    lock_upper=(-0.194, 1.375), lock_lower=(-0.055, 0.743),
+    rating_plate=(0.149, 1.138, 0.066, 0.053), power_socket=(-0.128, 1.105, 0.044, 0.057),
+    rear_screws_y=(0.15, 0.735, 1.38, 2.05),               # visible screw heads on each black rear profile
     wheel_xy=((-0.245, 1.99), (0.245, 1.99)), wheel_r=0.0385, wheel_w=0.028,
 )
 D['bag_center'] = (D['bag_hang'][0], D['lb_y0'] - D['neck_len'] - D['bag_ry'] + 0.032, D['bag_hang'][1])
@@ -217,7 +217,7 @@ def build_platform():
     zr = z1 - ramp
     base = Mesh('B04_base_frame', smooth_angle=30)
     dp = Mesh('D20_base_tread_plate', smooth_angle=20)
-    K = 5.4   # 5-bar tread: ~14 cells across the 69 cm plate, as on the real platform
+    K = 1 / 0.059   # tread tile 59 mm (measured), bars at +-45 deg to the plate edges
 
     def plate(P, up):
         P = np.array(P, float)
@@ -467,15 +467,24 @@ def build_back():
     nodes.append(('D23_rating_plate', 'DETAILS', rp))
     # D05 black rear profiles (L section over both vertical rear edges) + visible screw heads
     pr = Mesh('D05_rear_profiles', smooth_angle=30)
-    ym = (D['col_y0'] + D['col_box_y1']) / 2; hh = D['col_box_y1'] - D['col_y0']
+    # black L profiles on both rear edges, from the base all the way up to the crown underside
+    # (IMG_0523 / F17 / F32): column part, then the band part (the band is a few mm wider)
+    ytop = top_bottom(z0, cx) + 0.004
+    segs = ((D['col_y0'], D['col_box_y1'], cx), (D['col_box_y1'], ytop, D['drum_x']))
     for sx in (-1, 1):
-        Pq, UVq = quad([sx * (cx - D['back_trim'] / 2), ym, z0 - 0.0009], X3, Y3, D['back_trim'], hh)
-        Pq, UVq = orient_with_uv(Pq, UVq, [0, 0, -1]); pr.add('BLACK_STEEL', Pq, UVq)
-        Pq, UVq = quad([sx * (cx + 0.0009), ym, z0 + D['back_trim'] / 2], Z3, Y3, D['back_trim'], hh)
-        Pq, UVq = orient_with_uv(Pq, UVq, [sx, 0, 0]); pr.add('BLACK_STEEL', Pq, UVq)
+        for ya, yb, xx in segs:
+            ym, hh = (ya + yb) / 2, yb - ya
+            Pq, UVq = quad([sx * (xx - D['back_trim'] / 2), ym, z0 - 0.0009], X3, Y3, D['back_trim'], hh)
+            Pq, UVq = orient_with_uv(Pq, UVq, [0, 0, -1]); pr.add('BLACK_STEEL', Pq, UVq)
+            Pq, UVq = quad([sx * (xx + 0.0009), ym, z0 + D['back_trim'] / 2], Z3, Y3, D['back_trim'], hh)
+            Pq, UVq = orient_with_uv(Pq, UVq, [sx, 0, 0]); pr.add('BLACK_STEEL', Pq, UVq)
+        # step where the band is wider than the column
+        Pq, UVq = quad([sx * (cx + D['drum_x']) / 2, D['col_box_y1'], z0 + D['back_trim'] / 2], X3, Z3, D['drum_x'] - cx + 0.002, D['back_trim'])
+        Pq, UVq = orient_with_uv(Pq, UVq, [0, -1, 0]); pr.add('BLACK_STEEL', Pq, UVq)
         for yy in D['rear_screws_y']:
+            xx = cx if yy < D['col_box_y1'] else D['drum_x']
             Ps, UVs = lathe([(0, 0), (0.0032, 0), (0.0032, 0.0008), (0.0022, 0.0016), (0, 0.0018)], 12,
-                            M=look_basis(np.array([sx * (cx - D['back_trim'] * 0.55), yy, z0 - 0.001]), [0, 0, -1]) @ mat_rot('x', 90))
+                            M=look_basis(np.array([sx * (xx - D['back_trim'] * 0.55), yy, z0 - 0.001]), [0, 0, -1]) @ mat_rot('x', 90))
             pr.add('METAL', Ps, UVs)
     nodes.append(('D05_rear_profiles', 'BODY', pr))
     # D06 / D07 transport wheels: base plate with 4 bolts on the rear face, fixed fork, grey wheel, axle nut
@@ -607,7 +616,7 @@ def build_canopy(leds):
 
     # ---- lid: thin moulded shell.  A short collar sits on the band, the underside flares out like a
     # bell (steep at the band, almost flat at the rim), rounded rim ~3 cm thick, flat top.
-    tb = Mesh('B02_canopy_crown', smooth_angle=42)
+    tb = Mesh('B02_canopy_crown', smooth_angle=30)
     S = TOP_PLAN
     TOP = D['top_y']
     oc = np.array([0.0, 0.38])
@@ -615,42 +624,46 @@ def build_canopy(leds):
     dirs = np.stack([np.cos(angs), np.sin(angs)], 1)
     rin = ray_polygon(oc, angs, offset_contour(Cd, 0.004))   # just outside the band
     rout = ray_polygon(oc, angs, S)
-    nrm = dirs
-    rows = []
-    rim_t = 0.040
-    def rimbot(z):
-        t = min(max((z - D['top_z0']) / TOP_DEPTH, 0.0), 1.0)
-        return TOP - rim_t - 0.015 * t          # rolled lip slightly deeper towards the front
-    # (radius fraction s, height fraction along the bell, extra outward offset)
-    for k in range(13):
-        sfr = k / 12.0
-        rows.append(('bell', sfr))
-    rimpts = [(0.000, 0.00), (0.006, 0.12), (0.010, 0.35), (0.011, 0.55), (0.009, 0.75), (0.004, 0.92), (-0.004, 1.0), (-0.03, 1.0), (-0.08, 1.0)]
+    # crown (studio set; IMG_0514/0515/0518/0520/0566/0569/0571 overlay): from the band the lid rolls
+    # out in a convex curve and turns into a tall, slightly outward-leaning face that runs straight up
+    # to the rim, so the outermost point of the lid is its very top edge.  That edge is sharp
+    # (1.5 mm break) and the top behind it is flat.
     G = []
+    brk = 0.0015
+    lean = 0.010
     for i in range(len(angs)):
         d = dirs[i]; p_in = oc + d * rin[i]; p_out = oc + d * rout[i]
-        zin = p_in[1]
-        col = []
-        bot = top_bottom(zin, p_in[0])
-        # collar: 2 cm vertical ring on the band
-        col.append([p_in[0], bot - 0.004, p_in[1]])
-        col.append([p_in[0], bot + 0.006, p_in[1]])
-        for k in range(1, 13):
-            sfr = k / 12.0
-            q = p_in + (p_out - p_in) * sfr
-            hb = max(rimbot(q[1]), bot + 0.014)
-            h = (bot + 0.006) + (hb - bot - 0.006) * (1 - (1 - sfr) ** 2.4)   # trumpet flare
-            col.append([q[0], h, q[1]])
-        hb = max(rimbot(p_out[1]), bot + 0.014)
-        for off, fr in rimpts[1:]:
-            q = p_out + d * off
-            col.append([q[0], hb + (TOP - hb) * fr, q[1]])
+        bot = top_bottom(p_in[1], p_in[0])
+        span = max(rout[i] - rin[i], 0.03)
+        hgt = TOP - bot
+        r = min(0.032, span * 0.55, hgt * 0.45)
+        col = [[p_in[0], bot - 0.004, p_in[1]], [p_in[0], bot + 0.002, p_in[1]]]
+        # convex roll: quarter ellipse from the shelf (horizontal) to the face (vertical)
+        fx = rout[i] - lean - r            # radius where the roll starts
+        fx = max(fx, rin[i] + 0.004)
+        rx = rout[i] - lean - fx
+        for k in range(0, 9):
+            t = k / 8.0 * math.pi / 2
+            rr = fx + rx * math.sin(t)
+            hh = bot + 0.002 + r * (1 - math.cos(t))
+            q = oc + d * rr
+            col.append([q[0], hh, q[1]])
+        for k in range(1, 4):              # face leaning out up to the rim
+            f = k / 3.0
+            rr = rout[i] - lean + (lean - brk) * f
+            hh = bot + 0.002 + r + (TOP - brk - bot - 0.002 - r) * f
+            q = oc + d * rr
+            col.append([q[0], hh, q[1]])
+        q = p_out - d * brk
+        col.append([q[0], TOP, q[1]])                           # sharp top edge
+        q = p_out - d * 0.05
+        col.append([q[0], TOP, q[1]])
         G.append(col)
     G = np.array(G); G = np.concatenate([G, G[:1]], 0)
     P, UV = grid_tris(G, np.zeros(G.shape[:2] + (2,)))
-    P, UV = orient_with_uv(P, UV, lambda c: np.array([c[0] - oc[0], 0.0, c[2] - oc[1]]) + np.array([0, -0.6 if c[1] < TOP - 0.02 else 0.6, 0]), per_triangle=False)
+    P, UV = orient_with_uv(P, UV, lambda c: np.array([c[0] - oc[0], 0.0, c[2] - oc[1]]) + np.array([0, -0.6 if c[1] < TOP - 0.002 else 0.6, 0]), per_triangle=False)
     tb.add('BODY_PAINT', P, UV)
-    Si = np.array([oc + dirs[i] * (rout[i] - 0.08) for i in range(len(angs))])
+    Si = np.array([oc + dirs[i] * (rout[i] - 0.05) for i in range(len(angs))])
     Pt, UVt = cap(Si, X3, Z3, Y3, h=TOP, facing=+1, center=oc)
     tb.add('BODY_PAINT', Pt, UVt)
     nodes.append(('B02_canopy_crown', 'CANOPY', tb))

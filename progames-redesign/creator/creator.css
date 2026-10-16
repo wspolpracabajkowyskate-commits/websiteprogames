@@ -51,7 +51,7 @@ button { cursor: pointer; }
 .cr-viewer {
   position: relative; overflow: hidden; min-height: 0;
   background:
-    radial-gradient(120% 90% at 50% 38%, #ffffff 0%, #f6f7f8 42%, #e4e7ea 100%);
+    radial-gradient(110% 85% at 50% 40%, #f1f2f3 0%, #e2e4e6 45%, #c9ccd0 100%);   /* grey photo-studio sweep */
 }
 .cr-stage { position: absolute; inset: 0; }
 .cr-stage canvas { display: block; width: 100%; height: 100%; touch-action: none; outline: none; }

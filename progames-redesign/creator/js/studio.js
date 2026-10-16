@@ -1,7 +1,6 @@
 // Studio: renderer, neutral photo-studio lighting, soft + contact shadows, camera & limits.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { OrbitControls } from '/creator/vendor/three/addons/controls/OrbitControls.js';
-import { RoomEnvironment } from '/creator/vendor/three/addons/environments/RoomEnvironment.js';
 
 export function detectQuality() {
   const ua = navigator.userAgent;
@@ -22,6 +21,30 @@ export function detectQuality() {
   };
 }
 
+/** Photo-studio environment for reflections: dark grey cyclorama, large overhead softbox, two
+ *  tall strip boxes left/right and a low front fill.  Much more contrast than RoomEnvironment, so the
+ *  glossy red mouldings, the chrome parts and the tread plate read as in the photographs. */
+function studioEnvironment() {
+  // Photo-studio light set (matches the product photos): grey sweep, a big overhead softbox, two tall
+  // strip boxes that draw long vertical highlights on the gloss paint, a low bounce and a cool rim.
+  const env = new THREE.Scene();
+  const room = new THREE.Mesh(new THREE.BoxGeometry(14, 8, 14), new THREE.MeshBasicMaterial({ color: 0x34373c, side: THREE.BackSide }));
+  room.position.y = 3; env.add(room);
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(14, 14).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: 0x8c9096 }));
+  floor.position.y = -0.98; env.add(floor);
+  const box = (w, h, intensity, pos, look, tint = 0xffffff) => {
+    const m = new THREE.MeshBasicMaterial({ color: new THREE.Color(tint).multiplyScalar(intensity), side: THREE.DoubleSide });
+    const q = new THREE.Mesh(new THREE.PlaneGeometry(w, h), m); q.position.set(...pos); q.lookAt(...look); env.add(q);
+  };
+  box(5.0, 3.2, 8.0, [0.2, 6.8, 0.8], [0, 0, 0.5]);                  // overhead softbox
+  box(1.3, 6.0, 9.0, [-3.6, 2.4, 3.2], [0, 1.3, 0]);                  // tall strip front-left
+  box(1.3, 6.0, 7.5, [3.8, 2.4, 2.6], [0, 1.3, 0], 0xfff4e8);         // tall strip front-right (warm)
+  box(6.0, 1.4, 1.8, [0, 0.6, 6.5], [0, 1.2, 0]);                     // low bounce card
+  box(1.0, 5.0, 5.0, [-4.2, 2.6, -4.0], [0, 1.4, 0], 0xe8f0ff);       // rim left-back
+  box(1.0, 5.0, 4.0, [4.2, 2.6, -4.0], [0, 1.4, 0], 0xe8f0ff);        // rim right-back
+  return env;
+}
+
 export class Studio {
   constructor(container, quality) {
     this.container = container;
@@ -29,7 +52,7 @@ export class Studio {
     const r = this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance', preserveDrawingBuffer: false });
     r.setPixelRatio(quality.dpr);
     r.outputColorSpace = THREE.SRGBColorSpace;
-    r.toneMapping = THREE.ACESFilmicToneMapping;
+    r.toneMapping = THREE.NeutralToneMapping;   // keeps the paint red saturated (ACES pushes it to orange/dark)
     r.toneMappingExposure = 1.0;
     r.shadowMap.enabled = quality.shadows;
     r.shadowMap.type = quality.softShadows ? THREE.PCFSoftShadowMap : THREE.PCFShadowMap;
@@ -39,13 +62,13 @@ export class Studio {
 
     const scene = this.scene = new THREE.Scene();
     const pmrem = new THREE.PMREMGenerator(r);
-    const env = new RoomEnvironment();
-    scene.environment = pmrem.fromScene(env, 0.035).texture;
-    scene.environmentIntensity = 0.8;
-    env.dispose?.();
+    const env = studioEnvironment();
+    scene.environment = pmrem.fromScene(env, 0.02).texture;
+    scene.environmentIntensity = 1.0;
+    env.traverse((o) => { o.geometry?.dispose(); o.material?.dispose(); });
 
     // key light (soft shadow) + gentle fill from the opposite side
-    const key = this.key = new THREE.DirectionalLight(0xffffff, 1.55);
+    const key = this.key = new THREE.DirectionalLight(0xfff6ec, 1.9);
     key.position.set(2.2, 5.2, 3.6);
     key.castShadow = quality.shadows;
     key.shadow.mapSize.set(quality.shadowMap, quality.shadowMap);
@@ -54,12 +77,16 @@ export class Studio {
     key.shadow.normalBias = 0.02;
     key.shadow.radius = 4;
     scene.add(key);
-    const fill = this.fill = new THREE.DirectionalLight(0xdfe8ff, 0.35);
+    const fill = this.fill = new THREE.DirectionalLight(0xdfe8ff, 0.25);
     fill.position.set(-4, 2.5, -1.5);
     scene.add(fill);
+    // rim light from behind: separates the red crown and the black profiles from the background
+    const rim = this.rim = new THREE.DirectionalLight(0xffffff, 1.1);
+    rim.position.set(-1.5, 3.5, -5);
+    scene.add(rim);
 
     // shadow catcher for the directional light
-    const catcher = this.catcher = new THREE.Mesh(new THREE.PlaneGeometry(14, 14), new THREE.ShadowMaterial({ opacity: 0.16 }));
+    const catcher = this.catcher = new THREE.Mesh(new THREE.PlaneGeometry(14, 14), new THREE.ShadowMaterial({ opacity: 0.24 }));
     catcher.rotation.x = -Math.PI / 2; catcher.position.y = 0.0005; catcher.receiveShadow = true;
     scene.add(catcher);
 
@@ -90,7 +117,7 @@ export class Studio {
   }
 
   /** contact shadow: depth of the model rendered from below, blurred, projected on the floor */
-  buildContactShadow(object, size = 3.2, res = 512, darkness = 1.15, blur = 2.6, opacity = 0.62) {
+  buildContactShadow(object, size = 3.2, res = 512, darkness = 1.35, blur = 2.4, opacity = 0.78) {
     const rt = new THREE.WebGLRenderTarget(res, res); rt.texture.generateMipmaps = false;
     const rtBlur = new THREE.WebGLRenderTarget(res, res); rtBlur.texture.generateMipmaps = false;
     const plane = new THREE.Mesh(new THREE.PlaneGeometry(size, size).rotateX(-Math.PI / 2),
