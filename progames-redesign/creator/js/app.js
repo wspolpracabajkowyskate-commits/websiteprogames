@@ -2,11 +2,11 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=9';
-import { Studio, detectQuality } from './studio.js?v=9';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=9';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=9';
-import { ARView } from './ar.js?v=9';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=10';
+import { Studio, detectQuality } from './studio.js?v=10';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=10';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=10';
+import { ARView } from './ar.js?v=10';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -34,6 +34,9 @@ function defaultState() {
 }
 let state = Object.assign(defaultState(), loadState(product.id) || {});
 state.options = Object.assign(defaultState().options, state.options || {});
+for (const o of product.options) {  // saved value no longer offered (e.g. after a model update)
+  if (o.type === 'select' && !o.choices.some((c) => c.id === state.options[o.id])) state.options[o.id] = o.default;
+}
 // colour handed over from another device (QR code of "View in your room")
 if (/^[0-9a-f]{6}$/i.test(params.get('color') || '')) {
   const hex = `#${params.get('color').toLowerCase()}`;
@@ -243,7 +246,8 @@ function animateLeds(t) {
     if (s.material.map) s.material.map.offset.x = fx === 'chase' ? -t * 0.18 : 0;
     s.material.color.setScalar(fx === 'off' ? 0.12 : br * (fx === 'pulse' ? 0.5 + 0.5 * Math.abs(Math.sin(t * 1.2)) : 1));
   }
-  for (const w of leds.white) w.material.color.setScalar(fx === 'off' ? 0.2 : Math.min(br, 1.2));
+  const wp = fx === 'pulse' ? 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(t * 2.4)) : 1;
+  for (const w of leds.white) w.material.color.setScalar(fx === 'off' ? 0.2 : Math.min(br, 1.2) * wp);
 }
 
 // ------------------------------------------------------------------ body colour

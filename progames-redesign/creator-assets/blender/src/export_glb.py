@@ -49,6 +49,12 @@ class GLB:
             return self.tex_cache[key]
         data = open(path, 'rb').read()
         mime = 'image/webp' if path.endswith('.webp') else ('image/jpeg' if path.endswith('.jpg') else 'image/png')
+        if mime == 'image/png':  # ship PNG data maps as WebP (same as the Blender exporter does)
+            import io
+            from PIL import Image
+            im = Image.open(io.BytesIO(data)); buf = io.BytesIO()
+            im.convert('RGBA' if im.mode in ('RGBA', 'LA') else 'RGB').save(buf, 'WEBP', quality=90, method=6)
+            data, mime = buf.getvalue(), 'image/webp'
         bv = self.view(data)
         self.j['images'].append(dict(bufferView=bv, mimeType=mime, name=os.path.basename(path).rsplit('.', 1)[0]))
         img = len(self.j['images']) - 1
@@ -83,7 +89,9 @@ def build(out_path, tex_dir, model=None):
                    roughnessFactor=d.get('roughness', 0.5))
         m = dict(name=name, pbrMetallicRoughness=pbr)
         ext = {}
-        rep = name in ('DIAMOND_PLATE', 'BOXING_BAG_RED', 'BOXING_BAG_BLACK', 'LEATHER_BLACK')
+        rep = name in ('DIAMOND_PLATE', 'BOXING_BAG_RED', 'BOXING_BAG_BLACK', 'LEATHER_BLACK') or 'uv_scale' in d
+        xf = {'KHR_texture_transform': dict(scale=[d['uv_scale'], d['uv_scale']])} if 'uv_scale' in d else None
+        if xf: g.ext_used.add('KHR_texture_transform')
         def tp(p):
             sub = 'champion' if '/champion/' in p else ''
             return os.path.join(tex_dir, sub, os.path.basename(p))
@@ -93,6 +101,7 @@ def build(out_path, tex_dir, model=None):
             pbr['metallicRoughnessTexture'] = dict(index=g.texture(tp(d['roughness_tex']), rep))
         if 'normal' in d:
             m['normalTexture'] = dict(index=g.texture(tp(d['normal']), rep), scale=d.get('normal_scale', 1.0))
+            if xf: m['normalTexture']['extensions'] = xf
         if 'emissive' in d:
             m['emissiveFactor'] = d['emissive']
             if 'emissive_tex' in d:
