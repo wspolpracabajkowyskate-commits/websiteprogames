@@ -89,13 +89,29 @@ export class ARView {
       });
       swaps.push([o, m]); o.material = std;
     });
+    // AR Quick Look sorts blended surfaces badly: the (almost clear) acrylic over the score shield hid the
+    // print behind it. In the export the glass is left out and printed graphics / decals become alpha
+    // cut-outs (opacityThreshold) instead of blended layers, so they always draw on top of the paint.
+    const hidden = [], alpha = [];
+    root.traverse((o) => {
+      if (!o.isMesh || !o.material) return;
+      const m = o.material;
+      if (m.name === 'GLASS') { hidden.push([o, o.parent]); return; }
+      if (m.transparent && m.map && (/^GFX_/.test(m.name || '') || m.name === 'DECALS')) {
+        alpha.push([m, m.transparent, m.alphaTest, m.depthWrite]);
+        m.transparent = false; m.alphaTest = 0.5; m.depthWrite = true;
+      }
+    });
+    for (const [o, p] of hidden) p.remove(o);
     try {
       const exporter = new USDZExporter();
-      const data = await exporter.parseAsync(root, { maxTextureSize: 1024, quickLookCompatible: true,
+      const data = await exporter.parseAsync(root, { maxTextureSize: 2048, quickLookCompatible: true,
         ar: { anchoring: { type: 'plane' }, planeAnchoring: { alignment: 'horizontal' } } });
       return new Blob([data], { type: 'model/vnd.usdz+zip' });
     } finally {
       for (const [o, m] of swaps) { o.material.dispose(); o.material = m; }
+      for (const [o, p] of hidden) p.add(o);
+      for (const [m, tr, at, dw] of alpha) { m.transparent = tr; m.alphaTest = at; m.depthWrite = dw; m.needsUpdate = true; }
     }
   }
 
