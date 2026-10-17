@@ -78,3 +78,32 @@ for _k, _f in (('GFX_FRONT', 'champion_zone_front.webp'), ('GFX_BAND', 'champion
                ('GFX_LEFT', 'champion_zone_left.webp'), ('GFX_RIGHT', 'champion_zone_right.webp')):
     CHAMPION_MATERIALS[_k] = dict(base=[1, 1, 1], roughness=0.26, clearcoat=0.9, clearcoat_roughness=0.06,
                                   base_tex=_CH + _f, alpha='BLEND')
+
+# ---------------------------------------------------------------- Ultimate Monster 3in1
+_MO = TEX + 'monster/'
+MONSTER_MATERIALS = {k: dict(v) for k, v in CHAMPION_MATERIALS.items() if k in (
+    'BODY_PAINT', 'BLACK_PLASTIC', 'BLACK_STEEL', 'RUBBER', 'METAL', 'DIAMOND_PLATE', 'BOXING_BAG_RED', 'BOXING_BAG_BLACK',
+    'LEATHER_BLACK', 'GLASS', 'CAVITY_DARK', 'LED_WHITE')}
+MONSTER_MATERIALS['BODY_PAINT'] = dict(CHAMPION_MATERIALS['BODY_PAINT'], base=srgb('#c8101c'))
+MONSTER_MATERIALS['LEATHER_BLACK'] = dict(MATERIALS['LEATHER_BLACK'], normal_scale=0.5, roughness=0.5)
+MONSTER_MATERIALS['MONITOR'] = dict(base=srgb('#050607'), metallic=0.0, roughness=0.06, clearcoat=1.0, clearcoat_roughness=0.02, specular=0.6)
+MONSTER_MATERIALS['LAMP_DOME'] = dict(base=srgb('#f3f2ee'), metallic=0.0, roughness=0.22, clearcoat=0.8, clearcoat_roughness=0.08,
+                                      emissive=[1.0, 0.98, 0.94], emissive_strength=0.18)
+MONSTER_MATERIALS['LAMP_BASE'] = dict(base=srgb('#e9e8e4'), metallic=0.0, roughness=0.42, specular=0.5)
+MONSTER_MATERIALS['HAMMER_RED'] = dict(base=srgb('#d0121c'), metallic=0.0, roughness=0.3, clearcoat=0.7, clearcoat_roughness=0.18,
+                                       normal=TEX + 'plastic_grain_normal.png', normal_scale=0.25, uv_scale=4.0)
+MONSTER_MATERIALS['PAD_RUBBER'] = dict(base=srgb('#16171a'), metallic=0.0, roughness=0.55, clearcoat=0.25, clearcoat_roughness=0.35,
+                                       normal=TEX + 'plastic_grain_normal.png', normal_scale=0.6, uv_scale=3.0)
+MONSTER_MATERIALS['GRIP_BLACK'] = dict(base=srgb('#0b0b0c'), metallic=0.0, roughness=0.7, normal=TEX + 'plastic_grain_normal.png', normal_scale=0.8, uv_scale=10.0)
+MONSTER_MATERIALS['BALL_BLACK'] = dict(base=srgb('#111112'), metallic=0.0, roughness=0.5, clearcoat=0.35, clearcoat_roughness=0.3,
+                                       normal=TEX + 'leather_normal.png', normal_scale=0.6, uv_scale=3.0)
+MONSTER_MATERIALS['BALL_WHITE'] = dict(base=srgb('#e8e6e0'), metallic=0.0, roughness=0.5, clearcoat=0.35, clearcoat_roughness=0.3,
+                                       normal=TEX + 'leather_normal.png', normal_scale=0.6, uv_scale=3.0)
+MONSTER_MATERIALS['ROLLER_WHITE'] = dict(base=srgb('#ecebe7'), metallic=0.0, roughness=0.35)
+MONSTER_MATERIALS['TYRE_YELLOW'] = dict(base=srgb('#e3a812'), metallic=0.0, roughness=0.45)
+MONSTER_MATERIALS['METER'] = dict(base=[1, 1, 1], metallic=0.0, roughness=0.35, base_tex=_MO + 'monster_meter.webp')
+MONSTER_MATERIALS['DECALS'] = dict(base=[1, 1, 1], metallic=0.0, roughness=0.28, clearcoat=0.7, clearcoat_roughness=0.08,
+                                   base_tex=_MO + 'monster_atlas.webp', alpha='BLEND')
+for _k, _f in (('GFX_FRONT', 'front'), ('GFX_BAND', 'band'), ('GFX_LEFT', 'left'), ('GFX_RIGHT', 'right'), ('GFX_TOWER', 'tower')):
+    MONSTER_MATERIALS[_k] = dict(base=[1, 1, 1], roughness=0.26, clearcoat=0.9, clearcoat_roughness=0.06,
+                                 base_tex=_MO + f'monster_zone_{_f}.webp', alpha='BLEND')

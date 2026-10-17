@@ -2,11 +2,11 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=17';
-import { Studio, detectQuality } from './studio.js?v=17';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=17';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=17';
-import { ARView } from './ar.js?v=17';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=18';
+import { Studio, detectQuality } from './studio.js?v=18';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=18';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=18';
+import { ARView } from './ar.js?v=18';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
@@ -114,7 +114,7 @@ function onLoaded(gltf) {
 
   // the camera may never enter these volumes
   const boxes = [];
-  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform', 'B01_body', 'B02_canopy_drum', 'B02_canopy_crown', 'B03_canopy_underside', 'B04_base_frame']) {
+  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform', 'B01_body', 'B02_canopy_drum', 'B02_canopy_crown', 'B03_canopy_underside', 'B04_base_frame', 'B01_column_body', 'B02_canopy_band', 'K01_kicker_cabinet', 'T01_tower_body', 'H01_hammer_base']) {
     const obj = modelRoot.getObjectByName(name);
     if (obj) boxes.push(new THREE.Box3().setFromObject(obj).expandByScalar(0.12));
   }

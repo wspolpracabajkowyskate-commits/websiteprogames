@@ -75,7 +75,8 @@ def build(out_path, tex_dir, model=None):
     global MATERIALS
     model = model or MODEL
     mod = importlib.import_module(model)
-    MATERIALS = _materials.CHAMPION_MATERIALS if model in ('champion_model', 'boxer_champion_model') else _materials.MATERIALS
+    MATERIALS = (_materials.CHAMPION_MATERIALS if model in ('champion_model', 'boxer_champion_model') else
+                 _materials.MONSTER_MATERIALS if model == 'monster_model' else _materials.MATERIALS)
     nodes, leds = mod.build_all()
     GROUPS, ZONES = mod.GROUPS, mod.ZONES
     g = GLB()
@@ -93,7 +94,7 @@ def build(out_path, tex_dir, model=None):
         xf = {'KHR_texture_transform': dict(scale=[d['uv_scale'], d['uv_scale']])} if 'uv_scale' in d else None
         if xf: g.ext_used.add('KHR_texture_transform')
         def tp(p):
-            sub = 'champion' if '/champion/' in p else ''
+            sub = 'champion' if '/champion/' in p else ('monster' if '/monster/' in p else '')
             return os.path.join(tex_dir, sub, os.path.basename(p))
         if 'base_tex' in d:
             pbr['baseColorTexture'] = dict(index=g.texture(tp(d['base_tex']), rep))
@@ -122,7 +123,7 @@ def build(out_path, tex_dir, model=None):
     root_name = getattr(mod, 'ROOT_NAME', 'DoubleStrike')
     g.j['scenes'][0]['name'] = root_name
     root = dict(name=root_name, children=[], extras=dict(
-        product='boxer-champion' if 'champion' in model else model.replace('_model', '').replace('_', '-'), units='m', height_m=2.19,
+        product='boxer-champion' if 'champion' in model else ('ultimate-monster' if model == 'monster_model' else model.replace('_model', '').replace('_', '-')), units='m', height_m=2.30 if model == 'monster_model' else 2.19,
         params={k: (v[0] if not isinstance(v[0], tuple) else list(v[0]), v[1]) for k, v in getattr(mod, 'PARAMS', {}).items()},
         zones={k: dict(v) for k, v in ZONES.items()},
         led_groups={k: v.count for k, v in leds.items()}))

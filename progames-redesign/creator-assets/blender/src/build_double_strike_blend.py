@@ -27,8 +27,9 @@ MODEL_NAME = os.environ.get('DS_MODEL', 'double_strike_model')
 _mod = importlib.reload(importlib.import_module(MODEL_NAME))
 build_all, GROUPS, ZONES = _mod.build_all, _mod.GROUPS, _mod.ZONES
 CHAMP = MODEL_NAME in ('champion_model', 'boxer_champion_model')
-MATERIALS = materials.CHAMPION_MATERIALS if CHAMP else materials.MATERIALS
-SLUG = 'boxer-champion' if CHAMP else 'double-strike'
+MONSTER = MODEL_NAME == 'monster_model'
+MATERIALS = materials.CHAMPION_MATERIALS if CHAMP else (materials.MONSTER_MATERIALS if MONSTER else materials.MATERIALS)
+SLUG = 'boxer-champion' if CHAMP else ('ultimate-monster' if MONSTER else 'double-strike')
 ROOT_NAME = getattr(_mod, 'ROOT_NAME', 'BoxerChampion' if CHAMP else 'DoubleStrike')
 
 argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
@@ -106,7 +107,7 @@ def make_material(name, d):
     if d.get('clearcoat'):
         set_input(bsdf, ['Coat Weight', 'Clearcoat'], d['clearcoat'])
         set_input(bsdf, ['Coat Roughness', 'Clearcoat Roughness'], d.get('clearcoat_roughness', 0.05))
-    tex = lambda p: os.path.join(TEX_DIR, 'champion' if '/champion/' in p else '', os.path.basename(p))
+    tex = lambda p: os.path.join(TEX_DIR, 'champion' if '/champion/' in p else ('monster' if '/monster/' in p else ''), os.path.basename(p))
     x = -600
     mapping = None
     if d.get('uv_scale'):
@@ -316,7 +317,7 @@ if RENDER:
     VIEWS = {'front': ((0, -6.2, 1.2), (0, 0, 1.1)), 'left': ((-6.2, -0.25, 1.3), (0, -0.25, 1.1)),
              'right': ((6.2, -0.25, 1.3), (0, -0.25, 1.1)), 'q34': ((3.4, -5.1, 1.9), (0, -0.15, 1.08)),
              'back': ((0, 6.2, 1.25), (0, 0, 1.1))}
-    if CHAMP:
+    if CHAMP or MONSTER:
         VIEWS.update({'q34_front_left': ((-3.4, -5.1, 1.9), (0, -0.15, 1.08)), 'q34_back_right': ((3.4, 5.1, 1.9), (0, -0.15, 1.08)),
                       'q34_back_left': ((-3.4, 5.1, 1.9), (0, -0.15, 1.08))})
     only = [v for v in os.environ.get('DS_VIEWS', '').split(',') if v]
@@ -328,7 +329,7 @@ if RENDER:
         bpy.ops.render.render(write_still=True)
         renders[k] = scene.render.filepath
 
-    if CHAMP and os.environ.get('DS_ORTHO', '1') != '0':
+    if (CHAMP or MONSTER) and os.environ.get('DS_ORTHO', '1') != '0':
         # orthographic projections with ONE common scale (2.6 m frame height)
         cam_data.type = 'ORTHO'; cam_data.ortho_scale = 2.6
         scene.render.resolution_x = 1300; scene.render.resolution_y = 1300
