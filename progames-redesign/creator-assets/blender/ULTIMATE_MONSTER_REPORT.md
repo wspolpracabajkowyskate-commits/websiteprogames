@@ -1,5 +1,13 @@
 # Ultimate Monster 3in1 – model report (v2)
 
+## v3 changes (IMG_0532, IMG_0546)
+- **Canopy front:**
+  - A thick moulded rim now sits on top of the band. It projects about 30 mm with bevelled lower and upper edges, and the crown fascia starts on it.
+  - The front fascia is steeper (front edge at z 0.60).
+  - The band print has a wider red margin.
+- **Side prints:** each side is one continuous, cleanly trimmed print. It covers the canopy band side, the column side and the kicker side with the diagonal step. The outline is measured on the side view, the print stops about 20 mm inside the black rear profile and the red front edge, and there is no colour keying (no ragged edges).
+- **Rear tube:** the black tube now comes out of the top of the hammer tower slab and runs across the column back to one stand-off bracket. It is no longer between the rollers. The roller near the tower is lower (1.90 m), and the tower slab rises to 2.06 m.
+
 ## v2 changes (photo IMG_0542 + rear views)
 - **Hammer:** larger and higher.
   - Bellows 0.58 → 0.70 m, Ø 0.20–0.24 m, 5 convolutions.

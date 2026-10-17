@@ -154,7 +154,7 @@ reg = ((Y > 1.875) & (Y < 2.095) & (Z > -0.565) & (Z < 0.322)) | \
       ((Z > -0.565) & (Z < -0.330) & (Y > 0.075) & (Y < 2.095)) | \
       ((Z > -0.565) & (Z < -0.262) & (Y > 0.075) & (Y < 0.63))
 # lamps on the side fascia / ledge are modelled -> outside the region anyway
-pm = paint_mask(side) | ~reg
+pm = np.zeros_like(reg)   # clean, fully opaque print; the mesh outline does the trimming
 save('monster_zone_left.webp', rgba_from(side, pm))
 META['left'] = dict(z=[LZ0, LZ1], y=[LY0, LY1])
 
@@ -174,8 +174,8 @@ q = Hm @ P; q = q[:2] / q[2]
 mapx = q[0].reshape(H, W).astype(np.float32); mapy = q[1].reshape(H, W).astype(np.float32)
 rs = cv2.remap(n12, mapx, mapy, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
 rs = enhance(rs, 1.08, 1.05)
-reg = ((Y > 1.875) & (Y < 2.095) & (Z > -0.565) & (Z < 0.322)) | ((Z > -0.565) & (Z < -0.345) & (Y > 0.80) & (Y < 2.095))
-pm = paint_mask(rs) | ~reg
+reg = ((Y > 1.875) & (Y < 2.095) & (Z > -0.565) & (Z < 0.322)) | ((Z > -0.525) & (Z < -0.322) & (Y > 0.60) & (Y < 2.095))
+pm = np.zeros_like(reg)
 save('monster_zone_right.webp', rgba_from(rs, pm))
 META['right'] = dict(z=[RZ0, RZ1], y=[LY0, LY1])
 

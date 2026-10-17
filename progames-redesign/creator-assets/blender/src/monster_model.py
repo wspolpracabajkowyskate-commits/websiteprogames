@@ -41,7 +41,7 @@ D = dict(
     ham_left=(0.20, 0.40, -0.53, -0.26, 0.56), ham_box=(0.40, 0.70, -0.53, -0.12, 0.58),
     pad=(0.55, -0.32, 0.165), pad_y=(0.70, 0.76), head_c=(0.535, 0.832, -0.30), head_r=0.072, head_len=0.24,   # n11/n07/n13: pad top ~0.76, head Ø 145 mm
     # tower
-    tower_z=(-0.70, -0.53), tower_top=1.98, tower_x1=(0.70, 0.62),   # rear views: black slab stands out behind the column
+    tower_z=(-0.70, -0.53), tower_top=2.06, tower_x1=(0.70, 0.62),   # rear views: black slab stands out behind the column
     # bag (lowered)
     bag_hang=(-0.23, 0.24), bag_c_y=1.475, bag_rx=0.115, bag_ry=0.12,
 )
@@ -70,7 +70,7 @@ def tower_xr(y):
 
 
 def canopy_top(z):
-    return D['top_y'][0] + (z + 0.649) / 1.298 * (D['top_y'][1] - D['top_y'][0])
+    return D['top_y'][0] + min((z + 0.649) / 1.249, 1.0) * (D['top_y'][1] - D['top_y'][0])
 
 
 # ------------------------------------------------------------------------------------------ helpers
@@ -272,18 +272,36 @@ def build_column(dome, base):
             pts = [V(xfun(yy0), yy0, z0), V(xfun(yy0), yy0, z1), V(xfun(yy1), yy1, z1), V(xfun(yy1), yy1, z0)]
             poly(mesh, mat, pts, n, [uvf(p) for p in pts])
     luv = lambda p: ((p[2] - Lm['z'][0]) / (Lm['z'][1] - Lm['z'][0]), (Lm['y'][1] - p[1]) / (Lm['y'][1] - Lm['y'][0]))
-    side_rect(lg, 'GFX_LEFT', lambda y: xL, CZ0, 0.337, by0, by1, luv, -X3)
-    side_rect(lg, 'GFX_LEFT', lambda y: xL, CZ0, CZ1, D['kick_back_top'], by0, luv, -X3)
-    side_rect(lg, 'GFX_LEFT', lambda y: xL, CZ0, KZ, PT, D['kick_top'], luv, -X3)
-    # strip between the kicker top and the column front (sloped top, keep it simple: column part)
-    side_rect(lg, 'GFX_LEFT', lambda y: xL, CZ0, CZ1, D['kick_top'], D['kick_back_top'], luv, -X3)
+    # one continuous, neatly trimmed print per side: canopy band side + column side + kicker side with
+    # the diagonal step - outlines measured on the side view n11 (the print stops ~20 mm inside the
+    # black rear profile and the red front edge)
+    def panel(mesh, mat, pieces, xfun, n, uvf):
+        for pc in pieces:
+            pts = [V(xfun(y), y, z) for (z, y) in pc]
+            poly(mesh, mat, pts, n, [uvf(p) for p in pts])
+    GZ0, GZB1, GY0, GY1 = -0.526, 0.32, 1.875, 2.095
+    left_pieces = [[(GZ0, 0.08), (-0.262, 0.08), (-0.262, 0.57), (GZ0, 0.57)],
+                   [(GZ0, 0.57), (-0.262, 0.57), (-0.325, 0.665), (GZ0, 0.665)],
+                   [(GZ0, 0.665), (-0.325, 0.665), (-0.325, GY0), (GZ0, GY0)],
+                   [(GZ0, GY0), (GZB1, GY0), (GZB1, GY1), (GZ0, GY1)]]
+    for pc in left_pieces[2:]:
+        pass
+    # split the tall pieces so the mesh follows the face closely
+    def split(pc, k=4):
+        (z0, y0), _, _, (z3, y3) = pc
+        out = []
+        for t0, t1 in zip(np.linspace(0, 1, k + 1)[:-1], np.linspace(0, 1, k + 1)[1:]):
+            out.append([(pc[0][0], pc[0][1] + (pc[3][1] - pc[0][1]) * t0), (pc[1][0] + (pc[2][0] - pc[1][0]) * t0, pc[1][1] + (pc[2][1] - pc[1][1]) * t0),
+                        (pc[1][0] + (pc[2][0] - pc[1][0]) * t1, pc[1][1] + (pc[2][1] - pc[1][1]) * t1), (pc[0][0], pc[0][1] + (pc[3][1] - pc[0][1]) * t1)])
+        return out
+    panel(lg, 'GFX_LEFT', [q for pc in left_pieces for q in split(pc)], lambda y: CX0 - 0.0012, -X3, luv)
     nodes.append(('G03_left_graphic', 'GRAPHICS', lg))
     Rm = TEXMETA['right']
     rg = Mesh('G04_right_graphic', smooth_angle=10)
     ruv = lambda p: ((Rm['z'][1] - p[2]) / (Rm['z'][1] - Rm['z'][0]), (Rm['y'][1] - p[1]) / (Rm['y'][1] - Rm['y'][0]))
-    side_rect(rg, 'GFX_RIGHT', lambda y: col_xr(1.81) + 0.0012, CZ0, 0.337, by0, by1, ruv, X3)
-    for ya, yb in ((D['kick_back_top'], 1.81), (1.81, by0)):
-        side_rect(rg, 'GFX_RIGHT', lambda y: col_xr(y) + 0.0012, -0.53, CZ1, ya, yb, ruv, [1, 0.07, 0])
+    right_pieces = [[(-0.52, 0.60), (-0.325, 0.60), (-0.325, GY0), (-0.52, GY0)],
+                    [(GZ0, GY0), (GZB1, GY0), (GZB1, GY1), (GZ0, GY1)]]
+    panel(rg, 'GFX_RIGHT', [q for pc in right_pieces for q in split(pc, 8)], lambda y: col_xr(y) + 0.0012, [1, 0.07, 0], ruv)
     nodes.append(('G04_right_graphic', 'GRAPHICS', rg))
 
     # --- black edge profiles on the rear vertical edges of the column
@@ -308,7 +326,7 @@ def band_outline():
 
 
 def top_outline():
-    h, zs, zf, hf, zb = 0.47, 0.457, 0.649, 0.278, -0.649
+    h, zs, zf, hf, zb = 0.47, 0.43, 0.60, 0.28, -0.649     # steeper front fascia (IMG_0532 / n05)
     pts = [(-h, zb), (-h, zs), (-hf, zf), (hf, zf), (h, zs), (h, zb)]
     P = np.array([(XC + x, z) for x, z in pts])
     a = 0.5 * np.sum(P[:, 0] * np.roll(P[:, 1], -1) - np.roll(P[:, 0], -1) * P[:, 1])
@@ -326,7 +344,12 @@ def build_canopy(dome, base, st):
     by0, by1 = D['band_y']
     B = band_outline()
     T = top_outline()
-    Bi = inset(B, 0.045)                       # foot of the crown on the band top
+    # thick moulded rim on top of the band (IMG_0532/0546/n05): it projects ~30 mm all round with
+    # bevelled lower and upper edges; the crown fascia starts on top of it
+    RIM_H = 0.046
+    yR = by1 + RIM_H
+    Bo = inset(B, -0.030)                      # rim outer face
+    Bi = inset(B, -0.016)                      # foot of the crown fascia (rim top, after the upper bevel)
     Tr = T.copy()
     ch = D['rim_chamfer']
     Tc = inset(T, ch)
@@ -337,9 +360,11 @@ def build_canopy(dome, base, st):
         a, b = B[i], B[(i + 1) % n]
         nrm = outward(a, b)
         quadfill(band, 'BODY_PAINT', V(a[0], by0, a[1]), V(b[0], by0, b[1]), V(b[0], by1, b[1]), V(a[0], by1, a[1]), nrm)
-        # ledge (band top) between band outline and the crown foot
-        ai, bi = Bi[i], Bi[(i + 1) % n]
-        quadfill(band, 'BODY_PAINT', V(a[0], by1, a[1]), V(b[0], by1, b[1]), V(bi[0], by1, bi[1]), V(ai[0], by1, ai[1]), Y3)
+        # rim: lower bevel, vertical face, upper bevel
+        ao, bo, ai, bi = Bo[i], Bo[(i + 1) % n], Bi[i], Bi[(i + 1) % n]
+        quadfill(band, 'BODY_PAINT', V(a[0], by1, a[1]), V(b[0], by1, b[1]), V(bo[0], by1 + 0.013, bo[1]), V(ao[0], by1 + 0.013, ao[1]), nrm + np.array([0, -1.0, 0]))
+        quadfill(band, 'BODY_PAINT', V(ao[0], by1 + 0.013, ao[1]), V(bo[0], by1 + 0.013, bo[1]), V(bo[0], yR - 0.012, bo[1]), V(ao[0], yR - 0.012, ao[1]), nrm)
+        quadfill(band, 'BODY_PAINT', V(ao[0], yR - 0.012, ao[1]), V(bo[0], yR - 0.012, bo[1]), V(bi[0], yR, bi[1]), V(ai[0], yR, ai[1]), nrm + np.array([0, 1.0, 0]))
     nodes.append(('B02_canopy_band', 'CANOPY', band))
 
     crown = Mesh('B02_canopy_crown', smooth_angle=20)
@@ -350,7 +375,7 @@ def build_canopy(dome, base, st):
         ya, yb = canopy_top(d[1]) - ch, canopy_top(c[1]) - ch
         nrm = outward(T[i], T[(i + 1) % n]) + np.array([0, -0.5, 0])   # the flared fascia overhangs: normal points out and down
         # straight flared fascia from the band ledge up to the rim
-        quadfill(crown, 'BODY_PAINT', V(a[0], by1, a[1]), V(b[0], by1, b[1]), V(c[0], yb, c[1]), V(d[0], ya, d[1]), nrm)
+        quadfill(crown, 'BODY_PAINT', V(a[0], yR, a[1]), V(b[0], yR, b[1]), V(c[0], yb, c[1]), V(d[0], ya, d[1]), nrm)
         # sharp, cut-off top edge (13 mm chamfer) - as on the Boxer Champion
         quadfill(crown, 'BODY_PAINT', V(d[0], ya, d[1]), V(c[0], yb, c[1]), V(cb[0], canopy_top(cb[1]), cb[1]), V(ca[0], canopy_top(ca[1]), ca[1]),
                  outward(T[i], T[(i + 1) % n]) + np.array([0, 2.0, 0]))
@@ -365,7 +390,7 @@ def build_canopy(dome, base, st):
     seg = np.linalg.norm(np.diff(lpts, axis=0), axis=1)
     s = np.concatenate([[0], np.cumsum(seg)]); Ltot = s[-1]
     m0, m1 = 0.012, Ltot - 0.012
-    gy0, gy1 = by0 + 0.012, by1 - 0.012
+    gy0, gy1 = by0 + 0.018, by1 - 0.010
     def at(sv):
         k = min(np.searchsorted(s, sv, side='right') - 1, 2)
         t = (sv - s[k]) / seg[k]
@@ -476,7 +501,7 @@ def build_canopy(dome, base, st):
         """Point on crown facet i (edge Bi[i]->Bi[i+1] at the bottom, T[i]->T[i+1] at the rim)."""
         a, b = Bi[i], Bi[(i + 1) % n]; c, d = T[(i + 1) % n], T[i]
         pb = a + (b - a) * s; pt = d + (c - d) * s
-        yb = by1; yt = canopy_top(pt[1]) - ch
+        yb = yR; yt = canopy_top(pt[1]) - ch
         p = pb + (pt - pb) * t
         y = yb + (yt - yb) * t
         e1 = V(b[0] - a[0], 0, b[1] - a[1]); e2 = V(pt[0] - pb[0], yt - yb, pt[1] - pb[1])
@@ -487,7 +512,7 @@ def build_canopy(dome, base, st):
     # identify crown facets: front (both z at 0.649), left/right chamfers, sides
     def facet_kind(i):
         d, c = T[i], T[(i + 1) % n]
-        if abs(d[1] - 0.649) < 1e-6 and abs(c[1] - 0.649) < 1e-6:
+        if abs(d[1] - 0.60) < 1e-6 and abs(c[1] - 0.60) < 1e-6:
             return 'front'
         if abs(d[1] + 0.649) < 1e-6 and abs(c[1] + 0.649) < 1e-6:
             return 'back'
@@ -881,16 +906,21 @@ def build_rear():
     nodes.append(('R03_rating_plate', 'REAR', rp))
     # transport rollers at the top of the rear face + handle bar between them (n04, n10)
     ro = Mesh('R04_top_rollers', smooth_angle=40)
-    for x in (-0.545, 0.085):
-        c = V(x, 1.985, z - 0.045)
+    for x, yr in ((-0.545, 1.985), (0.085, 1.90)):
+        c = V(x, yr, z - 0.045)
         cyl(ro, 'ROLLER_WHITE', c - X3 * 0.016, c + X3 * 0.016, 0.036, 28)
         cyl(ro, 'METAL', c - X3 * 0.024, c + X3 * 0.024, 0.008, 12)
-        for s in (-1, 1):
-            box(ro, 'METAL', [x + s * 0.022 - 0.002, 1.955, z - 0.055], [x + s * 0.022 + 0.002, 2.03, z + 0.001], 0.001)
-        box(ro, 'METAL', [x - 0.03, 2.02, z - 0.012], [x + 0.03, 2.05, z + 0.001], 0.002)
-    cyl(ro, 'BLACK_STEEL', V(-0.50, 2.045, z - 0.03), V(0.04, 2.045, z - 0.03), 0.011, 14)
-    for x in (-0.50, 0.04):
-        cyl(ro, 'BLACK_STEEL', V(x, 2.045, z - 0.03), V(x, 2.045, z), 0.011, 14)
+        for s_ in (-1, 1):
+            box(ro, 'METAL', [x + s_ * 0.022 - 0.002, yr - 0.03, z - 0.055], [x + s_ * 0.022 + 0.002, yr + 0.045, z + 0.001], 0.001)
+        box(ro, 'METAL', [x - 0.03, yr + 0.035, z - 0.012], [x + 0.03, yr + 0.065, z + 0.001], 0.002)
+    # black tube: from the top of the hammer tower slab, across the column back, with one stand-off
+    # bracket at its far end (n04/n08/n10 - it does not start at the rollers)
+    tz0 = D['tower_z'][0]
+    zb_ = z - 0.075
+    cyl(ro, 'BLACK_STEEL', V(D['col_x1_top'] + 0.004, 2.035, zb_), V(-0.43, 2.035, zb_), 0.0125, 16)
+    cyl(ro, 'BLACK_STEEL', V(-0.43, 2.035, zb_), V(-0.43, 2.035, z), 0.0125, 16)
+    box(ro, 'BLACK_STEEL', [-0.455, 2.01, z - 0.004], [-0.405, 2.06, z + 0.001], 0.002)
+    box(ro, 'BLACK_STEEL', [D['col_x1_top'] - 0.002, 2.005, zb_ - 0.03], [D['col_x1_top'] + 0.012, 2.065, zb_ + 0.03], 0.002)
     nodes.append(('R04_top_rollers', 'TRANSPORT_WHEELS', ro))
     # yellow castors under the rear corners of the base (n04, n08, n10)
     ca = Mesh('R05_castors', smooth_angle=40)
