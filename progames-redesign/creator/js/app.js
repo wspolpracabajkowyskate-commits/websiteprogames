@@ -2,11 +2,11 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=19';
-import { Studio, detectQuality } from './studio.js?v=19';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=19';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=19';
-import { ARView } from './ar.js?v=19';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=20';
+import { Studio, detectQuality } from './studio.js?v=20';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=20';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=20';
+import { ARView } from './ar.js?v=20';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
