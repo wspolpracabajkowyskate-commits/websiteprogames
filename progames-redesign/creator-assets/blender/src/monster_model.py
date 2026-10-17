@@ -31,7 +31,7 @@ D = dict(
     col_x0=-0.58, col_x1_top=0.12, col_x1_low=0.20, col_slant_y=(1.81, 0.69),
     col_z0=-0.585, col_z1=-0.312,
     # canopy
-    can_xc=-0.23, band_y=(1.86, 2.10), under_y=1.81, top_y=(2.19, 2.30), rim_chamfer=0.013,
+    can_xc=-0.23, band_y=(1.86, 2.10), under_y=1.81, top_y=(2.25, 2.30), rim_chamfer=0.013,
     # kicker cabinet
     kick_z=-0.224, kick_top=0.645, kick_back_top=0.69,
     recess_out=(-0.554, 0.116, 0.025, 0.569), recess_in=(-0.385, 0.279, 0.017, 0.489), recess_depth=0.17,
@@ -543,7 +543,7 @@ def build_canopy(dome, base, st):
             for zz in np.linspace(-0.55, 0.40, 8):
                 s_ = (zz - d[1]) / (c[1] - d[1])
                 if 0.02 < s_ < 0.98:
-                    p, nrm, _, _ = fascia_point(i, s_, 0.62)
+                    p, nrm, _, _ = fascia_point(i, s_, 0.80)
                     lamp(dome, base, p, nrm)
     return nodes
 
