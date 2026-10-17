@@ -39,11 +39,11 @@ D = dict(
     frame=(-0.553, 0.99, 0.075, 1.74),
     # hammer station
     ham_left=(0.20, 0.40, -0.53, -0.26, 0.56), ham_box=(0.40, 0.70, -0.53, -0.12, 0.58),
-    pad=(0.55, -0.32, 0.135), head_c=(0.535, 0.775, -0.30), head_r=0.06, head_len=0.22,
+    pad=(0.55, -0.32, 0.165), pad_y=(0.70, 0.76), head_c=(0.535, 0.832, -0.30), head_r=0.072, head_len=0.24,   # n11/n07/n13: pad top ~0.76, head Ø 145 mm
     # tower
-    tower_z=(-0.63, -0.53), tower_top=1.90, tower_x1=(0.70, 0.62),
+    tower_z=(-0.70, -0.53), tower_top=1.98, tower_x1=(0.70, 0.62),   # rear views: black slab stands out behind the column
     # bag (lowered)
-    bag_hang=(-0.23, 0.255), bag_c_y=1.475, bag_rx=0.115, bag_ry=0.12,
+    bag_hang=(-0.23, 0.24), bag_c_y=1.475, bag_rx=0.115, bag_ry=0.12,
 )
 PT = D['plate_top']
 CX0 = D['col_x0']; CZ0, CZ1 = D['col_z0'], D['col_z1']
@@ -65,7 +65,7 @@ def col_xr(y):
 
 def tower_xr(y):
     a, b = D['tower_x1']
-    t = min(max((y - 0.58) / (D['tower_top'] - 0.58), 0.0), 1.0)
+    t = min(max((y - 0.58) / (1.90 - 0.58), 0.0), 1.0)
     return a + (b - a) * t
 
 
@@ -191,7 +191,7 @@ def build_platform():
     slab(-0.62, -0.16, KZ, 0.633)          # walkway in front of the bag
     slab(-0.16, 0.20, KZ, 0.14)            # in front of the kicker
     # plinth under the hammer station + tower
-    box(frame, 'BLACK_STEEL', [0.20, 0.0, -0.645], [0.715, PT, -0.10], 0.004, seg=2)
+    box(frame, 'BLACK_STEEL', [0.12, 0.0, -0.715], [0.715, PT, -0.10], 0.004, seg=2)
     return [('B05_tread_plate', 'BASE', plate), ('B04_base_frame', 'BASE', frame)]
 
 
@@ -290,6 +290,7 @@ def build_column(dome, base):
     pr = Mesh('R06_edge_profiles', smooth_angle=30)
     box(pr, 'BLACK_STEEL', [CX0 - 0.003, PT, CZ0 - 0.003], [CX0 + 0.004, by1, CZ0 + 0.040], 0.0015)
     box(pr, 'BLACK_STEEL', [CX0 - 0.003, PT, CZ0 - 0.003], [CX0 + 0.040, by1, CZ0 + 0.004], 0.0015)
+    box(pr, 'BLACK_STEEL', [0.12 - 0.040, PT, CZ0 - 0.003], [0.12 + 0.003, by1, CZ0 + 0.004], 0.0015)
     nodes.append(('R06_edge_profiles', 'BODY', pr))
     nodes.append(('G10_stickers', 'GRAPHICS', st))
     return nodes, st
@@ -397,7 +398,7 @@ def build_canopy(dome, base, st):
     # underside: ring between the inner ledge outline (+ column front line) and the bag opening
     hx, hz = D['bag_hang']
     outer_poly = np.array(inner)                     # closed by the column-front segment
-    op_w, op_d, op_r = 0.135, 0.10, 0.035
+    op_w, op_d, op_r = 0.165, 0.13, 0.075        # large rounded opening (IMG_0542)
     def rrect(w, d, r, nseg=6):
         pts = []
         for (cx, cz, a0) in ((hx + w - r, hz + d - r, 0), (hx - w + r, hz + d - r, 90), (hx - w + r, hz - d + r, 180), (hx + w - r, hz - d + r, 270)):
@@ -432,7 +433,7 @@ def build_canopy(dome, base, st):
     dl = Mesh('E01_downlights', smooth_angle=30)
     dlr = Mesh('E01_downlight_rings', smooth_angle=30)
     for sx in (-1, 1):
-        p = V(hx + sx * 0.205, uy, hz)
+        p = V(hx + sx * 0.235, uy, hz + 0.07)
         M = look_basis(p, -Y3) @ mat_rot('x', 90)
         P, UV = lathe([(0.026, 0.0), (0.036, 0.0), (0.036, 0.002), (0.028, 0.004), (0.026, 0.0035)], 28, M=M)
         dlr.add('METAL', P, UV)
@@ -713,17 +714,17 @@ def build_hammer(dome, base, st):
     # strike pad on bellows
     px, pz, pr = D['pad']
     bl = Mesh('H03_bellows', smooth_angle=55)
-    prof = [(0.0, ry), (0.118, ry), (0.118, ry + 0.008)]
-    yb0, yb1 = ry + 0.008, 0.67
-    for t in np.linspace(0, 1, 41):
-        rr = 0.09 + 0.016 * (0.5 + 0.5 * math.cos(t * 5 * 2 * math.pi))
+    prof = [(0.0, ry), (0.13, ry), (0.13, ry + 0.008)]
+    yb0, yb1 = ry + 0.008, D['pad_y'][0]
+    for t in np.linspace(0, 1, 51):
+        rr = 0.098 + 0.022 * (0.5 + 0.5 * math.cos(t * 5 * 2 * math.pi))
         prof.append((rr, yb0 + (yb1 - yb0) * t))
     prof.append((0.0, yb1))
     P, UV = lathe(prof, 40, M=mat_translate(px, 0, pz))
     bl.add('RUBBER', P, UV)
     nodes.append(('H03_bellows', 'HAMMER', bl))
     pd = Mesh('H02_strike_pad', smooth_angle=45)
-    y0p, y1p = 0.67, 0.72
+    y0p, y1p = D['pad_y']
     prof = [(0.0, y0p), (pr - 0.006, y0p), (pr, y0p + 0.006), (pr, y1p - 0.006), (pr - 0.006, y1p), (0.0, y1p)]
     P, UV = lathe(prof, 56, M=mat_translate(px, 0, pz))
     pd.add('PAD_RUBBER', P, UV)
@@ -750,11 +751,11 @@ def build_hammer(dome, base, st):
     hn = Mesh('H05_hammer_handle', smooth_angle=50)
     hdir = V(-0.10, 1.0, -0.32); hdir /= np.linalg.norm(hdir)
     h0 = hc + V(0, hr - 0.01, 0)
-    cyl(hn, 'BLACK_PLASTIC', hc + V(0, hr - 0.025, 0), hc + V(0, hr + 0.012, 0), 0.026, 20)
-    h1 = h0 + hdir * 0.29
-    cyl(hn, 'BLACK_PLASTIC', h0, h1, 0.0165, 18, caps=False)
-    h2 = h1 + hdir * 0.15
-    cyl(hn, 'GRIP_BLACK', h1, h2, 0.0195, 18)
+    cyl(hn, 'BLACK_PLASTIC', hc + V(0, hr - 0.025, 0), hc + V(0, hr + 0.014, 0), 0.031, 20)
+    h1 = h0 + hdir * 0.24
+    cyl(hn, 'BLACK_PLASTIC', h0, h1, 0.020, 18, caps=False)
+    h2 = h1 + hdir * 0.17
+    cyl(hn, 'GRIP_BLACK', h1, h2, 0.0235, 18)
     nodes.append(('H05_hammer_handle', 'HAMMER', hn))
     # safety cable: from the handle down to an eye bolt on the box front (n03, n14)
     cb = Mesh('H06_safety_cable', smooth_angle=70)
@@ -781,7 +782,7 @@ def build_tower(dome, base, st):
     tw = Mesh('T01_tower_body', smooth_angle=25)
     tz0, tz1 = D['tower_z']
     ytop = D['tower_top']
-    ys = [PT, 0.58, 0.69, 1.81, ytop]
+    ys = [PT, 0.58, 0.69, 1.81, 1.90, ytop]
     # front (graphic underneath), right side (black), back (black), top (black)
     for ya, yb in zip(ys[:-1], ys[1:]):
         quadfill(tw, 'BODY_PAINT', V(col_xr(ya), ya, tz1), V(tower_xr(ya), ya, tz1), V(tower_xr(yb), yb, tz1), V(col_xr(yb), yb, tz1), Z3)
@@ -794,7 +795,9 @@ def build_tower(dome, base, st):
     # front print (zone 'tower')
     G = TEXMETA['tower']
     tg = Mesh('G05_tower_graphic', smooth_angle=10)
-    yy = np.linspace(PT, ytop, 24)
+    yy = np.linspace(PT, 1.90, 24)
+    quadfill(tg, 'BLACK_STEEL', V(col_xr(1.90), 1.90, tz1 + 0.0012), V(tower_xr(1.90), 1.90, tz1 + 0.0012),
+             V(tower_xr(ytop), ytop, tz1 + 0.0012), V(col_xr(ytop), ytop, tz1 + 0.0012), Z3)
     for ya, yb in zip(yy[:-1], yy[1:]):
         pts = [V(col_xr(ya), ya, tz1 + 0.0012), V(tower_xr(ya) - 0.018, ya, tz1 + 0.0012), V(tower_xr(yb) - 0.018, yb, tz1 + 0.0012), V(col_xr(yb), yb, tz1 + 0.0012)]
         uv = [(0, (G['y'][1] - ya) / (G['y'][1] - G['y'][0])), (1, (G['y'][1] - ya) / (G['y'][1] - G['y'][0])),
@@ -851,6 +854,14 @@ def door(mesh, lk, x0, y0, x1, y1, z, lock_at):
     P, UV = lathe([(0, 0), (0.011, 0), (0.011, 0.002), (0.0095, 0.0045), (0, 0.005)], 24, M=look_basis(p, -Z3) @ mat_rot('x', 90))
     lk.add('METAL', P, UV)
     box(lk, 'BLACK_PLASTIC', [p[0] - 0.001, p[1] - 0.005, p[2] - 0.0058], [p[0] + 0.001, p[1] + 0.005, p[2] - 0.0045], 0.0004)
+    # key (n07/n08): short blade in the lock, bow hanging down, split ring with a second key
+    zk = p[2] - 0.009
+    box(lk, 'METAL', [p[0] - 0.0012, p[1] - 0.012, zk - 0.004], [p[0] + 0.0012, p[1] + 0.002, zk + 0.004], 0.0005)
+    box(lk, 'METAL', [p[0] - 0.0045, p[1] - 0.034, zk - 0.0012], [p[0] + 0.0045, p[1] - 0.012, zk + 0.0012], 0.0012)
+    P, UV = lathe([(0.0085, -0.0009), (0.0095, 0.0), (0.0085, 0.0009), (0.0075, 0.0), (0.0085, -0.0009)], 18,
+                  M=look_basis(V(p[0], p[1] - 0.043, zk - 0.003), -X3) @ mat_rot('x', 90))
+    lk.add('METAL', P, UV)
+    box(lk, 'METAL', [p[0] - 0.004, p[1] - 0.078, zk - 0.004], [p[0] + 0.004, p[1] - 0.050, zk - 0.0016], 0.0012)
 
 
 def build_rear():
@@ -858,10 +869,11 @@ def build_rear():
     dm = Mesh('R01_rear_doors', smooth_angle=30)
     lk = Mesh('R02_locks', smooth_angle=35)
     z = CZ0
-    door(dm, lk, -0.53, 1.10, 0.07, 1.80, z, (-0.46, 1.45))
-    door(dm, lk, -0.30, 0.64, -0.10, 0.88, z, (-0.13, 0.76))
-    door(dm, lk, -0.46, 0.10, -0.02, 0.56, z, (-0.40, 0.33))
-    door(dm, lk, 0.30, 0.10, 0.52, 0.40, D['tower_z'][0] - 0.002, (0.33, 0.25))
+    # rear layout from the rear views (n07/n08): tall upper door, small middle door, lower door
+    door(dm, lk, -0.555, 1.09, 0.095, 2.00, z, (0.045, 1.50))
+    door(dm, lk, -0.40, 0.64, -0.11, 0.95, z, (-0.15, 0.80))
+    door(dm, lk, -0.33, 0.07, 0.10, 0.55, z, (0.06, 0.31))
+    door(dm, lk, 0.24, 0.09, 0.55, 0.42, D['tower_z'][0] - 0.002, (0.28, 0.26))
     nodes.append(('R01_rear_doors', 'REAR', dm))
     nodes.append(('R02_locks', 'REAR', lk))
     rp = Mesh('R03_rating_plate', smooth_angle=30)
@@ -882,13 +894,13 @@ def build_rear():
     nodes.append(('R04_top_rollers', 'TRANSPORT_WHEELS', ro))
     # yellow castors under the rear corners of the base (n04, n08, n10)
     ca = Mesh('R05_castors', smooth_angle=40)
-    for x in (-0.585, 0.685):
-        c = V(x, 0.026, -0.655)
+    for x, zc in ((-0.585, -0.655), (0.685, -0.73)):
+        c = V(x, 0.026, zc)
         cyl(ca, 'TYRE_YELLOW', c - X3 * 0.011, c + X3 * 0.011, 0.026, 24)
         cyl(ca, 'METAL', c - X3 * 0.015, c + X3 * 0.015, 0.006, 10)
         for s in (-1, 1):
-            box(ca, 'BLACK_STEEL', [x + s * 0.014 - 0.002, 0.02, -0.67], [x + s * 0.014 + 0.002, 0.05, -0.63], 0.001)
-        box(ca, 'BLACK_STEEL', [x - 0.02, 0.045, -0.672], [x + 0.02, 0.052, -0.62], 0.001)
+            box(ca, 'BLACK_STEEL', [x + s * 0.014 - 0.002, 0.02, zc - 0.015], [x + s * 0.014 + 0.002, 0.05, zc + 0.025], 0.001)
+        box(ca, 'BLACK_STEEL', [x - 0.02, 0.045, zc - 0.017], [x + 0.02, 0.052, zc + 0.035], 0.001)
     nodes.append(('R05_castors', 'TRANSPORT_WHEELS', ca))
     return nodes
 

@@ -1,4 +1,19 @@
-# Ultimate Monster 3in1 – model report (v1)
+# Ultimate Monster 3in1 – model report (v2)
+
+## v2 changes (photo IMG_0542 + rear views)
+- **Hammer:** larger and higher.
+  - Bellows 0.58 → 0.70 m, Ø 0.20–0.24 m, 5 convolutions.
+  - Strike pad Ø 0.33 m, 0.70–0.76 m.
+  - Head Ø 145 mm × 240 mm.
+  - Handle Ø 40 mm with a Ø 47 mm grip; it ends at about 1.25 m.
+- **Rear:**
+  - The black tower slab stands about 0.12 m out behind the column and rises to 1.98 m, with a black cap above the print.
+  - The column back now has a tall upper door (1.09–2.00 m), a small middle door and a lower door. They are placed as in the rear views, with keys in every lock.
+  - The tower base has a red panel with a service door.
+  - Black edge profiles run up both rear edges.
+  - The castor is moved under the tower.
+- **Canopy underside (IMG_0542):** the bag opening is now large and rounded (0.33 × 0.26 m). The down-lights sit beside it, towards the front.
+
 
 ## Deliverables
 | File | Contents |
@@ -22,7 +37,7 @@
 | --- | --- | --- |
 | Height | 2.30 m | 230 cm |
 | Width | 1.40 m (crown left edge to tower) | 140 cm |
-| Depth | 1.30 m (canopy front to rear rollers / castors) | 140 cm |
+| Depth | 1.38 m (canopy front to the back of the tower slab) | 140 cm |
 
 All the views agree on a depth of about 1.28–1.30 m. Stretching the model to 1.40 would distort it, so it was left at 1.30 m (open item M1).
 
