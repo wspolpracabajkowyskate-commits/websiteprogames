@@ -43,9 +43,9 @@ D = dict(
     # punch bag LOWERED (F34/F35, P01): neck hangs from the front of the opening, egg-shaped ball
     bag_rx=0.12, bag_ry=0.14, bag_hang=(0.0, 0.70), neck_len=0.225, neck_top_r=0.030, neck_skirt_r=0.098,
     # slot in the brim underside the bag folds into
-    slot_x=0.175, slot_z0=0.36, slot_z1=0.76,
+    slot_x=0.19, slot_xb=0.125, slot_z0=0.38, slot_z1=0.735,   # IMG_0514/0515/0522: big rounded-trapezoid opening, wider at the front
     # canopy down-lights
-    light_x=0.152, light_z=0.674,
+    light_x=0.235, light_z=0.785,                 # IMG_0522: lights in the front corners, outside the opening
 )
 # visible fasteners / lock / wheel positions (F31, F32; D01-D07) - all 'estimated'
 D.update(
@@ -573,17 +573,12 @@ def front_uv(xy):
 
 
 def slot_outline(n=140):
-    """D15: dark oval opening in the underside (F35, F16): rounded super-ellipse, a little narrower
-    at the front where the neck comes out."""
-    z0, z1 = D['slot_z0'], D['slot_z1']
-    zc, hz = (z0 + z1) / 2, (z1 - z0) / 2
-    pts = []
-    for t in np.linspace(0, 2 * math.pi, n, endpoint=False):
-        c, s_ = math.cos(t), math.sin(t)
-        z = zc + hz * math.copysign(abs(s_) ** 0.7, s_)
-        w = D['slot_x'] * (1.0 - 0.18 * max(0.0, (z - zc) / hz))
-        pts.append((w * math.copysign(abs(c) ** 0.7, c), z))
-    return ccw(resample_closed(np.array(pts), n))
+    """D15: opening in the underside (IMG_0514/0515/0522): rounded trapezoid, wide at the front
+    (between the two lights), narrowing towards the column; large corner radii."""
+    z0, z1, xf, xb = D['slot_z0'], D['slot_z1'], D['slot_x'], D['slot_xb']
+    pts = np.array([[-xb, z0], [xb, z0], [xf, z1], [-xf, z1]], float)
+    pts = fillet(pts, lambda p: 0.075 if p[1] > (z0 + z1) / 2 else 0.06, seg=14)
+    return ccw(resample_closed(pts, n))
 
 
 def build_canopy(leds):
@@ -608,17 +603,28 @@ def build_canopy(leds):
     angs = np.arctan2(rel[:, 1], rel[:, 0])
     rout = ray_polygon(oc, angs, offset_contour(C, -0.03))
     outer = oc + np.stack([np.cos(angs), np.sin(angs)], 1) * rout[:, None]
-    rings = [outer + (hole - outer) * k for k in np.linspace(0, 1, 9)]
+    hole_o = offset_contour(hole, 0.035)                 # edge of the sloped lip around the opening
+    rings = [outer + (hole_o - outer) * k for k in np.linspace(0, 1, 9)]
     under_h = lambda a_, b_, h: brim_bottom(b_, a_)
     for ra, rb_ in zip(rings[:-1], rings[1:]):
         Pu, UVu = ring_cap(ra, rb_, X3, Z3, Y3, hfunc=under_h, facing=-1)
         lb.add('BODY_PAINT', Pu, UVu)
+    # sloped red lip: from the underside up and into the opening (the "wings" either side)
+    lip = []
+    for k in range(len(hole)):
+        q = (k + 1) % len(hole)
+        a = [hole_o[k][0], brim_bottom(hole_o[k][1], hole_o[k][0]), hole_o[k][1]]; b = [hole_o[q][0], brim_bottom(hole_o[q][1], hole_o[q][0]), hole_o[q][1]]
+        c = [hole[q][0], brim_bottom(hole[q][1], hole[q][0]) + 0.04, hole[q][1]]; d = [hole[k][0], brim_bottom(hole[k][1], hole[k][0]) + 0.04, hole[k][1]]
+        lip += [[a, b, c], [a, c, d]]
+    Pl = np.array(lip)
+    Pl, _ = orient_with_uv(Pl, np.zeros((len(Pl), 3, 2)), lambda c: np.array([oc[0] - c[0], -1.5, oc[1] - c[2]]), per_triangle=True)
+    lb.add('BODY_PAINT', Pl)
     # slot walls + ceiling (black, deep enough to hold the folded ball)
     depth = 0.21
     walls = []
     for k in range(len(hole)):
         q = (k + 1) % len(hole)
-        a = [hole[k][0], brim_bottom(hole[k][1], hole[k][0]), hole[k][1]]; b = [hole[q][0], brim_bottom(hole[q][1], hole[q][0]), hole[q][1]]
+        a = [hole[k][0], brim_bottom(hole[k][1], hole[k][0]) + 0.04, hole[k][1]]; b = [hole[q][0], brim_bottom(hole[q][1], hole[q][0]) + 0.04, hole[q][1]]
         c = [hole[q][0], y0 + depth, hole[q][1]]; d = [hole[k][0], y0 + depth, hole[k][1]]
         walls += [[a, b, c], [a, c, d]]
     Pw = np.array(walls)
@@ -719,10 +725,10 @@ def build_canopy(leds):
     lb_m = Mesh('D15_lamp_bezels', smooth_angle=30)
     for sx in (-1, 1):
         zz = D['light_z']
-        yb = brim_bottom(zz)
-        Pm, UVm = lathe([(0.0, 0.0), (0.028, 0.0), (0.032, 0.003), (0.034, 0.0)], 24, M=mat_translate(sx * D['light_x'], yb, zz) @ mat_rot('x', 180))
+        yb = brim_bottom(zz, sx * D['light_x'])
+        Pm, UVm = lathe([(0.0, 0.0), (0.036, 0.0), (0.040, 0.004), (0.046, 0.003), (0.047, 0.0)], 32, M=mat_translate(sx * D['light_x'], yb, zz) @ mat_rot('x', 180))
         lb_m.add('METAL', Pm, UVm)
-        Pd, UVd = disc(0.025, 24, M=mat_translate(sx * D['light_x'], yb - 0.0035, zz) @ mat_rot('x', 90))
+        Pd, UVd = disc(0.034, 32, M=mat_translate(sx * D['light_x'], yb - 0.0025, zz) @ mat_rot('x', 90))
         leds['D15_lamps'].mesh.add('LED_WHITE', Pd, UVd, np.ones((len(Pd), 3, 3)), np.full((len(Pd), 3), float(leds['D15_lamps'].count)))
         leds['D15_lamps'].count += 1
     nodes.append(('D15_lamp_bezels', 'CANOPY', lb_m))
