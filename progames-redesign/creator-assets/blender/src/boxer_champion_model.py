@@ -43,9 +43,9 @@ D = dict(
     # punch bag LOWERED (F34/F35, P01): neck hangs from the front of the opening, egg-shaped ball
     bag_rx=0.12, bag_ry=0.14, bag_hang=(0.0, 0.70), neck_len=0.225, neck_top_r=0.030, neck_skirt_r=0.098,
     # slot in the brim underside the bag folds into
-    slot_x=0.19, slot_xb=0.125, slot_z0=0.38, slot_z1=0.735,   # IMG_0514/0515/0522: big rounded-trapezoid opening, wider at the front
+    slot_x=0.185, slot_xn=0.06, slot_z0=0.37, slot_z1=0.80, slot_zn=0.63,   # photos 17.10: narrow front slot (bag mount) widening into a big rounded opening at the back
     # canopy down-lights
-    light_x=0.235, light_z=0.785,                 # IMG_0522: lights in the front corners, outside the opening
+    light_x=0.15, light_z=0.69,                   # photos 17.10: the two lights flank the narrow front part of the opening
 )
 # visible fasteners / lock / wheel positions (F31, F32; D01-D07) - all 'estimated'
 D.update(
@@ -572,12 +572,19 @@ def front_uv(xy):
     return np.stack([(px - x0) / (x1 - x0), (py - y0) / (y1 - y0)], 1)
 
 
-def slot_outline(n=140):
-    """D15: opening in the underside (IMG_0514/0515/0522): rounded trapezoid, wide at the front
-    (between the two lights), narrowing towards the column; large corner radii."""
-    z0, z1, xf, xb = D['slot_z0'], D['slot_z1'], D['slot_x'], D['slot_xb']
-    pts = np.array([[-xb, z0], [xb, z0], [xf, z1], [-xf, z1]], float)
-    pts = fillet(pts, lambda p: 0.075 if p[1] > (z0 + z1) / 2 else 0.06, seg=14)
+def slot_outline(n=160):
+    """D15: opening in the underside (photos of 17.10): a narrow rectangular slot at the front where
+    the bag mount sits (just behind START BOXER), widening into a big rounded opening towards the
+    column / score shield."""
+    z0, z1, zn, xw, xn = D['slot_z0'], D['slot_z1'], D['slot_zn'], D['slot_x'], D['slot_xn']
+    zw = zn - 0.11                                # where the full width is reached
+    pts = np.array([[-xn, z1], [xn, z1], [xn, zn], [xw, zw], [xw, z0 + 0.03], [-xw, z0 + 0.03], [-xw, zw], [-xn, zn]], float)
+    def rad(p):
+        if p[1] > z1 - 1e-6: return 0.015
+        if abs(p[1] - zn) < 1e-6: return 0.05
+        if abs(p[1] - zw) < 1e-6: return 0.06
+        return 0.10
+    pts = fillet(pts, rad, seg=14)
     return ccw(resample_closed(pts, n))
 
 
@@ -603,7 +610,7 @@ def build_canopy(leds):
     angs = np.arctan2(rel[:, 1], rel[:, 0])
     rout = ray_polygon(oc, angs, offset_contour(C, -0.03))
     outer = oc + np.stack([np.cos(angs), np.sin(angs)], 1) * rout[:, None]
-    hole_o = offset_contour(hole, 0.035)                 # edge of the sloped lip around the opening
+    hole_o = offset_contour(hole, 0.022)                 # edge of the sloped lip around the opening
     rings = [outer + (hole_o - outer) * k for k in np.linspace(0, 1, 9)]
     under_h = lambda a_, b_, h: brim_bottom(b_, a_)
     for ra, rb_ in zip(rings[:-1], rings[1:]):
@@ -726,9 +733,9 @@ def build_canopy(leds):
     for sx in (-1, 1):
         zz = D['light_z']
         yb = brim_bottom(zz, sx * D['light_x'])
-        Pm, UVm = lathe([(0.0, 0.0), (0.036, 0.0), (0.040, 0.004), (0.046, 0.003), (0.047, 0.0)], 32, M=mat_translate(sx * D['light_x'], yb, zz) @ mat_rot('x', 180))
+        Pm, UVm = lathe([(0.0, 0.0), (0.027, 0.0), (0.030, 0.003), (0.035, 0.0025), (0.036, 0.0)], 32, M=mat_translate(sx * D['light_x'], yb, zz) @ mat_rot('x', 180))
         lb_m.add('METAL', Pm, UVm)
-        Pd, UVd = disc(0.034, 32, M=mat_translate(sx * D['light_x'], yb - 0.0025, zz) @ mat_rot('x', 90))
+        Pd, UVd = disc(0.026, 32, M=mat_translate(sx * D['light_x'], yb - 0.0025, zz) @ mat_rot('x', 90))
         leds['D15_lamps'].mesh.add('LED_WHITE', Pd, UVd, np.ones((len(Pd), 3, 3)), np.full((len(Pd), 3), float(leds['D15_lamps'].count)))
         leds['D15_lamps'].count += 1
     nodes.append(('D15_lamp_bezels', 'CANOPY', lb_m))
