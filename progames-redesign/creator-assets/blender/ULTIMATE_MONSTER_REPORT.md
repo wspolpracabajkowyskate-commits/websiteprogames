@@ -22,7 +22,7 @@
 | `blender/src/monster_model.py` | Parametric source. All main dimensions are in `D` at the top. |
 | `blender/src/make_monster_textures.py` | Rebuilds every print from the reference views. It rectifies each print, keys the body paint out to alpha, removes lamps and reflections, and packs the stickers into an atlas. |
 | `textures/monster/` | Zone prints: front, canopy front, left, right and tower. Also the sticker atlas and the LED meter texture. |
-| `.blend` | Not built yet: the Blender machine was offline. The builder supports `DS_MODEL=monster_model`. |
+| `blender/ultimate-monster.blend` | Blender 5.2 source: collections per module and Blender renders in `blender/renders/ultimate-monster_*`. |
 
 ## Source and method
 - **Source:** the supplied generated views (no photographs). They are not orthographic and they differ in details, so one consistent geometry was chosen.
