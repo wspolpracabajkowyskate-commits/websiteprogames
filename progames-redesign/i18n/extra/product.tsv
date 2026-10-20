@@ -83,8 +83,8 @@ Dimensions	Διαστάσεις	Dimensioni	الأبعاد	Dimensiuni	Rozměry	M�
 Power supply	Τροφοδοσία	Alimentazione	مصدر الطاقة	Alimentare	Napájení	Tápellátás	Питание	Захранване
 Power consumption	Κατανάλωση ισχύος	Potenza assorbita	استهلاك الطاقة	Consum de energie	Příkon	Teljesítményfelvétel	Потребляемая мощность	Консумирана мощност
 To be confirmed	Προς επιβεβαίωση	Da confermare	يُحدّد لاحقًا	De confirmat	K potvrzení	Megerősítendő	Требует подтверждения	За потвърждение
-Product: LxWxH // Weight	Προϊόν: Μ×Π×Υ // Βάρος	Prodotto: L×P×A // Peso	المنتج: الطول × العرض × الارتفاع // الوزن	Produs: L×l×Î // Greutate	Produkt: D×Š×V // Hmotnost	Termék: H×Sz×M // Tömeg	Изделие: Д×Ш×В // Масса	Продукт: Д×Ш×В // Тегло
-Package: LxWxH // Weight	Συσκευασία: Μ×Π×Υ // Βάρος	Imballo: L×P×A // Peso	العبوة: الطول × العرض × الارتفاع // الوزن	Ambalaj: L×l×Î // Greutate	Balení: D×Š×V // Hmotnost	Csomag: H×Sz×M // Tömeg	Упаковка: Д×Ш×В // Масса	Опаковка: Д×Ш×В // Тегло
+Product: LxWxH // Weight	Προϊόν: Μ×Π×Υ // Βάρος	Prodotto: lung.×larg.×alt. // Peso	المنتج: الطول × العرض × الارتفاع // الوزن	Produs: L×l×Î // Greutate	Produkt: D×Š×V // Hmotnost	Termék: H×Sz×M // Tömeg	Изделие: Д×Ш×В // Масса	Продукт: Д×Ш×В // Тегло
+Package: LxWxH // Weight	Συσκευασία: Μ×Π×Υ // Βάρος	Imballo: lung.×larg.×alt. // Peso	العبوة: الطول × العرض × الارتفاع // الوزن	Ambalaj: L×l×Î // Greutate	Balení: D×Š×V // Hmotnost	Csomag: H×Sz×M // Tömeg	Упаковка: Д×Ш×В // Масса	Опаковка: Д×Ш×В // Тегло
 Black	Μαύρο	Nero	أسود	Negru	Černá	Fekete	Чёрный	Черен
 White	Λευκό	Bianco	أبيض	Alb	Bílá	Fehér	Белый	Бял
 Red	Κόκκινο	Rosso	أحمر	Roșu	Červená	Piros	Красный	Червен
