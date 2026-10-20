@@ -1,6 +1,6 @@
 const fs=require('fs'),assert=require('assert/strict'),vm=require('vm'),{parseHTML}=require('linkedom');
 const origin='https://www.progamespoland.com',pages=JSON.parse(fs.readFileSync('build/pages.json')),config=JSON.parse(fs.readFileSync('vercel.json'));
-const oldPages=pages.filter(p=>!p.editorial),newPages=pages.filter(p=>p.editorial&&p.lang==='en');assert.equal(oldPages.length,245);assert.equal(newPages.length,8);
+const oldPages=pages.filter(p=>!p.editorial),newPages=pages.filter(p=>p.editorial&&p.lang==='en');assert.equal(oldPages.length,637);assert.equal(newPages.length,8);
 const source={window:{}};vm.runInNewContext(fs.readFileSync('products.js','utf8'),source);const products=source.window.PRODUCTS;
 const docs=new Map(pages.map(p=>[p.url,parseHTML(fs.readFileSync(p.filename,'utf8')).document]));let references=0,schemas=0,images=0,specs=0;
 for(const p of pages){const d=docs.get(p.url),json=[...d.querySelectorAll('script[type="application/ld+json"]')].map(s=>JSON.parse(s.textContent));schemas+=json.length;

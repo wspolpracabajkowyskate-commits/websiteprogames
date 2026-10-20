@@ -161,3 +161,6 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 .map-distributor>a{flex-shrink:0;font-size:12px;font-weight:700;padding:12px 16px;border:1px solid #eaaa5060;border-radius:24px;color:#f6d39e;text-decoration:none}
 .map-distributor>a:hover{background:#eaaa501a}.map-distributor>a:focus-visible{outline:2px solid #efb260;outline-offset:4px}
 @media(max-width:700px){.map-distributor{align-items:flex-start;flex-direction:column;padding:16px;gap:14px}.map-distributor>a{align-self:flex-start}.map-distributor strong{font-size:17px}}
+
+/* Thirteen locales: keep the disclosure within the viewport. */
+.pg-language-list{max-height:min(65vh,520px);overflow-y:auto;overscroll-behavior:contain}

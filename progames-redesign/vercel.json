@@ -1,6 +1,6 @@
 {
   "cleanUrls": false,
-  "buildCommand": "",
+  "buildCommand": "npm run build:languages",
   "framework": null,
   "redirects": [
     {

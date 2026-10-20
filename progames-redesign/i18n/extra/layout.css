@@ -1,0 +1,38 @@
+/* Additive locale-only layout rules. Existing EN/ES/PL/DE/FR remain unchanged. */
+html[data-extra-locale] :is(.section-head>*,.contact-grid>*,.config-summary dl>div,.catalog-choice-copy,.trade-main,.trade-map-detail-copy){min-width:0}
+html[data-extra-locale] :is(.section-head h2,.business h2,.global h2,.contact h2,.operator-note h2,.production-copy h2){font-size:clamp(32px,4.1vw,64px);line-height:1.08;overflow-wrap:break-word}
+html[data-extra-locale] .btn{line-height:1.35;text-align:center;white-space:normal}
+html[data-extra-locale] :is(.config-option-content,.gallery-swatch){white-space:normal;overflow-wrap:break-word}
+html[data-extra-locale] .config-option-content{min-height:80px}
+html[data-extra-locale] .catalog-choice h2{font-size:clamp(26px,3.2vw,46px);line-height:1.12;overflow-wrap:break-word}
+html[data-extra-locale] .catalog-hero h1{font-size:clamp(48px,7vw,110px);line-height:1.05}
+html[data-extra-locale] :is(.config-summary dd,.spec-table b,.trade-status){overflow-wrap:anywhere}
+html[data-extra-locale] .hero.hero-cinematic h1{font-size:clamp(48px,6.7vw,110px);line-height:1.05}
+html[data-extra-locale] .hero.hero-cinematic .hero-title-line{white-space:normal}
+html[data-extra-locale] .product-header-actions{min-width:0}
+@media(min-width:981px){html[data-extra-locale] .desktop-nav{gap:12px;font-size:11px}html[data-extra-locale] .site-header{gap:14px}html[data-extra-locale] .header-cta{font-size:10px;padding-inline:12px}}
+@media(max-width:640px){
+ html[data-extra-locale] .hero.hero-cinematic .hero-copy{--hero-title-size:clamp(32px,9.7vw,55px);--hero-line-height:calc(var(--hero-title-size) * 1.18);grid-template-rows:32px calc(var(--hero-line-height) * 2) minmax(76.5px,auto) minmax(48px,auto)}
+ html[data-extra-locale] .hero.hero-cinematic h1{display:grid;grid-template-rows:repeat(2,var(--hero-line-height));margin:0;font-size:var(--hero-title-size);line-height:var(--hero-line-height);min-width:0}
+ html[data-extra-locale] .hero.hero-cinematic .hero-title-line{height:auto;white-space:nowrap;line-height:var(--hero-line-height)}
+ html[data-extra-locale] .hero.hero-cinematic .lead{height:auto;font-size:16px;line-height:1.5}
+ html[data-extra-locale] .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ html[data-extra-locale] .hero-actions .btn{padding:8px;font-size:10px;min-height:48px;letter-spacing:.02em}
+ html[data-extra-locale] :is(.section-head h2,.business h2,.global h2,.contact h2,.operator-note h2,.production-copy h2){font-size:clamp(28px,7.6vw,42px)}
+ html[data-extra-locale] .catalog-hero h1{font-size:clamp(36px,10vw,58px)}
+ html[data-extra-locale] .gallery-variant-head{flex-wrap:wrap;gap:7px}
+ html[data-extra-locale] .product-header-actions .btn{font-size:9px;padding:7px 9px;min-height:36px}
+ html[data-extra-locale] .config-option-content{font-size:11px;padding:10px;min-height:84px}
+ html[data-extra-locale] .parts-actions{align-items:flex-start;gap:18px}
+}
+/* Arabic shaping and logical direction, while maps and physical products stay unmirrored. */
+html:lang(ar) body{font-family:Tahoma,Arial,sans-serif}
+html:lang(ar) :is(h1,h2,h3,.btn,.kicker,.eyebrow,.desktop-nav){font-family:Tahoma,Arial,sans-serif;letter-spacing:normal!important;text-transform:none;line-height:1.35}
+html:lang(ar) :is(.trade-map-stage,.trade-map-canvas,.phone-control,.spec-table table,a[href^="tel:"],a[href^="mailto:"],input[type=email],input[type=tel]){direction:ltr;unicode-bidi:isolate}
+html:lang(ar) :is(.contact-form,.detail-copy,.config-panel){text-align:right}
+html:lang(ar) .hero.hero-cinematic .eyebrow{padding-left:0;padding-right:32px}
+html:lang(ar) .hero.hero-cinematic .eyebrow>span{left:auto;right:0}
+html:lang(ar) .pg-language-list{text-align:start;right:auto;left:0}
+html:lang(ar) .config-summary dd{margin-inline-start:0}
+html:lang(ar) .contact-trap{left:0;right:auto;top:0;clip-path:inset(50%);pointer-events:none}
+@media(min-width:641px){html[data-extra-locale] .hero.hero-cinematic .hero-title-line{display:block}html[data-extra-locale] .hero.hero-cinematic h1{font-size:clamp(46px,5.7vw,96px)}}

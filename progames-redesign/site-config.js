@@ -1,7 +1,7 @@
-window.PG_SITE={origin:'https://www.progamespoland.com',languages:['en','es','pl','de','fr']};
+window.PG_SITE={origin:'https://www.progamespoland.com',languages:['en','es','pl','de','fr','el','it','ar','ro','cs','hu','ru','bg']};
 window.PG_ROUTES={
  home:lang=>lang==='en'?'/':lang==='es'?'/es.html':`/${lang}/`,
- product:(lang,slug)=>`/${({en:'en/products',es:'es/productos',pl:'pl/produkty',de:'de/produkte',fr:'fr/produits'})[lang]||'en/products'}/${encodeURIComponent(slug)}.html`,
+ product:(lang,slug)=>`/${({en:'en/products',es:'es/productos',pl:'pl/produkty',de:'de/produkte',fr:'fr/produits',el:'el/products',it:'it/products',ar:'ar/products',ro:'ro/products',cs:'cs/products',hu:'hu/products',ru:'ru/products',bg:'bg/products'})[lang]||'en/products'}/${encodeURIComponent(slug)}.html`,
  collection:lang=>lang==='en'?'/boxer-standard.html':lang==='es'?'/boxer-standard-es.html':`/${lang}/boxer-standard.html`,
  catalog:lang=>lang==='en'?'/catalog.html':lang==='es'?'/catalog-es.html':`/${lang}/${({pl:'katalog',de:'katalog',fr:'catalogue'})[lang]||'catalog'}.html`
 };
@@ -18,7 +18,7 @@ window.PG_QUOTE_OPTIONS=[
 window.PG_QUOTE_SELECTION=search=>{const ids=new Set((search.get('options')||'').split(','));return window.PG_QUOTE_OPTIONS.filter(o=>ids.has(o.id));};
 window.PG_INQUIRY_URL=data=>'mailto:office@progames.pl?subject='+encodeURIComponent('Pro Games inquiry — '+(data.get('product')||'General'))+'&body='+encodeURIComponent([...data].map(([name,value])=>`${name}: ${value}`).join('\r\n'));
 // Localised email presentation; preserve the original EN/ES inquiry behaviour.
-if(typeof document!=='undefined'&&['pl','de','fr'].includes(document.documentElement.lang)){
+if(typeof document!=='undefined'&&['pl','de','fr','el','it','ar','ro','cs','hu','ru','bg'].includes(document.documentElement.lang)){
  window.PG_INQUIRY_URL=data=>{
   const t=window.PG_T||((x)=>x),labels={name:'Full name',company:'Company',email:'Email',phone:'Phone',product:'Product of interest',message:'Message',configuration:'Configuration'};
   const body=[...data].map(([key,value])=>(t(labels[key]||key))+': '+(key==='message'||key==='configuration'?value:t(value))).join('\r\n');

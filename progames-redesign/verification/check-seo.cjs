@@ -5,5 +5,5 @@ for(const p of pages){const {document:d}=parseHTML(fs.readFileSync(p.filename,'u
  for(const el of d.querySelectorAll('script[type="application/ld+json"]')){const o=JSON.parse(el.textContent);if(o['@type']==='Product'){assert(!o.offers&&!o.aggregateRating&&!o.review);assert(o.description);assert.equal(o.url,origin+p.url);}const s=JSON.stringify(o);assert(!/\/(pl|de|fr)\/#(?:organization|website)/.test(s),'Split identity');}
  assert.equal(d.querySelector('meta[property="og:title"]').content,d.title);assert.equal(d.querySelector('meta[property="og:description"]').content,description);
 }
-const sitemap=fs.readFileSync('sitemap.xml','utf8');assert.equal((sitemap.match(/<loc>/g)||[]).length,pages.length);assert.equal((sitemap.match(/<xhtml:link /g)||[]).length,pages.reduce((n,p)=>n+(p.editorial?(p.alternates??2):6),0));for(const p of pages)assert(sitemap.includes('<loc>'+origin+p.url+'</loc>'));
+const sitemap=fs.readFileSync('sitemap.xml','utf8');assert.equal((sitemap.match(/<loc>/g)||[]).length,pages.length);assert.equal((sitemap.match(/<xhtml:link /g)||[]).length,pages.reduce((n,p)=>n+(p.editorial?(p.alternates??2):14),0));for(const p of pages)assert(sitemap.includes('<loc>'+origin+p.url+'</loc>'));
 console.log('PASS SEO: unique titles/descriptions; single H1; canonical URLs; language alternates; sitemap; consistent structured data and social metadata.');

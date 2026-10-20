@@ -1,0 +1,511 @@
+{
+  "status": "PASS",
+  "mockedContact": true,
+  "results": [
+    {
+      "lang": "el",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 320,
+      "kind": "home",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 320,
+      "kind": "product",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 320,
+      "kind": "catalog",
+      "scroll": 320,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 390,
+      "kind": "home",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 390,
+      "kind": "product",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 390,
+      "kind": "catalog",
+      "scroll": 390,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "el",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "it",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ar",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ro",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "cs",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "hu",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 1440,
+      "kind": "home",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 1440,
+      "kind": "product",
+      "scroll": 1440,
+      "over": []
+    },
+    {
+      "lang": "bg",
+      "width": 1440,
+      "kind": "catalog",
+      "scroll": 1440,
+      "over": []
+    }
+  ],
+  "errors": []
+}
