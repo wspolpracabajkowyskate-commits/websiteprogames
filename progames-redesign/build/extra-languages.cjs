@@ -76,7 +76,7 @@ for(const l of langs){
   };
   for(const s of d.querySelectorAll('script[type="application/ld+json"]')){const obj=JSON.parse(s.textContent);if(obj['@type']==='Organization'||obj['@type']==='WebSite')continue;const translated=translateObject(obj);if(obj['@type']==='Product')translated.description=d.querySelector('.detail-lead').textContent.replace(/\s+/g,' ').trim();s.textContent=JSON.stringify(translated).replaceAll('<','\\u003c');}
   const script=d.createElement('script');script.src='/i18n/'+l+'.js?v=44';d.head.append(script);
-  const css=d.createElement('link');css.rel='stylesheet';css.href='/i18n/extra/layout.css?v=44';d.head.append(css);
+  const css=d.createElement('link');css.rel='stylesheet';css.href='/i18n/extra/layout.css?v=45';d.head.append(css);
   // Record actual untranslated content, not placeholders or product names.
   function collect(n){if(['SCRIPT','STYLE','SVG'].includes(n.nodeName)||n.hasAttribute?.('data-no-translate')||n.closest?.('select[name=country]'))return;if(n.nodeType===3){const text=n.textContent.trim().replace(/\s+/g,' ');if(text&&t(text)===text&&/[A-Za-z]{3}/.test(text))unresolved.add(text);}for(const ch of n.childNodes)collect(ch);}if(l==='el')collect(d.body);
   fs.mkdirSync(path.dirname(page.filename),{recursive:true});fs.writeFileSync(page.filename,'<!doctype html>\n'+d.documentElement.outerHTML+'\n');generated.push(page);
