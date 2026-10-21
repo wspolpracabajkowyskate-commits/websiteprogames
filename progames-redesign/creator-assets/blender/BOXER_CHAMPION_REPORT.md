@@ -1,5 +1,15 @@
 # Boxer Champion – model report (v10: shape from the manufacturer CAD renders)
 
+## v10.1 fixes (21.10.2026, feedback on the configurator)
+- Lid and canopy box: triangle winding made consistent (one orientation decision per generated grid
+  instead of per triangle) - the lid was partly see-through from inside and showed saw-tooth edges.
+- Lid top rebuilt after the CAD top view: rolled surround (rim) all round - narrow at the back, ~4 cm
+  along the sides, ~9 cm at the front - and a flat top panel recessed 22 mm inside it.
+- Front corner rails removed (not on the machine): no vertical strips and no pointed ends under the canopy.
+- Stickers join up: side prints run to the front edge and up to the canopy band (no red strips between
+  them); the front print runs edge to edge (photographed rail strips of the old print are cut off).
+- Zone sizes: front 0.688 x 1.817, band 2.577 x 0.192, sides 0.281 x 1.862 m.
+
 ## v10 changes (21.10.2026)
 Only the SHAPE changed; graphics, colours and materials are those of v9.
 - **Reference:** SolidWorks renders (front, both sides, top, 3/4 from above and from below). The side

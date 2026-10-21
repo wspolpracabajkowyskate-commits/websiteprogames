@@ -36,15 +36,16 @@ D = dict(
     plat_x=0.36, plat_z0=-0.255, plat_z1=0.882, plat_h=0.039, plat_y0=0.006, ramp=0.026, chamfer=0.006,
     foot_r=0.026, foot_x=0.315, foot_z=(-0.17, 0.761),
     # column
-    col_x=0.35, col_z0=-0.158, col_z1=0.163, col_y0=0.039, col_y1=1.80, col_box_y1=1.858,
-    frame_w=0.020, side_red=0.042, back_trim=0.028,
+    col_x=0.35, col_z0=-0.158, col_z1=0.163, col_y0=0.039, col_y1=1.80, col_box_y1=1.907,
+    frame_w=0.0, side_red=0.012, back_trim=0.028,      # no front corner rails (real machine); side print runs to the front edge and up to the band
     # canopy box (sides flush with the column, semicircular front)
     lb_y0=1.858, lb_y1=2.103, lb_x=0.35, lb_z1=0.956, lb_r=0.35,
     wall_y0=1.907, cham_in=0.024, cham_y=1.873, edge_in=0.040, ledge_t=0.008, ledge_out=0.010,
     # kept for older scripts: the canopy front = 'drum'
     drum_x=0.35, drum_z1=0.956, drum_r=0.35,
     # lid
-    top_x=0.419, top_z0=-0.183, top_z1=1.113, top_r=0.419, top_y=2.19, top_rim=0.034, top_recess=0.003,
+    top_x=0.419, top_z0=-0.183, top_z1=1.113, top_r=0.419, top_y=2.19, top_recess=0.022,
+    panel_x=0.363, panel_z0=-0.150, panel_zc=0.651, panel_wall=0.014,     # recessed top panel inside the surround
     # punch bag LOWERED: neck hangs from the narrow front part of the underside opening
     bag_rx=0.12, bag_ry=0.14, bag_hang=(0.0, 0.66), neck_len=0.225, neck_top_r=0.030, neck_skirt_r=0.098,
     # underside opening: narrow front slot (bag mount) widening into a rounded opening towards the column
@@ -133,11 +134,12 @@ def stadium_plan(hx, z0, zc, n=320, back_r=0.0):
 DRUM_PLAN = stadium_plan(D['lb_x'], D['col_z0'], CANOPY_ZC)                 # canopy box outline
 TOP_PLAN = stadium_plan(D['top_x'], D['top_z0'], LID_ZC, n=360, back_r=0.01)  # lid outline
 LB_PLAN = DRUM_PLAN
+PANEL_PLAN = stadium_plan(D['panel_x'], D['panel_z0'], D['panel_zc'], n=360)    # recessed lid top panel
 
 # ----------------------------------------------------------------------------
 # Front panel (graphic between the corner rails)
 # ----------------------------------------------------------------------------
-FRONT_GFX = dict(x0=-0.3535, x1=0.3535, y0=0.041, y1=1.858)
+FRONT_GFX = dict(x0=-0.344, x1=0.344, y0=0.041, y1=1.858)
 # photo frame of the previous version (used by the photo pipeline scripts only)
 FRONT_PX = dict(cx=512.0, ppm_x=685.0, py_top=300.0, y_top=1.80, py_bot=1315.0, y_bot=0.045)
 FRONT_CROP = (318, 300, 706, 1315)
@@ -189,9 +191,9 @@ def shield_inner(n=240):
 # Displays, coin acceptor and rules plate (front, metres).  Display windows and the rules plate are
 # where the re-fitted print puts them (fit_champion_cad_textures.py prints these values); the coin
 # acceptor is at its CAD position.
-SCREENS = {'score': (-0.124, 1.28, 0.11, 1.39), 'high': (-0.068, 1.161, 0.05, 1.235), 'credit': (-0.026, 1.099, 0.008, 1.13)}
+SCREENS = {'score': (-0.133, 1.279, 0.123, 1.394), 'high': (-0.069, 1.159, 0.063, 1.233), 'credit': (-0.019, 1.097, 0.017, 1.127)}
 COIN = (-0.294, 0.885, -0.228, 1.042)
-RULES = (0.236, 0.776, 0.328, 0.917)          # on the printed rules area, clear of the corner rail
+RULES = (0.246, 0.775, 0.336, 0.921)          # on the printed rules area
 
 ATLAS_SIZE = 2048
 ATLAS = {
@@ -304,10 +306,6 @@ def build_column():
     nodes += build_back()
 
     # corner rails: up both front edges and bending forward into the canopy underside (CAD)
-    fr = Mesh('D09_front_profiles', smooth_angle=50)
-    for sx in (-1, 1):
-        fr.add('BODY_PAINT', *corner_rail(sx))
-    nodes.append(('D09_front_profiles', 'BODY', fr))
 
     # FRONT graphic (whole front panel between the corner rails)
     fm = Mesh('D24_front_graphic', smooth_angle=60)
@@ -594,7 +592,7 @@ def build_canopy(leds):
             a, b = C[ci] + Nn[ci] * off * k[ci]
             G[i, j] = [a, yy, b]
     P, UV = grid_tris(G, np.zeros(G.shape[:2] + (2,)))
-    P, UV = orient_with_uv(P, UV, lambda c: _outward_from_plan(C, c) + np.array([0, -1.0 if c[1] < D['wall_y0'] - 0.002 else 0.0, 0]), per_triangle=True)
+    P, UV = orient_with_uv(P, UV, lambda c: _outward_from_plan(C, c) if c[1] > D['wall_y0'] + 0.01 else np.zeros(3))   # one decision: consistent grid winding
     sh.add('BODY_PAINT', P, UV)
     Pt, UVt = cap(C, X3, Z3, Y3, origin=[0, y1, 0], facing=+1, center=[0, CANOPY_ZC - 0.2])
     sh.add('BODY_PAINT', Pt, UVt)
@@ -654,18 +652,21 @@ def build_canopy(leds):
     lg.add('BODY_PAINT', P, UV)
     nodes.append(('B02_canopy_ledge', 'CANOPY', lg))
 
-    # ---- lid: flat 'U' shell, nose rolling down into an underside that rises from the ledge to the rim
-    tb = Mesh('B02_canopy_crown', smooth_angle=32)
+    # ---- lid: 'U' shell with a raised surround (CAD top view): rolled rim all round (narrow at the
+    # back, ~4 cm along the sides, ~8 cm at the front), recessed flat top panel inside it; nose rolling
+    # down into an underside that rises from the ledge to the rim
+    tb = Mesh('B02_canopy_crown', smooth_angle=34)
     S = TOP_PLAN
     TOP = D['top_y']
+    rec = TOP - D['top_recess']
     ocl = np.array([0.0, 0.42])
-    nang = 300
+    nang = 320
     angs = np.linspace(0, 2 * math.pi, nang, endpoint=False)
     dirs = np.stack([np.cos(angs), np.sin(angs)], 1)
     rin = ray_polygon(ocl, angs, offset_contour(C, lo - 0.004))
     rout = ray_polygon(ocl, angs, S)
-    rrim = ray_polygon(ocl, angs, offset_contour(S, -D['top_rim']))
-    rec = TOP - D['top_recess']
+    rwall = ray_polygon(ocl, angs, offset_contour(PANEL_PLAN, D['panel_wall']))
+    rpan = ray_polygon(ocl, angs, PANEL_PLAN)
     Gl = []
     for i in range(nang):
         dvec = dirs[i]
@@ -673,21 +674,26 @@ def build_canopy(leds):
         base = _lid_f(span)
         pt = lambda dist: ocl + dvec * (rout[i] - dist)
         col = []
-        ds = np.linspace(span, 0.006, 12)
-        for dd in ds:
+        for dd in np.linspace(span, 0.006, 12):
             q = pt(dd); col.append([q[0], LID_UNDER + _lid_f(dd) - base, q[1]])
         yt = LID_UNDER + _lid_f(0.006) - base
-        for dd, f in ((0.0022, 0.30), (0.0, 0.58), (0.0016, 0.84), (0.0055, 0.97), (0.011, 1.0)):
-            q = pt(dd); col.append([q[0], yt + (TOP - yt) * f, q[1]])
-        drim = rout[i] - rrim[i]
-        for dd, yy in ((drim - 0.004, TOP), (drim - 0.001, TOP - 0.0015), (drim + 0.002, rec), (drim + 0.03, rec)):
+        for dd, f in ((0.0022, 0.30), (0.0, 0.58), (0.0016, 0.80), (0.005, 0.93), (0.010, 0.985)):
+            q = pt(dd); col.append([q[0], yt + (TOP - 0.002 - yt) * f, q[1]])
+        dw = rout[i] - rwall[i]; dp = rout[i] - rpan[i]
+        for t in np.linspace(0, 1, 7)[1:]:                      # rolled (domed) rim top
+            dd = 0.010 + (dw - 0.010) * t
+            col.append([*pt(dd)[:1], TOP - 0.0025 + 0.0025 * math.sin(math.pi * min(t * 1.15, 1.0)), pt(dd)[1]])
+        for t in np.linspace(0, 1, 6)[1:]:                      # rounded inner wall down to the panel
+            dd = dw + (dp - dw) * t
+            yy = TOP - 0.001 - (TOP - 0.001 - rec) * (0.5 - 0.5 * math.cos(math.pi * t))
             q = pt(dd); col.append([q[0], yy, q[1]])
         Gl.append(col)
     Gl = np.array(Gl); Gl = np.concatenate([Gl, Gl[:1]], 0)
     P, UV = grid_tris(Gl, np.zeros(Gl.shape[:2] + (2,)))
-    P, UV = orient_with_uv(P, UV, lambda c: np.array([c[0] - ocl[0], 0.0, c[2] - ocl[1]]) * 0.5 + np.array([0, -1.0 if c[1] < TOP - 0.03 else 1.0, 0]), per_triangle=True)
+    # one global decision (consistent grid winding): the rim top must face up
+    P, UV = orient_with_uv(P, UV, lambda c: np.array([0, 1.0, 0]) if c[1] > TOP - 0.0015 else np.zeros(3))
     tb.add('BODY_PAINT', P, UV)
-    Si = np.array([ocl + dirs[i] * (rrim[i] - 0.03) for i in range(nang)])
+    Si = np.array([ocl + dirs[i] * rpan[i] for i in range(nang)])
     Pt, UVt = cap(Si, X3, Z3, Y3, h=rec, facing=+1, center=ocl)
     tb.add('BODY_PAINT', Pt, UVt)
     nodes.append(('B02_canopy_crown', 'CANOPY', tb))
@@ -829,7 +835,6 @@ _PG = 'photogrammetry (BA of F01/F02/F10/F26)'
 _CAD = 'CAD renders 21.10.2026'
 META = {
     'B01_body': ('CAD front/side view', 'high', _CAD, 'B01'),
-    'D09_front_profiles': ('F27,F05,F28,F29', 'medium', 'section estimated', 'D09/D28'),
     'D24_front_graphic': ('F01,F10,F26', 'high', 'projective bake of 3 photos', 'D24/B05'),
     'D18_score_shield': ('CAD front view', 'high', _CAD, 'D18'),
     'D18_score_glass': ('F26,F07', 'medium', 'estimated', 'D18'),

@@ -89,10 +89,10 @@ src = list(_s[_keep]) + list(_s[_keep] * [-1, 1]) + list(_s[np.abs(_s[:, 0]) <= 
 dst = list(_d[_keep]) + list(_d[_keep] * [-1, 1]) + list(_d[np.abs(_s[:, 0]) <= 1e-6] * [0, 1])
 for y in np.linspace(G['y0'], G['y1'], 16):
     for sx in (-1, 1):
-        src += [[sx * G['x1'], y], [sx * (M.D['col_x'] - M.D['frame_w']), y]]
-        dst += [[sx * OLD_GFX['x1'], y_new2old(y)], [sx * OLD_RAIL_IN, y_new2old(y)]]
+        src += [[sx * G['x1'], y]]                       # no rails any more: the printed red rail
+        dst += [[sx * OLD_RAIL_IN, y_new2old(y)]]        # strip of the photo is left outside
 for x in np.linspace(-0.30, 0.30, 7):
-    src += [[x, G['y0']], [x, G['y1']]]; dst += [[x * 0.95, OLD_GFX['y0']], [x * 0.95, OLD_GFX['y1']]]
+    src += [[x, G['y0']], [x, G['y1']]]; dst += [[x * OLD_RAIL_IN / G['x1'], OLD_GFX['y0']], [x * OLD_RAIL_IN / G['x1'], OLD_GFX['y1']]]
 for y in (0.12, 0.32, 0.52, 0.70):                      # artwork below the shield keeps its scale
     for x in (-0.18, -0.09, 0.0, 0.09, 0.18):
         src.append([x, y]); dst.append([x, y_new2old(y)])
