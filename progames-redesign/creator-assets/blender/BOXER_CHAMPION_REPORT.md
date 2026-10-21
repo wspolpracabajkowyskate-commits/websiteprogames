@@ -1,3 +1,32 @@
+# Boxer Champion – model report (v10: shape from the manufacturer CAD renders)
+
+## v10 changes (21.10.2026)
+Only the SHAPE changed; graphics, colours and materials are those of v9.
+- **Reference:** SolidWorks renders (front, both sides, top, 3/4 from above and from below). The side
+  view is the scale reference (642.5 px/m, total height 2.19 m); the top view gives the lid and base
+  plan; the front view was corrected for its perspective.
+- **Column:** 0.70 m wide (v9 0.645), 0.321 m deep, standing on a flat base plate 0.72 × 1.137 m
+  (33 mm, short front bevel instead of the long ramp, 97 mm of plate behind the column, 4 levelling feet).
+  Corner rails narrowed to 20 mm.
+- **Canopy:** one box as wide as the column, sides flush with the column, semicircular front (r 0.35 m),
+  1.858–2.103 m, chamfered lower tray, flat underside (the v9 'chin' is gone), thin ledge under the lid.
+  Underside opening, two lamps and the START button moved to the CAD positions (START on the tray chamfer).
+- **Lid:** flat 'U' shell 0.838 × 1.296 m, top at 2.19 m (no visor slope), rounded nose, underside rising
+  from the box to the rim, recessed top panel with 4 screw heads and a round cap at the back right.
+- **Score shield:** crest outline from the CAD (horns at the top corners, pointed bottom at 0.85 m),
+  raised glass face with a sloped red bevel. Coin acceptor at its CAD position.
+- **Print files re-fitted** (`blender/src/fit_champion_cad_textures.py`, sources in `reference/sticker_v9/`):
+  front panel warped so the printed shield window sits exactly under the new glass face and the printed
+  bezel under the new bevel (displays and rules plate follow the print); canopy band re-laid onto the
+  longer wall (CHAMPION panel +18 %, side artwork stretched); side panels unchanged.
+- Zone sizes in `creator/js/config.js`: front 0.707 × 1.817, band 2.577 × 0.192, sides 0.251 × 1.813 m.
+- `models/boxer-champion.glb` rebuilt with `export_glb.py` (same writer as v9). `boxer-champion.blend`
+  and the Blender renders in `blender/renders/` are still v9 – rebuild them with
+  `DS_MODEL=champion_model blender -b -P build_double_strike_blend.py -- --out creator-assets`.
+  Comparison with the CAD: `renders/compare/v10_cad_side_top.webp`.
+
+---
+
 # Boxer Champion – model report (v6: crown fitted to photos, continuous rear profiles)
 
 ## Deliverables
