@@ -1,4 +1,4 @@
-# Pomiar widoczności PROGAMES w AI i wyszukiwarkach
+# Pomiar widoczności PRO GAMES w AI i wyszukiwarkach
 
 ## Zestaw pytań
 `questions-v2.json` — 30 PL + 30 EN:
@@ -6,7 +6,7 @@
 - P (8/język): konkretne potrzeby zakupowe, bez marki;
 - B (6/język): tożsamość marki i oficjalny adres;
 - C (4/język): marka + fakty o produktach.
-A+P = 20/30 pytań na język bez nazwy PROGAMES.
+A+P = 20/30 pytań na język bez nazwy PRO GAMES.
 
 Arkusz do ręcznych testów: `tracking-sheet.csv` (jedna kopia na datę i narzędzie).
 
@@ -15,16 +15,16 @@ Gemini (aplikacja), ChatGPT z wyszukiwaniem, Perplexity, Claude.ai z wyszukiwani
 Zasady: nowa rozmowa dla każdego pytania, wylogowana lub czysta sesja bez historii, zapis daty, nazwy i trybu modelu, lokalizacji (PL / EN-US przez VPN, jeśli dostępny). Każde pytanie 2× w odstępie min. 1 dnia — pojedyncza odpowiedź nie jest rankingiem.
 
 ## Mierniki
-1. % odpowiedzi wymieniających PROGAMES (osobno A, P, B, C; osobno PL/EN).
+1. % odpowiedzi wymieniających PRO GAMES (osobno A, P, B, C; osobno PL/EN).
 2. % odpowiedzi z poprawnym linkiem do progamespoland.com (lub progames.pl → przekierowanie).
-3. % odpowiedzi opisujących PROGAMES jako producenta (nie dystrybutora/sklep).
-4. Źródła cytowane przy PROGAMES (domena + typ: własna strona / IAAPA / dystrybutor / katalog / media).
-5. Pozycja PROGAMES na liście producentów (1 = pierwszy).
+3. % odpowiedzi opisujących PRO GAMES jako producenta (nie dystrybutora/sklep).
+4. Źródła cytowane przy PRO GAMES (domena + typ: własna strona / IAAPA / dystrybutor / katalog / media).
+5. Pozycja PRO GAMES na liście producentów (1 = pierwszy).
 6. Ruch: Vercel Web Analytics — `referrerHostname` (chatgpt.com, perplexity.ai, gemini.google.com, copilot.microsoft.com, claude.ai) oraz zapytania z formularza z dopiskiem „skąd o nas wiesz”. Uwaga: wiele aplikacji AI nie przekazuje referera — ruch z AI będzie zaniżony.
 
 ## Punkt wyjścia (22.10.2026)
 `../results/search-baseline-2026-10-22.json` — test narzędzia wyszukiwania Claude (nie odpowiedzi Gemini/ChatGPT):
-- 0/15 zapytań bez wariantu „Pro Games” zwróciło stronę PROGAMES; oficjalna domena progamespoland.com nie pojawiła się w żadnym wyniku (także dla `site:`).
+- 0/15 zapytań bez wariantu „Pro Games” zwróciło stronę PRO GAMES; oficjalna domena progamespoland.com nie pojawiła się w żadnym wyniku (także dla `site:`).
 - Marka pojawia się tylko przy zapytaniach „Pro Games Poland” / „progames.pl”: przez Facebook, Instagram, ogłoszenia i katalogi linkujące do martwej domeny boxer-progames.com.
 - Przy konkurencji cytowane są profile IAAPA Marketplace, profile wystawców IAAPA Expo i newsy branżowe (Intergame/Amusements & Attractions, Replay, Arcade Heroes).
 Odpowiedzi Gemini, ChatGPT, Perplexity, Google AI: **nieprzetestowane** (brak dostępu z tego środowiska) — do wykonania ręcznie według arkusza.
