@@ -4032,6 +4032,12 @@ Object.assign(window.PRODUCTS,{
     "label": "STRENGTH GAME",
     "tag": "NEW 2026",
     "image": "/assets/products/hammer-2026-multicolour-v2.jpg",
+    "cardImages": [
+      "/assets/products/hammer-2026-multicolour-v2.jpg",
+      "/assets/products/hammer-2026-multicolour-v2-2.jpg",
+      "/assets/products/hammer-2026-multicolour-v2-3.jpg",
+      "/assets/products/hammer-2026-multicolour-v2-4.jpg"
+    ],
     "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in the single multicolour finish shown. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
     "features": [],
     "spec": [
