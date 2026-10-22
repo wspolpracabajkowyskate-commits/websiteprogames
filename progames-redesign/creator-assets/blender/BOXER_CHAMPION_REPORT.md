@@ -1,5 +1,12 @@
 # Boxer Champion – model report (v10: shape from the manufacturer CAD renders)
 
+## v10.3 (22.10.2026)
+- Area under the shield (bezel tip, flames, hood) from a straight-on photo of the machine
+  (`reference/sticker_v9/champion_front_lower_photo.png`), colour-matched to the print; the broken bezel tip of
+  the warped old print and the doubled rules plate / coin acceptor are gone (printed ones filled in, the 3D
+  parts moved to their real positions: COIN / RULES in boxer_champion_model.py).
+- One colour grade over the whole front (light dehaze, +10 % contrast, +8 % colour) so it matches the shield.
+
 ## v10.2 (22.10.2026)
 - Score-shield graphic replaced by a sharp straight-on photo of the print (`reference/sticker_v9/champion_shield_photo.png`),
   warped onto the glass face. Photo glare removed (dark-channel dehaze), darker with more contrast and colour to

@@ -192,8 +192,8 @@ def shield_inner(n=240):
 # where the re-fitted print puts them (fit_champion_cad_textures.py prints these values); the coin
 # acceptor is at its CAD position.
 SCREENS = {'score': (-0.144, 1.338, 0.143, 1.448), 'high': (-0.076, 1.191, 0.079, 1.272), 'credit': (-0.021, 1.117, 0.025, 1.154)}   # = display windows of the shield photo
-COIN = (-0.294, 0.885, -0.228, 1.042)
-RULES = (0.246, 0.775, 0.336, 0.921)          # on the printed rules area
+COIN = (-0.268, 0.854, -0.205, 0.975)          # coin acceptor where it is on the machine (front photo)
+RULES = (0.205, 0.826, 0.298, 0.969)          # rules plate where it is on the machine (front photo)
 
 ATLAS_SIZE = 2048
 ATLAS = {

@@ -229,9 +229,6 @@ if os.path.exists(SHIELD_PHOTO):
         return tuple(round(float(v), 3) for v in (c[0] - w / 2, c[1] - h / 2, c[0] + w / 2, c[1] + h / 2))
     NEW_SCREENS = {k: win(v) for k, v in PH_WINDOWS.items()}
     print('shield photo fitted; display windows:', NEW_SCREENS)
-cv2.imwrite(os.path.join(OUT, 'champion_zone_front.webp'), out, [cv2.IMWRITE_WEBP_QUALITY, 92])
-print('front', front.shape, '->', out.shape)
-
 
 from scipy.spatial import cKDTree
 _gx, _gy = np.meshgrid(np.arange(-0.33, 0.33, 0.001), np.arange(0.6, 1.86, 0.001))
@@ -249,6 +246,79 @@ def fwd_rect(r):
     Q = old2new_exact(np.array([[cx, cy], [r[0], cy], [r[2], cy], [cx, r[1]], [cx, r[3]]]))
     w = np.linalg.norm(Q[2] - Q[1]); h = np.linalg.norm(Q[4] - Q[3]); c = Q[0]
     return tuple(round(float(v), 3) for v in (c[0] - w / 2, c[1] - h / 2, c[0] + w / 2, c[1] + h / 2))
+
+
+
+# ---------------------------------------------------------------- area under the shield from a photo
+# champion_front_lower_photo.png: straight-on photo of the real machine below the shield (bezel tip,
+# coin acceptor, rules plate, flames, hood).  Scale 1650 px/m, bezel tip (490, 268) px = CAD tip; its
+# shield edge then matches the CAD outline (0.195 m half width at 1.01 m).  It replaces the warped old
+# print there (which left a broken bezel tip and a second rules plate); colours matched to the print.
+LOWER_PHOTO = os.path.join(SRC, 'champion_front_lower_photo.png')
+LP_S, LP_TIP = 1650.0, (490.0, 268.0)
+if os.path.exists(LOWER_PHOTO):
+    lp = cv2.imread(LOWER_PHOTO, cv2.IMREAD_COLOR)
+    # old print: its rules plate and coin acceptor (now left of / under the 3D parts) are filled in
+    old_items = np.zeros((Hn, Wn), np.uint8)
+    for r in (fwd_rect(OLD_RULES), M.COIN):
+        q = to_px(np.array([[r[0] - 0.012, r[3] + 0.012], [r[2] + 0.012, r[1] - 0.012]]))
+        cv2.rectangle(old_items, tuple(int(v) for v in q[0]), tuple(int(v) for v in q[1]), 255, -1)
+    out[..., :3] = cv2.inpaint(np.ascontiguousarray(out[..., :3]), old_items, 15, cv2.INPAINT_TELEA)
+    tip_y = float(M.shield_outline(400)[:, 1].min())
+    X2, Y2 = np.meshgrid(np.arange(Wn), np.arange(Hn))
+    xm2 = G['x0'] + (X2 + 0.5) / Wn * (G['x1'] - G['x0']); ym2 = G['y1'] - (Y2 + 0.5) / Hn * (G['y1'] - G['y0'])
+    mx = (LP_TIP[0] + xm2 * LP_S).astype(np.float32); my = (LP_TIP[1] - (ym2 - tip_y) * LP_S).astype(np.float32)
+    # the coin acceptor and the rules plate are separate 3D parts: take them out of the photo
+    hole = np.zeros(lp.shape[:2], np.uint8)
+    cv2.rectangle(hole, (40, 55), (160, 270), 255, -1); cv2.rectangle(hole, (820, 65), (988, 315), 255, -1)
+    lp = cv2.inpaint(lp, hole, 15, cv2.INPAINT_TELEA)
+    patch = cv2.remap(lp, mx, my, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+    # weight: inside the photo, feathered 30 mm at its borders, not inside the shield
+    fe = 0.03 * LP_S
+    wx = np.clip(np.minimum(mx - 2, lp.shape[1] - 3 - mx) / fe, 0, 1)
+    wy = np.clip(np.minimum(my - 2, lp.shape[0] - 3 - my) / fe, 0, 1)
+    w = (wx * wy).astype(np.float32)
+    sh = np.zeros((Hn, Wn), np.uint8)
+    cv2.fillPoly(sh, [np.round(to_px(offset_contour(M.shield_outline(400), 0.001)) * 4).astype(np.int32)], 255, shift=2)
+    sh = cv2.GaussianBlur(sh, (5, 5), 1).astype(np.float32) / 255
+    w = w * (1 - sh)
+    # colour match the photo to the print on the feather band (mean / std per channel, Lab)
+    band = (w > 0.05) & (w < 0.95)
+    lab_o = cv2.cvtColor(out[..., :3], cv2.COLOR_BGR2LAB).astype(np.float32)
+    lab_p = cv2.cvtColor(patch, cv2.COLOR_BGR2LAB).astype(np.float32)
+    for c in range(3):
+        mo, so = lab_o[..., c][band].mean(), lab_o[..., c][band].std()
+        mp, sp = lab_p[..., c][band].mean(), lab_p[..., c][band].std()
+        lab_p[..., c] = (lab_p[..., c] - mp) * (so / max(sp, 1e-3)) * 0.5 + (lab_p[..., c] - mp) * 0.5 + (mo * 0.6 + mp * 0.4)
+    patch = cv2.cvtColor(np.clip(lab_p, 0, 255).astype(np.uint8), cv2.COLOR_LAB2BGR)
+    out[..., :3] = (out[..., :3] * (1 - w[..., None]) + patch * w[..., None]).astype(np.uint8)
+    # printed bezel red just outside the model's bevel (photo / old print) -> filled from the flames
+    ring = np.zeros((Hn, Wn), np.uint8)
+    cv2.fillPoly(ring, [np.round(to_px(offset_contour(M.shield_outline(400), 0.035)) * 4).astype(np.int32)], 255, shift=2)
+    cv2.fillPoly(ring, [np.round(to_px(offset_contour(M.shield_outline(400), -0.002)) * 4).astype(np.int32)], 0, shift=2)
+    ring[: int((G['y1'] - 1.30) / (G['y1'] - G['y0']) * Hn)] = 0
+    bb = out[..., :3].astype(int)
+    pure_red = (bb[..., 2] > 120) & (bb[..., 1] < 0.30 * bb[..., 2]) & (bb[..., 0] < 0.38 * bb[..., 2])
+    fillr = cv2.dilate(((ring > 0) & pure_red).astype(np.uint8) * 255, np.ones((7, 7), np.uint8)) & ring
+    out[..., :3] = cv2.inpaint(np.ascontiguousarray(out[..., :3]), fillr, 7, cv2.INPAINT_TELEA)
+    print('lower photo pasted: coin %s, rules %s' % (
+        tuple(round(v, 3) for v in ((47 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 262) / LP_S, (152 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 62) / LP_S)),
+        tuple(round(v, 3) for v in ((828 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 307) / LP_S, (982 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 72) / LP_S))))
+
+# ---------------------------------------------------------------- one look for the whole front
+# same treatment as the shield, milder: less haze, a little more contrast and colour
+inner_m = np.zeros((Hn, Wn), np.uint8)
+cv2.fillPoly(inner_m, [np.round(to_px(offset_contour(M.shield_inner(400), 0.004)) * 4).astype(np.int32)], 255, shift=2)
+inner_m = cv2.GaussianBlur(inner_m, (9, 9), 2).astype(np.float32)[..., None] / 255
+f = out[..., :3].astype(np.float32) / 255
+dark = cv2.erode(f.min(2), np.ones((25, 25), np.uint8))
+haze = cv2.GaussianBlur(dark, (0, 0), 25)[..., None] * 0.5
+g = np.clip((f - haze) / np.maximum(1 - haze, 0.3), 0, 1)
+g = np.clip((g - 0.5) * 1.10 + 0.5 - 0.02, 0, 1) ** 1.06
+lum = g.mean(2, keepdims=True); g = np.clip(lum + (g - lum) * 1.08, 0, 1)
+out[..., :3] = ((f * inner_m + g * (1 - inner_m)) * 255 + 0.5).astype(np.uint8)
+cv2.imwrite(os.path.join(OUT, 'champion_zone_front.webp'), out, [cv2.IMWRITE_WEBP_QUALITY, 92])
+print('front', front.shape, '->', out.shape)
 
 
 print('SCREENS =', NEW_SCREENS or {k: fwd_rect(v) for k, v in OLD_SCREENS.items()})
