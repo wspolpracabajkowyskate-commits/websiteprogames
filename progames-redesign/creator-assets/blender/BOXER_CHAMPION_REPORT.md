@@ -1,5 +1,9 @@
 # Boxer Champion – model report (v10: shape from the manufacturer CAD renders)
 
+## v10.2 (22.10.2026)
+- Score-shield graphic replaced by a sharp straight-on photo of the print (`reference/sticker_v9/champion_shield_photo.png`),
+  warped onto the glass face, with slightly more contrast (+15 %) and colour (+10 %); displays placed on its windows.
+
 ## v10.1 fixes (21.10.2026, feedback on the configurator)
 - Lid and canopy box: triangle winding made consistent (one orientation decision per generated grid
   instead of per triangle) - the lid was partly see-through from inside and showed saw-tooth edges.

@@ -178,6 +178,49 @@ fill &= (255 - inside)
 rgb = cv2.inpaint(np.ascontiguousarray(out[..., :3]), fill, 9, cv2.INPAINT_TELEA)
 out = np.dstack([rgb, out[..., 3]]) if out.shape[2] == 4 else rgb
 print('bezel remnant pixels filled:', int((fill > 0).sum()))
+
+# ---------------------------------------------------------------- score shield from the sharp photo
+# champion_shield_photo.png: straight-on photo of the printed shield.  Its print window (inner edge of
+# the red bezel, traced below in photo pixels) is warped onto the new glass face; the displays are
+# then placed on the photographed display windows.
+SHIELD_PHOTO = os.path.join(SRC, 'champion_shield_photo.png')
+PH_INNER = [(506, 1468), (673, 1410), (745, 1350), (799, 1290), (842, 1230), (874, 1170), (896, 1110), (913, 1050),
+            (930, 990), (939, 930), (942, 870), (941, 810), (936, 750), (921, 690), (907, 630), (893, 570), (879, 510),
+            (867, 450), (858, 390), (851, 330), (858, 210), (874, 90), (868, 78), (800, 62), (700, 57), (600, 52),
+            (506, 50), (400, 52), (300, 58), (200, 66), (110, 78), (102, 90), (122, 210), (129, 330), (125, 390),
+            (103, 450), (102, 510), (90, 570), (78, 630), (69, 690), (63, 750), (60, 810), (62, 870), (66, 930),
+            (74, 990), (87, 1050), (110, 1110), (134, 1170), (167, 1230), (209, 1290), (264, 1350), (340, 1410)]
+PH_WINDOWS = {'score': (270, 595, 728, 773), 'high': (380, 880, 632, 1012), 'credit': (470, 1072, 545, 1133)}   # x0,y0,x1,y1 px
+NEW_SCREENS = None
+if os.path.exists(SHIELD_PHOTO):
+    photo = cv2.imread(SHIELD_PHOTO, cv2.IMREAD_COLOR)
+    ph = np.array(PH_INNER, float) * [1, -1]                   # y up so the contour is CCW like the model's
+    ph = ccw(resample_closed(ph, 160)); ph = start_bottom(ph)
+    ni = M.shield_inner(160)
+    to_ph = RBFInterpolator(ni, ph * [1, -1], kernel='thin_plate_spline', smoothing=1e-6)
+    to_new = RBFInterpolator(ph * [1, -1], ni, kernel='thin_plate_spline', smoothing=1e-6)
+    gx2, gy2 = np.meshgrid(np.arange(0, Wn + step, step), np.arange(0, Hn + step, step))
+    xm2 = G['x0'] + (gx2 + 0.5) / Wn * (G['x1'] - G['x0']); ym2 = G['y1'] - (gy2 + 0.5) / Hn * (G['y1'] - G['y0'])
+    q = to_ph(np.stack([xm2.ravel(), ym2.ravel()], 1)).reshape(xm2.shape + (2,)).astype(np.float32)
+    mx = cv2.resize(q[..., 0], (gx2.shape[1] * step, gx2.shape[0] * step), interpolation=cv2.INTER_LINEAR)[:Hn, :Wn]
+    my = cv2.resize(q[..., 1], (gx2.shape[1] * step, gx2.shape[0] * step), interpolation=cv2.INTER_LINEAR)[:Hn, :Wn]
+    shield_rgb = cv2.remap(photo, mx, my, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
+    # slightly more contrast and colour (the photo is a little flat behind the acrylic)
+    f = shield_rgb.astype(np.float32) / 255.0
+    f = np.clip((f - 0.5) * 1.15 + 0.5 - 0.015, 0, 1)
+    lum = f.mean(2, keepdims=True); f = np.clip(lum + (f - lum) * 1.10, 0, 1)
+    shield_rgb = (f * 255 + 0.5).astype(np.uint8)
+    mask = np.zeros((Hn, Wn), np.uint8)
+    cv2.fillPoly(mask, [np.round(to_px(offset_contour(M.shield_inner(400), 0.004)) * 4).astype(np.int32)], 255, shift=2)
+    mask = cv2.GaussianBlur(mask, (9, 9), 2).astype(np.float32)[..., None] / 255.0
+    out[..., :3] = (out[..., :3] * (1 - mask) + shield_rgb * mask).astype(np.uint8)
+    def win(r):
+        cx, cy = (r[0] + r[2]) / 2, (r[1] + r[3]) / 2
+        Q = to_new(np.array([[cx, cy], [r[0], cy], [r[2], cy], [cx, r[1]], [cx, r[3]]], float))
+        w = np.linalg.norm(Q[2] - Q[1]); h = np.linalg.norm(Q[4] - Q[3]); c = Q[0]
+        return tuple(round(float(v), 3) for v in (c[0] - w / 2, c[1] - h / 2, c[0] + w / 2, c[1] + h / 2))
+    NEW_SCREENS = {k: win(v) for k, v in PH_WINDOWS.items()}
+    print('shield photo fitted; display windows:', NEW_SCREENS)
 cv2.imwrite(os.path.join(OUT, 'champion_zone_front.webp'), out, [cv2.IMWRITE_WEBP_QUALITY, 92])
 print('front', front.shape, '->', out.shape)
 
@@ -200,7 +243,7 @@ def fwd_rect(r):
     return tuple(round(float(v), 3) for v in (c[0] - w / 2, c[1] - h / 2, c[0] + w / 2, c[1] + h / 2))
 
 
-print('SCREENS =', {k: fwd_rect(v) for k, v in OLD_SCREENS.items()})
+print('SCREENS =', NEW_SCREENS or {k: fwd_rect(v) for k, v in OLD_SCREENS.items()})
 print('RULES =', fwd_rect(OLD_RULES))
 
 # ------------------------------------------------------------------ BAND texture

@@ -191,7 +191,7 @@ def shield_inner(n=240):
 # Displays, coin acceptor and rules plate (front, metres).  Display windows and the rules plate are
 # where the re-fitted print puts them (fit_champion_cad_textures.py prints these values); the coin
 # acceptor is at its CAD position.
-SCREENS = {'score': (-0.133, 1.279, 0.123, 1.394), 'high': (-0.069, 1.159, 0.063, 1.233), 'credit': (-0.019, 1.097, 0.017, 1.127)}
+SCREENS = {'score': (-0.144, 1.325, 0.143, 1.442), 'high': (-0.076, 1.187, 0.079, 1.270), 'credit': (-0.021, 1.12, 0.025, 1.156)}   # on the windows of the shield photo
 COIN = (-0.294, 0.885, -0.228, 1.042)
 RULES = (0.246, 0.775, 0.336, 0.921)          # on the printed rules area
 
