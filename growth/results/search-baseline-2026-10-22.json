@@ -1,0 +1,283 @@
+{
+ "date": "2026-10-22",
+ "tool": "WebSearch (Claude, web search tool; top 9-10 results, links only) — NOT a test of Gemini/ChatGPT/Perplexity answers",
+ "not_tested": [
+  "Gemini app",
+  "ChatGPT (search)",
+  "Perplexity",
+  "Claude.ai with web search (consumer)",
+  "Google AI Overviews / AI Mode",
+  "Bing Copilot"
+ ],
+ "not_run_exactly": [
+  "Poleć producentów automatów bokserskich.",
+  "Czy PROGAMES jest producentem automatów bokserskich?",
+  "Jaka jest oficjalna strona PROGAMES?",
+  "What is the official PROGAMES website? (similar query run)"
+ ],
+ "summary": {
+  "queries": 20,
+  "progames_mentioned": 3,
+  "official_domain_progamespoland_com_in_results": 0,
+  "note": "Brand appears only for 'Pro Games' / progames.pl variant queries, via Facebook, Instagram, marketplace listings and directories that point to the dead domain boxer-progames.com."
+ },
+ "results": [
+  {
+   "set": "pl",
+   "query": "Kto produkuje automaty bokserskie w Polsce? (run as: producent automatów bokserskich Polska)",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "iaapa.org/partners/marketplace/kupper-automaty-krzysztof-kupper"
+   ],
+   "competitors_seen": "Kupper Automaty (IAAPA profile)"
+  },
+  {
+   "set": "pl",
+   "query": "Gdzie kupić automat bokserski bezpośrednio od producenta",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "alibaba",
+    "bytomic wholesale",
+    "hktdc sourcing"
+   ],
+   "competitors_seen": "Starpro, Bytomic"
+  },
+  {
+   "set": "pl",
+   "query": "Jaki producent automatów bokserskich oferuje personalizację? (run as: producent automatów bokserskich personalizacja obudowy)",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "betson.com/amusement-products/custom-boxer/",
+    "kaufland.pl"
+   ],
+   "competitors_seen": "Betson (Custom Boxer)"
+  },
+  {
+   "set": "pl",
+   "query": "jakiego producenta automatu bokserskiego wybrać do salonu gier",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "mpamusement.com",
+    "betson.com",
+    "replaymag.com (Benchmark)",
+    "creative-arcades.com"
+   ],
+   "competitors_seen": "MP Amusement, Betson, Benchmark, Creative Arcades"
+  },
+  {
+   "set": "pl",
+   "query": "producenci automatów rozrywkowych w Polsce",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "rmf24",
+    "intergameonline alfastreet"
+   ],
+   "competitors_seen": "none relevant"
+  },
+  {
+   "set": "pl",
+   "query": "automat bokserski części zamienne serwis producent",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "e-katalog.pl",
+    "automa.net"
+   ],
+   "competitors_seen": "none relevant"
+  },
+  {
+   "set": "en",
+   "query": "boxing arcade machine manufacturers Europe",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "Zaccaria wiki",
+    "SEGA Amusements Europe",
+    "IAAPA connectplus Bandai Namco Europe",
+    "intergameonline Benchmark",
+    "creative-arcades.com"
+   ],
+   "competitors_seen": "Bandai Namco, SEGA, Benchmark, Creative Arcades"
+  },
+  {
+   "set": "en",
+   "query": "boxing arcade machine manufacturer Poland",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "intergameonline Jakar",
+    "compabase Jakar",
+    "iaapa.org uplay-america (pos 3-4)",
+    "iaapa.org kalkomat",
+    "connectplus IAAPA Expo Europe WIK"
+   ],
+   "competitors_seen": "Jakar, Kalkomat, WIK; UPlay America (our distributor, no link to us)"
+  },
+  {
+   "set": "en",
+   "query": "buy boxing arcade machine directly from manufacturer",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "creative-arcades.com",
+    "mpamusement.com",
+    "betson.com",
+    "iaapa.org uplay-america (pos 9)"
+   ],
+   "competitors_seen": "Creative Arcades, MP Amusement, Betson, Marwey"
+  },
+  {
+   "set": "en",
+   "query": "custom branded boxing arcade machine manufacturer",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "betson.com custom-boxer",
+    "boutiquepartyhire.co.uk",
+    "libertygames.co.uk"
+   ],
+   "competitors_seen": "Betson"
+  },
+  {
+   "set": "en",
+   "query": "punching arcade machine manufacturers",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "arcade-museum.com",
+    "b2bwiki.baidu.com",
+    "creative-arcades.com"
+   ],
+   "competitors_seen": "Marwey, Creative Arcades"
+  },
+  {
+   "set": "en",
+   "query": "boxing arcade machine suppliers for distributors",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "iaapa.org jnc-sales-ltd",
+    "iaapa.org uplay-america (pos 2)",
+    "alibaba/made-in-china"
+   ],
+   "competitors_seen": "JNC Sales; UPlay America"
+  },
+  {
+   "set": "brand",
+   "query": "PROGAMES automaty bokserskie",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "unrelated (video games)"
+   ],
+   "competitors_seen": "—"
+  },
+  {
+   "set": "brand",
+   "query": "Kim jest PROGAMES producent",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "unrelated"
+   ],
+   "competitors_seen": "—"
+  },
+  {
+   "set": "brand",
+   "query": "PROGAMES official website boxing machines",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": null,
+   "top_sources": [
+    "betson.com",
+    "creative-arcades.com",
+    "mpamusement.com"
+   ],
+   "competitors_seen": "competitors only"
+  },
+  {
+   "set": "brand",
+   "query": "Who manufactures PROGAMES boxing machines",
+   "mode": "standard",
+   "progames_present": "indirect (UPlay profile names Pro-Games Poland)",
+   "official_link": false,
+   "top_sources": [
+    "iaapa.org/ja/partners/marketplace/uplay-america (pos 1)",
+    "iaapa.org/partners/marketplace/uplay-america (pos 2)",
+    "connectplus Pugato",
+    "iaapa kalkomat"
+   ],
+   "competitors_seen": "Pugato, Kalkomat, Betson, Benchmark"
+  },
+  {
+   "set": "brand",
+   "query": "site:progamespoland.com",
+   "mode": "standard",
+   "progames_present": false,
+   "official_link": false,
+   "top_sources": [
+    "unrelated"
+   ],
+   "competitors_seen": "official domain not returned at all"
+  },
+  {
+   "set": "brand",
+   "query": "\"Pro Games Poland\" boxer",
+   "mode": "extended",
+   "progames_present": true,
+   "official_link": "facebook.com/BoxerProgames (pos 1)",
+   "top_sources": [
+    "facebook.com/BoxerProgames/videos/... (pos 1)"
+   ],
+   "competitors_seen": "—"
+  },
+  {
+   "set": "brand",
+   "query": "progames.pl automat bokserski Jastrzębie-Zdrój",
+   "mode": "extended",
+   "progames_present": true,
+   "official_link": "no official domain; favore.pl links dead boxer-progames.com",
+   "top_sources": [
+    "sprzedajemy.pl listing (1)",
+    "favore.pl Boxer Easy (2) → boxer-progames.com",
+    "mapa.targeo.pl F.H.U. PRO-Games Ł.Dudek, T. Mikolajewski, Rybnicka 17 (3)",
+    "facebook.com/BoxerProgames/about (4,5)",
+    "favore.pl Boxer Multiplayer (6)",
+    "mapa.targeo.pl NIP 6332130434 (7)"
+   ],
+   "competitors_seen": "—"
+  },
+  {
+   "set": "brand",
+   "query": "intergameonline Pro Games Poland boxer",
+   "mode": "extended",
+   "progames_present": true,
+   "official_link": "instagram.com/progames.pl; highwaygames.com → boxer-progames.com",
+   "top_sources": [
+    "facebook video (1)",
+    "instagram.com/progames.pl (2)",
+    "highwaygames.com/arcade-manufacturers/pro-games-s.c./1350.html (10)"
+   ],
+   "competitors_seen": "—"
+  }
+ ]
+}

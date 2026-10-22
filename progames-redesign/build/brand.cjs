@@ -34,7 +34,7 @@ function normalizeBrand(text) {
 }
 
 const SKIP_DIRS = new Set(['node_modules', 'creator', 'creator-assets', 'api', 'assets', '.git', 'verification-output']);
-const SKIP_FILES = new Set(['site-config.js', 'contact.js', 'brand.cjs', 'entity-schema.cjs', 'entity-content.cjs', 'check-entity.cjs']);
+const SKIP_FILES = new Set(['site-config.js', 'contact.js', 'brand.cjs', 'entity-schema.cjs', 'entity-content.cjs', 'check-entity.cjs', 'check-contact-label.cjs']);
 const EXT = /\.(html|js|cjs|json|tsv|xml)$/;
 
 function* walk(dir) {
