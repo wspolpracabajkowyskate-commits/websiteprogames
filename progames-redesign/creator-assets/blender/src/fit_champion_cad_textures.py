@@ -190,13 +190,13 @@ PH_INNER = [(506, 1468), (673, 1410), (745, 1350), (799, 1290), (842, 1230), (87
             (506, 50), (400, 52), (300, 58), (200, 66), (110, 78), (102, 90), (122, 210), (129, 330), (125, 390),
             (103, 450), (102, 510), (90, 570), (78, 630), (69, 690), (63, 750), (60, 810), (62, 870), (66, 930),
             (74, 990), (87, 1050), (110, 1110), (134, 1170), (167, 1230), (209, 1290), (264, 1350), (340, 1410)]
-PH_WINDOWS = {'score': (270, 595, 728, 773), 'high': (380, 880, 632, 1012), 'credit': (470, 1072, 545, 1133)}   # x0,y0,x1,y1 px
+PH_WINDOWS = {'score': (269, 595, 730, 799), 'high': (377, 880, 632, 1015), 'credit': (469, 1070, 546, 1133)}   # x0,y0,x1,y1 px (measured)
 NEW_SCREENS = None
 if os.path.exists(SHIELD_PHOTO):
     photo = cv2.imread(SHIELD_PHOTO, cv2.IMREAD_COLOR)
     # the printed display windows are blacked out: only the model's LED digits show there
     for (x0, y0, x1, y1) in PH_WINDOWS.values():
-        cv2.rectangle(photo, (x0 - 6, y0 - 6), (x1 + 6, y1 + 6), (10, 6, 14), -1)
+        cv2.rectangle(photo, (x0 - 3, y0 - 3), (x1 + 3, y1 + 3), (10, 6, 14), -1)
     ph = np.array(PH_INNER, float) * [1, -1]                   # y up so the contour is CCW like the model's
     ph = ccw(resample_closed(ph, 160)); ph = start_bottom(ph)
     ni = M.shield_inner(160)
@@ -300,7 +300,28 @@ if os.path.exists(LOWER_PHOTO):
     bb = out[..., :3].astype(int)
     pure_red = (bb[..., 2] > 120) & (bb[..., 1] < 0.30 * bb[..., 2]) & (bb[..., 0] < 0.38 * bb[..., 2])
     fillr = cv2.dilate(((ring > 0) & pure_red).astype(np.uint8) * 255, np.ones((7, 7), np.uint8)) & ring
+    # the glow of the photographed bezel around the bottom point: a band right outside the bevel
+    glow = np.zeros((Hn, Wn), np.uint8)
+    cv2.fillPoly(glow, [np.round(to_px(offset_contour(M.shield_outline(400), 0.012)) * 4).astype(np.int32)], 255, shift=2)
+    cv2.fillPoly(glow, [np.round(to_px(offset_contour(M.shield_outline(400), -0.003)) * 4).astype(np.int32)], 0, shift=2)
+    glow[: int((G['y1'] - 1.10) / (G['y1'] - G['y0']) * Hn)] = 0
+    reddish = (bb[..., 2] > 90) & (bb[..., 2] > 1.5 * bb[..., 1])
+    fillr |= (glow > 0) & reddish
+    fillr = fillr.astype(np.uint8) * 255 if fillr.dtype == bool else fillr
     out[..., :3] = cv2.inpaint(np.ascontiguousarray(out[..., :3]), fillr, 7, cv2.INPAINT_TELEA)
+    # what is left of the photographed bezel glow: desaturate + darken a 16 mm band outside the bevel
+    # (reads as the bevel's own contact shadow instead of a red halo)
+    shm = np.full((Hn, Wn), 255, np.uint8)
+    cv2.fillPoly(shm, [np.round(to_px(offset_contour(M.shield_outline(400), -0.001)) * 4).astype(np.int32)], 0, shift=2)
+    dist = cv2.distanceTransform(shm, cv2.DIST_L2, 5) * (G['x1'] - G['x0']) / Wn      # metres from the bevel edge
+    k = np.clip(1 - dist / 0.016, 0, 1) ** 1.5
+    k[: int((G['y1'] - 1.15) / (G['y1'] - G['y0']) * Hn)] = 0
+    k[shm == 0] = 0
+    k = k[..., None].astype(np.float32)
+    o = out[..., :3].astype(np.float32)
+    grey = o.mean(2, keepdims=True)
+    o = o * (1 - k) + (grey * 0.6 + o * 0.4) * 0.45 * k
+    out[..., :3] = np.clip(o, 0, 255).astype(np.uint8)
     print('lower photo pasted: coin %s, rules %s' % (
         tuple(round(v, 3) for v in ((47 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 262) / LP_S, (152 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 62) / LP_S)),
         tuple(round(v, 3) for v in ((828 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 307) / LP_S, (982 - LP_TIP[0]) / LP_S, tip_y + (LP_TIP[1] - 72) / LP_S))))

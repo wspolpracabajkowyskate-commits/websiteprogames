@@ -191,7 +191,7 @@ def shield_inner(n=240):
 # Displays, coin acceptor and rules plate (front, metres).  Display windows and the rules plate are
 # where the re-fitted print puts them (fit_champion_cad_textures.py prints these values); the coin
 # acceptor is at its CAD position.
-SCREENS = {'score': (-0.144, 1.338, 0.143, 1.448), 'high': (-0.076, 1.191, 0.079, 1.272), 'credit': (-0.021, 1.117, 0.025, 1.154)}   # = display windows of the shield photo
+SCREENS = {'score': (-0.145, 1.322, 0.144, 1.448), 'high': (-0.078, 1.189, 0.079, 1.272), 'credit': (-0.022, 1.117, 0.025, 1.155)}   # = display windows of the shield photo
 COIN = (-0.268, 0.854, -0.205, 0.975)          # coin acceptor where it is on the machine (front photo)
 RULES = (0.205, 0.826, 0.298, 0.969)          # rules plate where it is on the machine (front photo)
 
@@ -350,8 +350,8 @@ def build_column():
     ca.add('BLACK_PLASTIC', Pf)
     Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0123], X3, Y3, (xb_ - xa_) * 0.97, (yb_ - ya_) * 0.98)
     ca.add('DECALS', Pq, atlas_uv('coin', UVq))
-    bx, by = xa_ + (xb_ - xa_) * 0.55, ya_ + (yb_ - ya_) * 0.68
-    Pb = rounded_box_tris([bx - 0.011, by - 0.007, z1 + 0.011], [bx + 0.011, by + 0.007, z1 + 0.019], 0.002, seg=3, step=1)
+    bx, by = xa_ + (xb_ - xa_) * 0.63, ya_ + (yb_ - ya_) * 0.615          # on the printed button of the decal
+    Pb = rounded_box_tris([bx - 0.0105, by - 0.0082, z1 + 0.011], [bx + 0.0105, by + 0.0082, z1 + 0.017], 0.002, seg=3, step=1)
     ca.add('BUTTON_RED', Pb)
     nodes.append(('D16_payment_panel', 'FRONT_PANEL', ca))
     ca = Mesh('D17_game_rules', smooth_angle=40)
