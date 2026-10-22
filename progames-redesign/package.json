@@ -7,14 +7,16 @@
     "test": "npm run test:seo",
     "test:browser": "node verification/test-browser.cjs",
     "test:i18n": "node verification/check-i18n.cjs",
-    "test:seo": "node verification/check-seo.cjs && node verification/check-v42.cjs && node verification/check-contact-label.cjs",
+    "test:seo": "node verification/check-seo.cjs && node verification/check-v42.cjs && node verification/check-contact-label.cjs && npm run test:brand",
     "build:legacy": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/seo-v42.cjs && node build/redirects.cjs && node build/seo-pl-v43.cjs",
     "test:legacy": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
     "test:pl": "node verification/check-pl-growth.cjs",
-    "build:languages": "node build/extra-languages.cjs",
+    "build:languages": "node build/extra-languages.cjs && npm run build:entity",
     "pretest:seo": "npm run build:languages",
     "pretest:i18n": "npm run build:languages",
-    "test:languages": "node verification/check-extra-browser.cjs"
+    "test:languages": "node verification/check-extra-browser.cjs",
+    "build:entity": "node build/entity-content.cjs && node build/brand.cjs && node build/entity-schema.cjs",
+    "test:brand": "node build/brand.cjs --check && node verification/check-entity.cjs"
   },
   "devDependencies": {
     "libphonenumber-js": "^1.13.14",
