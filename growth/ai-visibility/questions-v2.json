@@ -1,0 +1,486 @@
+{
+ "version": "2026-10-22",
+ "note": "A+P = 20/30 per language without the brand name. Score each answer with scoring.md.",
+ "questions": [
+  {
+   "id": "PL-A-01",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Kto produkuje automaty bokserskie w Polsce?"
+  },
+  {
+   "id": "PL-A-02",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Poleć producentów automatów bokserskich."
+  },
+  {
+   "id": "PL-A-03",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Producenci automatów rozrywkowych w Polsce."
+  },
+  {
+   "id": "PL-A-04",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Jakie firmy produkują boksery na monety?"
+  },
+  {
+   "id": "PL-A-05",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Polski producent automatów bokserskich — kto to jest?"
+  },
+  {
+   "id": "PL-A-06",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Najlepsi producenci automatów bokserskich w Europie."
+  },
+  {
+   "id": "PL-A-07",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Kto produkuje automaty boksersko-piłkarskie (bokser z kopaczem)?"
+  },
+  {
+   "id": "PL-A-08",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Producent automatów siłowych typu bokser i młot w Polsce."
+  },
+  {
+   "id": "PL-A-09",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Jakie firmy z Polski wystawiają automaty bokserskie na targach IAAPA?"
+  },
+  {
+   "id": "PL-A-10",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Producent automatów bokserskich dla dzieci."
+  },
+  {
+   "id": "PL-A-11",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Kto produkuje automaty bokserskie z ekranem LED?"
+  },
+  {
+   "id": "PL-A-12",
+   "language": "pl",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Polscy producenci automatów do salonów gier i centrów rozrywki."
+  },
+  {
+   "id": "PL-P-01",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Gdzie kupić automat bokserski bezpośrednio od producenta?"
+  },
+  {
+   "id": "PL-P-02",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Jaki producent automatów bokserskich oferuje personalizację obudowy i grafiki?"
+  },
+  {
+   "id": "PL-P-03",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Jakiego producenta bokserów wybrać do salonu gier?"
+  },
+  {
+   "id": "PL-P-04",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Gdzie kupić automat bokserski z dostępem do części i serwisu?"
+  },
+  {
+   "id": "PL-P-05",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Automat bokserski do baru — od jakiego producenta kupić?"
+  },
+  {
+   "id": "PL-P-06",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Hurtowy zakup automatów bokserskich dla dystrybutora — z kim rozmawiać?"
+  },
+  {
+   "id": "PL-P-07",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Automat bokserski z akceptorem banknotów — kto produkuje?"
+  },
+  {
+   "id": "PL-P-08",
+   "language": "pl",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Od czego zależy cena automatu bokserskiego i gdzie zapytać producenta o wycenę?"
+  },
+  {
+   "id": "PL-B-01",
+   "language": "pl",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Kim jest PROGAMES?"
+  },
+  {
+   "id": "PL-B-02",
+   "language": "pl",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Czy PROGAMES jest producentem automatów bokserskich?"
+  },
+  {
+   "id": "PL-B-03",
+   "language": "pl",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Jaka jest oficjalna strona PROGAMES?"
+  },
+  {
+   "id": "PL-B-04",
+   "language": "pl",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Gdzie PROGAMES produkuje automaty?"
+  },
+  {
+   "id": "PL-B-05",
+   "language": "pl",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Czy Pro Games Poland i PROGAMES to ta sama firma?"
+  },
+  {
+   "id": "PL-B-06",
+   "language": "pl",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Jak skontaktować się z serwisem PROGAMES?"
+  },
+  {
+   "id": "PL-C-01",
+   "language": "pl",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "Czym różni się Double Hit od Monster 3 w 1 w ofercie PROGAMES?"
+  },
+  {
+   "id": "PL-C-02",
+   "language": "pl",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "Które produkty PROGAMES są produkowane, a które pochodzą z dystrybucji?"
+  },
+  {
+   "id": "PL-C-03",
+   "language": "pl",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "Ile modeli liczy kolekcja Boxer Standard PROGAMES?"
+  },
+  {
+   "id": "PL-C-04",
+   "language": "pl",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "Kto jest dystrybutorem PROGAMES w Ameryce?"
+  },
+  {
+   "id": "EN-A-01",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Boxing arcade machine manufacturers in Europe."
+  },
+  {
+   "id": "EN-A-02",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Boxing arcade machine manufacturer Poland."
+  },
+  {
+   "id": "EN-A-03",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Punching arcade machine manufacturers."
+  },
+  {
+   "id": "EN-A-04",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Who makes coin-operated boxing machines?"
+  },
+  {
+   "id": "EN-A-05",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Best boxer machine manufacturers for arcades."
+  },
+  {
+   "id": "EN-A-06",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Polish amusement machine manufacturers."
+  },
+  {
+   "id": "EN-A-07",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Boxing and kicking arcade machine manufacturer."
+  },
+  {
+   "id": "EN-A-08",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Kids boxing arcade machine manufacturer."
+  },
+  {
+   "id": "EN-A-09",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Strength tester arcade machine manufacturers (boxer, hammer, kicker)."
+  },
+  {
+   "id": "EN-A-10",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Which European companies exhibit boxing machines at IAAPA Expo?"
+  },
+  {
+   "id": "EN-A-11",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Boxer machine manufacturers outside China."
+  },
+  {
+   "id": "EN-A-12",
+   "language": "en",
+   "group": "A",
+   "group_meaning": "discovery without brand",
+   "brand_in_question": false,
+   "question": "Manufacturers of LED boxing arcade machines for FECs."
+  },
+  {
+   "id": "EN-P-01",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Where can I buy a boxing arcade machine directly from a manufacturer?"
+  },
+  {
+   "id": "EN-P-02",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Custom branded boxing arcade machine manufacturer."
+  },
+  {
+   "id": "EN-P-03",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Boxing arcade machine suppliers for distributors."
+  },
+  {
+   "id": "EN-P-04",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Boxing machine manufacturer with spare parts and service support."
+  },
+  {
+   "id": "EN-P-05",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Which boxing machine should I buy for a bar or pub, and from which manufacturer?"
+  },
+  {
+   "id": "EN-P-06",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Wholesale boxing arcade machines from a European factory."
+  },
+  {
+   "id": "EN-P-07",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "Boxing arcade machine with bill acceptor — who manufactures one?"
+  },
+  {
+   "id": "EN-P-08",
+   "language": "en",
+   "group": "P",
+   "group_meaning": "purchase need without brand",
+   "brand_in_question": false,
+   "question": "What affects the price of a commercial boxing machine and where can I get a factory quote?"
+  },
+  {
+   "id": "EN-B-01",
+   "language": "en",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Who is PROGAMES?"
+  },
+  {
+   "id": "EN-B-02",
+   "language": "en",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Is PROGAMES a boxing machine manufacturer?"
+  },
+  {
+   "id": "EN-B-03",
+   "language": "en",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "What is the official PROGAMES website?"
+  },
+  {
+   "id": "EN-B-04",
+   "language": "en",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Who manufactures PROGAMES boxing machines?"
+  },
+  {
+   "id": "EN-B-05",
+   "language": "en",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Is Pro-Games Poland the same company as PROGAMES?"
+  },
+  {
+   "id": "EN-B-06",
+   "language": "en",
+   "group": "B",
+   "group_meaning": "brand identity and official URL",
+   "brand_in_question": true,
+   "question": "Where are PROGAMES machines made?"
+  },
+  {
+   "id": "EN-C-01",
+   "language": "en",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "How does the PROGAMES Double Hit differ from the Monster 3 in 1?"
+  },
+  {
+   "id": "EN-C-02",
+   "language": "en",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "Which PROGAMES products are manufactured and which are distributed?"
+  },
+  {
+   "id": "EN-C-03",
+   "language": "en",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "How many designs are in the PROGAMES Boxer Standard collection?"
+  },
+  {
+   "id": "EN-C-04",
+   "language": "en",
+   "group": "C",
+   "group_meaning": "brand + product facts",
+   "brand_in_question": true,
+   "question": "Who distributes PROGAMES machines in the Americas?"
+  }
+ ]
+}
