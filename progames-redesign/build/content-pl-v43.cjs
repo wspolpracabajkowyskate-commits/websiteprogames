@@ -28,12 +28,12 @@ const parts='<a href="/pl/katalog.html?catalog=parts">katalogu części zamienny
 
 const pages=[
 {key:'boxing',kind:'category',
- title:'Automaty bokserskie – boksery i siłomierze | PROGAMES',
+ title:'Automaty bokserskie – boksery i siłomierze | PRO GAMES',
  description:'Automaty bokserskie od polskiego producenta: boksery Standard i Premium, bokser z kopaczem, modele dla dzieci i wieloosobowe. Porównaj modele i zapytaj o cenę.',
  h1:'Automaty bokserskie dla lokali i operatorów',
- lead:'Automat bokserski – nazywany też bokserem, boxerem albo siłomierzem bokserskim – to gra, w której uderza się w gruszkę, a urządzenie wyświetla wynik. PROGAMES projektuje i produkuje komercyjne automaty bokserskie w Polsce, w Jastrzębiu-Zdroju, z myślą o barach, klubach, salonach gier, centrach handlowych i parkach rozrywki.',
+ lead:'Automat bokserski – nazywany też bokserem, boxerem albo siłomierzem bokserskim – to gra, w której uderza się w gruszkę, a urządzenie wyświetla wynik. PRO GAMES projektuje i produkuje komercyjne automaty bokserskie w Polsce, w Jastrzębiu-Zdroju, z myślą o barach, klubach, salonach gier, centrach handlowych i parkach rozrywki.',
  body:
- section('Najpierw wybierz rodzaj automatu, potem wygląd',`<div class="editorial-table-wrap"><table><caption>Rodziny automatów bokserskich PROGAMES</caption><thead><tr><th scope="col">Rodzina</th><th scope="col">Na co zwrócić uwagę</th><th scope="col">Zobacz</th></tr></thead><tbody><tr><th scope="row">Boxer Standard</th><td>15 wzorów w jednej kolekcji – porównaj grafiki, kolory i opublikowane dane techniczne.</td><td><a href="/pl/boxer-standard.html">Kolekcja Standard</a></td></tr><tr><th scope="row">Boksery Premium</th><td>Obudowa, funkcje gry i wyposażenie różnią się w zależności od modelu.</td><td>${plink('boxer-combat','Boxer Combat')}</td></tr><tr><th scope="row">Bokser + kopacz</th><td>Dwa wyzwania w jednym automacie – sprawdź wymiary wybranego modelu.</td><td>${plink('double-hit','Double Hit')}</td></tr><tr><th scope="row">3 w 1</th><td>Boks, kopanie i młot w jednym urządzeniu.</td><td>${plink('monster-3in1','Monster 3 in 1')}</td></tr><tr><th scope="row">Z nagrodami lub biletami</th><td>Wersje z funkcją nagród lub biletów – szczegóły potwierdza dział sprzedaży.</td><td>${plink('boxer-gift','Boxer Gift')}</td></tr><tr><th scope="row">Dla dzieci</th><td>Osobna linia dla młodszych graczy – podaj w zapytaniu, dla kogo jest automat.</td><td>${plink('boxer-kids','Boxer Kids')}</td></tr><tr><th scope="row">Wieloosobowe</th><td>Porównuj format gry, nie tylko obudowę.</td><td>${plink('boxer-fist','Boxer Fist · 3 Player')}</td></tr></tbody></table></div>`)
+ section('Najpierw wybierz rodzaj automatu, potem wygląd',`<div class="editorial-table-wrap"><table><caption>Rodziny automatów bokserskich PRO GAMES</caption><thead><tr><th scope="col">Rodzina</th><th scope="col">Na co zwrócić uwagę</th><th scope="col">Zobacz</th></tr></thead><tbody><tr><th scope="row">Boxer Standard</th><td>15 wzorów w jednej kolekcji – porównaj grafiki, kolory i opublikowane dane techniczne.</td><td><a href="/pl/boxer-standard.html">Kolekcja Standard</a></td></tr><tr><th scope="row">Boksery Premium</th><td>Obudowa, funkcje gry i wyposażenie różnią się w zależności od modelu.</td><td>${plink('boxer-combat','Boxer Combat')}</td></tr><tr><th scope="row">Bokser + kopacz</th><td>Dwa wyzwania w jednym automacie – sprawdź wymiary wybranego modelu.</td><td>${plink('double-hit','Double Hit')}</td></tr><tr><th scope="row">3 w 1</th><td>Boks, kopanie i młot w jednym urządzeniu.</td><td>${plink('monster-3in1','Monster 3 in 1')}</td></tr><tr><th scope="row">Z nagrodami lub biletami</th><td>Wersje z funkcją nagród lub biletów – szczegóły potwierdza dział sprzedaży.</td><td>${plink('boxer-gift','Boxer Gift')}</td></tr><tr><th scope="row">Dla dzieci</th><td>Osobna linia dla młodszych graczy – podaj w zapytaniu, dla kogo jest automat.</td><td>${plink('boxer-kids','Boxer Kids')}</td></tr><tr><th scope="row">Wieloosobowe</th><td>Porównuj format gry, nie tylko obudowę.</td><td>${plink('boxer-fist','Boxer Fist · 3 Player')}</td></tr></tbody></table></div>`)
  +section('Automat bokserski na monety – płatności i personalizacja',p('Na stronie każdego produktu działa konfigurator. Możesz w nim zaznaczyć m.in. dodatkowy wrzutnik monet, akceptor banknotów, naklejki z własną grafiką oraz Internet Wi-Fi Boxnet. Dostępność i zgodność opcji z konkretnym modelem potwierdza dział sprzedaży.')+p('Sama opcja Wi-Fi nie oznacza obsługi płatności bezgotówkowych. Jeśli potrzebujesz płatności kartą lub innego systemu, podaj jego nazwę w zapytaniu.'))
  +section('Ile kosztuje automat bokserski?',p('Cena zależy od modelu, wersji i wyposażenia (system płatności, grafika, funkcje nagród lub biletów) oraz od transportu. Każdą ofertę przygotowujemy indywidualnie, a zapytanie trafia bezpośrednio do działu sprzedaży producenta.')+p(`${link('price','Sprawdź, od czego zależy cena automatu bokserskiego')} lub ${link('b2b','zapytaj o zamówienie kilku automatów')}.`))
  +section('Dlaczego automat od polskiego producenta?',ul([
@@ -41,8 +41,8 @@ const pages=[
   `Rozmawiasz po polsku bezpośrednio z działem sprzedaży (${sales}) i serwisu (${service}).`,
   `Części zamienne do naszych automatów znajdziesz w ${parts}.`,
   'Konfigurację – kolory, grafikę i system płatności – dopasowujemy do Twojego obiektu.',
-  'Marka PROGAMES działa od 2012 roku i dostarcza automaty klientom w Europie oraz na innych rynkach.'
- ])+p(`${link('manufacturer','Poznaj PROGAMES – producenta automatów bokserskich')}.`))
+  'Marka PRO GAMES działa od 2012 roku i dostarcza automaty klientom w Europie oraz na innych rynkach.'
+ ])+p(`${link('manufacturer','Poznaj PRO GAMES – producenta automatów bokserskich')}.`))
  +section('Najczęstsze pytania',faq([
   ['Czym różni się automat bokserski od siłomierza?','Siłomierz to potoczna, szersza nazwa automatów, które sprawdzają siłę uderzenia. Automat bokserski to siłomierz z gruszką do uderzania pięścią. W ofercie mamy też siłomierze z młotem ('+plink('hammer','Hammer')+') i kopacze ('+plink('kicker','Kicker')+').'],
   ['Czy automat bokserski nadaje się do baru?','Bary, puby i kluby to jedne z miejsc, dla których projektujemy automaty. Przed zakupem sprawdź wymiary, miejsce potrzebne do gry, zasilanie i drogę dostawy. Pomoże w tym poradnik: '+link('bar','automat bokserski do baru')+'.'],
@@ -53,12 +53,12 @@ const pages=[
  filter:p=>['boxer','combo','kids'].includes(p.category),standardLink:true},
 
 {key:'arcade',kind:'category',
- title:'Automaty rozrywkowe: młot, kopacz, cymbergaje | PROGAMES',
- description:'Siłomierze i automaty rozrywkowe PROGAMES: młot, kopacz, boksery, a także cymbergaje, automaty do koszykówki i dart z oferty dystrybucyjnej. Zapytaj o ofertę.',
+ title:'Automaty rozrywkowe: młot, kopacz, cymbergaje | PRO GAMES',
+ description:'Siłomierze i automaty rozrywkowe PRO GAMES: młot, kopacz, boksery, a także cymbergaje, automaty do koszykówki i dart z oferty dystrybucyjnej. Zapytaj o ofertę.',
  h1:'Automaty rozrywkowe i siłomierze',
- lead:'Poznaj siłomierze i automaty rozrywkowe produkowane przez PROGAMES oraz wybrane atrakcje z oferty dystrybucyjnej: cymbergaje, automaty do koszykówki, dart elektroniczny, bujak i zamki dmuchane dla dzieci. Obie grupy oznaczamy osobno, aby było jasne, które urządzenia produkujemy sami.',
+ lead:'Poznaj siłomierze i automaty rozrywkowe produkowane przez PRO GAMES oraz wybrane atrakcje z oferty dystrybucyjnej: cymbergaje, automaty do koszykówki, dart elektroniczny, bujak i zamki dmuchane dla dzieci. Obie grupy oznaczamy osobno, aby było jasne, które urządzenia produkujemy sami.',
  body:
- section('Automaty produkowane przez PROGAMES',p('Produkujemy automaty bokserskie, automaty łączące boks z kopaniem, modele dla dzieci, kopacze oraz siłomierze z młotem. Wyposażenie różni się w zależności od modelu, dlatego porównuj dane techniczne opublikowane na stronach produktów.')+p(`${link('boxing','Porównaj automaty bokserskie')}, ${plink('kicker','kopacz Kicker')}, ${plink('hammer','młot Hammer')} i ${plink('hammer-2026','Hammer 2')}.`))
+ section('Automaty produkowane przez PRO GAMES',p('Produkujemy automaty bokserskie, automaty łączące boks z kopaniem, modele dla dzieci, kopacze oraz siłomierze z młotem. Wyposażenie różni się w zależności od modelu, dlatego porównuj dane techniczne opublikowane na stronach produktów.')+p(`${link('boxing','Porównaj automaty bokserskie')}, ${plink('kicker','kopacz Kicker')}, ${plink('hammer','młot Hammer')} i ${plink('hammer-2026','Hammer 2')}.`))
  +section('Cymbergaje (air hockey) z oferty dystrybucyjnej',p('Air Hockey Golden, Arctic i Matrix to stoły do cymbergaja z naszej oferty dystrybucyjnej. Zapytaj dział sprzedaży o producenta, warunki instalacji i wsparcie dla wybranej wersji.')+p(`${plink('air-hockey-golden','Golden')} · ${plink('air-hockey-arctic','Arctic')} · ${plink('air-hockey-matrix','Matrix')}`),'cymbergaj')
  +section('Automaty do koszykówki z oferty dystrybucyjnej',p('Porównaj modele Basketball, Basketball Compact i Kids Basketball. O potrzebnym miejscu i warunkach instalacji decyduje dokumentacja produktu, a nie nazwa kategorii.')+p(`${plink('basketball','Basketball')} · ${plink('basketball-compact','Basketball Compact')} · ${plink('kids-basketball','Kids Basketball')}`),'koszykowka')
  +section('Inne atrakcje z oferty dystrybucyjnej',p(`${plink('cyberdart','Cyberdart')} (dart elektroniczny), ${plink('kiddie-ride','Kiddie Ride')} (bujak dla dzieci) i ${plink('bouncy-castles-xs','Bouncy Castles · XS')} (zamki dmuchane). Przed zamówieniem zapytaj o producenta, dokumentację i wsparcie dla wybranej wersji.`))
@@ -66,29 +66,29 @@ const pages=[
  filter:p=>['strength','distributed'].includes(p.category)},
 
 {key:'manufacturer',kind:'about',
- title:'Producent automatów bokserskich w Polsce | PROGAMES',
- description:'PROGAMES to polski producent komercyjnych automatów bokserskich z Jastrzębia-Zdroju. Poznaj ofertę, etapy produkcji, serwis i części zamienne. Marka od 2012 r.',
- h1:'PROGAMES – producent automatów bokserskich w Polsce',
- lead:'PROGAMES projektuje i produkuje w Polsce komercyjne automaty bokserskie i urządzenia rozrywkowe. Współpracujemy z operatorami i dystrybutorami, zapewniając obsługę sprzedażową, części zamienne i serwis.',
+ title:'Producent automatów bokserskich w Polsce | PRO GAMES',
+ description:'PRO GAMES to polski producent komercyjnych automatów bokserskich z Jastrzębia-Zdroju. Poznaj ofertę, etapy produkcji, serwis i części zamienne. Marka od 2012 r.',
+ h1:'PRO GAMES – producent automatów bokserskich w Polsce',
+ lead:'PRO GAMES projektuje i produkuje w Polsce komercyjne automaty bokserskie i urządzenia rozrywkowe. Współpracujemy z operatorami i dystrybutorami, zapewniając obsługę sprzedażową, części zamienne i serwis.',
  body:
- section('Polski producent z szeroką ofertą bokserów',p('Marka PROGAMES działa od 2012 roku. Obecna spółka, PRO GAMES POLAND Sp. z o.o., ma siedzibę przy ul. Rybnickiej 19A, 44-335 Jastrzębie-Zdrój. Historia marki jest dłuższa niż historia obecnej spółki.')+p('Oferta obejmuje boksery Standard, boksery Premium, automaty łączące boks z kopaniem, modele dla dzieci i siłomierze. Wybrane dodatkowe atrakcje pochodzą z oferty dystrybucyjnej i są wyraźnie tak oznaczone.')+p(`${link('boxing','Zobacz automaty bokserskie')} i ${link('arcade','pozostałe automaty rozrywkowe')}.`))
+ section('Polski producent z szeroką ofertą bokserów',p('Marka PRO GAMES działa od 2012 roku. Obecna spółka, PRO GAMES POLAND Sp. z o.o., ma siedzibę przy ul. Rybnickiej 19A, 44-335 Jastrzębie-Zdrój. Historia marki jest dłuższa niż historia obecnej spółki.')+p('Oferta obejmuje boksery Standard, boksery Premium, automaty łączące boks z kopaniem, modele dla dzieci i siłomierze. Wybrane dodatkowe atrakcje pochodzą z oferty dystrybucyjnej i są wyraźnie tak oznaczone.')+p(`${link('boxing','Zobacz automaty bokserskie')} i ${link('arcade','pozostałe automaty rozrywkowe')}.`))
  +section('Produkcja, montaż i testy',p('Montaż, elektronika, testy i końcowa konfiguracja automatów odbywają się w Polsce. Zdjęcia poniżej pokazują te etapy. Skontaktuj się z nami, aby omówić konkretny model i konfigurację.')+'%PRODUCTION%')
  +section('Konfiguracja i wsparcie',p('Konfigurator na stronie produktu zapisuje wybrane kolory i wyposażenie. Dział sprzedaży potwierdza dostępność i zgodność opcji z wybranym automatem. Sprawy serwisowe i części zamienne mają osobny kontakt, aby operator od razu trafił do właściwego zespołu.')+p(`Sprzedaż: ${sales}`)+p(`Serwis i części: ${service}`)+p(`${link('b2b','Dystrybucja i zapytania B2B')} · <a href="/pl/katalog.html?catalog=parts">Katalog części zamiennych</a>`))
- +section('Dane firmy','<dl class="editorial-facts"><div><dt>Marka</dt><dd>PROGAMES</dd></div><div><dt>Firma</dt><dd>PRO GAMES POLAND Sp. z o.o.</dd></div><div><dt>Adres</dt><dd>ul. Rybnicka 19A, 44-335 Jastrzębie-Zdrój, Polska</dd></div><div><dt>NIP</dt><dd>633-224-54-91</dd></div><div><dt>REGON</dt><dd>520986702</dd></div></dl>')},
+ +section('Dane firmy','<dl class="editorial-facts"><div><dt>Marka</dt><dd>PRO GAMES</dd></div><div><dt>Firma</dt><dd>PRO GAMES POLAND Sp. z o.o.</dd></div><div><dt>Adres</dt><dd>ul. Rybnicka 19A, 44-335 Jastrzębie-Zdrój, Polska</dd></div><div><dt>NIP</dt><dd>633-224-54-91</dd></div><div><dt>REGON</dt><dd>520986702</dd></div></dl>')},
 
 {key:'b2b',kind:'b2b',
- title:'Automaty bokserskie hurtowo – sprzedaż i dystrybucja | PROGAMES',
- description:'Hurtowa sprzedaż automatów bokserskich i współpraca dystrybucyjna z producentem PROGAMES. Przygotuj listę modeli, kraj dostawy i konfigurację – wycenimy indywidualnie.',
+ title:'Automaty bokserskie hurtowo – sprzedaż i dystrybucja | PRO GAMES',
+ description:'Hurtowa sprzedaż automatów bokserskich i współpraca dystrybucyjna z producentem PRO GAMES. Przygotuj listę modeli, kraj dostawy i konfigurację – wycenimy indywidualnie.',
  h1:'Automaty bokserskie dla operatorów i dystrybutorów',
- lead:'Zamawiasz automat do jednego lokalu, kilka sztuk dla sieci obiektów, a może chcesz zostać dystrybutorem? Skontaktuj się z PROGAMES, podając rynek docelowy i listę modeli. Warunki handlowe ustalamy indywidualnie.',
+ lead:'Zamawiasz automat do jednego lokalu, kilka sztuk dla sieci obiektów, a może chcesz zostać dystrybutorem? Skontaktuj się z PRO GAMES, podając rynek docelowy i listę modeli. Warunki handlowe ustalamy indywidualnie.',
  body:
  section('Co podać w zapytaniu hurtowym',ol(['Nazwę firmy, dane kontaktowe i kraj dostawy.','Modele automatów i liczbę sztuk.','Preferowane kolory, grafikę i system płatności.','Rodzaj obiektu lub planowany obszar dystrybucji.','Oczekiwany termin dostawy i ewentualne ograniczenia dojazdu lub wniesienia.'])+p('Poproś dział sprzedaży o pisemne potwierdzenie ceny, ewentualnej minimalnej wielkości zamówienia, terminu realizacji, transportu, warunków gwarancji i dostępności części. Ta strona nie obiecuje standardowych rabatów, minimalnych ilości ani terminów dostawy.'))
- +section('Obecna sieć dystrybucji i wsparcie lokalne',p('Wyłącznym dystrybutorem PROGAMES w Ameryce Północnej, Środkowej i Południowej jest UPlay America. Na tym obszarze skontaktuj się z oficjalnym partnerem albo poproś nas o przekazanie zapytania.')+'<p><a href="https://www.uplayamerica.com/" rel="noopener noreferrer">Strona UPlay America</a> · <a href="/pl/#distributors">Zobacz naszą sieć dystrybucji</a></p>'+p('Mamy też własny oddział w Elche w Hiszpanii oraz oddział w Argentynie. Dane kontaktowe znajdziesz na stronie głównej.'))
+ +section('Obecna sieć dystrybucji i wsparcie lokalne',p('Wyłącznym dystrybutorem PRO GAMES w Ameryce Północnej, Środkowej i Południowej jest UPlay America. Na tym obszarze skontaktuj się z oficjalnym partnerem albo poproś nas o przekazanie zapytania.')+'<p><a href="https://www.uplayamerica.com/" rel="noopener noreferrer">Strona UPlay America</a> · <a href="/pl/#distributors">Zobacz naszą sieć dystrybucji</a></p>'+p('Mamy też własny oddział w Elche w Hiszpanii oraz oddział w Argentynie. Dane kontaktowe znajdziesz na stronie głównej.'))
  +section('Chcesz zostać dystrybutorem?',p('Przedstaw swoją firmę, terytorium, obecne możliwości sprzedażowe i serwisowe oraz automaty, które chcesz oferować. Potwierdzimy, czy współpraca jest możliwa i na jakich zasadach. Samo zapytanie nie daje praw do terytorium.')+p(`${link('manufacturer','O producencie')} · ${link('boxing','Porównaj automaty bokserskie')} · <a href="/pl/#contact">Wyślij zapytanie B2B</a>`))},
 
 {key:'hub',kind:'hub',
- title:'Poradniki: automaty bokserskie dla operatorów | PROGAMES',
- description:'Praktyczne poradniki PROGAMES o automatach bokserskich: czym jest bokser, jak go wybrać, ile kosztuje, jak przygotować montaż i serwis oraz automat do baru.',
+ title:'Poradniki: automaty bokserskie dla operatorów | PRO GAMES',
+ description:'Praktyczne poradniki PRO GAMES o automatach bokserskich: czym jest bokser, jak go wybrać, ile kosztuje, jak przygotować montaż i serwis oraz automat do baru.',
  h1:'Poradniki o automatach bokserskich',
  lead:'Praktyczne informacje, które pomogą wybrać i zaplanować komercyjny automat bokserski. Korzystaj z nich razem z danymi technicznymi i dokumentacją konkretnego modelu.',
  body:
@@ -97,8 +97,8 @@ const pages=[
  cards:[['definition','Co to jest automat bokserski?','Na czym polega gra i czym różni się bokser od automatu łączonego, np. z kopaczem.'],['choose','Jak wybrać automat bokserski?','Format gry, miejsce, konfiguracja i wsparcie – sprawdź je przed zapytaniem o ofertę.'],['price','Ile kosztuje automat bokserski?','Co wpływa na cenę i jak przygotować zapytanie, żeby oferta była konkretna.'],['bar','Automat bokserski do baru i pubu','Miejsce, zasilanie, płatności i bezpieczeństwo w lokalu.'],['care','Montaż i serwis automatu','Pytania, na które odpowiada dokumentacja techniczna konkretnego modelu.']]},
 
 {key:'definition',kind:'article',
- title:'Co to jest automat bokserski (bokser, siłomierz)? | PROGAMES',
- description:'Czym jest automat bokserski, jak działa gra i czym różni się klasyczny bokser od automatu łączonego z kopaczem lub młotem. Poradnik producenta PROGAMES.',
+ title:'Co to jest automat bokserski (bokser, siłomierz)? | PRO GAMES',
+ description:'Czym jest automat bokserski, jak działa gra i czym różni się klasyczny bokser od automatu łączonego z kopaczem lub młotem. Poradnik producenta PRO GAMES.',
  h1:'Co to jest automat bokserski?',
  lead:'Automat bokserski to gra rozrywkowa, w której gracz uderza w gruszkę i otrzymuje wynik na wyświetlaczu. W Polsce takie urządzenie nazywa się też bokserem, boxerem lub siłomierzem.',
  body:
@@ -108,7 +108,7 @@ const pages=[
  +section('Jak sprawdzić, czy automat pasuje do Twojego lokalu?',p('Patrz nie tylko na grafikę obudowy. Porównaj opublikowane wymiary, format gry, opcje płatności, obsługę serwisową i wymagania instalacyjne konkretnego automatu. Przy modelach dla dzieci określ, kto będzie z nich korzystać.')+p(`${link('choose','Przejdź do poradnika zakupowego')} lub ${link('boxing','zobacz modele automatów')}.`))},
 
 {key:'choose',kind:'article',
- title:'Jak wybrać automat bokserski do lokalu? Poradnik | PROGAMES',
+ title:'Jak wybrać automat bokserski do lokalu? Poradnik | PRO GAMES',
  description:'Lista kontrolna przy zakupie automatu bokserskiego: format gry, wymiary, płatności na monety i bezgotówkowe, własna grafika, serwis i zawartość oferty.',
  h1:'Jak wybrać automat bokserski?',
  lead:'Najpierw wybierz format gry i sprawdź wymagania instalacyjne, a dopiero potem wykończenie i wyposażenie dodatkowe. Dobra oferta wskazuje dokładny model i konfigurację, którą otrzymasz.',
@@ -120,8 +120,8 @@ const pages=[
  +section('5. Sprawdź całą ofertę',p('Potwierdź wersję automatu, wyposażenie w zestawie, transport, termin realizacji, warunki gwarancji i kontakt serwisowy. Zachowaj specyfikację razem z zamówieniem, aby można było sprawdzić dostarczoną konfigurację.')+p(`${link('boxing','Porównaj automaty bokserskie')} · ${link('price','Od czego zależy cena')} · ${link('b2b','Zapytanie hurtowe')} · ${link('care','Montaż i serwis')}`))},
 
 {key:'care',kind:'article',
- title:'Montaż i serwis automatu bokserskiego – poradnik | PROGAMES',
- description:'Jak przygotować montaż automatu bokserskiego: miejsce, zasilanie, dostawa i konserwacja. Jak zamówić część zamienną i skontaktować się z serwisem PROGAMES.',
+ title:'Montaż i serwis automatu bokserskiego – poradnik | PRO GAMES',
+ description:'Jak przygotować montaż automatu bokserskiego: miejsce, zasilanie, dostawa i konserwacja. Jak zamówić część zamienną i skontaktować się z serwisem PRO GAMES.',
  h1:'Montaż i serwis automatu bokserskiego',
  lead:'Wymagania dotyczące instalacji i konserwacji zależą od modelu. Ta lista pomoże zebrać właściwą dokumentację przed dostawą. Nie zastępuje instrukcji obsługi ani instrukcji serwisowej automatu.',
  body:
@@ -130,7 +130,7 @@ const pages=[
  +section('Zamawianie części i serwisu',p('Podaj model, numer seryjny (jeśli jest dostępny), opis problemu i wyraźne zdjęcia. Poproś serwis o wskazanie właściwej części i potwierdzenie zgodności przed zamówieniem.')+p(`${service} · <a href="/pl/katalog.html?catalog=parts">Katalog części zamiennych</a>`)+p(`${link('choose','Lista kontrolna przy zakupie')} · ${link('manufacturer','Producent i wsparcie')} · ${link('boxing','Dane techniczne produktów')}`))},
 
 {key:'price',kind:'article',
- title:'Ile kosztuje automat bokserski? Od czego zależy cena | PROGAMES',
+ title:'Ile kosztuje automat bokserski? Od czego zależy cena | PRO GAMES',
  description:'Od czego zależy cena automatu bokserskiego: model, wyposażenie, system płatności, grafika, transport i liczba sztuk. Jak zapytać producenta o konkretną ofertę.',
  h1:'Ile kosztuje automat bokserski?',
  lead:'Nie publikujemy cennika, bo cena automatu bokserskiego zależy od modelu, wersji i wyposażenia. Wyjaśniamy, co wpływa na wycenę i jak przygotować zapytanie, aby otrzymać konkretną ofertę od producenta.',
@@ -143,7 +143,7 @@ const pages=[
  +section('Jak zapytać o cenę',ol(['Wybrany model lub kilka modeli do porównania.','Liczba sztuk.','Miasto i kraj dostawy.','Rodzaj lokalu i planowane miejsce ustawienia.','Potrzebny system płatności.','Kolory lub własna grafika.','Oczekiwany termin.'])+p(`Zapytanie wyślesz formularzem na stronie produktu lub na <a href="/pl/#contact">stronie głównej</a>. Możesz też napisać lub zadzwonić: ${sales}.`))},
 
 {key:'bar',kind:'article',
- title:'Automat bokserski do baru i pubu – na co uważać | PROGAMES',
+ title:'Automat bokserski do baru i pubu – na co uważać | PRO GAMES',
  description:'Automat bokserski do baru, pubu lub klubu: ile miejsca potrzebuje, jakie zasilanie i płatności wybrać, który model pasuje do lokalu i o czym pamiętać przed zakupem.',
  h1:'Automat bokserski do baru, pubu i klubu',
  lead:'Bokser to atrakcja, która zachęca gości do rywalizacji. Zanim wybierzesz model do lokalu, sprawdź miejsce, zasilanie, system płatności i obsługę serwisową. Ten poradnik zbiera najważniejsze pytania.',

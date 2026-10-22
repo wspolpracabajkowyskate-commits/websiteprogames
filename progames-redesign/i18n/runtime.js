@@ -14,7 +14,7 @@
    if((m=s.match(/^(\d+) (models shown|products \/ collections)$/)))result=m[1]+' '+(m[2]==='models shown'?terms.models:terms.products);
    else if((m=s.match(/^(Show |View )(.+)$/)))result=(m[1]==='Show '?terms.show:terms.view)+t(m[2]);
    else if((m=s.match(/^Artwork (\d+)(.*)$/)))result=terms.art+m[1]+(m[2]?m[2].replace(/[A-Za-z].*$/,x=>t(x)):'');
-   else if(s.endsWith(' by PROGAMES'))result=t(s.slice(0,-13))+' — PROGAMES';
+   else if(s.endsWith(' by PRO GAMES'))result=t(s.slice(0,-13))+' — PRO GAMES';
    else if(s.includes(' — '))result=s.split(' — ').map(t).join(' — ');
    else if(s.includes(' | '))result=s.split(' | ').map(t).join(' | ');
    else if(s.includes(' · '))result=s.split(' · ').map(t).join(' · ');

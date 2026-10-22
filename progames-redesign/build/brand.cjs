@@ -1,4 +1,4 @@
-/* Brand normalisation: the brand is written PROGAMES (one word).
+/* Brand normalisation: the brand is written PRO GAMES (capitals, with a space).
    Kept unchanged on purpose:
    - the legal entity PRO GAMES POLAND Sp. z o.o.;
    - third-party spellings quoted as such (IAAPA "PRO-GAMES POLAND", UPlay "Pro-Games Poland");
@@ -23,13 +23,13 @@ const PROTECT = [
   /Are Pro Games Poland,/g,
   /Czy Pro Games Poland,/g,
 ];
-const BRAND = /\b(?:Pro Games|PRO GAMES|ProGames|Pro-Games|PRO-GAMES)(?: Poland| POLAND)?\b/g;
+const BRAND = /\b(?:Pro Games|PRO GAMES|ProGames|PROGAMES|Pro-Games|PRO-GAMES)(?: Poland| POLAND)?\b/g;
 
 function normalizeBrand(text) {
   const kept = [];
   let out = text;
   for (const re of PROTECT) out = out.replace(re, m => `\u0000${kept.push(m) - 1}\u0000`);
-  out = out.replace(BRAND, 'PROGAMES');
+  out = out.replace(BRAND, 'PRO GAMES');
   return out.replace(/\u0000(\d+)\u0000/g, (_, i) => kept[+i]);
 }
 
@@ -55,7 +55,7 @@ if (require.main === module) {
   }
   if (check) {
     if (left.length) { console.error('Brand not normalised in:\n' + left.join('\n')); process.exit(1); }
-    console.log('Brand check: PROGAMES consistent.');
+    console.log('Brand check: PRO GAMES consistent.');
   } else console.log(`Brand normalised in ${changed} files.`);
 }
 module.exports = { normalizeBrand };
