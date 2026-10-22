@@ -194,6 +194,9 @@ PH_WINDOWS = {'score': (270, 595, 728, 773), 'high': (380, 880, 632, 1012), 'cre
 NEW_SCREENS = None
 if os.path.exists(SHIELD_PHOTO):
     photo = cv2.imread(SHIELD_PHOTO, cv2.IMREAD_COLOR)
+    # the printed display windows are blacked out: only the model's LED digits show there
+    for (x0, y0, x1, y1) in PH_WINDOWS.values():
+        cv2.rectangle(photo, (x0 - 6, y0 - 6), (x1 + 6, y1 + 6), (10, 6, 14), -1)
     ph = np.array(PH_INNER, float) * [1, -1]                   # y up so the contour is CCW like the model's
     ph = ccw(resample_closed(ph, 160)); ph = start_bottom(ph)
     ni = M.shield_inner(160)
@@ -207,8 +210,13 @@ if os.path.exists(SHIELD_PHOTO):
     shield_rgb = cv2.remap(photo, mx, my, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
     # slightly more contrast and colour (the photo is a little flat behind the acrylic)
     f = shield_rgb.astype(np.float32) / 255.0
-    f = np.clip((f - 0.5) * 1.15 + 0.5 - 0.015, 0, 1)
-    lum = f.mean(2, keepdims=True); f = np.clip(lum + (f - lum) * 1.10, 0, 1)
+    # remove the glare of the photo (reflections on the acrylic): haze = blurred dark channel
+    dark = cv2.erode(f.min(2), np.ones((25, 25), np.uint8))
+    haze = cv2.GaussianBlur(dark, (0, 0), 25)[..., None] * 0.85
+    f = np.clip((f - haze) / np.maximum(1 - haze, 0.3), 0, 1)
+    # darker, more contrast and colour, like the rest of the print
+    f = np.clip((f - 0.5) * 1.22 + 0.5 - 0.04, 0, 1) ** 1.15
+    lum = f.mean(2, keepdims=True); f = np.clip(lum + (f - lum) * 1.12, 0, 1)
     shield_rgb = (f * 255 + 0.5).astype(np.uint8)
     mask = np.zeros((Hn, Wn), np.uint8)
     cv2.fillPoly(mask, [np.round(to_px(offset_contour(M.shield_inner(400), 0.004)) * 4).astype(np.int32)], 255, shift=2)

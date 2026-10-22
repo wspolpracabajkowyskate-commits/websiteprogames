@@ -191,7 +191,7 @@ def shield_inner(n=240):
 # Displays, coin acceptor and rules plate (front, metres).  Display windows and the rules plate are
 # where the re-fitted print puts them (fit_champion_cad_textures.py prints these values); the coin
 # acceptor is at its CAD position.
-SCREENS = {'score': (-0.144, 1.325, 0.143, 1.442), 'high': (-0.076, 1.187, 0.079, 1.270), 'credit': (-0.021, 1.12, 0.025, 1.156)}   # on the windows of the shield photo
+SCREENS = {'score': (-0.144, 1.338, 0.143, 1.448), 'high': (-0.076, 1.191, 0.079, 1.272), 'credit': (-0.021, 1.117, 0.025, 1.154)}   # = display windows of the shield photo
 COIN = (-0.294, 0.885, -0.228, 1.042)
 RULES = (0.246, 0.775, 0.336, 0.921)          # on the printed rules area
 
@@ -333,7 +333,7 @@ def build_column():
     for region, nm in (('score', 'D19_score_777'), ('high', 'D19_highscore_649'), ('credit', 'D19_credit_5')):
         xa_, ya_, xb_, yb_ = SCREENS[region]
         sc = Mesh(nm, smooth_angle=10)
-        Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0042], X3, Y3, (xb_ - xa_) * 0.97, (yb_ - ya_) * 0.92)
+        Pq, UVq = quad([(xa_ + xb_) / 2, (ya_ + yb_) / 2, z1 + 0.0042], X3, Y3, (xb_ - xa_) * 1.0, (yb_ - ya_) * 1.0)   # covers the whole (blacked-out) window
         u0, v0, u1, v1 = [c / 1024.0 for c in SCREEN_ATLAS[region]]
         UVq[..., 0] = u0 + UVq[..., 0] * (u1 - u0); UVq[..., 1] = v0 + UVq[..., 1] * (v1 - v0)
         sc.add('SCREEN', Pq, UVq)

@@ -2,7 +2,8 @@
 
 ## v10.2 (22.10.2026)
 - Score-shield graphic replaced by a sharp straight-on photo of the print (`reference/sticker_v9/champion_shield_photo.png`),
-  warped onto the glass face, with slightly more contrast (+15 %) and colour (+10 %); displays placed on its windows.
+  warped onto the glass face. Photo glare removed (dark-channel dehaze), darker with more contrast and colour to
+  match the rest of the print; the printed display windows are blacked out and the LED displays cover them exactly.
 
 ## v10.1 fixes (21.10.2026, feedback on the configurator)
 - Lid and canopy box: triangle winding made consistent (one orientation decision per generated grid
