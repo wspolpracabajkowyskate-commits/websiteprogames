@@ -15,7 +15,7 @@
     "pretest:seo": "npm run build:languages",
     "pretest:i18n": "npm run build:languages",
     "test:languages": "node verification/check-extra-browser.cjs",
-    "build:entity": "node build/entity-content.cjs && node build/brand.cjs && node build/entity-schema.cjs && node build/multi-view-cards.cjs",
+    "build:entity": "node build/entity-content.cjs && node build/brand.cjs && node build/entity-schema.cjs",
     "test:brand": "node build/brand.cjs --check && node verification/check-entity.cjs"
   },
   "devDependencies": {
