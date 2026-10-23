@@ -106,4 +106,8 @@ MONSTER_MATERIALS['DECALS'] = dict(base=[1, 1, 1], metallic=0.0, roughness=0.28,
                                    base_tex=_MO + 'monster_atlas.webp', alpha='BLEND')
 for _k, _f in (('GFX_FRONT', 'front'), ('GFX_BAND', 'band'), ('GFX_LEFT', 'left'), ('GFX_RIGHT', 'right'), ('GFX_TOWER', 'tower')):
     MONSTER_MATERIALS[_k] = dict(base=[1, 1, 1], roughness=0.26, clearcoat=0.9, clearcoat_roughness=0.06,
-                                 base_tex=_MO + f'monster_zone_{_f}.webp', alpha='BLEND')
+                                 base_tex=_MO + 'monster_blank.webp', alpha='BLEND')   # v2: no stickers yet
+MONSTER_MATERIALS['TURF_GREEN'] = dict(base=srgb('#2f5a23'), metallic=0.0, roughness=0.95)
+for _k in ('GAP_DARK', 'BUTTON_RED', 'TYRE_GREY'):
+    MONSTER_MATERIALS.setdefault(_k, dict(CHAMPION_MATERIALS[_k]))
+MONSTER_MATERIALS['MONITOR'] = dict(base=srgb('#1b1c1f'), metallic=0.0, roughness=0.08, clearcoat=1.0, clearcoat_roughness=0.02, specular=0.6)

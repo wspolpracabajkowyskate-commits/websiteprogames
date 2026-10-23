@@ -114,7 +114,7 @@ function onLoaded(gltf) {
 
   // the camera may never enter these volumes
   const boxes = [];
-  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform', 'B01_body', 'B02_canopy_drum', 'B02_canopy_crown', 'B03_canopy_underside', 'B04_base_frame', 'B01_column_body', 'B02_canopy_band', 'K01_kicker_cabinet', 'T01_tower_body', 'H01_hammer_base']) {
+  for (const name of ['body_lower', 'body_column', 'top_canopy_drum', 'top_canopy', 'top_canopy_lower', 'metal_platform', 'B01_body', 'B02_canopy_drum', 'B02_canopy_crown', 'B03_canopy_underside', 'B04_base_frame', 'B01_column_body', 'B02_canopy_band', 'K01_kicker_cabinet', 'T01_tower_body', 'H01_hammer_base', 'B02_canopy_box', 'B02_canopy_lid', 'T01_tower', 'H01_middle_box', 'H02_anvil_box']) {
     const obj = modelRoot.getObjectByName(name);
     if (obj) boxes.push(new THREE.Box3().setFromObject(obj).expandByScalar(0.12));
   }

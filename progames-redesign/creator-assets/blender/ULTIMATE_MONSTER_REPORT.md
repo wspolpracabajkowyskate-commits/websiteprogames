@@ -1,3 +1,32 @@
+# Boxer Monster 3 in 1 – model report (v2: rebuilt from the manufacturer drawing)
+
+## v2 (24.10.2026)
+The whole geometry was rebuilt from scratch (`blender/src/monster_model.py`; the previous model, made
+from generated views, is kept as `monster_model_v1.py`).
+
+- **Source:** drawing "Boxer Monster 3 in 1" (SOLIDWORKS, A1, scale 1:10, 28.09.2026) –
+  front, both sides, back, top, two isometric views –
+  plus the CAD renders of 23.10.2026 (not stored in this public repo – the drawing carries a
+  confidentiality notice). Measured at 300 dpi (1.181 px per mm); the drawn dimensions check
+  out: width 1375, depth 1249, height ~2253, lid 850 × 1316, plate 40 mm.
+- **Note on the drawing:** European (first-angle) projection – the view left of the front view shows the
+  machine from the RIGHT. That is how the depths were read: hammer tower at the very back (76 mm deep),
+  boxer column from 151 to 435 mm, kicker box front at 514 mm, hammer boxes to 485 mm.
+- **Parts:** base plate on 7 feet with the kicker stand (wide step + long arm on the left, tread plate);
+  boxer column with the slanted right edge, screen, coin acceptor and lock; kicker box with lamps, recess
+  with turf floor, speaker grille, arm and black/white ball; canopy box (faceted front, slanted front wall,
+  lamp strip chamfer, flat underside with the bag opening and two down-lights, START button), ledge plate
+  and the tray-shaped lid with the lamp rim (front raised to 2243 mm) and the round cap; punch bag folded
+  up as in the CAD; hammer tower with the slanted right edge, window, raised lamp strip (12 lamps) and the
+  top row; middle box, hammer box with lamp chamfer, bellows and strike pad, hammer resting on the box;
+  back with 4 doors, power inlet, 2 transport wheels and 2 castors.
+- **No stickers yet:** the sticker zones (front, canopy band, left side, hammer-box side) are invisible
+  decals with a transparent texture (`textures/monster/monster_blank.webp`); customer artwork still works.
+- GLB built with `export_glb.py` (`python3 export_glb.py ../../models/ultimate-monster.glb ../../textures monster_model`);
+  the `.blend` and Blender renders are still the old model.
+
+---
+
 # Ultimate Monster 3in1 – model report (v2)
 
 ## v3 changes (IMG_0532, IMG_0546)

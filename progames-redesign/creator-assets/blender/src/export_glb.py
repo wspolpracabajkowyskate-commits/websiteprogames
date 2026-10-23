@@ -123,7 +123,7 @@ def build(out_path, tex_dir, model=None):
     root_name = getattr(mod, 'ROOT_NAME', 'DoubleStrike')
     g.j['scenes'][0]['name'] = root_name
     root = dict(name=root_name, children=[], extras=dict(
-        product='boxer-champion' if 'champion' in model else ('ultimate-monster' if model == 'monster_model' else model.replace('_model', '').replace('_', '-')), units='m', height_m=2.30 if model == 'monster_model' else 2.19,
+        product='boxer-champion' if 'champion' in model else ('ultimate-monster' if model == 'monster_model' else model.replace('_model', '').replace('_', '-')), units='m', height_m=2.253 if model == 'monster_model' else 2.19,
         params={k: (v[0] if not isinstance(v[0], tuple) else list(v[0]), v[1]) for k, v in getattr(mod, 'PARAMS', {}).items()},
         zones={k: dict(v) for k, v in ZONES.items()},
         led_groups={k: v.count for k, v in leds.items()}))

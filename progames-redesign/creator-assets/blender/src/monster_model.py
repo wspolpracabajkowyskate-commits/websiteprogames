@@ -1,1024 +1,722 @@
 """
-monster_model.py - PRO GAMES "Ultimate Monster 3in1" (boxer + kicker + hammer).
+monster_model.py - PRO GAMES "Boxer Monster 3 in 1" (boxer + kicker + hammer), v2.
 
-Source: the generated product views supplied with the brief (no photographs, no drawings).  The
-views are not orthographic and differ slightly from each other, so one consistent geometry was
-chosen from features that repeat across them:
-  * heights and depths: the left side view (n11, ~624 px/m, nearly orthographic),
-  * widths: the front view (n13) measured relative to the screen frame (n11 height 0.75 m),
-  * layout of the hammer station / tower: front view + both 3/4 views (n12, n14),
-  * details and prints: the close-ups (n02 front panel, n03 hammer, n05 canopy, n06 kicker, n09 bag).
-Overall: height 2.30 m (spec), width 1.40 m (spec), depth 1.30 m (views; the spec states 1.40 m).
+Source: the manufacturer's drawing "Boxer Monster 3 in 1" (SOLIDWORKS, A1, 1:10, 28.09.2026:
+left side, front, right side, back, top, two isometric views; dimensions ~2253 / 1249 / 1375 /
+850 / 1316 / 40 / 66) and the CAD renders of 23.10.2026.  Every value below was measured on the
+drawing (1:10 -> 1.181 px/mm at 300 dpi), in millimetres in the drawing frame:
 
-State: punch bag LOWERED (hanging vertically under the canopy), kicker arm at rest, hammer lying on
-the strike pad with its safety cable, doors closed.
+    X  from the left edge of the base plate (0) to the right edge (1375)      (front view)
+    Y  up from the floor                                                         (front/side views)
+    Z  forward from the back face of the machine (0) towards the player        (side/top views)
 
-Axes: metres, glTF (Y up, +Z = machine front, +X = machine right as seen from the front).
+and converted to the glTF frame at the end (metres, +X right, +Y up, +Z front, centred on the base).
+
+Shape only (v2): plain red body, white lamps, black screen and pads, no stickers yet.  The
+sticker zones exist as invisible decals so that customer artwork can be placed.
+
+State: punch bag folded up into the canopy (as in the CAD), kicker arm at rest, hammer resting on
+the box next to the strike pad, doors closed.
 """
-import math, os, json
+import math
 import numpy as np
-from meshlib import (Mesh, lathe, disc, rounded_box_tris, ray_polygon, mat_translate, mat_rot, look_basis,
-                     apply, orient_with_uv, grid_tris)
+from meshlib import (Mesh, lathe, disc, rounded_box_tris, mat_translate, mat_scale, mat_basis, look_basis,
+                     mat_rot, apply, orient_with_uv, grid_tris, resample_closed, ray_polygon, ring_cap)
+from double_strike_model import LedGroup
 
-_TEX_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'textures', 'monster', 'monster_textures.json')
-TEXMETA = json.load(open(_TEX_JSON))
-ATLAS = TEXMETA['atlas']
-
-# ------------------------------------------------------------------------------------------ dimensions
+# ------------------------------------------------------------------------------------------ dimensions (mm)
 D = dict(
-    plate_top=0.055,
-    # boxer column (front face is a trapezoid: right edge leans out towards the kicker)
-    col_x0=-0.58, col_x1_top=0.12, col_x1_low=0.20, col_slant_y=(1.81, 0.69),
-    col_z0=-0.585, col_z1=-0.312,
-    # canopy
-    can_xc=-0.23, band_y=(1.86, 2.10), under_y=1.81, top_y=(2.25, 2.30), rim_chamfer=0.013,
-    # kicker cabinet
-    kick_z=-0.224, kick_top=0.645, kick_back_top=0.69,
-    recess_out=(-0.554, 0.116, 0.025, 0.569), recess_in=(-0.385, 0.279, 0.017, 0.489), recess_depth=0.17,
-    # screen frame
-    frame=(-0.553, 0.99, 0.075, 1.74),
-    # hammer station
-    ham_left=(0.20, 0.40, -0.53, -0.26, 0.56), ham_box=(0.40, 0.70, -0.53, -0.12, 0.58),
-    pad=(0.55, -0.32, 0.165), pad_y=(0.70, 0.76), head_c=(0.535, 0.832, -0.30), head_r=0.072, head_len=0.24,   # n11/n07/n13: pad top ~0.76, head Ø 145 mm
-    # tower
-    tower_z=(-0.70, -0.53), tower_top=2.06, tower_x1=(0.70, 0.62),   # rear views: black slab stands out behind the column
-    # bag (lowered)
-    bag_hang=(-0.23, 0.24), bag_c_y=1.475, bag_rx=0.115, bag_ry=0.12,
+    W=1375.0, H=2253.0,
+    # base plate (Y 10..40 on feet), rear part + kicker stand (wide step + long arm on the left)
+    plate_y=(10.0, 40.0), plate_rear_z=(-8.0, 520.0), stand_wide=(0.0, 687.0, 520.0, 687.0),
+    stand_arm=(0.0, 300.0, 687.0, 1187.0), bevel=26.0,
+    # boxer column (front face z 435) + kicker box (front z 514, top 577, chamfer to the column at 646)
+    col_x0=4.0, col_xr_top=683.0, col_xr_low=844.0, col_slant_y=(1774.0, 646.0), col_z=(151.0, 435.0), col_top=2088.0,   # column back 151 mm in front of the tower back
+    kick_z=514.0, kick_top=577.0, kick_y0=40.0,
+    kick_open=(41.0, 77.0, 649.0, 480.0), kick_depth=130.0,
+    screen=(37.0, 999.0, 662.0, 1755.0), coin=(595.0, 811.0, 662.0, 969.0), lock=(724.0, 999.0),
+    # canopy box (walls Y 1875..2088, lamp strip chamfer to the underside at 1827; back flush with the
+    # column at z 151), ledge plate and lid (back edge at z 45, overhanging the tower)
+    can_y=(1827.0, 1875.0, 2088.0), plate_t=38.0, lid_top=2202.0, lid_top_front=2243.0, lid_floor=2150.0,
+    # hammer tower (back slab, front face z 151, slanted right edge), middle box, anvil box
+    tower_z=(0.0, 76.0), tower_y=(404.0, 2064.0), tower_cap=(2064.0, 2083.0), tower_xr=(1230.0, 1363.0),
+    tower_win=(892.0, 514.0, 1072.0, 1985.0), tower_strip_x=1109.0,
+    mid_box=(844.0, 1113.0, 40.0, 407.0, 0.0, 484.0), anvil_box=(1113.0, 1370.0, 40.0, 432.0, 0.0, 485.0),
+    pad=(1226.0, 337.0, 151.0), bellows=(432.0, 514.0, 88.0), pad_y=(514.0, 571.0),
+    hammer_head=(946.0, 480.0, 274.0, 73.0, 230.0), hammer_top=(801.0, 1087.0),
+    # kicker ball + arm
+    ball=(174.0, 277.0, 535.0, 107.0), arm=(270.0, 552.0, 287.0, 470.0, 48.0),
+    # punch bag folded up
+    bag=(344.0, 1868.0, 640.0, 100.0),
 )
-PT = D['plate_top']
-CX0 = D['col_x0']; CZ0, CZ1 = D['col_z0'], D['col_z1']
-KZ = D['kick_z']
-XC = D['can_xc']
 Y3 = np.array([0, 1.0, 0]); X3 = np.array([1.0, 0, 0]); Z3 = np.array([0, 0, 1.0])
+CENTRE = (D['W'] / 2, 0.0, 620.0)
 
 
 def col_xr(y):
-    """Right edge of the boxer column (and left edge of the tower) at height y."""
-    y0, y1 = D['col_slant_y']
-    if y >= y0:
-        return D['col_x1_top']
-    if y <= y1:
-        return D['col_x1_low']
-    t = (y0 - y) / (y0 - y1)
-    return D['col_x1_top'] + t * (D['col_x1_low'] - D['col_x1_top'])
+    """Right edge of the boxer column at height y (front view: 683 at the top, slanting out to 844)."""
+    y1, y0 = D['col_slant_y']
+    if y >= y1: return D['col_xr_top']
+    if y <= y0: return D['col_xr_low']
+    t = (y - y0) / (y1 - y0)
+    return D['col_xr_low'] + (D['col_xr_top'] - D['col_xr_low']) * t
 
 
 def tower_xr(y):
-    a, b = D['tower_x1']
-    t = min(max((y - 0.58) / (1.90 - 0.58), 0.0), 1.0)
-    return a + (b - a) * t
-
-
-def canopy_top(z):
-    return D['top_y'][0] + min((z + 0.649) / 1.249, 1.0) * (D['top_y'][1] - D['top_y'][0])
+    """Right edge of the hammer tower (slanted, 1230 at the top -> 1363 at its foot 404)."""
+    ytop = D['tower_cap'][1]; ybot = D['tower_y'][0]
+    t = (ytop - y) / (ytop - ybot)
+    return D['tower_xr'][0] + (D['tower_xr'][1] - D['tower_xr'][0]) * t
 
 
 # ------------------------------------------------------------------------------------------ helpers
-def V(*a):
-    return np.array(a, float)
-
-
-def poly(mesh, mat, pts, normal, uv=None):
-    """Convex planar polygon (fan), oriented along `normal`."""
-    pts = [np.asarray(p, float) for p in pts]
+def face(mesh, mat, pts, normal, uv_scale=0.001):
+    """Convex planar polygon (fan) facing `normal`; planar UVs in metres."""
+    pts = np.asarray(pts, float); n = np.asarray(normal, float); n = n / np.linalg.norm(n)
+    a = np.cross(Y3, n) if abs(n[1]) < 0.9 else X3.copy()
+    a /= np.linalg.norm(a); b = np.cross(n, a)
     P = np.array([[pts[0], pts[i], pts[i + 1]] for i in range(1, len(pts) - 1)])
-    UVa = None
-    if uv is not None:
-        uv = [np.asarray(u, float) for u in uv]
-        UVa = np.array([[uv[0], uv[i], uv[i + 1]] for i in range(1, len(uv) - 1)])
-    else:
-        from meshlib import box_uv
-        UVa = box_uv(P)
-    P, UVa = orient_with_uv(P, UVa, normal)
-    mesh.add(mat, P, UVa)
-
-
-def quadfill(mesh, mat, a, b, c, d, normal, uv=None):
-    poly(mesh, mat, [a, b, c, d], normal, uv)
-
-
-def atlas_uv(name):
-    x, y, w, h = ATLAS['rects'][name]
-    AW, AH = ATLAS['size']
-    return x / AW, y / AH, (x + w) / AW, (y + h) / AH
-
-
-def decal(mesh, name, tl, tr, br, bl, normal, sub=None, mat='DECALS'):
-    """Atlas sticker on a planar quad (corners as seen from the front of the sticker)."""
-    u0, v0, u1, v1 = atlas_uv(name) if sub is None else sub
-    n = np.asarray(normal, float); n = n / np.linalg.norm(n)
-    off = n * 0.0012
-    poly(mesh, mat, [np.asarray(p) + off for p in (tl, tr, br, bl)], n, [(u0, v0), (u1, v0), (u1, v1), (u0, v1)])
-
-
-def frame_on(origin, U, Vv, w, h):
-    """Corners of a w x h rectangle centred at origin spanning unit vectors U (right) and Vv (up)."""
-    o = np.asarray(origin, float); U = np.asarray(U, float); Vv = np.asarray(Vv, float)
-    return (o - U * w / 2 + Vv * h / 2, o + U * w / 2 + Vv * h / 2, o + U * w / 2 - Vv * h / 2, o - U * w / 2 - Vv * h / 2)
-
-
-def box(mesh, mat, lo, hi, r=0.002, seg=1):
-    mesh.add(mat, rounded_box_tris(lo, hi, r, seg=seg, step=1))
-
-
-def cyl(mesh, mat, p0, p1, r, seg=16, caps=True, prof=None):
-    p0 = np.asarray(p0, float); p1 = np.asarray(p1, float)
-    d = p1 - p0; L = np.linalg.norm(d)
-    M = look_basis(p0, d / L) @ mat_rot('x', 90)
-    pr = prof if prof is not None else ([(0.0, 0.0)] if caps else []) + [(r, 0.0), (r, L)] + ([(0.0, L)] if caps else [])
-    P, UV = lathe(pr, seg, M=M)
+    UV = np.stack([P @ a, -(P @ b)], -1) * uv_scale
+    P, UV = orient_with_uv(P, UV, n)
     mesh.add(mat, P, UV)
 
 
-def inset(poly2, d):
-    """Inset a convex CCW polygon (x,z) by d (positive = inwards)."""
-    P = np.asarray(poly2, float); n = len(P)
-    lines = []
+def poly_normal(pts, ref_out):
+    pts = np.asarray(pts, float)
+    n = np.cross(pts[1] - pts[0], pts[2] - pts[0])
+    for i in range(2, len(pts) - 1):
+        if np.linalg.norm(n) > 1e-9: break
+        n = np.cross(pts[i] - pts[0], pts[i + 1] - pts[0])
+    n /= np.linalg.norm(n)
+    return n if np.dot(n, ref_out) >= 0 else -n
+
+
+def qface(mesh, mat, pts, ref_out):
+    face(mesh, mat, pts, poly_normal(pts, ref_out))
+
+
+def box(mesh, mat, lo, hi, r=1.5, seg=1):
+    mesh.add(mat, rounded_box_tris(lo, hi, r, seg=seg, step=1e4))
+
+
+def solid_box(mesh, mat, x0, x1, y0, y1, z0, z1, skip=()):
+    c = np.array([(x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2])
+    F = {'-x': [(x0, y0, z0), (x0, y0, z1), (x0, y1, z1), (x0, y1, z0)], '+x': [(x1, y0, z0), (x1, y1, z0), (x1, y1, z1), (x1, y0, z1)],
+         '-y': [(x0, y0, z0), (x1, y0, z0), (x1, y0, z1), (x0, y0, z1)], '+y': [(x0, y1, z0), (x0, y1, z1), (x1, y1, z1), (x1, y1, z0)],
+         '-z': [(x0, y0, z0), (x0, y1, z0), (x1, y1, z0), (x1, y0, z0)], '+z': [(x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)]}
+    for k, pts in F.items():
+        if k in skip: continue
+        qface(mesh, mat, pts, np.asarray(pts, float).mean(0) - c)
+
+
+def axis_basis(p0, d):
+    """Matrix mapping lathe space (axis +Y) onto the axis p0 + t*d."""
+    d = np.asarray(d, float); d = d / np.linalg.norm(d)
+    u = np.cross(d, [0, 0, 1.0]) if abs(d[2]) < 0.9 else np.cross(d, [1.0, 0, 0])
+    u /= np.linalg.norm(u); w = np.cross(u, d)
+    return mat_basis(np.asarray(p0, float), u, d, w)
+
+
+def cyl(mesh, mat, p0, p1, r, seg=32, round_r=0.0):
+    p0 = np.asarray(p0, float); p1 = np.asarray(p1, float); L = np.linalg.norm(p1 - p0)
+    rr = min(round_r, r * 0.9, L / 2)
+    prof = [(0.0, 0.0), (r - rr, 0.0)]
+    if rr > 0:
+        prof += [(r - rr + rr * math.sin(t), rr - rr * math.cos(t)) for t in np.linspace(0, math.pi / 2, 5)[1:]]
+        prof += [(r - rr + rr * math.cos(t), L - rr + rr * math.sin(t)) for t in np.linspace(0, math.pi / 2, 5)[:-1]]
+    else:
+        prof += [(r, 0.0), (r, L)]
+    prof += [(r - rr, L), (0.0, L)]
+    P, UV = lathe(prof, seg, M=axis_basis(p0, p1 - p0))
+    mesh.add(mat, P, UV)
+
+
+def sphere_gores(mesh, mats, c, R, n=8, axis=(0, 1, 0)):
+    """Ball of n vertical gores alternating materials (kicker ball)."""
+    for g in range(n):
+        a0 = 2 * math.pi * g / n; a1 = a0 + 2 * math.pi / n
+        prof = [(R * math.sin(ph), R * math.cos(ph)) for ph in np.linspace(math.pi, 0, 24)]
+        P, UV = lathe(prof, 6, M=axis_basis(np.asarray(c, float), axis), a0=a0, a1=a1)
+        mesh.add(mats[g % len(mats)], P, UV)
+
+
+def offset_poly(pts, d):
+    """Offset a CCW (x, z) polygon outward by d (miter)."""
+    P = np.asarray(pts, float); n = len(P); out = []
     for i in range(n):
-        a, b = P[i], P[(i + 1) % n]
-        t = (b - a) / np.linalg.norm(b - a)
-        nrm = np.array([t[1], -t[0]])            # outward for CCW
-        lines.append((a - nrm * d, t))
-    out = []
-    for i in range(n):
-        (p1, t1), (p2, t2) = lines[i - 1], lines[i]
-        A = np.array([t1, -t2]).T
-        s = np.linalg.solve(A, p2 - p1)
-        out.append(p1 + t1 * s[0])
+        a, b, c = P[i - 1], P[i], P[(i + 1) % n]
+        e1 = b - a; e2 = c - b
+        n1 = np.array([e1[1], -e1[0]]) / np.linalg.norm(e1); n2 = np.array([e2[1], -e2[0]]) / np.linalg.norm(e2)
+        m = n1 + n2; m /= np.linalg.norm(m)
+        out.append(b + m * d / max(np.dot(m, n1), 0.3))
     return np.array(out)
 
 
-def lamp(dome, base, pos, normal, r=0.019):
-    """Marquee lamp: milky hemispherical dome on a toothed white base ring."""
-    M = look_basis(np.asarray(pos, float), normal) @ mat_rot('x', 90)
-    prof = [(r * math.cos(t), 0.004 + 0.85 * r * math.sin(t)) for t in np.linspace(0, math.pi / 2, 6)]
-    P, UV = lathe(prof + [(0.0, 0.004 + 0.85 * r)], 14, M=M)
-    dome.add('LAMP_DOME', P, UV)
-    rb = r * 1.27
-    P, UV = lathe([(rb * 0.8, -0.0005), (rb, -0.0005), (rb, 0.003), (r * 0.98, 0.0045)], 28, M=M,
-                  radial_fn=lambda a, y, rr: rr * (1 + (0.05 * (0.5 + 0.5 * math.cos(28 * a)) if rr > r else 0)))
-    base.add('LAMP_BASE', P, UV)
+def ccw(P):
+    P = np.asarray(P, float)
+    area = 0.5 * np.sum(P[:, 0] * np.roll(P[:, 1], -1) - np.roll(P[:, 0], -1) * P[:, 1])
+    return P if area > 0 else P[::-1].copy()
 
 
-# ------------------------------------------------------------------------------------------ platform
-def build_platform():
-    """Diamond (5-bar) tread plate on black steel frames: the strip under the cabinet, the long
-    left walkway in front of the bag and the shorter part in front of the kicker (stepped front
-    edge as in all front views), plus the black plinth under the hammer station and tower."""
-    plate = Mesh('B05_tread_plate', smooth_angle=20)
-    frame = Mesh('B04_base_frame', smooth_angle=30)
-    K = 1 / 0.059
-    ch = 0.012
-    h = PT
-
-    def slab(x0, x1, z0, z1):
-        xi0, xi1, zi0, zi1 = x0 + ch, x1 - ch, z0 + ch, z1 - ch
-        def pl(pts, n):
-            uv = [(p[0] * K, p[2] * K) for p in pts]
-            poly(plate, 'DIAMOND_PLATE', pts, n, uv)
-        pl([V(xi0, h, zi1), V(xi1, h, zi1), V(xi1, h, zi0), V(xi0, h, zi0)], Y3)
-        hb = h - ch
-        pl([V(xi0, h, zi1), V(xi1, h, zi1), V(x1, hb, z1), V(x0, hb, z1)], [0, 1, 1])
-        pl([V(xi0, h, zi0), V(xi1, h, zi0), V(x1, hb, z0), V(x0, hb, z0)], [0, 1, -1])
-        pl([V(xi0, h, zi0), V(xi0, h, zi1), V(x0, hb, z1), V(x0, hb, z0)], [-1, 1, 0])
-        pl([V(xi1, h, zi0), V(xi1, h, zi1), V(x1, hb, z1), V(x1, hb, z0)], [1, 1, 0])
-        # folded plate edge (vertical, 8 mm) and black frame below
-        for (a, b, n) in (((x0, z1), (x1, z1), Z3), ((x0, z0), (x1, z0), -Z3), ((x0, z0), (x0, z1), -X3), ((x1, z0), (x1, z1), X3)):
-            pl([V(a[0], hb, a[1]), V(b[0], hb, b[1]), V(b[0], hb - 0.008, b[1]), V(a[0], hb - 0.008, a[1])], n)
-        box(frame, 'BLACK_STEEL', [x0 + 0.004, 0.004, z0 + 0.004], [x1 - 0.004, hb - 0.008, z1 - 0.004], 0.003)
-
-    slab(-0.62, 0.20, -0.633, KZ)          # under the cabinet (visible along the left side and at the back)
-    slab(-0.62, -0.16, KZ, 0.633)          # walkway in front of the bag
-    slab(-0.16, 0.20, KZ, 0.14)            # in front of the kicker
-    # plinth under the hammer station + tower
-    box(frame, 'BLACK_STEEL', [0.12, 0.0, -0.715], [0.715, PT, -0.10], 0.004, seg=2)
-    return [('B05_tread_plate', 'BASE', plate), ('B04_base_frame', 'BASE', frame)]
+def ring(mesh, mat, A, B, ref_c):
+    """Band between two 3D polylines with equal point counts (closed), facing away from ref_c."""
+    n = len(A)
+    for i in range(n):
+        j = (i + 1) % n
+        q = [A[i], A[j], B[j], B[i]]
+        cen = np.mean(q, 0)
+        out = cen - np.asarray(ref_c, float); out[1] = 0 if abs(out[1]) < 1e-9 else out[1]
+        qface(mesh, mat, q, out)
 
 
-# ------------------------------------------------------------------------------------------ boxer column
-def build_column(dome, base):
+def polyline_points(poly3, step, margin=0.0, closed=True):
+    """Evenly spaced points along a 3D polyline (for lamp rows)."""
+    P = np.asarray(poly3, float)
+    if closed: P = np.vstack([P, P[:1]])
+    seg = np.linalg.norm(np.diff(P, axis=0), axis=1); s = np.concatenate([[0], np.cumsum(seg)])
+    L = s[-1] - 2 * margin; n = max(int(round(L / step)), 1)
+    out = []
+    for k in range(n + (0 if closed else 1)):
+        t = margin + (L * k / n if not closed else s[-1] * k / n)
+        i = min(np.searchsorted(s, t, side='right') - 1, len(seg) - 1)
+        f = (t - s[i]) / max(seg[i], 1e-9)
+        out.append((P[i] * (1 - f) + P[i + 1] * f, i))
+    return out
+
+
+class Lamps:
+    """White lamp bulbs (chrome bezel + LED_WHITE dome), as in the CAD."""
+    def __init__(self):
+        self.leds = LedGroup('E01_lamps')
+        self.bezel = Mesh('E01_lamp_bezels', smooth_angle=40)
+
+    def add(self, pos, normal, r=17.0):
+        n = np.asarray(normal, float); n /= np.linalg.norm(n); p = np.asarray(pos, float)
+        B = look_basis(p, n) @ mat_rot('x', 90)
+        P, UV = lathe([(0.0, 0.0), (r + 5, 0.0), (r + 5, 2.5), (r + 2, 4.0), (0.0, 4.0)], 20, M=B)
+        self.bezel.add('METAL', P, UV)
+        self.leds.bulb(p + n * 3.0, n, color=(1, 1, 1), r=r, h=r * 0.75, mat='LED_WHITE')
+
+
+# ------------------------------------------------------------------------------------------ base
+def build_base():
     nodes = []
-    col = Mesh('B01_column_body', smooth_angle=30)
-    ytop = D['band_y'][0]
-    # cross-section in x-y (left edge vertical, right edge leaning) extruded from z0 to z1
-    sec = [V(CX0, PT), V(col_xr(0.0), PT), V(col_xr(0.69), 0.69), V(col_xr(1.81), 1.81), V(col_xr(1.81), ytop), V(CX0, ytop)]
-    front = [V(p[0], p[1], CZ1) for p in sec]
-    back = [V(p[0], p[1], CZ0) for p in sec]
-    poly(col, 'BODY_PAINT', front, Z3)
-    poly(col, 'BODY_PAINT', back, -Z3)
-    for i in range(len(sec)):
-        a, b = sec[i], sec[(i + 1) % len(sec)]
-        if a[1] == ytop and b[1] == ytop:
-            continue
-        t = b - a; n = np.array([t[1], -t[0], 0.0])
-        quadfill(col, 'BODY_PAINT', V(a[0], a[1], CZ1), V(b[0], b[1], CZ1), V(b[0], b[1], CZ0), V(a[0], a[1], CZ0), n)
-    nodes.append(('B01_column_body', 'BODY', col))
+    y0, y1 = D['plate_y']; bev = D['bevel']
+    fr = Mesh('B04_base_frame', smooth_angle=30)
+    tp = Mesh('D20_stand_tread_plate', smooth_angle=20)
+    # rear plate (under the machine), front edge bevelled
+    z0, z1 = D['plate_rear_z']
+    solid_box(fr, 'BLACK_STEEL', 0, D['W'], y0, y1, z0, z1, skip=('+z', '-y'))
+    qface(fr, 'BLACK_STEEL', [(0, y0, z1), (D['W'], y0, z1), (D['W'], y1 - 6, z1 + 6), (0, y1 - 6, z1 + 6)], [0, 0.3, 1])
 
-    # --- front panel: screen frame, screen, header/footer prints, glass, coin mech, start button
-    fp = Mesh('F01_screen_frame', smooth_angle=30)
-    x0, y0, x1, y1 = D['frame']
-    zf = CZ1
-    box(fp, 'BLACK_PLASTIC', [x0, y0, zf - 0.002], [x1, y1, zf + 0.008], 0.003, seg=2)
-    W, H = x1 - x0, y1 - y0
-    for fx in (0.027, 0.973):
-        for fy in (0.03, 0.285, 0.66, 0.96):
-            c = V(x0 + fx * W, y1 - fy * H, zf + 0.008)
-            P, UV = lathe([(0.0, 0.0), (0.0065, 0.0), (0.0062, 0.0015), (0.004, 0.0028), (0.0, 0.003)], 14,
-                          M=look_basis(c, Z3) @ mat_rot('x', 90))
-            fp.add('METAL', P, UV)
-    nodes.append(('F01_screen_frame', 'FRONT_PANEL', fp))
-    ix0, ix1 = x0 + 0.056 * W, x0 + 0.944 * W
-    hy0, hy1 = y1 - 0.117 * H, y1 - 0.014 * H          # header strip
-    fy0, fy1 = y1 - 0.979 * H, y1 - 0.834 * H          # footer strip
-    scr = Mesh('F02_screen', smooth_angle=10)
-    quadfill(scr, 'MONITOR', V(ix0, fy1, zf + 0.0085), V(ix1, fy1, zf + 0.0085), V(ix1, hy0, zf + 0.0085), V(ix0, hy0, zf + 0.0085), Z3,
-             [(0, 1), (1, 1), (1, 0), (0, 0)])
-    nodes.append(('F02_screen', 'FRONT_PANEL', scr))
-    st = Mesh('G10_stickers', smooth_angle=10)
-    decal(st, 'screen_header', V(ix0, hy1, zf + 0.0085), V(ix1, hy1, zf + 0.0085), V(ix1, hy0, zf + 0.0085), V(ix0, hy0, zf + 0.0085), Z3)
-    decal(st, 'screen_footer', V(ix0, fy1, zf + 0.0085), V(ix1, fy1, zf + 0.0085), V(ix1, fy0, zf + 0.0085), V(ix0, fy0, zf + 0.0085), Z3)
-    gl = Mesh('F03_screen_glass', smooth_angle=10)
-    quadfill(gl, 'GLASS', V(ix0, fy0, zf + 0.0105), V(ix1, fy0, zf + 0.0105), V(ix1, hy1, zf + 0.0105), V(ix0, hy1, zf + 0.0105), Z3)
-    nodes.append(('F03_screen_glass', 'FRONT_PANEL', gl))
-    # coin mech (raised black box, its face printed from the close-up) + price label in the panel print
-    cm = Mesh('F04_coin_mech', smooth_angle=30)
-    cx0, cy0, cx1, cy1 = -0.087, 0.801, -0.030, 0.931
-    box(cm, 'BLACK_PLASTIC', [cx0, cy0, zf - 0.002], [cx1, cy1, zf + 0.012], 0.003, seg=2)
-    decal(cm, 'coin_mech', V(cx0, cy1, zf + 0.012), V(cx1, cy1, zf + 0.012), V(cx1, cy0, zf + 0.012), V(cx0, cy0, zf + 0.012), Z3)
-    nodes.append(('F04_coin_mech', 'FRONT_PANEL', cm))
-    bt = Mesh('F05_start_kicker_button', smooth_angle=35)
-    c = V(0.035, 0.939, zf)
-    P, UV = lathe([(0.0, 0.0005), (0.024, 0.0005), (0.024, 0.004), (0.019, 0.006), (0.0175, 0.0045), (0.0, 0.0055)], 28,
-                  M=look_basis(c, Z3) @ mat_rot('x', 90))
-    bt.add('METAL', P, UV)
-    nodes.append(('F05_start_kicker_button', 'FRONT_PANEL', bt))
-    # front zone print (stickers below the frame) - column front trapezoid between kicker and canopy
-    G = TEXMETA['front']
-    gm = Mesh('G01_front_graphic', smooth_angle=10)
-    ys = np.linspace(0.69, D['under_y'], 9)
-    for ya, yb in zip(ys[:-1], ys[1:]):
-        pts = [V(CX0, ya, zf + 0.0012), V(col_xr(ya), ya, zf + 0.0012), V(col_xr(yb), yb, zf + 0.0012), V(CX0, yb, zf + 0.0012)]
-        uv = [((p[0] - G['x'][0]) / (G['x'][1] - G['x'][0]), (G['y'][1] - p[1]) / (G['y'][1] - G['y'][0])) for p in pts]
-        poly(gm, 'GFX_FRONT', pts, Z3, uv)
-    nodes.append(('G01_front_graphic', 'GRAPHICS', gm))
+    def stand(x0, x1, za, zb, front_bevel, left_open=False, back_open=True):
+        # tread plate top + bevelled front, black edges
+        zt = zb - front_bevel
+        K = 1 / 59.0
+        def tread(pts, n):
+            pts = np.asarray(pts, float)
+            P = np.array([[pts[0], pts[i], pts[i + 1]] for i in range(1, len(pts) - 1)])
+            UV = np.stack([P[..., 0] * K, P[..., 2] * K], -1)
+            P, UV = orient_with_uv(P, UV, n); tp.add('DIAMOND_PLATE', P, UV)
+        tread([(x0, y1, za), (x1, y1, za), (x1, y1, zt), (x0, y1, zt)], [0, 1, 0])
+        tread([(x0, y1, zt), (x1, y1, zt), (x1, y0 + 2, zb), (x0, y0 + 2, zb)], [0, 1, front_bevel / 30.0])
+        qface(fr, 'BLACK_STEEL', [(x0, y0, za), (x0, y1, za), (x0, y1, zt), (x0, y0 + 2, zb), (x0, y0, zb)], [-1, 0, 0])
+        qface(fr, 'BLACK_STEEL', [(x1, y0, za), (x1, y1, za), (x1, y1, zt), (x1, y0 + 2, zb), (x1, y0, zb)], [1, 0, 0])
+    stand(*D['stand_wide'][:2], D['stand_wide'][2], D['stand_wide'][3], bev)
+    stand(*D['stand_arm'][:2], D['stand_arm'][2] - 1, D['stand_arm'][3], 32.0)
+    nodes += [('B04_base_frame', 'BASE', fr), ('D20_stand_tread_plate', 'BASE', tp)]
+    ft = Mesh('D21_base_feet', smooth_angle=40)
+    for (fx, fz) in ((90, 60), (700, 60), (1290, 60), (90, 480), (700, 480), (1290, 470), (150, 1100)):
+        P, UV = lathe([(0, 0), (36, 0), (40, 2), (40, y0), (0, y0)], 24, M=mat_translate(fx, 0, fz))
+        ft.add('RUBBER', P, UV)
+    nodes.append(('D21_base_feet', 'BASE', ft))
+    return nodes
 
-    # --- side prints (L-shaped: canopy band side + column side + kicker side)
-    by0, by1 = D['band_y']
-    Lm = TEXMETA['left']
-    lg = Mesh('G03_left_graphic', smooth_angle=10)
-    xL = CX0 - 0.0012
-    def side_rect(mesh, mat, xfun, z0, z1, ya, yb, uvf, n):
-        for yy0, yy1 in zip(np.linspace(ya, yb, 5)[:-1], np.linspace(ya, yb, 5)[1:]):
-            pts = [V(xfun(yy0), yy0, z0), V(xfun(yy0), yy0, z1), V(xfun(yy1), yy1, z1), V(xfun(yy1), yy1, z0)]
-            poly(mesh, mat, pts, n, [uvf(p) for p in pts])
-    luv = lambda p: ((p[2] - Lm['z'][0]) / (Lm['z'][1] - Lm['z'][0]), (Lm['y'][1] - p[1]) / (Lm['y'][1] - Lm['y'][0]))
-    # one continuous, neatly trimmed print per side: canopy band side + column side + kicker side with
-    # the diagonal step - outlines measured on the side view n11 (the print stops ~20 mm inside the
-    # black rear profile and the red front edge)
-    def panel(mesh, mat, pieces, xfun, n, uvf):
-        for pc in pieces:
-            pts = [V(xfun(y), y, z) for (z, y) in pc]
-            poly(mesh, mat, pts, n, [uvf(p) for p in pts])
-    GZ0, GZB1, GY0, GY1 = -0.526, 0.32, 1.875, 2.095
-    left_pieces = [[(GZ0, 0.08), (-0.262, 0.08), (-0.262, 0.57), (GZ0, 0.57)],
-                   [(GZ0, 0.57), (-0.262, 0.57), (-0.325, 0.665), (GZ0, 0.665)],
-                   [(GZ0, 0.665), (-0.325, 0.665), (-0.325, GY0), (GZ0, GY0)],
-                   [(GZ0, GY0), (GZB1, GY0), (GZB1, GY1), (GZ0, GY1)]]
-    for pc in left_pieces[2:]:
-        pass
-    # split the tall pieces so the mesh follows the face closely
-    def split(pc, k=4):
-        (z0, y0), _, _, (z3, y3) = pc
-        out = []
-        for t0, t1 in zip(np.linspace(0, 1, k + 1)[:-1], np.linspace(0, 1, k + 1)[1:]):
-            out.append([(pc[0][0], pc[0][1] + (pc[3][1] - pc[0][1]) * t0), (pc[1][0] + (pc[2][0] - pc[1][0]) * t0, pc[1][1] + (pc[2][1] - pc[1][1]) * t0),
-                        (pc[1][0] + (pc[2][0] - pc[1][0]) * t1, pc[1][1] + (pc[2][1] - pc[1][1]) * t1), (pc[0][0], pc[0][1] + (pc[3][1] - pc[0][1]) * t1)])
-        return out
-    panel(lg, 'GFX_LEFT', [q for pc in left_pieces for q in split(pc)], lambda y: CX0 - 0.0012, -X3, luv)
-    nodes.append(('G03_left_graphic', 'GRAPHICS', lg))
-    Rm = TEXMETA['right']
-    rg = Mesh('G04_right_graphic', smooth_angle=10)
-    ruv = lambda p: ((Rm['z'][1] - p[2]) / (Rm['z'][1] - Rm['z'][0]), (Rm['y'][1] - p[1]) / (Rm['y'][1] - Rm['y'][0]))
-    right_pieces = [[(-0.52, 0.60), (-0.325, 0.60), (-0.325, GY0), (-0.52, GY0)],
-                    [(GZ0, GY0), (GZB1, GY0), (GZB1, GY1), (GZ0, GY1)]]
-    panel(rg, 'GFX_RIGHT', [q for pc in right_pieces for q in split(pc, 8)], lambda y: col_xr(y) + 0.0012, [1, 0.07, 0], ruv)
-    nodes.append(('G04_right_graphic', 'GRAPHICS', rg))
 
-    # --- black edge profiles on the rear vertical edges of the column
-    pr = Mesh('R06_edge_profiles', smooth_angle=30)
-    box(pr, 'BLACK_STEEL', [CX0 - 0.003, PT, CZ0 - 0.003], [CX0 + 0.004, by1, CZ0 + 0.040], 0.0015)
-    box(pr, 'BLACK_STEEL', [CX0 - 0.003, PT, CZ0 - 0.003], [CX0 + 0.040, by1, CZ0 + 0.004], 0.0015)
-    box(pr, 'BLACK_STEEL', [0.12 - 0.040, PT, CZ0 - 0.003], [0.12 + 0.003, by1, CZ0 + 0.004], 0.0015)
-    nodes.append(('R06_edge_profiles', 'BODY', pr))
-    nodes.append(('G10_stickers', 'GRAPHICS', st))
-    return nodes, st
+# ------------------------------------------------------------------------------------------ boxer column + kicker
+def build_column(L):
+    nodes = []
+    m = Mesh('B01_body', smooth_angle=30)
+    x0 = D['col_x0']; z0, zf = D['col_z']; zk = D['kick_z']; yk = D['kick_top']; y0 = D['kick_y0']
+    ytop = D['col_top']; ys1, ys0 = D['col_slant_y']; xrl = D['col_xr_low']; xrt = D['col_xr_top']
+    ych = ys0                                         # chamfer top = start of the slant (646)
+    # side profile (z, y), CCW seen from -X
+    prof = [(z0, y0), (zk, y0), (zk, yk), (zf, ych), (zf, ytop), (z0, ytop)]
+    # left side
+    qface(m, 'BODY_PAINT', [(x0, y, z) for z, y in prof], [-1, 0, 0])
+    # right side: lower part x = 844 (kicker profile), slanted middle, upper part x = 683
+    qface(m, 'BODY_PAINT', [(xrl, y0, z0), (xrl, y0, zk), (xrl, yk, zk), (xrl, ych, zf), (xrl, ych, z0)], [1, 0, 0])
+    qface(m, 'BODY_PAINT', [(xrl, ych, z0), (xrl, ych, zf), (xrt, ys1, zf), (xrt, ys1, z0)], [1, 0.14, 0])
+    qface(m, 'BODY_PAINT', [(xrt, ys1, z0), (xrt, ys1, zf), (xrt, ytop, zf), (xrt, ytop, z0)], [1, 0, 0])
+    # back (doors are added in build_rear)
+    qface(m, 'BODY_PAINT', [(x0, y0, z0), (xrl, y0, z0), (xrl, ych, z0), (xrt, ys1, z0), (xrt, ytop, z0), (x0, ytop, z0)], [0, 0, -1])
+    # column front (z 435) from the chamfer up to the canopy underside, with the screen
+    yc = D['can_y'][0]
+    sx0, sy0, sx1, sy1 = D['screen']
+    qface(m, 'BODY_PAINT', [(x0, ych, zf), (xrl, ych, zf), (xrt, ys1, zf), (xrt, yc, zf), (x0, yc, zf)], [0, 0, 1])
+    # kicker chamfer + front with the opening
+    qface(m, 'BODY_PAINT', [(x0, yk, zk), (xrl, yk, zk), (xrl, ych, zf), (x0, ych, zf)], [0, 1, 1.1])
+    ox0, oy0, ox1, oy1 = D['kick_open']
+    for pts in ([(x0, y0, zk), (xrl, y0, zk), (xrl, oy0, zk), (x0, oy0, zk)], [(x0, oy1, zk), (xrl, oy1, zk), (xrl, yk, zk), (x0, yk, zk)],
+                [(x0, oy0, zk), (ox0, oy0, zk), (ox0, oy1, zk), (x0, oy1, zk)], [(ox1, oy0, zk), (xrl, oy0, zk), (xrl, oy1, zk), (ox1, oy1, zk)]):
+        qface(m, 'BODY_PAINT', pts, [0, 0, 1])
+    nodes.append(('B01_body', 'BODY', m))
+
+    # kicker recess: red walls, dark back, green turf floor
+    kr = Mesh('K01_kicker_recess', smooth_angle=30)
+    zb = zk - D['kick_depth']; ins = 22.0
+    bx0, by0, bx1, by1 = ox0 + ins, oy0, ox1 - ins, oy1 - ins
+    qface(kr, 'BODY_PAINT', [(ox0, oy1, zk), (ox1, oy1, zk), (bx1, by1, zb), (bx0, by1, zb)], [0, -1, 0])
+    qface(kr, 'BODY_PAINT', [(ox0, oy0, zk), (ox0, oy1, zk), (bx0, by1, zb), (bx0, by0, zb)], [1, 0, 0])
+    qface(kr, 'BODY_PAINT', [(ox1, oy0, zk), (bx1, by0, zb), (bx1, by1, zb), (ox1, oy1, zk)], [-1, 0, 0])
+    qface(kr, 'TURF_GREEN', [(ox0, oy0 + 1, zk), (ox1, oy0 + 1, zk), (bx1, by0 + 1, zb), (bx0, by0 + 1, zb)], [0, 1, 0])
+    qface(kr, 'CAVITY_DARK', [(bx0, by0, zb), (bx1, by0, zb), (bx1, by1, zb), (bx0, by1, zb)], [0, 0, 1])
+    # speaker grille (perforated, top left of the opening)
+    for i in range(6):
+        for j in range(2):
+            P, UV = disc(8.5, 14, M=mat_translate(ox0 + 70 + i * 21 + j * 10, oy1 - 30 - j * 18, zb + 1))
+            kr.add('BLACK_PLASTIC', P, UV)
+    nodes.append(('K01_kicker_recess', 'KICKER', kr))
+
+    # kicker ball + arm (at rest, horizontal inside the opening)
+    ka = Mesh('K02_kicker_arm', smooth_angle=45)
+    ax0, ax1, ay, az, ar = D['arm']
+    cyl(ka, 'BLACK_PLASTIC', (ax0, ay, az), (ax1, ay, az), ar, seg=28, round_r=4)
+    cyl(ka, 'BLACK_PLASTIC', (ax0 - 40, ay, az), (ax0 + 5, ay, az), ar * 0.72, seg=24)
+    box(ka, 'METAL', (ax1, ay - 40, az - 45), (ax1 + 150, ay + 40, zk - 2), r=4, seg=2)
+    box(ka, 'BLACK_PLASTIC', (ax1 + 20, ay - 55, az - 30), (ax1 + 130, ay + 55, az + 30), r=4, seg=2)
+    nodes.append(('K02_kicker_arm', 'KICKER', ka))
+    kb = Mesh('K03_kicker_ball', smooth_angle=60)
+    bxc, byc, bzc, br = D['ball']
+    sphere_gores(kb, ['BALL_BLACK', 'BALL_WHITE'], (bxc, byc, bzc), br, n=8, axis=(1, 0, 0.0))
+    nodes.append(('K03_kicker_ball', 'KICKER', kb))
+
+    # screen (black glass in a thin black frame), coin acceptor, lock
+    fp = Mesh('F01_screen', smooth_angle=20)
+    box(fp, 'BLACK_PLASTIC', (sx0, sy0, zf - 2), (sx1, sy1, zf + 6), r=2, seg=1)
+    qface(fp, 'MONITOR', [(sx0 + 12, sy0 + 12, zf + 6.5), (sx1 - 12, sy0 + 12, zf + 6.5), (sx1 - 12, sy1 - 12, zf + 6.5), (sx0 + 12, sy1 - 12, zf + 6.5)], [0, 0, 1])
+    nodes.append(('F01_screen', 'FRONT_PANEL', fp))
+    cp = Mesh('F02_coin_acceptor', smooth_angle=30)
+    cx0, cy0, cx1, cy1 = D['coin']
+    box(cp, 'BLACK_PLASTIC', (cx0, cy0, zf - 2), (cx1, cy1, zf + 10), r=2, seg=1)
+    cxm = (cx0 + cx1) / 2
+    box(cp, 'BUTTON_RED', (cxm - 14, (cy0 + cy1) / 2 - 9, zf + 9), (cxm + 14, (cy0 + cy1) / 2 + 9, zf + 15), r=2, seg=2)
+    for yy in (cy1 - 45, cy0 + 20):
+        box(cp, 'CAVITY_DARK', (cxm - 2.5, yy, zf + 10), (cxm + 2.5, yy + 28, zf + 10.6), r=0.5, seg=1)
+    for sx in (cx0 + 7, cx1 - 7):
+        for sy in (cy0 + 7, cy1 - 7):
+            P, UV = disc(3, 10, M=mat_translate(sx, sy, zf + 10.3)); cp.add('METAL', P, UV)
+    lx, ly = D['lock']
+    P, UV = lathe([(0, 0), (11, 0), (11, 3), (9, 6), (0, 6)], 24, M=look_basis(np.array([lx, ly, zf]), [0, 0, 1]) @ mat_rot('x', 90))
+    cp.add('METAL', P, UV)
+    nodes.append(('F02_coin_acceptor', 'FRONT_PANEL', cp))
+
+    # lamps around the kicker front (top row + both sides)
+    zl = zk
+    for x in np.linspace(26, 822, 8):
+        L.add((x, 539, zl), (0, 0, 1))
+    for y in (426, 312, 199, 86):
+        L.add((26, y, zl), (0, 0, 1)); L.add((822, y, zl), (0, 0, 1))
+    return nodes
 
 
 # ------------------------------------------------------------------------------------------ canopy
-def band_outline():
-    """Band (lower canopy tier) plan, CCW in (x, z)."""
-    h, zs, zf, hf = 0.35, 0.337, 0.437, 0.252
-    pts = [(-h, CZ0), (-h, zs), (-hf, zf), (hf, zf), (h, zs), (h, CZ0)]
-    P = np.array([(XC + x, z) for x, z in pts])
-    # CCW in (x,z): reverse if needed
-    a = 0.5 * np.sum(P[:, 0] * np.roll(P[:, 1], -1) - np.roll(P[:, 0], -1) * P[:, 1])
-    return P if a > 0 else P[::-1].copy()
+# plans (x, z): canopy box top, box bottom (front facets 40 mm further back), lid outline
+BOX_TOP = ccw([(4, 151), (683, 151), (683, 440), (630, 1035), (480, 1231), (209, 1231), (57, 1035), (4, 440)])
+BOX_BOT = ccw([(4, 151), (683, 151), (683, 440), (632, 995), (480, 1191), (209, 1191), (55, 995), (4, 440)])
+LID = ccw([(-81, 45), (770, 45), (770, 440), (715, 1122), (529, 1359), (160, 1359), (-24, 1122), (-81, 440)])
 
 
-def top_outline():
-    h, zs, zf, hf, zb = 0.47, 0.43, 0.60, 0.28, -0.649     # steeper front fascia (IMG_0532 / n05)
-    pts = [(-h, zb), (-h, zs), (-hf, zf), (hf, zf), (h, zs), (h, zb)]
-    P = np.array([(XC + x, z) for x, z in pts])
-    a = 0.5 * np.sum(P[:, 0] * np.roll(P[:, 1], -1) - np.roll(P[:, 0], -1) * P[:, 1])
-    return P if a > 0 else P[::-1].copy()
+def lid_top_y(z):
+    if z <= 1122: return D['lid_top']
+    return D['lid_top'] + (min(z, 1359) - 1122) / (1359 - 1122) * (D['lid_top_front'] - D['lid_top'])
 
 
-def outward(a, b):
-    """Outward normal (x,z) of edge a->b of a CCW (x,z) polygon -> 3D."""
-    t = b - a
-    return np.array([t[1], 0.0, -t[0]])
-
-
-def build_canopy(dome, base, st):
+def build_canopy(L):
     nodes = []
-    by0, by1 = D['band_y']
-    B = band_outline()
-    T = top_outline()
-    # thick moulded rim on top of the band (IMG_0532/0546/n05): it projects ~30 mm all round with
-    # bevelled lower and upper edges; the crown fascia starts on top of it
-    RIM_H = 0.046
-    yR = by1 + RIM_H
-    Bo = inset(B, -0.030)                      # rim outer face
-    Bi = inset(B, -0.016)                      # foot of the crown fascia (rim top, after the upper bevel)
-    Tr = T.copy()
-    ch = D['rim_chamfer']
-    Tc = inset(T, ch)
-
-    band = Mesh('B02_canopy_band', smooth_angle=25)
-    n = len(B)
-    for i in range(n):
-        a, b = B[i], B[(i + 1) % n]
-        nrm = outward(a, b)
-        quadfill(band, 'BODY_PAINT', V(a[0], by0, a[1]), V(b[0], by0, b[1]), V(b[0], by1, b[1]), V(a[0], by1, a[1]), nrm)
-        # rim: lower bevel, vertical face, upper bevel
-        ao, bo, ai, bi = Bo[i], Bo[(i + 1) % n], Bi[i], Bi[(i + 1) % n]
-        quadfill(band, 'BODY_PAINT', V(a[0], by1, a[1]), V(b[0], by1, b[1]), V(bo[0], by1 + 0.013, bo[1]), V(ao[0], by1 + 0.013, ao[1]), nrm + np.array([0, -1.0, 0]))
-        quadfill(band, 'BODY_PAINT', V(ao[0], by1 + 0.013, ao[1]), V(bo[0], by1 + 0.013, bo[1]), V(bo[0], yR - 0.012, bo[1]), V(ao[0], yR - 0.012, ao[1]), nrm)
-        quadfill(band, 'BODY_PAINT', V(ao[0], yR - 0.012, ao[1]), V(bo[0], yR - 0.012, bo[1]), V(bi[0], yR, bi[1]), V(ai[0], yR, ai[1]), nrm + np.array([0, 1.0, 0]))
-    nodes.append(('B02_canopy_band', 'CANOPY', band))
-
-    crown = Mesh('B02_canopy_crown', smooth_angle=20)
-    for i in range(n):
-        a, b = Bi[i], Bi[(i + 1) % n]
-        c, d = T[(i + 1) % n], T[i]
-        ca, cb = Tc[i], Tc[(i + 1) % n]
-        ya, yb = canopy_top(d[1]) - ch, canopy_top(c[1]) - ch
-        nrm = outward(T[i], T[(i + 1) % n]) + np.array([0, -0.5, 0])   # the flared fascia overhangs: normal points out and down
-        # straight flared fascia from the band ledge up to the rim
-        quadfill(crown, 'BODY_PAINT', V(a[0], yR, a[1]), V(b[0], yR, b[1]), V(c[0], yb, c[1]), V(d[0], ya, d[1]), nrm)
-        # sharp, cut-off top edge (13 mm chamfer) - as on the Boxer Champion
-        quadfill(crown, 'BODY_PAINT', V(d[0], ya, d[1]), V(c[0], yb, c[1]), V(cb[0], canopy_top(cb[1]), cb[1]), V(ca[0], canopy_top(ca[1]), ca[1]),
-                 outward(T[i], T[(i + 1) % n]) + np.array([0, 2.0, 0]))
-    poly(crown, 'BODY_PAINT', [V(p[0], canopy_top(p[1]), p[1]) for p in Tc], [0, 1, -0.085])
-    nodes.append(('B02_canopy_crown', 'CANOPY', crown))
-
-    # ---- front band print (zone 'band'): left chamfer, front, right chamfer
-    bm = Mesh('G02_band_graphic', smooth_angle=10)
-    i_lf = [k for k in range(n) if abs(B[k][1] - 0.337) < 1e-6 and B[k][0] < XC][0]
-    # walk the polyline left-side end -> left front -> right front -> right-side end
-    lpts = [np.array([XC - 0.35, 0.337]), np.array([XC - 0.252, 0.437]), np.array([XC + 0.252, 0.437]), np.array([XC + 0.35, 0.337])]
-    seg = np.linalg.norm(np.diff(lpts, axis=0), axis=1)
-    s = np.concatenate([[0], np.cumsum(seg)]); Ltot = s[-1]
-    m0, m1 = 0.012, Ltot - 0.012
-    gy0, gy1 = by0 + 0.018, by1 - 0.010
-    def at(sv):
-        k = min(np.searchsorted(s, sv, side='right') - 1, 2)
-        t = (sv - s[k]) / seg[k]
-        p = lpts[k] + (lpts[k + 1] - lpts[k]) * t
-        e = lpts[k + 1] - lpts[k]; nn = np.array([-e[1], e[0]]); nn /= np.linalg.norm(nn)
-        if nn[1] < 0:
-            nn = -nn
-        return p + nn * 0.0012, nn
-    samples = sorted(set(list(np.linspace(m0, m1, 40)) + [s[1], s[2]]))
-    for sa, sb in zip(samples[:-1], samples[1:]):
-        (pa, na), (pb, nb) = at(sa), at(sb + 1e-9 if sb in (s[1], s[2]) else sb)
-        pb, nb = at(sb - 1e-9) if sb in (s[1], s[2]) else (pb, nb)
-        ua, ub = (sa - m0) / (m1 - m0), (sb - m0) / (m1 - m0)
-        nn = (na + nb) / 2
-        poly(bm, 'GFX_BAND', [V(pa[0], gy0, pa[1]), V(pb[0], gy0, pb[1]), V(pb[0], gy1, pb[1]), V(pa[0], gy1, pa[1])],
-             V(nn[0], 0, nn[1]), [(ua, 1), (ub, 1), (ub, 0), (ua, 0)])
-    nodes.append(('G02_band_graphic', 'GRAPHICS', bm))
-
-    # ---- bottom: chamfered lamp ledge around the open part, underside with the bag opening
-    uy = D['under_y']
-    ring = [np.array([XC - 0.35, CZ1]), np.array([XC - 0.35, 0.337]), np.array([XC - 0.252, 0.437]),
-            np.array([XC + 0.252, 0.437]), np.array([XC + 0.35, 0.337]), np.array([XC + 0.35, CZ1])]
-    inner = [np.array([XC - 0.30, CZ1]), np.array([XC - 0.30, 0.316]), np.array([XC - 0.231, 0.387]),
-             np.array([XC + 0.231, 0.387]), np.array([XC + 0.30, 0.316]), np.array([XC + 0.30, CZ1])]
-    und = Mesh('B03_canopy_underside', smooth_angle=25)
-    for k in range(5):
-        a, b, ai, bi = ring[k], ring[k + 1], inner[k], inner[k + 1]
-        e = b - a; nn = np.array([-e[1], 0, e[0]]); nn = -nn if (nn[0] * (a[0] - XC) + nn[2] * (a[1] - 0.1)) < 0 else nn
-        quadfill(und, 'BODY_PAINT', V(a[0], by0, a[1]), V(b[0], by0, b[1]), V(bi[0], uy, bi[1]), V(ai[0], uy, ai[1]), nn + np.array([0, -1.0, 0]))
-    # underside: ring between the inner ledge outline (+ column front line) and the bag opening
-    hx, hz = D['bag_hang']
-    outer_poly = np.array(inner)                     # closed by the column-front segment
-    op_w, op_d, op_r = 0.165, 0.13, 0.075        # large rounded opening (IMG_0542)
-    def rrect(w, d, r, nseg=6):
-        pts = []
-        for (cx, cz, a0) in ((hx + w - r, hz + d - r, 0), (hx - w + r, hz + d - r, 90), (hx - w + r, hz - d + r, 180), (hx + w - r, hz - d + r, 270)):
-            for t in np.linspace(a0, a0 + 90, nseg):
-                pts.append([cx + r * math.cos(math.radians(t)), cz + r * math.sin(math.radians(t))])
-        return np.array(pts)
-    hole = rrect(op_w, op_d, op_r)
-    N = 120
-    angs = np.linspace(0, 2 * math.pi, N, endpoint=False)
-    c = np.array([hx, hz])
-    ro = ray_polygon(c, angs, outer_poly)
-    ri = ray_polygon(c, angs, hole)
+    ya, yb, yc = D['can_y']                 # underside, wall bottom, wall top
+    cb = Mesh('B02_canopy_box', smooth_angle=25)
+    top3 = [np.array([x, yc, z]) for x, z in BOX_TOP]
+    bot3 = [np.array([x, yb, z]) for x, z in BOX_BOT]
+    cen = np.array([343.5, 1960, 600])
+    # walls (skip the back edge: index of the (4,0)->(683,0) segment)
+    def edges(Pl):
+        out = []
+        n = len(Pl)
+        for i in range(n):
+            a, b = Pl[i], Pl[(i + 1) % n]
+            out.append((i, (i + 1) % n, a, b))
+        return out
+    back = lambda a, b: abs(a[1] - 151) < 1e-6 and abs(b[1] - 151) < 1e-6
+    for i, j, a, b in edges(BOX_TOP):
+        if back(a, b): continue
+        q = [bot3[i], bot3[j], top3[j], top3[i]]
+        qface(cb, 'BODY_PAINT', q, np.r_[np.mean(q, 0)[0] - cen[0], 0, np.mean(q, 0)[2] - cen[2]])
+    # lamp strip: chamfer from the wall bottom (1875) to the underside (1827), 30 mm inset
+    UND = offset_poly(BOX_BOT, -30.0); UND[np.abs(np.asarray(BOX_BOT)[:, 1] - 151) < 1e-6, 1] = 151.0
+    und3 = [np.array([x, ya, z]) for x, z in UND]
+    strip_quads = []
+    for i, j, a, b in edges(BOX_BOT):
+        if back(a, b): continue
+        q = [und3[i], und3[j], bot3[j], bot3[i]]
+        cq = np.mean(q, 0)
+        qface(cb, 'BODY_PAINT', q, np.r_[cq[0] - cen[0], -60.0, cq[2] - cen[2]])
+        strip_quads.append(q)
+    # underside: flat, with the bag opening, from the column front (z 435) forward
+    zf = D['col_z'][1]
+    pts = np.array([[4 + 30, zf], [683 - 30, zf]] + [tuple(p) for p in UND if p[1] > 441])
+    oc = np.array([343.5, 760.0])
+    pts = pts[np.argsort(np.arctan2(pts[:, 1] - oc[1], pts[:, 0] - oc[0]))]
+    hole = (250.0, 438.0, 560.0, 900.0)       # bag opening (x0, x1, z0, z1)
+    hx0, hx1, hz0, hz1 = hole
+    rect = np.array([[hx0, hz0], [hx1, hz0], [hx1, hz1], [hx0, hz1]])
+    angs = np.linspace(0, 2 * math.pi, 160, endpoint=False)
     dirs = np.stack([np.cos(angs), np.sin(angs)], 1)
-    for k in range(N):
-        k2 = (k + 1) % N
-        a, b = c + dirs[k] * ro[k], c + dirs[k2] * ro[k2]
-        ai, bi = c + dirs[k] * ri[k], c + dirs[k2] * ri[k2]
-        quadfill(und, 'BODY_PAINT', V(a[0], uy, a[1]), V(b[0], uy, b[1]), V(bi[0], uy, bi[1]), V(ai[0], uy, ai[1]), -Y3)
-    # opening: short funnel up into the canopy, dark cavity, black neck mount
-    hole2 = rrect(op_w - 0.03, op_d - 0.025, op_r * 0.6)
-    ri2 = ray_polygon(c, angs, hole2)
-    for k in range(N):
-        k2 = (k + 1) % N
-        a, b = c + dirs[k] * ri[k], c + dirs[k2] * ri[k2]
-        ai, bi = c + dirs[k] * ri2[k], c + dirs[k2] * ri2[k2]
-        quadfill(und, 'BODY_PAINT', V(a[0], uy, a[1]), V(b[0], uy, b[1]), V(bi[0], uy + 0.05, bi[1]), V(ai[0], uy + 0.05, ai[1]),
-                 V(-(a[0] + b[0]) / 2 + hx, -0.3, -(a[1] + b[1]) / 2 + hz))
-        quadfill(und, 'CAVITY_DARK', V(ai[0], uy + 0.05, ai[1]), V(bi[0], uy + 0.05, bi[1]), V(hx, uy + 0.05, hz), V(hx, uy + 0.05, hz), -Y3)
-    nodes.append(('B03_canopy_underside', 'CANOPY', und))
+    ro = ray_polygon(oc, angs, pts); ri = ray_polygon(oc, angs, rect)
+    outer = oc + dirs * ro[:, None]; inner = oc + dirs * ri[:, None]
+    Pu, UVu = ring_cap(outer, inner, X3, Z3, Y3, h=ya, facing=-1)
+    cb.add('BODY_PAINT', Pu, UVu * 0.001)
+    # the canopy box is flush with the column back (z 151); only plate + lid overhang to z 45
+    qface(cb, 'BODY_PAINT', [(4, yb, 151), (4, yc, 151), (683, yc, 151), (683, yb, 151)], [0, 0, -1])
+    nodes.append(('B02_canopy_box', 'CANOPY', cb))
+    # bag cavity
+    cv = Mesh('B03_canopy_cavity', smooth_angle=30)
+    hy = ya + 210
+    for q, n in (([(hx0, ya, hz0), (hx0, hy, hz0), (hx0, hy, hz1), (hx0, ya, hz1)], [1, 0, 0]),
+                 ([(hx1, ya, hz0), (hx1, ya, hz1), (hx1, hy, hz1), (hx1, hy, hz0)], [-1, 0, 0]),
+                 ([(hx0, ya, hz0), (hx1, ya, hz0), (hx1, hy, hz0), (hx0, hy, hz0)], [0, 0, 1]),
+                 ([(hx0, ya, hz1), (hx0, hy, hz1), (hx1, hy, hz1), (hx1, ya, hz1)], [0, 0, -1]),
+                 ([(hx0, hy, hz0), (hx1, hy, hz0), (hx1, hy, hz1), (hx0, hy, hz1)], [0, -1, 0])):
+        qface(cv, 'CAVITY_DARK', q, n)
+    nodes.append(('B03_canopy_cavity', 'CANOPY', cv))
 
-    # downlights (two round LED spots either side of the opening)
-    dl = Mesh('E01_downlights', smooth_angle=30)
-    dlr = Mesh('E01_downlight_rings', smooth_angle=30)
-    for sx in (-1, 1):
-        p = V(hx + sx * 0.235, uy, hz + 0.07)
-        M = look_basis(p, -Y3) @ mat_rot('x', 90)
-        P, UV = lathe([(0.026, 0.0), (0.036, 0.0), (0.036, 0.002), (0.028, 0.004), (0.026, 0.0035)], 28, M=M)
-        dlr.add('METAL', P, UV)
-        P, UV = disc(0.026, 24, M=look_basis(p - Y3 * 0.0025, -Y3))
-        dl.add('LED_WHITE', P, UV)
-    nodes.append(('E01_downlights', 'EMISSION', dl))
-    nodes.append(('E01_downlight_rings', 'CANOPY', dlr))
-
-    # START BOXER button on the front of the lamp ledge
-    a, b, ai, bi = ring[2], ring[3], inner[2], inner[3]
-    pc = (a + b + ai + bi) / 4
-    p3 = V(pc[0], (by0 + uy) / 2, pc[1])
-    nl = V(0, -0.05 / 0.05, 0.05 / 0.05); nl /= np.linalg.norm(nl)
-    upv = V(0, 1.0, 1.0); upv /= np.linalg.norm(upv)
-    tl, tr, br, bl = frame_on(p3, X3, upv, 0.062, 0.062)
-    decal(st, 'st_start_boxer', tl, tr, br, bl, nl)
-    btn = Mesh('F06_start_boxer_button', smooth_angle=35)
-    P, UV = lathe([(0.0, 0.0), (0.016, 0.0), (0.016, 0.003), (0.012, 0.0045), (0.0, 0.0045)], 24, M=look_basis(p3, nl) @ mat_rot('x', 90))
-    btn.add('METAL', P, UV)
-    nodes.append(('F06_start_boxer_button', 'CANOPY', btn))
-
-    # ---- lamps
-    def lamps_on_ledge(a, b, ai, bi, ts):
-        for t in ts:
-            p = (a + (b - a) * t + ai + (bi - ai) * t) / 2
-            e = b - a; nn = np.array([-e[1], e[0]]); nn /= np.linalg.norm(nn)
-            if np.dot(nn, a - np.array([XC, 0.0])) < 0:
-                nn = -nn
-            nrm = V(nn[0], -1.0, nn[1]); nrm /= np.linalg.norm(nrm)
-            lamp(dome, base, V(p[0], (by0 + uy) / 2, p[1]) + nrm * 0.002, nrm)
-    lamps_on_ledge(ring[2], ring[3], inner[2], inner[3], [0.5 - 0.19 / 0.504, 0.5 - 0.08 / 0.504, 0.5 + 0.08 / 0.504, 0.5 + 0.19 / 0.504])
-    lamps_on_ledge(ring[1], ring[2], inner[1], inner[2], [0.5])
-    lamps_on_ledge(ring[3], ring[4], inner[3], inner[4], [0.5])
-    zs_side = np.linspace(-0.22, 0.25, 5)
-    for k, zz in ((0, zs_side), (4, zs_side)):
-        a, b, ai, bi = ring[k], ring[k + 1], inner[k], inner[k + 1]
-        lamps_on_ledge(a, b, ai, bi, [(z - a[1]) / (b[1] - a[1]) for z in zz])
-
-    def fascia_point(i, s, t):
-        """Point on crown facet i (edge Bi[i]->Bi[i+1] at the bottom, T[i]->T[i+1] at the rim)."""
-        a, b = Bi[i], Bi[(i + 1) % n]; c, d = T[(i + 1) % n], T[i]
-        pb = a + (b - a) * s; pt = d + (c - d) * s
-        yb = yR; yt = canopy_top(pt[1]) - ch
-        p = pb + (pt - pb) * t
-        y = yb + (yt - yb) * t
-        e1 = V(b[0] - a[0], 0, b[1] - a[1]); e2 = V(pt[0] - pb[0], yt - yb, pt[1] - pb[1])
-        nrm = np.cross(e1, e2); nrm /= np.linalg.norm(nrm)
-        if np.dot(nrm, V(pb[0] - XC, 0, pb[1] - 0.0)) < 0:
-            nrm = -nrm
-        return V(p[0], y, p[1]), nrm, e1 / np.linalg.norm(e1), e2 / np.linalg.norm(e2)
-    # identify crown facets: front (both z at 0.649), left/right chamfers, sides
-    def facet_kind(i):
-        d, c = T[i], T[(i + 1) % n]
-        if abs(d[1] - 0.60) < 1e-6 and abs(c[1] - 0.60) < 1e-6:
-            return 'front'
-        if abs(d[1] + 0.649) < 1e-6 and abs(c[1] + 0.649) < 1e-6:
-            return 'back'
-        if abs(d[0] - c[0]) < 1e-6:
-            return 'side'
-        return 'chamfer'
+    # ledge plate (38 mm) between box and lid
+    lp = Mesh('B02_canopy_plate', smooth_angle=25)
+    PL = offset_poly(BOX_TOP, 22.0); PL[np.abs(np.asarray(BOX_TOP)[:, 1] - 151) < 1e-6, 1] = 45.0
+    PL[:, 1] = np.maximum(PL[:, 1], 45.0)
+    yp0, yp1 = yc, yc + D['plate_t']
+    p0 = [np.array([x, yp0, z]) for x, z in PL]; p1 = [np.array([x, yp1, z]) for x, z in PL]
+    n = len(PL)
     for i in range(n):
-        kind = facet_kind(i)
-        if kind == 'front':
-            for s_ in (0.5 - 0.175 / 0.53, 0.5, 0.5 + 0.175 / 0.53):
-                p, nrm, _, _ = fascia_point(i, s_, 0.80)
-                lamp(dome, base, p, nrm)
-            p, nrm, e1, e2 = fascia_point(i, 0.5, 0.38)
-            if np.dot(e1, X3) < 0:
-                e1 = -e1
-            decal(st, 'st_vs_hammer', *frame_on(p, e1, e2, 0.42, 0.167), nrm)
-        elif kind == 'chamfer':
-            for s_ in (0.2, 0.5, 0.8):
-                p, nrm, _, _ = fascia_point(i, s_, 0.78)
-                lamp(dome, base, p, nrm)
-            p, nrm, e1, e2 = fascia_point(i, 0.5, 0.36)
-            if np.dot(e1, X3) < 0:
-                e1 = -e1
-            left = p[0] < XC
-            decal(st, 'st_boxer' if left else 'st_kicker', *frame_on(p, e1, e2, 0.16, 0.16), nrm)
-        elif kind == 'side':
-            d, c = T[i], T[(i + 1) % n]
-            for zz in np.linspace(-0.55, 0.40, 8):
-                s_ = (zz - d[1]) / (c[1] - d[1])
-                if 0.02 < s_ < 0.98:
-                    p, nrm, _, _ = fascia_point(i, s_, 0.80)
-                    lamp(dome, base, p, nrm)
+        j = (i + 1) % n
+        q = [p0[i], p0[j], p1[j], p1[i]]; cq = np.mean(q, 0)
+        qface(lp, 'BODY_PAINT', q, np.r_[cq[0] - cen[0], 0, cq[2] - cen[2]])
+    ctr = np.array([343.5, yp0, 700.0])
+    for i in range(n):
+        j = (i + 1) % n
+        qface(lp, 'BODY_PAINT', [p0[i], p0[j], ctr], [0, -1, 0])
+    nodes.append(('B02_canopy_plate', 'CANOPY', lp))
+
+    # lid: sloped rim (lamps) from the plate up and out to the lid outline, thin lip, tray floor
+    ld = Mesh('B02_canopy_lid', smooth_angle=25)
+    outer = [np.array([x, lid_top_y(z), z]) for x, z in LID]
+    PLr = PL.copy()
+    base3 = [np.array([x, yp1, z]) for x, z in PLr]
+    for i in range(n):
+        j = (i + 1) % n
+        q = [base3[i], base3[j], outer[j], outer[i]]; cq = np.mean(q, 0)
+        qface(ld, 'BODY_PAINT', q, np.r_[cq[0] - cen[0], 0.0, cq[2] - cen[2]] + np.array([0, 40.0, 0]))
+    INN = offset_poly(LID, -10.0)
+    inner = [np.array([x, lid_top_y(z), z]) for x, z in INN]
+    floor = [np.array([x, D['lid_floor'], z]) for x, z in offset_poly(LID, -14.0)]
+    for i in range(n):
+        j = (i + 1) % n
+        qface(ld, 'BODY_PAINT', [outer[i], outer[j], inner[j], inner[i]], [0, 1, 0])
+        q = [inner[i], inner[j], floor[j], floor[i]]; cq = np.mean(q, 0)
+        qface(ld, 'BODY_PAINT', q, -np.r_[cq[0] - cen[0], 0.0, cq[2] - cen[2]])
+    face(ld, 'BODY_PAINT', floor, [0, 1, 0])
+    # round cap on the lid floor (top view, back left)
+    P, UV = lathe([(0, 0), (58, 0), (58, 4), (48, 12), (14, 16), (0, 16)], 36, M=mat_translate(76, D['lid_floor'], 224))
+    ld.add('BODY_PAINT', P, UV)
+    P, UV = lathe([(0, 15), (12, 15), (12, 24), (0, 26)], 20, M=mat_translate(76, D['lid_floor'], 224))
+    ld.add('METAL', P, UV)
+    nodes.append(('B02_canopy_lid', 'CANOPY', ld))
+
+    # lamps on the lid rim (mid-line of the sloped face), skipping the back edge
+    for i in range(n):
+        j = (i + 1) % n
+        a0, b0 = base3[i], base3[j]; a1, b1 = outer[i], outer[j]
+        if abs(LID[i][1] - 45) < 1 and abs(LID[j][1] - 45) < 1: continue
+        ma = (a0 + a1) / 2; mb = (b0 + b1) / 2
+        Lg = np.linalg.norm(mb - ma); k = max(int(round(Lg / 123.0)), 1)
+        nrm = poly_normal([a0, b0, b1, a1], np.r_[(ma + mb)[0] / 2 - cen[0], 0, (ma + mb)[2] / 2 - cen[2]] + np.array([0, 40.0, 0]))
+        for t in (np.arange(k) + 0.5) / k:
+            L.add(ma + (mb - ma) * t, nrm, r=15.0)
+    # lamps on the lower strip; START button at the front centre
+    for q in strip_quads:
+        a = (q[0] + q[3]) / 2; b = (q[1] + q[2]) / 2
+        Lg = np.linalg.norm(b - a); k = max(int(round(Lg / 100.0)), 1)
+        nrm = poly_normal(q, np.r_[(a + b)[0] / 2 - cen[0], -60.0, (a + b)[2] / 2 - cen[2]])
+        for t in (np.arange(k) + 0.5) / k:
+            p = a + (b - a) * t
+            if abs(p[0] - 343.5) < 40 and p[2] > 1100: continue
+            if p[2] < 470: continue                  # inside the column
+            L.add(p, nrm, r=13.0)
+    st = Mesh('D12_start_button', smooth_angle=35)
+    q = strip_quads[[i for i, q in enumerate(strip_quads) if abs(np.mean(q, 0)[0] - 343.5) < 5 and np.mean(q, 0)[2] > 1100][0]]
+    nrm = poly_normal(q, [0, -1, 1]); pos = np.mean(q, 0)
+    P, UV = lathe([(0, 0), (16, 0), (16, 3), (14, 5), (0, 5)], 28, M=look_basis(pos, nrm) @ mat_rot('x', 90)); st.add('METAL', P, UV)
+    P, UV = lathe([(0, 4.5), (7, 4.5), (6.5, 8), (0, 8.5)], 20, M=look_basis(pos, nrm) @ mat_rot('x', 90)); st.add('BUTTON_RED', P, UV)
+    nodes.append(('D12_start_button', 'DETAILS', st))
+    # two down-lights in the underside next to the opening
+    dl = Mesh('E02_down_lights', smooth_angle=30)
+    for x in (205.0, 482.0):
+        P, UV = lathe([(0, 0), (24, 0), (26, 2), (0, 2)], 24, M=mat_translate(x, ya - 2, 760) @ mat_rot('x', 180)); dl.add('METAL', P, UV)
+        P, UV = disc(19, 24, M=mat_translate(x, ya - 2.5, 760) @ mat_rot('x', 90)); dl.add('LED_WHITE', P, UV)
+    nodes.append(('E02_down_lights', 'EMISSION', dl))
     return nodes
 
 
-# ------------------------------------------------------------------------------------------ kicker
-def build_kicker(dome, base, st):
-    nodes = []
-    k = Mesh('K01_kicker_cabinet', smooth_angle=30)
-    x0, x1 = CX0, D['col_x1_low']
-    y0, y1, yb = PT, D['kick_top'], D['kick_back_top']
-    ox0, oy0, ox1, oy1 = D['recess_out']
-    ix0, iy0, ix1, iy1 = D['recess_in']
-    zb = KZ - D['recess_depth']
-    F = lambda x, y: V(x, y, KZ)
-    # front face around the opening
-    quadfill(k, 'BODY_PAINT', F(x0, y0), F(x1, y0), F(x1, oy0), F(x0, oy0), Z3)
-    quadfill(k, 'BODY_PAINT', F(x0, oy1), F(x1, oy1), F(x1, y1), F(x0, y1), Z3)
-    quadfill(k, 'BODY_PAINT', F(x0, oy0), F(ox0, oy0), F(ox0, oy1), F(x0, oy1), Z3)
-    quadfill(k, 'BODY_PAINT', F(ox1, oy0), F(x1, oy0), F(x1, oy1), F(ox1, oy1), Z3)
-    # sloped top (smash panel) and sides
-    quadfill(k, 'BODY_PAINT', F(x0, y1), F(x1, y1), V(x1, yb, CZ1), V(x0, yb, CZ1), [0, 1, 0.6])
-    for xs, nn in ((x0, -X3), (x1, X3)):
-        poly(k, 'BODY_PAINT', [V(xs, y0, KZ), V(xs, y1, KZ), V(xs, yb, CZ1), V(xs, y0, CZ1)], nn)
-    # recess: tapered walls (top, left and floor slope inwards; the right wall is straight)
-    O = [V(ox0, oy0, KZ), V(ox1, oy0, KZ), V(ox1, oy1, KZ), V(ox0, oy1, KZ)]
-    I = [V(ix0, iy0, zb), V(ix1, iy0, zb), V(ix1, iy1, zb), V(ix0, iy1, zb)]
-    cen = V((ix0 + ix1) / 2, (iy0 + iy1) / 2, KZ)
-    for a in range(4):
-        b = (a + 1) % 4
-        mid = (O[a] + O[b] + I[a] + I[b]) / 4
-        quadfill(k, 'BODY_PAINT', O[a], O[b], I[b], I[a], cen - mid)
-    quadfill(k, 'BODY_PAINT', I[0], I[1], I[2], I[3], Z3)
-    nodes.append(('K01_kicker_cabinet', 'KICKER', k))
-    # printed face (stickers + 3in1 + comet) and the comet on the recess floor
-    u0, v0, u1, v1 = atlas_uv('kicker_face')
-    def fuv(x, y):
-        return (u0 + (x - x0) / (x1 - x0) * (u1 - u0), v0 + (y1 - y) / (y1 - y0) * (v1 - v0))
-    for (xa, ya, xb, yb_) in ((x0, y0, x1, oy0), (x0, oy1, x1, y1), (x0, oy0, ox0, oy1), (ox1, oy0, x1, oy1)):
-        pts = [V(xa, ya, KZ + 0.0012), V(xb, ya, KZ + 0.0012), V(xb, yb_, KZ + 0.0012), V(xa, yb_, KZ + 0.0012)]
-        poly(st, 'DECALS', pts, Z3, [fuv(p[0], p[1]) for p in pts])
-    fl0, fl1 = O[0], O[1]; bl0, bl1 = I[0], I[1]
-    def floor_pt(s, t):
-        a = fl0 + (fl1 - fl0) * s; b = bl0 + (bl1 - bl0) * s
-        return a + (b - a) * t
-    nf = np.cross(fl1 - fl0, bl0 - fl0); nf = nf / np.linalg.norm(nf); nf = nf if nf[1] > 0 else -nf
-    decal(st, 'kicker_floor', floor_pt(0.20, 0.82), floor_pt(0.86, 0.82), floor_pt(0.86, 0.12), floor_pt(0.20, 0.12), nf)
-    # smash panel on the sloped top
-    sp0, sp1 = -0.565, 0.11
-    tl, tr = V(sp0, yb - 0.004, CZ1 + 0.008), V(sp1, yb - 0.004, CZ1 + 0.008)
-    br, bl = V(sp1, y1 + 0.003, KZ - 0.006), V(sp0, y1 + 0.003, KZ - 0.006)
-    decal(st, 'smash', tl, tr, br, bl, [0, 1, 0.6])
-    # lamps (n06): 6 across the top, 3 down each side of the opening
-    for x in (-0.555, -0.454, -0.319, -0.169, -0.015, 0.174):
-        lamp(dome, base, V(x, 0.608, KZ), Z3)
-    for y in (0.509, 0.382, 0.249):
-        lamp(dome, base, V(-0.566, y, KZ), Z3)
-    for y in (0.473, 0.323, 0.176):
-        lamp(dome, base, V(0.174, y, KZ), Z3)
-
-    # ---- kick mechanism: ball, sleeve, bracket, mount plate, stop block
-    bc = V(-0.466, 0.358, -0.149); br_ = 0.10
-    nodes += kicker_ball(bc, br_)
-    sl = Mesh('K03_kicker_arm_sleeve', smooth_angle=60)
-    xa, xb = bc[0] + br_ - 0.012, -0.012
-    L = xb - xa
-    prof = [(0.0, 0.0), (0.05, 0.0)] + [(0.062, t * L) for t in np.linspace(0.02, 0.98, 30)] + [(0.05, L), (0.0, L)]
-    def wr(a, y, r):
-        if r < 0.06:
-            return r
-        u = y / L
-        return r * (1 + 0.07 * math.sin(7 * a + 9 * u) * math.sin(math.pi * u * 5) + 0.03 * math.cos(3 * a - 14 * u))
-    M = look_basis(V(xa, bc[1], bc[2]), X3) @ mat_rot('x', 90)
-    P, UV = lathe(prof, 36, M=M, radial_fn=wr)
-    sl.add('LEATHER_BLACK', P, UV)
-    cyl(sl, 'BLACK_PLASTIC', V(xa - 0.02, bc[1], bc[2]), V(xa + 0.004, bc[1], bc[2]), 0.034, 20)
-    nodes.append(('K03_kicker_arm_sleeve', 'KICKER', sl))
-    mt = Mesh('K04_kicker_mount', smooth_angle=30)
-    box(mt, 'BLACK_PLASTIC', [-0.016, 0.292, -0.206], [0.024, 0.418, -0.096], 0.006, seg=2)
-    box(mt, 'BLACK_PLASTIC', [0.0, 0.286, KZ - 0.002], [0.086, 0.412, KZ + 0.024], 0.004, seg=2)
-    for sx in (0.068, 0.078):
-        for sy in (0.300, 0.398):
-            P, UV = lathe([(0, 0), (0.005, 0), (0.0045, 0.002), (0, 0.0025)], 10, M=look_basis(V(sx, sy, KZ + 0.024), Z3) @ mat_rot('x', 90))
-            mt.add('METAL', P, UV)
-    box(mt, 'BLACK_PLASTIC', [-0.378, 0.412, zb], [-0.228, 0.456, KZ - 0.06], 0.006, seg=2)     # stop block
-    nodes.append(('K04_kicker_mount', 'KICKER', mt))
-    return nodes
-
-
-def kicker_ball(c, R):
-    """Stitched football: truncated icosahedron projected on a sphere, each panel slightly puffed so
-    the seams read as grooves.  Pentagons black, hexagons black/white (n06)."""
-    ball = Mesh('K02_kicker_ball', smooth_angle=48)
-    ph = (1 + 5 ** 0.5) / 2
-    ico = []
-    for a in (-1, 1):
-        for b in (-ph, ph):
-            ico += [(0, a, b), (a, b, 0), (b, 0, a)]
-    ico = np.array(ico, float); ico /= np.linalg.norm(ico[0])
-    d = np.linalg.norm(ico[:, None] - ico[None], axis=2)
-    el = d[d > 1e-6].min()
-    nb = [np.where(np.abs(d[i] - el) < 1e-3)[0] for i in range(12)]
-    faces = []
-    for i in range(12):
-        for j in nb[i]:
-            for k in nb[i]:
-                if j < k and abs(d[j, k] - el) < 1e-3 and i < j:
-                    faces.append((i, j, k))
-    # orient: front of the ball (+Z) shows a black pentagon (n06)
-    rot = look_basis(np.zeros(3), ico[0])[:3, :3].T
-    polys = []
-    for i in range(12):
-        ring = [ico[i] + (ico[j] - ico[i]) / 3 for j in nb[i]]
-        polys.append(('p', ring))
-    for (i, j, k) in faces:
-        A, Bv, C = ico[i], ico[j], ico[k]
-        polys.append(('h', [A + (Bv - A) / 3, A + 2 * (Bv - A) / 3, Bv + (C - Bv) / 3, Bv + 2 * (C - Bv) / 3, C + (A - C) / 3, C + 2 * (A - C) / 3]))
-    rng = np.random.RandomState(7)
-    white = set(rng.choice(20, 8, replace=False).tolist())
-    hi = 0
-    for kind, ring in polys:
-        ring = [rot @ p for p in ring]
-        cen = np.mean(ring, 0)
-        nrm = cen / np.linalg.norm(cen)
-        # sort ring around the centre
-        ref = ring[0] - cen; ref /= np.linalg.norm(ref); oth = np.cross(nrm, ref)
-        ring = sorted(ring, key=lambda p: math.atan2(np.dot(p - cen, oth), np.dot(p - cen, ref)))
-        mat = 'BALL_BLACK'
-        if kind == 'h':
-            if hi in white:
-                mat = 'BALL_WHITE'
-            hi += 1
-        rings = 4
-        G = []
-        for r_ in range(rings + 1):
-            t = r_ / rings
-            row = []
-            for p in ring + [ring[0]]:
-                q = cen + (p - cen) * t
-                q = q / np.linalg.norm(q)
-                puff = 1.0 - 0.045 * (t ** 3)
-                row.append(c + q * R * puff)
-            G.append(row)
-        for r_ in range(rings):
-            for m in range(len(ring)):
-                a, b = G[r_][m], G[r_][m + 1]; cc, dd = G[r_ + 1][m + 1], G[r_ + 1][m]
-                tri = np.array([[a, cc, b], [a, dd, cc]]) if r_ > 0 else np.array([[a, cc, dd]])
-                Pp, UVp = orient_with_uv(tri, np.zeros(tri.shape[:2] + (2,)), lambda q: q - c, per_triangle=True)
-                ball.add(mat, Pp, UVp + np.array([0.0, 0.0]) + (Pp[..., :2] - c[:2]) * 6)
-    return [('K02_kicker_ball', 'KICKER', ball)]
+def build_bag():
+    """Punch bag folded up into the canopy (CAD state): only the lower half of the ball shows."""
+    bg = Mesh('D13_bag', smooth_angle=55)
+    x, y, z, r = D['bag']
+    for g in range(4):
+        a0 = 2 * math.pi * g / 4 + math.pi / 4; a1 = a0 + math.pi / 2
+        prof = [(r * math.sin(ph) * (1 + 0.08 * math.cos(ph)), r * 1.12 * math.cos(ph)) for ph in np.linspace(math.pi, 0, 26)]
+        P, UV = lathe(prof, 10, M=axis_basis((x, y, z), (0, 0, 1)), a0=a0, a1=a1)
+        bg.add('BOXING_BAG_RED' if g % 2 else 'BOXING_BAG_BLACK', P, UV)
+    nk = Mesh('D14_bag_mount', smooth_angle=45)
+    cyl(nk, 'LEATHER_BLACK', (x, y, z + r * 1.05), (x, y, z + r * 1.05 + 140), 34, seg=24, round_r=6)
+    box(nk, 'BLACK_PLASTIC', (x - 40, y - 30, z + r * 1.05 + 120), (x + 40, y + 60, z + r * 1.05 + 200), r=6, seg=2)
+    return [('D13_bag', 'BAG', bg), ('D14_bag_mount', 'BAG', nk)]
 
 
 # ------------------------------------------------------------------------------------------ hammer station
-def chamfer_box(mesh, mat, x0, x1, y0, y1, z0, z1, c, normal_ref=None):
-    """Box with the top-front and top-right edges chamfered (hammer station, n03)."""
-    A = V(x1 - c, y1, z1 - c); Bp = V(x1, y1 - c, z1)
-    quadfill(mesh, mat, V(x0, y1, z0), V(x1 - c, y1, z0), V(x1 - c, y1, z1 - c), V(x0, y1, z1 - c), Y3)            # top
-    poly(mesh, mat, [V(x0, y1 - c, z1), Bp, A, V(x0, y1, z1 - c)], [0, 1, 1])                                       # front chamfer
-    poly(mesh, mat, [V(x1, y1 - c, z0), Bp, A, V(x1 - c, y1, z0)], [1, 1, 0])                                       # right chamfer
-    quadfill(mesh, mat, V(x0, y0, z1), V(x1, y0, z1), V(x1, y1 - c, z1), V(x0, y1 - c, z1), Z3)                    # front
-    quadfill(mesh, mat, V(x1, y0, z0), V(x1, y0, z1), V(x1, y1 - c, z1), V(x1, y1 - c, z0), X3)                    # right
-    poly(mesh, mat, [V(x0, y0, z0), V(x0, y0, z1), V(x0, y1 - c, z1), V(x0, y1, z1 - c), V(x0, y1, z0)], -X3)      # left
-    quadfill(mesh, mat, V(x0, y0, z0), V(x1, y0, z0), V(x1, y1 - c, z0), V(x0, y1, z0), -Z3)                       # back (hidden)
-
-
-def build_hammer(dome, base, st):
+def build_hammer(L):
     nodes = []
-    hb = Mesh('H01_hammer_base', smooth_angle=30)
-    lx0, lx1, lz0, lz1, ly = D['ham_left']
-    rx0, rx1, rz0, rz1, ry = D['ham_box']
-    chamfer_box(hb, 'BODY_PAINT', lx0, lx1, PT, ly, lz0, lz1, 0.03)
-    chamfer_box(hb, 'BODY_PAINT', rx0, rx1, PT, ry, rz0, rz1, 0.045)
-    nodes.append(('H01_hammer_base', 'HAMMER', hb))
-    # prints: emblem panel (left front), 3in1 + comet (box front), comet (box right side),
-    # START HAMMER and the round start-button sticker on the top of the left part
-    decal(st, 'emblem_panel', V(lx0 + 0.012, ly - 0.05, lz1), V(lx1 - 0.012, ly - 0.05, lz1), V(lx1 - 0.012, PT + 0.03, lz1), V(lx0 + 0.012, PT + 0.03, lz1), Z3)
-    decal(st, 'st_hammer_front', V(rx0 + 0.025, ry - 0.07, rz1), V(rx1 - 0.025, ry - 0.07, rz1), V(rx1 - 0.025, PT + 0.04, rz1), V(rx0 + 0.025, PT + 0.04, rz1), Z3)
-    decal(st, 'st_comet', V(rx1, 0.47, rz1 - 0.05), V(rx1, 0.47, rz0 + 0.07), V(rx1, 0.15, rz0 + 0.07), V(rx1, 0.15, rz1 - 0.05), X3)
-    yt = ly
-    decal(st, 'st_start_hammer', V(lx0 + 0.008, yt, lz0 + 0.03), V(lx1 - 0.004, yt, lz0 + 0.03), V(lx1 - 0.004, yt, lz0 + 0.155), V(lx0 + 0.008, yt, lz0 + 0.155), Y3)
-    bcen = V((lx0 + lx1) / 2 - 0.02, yt, lz1 - 0.065)
-    decal(st, 'st_hammer_button', *frame_on(bcen, X3, -Z3, 0.075, 0.075), Y3)
-    btn = Mesh('H07_start_hammer_button', smooth_angle=35)
-    P, UV = lathe([(0.0, 0.0), (0.017, 0.0), (0.017, 0.003), (0.0125, 0.0047), (0.0, 0.0047)], 24, M=look_basis(bcen, Y3) @ mat_rot('x', 90))
-    btn.add('METAL', P, UV)
-    nodes.append(('H07_start_hammer_button', 'HAMMER', btn))
-    # lamps along the chamfers of the box (n03): 3 on the front, 3 on the right
-    c = 0.045
-    n_f = V(0, 1, 1) / math.sqrt(2); n_r = V(1, 1, 0) / math.sqrt(2)
-    for x in (0.47, 0.55, 0.63):
-        lamp(dome, base, V(x, ry - c / 2, rz1 - c / 2), n_f)
-    for z in (-0.44, -0.33, -0.22):
-        lamp(dome, base, V(rx1 - c / 2, ry - c / 2, z), n_r)
-    # strike pad on bellows
-    px, pz, pr = D['pad']
-    bl = Mesh('H03_bellows', smooth_angle=55)
-    prof = [(0.0, ry), (0.13, ry), (0.13, ry + 0.008)]
-    yb0, yb1 = ry + 0.008, D['pad_y'][0]
-    for t in np.linspace(0, 1, 51):
-        rr = 0.098 + 0.022 * (0.5 + 0.5 * math.cos(t * 5 * 2 * math.pi))
-        prof.append((rr, yb0 + (yb1 - yb0) * t))
-    prof.append((0.0, yb1))
-    P, UV = lathe(prof, 40, M=mat_translate(px, 0, pz))
-    bl.add('RUBBER', P, UV)
-    nodes.append(('H03_bellows', 'HAMMER', bl))
-    pd = Mesh('H02_strike_pad', smooth_angle=45)
-    y0p, y1p = D['pad_y']
-    prof = [(0.0, y0p), (pr - 0.006, y0p), (pr, y0p + 0.006), (pr, y1p - 0.006), (pr - 0.006, y1p), (0.0, y1p)]
-    P, UV = lathe(prof, 56, M=mat_translate(px, 0, pz))
-    pd.add('PAD_RUBBER', P, UV)
-    nodes.append(('H02_strike_pad', 'HAMMER', pd))
-    # hammer: red cylindrical head with studded ends lying on the pad, black handle leaning back
-    hc = V(*D['head_c']); hr, hl = D['head_r'], D['head_len']
-    ax = V(math.cos(math.radians(28)), 0, math.sin(math.radians(28)))
-    hd = Mesh('H04_hammer_head', smooth_angle=40)
-    p0 = hc - ax * hl / 2
-    M = look_basis(p0, ax) @ mat_rot('x', 90)
-    prof = [(0.0, -0.002), (hr * 0.82, -0.002), (hr - 0.004, 0.0), (hr, 0.006), (hr, hl - 0.006), (hr - 0.004, hl), (hr * 0.82, hl + 0.002), (0.0, hl + 0.002)]
-    P, UV = lathe(prof, 40, M=M)
-    hd.add('HAMMER_RED', P, UV)
-    for end, sgn in ((p0 - ax * 0.002, -1), (p0 + ax * (hl + 0.002), 1)):
-        nrm = ax * sgn
-        Bm = look_basis(end, nrm)
-        for ring_r, cnt in ((0.046, 14), (0.024, 6)):
-            for kk in range(cnt):
-                a = 2 * math.pi * kk / cnt
-                q = apply(Bm, np.array([[ring_r * math.cos(a), ring_r * math.sin(a), 0.0]]))[0]
-                P, UV = lathe([(0.0068, 0.0), (0.0066, 0.002), (0.0045, 0.0055), (0.0, 0.0068)], 10, M=look_basis(q, nrm) @ mat_rot('x', 90))
-                hd.add('HAMMER_RED', P, UV)
-    nodes.append(('H04_hammer_head', 'HAMMER', hd))
-    hn = Mesh('H05_hammer_handle', smooth_angle=50)
-    hdir = V(-0.10, 1.0, -0.32); hdir /= np.linalg.norm(hdir)
-    h0 = hc + V(0, hr - 0.01, 0)
-    cyl(hn, 'BLACK_PLASTIC', hc + V(0, hr - 0.025, 0), hc + V(0, hr + 0.014, 0), 0.031, 20)
-    h1 = h0 + hdir * 0.24
-    cyl(hn, 'BLACK_PLASTIC', h0, h1, 0.020, 18, caps=False)
-    h2 = h1 + hdir * 0.17
-    cyl(hn, 'GRIP_BLACK', h1, h2, 0.0235, 18)
-    nodes.append(('H05_hammer_handle', 'HAMMER', hn))
-    # safety cable: from the handle down to an eye bolt on the box front (n03, n14)
-    cb = Mesh('H06_safety_cable', smooth_angle=70)
-    eye = V(0.655, 0.115, rz1)
-    a = h0 + hdir * 0.08
-    pts = []
-    for t in np.linspace(0, 1, 26):
-        p = a + (eye - a) * t
-        p = p + V(0.03, -0.06, 0.02) * math.sin(math.pi * t)
-        pts.append(p)
-    for pa, pb in zip(pts[:-1], pts[1:]):
-        cyl(cb, 'METAL', pa, pb, 0.0016, 6, caps=False)
-    P, UV = lathe([(0.009, -0.002), (0.012, 0.0), (0.009, 0.002), (0.006, 0.0), (0.009, -0.002)], 18,
-                  M=look_basis(eye + V(0, 0, 0.012), X3) @ mat_rot('x', 90))
-    cb.add('METAL', P, UV)
-    cyl(cb, 'METAL', eye, eye + V(0, 0, 0.006), 0.007, 12)
-    nodes.append(('H06_safety_cable', 'HAMMER', cb))
-    return nodes
+    tw = Mesh('T01_tower', smooth_angle=25)
+    z0, zf = D['tower_z']; ya, yb = D['tower_y']
+    wx0, wy0, wx1, wy1 = D['tower_win']
+    # front face (z 151) around the window, from the anvil box top up to the cap
+    yfa = D['anvil_box'][3]
+    def xl(y): return col_xr(y)
+    rows = np.unique(np.r_[np.linspace(ya, yb, 30), wy0, wy1])
+    for y0_, y1_ in zip(rows[:-1], rows[1:]):
+        xa0, xa1 = xl(y0_), xl(y1_); xr0, xr1 = tower_xr(y0_), tower_xr(y1_)
+        if y1_ <= wy0 + 1e-6 or y0_ >= wy1 - 1e-6:
+            qface(tw, 'BODY_PAINT', [(xa0, y0_, zf), (xr0, y0_, zf), (xr1, y1_, zf), (xa1, y1_, zf)], [0, 0, 1])
+        else:
+            qface(tw, 'BODY_PAINT', [(xa0, y0_, zf), (wx0, y0_, zf), (wx0, y1_, zf), (xa1, y1_, zf)], [0, 0, 1])
+            qface(tw, 'BODY_PAINT', [(wx1, y0_, zf), (xr0, y0_, zf), (xr1, y1_, zf), (wx1, y1_, zf)], [0, 0, 1])
+    # window: rows exactly at the window bounds
+    # right side (slanted), back (black)
+    qface(tw, 'BODY_PAINT', [(tower_xr(ya), ya, z0), (tower_xr(ya), ya, zf), (tower_xr(yb), yb, zf), (tower_xr(yb), yb, z0)], [1, 0.08, 0])
+    qface(tw, 'BLACK_STEEL', [(xl(ya), ya, z0), (xl(yb), yb, z0), (tower_xr(yb), yb, z0), (tower_xr(ya), ya, z0)], [0, 0, -1])
+    qface(tw, 'BODY_PAINT', [(xl(ya), ya, z0), (xl(ya), ya, zf), (xl(D['col_slant_y'][0]), D['col_slant_y'][0], zf), (xl(D['col_slant_y'][0]), D['col_slant_y'][0], z0)], [-1, -0.14, 0])
+    qface(tw, 'BODY_PAINT', [(xl(D['col_slant_y'][0]), D['col_slant_y'][0], z0), (xl(D['col_slant_y'][0]), D['col_slant_y'][0], zf), (xl(yb), yb, zf), (xl(yb), yb, z0)], [-1, 0, 0])
+    qface(tw, 'BODY_PAINT', [(xl(ya), ya, z0), (tower_xr(ya), ya, z0), (tower_xr(ya), ya, zf), (xl(ya), ya, zf)], [0, -1, 0])
+    # cap
+    c0, c1 = D['tower_cap']
+    box(tw, 'BODY_PAINT', (col_xr(c1) - 2, c0, z0 - 3), (tower_xr(c0) + 8, c1, zf + 6), r=2, seg=1)
+    nodes.append(('T01_tower', 'TOWER', tw))
+    # window: dark glass recessed 18 mm, red reveal
+    wn = Mesh('T02_tower_window', smooth_angle=20)
+    zr = zf - 18
+    for q, nn in (([(wx0, wy0, zf), (wx0, wy1, zf), (wx0, wy1, zr), (wx0, wy0, zr)], [1, 0, 0]),
+                  ([(wx1, wy0, zf), (wx1, wy0, zr), (wx1, wy1, zr), (wx1, wy1, zf)], [-1, 0, 0]),
+                  ([(wx0, wy1, zf), (wx1, wy1, zf), (wx1, wy1, zr), (wx0, wy1, zr)], [0, -1, 0]),
+                  ([(wx0, wy0, zf), (wx0, wy0, zr), (wx1, wy0, zr), (wx1, wy0, zf)], [0, 1, 0])):
+        qface(wn, 'BODY_PAINT', q, nn)
+    qface(wn, 'MONITOR', [(wx0, wy0, zr), (wx1, wy0, zr), (wx1, wy1, zr), (wx0, wy1, zr)], [0, 0, 1])
+    # fill the face rows that cross the window edges exactly
+    nodes.append(('T02_tower_window', 'TOWER', wn))
+    # raised lamp strip on the right of the tower front (12 lamps) + top row
+    ls = Mesh('T03_lamp_strip', smooth_angle=30)
+    xs0 = D['tower_strip_x']; ys_a, ys_b = D['pad_y'][1], yb - 4
+    pts = [(xs0, ys_a, zf), (tower_xr(ys_a) - 3, ys_a, zf), (tower_xr(ys_b) - 3, ys_b, zf), (xs0 + (tower_xr(ys_b) - tower_xr(ys_a)) * 0, ys_b, zf)]
+    qface(ls, 'BODY_PAINT', [(p[0], p[1], p[2] + 8) for p in pts], [0, 0, 1])
+    for k in range(4):
+        a, b = pts[k], pts[(k + 1) % 4]
+        q = [a, b, (b[0], b[1], b[2] + 8), (a[0], a[1], a[2] + 8)]
+        c = np.mean(q, 0); ctr = np.mean(pts, 0)
+        qface(ls, 'BODY_PAINT', q, np.r_[c[0] - ctr[0], c[1] - ctr[1], 0])
+    nodes.append(('T03_lamp_strip', 'TOWER', ls))
+    for y in np.linspace(2028, 655, 12):
+        xm = (xs0 + tower_xr(y)) / 2
+        L.add((xm, y, zf + 8), (0, 0, 1), r=15.0)
+    for x in (804, 923, 1043):
+        L.add((x, 2035, zf), (0, 0, 1), r=15.0)
 
-
-# ------------------------------------------------------------------------------------------ tower
-def build_tower(dome, base, st):
-    nodes = []
-    tw = Mesh('T01_tower_body', smooth_angle=25)
-    tz0, tz1 = D['tower_z']
-    ytop = D['tower_top']
-    ys = [PT, 0.58, 0.69, 1.81, 1.90, ytop]
-    # front (graphic underneath), right side (black), back (black), top (black)
-    for ya, yb in zip(ys[:-1], ys[1:]):
-        quadfill(tw, 'BODY_PAINT', V(col_xr(ya), ya, tz1), V(tower_xr(ya), ya, tz1), V(tower_xr(yb), yb, tz1), V(col_xr(yb), yb, tz1), Z3)
-        n_r = V(1, (tower_xr(ya) - tower_xr(yb)) / (yb - ya), 0)
-        quadfill(tw, 'BLACK_STEEL', V(tower_xr(ya), ya, tz0), V(tower_xr(ya), ya, tz1), V(tower_xr(yb), yb, tz1), V(tower_xr(yb), yb, tz0), n_r)
-        quadfill(tw, 'BLACK_STEEL', V(col_xr(ya), ya, tz0), V(tower_xr(ya), ya, tz0), V(tower_xr(yb), yb, tz0), V(col_xr(yb), yb, tz0), -Z3)
-        quadfill(tw, 'BLACK_STEEL', V(col_xr(ya), ya, tz0), V(col_xr(ya), ya, tz1), V(col_xr(yb), yb, tz1), V(col_xr(yb), yb, tz0), -X3)
-    quadfill(tw, 'BLACK_STEEL', V(col_xr(ytop), ytop, tz0), V(tower_xr(ytop), ytop, tz0), V(tower_xr(ytop), ytop, tz1), V(col_xr(ytop), ytop, tz1), Y3)
-    nodes.append(('T01_tower_body', 'TOWER', tw))
-    # front print (zone 'tower')
-    G = TEXMETA['tower']
-    tg = Mesh('G05_tower_graphic', smooth_angle=10)
-    yy = np.linspace(PT, 1.90, 24)
-    quadfill(tg, 'BLACK_STEEL', V(col_xr(1.90), 1.90, tz1 + 0.0012), V(tower_xr(1.90), 1.90, tz1 + 0.0012),
-             V(tower_xr(ytop), ytop, tz1 + 0.0012), V(col_xr(ytop), ytop, tz1 + 0.0012), Z3)
-    for ya, yb in zip(yy[:-1], yy[1:]):
-        pts = [V(col_xr(ya), ya, tz1 + 0.0012), V(tower_xr(ya) - 0.018, ya, tz1 + 0.0012), V(tower_xr(yb) - 0.018, yb, tz1 + 0.0012), V(col_xr(yb), yb, tz1 + 0.0012)]
-        uv = [(0, (G['y'][1] - ya) / (G['y'][1] - G['y'][0])), (1, (G['y'][1] - ya) / (G['y'][1] - G['y'][0])),
-              (1, (G['y'][1] - yb) / (G['y'][1] - G['y'][0])), (0, (G['y'][1] - yb) / (G['y'][1] - G['y'][0]))]
-        poly(tg, 'GFX_TOWER', pts, Z3, uv)
-    nodes.append(('G05_tower_graphic', 'GRAPHICS', tg))
-    # black edge profiles: right edge and top
-    pr = Mesh('T03_tower_profiles', smooth_angle=30)
-    for ya, yb in zip(ys[:-1], ys[1:]):
-        a0, a1 = tower_xr(ya), tower_xr(yb)
-        quadfill(pr, 'BLACK_STEEL', V(a0 - 0.022, ya, tz1 + 0.004), V(a0 + 0.002, ya, tz1 + 0.004), V(a1 + 0.002, yb, tz1 + 0.004), V(a1 - 0.022, yb, tz1 + 0.004), Z3)
-        quadfill(pr, 'BLACK_STEEL', V(a0 + 0.002, ya, tz1), V(a0 + 0.002, ya, tz1 + 0.004), V(a1 + 0.002, yb, tz1 + 0.004), V(a1 + 0.002, yb, tz1), X3)
-    box(pr, 'BLACK_STEEL', [col_xr(ytop), ytop - 0.02, tz1 - 0.002], [tower_xr(ytop) + 0.002, ytop + 0.003, tz1 + 0.004], 0.0015)
-    nodes.append(('T03_tower_profiles', 'TOWER', pr))
-    # recessed LED meter strip
-    mt = Mesh('T02_tower_meter', smooth_angle=30)
-    mx0, mx1, my0, my1 = 0.327, 0.524, 0.68, 1.833
-    box(mt, 'BLACK_PLASTIC', [mx0, my0, tz1], [mx1, my1, tz1 + 0.010], 0.003, seg=2)
-    quadfill(mt, 'METER', V(mx0 + 0.010, my0 + 0.010, tz1 + 0.0105), V(mx1 - 0.010, my0 + 0.010, tz1 + 0.0105),
-             V(mx1 - 0.010, my1 - 0.010, tz1 + 0.0105), V(mx0 + 0.010, my1 - 0.010, tz1 + 0.0105), Z3, [(0, 1), (1, 1), (1, 0), (0, 0)])
-    nodes.append(('T02_tower_meter', 'TOWER', mt))
-    # lamps: right column (13) + top row (3 more)
-    def tx(u, y):
-        return col_xr(y) + u * (tower_xr(y) - col_xr(y))
-    for y in np.linspace(1.87, 0.69, 13):
-        lamp(dome, base, V(tx(0.88, y), y, tz1), Z3)
-    for u in (0.214, 0.43, 0.66):
-        lamp(dome, base, V(tx(u, 1.87), 1.87, tz1), Z3)
-    # back: lower red panel with a small service door; screws on the black panels
-    rr = Mesh('R01_rear_panels', smooth_angle=30)
-    quadfill(rr, 'BODY_PAINT', V(col_xr(PT), PT, tz0 - 0.002), V(0.70, PT, tz0 - 0.002), V(0.70, 0.45, tz0 - 0.002), V(col_xr(0.45), 0.45, tz0 - 0.002), -Z3)
-    nodes.append(('R01_rear_panels', 'REAR', rr))
-    sc = Mesh('R07_screws', smooth_angle=40)
-    for x in (0.16, 0.40, 0.64):
-        for y in np.linspace(0.6, 1.85, 6):
-            if x > tower_xr(y) - 0.03:
-                continue
-            P, UV = lathe([(0, 0), (0.0045, 0), (0.004, 0.0012), (0, 0.0016)], 10, M=look_basis(V(x, y, tz0), -Z3) @ mat_rot('x', 90))
-            sc.add('METAL', P, UV)
-    for z in (tz0 + 0.025, tz1 - 0.025):
-        for y in np.linspace(0.2, 1.8, 7):
-            P, UV = lathe([(0, 0), (0.0045, 0), (0.004, 0.0012), (0, 0.0016)], 10, M=look_basis(V(tower_xr(y), y, z), X3) @ mat_rot('x', 90))
-            sc.add('METAL', P, UV)
-    nodes.append(('R07_screws', 'REAR', sc))
+    # middle box (between kicker and anvil): red top band, black front panel, small lock
+    mb = Mesh('H01_middle_box', smooth_angle=25)
+    x0, x1, y0, y1, bz0, bz1 = D['mid_box']
+    solid_box(mb, 'BODY_PAINT', x0, x1, y0, y1, bz0, bz1, skip=('-y',))
+    box(mb, 'BLACK_PLASTIC', (x0 + 6, y0 + 2, bz1 - 3), (x1 - 8, 334, bz1 + 2), r=1.5, seg=1)
+    P, UV = lathe([(0, 0), (9, 0), (9, 3), (7, 5), (0, 5)], 20, M=look_basis(np.array([974, 384, bz1]), [0, 0, 1]) @ mat_rot('x', 90))
+    mb.add('METAL', P, UV)
+    nodes.append(('H01_middle_box', 'HAMMER', mb))
+    # anvil box with chamfered top edge (lamps on the chamfer)
+    ab = Mesh('H02_anvil_box', smooth_angle=25)
+    x0, x1, y0, y1, bz0, bz1 = D['anvil_box']; c = 22.0
+    yc_ = y1 - c
+    qface(ab, 'BODY_PAINT', [(x0, y0, bz1), (x1, y0, bz1), (x1, yc_, bz1), (x0, yc_, bz1)], [0, 0, 1])
+    qface(ab, 'BODY_PAINT', [(x1, y0, bz0), (x1, yc_, bz0), (x1, yc_, bz1), (x1, y0, bz1)], [1, 0, 0])
+    qface(ab, 'BODY_PAINT', [(x0, y0, bz0), (x0, y0, bz1), (x0, yc_, bz1), (x0, yc_, bz0)], [-1, 0, 0])
+    qface(ab, 'BODY_PAINT', [(x0, y0, bz0), (x0, yc_, bz0), (x1, yc_, bz0), (x1, y0, bz0)], [0, 0, -1])
+    qface(ab, 'BODY_PAINT', [(x0, yc_, bz1), (x1, yc_, bz1), (x1 - c, y1, bz1 - c), (x0 + c, y1, bz1 - c)], [0, 1, 1])
+    qface(ab, 'BODY_PAINT', [(x1, yc_, bz1), (x1, yc_, bz0), (x1 - c, y1, bz0), (x1 - c, y1, bz1 - c)], [1, 1, 0])
+    qface(ab, 'BODY_PAINT', [(x0, yc_, bz0), (x0, yc_, bz1), (x0 + c, y1, bz1 - c), (x0 + c, y1, bz0)], [-1, 1, 0])
+    qface(ab, 'BODY_PAINT', [(x0 + c, y1, bz0), (x0 + c, y1, bz1 - c), (x1 - c, y1, bz1 - c), (x1 - c, y1, bz0)], [0, 1, 0])
+    nodes.append(('H02_anvil_box', 'HAMMER', ab))
+    for x in np.linspace(x0 + 45, x1 - 45, 4):
+        L.add((x, y1 - c / 2, bz1 - c / 2), (0, 1, 1), r=13.0)
+    for z in np.linspace(bz1 - 60, bz0 + 200, 4):
+        L.add((x1 - c / 2, y1 - c / 2, z), (1, 1, 0), r=13.0)
+    for z in np.linspace(bz1 - 60, bz0 + 200, 4):
+        L.add((x0 + c / 2, y1 - c / 2, z), (-1, 1, 0), r=13.0)
+    # bellows + strike pad
+    pd = Mesh('H03_strike_pad', smooth_angle=40)
+    px, pz, pr = D['pad']; b0, b1, brr = D['bellows']; py0, py1 = D['pad_y']
+    prof = []
+    for k, y in enumerate(np.linspace(b0, b1, 41)):
+        rr = brr - 14 + 14 * abs(math.sin((y - b0) / (b1 - b0) * 5 * math.pi))
+        prof.append((rr, y))
+    prof = [(0, b0)] + prof + [(0, b1)]
+    P, UV = lathe(prof, 40, M=mat_translate(px, 0, pz)); pd.add('RUBBER', P, UV)
+    cyl(pd, 'PAD_RUBBER', (px, py0, pz), (px, py1, pz), pr, seg=56, round_r=10)
+    nodes.append(('H03_strike_pad', 'HAMMER', pd))
+    # hammer: head lying on the middle box (axis front-back), handle leaning on the column
+    hm = Mesh('H04_hammer', smooth_angle=40)
+    hx, hy, hz, hr, hl = D['hammer_head']
+    cyl(hm, 'METAL', (hx, hy, hz - hl / 2), (hx, hy, hz + hl / 2), hr, seg=40, round_r=8)
+    tx, ty = D['hammer_top']
+    d = np.array([tx - hx, ty - hy, 0.0]); Lh = np.linalg.norm(d); d /= Lh
+    p_in = np.array([hx, hy, hz]) + d * (hr - 6)
+    cyl(hm, 'METAL', p_in, p_in + d * (Lh * 0.62 - hr), 13.0, seg=20)
+    cyl(hm, 'METAL', p_in + d * (Lh * 0.62 - hr), np.array([tx, ty, hz]) - d * 14, 17.0, seg=20, round_r=3)
+    cyl(hm, 'METAL', np.array([tx, ty, hz]) - d * 16, np.array([tx, ty, hz]), 19.0, seg=20, round_r=6)
+    nodes.append(('H04_hammer', 'HAMMER', hm))
     return nodes
 
 
 # ------------------------------------------------------------------------------------------ rear
-def door(mesh, lk, x0, y0, x1, y1, z, lock_at):
-    """Black steel service door on the rear face (raised leaf) with a round lock."""
-    box(mesh, 'BLACK_STEEL', [x0, y0, z - 0.005], [x1, y1, z + 0.001], 0.002, seg=2)
-    box(mesh, 'BLACK_STEEL', [x0 + 0.012, y0 + 0.012, z - 0.008], [x1 - 0.012, y1 - 0.012, z - 0.004], 0.002, seg=2)
-    p = V(lock_at[0], lock_at[1], z - 0.008)
-    P, UV = lathe([(0, 0), (0.011, 0), (0.011, 0.002), (0.0095, 0.0045), (0, 0.005)], 24, M=look_basis(p, -Z3) @ mat_rot('x', 90))
-    lk.add('METAL', P, UV)
-    box(lk, 'BLACK_PLASTIC', [p[0] - 0.001, p[1] - 0.005, p[2] - 0.0058], [p[0] + 0.001, p[1] + 0.005, p[2] - 0.0045], 0.0004)
-    # key (n07/n08): short blade in the lock, bow hanging down, split ring with a second key
-    zk = p[2] - 0.009
-    box(lk, 'METAL', [p[0] - 0.0012, p[1] - 0.012, zk - 0.004], [p[0] + 0.0012, p[1] + 0.002, zk + 0.004], 0.0005)
-    box(lk, 'METAL', [p[0] - 0.0045, p[1] - 0.034, zk - 0.0012], [p[0] + 0.0045, p[1] - 0.012, zk + 0.0012], 0.0012)
-    P, UV = lathe([(0.0085, -0.0009), (0.0095, 0.0), (0.0085, 0.0009), (0.0075, 0.0), (0.0085, -0.0009)], 18,
-                  M=look_basis(V(p[0], p[1] - 0.043, zk - 0.003), -X3) @ mat_rot('x', 90))
-    lk.add('METAL', P, UV)
-    box(lk, 'METAL', [p[0] - 0.004, p[1] - 0.078, zk - 0.004], [p[0] + 0.004, p[1] - 0.050, zk - 0.0016], 0.0012)
-
-
 def build_rear():
     nodes = []
-    dm = Mesh('R01_rear_doors', smooth_angle=30)
-    lk = Mesh('R02_locks', smooth_angle=35)
-    z = CZ0
-    # rear layout from the rear views (n07/n08): tall upper door, small middle door, lower door
-    door(dm, lk, -0.555, 1.09, 0.095, 2.00, z, (0.045, 1.50))
-    door(dm, lk, -0.40, 0.64, -0.11, 0.95, z, (-0.15, 0.80))
-    door(dm, lk, -0.33, 0.07, 0.10, 0.55, z, (0.06, 0.31))
-    door(dm, lk, 0.24, 0.09, 0.55, 0.42, D['tower_z'][0] - 0.002, (0.28, 0.26))
-    nodes.append(('R01_rear_doors', 'REAR', dm))
-    nodes.append(('R02_locks', 'REAR', lk))
-    rp = Mesh('R03_rating_plate', smooth_angle=30)
-    box(rp, 'METAL', [0.0, 0.92, z - 0.0015], [0.075, 0.97, z + 0.001], 0.001)
-    nodes.append(('R03_rating_plate', 'REAR', rp))
-    # transport rollers at the top of the rear face + handle bar between them (n04, n10)
-    ro = Mesh('R04_top_rollers', smooth_angle=40)
-    for x, yr in ((-0.545, 1.985), (0.085, 1.90)):
-        c = V(x, yr, z - 0.045)
-        cyl(ro, 'ROLLER_WHITE', c - X3 * 0.016, c + X3 * 0.016, 0.036, 28)
-        cyl(ro, 'METAL', c - X3 * 0.024, c + X3 * 0.024, 0.008, 12)
-        for s_ in (-1, 1):
-            box(ro, 'METAL', [x + s_ * 0.022 - 0.002, yr - 0.03, z - 0.055], [x + s_ * 0.022 + 0.002, yr + 0.045, z + 0.001], 0.001)
-        box(ro, 'METAL', [x - 0.03, yr + 0.035, z - 0.012], [x + 0.03, yr + 0.065, z + 0.001], 0.002)
-    # black tube: from the top of the hammer tower slab, across the column back, with one stand-off
-    # bracket at its far end (n04/n08/n10 - it does not start at the rollers)
-    tz0 = D['tower_z'][0]
-    zb_ = z - 0.075
-    cyl(ro, 'BLACK_STEEL', V(D['col_x1_top'] + 0.004, 2.035, zb_), V(-0.43, 2.035, zb_), 0.0125, 16)
-    cyl(ro, 'BLACK_STEEL', V(-0.43, 2.035, zb_), V(-0.43, 2.035, z), 0.0125, 16)
-    box(ro, 'BLACK_STEEL', [-0.455, 2.01, z - 0.004], [-0.405, 2.06, z + 0.001], 0.002)
-    box(ro, 'BLACK_STEEL', [D['col_x1_top'] - 0.002, 2.005, zb_ - 0.03], [D['col_x1_top'] + 0.012, 2.065, zb_ + 0.03], 0.002)
-    nodes.append(('R04_top_rollers', 'TRANSPORT_WHEELS', ro))
-    # yellow castors under the rear corners of the base (n04, n08, n10)
-    ca = Mesh('R05_castors', smooth_angle=40)
-    for x, zc in ((-0.585, -0.655), (0.685, -0.73)):
-        c = V(x, 0.026, zc)
-        cyl(ca, 'TYRE_YELLOW', c - X3 * 0.011, c + X3 * 0.011, 0.026, 24)
-        cyl(ca, 'METAL', c - X3 * 0.015, c + X3 * 0.015, 0.006, 10)
-        for s in (-1, 1):
-            box(ca, 'BLACK_STEEL', [x + s * 0.014 - 0.002, 0.02, zc - 0.015], [x + s * 0.014 + 0.002, 0.05, zc + 0.025], 0.001)
-        box(ca, 'BLACK_STEEL', [x - 0.02, 0.045, zc - 0.017], [x + 0.02, 0.052, zc + 0.035], 0.001)
-    nodes.append(('R05_castors', 'TRANSPORT_WHEELS', ca))
+    rr = Mesh('R01_rear_doors', smooth_angle=30)
+    def door(x0, y0, x1, y1, lock_at, z=D['col_z'][0]):
+        box(rr, 'BLACK_STEEL', (x0, y0, z - 4), (x1, y1, z + 1), r=1.5, seg=1)
+        g = 18.0
+        box(rr, 'BLACK_STEEL', (x0 + g, y0 + g, z - 6), (x1 - g, y1 - g, z - 3.5), r=1.0, seg=1)
+        for (a, b, c_, d_) in ((x0 + g - 3, y0 + g - 3, x1 - g + 3, y0 + g), (x0 + g - 3, y1 - g, x1 - g + 3, y1 - g + 3),
+                               (x0 + g - 3, y0 + g, x0 + g, y1 - g), (x1 - g, y0 + g, x1 - g + 3, y1 - g)):
+            qface(rr, 'GAP_DARK', [(a, b, z - 4.2), (c_, b, z - 4.2), (c_, d_, z - 4.2), (a, d_, z - 4.2)], [0, 0, -1])
+        lx, ly = lock_at
+        P, UV = lathe([(0, 0), (10, 0), (10, 2.5), (8.5, 5), (0, 5)], 24, M=look_basis(np.array([lx, ly, z - 6]), [0, 0, -1]) @ mat_rot('x', 90))
+        rr.add('METAL', P, UV)
+    door(43, 999, 648, 1885, (600, 1380))
+    door(254, 514, 504, 814, (461, 663))
+    door(315, 30 + 12, 784, 500, (735, 296))
+    door(878, 54, 1332, 354, (1288, 196), z=0.0)
+    # power entry (hexagon)
+    P, UV = lathe([(0, 0), (26, 0), (26, 10), (0, 10)], 6, M=look_basis(np.array([648, 934, D['col_z'][0]]), [0, 0, -1]) @ mat_rot('x', 90))
+    rr.add('BLACK_PLASTIC', P, UV)
+    nodes.append(('R01_rear_doors', 'REAR', rr))
+    wh = Mesh('R02_wheels', smooth_angle=40)
+    for xc in (113.0, 570.0):                       # transport wheels at the top of the back
+        zb_ = D['col_z'][0]
+        box(wh, 'METAL', (xc - 45, 1953, zb_ - 6), (xc + 45, 2054, zb_ + 0.5), r=2, seg=1)
+        for sg in (-1, 1):
+            box(wh, 'METAL', (xc + sg * 24 - 2, 1965, zb_ - 62), (xc + sg * 24 + 2, 2040, zb_ - 5), r=1, seg=1)
+        P, UV = lathe([(0, -11), (30, -11), (38, -7), (40, 0), (38, 7), (30, 11), (0, 11)], 32, M=axis_basis((xc, 2003, zb_ - 40), (1, 0, 0)))
+        wh.add('TYRE_GREY', P, UV)
+    for xc in (149.0, 1224.0):                      # castors at the back of the base
+        P, UV = lathe([(0, -10), (22, -10), (25, 0), (22, 10), (0, 10)], 28, M=axis_basis((xc, 25, -38), (1, 0, 0)))
+        wh.add('TYRE_YELLOW', P, UV)
+        box(wh, 'METAL', (xc - 14, 12, -40), (xc + 14, 40, -6), r=2, seg=1)
+    nodes.append(('R02_wheels', 'REAR', wh))
     return nodes
 
 
-# ------------------------------------------------------------------------------------------ bag
-def build_bag():
-    """Punch bag LOWERED: black leather neck sleeve from the opening, flaring into a skirt over an
-    egg-shaped ball of 4 gores (black front/back, red sides), n09 / n11."""
+# ------------------------------------------------------------------------------------------ sticker zones (invisible for now)
+def build_zones():
     nodes = []
-    hx, hz = D['bag_hang']
-    uy = D['under_y']
-    ytop = uy + 0.04
-    rx, ry, by = D['bag_rx'], D['bag_ry'], D['bag_c_y']
-    yskirt = by + ry * 0.62
-    mt = Mesh('D14_neck_mount', smooth_angle=40)
-    box(mt, 'BLACK_PLASTIC', [hx - 0.05, uy + 0.01, hz - 0.035], [hx + 0.05, uy + 0.055, hz + 0.035], 0.006, seg=2)
-    nodes.append(('D14_neck_mount', 'BAG_LOWERED', mt))
-    nk = Mesh('D14_neck', smooth_angle=65)
-    prof = []
-    for yy in np.linspace(ytop, yskirt, 44):
-        t = (ytop - yy) / (ytop - yskirt)
-        r = 0.028 + 0.016 * t
-        r += 0.005 * math.exp(-((t - 0.45) / 0.04) ** 2)
-        if t > 0.72:
-            u = (t - 0.72) / 0.28
-            r += (0.088 - 0.044) * (u ** 1.5)
-        prof.append((r, yy))
-    prof += [(0.084, yskirt - 0.006), (0.072, yskirt - 0.004)]
-    def wr(a, yy, rr):
-        t = min(max((ytop - yy) / (ytop - yskirt), 0.0), 1.0)
-        return rr * (1 + 0.04 * math.sin(a * 4 + 0.6) * max(0.0, t - 0.7) / 0.3) * (1 + 0.10 * math.cos(2 * a) * (1 - 0.5 * t))
-    P, UV = lathe(prof, 48, M=mat_translate(hx, 0, hz), radial_fn=wr)
-    nk.add('LEATHER_BLACK', P, UV)
-    nodes.append(('D14_neck', 'BAG_LOWERED', nk))
-    bg = Mesh('D13_bag', smooth_angle=50)
-    for g in range(4):
-        a0 = 2 * math.pi * g / 4 - math.pi / 4; a1 = a0 + math.pi / 2
-        prof = []
-        for ph in np.linspace(0.04, math.pi - 0.04, 34):
-            prof.append((rx * math.sin(ph) * (1.0 + 0.05 * math.cos(ph)), by + ry * math.cos(ph)))
-        def seam(a, yy, rr, a0=a0, a1=a1):
-            d = min(abs(a - a0), abs(a - a1))
-            return rr * (1 - 0.02 * math.exp(-(d / 0.035) ** 2))
-        P, UV = lathe(prof, 14, M=mat_translate(hx, 0, hz), radial_fn=seam, a0=a0, a1=a1)
-        bg.add('BOXING_BAG_BLACK' if g % 2 == 0 else 'BOXING_BAG_RED', P, UV)
-    for ph_c in (0.04, math.pi - 0.04):
-        y_ = by + ry * math.cos(ph_c); r_ = rx * math.sin(ph_c)
-        Pc, UVc = disc(r_ * 1.01, 16, M=mat_translate(hx, y_, hz) @ mat_rot('x', -90 if ph_c < 1 else 90))
-        bg.add('BOXING_BAG_BLACK', Pc, UVc)
-    nodes.append(('D13_bag', 'BAG_LOWERED', bg))
+    zf = D['col_z'][1]; ych = D['col_slant_y'][1]; yc = D['can_y'][0]
+    fr = Mesh('Z01_front_graphic', smooth_angle=60)     # column front, screen cut out by drawing order
+    xs = (D['col_x0'] + 2, D['col_xr_top'] - 2)
+    pts = [(xs[0], ych + 2, zf + 1.2), (D['col_xr_low'] - 2, ych + 2, zf + 1.2), (D['col_xr_top'] - 2, D['col_slant_y'][0], zf + 1.2),
+           (xs[1], yc - 2, zf + 1.2), (xs[0], yc - 2, zf + 1.2)]
+    X0, X1, Y0, Y1 = xs[0], D['col_xr_low'] - 2, ych + 2, yc - 2
+    P = np.array([[pts[0], pts[i], pts[i + 1]] for i in range(1, len(pts) - 1)])
+    UV = np.stack([(P[..., 0] - X0) / (X1 - X0), (Y1 - P[..., 1]) / (Y1 - Y0)], -1)
+    P, UV = orient_with_uv(P, UV, [0, 0, 1]); fr.add('GFX_FRONT', P, UV)
+    nodes.append(('Z01_front_graphic', 'GRAPHICS', fr))
+    # canopy band: the five front facets of the canopy box
+    bd = Mesh('Z02_canopy_band', smooth_angle=60)
+    ya_, yb_, yc_ = D['can_y']
+    ids = [2, 3, 4, 5, 6]   # BOX_TOP indices of the front facets (after ccw)
+    T = np.asarray(BOX_TOP); B = np.asarray(BOX_BOT)
+    seq = [i for i in range(len(T)) if T[i][1] > 1]          # vertices not on the back edge, in CCW order
+    # order from the left (x small) round the front to the right
+    start = int(np.argmin([T[i][0] if T[i][1] > 1 else 1e9 for i in range(len(T))]))
+    order = [(start + k) % len(T) for k in range(len(T))]
+    order = [i for i in order if T[i][1] > 1]
+    if T[order[1]][1] < T[order[0]][1]: order = order[::-1]
+    s = [0.0]
+    for a, b in zip(order[:-1], order[1:]):
+        s.append(s[-1] + np.linalg.norm(T[b] - T[a]))
+    Ltot = s[-1]
+    cen = np.array([343.5, 600.0])
+    for k, (a, b) in enumerate(zip(order[:-1], order[1:])):
+        def pt(i, y, top):
+            P2 = (T if top else B)[i]
+            d = P2 - cen; d = d / np.linalg.norm(d)
+            return np.array([P2[0] + d[0] * 1.5, y, P2[1] + d[1] * 1.5])
+        q = [pt(a, yb_, False), pt(b, yb_, False), pt(b, yc_, True), pt(a, yc_, True)]
+        uv = [[s[k] / Ltot, 1], [s[k + 1] / Ltot, 1], [s[k + 1] / Ltot, 0], [s[k] / Ltot, 0]]
+        Pq = np.array([[q[0], q[1], q[2]], [q[0], q[2], q[3]]]); UVq = np.array([[uv[0], uv[1], uv[2]], [uv[0], uv[2], uv[3]]])
+        cq = np.mean(q, 0)
+        Pq, UVq = orient_with_uv(Pq, UVq, np.r_[cq[0] - cen[0], 0, cq[2] - cen[1]])
+        bd.add('GFX_BAND', Pq, UVq)
+    nodes.append(('Z02_canopy_band', 'GRAPHICS', bd))
+    BAND_LEN.append(Ltot); BAND_LEN.append(yc_ - yb_)
+    # left side (column + kicker side, below the canopy)
+    lf = Mesh('Z03_left_graphic', smooth_angle=60)
+    x = D['col_x0'] - 1.2
+    za, zb, ya2, yb2 = D['col_z'][0] + 12, D['col_z'][1] - 8, 50.0, D['can_y'][1] - 5
+    P = np.array([[(x, ya2, za), (x, ya2, zb), (x, yb2, zb)], [(x, ya2, za), (x, yb2, zb), (x, yb2, za)]], float)
+    UV = np.stack([(P[..., 2] - za) / (zb - za), (yb2 - P[..., 1]) / (yb2 - ya2)], -1)
+    P, UV = orient_with_uv(P, UV, [-1, 0, 0]); lf.add('GFX_LEFT', P, UV)
+    nodes.append(('Z03_left_graphic', 'GRAPHICS', lf))
+    # right side of the hammer box (anvil box, x 1370)
+    rt = Mesh('Z04_hammer_side_graphic', smooth_angle=60)
+    x0_, x1_, y0_, y1_, z0_, z1_ = D['anvil_box']
+    x = x1_ + 1.2; za3, zb3, ya3, yb3 = z0_ + 10, z1_ - 10, y0_ + 10, y1_ - 26
+    P = np.array([[(x, ya3, zb3), (x, ya3, za3), (x, yb3, za3)], [(x, ya3, zb3), (x, yb3, za3), (x, yb3, zb3)]], float)
+    UV = np.stack([(zb3 - P[..., 2]) / (zb3 - za3), (yb3 - P[..., 1]) / (yb3 - ya3)], -1)
+    P, UV = orient_with_uv(P, UV, [1, 0, 0]); rt.add('GFX_RIGHT', P, UV)
+    nodes.append(('Z04_hammer_side_graphic', 'GRAPHICS', rt))
     return nodes
 
 
-# ------------------------------------------------------------------------------------------ assembly
-class _NoLeds:
-    count = 0
+BAND_LEN = []
 
 
 def build_all():
-    dome = Mesh('L01_lamp_domes', smooth_angle=70)
-    base = Mesh('L02_lamp_bases', smooth_angle=40)
+    L = Lamps()
     nodes = []
-    nodes += build_platform()
-    cn, st = build_column(dome, base)
-    nodes += cn
-    nodes += build_canopy(dome, base, st)
-    nodes += build_kicker(dome, base, st)
-    nodes += build_hammer(dome, base, st)
-    nodes += build_tower(dome, base, st)
-    nodes += build_rear()
+    nodes += build_base()
+    nodes += build_column(L)
+    nodes += build_canopy(L)
     nodes += build_bag()
-    nodes.append(('L01_lamp_domes', 'LAMPS', dome))
-    nodes.append(('L02_lamp_bases', 'LAMPS', base))
-    return nodes, {}
+    nodes += build_hammer(L)
+    nodes += build_rear()
+    nodes += build_zones()
+    nodes.append(('E01_lamp_bezels', 'EMISSION', L.bezel))
+    nodes.append(('E01_lamps', 'EMISSION', L.leds.mesh))
+    M = mat_scale(0.001) @ mat_translate(-CENTRE[0], 0, -CENTRE[2])
+    nodes = [(n, p, m.transformed(M)) for n, p, m in nodes]
+    return nodes, {'E01_lamps': L.leds}
 
 
-ROOT_NAME = 'ULTIMATE_MONSTER_3IN1'
-GROUPS = ['BODY', 'CANOPY', 'BASE', 'FRONT_PANEL', 'KICKER', 'HAMMER', 'TOWER', 'BAG_LOWERED', 'REAR',
-          'TRANSPORT_WHEELS', 'LAMPS', 'GRAPHICS', 'EMISSION']
+ROOT_NAME = 'BOXER_MONSTER_3IN1'
+GROUPS = ['BODY', 'CANOPY', 'BASE', 'FRONT_PANEL', 'KICKER', 'HAMMER', 'TOWER', 'BAG', 'REAR', 'DETAILS', 'GRAPHICS', 'EMISSION']
 ZONES = {
-    'front': dict(label='FRONT PANEL', material='GFX_FRONT', meshes=['G01_front_graphic'], size=[0.70, 1.12]),
-    'band': dict(label='CANOPY FRONT', material='GFX_BAND', meshes=['G02_band_graphic'], size=[0.714, 0.216]),
-    'left': dict(label='LEFT SIDE', material='GFX_LEFT', meshes=['G03_left_graphic'], size=[0.922, 2.045]),
-    'right': dict(label='RIGHT SIDE', material='GFX_RIGHT', meshes=['G04_right_graphic'], size=[0.922, 2.045]),
-    'tower': dict(label='HAMMER TOWER', material='GFX_TOWER', meshes=['G05_tower_graphic'], size=[0.58, 1.845]),
+    'front': dict(label='FRONT PANEL', material='GFX_FRONT', meshes=['Z01_front_graphic'], size=[0.836, 1.177]),
+    'band': dict(label='CANOPY BAND', material='GFX_BAND', meshes=['Z02_canopy_band'], size=[2.929, 0.213]),
+    'left': dict(label='LEFT SIDE', material='GFX_LEFT', meshes=['Z03_left_graphic'], size=[0.264, 1.82]),
+    'right': dict(label='HAMMER BOX SIDE', material='GFX_RIGHT', meshes=['Z04_hammer_side_graphic'], size=[0.465, 0.356]),
 }
-_V = 'reference views (generated) - proportions, not measured'
-META = {k: ('n02,n05,n06,n11,n12,n13', 'medium', _V, k[:3]) for k in (
-    'B01_column_body', 'B02_canopy_band', 'B02_canopy_crown', 'B03_canopy_underside', 'K01_kicker_cabinet',
-    'H01_hammer_base', 'T01_tower_body', 'D13_bag', 'D14_neck', 'K02_kicker_ball')}
-PARAMS = {k: (v, 'from reference views') for k, v in D.items()}
+_SRC = 'drawing Boxer Monster 3 in 1 (1:10, 28.09.2026) + CAD renders 23.10.2026'
+META = {}
+PARAMS = {k: (v if not isinstance(v, tuple) else tuple(v), 'measured on the drawing (mm)') for k, v in D.items()}
