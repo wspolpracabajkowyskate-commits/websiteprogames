@@ -3,7 +3,7 @@
 import json, hashlib, re, subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-DATE='2026-10-13'
+DATE='2026-10-25'
 def write(path,data):
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 # Node evaluates only the archived, reviewed first-party JS in a timeout-limited context.

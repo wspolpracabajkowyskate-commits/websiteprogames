@@ -1,25 +1,25 @@
 {
-  "as_of": "2026-10-13",
+  "as_of": "2026-10-25",
   "sources": [
     {
       "id": "official-products-js",
       "url": "https://www.progamespoland.com/products.js",
-      "retrieved_at": "2026-10-13",
+      "retrieved_at": "2026-10-25",
       "type": "official_first_party",
       "http_status": 200,
       "snapshot": "sources/snapshots/products.js",
-      "sha256": "ee401484cba7b0118a52e1c0338d0742aaf5981ae475bef34624725b9036b58f",
+      "sha256": "07a685d14faf5b86f2d2d7f242daafed60f5e767e95fe08f0920065a5ef91d81",
       "confidence": "high_source_authenticity_factual_claims_not_independently_certified",
       "limitations": "Generated or legacy copied text may contain inaccuracies. Human review pending."
     },
     {
       "id": "official-home",
       "url": "https://www.progamespoland.com/",
-      "retrieved_at": "2026-10-13",
+      "retrieved_at": "2026-10-25",
       "type": "official_first_party",
       "http_status": 200,
       "snapshot": "sources/snapshots/home.html",
-      "sha256": "ad448ed18996b7f43b74ee6883534b04a76acfa6593d04e40e255371ac2a00b0",
+      "sha256": "31a2c0dd35b63ca36e095c5409e8d9da8b3a8eb58a8822cede0e9d36fa9fe622",
       "confidence": "high_source_authenticity_factual_claims_not_independently_certified",
       "limitations": "Generated or legacy copied text may contain inaccuracies. Human review pending."
     }
