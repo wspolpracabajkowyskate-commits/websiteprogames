@@ -2107,7 +2107,7 @@ window.PRODUCTS={
     "category": "boxer",
     "label": "MATTE / AIRBRUSHED",
     "tag": "BESTSELLER",
-    "desc": "Contact PRO GAMES for the product description, technical specifications and available equipment for this model.",
+    "desc": "Contact PRO-GAMES for the product description, technical specifications and available equipment for this model.",
     "features": [],
     "spec": [],
     "options": [],
@@ -3007,7 +3007,7 @@ window.PRODUCTS={
     "name": "Boxer Flash",
     "category": "boxer",
     "label": "BOXER PREMIUM",
-    "desc": "Contact PRO GAMES for the product description, technical specifications and available equipment for this model.",
+    "desc": "Contact PRO-GAMES for the product description, technical specifications and available equipment for this model.",
     "features": [],
     "spec": [],
     "options": [],
@@ -3487,7 +3487,7 @@ window.PRODUCTS={
     "name": "Kids Basketball",
     "category": "distributed",
     "label": "DISTRIBUTED / KIDS BASKETBALL",
-    "desc": "Contact PRO GAMES for the product description, technical specifications and available equipment for this model.",
+    "desc": "Contact PRO-GAMES for the product description, technical specifications and available equipment for this model.",
     "features": [],
     "spec": [],
     "options": [],
@@ -3508,7 +3508,7 @@ window.PRODUCTS={
     "name": "Kiddie Ride",
     "category": "distributed",
     "label": "DISTRIBUTED MACHINE",
-    "desc": "Contact PRO GAMES for the product description, technical specifications and available equipment for this model.",
+    "desc": "Contact PRO-GAMES for the product description, technical specifications and available equipment for this model.",
     "features": [],
     "spec": [],
     "options": [],
@@ -3529,7 +3529,7 @@ window.PRODUCTS={
     "name": "Cyberdart",
     "category": "distributed",
     "label": "DISTRIBUTED MACHINE",
-    "desc": "Contact PRO GAMES for the product description, technical specifications and available equipment for this model.",
+    "desc": "Contact PRO-GAMES for the product description, technical specifications and available equipment for this model.",
     "features": [],
     "spec": [],
     "options": [],
@@ -3616,7 +3616,7 @@ window.PRODUCT_ES={
     "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
   },
   "matte-airbrushed": {
-    "desc": "Contacta con PRO GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+    "desc": "Contacta con PRO-GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
   },
   "boxer-combat": {
     "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
@@ -3643,7 +3643,7 @@ window.PRODUCT_ES={
     "desc": "Esta máquina ofrece un juego emocionante y dinámico para quienes quieren poner a prueba la fuerza y precisión de sus patadas. Ideal tanto para niños como para adultos, es una gran incorporación a salones recreativos, bares deportivos y centros de ocio familiar."
   },
   "boxer-flash": {
-    "desc": "Contacta con PRO GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+    "desc": "Contacta con PRO-GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
   },
   "boxer-gift": {
     "desc": "Boxer Gift aporta un giro emocionante al combinar el reto clásico del boxeo con una función de premios. Con luces LED brillantes y un juego atractivo."
@@ -3667,13 +3667,13 @@ window.PRODUCT_ES={
     "desc": "Nuestras máquinas recreativas de baloncesto resistentes a la intemperie pueden utilizarse al aire libre durante todo el año. El juego tiene cuatro niveles de dificultad e incluye cinco balones. Según el modo seleccionado, la canasta puede moverse.\n\nEl montaje y el transporte son muy sencillos.\n\nEl baloncesto es un juego para todas las edades que encanta tanto a niños como a adultos. Los jugadores pueden jugar en grupo y competir por la mejor puntuación mediante la opción de conexión. Es una máquina duradera de alta calidad. WIK es líder en la fabricación de máquinas recreativas de baloncesto, con años de experiencia. Una atracción que gusta al público y no deja de ofrecer diversión."
   },
   "kids-basketball": {
-    "desc": "Contacta con PRO GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+    "desc": "Contacta con PRO-GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
   },
   "kiddie-ride": {
-    "desc": "Contacta con PRO GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+    "desc": "Contacta con PRO-GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
   },
   "cyberdart": {
-    "desc": "Contacta con PRO GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
+    "desc": "Contacta con PRO-GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
   }
 };
 
@@ -3787,7 +3787,7 @@ window.PG_ES={
     "Supports flexible payment configurations for different markets": "Configuraciones de pago flexibles para distintos mercados",
     "Operator-focused construction with service access and configurable lighting": "Construcción orientada al operador, acceso de servicio e iluminación configurable",
     "Matte airbrushed cabinet finishes": "Acabados mate aerografiados",
-    "Multiple artwork variants shown by PRO GAMES": "Múltiples variantes gráficas mostradas por PRO GAMES",
+    "Multiple artwork variants shown by PRO-GAMES": "Múltiples variantes gráficas mostradas por PRO-GAMES",
     "Commercial boxer platform": "Plataforma boxer comercial",
     "Custom configuration available on request": "Configuración personalizada bajo pedido",
     "Commercial punch-strength gameplay": "Juego comercial de fuerza de golpeo",
@@ -3845,7 +3845,7 @@ window.PG_ES={
     "Children’s amusement category": "Categoría de entretenimiento infantil",
     "Commercial venue use": "Uso en espacios comerciales",
     "Model-specific configuration": "Configuración específica según modelo",
-    "Details available from PRO GAMES sales": "Detalles disponibles con el equipo comercial PRO GAMES",
+    "Details available from PRO-GAMES sales": "Detalles disponibles con el equipo comercial PRO-GAMES",
     "Electronic darts entertainment format": "Formato de entretenimiento de dardos electrónicos",
     "Commercial venue category": "Categoría para espacios comerciales",
     "Built for heavy use, the 3-in-1 Boxer/Kicker/Hammer guarantees fun, competition, and excitement for players of all ages.": "Diseñado para un uso intensivo, el Boxer/Kicker/Hammer 3 en 1 garantiza diversión, competición y emoción a jugadores de todas las edades.",

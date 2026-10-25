@@ -21,7 +21,7 @@ const locales=['el','it','ar','ro','cs','hu','ru','bg'];
      const before=await page.locator('#variantName').textContent();await page.locator('.gallery-swatch').nth(1).click();await page.waitForFunction(before=>document.querySelector('#variantName').textContent!==before,before);const quote=await page.locator('.config-quote').getAttribute('href');assert(quote.startsWith('/'+lang+'/'));assert(quote.includes('variant='));
      const menu=page.locator('.pg-language').first();await menu.locator('summary').click();assert.equal(await menu.locator('a').count(),13);const it=await menu.locator('a[lang=it]').getAttribute('href');assert(it.includes('/it/products/boxer-kids.html'));assert(it.includes('variant='));await menu.locator('summary').click();
     }
-    if(kind==='catalog'){await page.locator('[data-catalog=parts]').click();assert.equal(await page.locator('#catalogTitle').textContent(),await page.evaluate(()=>window.PG_T('PRO GAMES Spare Parts')));}
+    if(kind==='catalog'){await page.locator('[data-catalog=parts]').click();assert.equal(await page.locator('#catalogTitle').textContent(),await page.evaluate(()=>window.PG_T('PRO-GAMES Spare Parts')));}
    }
    if(width===390&&['el','ar','ru'].includes(lang))await page.screenshot({path:`/tmp/pg-${lang}-${kind}.png`});
   }

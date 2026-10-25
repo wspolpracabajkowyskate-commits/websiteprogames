@@ -3,7 +3,7 @@ const products=window.PRODUCTS||{};
 const params=new URLSearchParams(location.search);
 const requested=document.body.dataset.model||params.get('model')||'champion';
 const key=Object.hasOwn(products,requested)?requested:null;
-if(!key){ document.title='Product not found | PRO GAMES'; document.querySelector('#productDetail').innerHTML=document.documentElement.lang==='es'?'<section class="section"><h1>Producto no encontrado</h1><a href="/es.html#machines">Ver productos</a></section>':'<section class="section"><h1>Product not found</h1><a href="/#machines">View products</a></section>'; window.PG_LOCALIZE?.(); return; }
+if(!key){ document.title='Product not found | PRO-GAMES'; document.querySelector('#productDetail').innerHTML=document.documentElement.lang==='es'?'<section class="section"><h1>Producto no encontrado</h1><a href="/es.html#machines">Ver productos</a></section>':'<section class="section"><h1>Product not found</h1><a href="/#machines">View products</a></section>'; window.PG_LOCALIZE?.(); return; }
 const p=products[key];
 const lang=document.documentElement.lang;
 const isES=lang==='es';
@@ -19,23 +19,23 @@ const FAMILY_URL=routes.collection(lang);
 const txt=isPL?{
  all:'Wszystkie produkty',allMachines:'Wszystkie automaty',request:'Zapytaj o ofertę',catalog:'Zobacz pełny katalog →',price:'Cena i ostateczna konfiguracja są ustalane indywidualnie.',
  colour:'KOLOR / WZÓR',current:'Wybrane wykończenie',colourNote:'Wybierz kolor lub wzór, aby zobaczyć zdjęcie tej wersji urządzenia. Dostępność i szczegóły konfiguracji potwierdza dział sprzedaży.',
- finish:'WYKOŃCZENIE / WZÓR',currentImage:'Zdjęcie produktu',currentNote:'Zapytaj PRO GAMES o dostępne wykończenia, kolory i możliwości personalizacji tego modelu.',
+ finish:'WYKOŃCZENIE / WZÓR',currentImage:'Zdjęcie produktu',currentNote:'Zapytaj PRO-GAMES o dostępne wykończenia, kolory i możliwości personalizacji tego modelu.',
  details:'SZCZEGÓŁY PRODUKTU',built:'DO INTENSYWNEJ\nEKSPLOATACJI.',features:'Najważniejsze cechy',specs:'Dane techniczne',options:'Dostępne opcje i wyposażenie',
- operator:'KONFIGURACJA DLA OPERATORA',one:'TWÓJ AUTOMAT.\nDOPASOWANY DO LOKALU.',operatorText:'System płatności, grafika, oświetlenie, funkcje biletowe i nagrodowe oraz szczegóły techniczne zależą od modelu, rynku i zamówienia. Skontaktuj się z PRO GAMES, aby potwierdzić konfigurację odpowiednią dla Twojego obiektu.',
+ operator:'KONFIGURACJA DLA OPERATORA',one:'TWÓJ AUTOMAT.\nDOPASOWANY DO LOKALU.',operatorText:'System płatności, grafika, oświetlenie, funkcje biletowe i nagrodowe oraz szczegóły techniczne zależą od modelu, rynku i zamówienia. Skontaktuj się z PRO-GAMES, aby potwierdzić konfigurację odpowiednią dla Twojego obiektu.',
  explore:'POZNAJ WIĘCEJ',related:'POWIĄZANE AUTOMATY',viewAll:'Zobacz wszystkie produkty ↗',ready:'POROZMAWIAJMY',build:'STWÓRZMY TWOJĄ\nNOWĄ ATRAKCJĘ.',send:'Wyślij zapytanie'
 }:isES?{
   all:'Todos los productos', allMachines:'Todas las máquinas', request:'Solicitar oferta', catalog:'Ver catálogo completo →', price:'El precio y la configuración final se cotizan individualmente.',
-  colour:'COLOR / ACABADO', current:'Acabado actual', colourNote:'Selecciona un color o acabado. La foto principal cambia automáticamente para mostrar la variante real de PRO GAMES. El color, el diseño y la disponibilidad final se confirman con el equipo comercial.',
-  finish:'ACABADO / DISEÑO', currentImage:'Imagen actual del producto', currentNote:'Consulta con el equipo comercial de PRO GAMES las opciones actuales de diseño, color y personalización para este modelo.',
+  colour:'COLOR / ACABADO', current:'Acabado actual', colourNote:'Selecciona un color o acabado. La foto principal cambia automáticamente para mostrar la variante real de PRO-GAMES. El color, el diseño y la disponibilidad final se confirman con el equipo comercial.',
+  finish:'ACABADO / DISEÑO', currentImage:'Imagen actual del producto', currentNote:'Consulta con el equipo comercial de PRO-GAMES las opciones actuales de diseño, color y personalización para este modelo.',
   details:'DETALLES DEL PRODUCTO', built:'DISEÑADA PARA\nUSO COMERCIAL.', features:'Características principales', specs:'Especificaciones técnicas', options:'Opciones / mejoras disponibles',
-  operator:'CONFIGURACIÓN PARA OPERADORES', one:'UNA MÁQUINA.\nCONFIGURADA PARA TU LOCAL.', operatorText:'El hardware de pago, el diseño gráfico, la iluminación, la configuración de tickets o premios y algunos detalles técnicos pueden variar según el mercado y el pedido. Contacta con PRO GAMES para confirmar la especificación exacta que necesitas.',
+  operator:'CONFIGURACIÓN PARA OPERADORES', one:'UNA MÁQUINA.\nCONFIGURADA PARA TU LOCAL.', operatorText:'El hardware de pago, el diseño gráfico, la iluminación, la configuración de tickets o premios y algunos detalles técnicos pueden variar según el mercado y el pedido. Contacta con PRO-GAMES para confirmar la especificación exacta que necesitas.',
   explore:'DESCUBRE MÁS', related:'MÁQUINAS RELACIONADAS', viewAll:'Ver todos los productos ↗', ready:'¿HABLAMOS?', build:'CREEMOS TU PRÓXIMA\nEXPERIENCIA DE ENTRETENIMIENTO.', send:'Enviar consulta'
 }:{
   all:'All products', allMachines:'All machines', request:'Request a quote', catalog:'View full product catalog →', price:'Pricing and final configuration are quoted individually.',
-  colour:'COLOUR / ARTWORK', current:'Current finish', colourNote:'Select a colour / artwork option. The main product photo changes automatically to the corresponding real PRO GAMES variant. Final colour, artwork and availability are confirmed with the sales team.',
-  finish:'FINISH / ARTWORK', currentImage:'Current product image', currentNote:'Ask the PRO GAMES sales team about current artwork, colour and branding options for this model.',
+  colour:'COLOUR / ARTWORK', current:'Current finish', colourNote:'Select a colour / artwork option. The main product photo changes automatically to the corresponding real PRO-GAMES variant. Final colour, artwork and availability are confirmed with the sales team.',
+  finish:'FINISH / ARTWORK', currentImage:'Current product image', currentNote:'Ask the PRO-GAMES sales team about current artwork, colour and branding options for this model.',
   details:'PRODUCT DETAILS', built:'BUILT FOR\nCOMMERCIAL PLAY.', features:'Key features', specs:'Technical specifications', options:'Available upgrades / options',
-  operator:'OPERATOR CONFIGURATION', one:'ONE MACHINE.\nCONFIGURED FOR YOUR VENUE.', operatorText:'Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact PRO GAMES for the current specification of the exact version you need.',
+  operator:'OPERATOR CONFIGURATION', one:'ONE MACHINE.\nCONFIGURED FOR YOUR VENUE.', operatorText:'Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact PRO-GAMES for the current specification of the exact version you need.',
   explore:'EXPLORE MORE', related:'RELATED MACHINES', viewAll:'View all products ↗', ready:'READY TO TALK?', build:"LET'S BUILD YOUR NEXT\nENTERTAINMENT EXPERIENCE.", send:'Send an inquiry'
 };
 const label=(isES||isPL)?(es.labels[p.label]||p.label):p.label;
@@ -47,9 +47,9 @@ const localOption=x=>(isES||isPL)?(es.options[x]||x):x;
 const localSpec=x=>(isES||isPL)?(es.specs[x]||x):x;
 const localColor=x=>(isES||isPL)?(es.colors[x]||x):x;
 
-if(!document.body.dataset.model) document.title=`${p.name} | PRO GAMES`;
+if(!document.body.dataset.model) document.title=`${p.name} | PRO-GAMES`;
 const meta=document.querySelector('meta[name="description"]');
-if(meta&&!document.body.dataset.model) meta.content=isPL?`${p.name} — automat PRO GAMES. Kolory, zdjęcia, dane techniczne i konfiguracja dla operatorów.`:isES?`${p.name} de PRO GAMES. Descripción, especificaciones, colores disponibles y configuración para operadores.`:`${p.name} by PRO GAMES. Product overview, verified dimensions, available finishes and operator configuration.`;
+if(meta&&!document.body.dataset.model) meta.content=isPL?`${p.name} — automat PRO-GAMES. Kolory, zdjęcia, dane techniczne i konfiguracja dla operatorów.`:isES?`${p.name} de PRO-GAMES. Descripción, especificaciones, colores disponibles y configuración para operadores.`:`${p.name} by PRO-GAMES. Product overview, verified dimensions, available finishes and operator configuration.`;
 
 const detail=document.querySelector('#productDetail');
 const variantList=(p.variants||[]).filter(v=>v&&v.image);
