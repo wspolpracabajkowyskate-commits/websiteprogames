@@ -11,8 +11,8 @@
    if((m=s.match(/^(\d+) (models shown|products \/ collections|machine shown|machines shown)$/)))result=t(m[2]==='models shown'?'Models shown':'Products / collections')+': '+m[1];
    else if((m=s.match(/^(Show |View )(.+)$/)))result=t(m[1].trim())+' '+t(m[2]);
    else if((m=s.match(/^Artwork (\d+)(.*)$/)))result=t('Artwork')+' '+m[1]+(m[2]?' · '+t(m[2].replace(/^\s*·\s*/,'')):'');
-   else if((m=s.match(/^(.+) is listed in the PRO GAMES catalogue\. Contact sales to confirm the current specification and available configuration\.$/)))result=m[1]+': '+t('Contact PRO GAMES for the product description, technical specifications and available equipment for this model.');
-   else if((m=s.match(/^(.+) – (.+) (by|available from) PRO GAMES\. Explore photos, specifications and configuration options\. Request a quote\.$/)))result=m[1]+' — '+t('Professional amusement machines made in Poland.')+' '+t('Request a quote');
+   else if((m=s.match(/^(.+) is listed in the PRO-GAMES catalogue\. Contact sales to confirm the current specification and available configuration\.$/)))result=m[1]+': '+t('Contact PRO-GAMES for the product description, technical specifications and available equipment for this model.');
+   else if((m=s.match(/^(.+) – (.+) (by|available from) PRO-GAMES\. Explore photos, specifications and configuration options\. Request a quote\.$/)))result=m[1]+' — '+t('Professional amusement machines made in Poland.')+' '+t('Request a quote');
    else if(s.includes(' — '))result=s.split(' — ').map(t).join(' — ');
    else if(s.includes(' | '))result=s.split(' | ').map(t).join(' | ');
    else if(s.includes(' · '))result=s.split(' · ').map(t).join(' · ');

@@ -16,14 +16,14 @@ for(const file of fs.readdirSync('i18n/extra').filter(f=>f.endsWith('.tsv'))){
 const aliases={28:20,49:20,57:54,84:69,85:70,87:74,89:76,90:77,109:74,112:78,116:108,117:110};
 for(const d of Object.values(dictionaries)){
  for(const [to,from]of Object.entries(aliases))d[sources[to]]=d[sources[from]];
- for(const [to,from]of Object.entries({'Spare Parts':'Spare parts','spare parts':'Spare parts','SPARE PARTS.':'Spare parts','MANUFACTURING':'manufacturing','ELECTRONICS':'Electronics','BOOTH':'Booth','OPERATOR CONFIGURATION':'Operator configuration','MULTIPLAYER BOXER MACHINE':sources[36],'Send an inquiry':'Send inquiry','dispensing':'& dispensing','PRO GAMES Machines Catalog':'MACHINE CATALOG','PRO GAMES Spare Parts Catalog':'SPARE PARTS CATALOG'}))d[to]=d[from];
+ for(const [to,from]of Object.entries({'Spare Parts':'Spare parts','spare parts':'Spare parts','SPARE PARTS.':'Spare parts','MANUFACTURING':'manufacturing','ELECTRONICS':'Electronics','BOOTH':'Booth','OPERATOR CONFIGURATION':'Operator configuration','MULTIPLAYER BOXER MACHINE':sources[36],'Send an inquiry':'Send inquiry','dispensing':'& dispensing','PRO-GAMES Machines Catalog':'MACHINE CATALOG','PRO-GAMES Spare Parts Catalog':'SPARE PARTS CATALOG'}))d[to]=d[from];
 }
 const productContext={window:{}};vm.runInNewContext(fs.readFileSync('products.js','utf8'),productContext);
 const brands=[...new Set([...Object.values(productContext.window.PRODUCTS).map(p=>p.name),'Boxer Standard'])];
 for(const d of Object.values(dictionaries)){
- d['PRO GAMES manufactures commercial boxing arcade machines in Poland. Compare boxer, combo and strength games, explore configurations and request a B2B quote.']=d['PRO GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
+ d['PRO-GAMES manufactures commercial boxing arcade machines in Poland. Compare boxer, combo and strength games, explore configurations and request a B2B quote.']=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  d['Explore 15 Boxer Standard designs, including Champion, Joker and MMA. Compare images, colours and technical specifications, then request your configuration.']=d['15 Boxer Standard designs. Choose a model to explore its colours, photos and specifications.'];
- d['Browse and download the PRO GAMES machine and spare parts catalogs in PDF. Explore our range and find parts information for your amusement equipment.']=d['Choose the catalog you need. Browse it directly on this page or download the original PDF for offline use.'];
+ d['Browse and download the PRO-GAMES machine and spare parts catalogs in PDF. Explore our range and find parts information for your amusement equipment.']=d['Choose the catalog you need. Browse it directly on this page or download the original PDF for offline use.'];
 }
 const runtime=fs.readFileSync('i18n/extra/runtime.js','utf8');
 for(const l of langs)fs.writeFileSync('i18n/'+l+'.js','window.PG_BRANDS='+JSON.stringify(brands)+';window.PG_DICTIONARY='+JSON.stringify(dictionaries[l])+';\n'+runtime);

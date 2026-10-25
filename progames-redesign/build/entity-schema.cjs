@@ -1,6 +1,6 @@
 /* Entity schema: one Organization identity (#organization) on every page,
-   explicit link between the PRO GAMES brand and the official domain,
-   Product.brand/manufacturer only for machines PRO GAMES manufactures.
+   explicit link between the PRO-GAMES brand and the official domain,
+   Product.brand/manufacturer only for machines PRO-GAMES manufactures.
    Facts come from the published company details on this site; sameAs lists only
    profiles verified to describe this company (same address/phone/brand).
    Idempotent. Run after build:languages and build/brand.cjs. */
@@ -13,14 +13,14 @@ const ORGANIZATION = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': ORG_ID,
-  name: 'PRO GAMES',
+  name: 'PRO-GAMES',
   legalName: 'PRO GAMES POLAND Sp. z o.o.',
-  alternateName: ['PROGAMES', 'ProGames', 'Pro Games', 'Pro Games Poland', 'PRO-GAMES POLAND', 'Pro-Games Poland'],
-  description: 'PRO GAMES is a Polish manufacturer of commercial boxing arcade machines and amusement machines, based in Jastrzębie-Zdrój, Poland. Official website: https://www.progamespoland.com/.',
+  alternateName: ['PRO GAMES', 'PROGAMES', 'ProGames', 'Pro Games', 'Pro Games Poland', 'PRO-GAMES POLAND', 'Pro-Games Poland'],
+  description: 'PRO-GAMES is a Polish manufacturer of commercial boxing arcade machines and amusement machines, based in Jastrzębie-Zdrój, Poland. Official website: https://www.progamespoland.com/.',
   url: origin + '/',
   logo: { '@type': 'ImageObject', url: origin + '/assets/progames-emblem-256.webp', width: 256, height: 256 },
   image: origin + '/assets/production/production-line.webp',
-  brand: { '@type': 'Brand', name: 'PRO GAMES', url: origin + '/' },
+  brand: { '@type': 'Brand', name: 'PRO-GAMES', url: origin + '/' },
   knowsAbout: ['boxing arcade machines', 'boxer machines', 'kicker machines', 'strength tester machines', 'amusement machines', 'automaty bokserskie'],
   email: 'office@progames.pl',
   telephone: '+48 536 068 912',
@@ -44,7 +44,7 @@ const CATEGORY = {
   combo: 'Boxing and kicking arcade machine',
   kids: 'Kids boxing arcade machine',
   strength: 'Strength tester arcade machine',
-  distributed: 'Amusement machine (distributed by PRO GAMES)'
+  distributed: 'Amusement machine (distributed by PRO-GAMES)'
 };
 
 function fix(item) {
@@ -56,15 +56,15 @@ function fix(item) {
     return out;
   }
   if (item['@type'] === 'WebSite' && item['@id'] === origin + '/#website') {
-    item.name = 'PRO GAMES';
-    item.alternateName = ['PROGAMES', 'ProGames', 'progamespoland.com'];
+    item.name = 'PRO-GAMES';
+    item.alternateName = ['PRO GAMES', 'PROGAMES', 'ProGames', 'progamespoland.com'];
     item.publisher = { '@id': ORG_ID };
   }
   if (item['@type'] === 'Product') {
     if (CATEGORY[item.category]) item.category = CATEGORY[item.category];
     if (item.manufacturer) {
-      item.manufacturer = { '@type': 'Organization', '@id': ORG_ID, name: 'PRO GAMES', url: origin + '/' };
-      item.brand = { '@type': 'Brand', name: 'PRO GAMES' };
+      item.manufacturer = { '@type': 'Organization', '@id': ORG_ID, name: 'PRO-GAMES', url: origin + '/' };
+      item.brand = { '@type': 'Brand', name: 'PRO-GAMES' };
       item.countryOfOrigin = 'PL';
     } else {
       delete item.brand; delete item.countryOfOrigin; // distributed: not presented as our brand
