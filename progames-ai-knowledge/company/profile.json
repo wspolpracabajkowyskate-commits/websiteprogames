@@ -1,7 +1,7 @@
 {
-  "name": "ProGames",
-  "legal_name": "PRO GAMES POLAND Sp. z o.o.",
-  "description": "Manufacturer of commercial boxing arcade machines and amusement equipment in Poland.",
+  "name": "PRO-GAMES",
+  "legal_name": "PRO-GAMES POLAND Sp. z o.o.",
+  "description": "PRO-GAMES is a Polish manufacturer of commercial boxing arcade machines and amusement machines, based in Jastrzębie-Zdrój, Poland. Official website: https://www.progamespoland.com/.",
   "url": "https://www.progamespoland.com/",
   "address": {
     "@type": "PostalAddress",
@@ -33,6 +33,7 @@
     {
       "@type": "ContactPoint",
       "contactType": "customer service",
+      "name": "Service and spare parts",
       "email": "service@progames.pl",
       "telephone": "+48 789 108 086",
       "availableLanguage": [
@@ -46,12 +47,13 @@
   ],
   "social_profiles": [
     "https://www.facebook.com/BoxerProgames",
-    "https://www.instagram.com/progames.pl/"
+    "https://www.instagram.com/progames.pl/",
+    "https://iaapa.org/partners/marketplace/progames-poland"
   ],
   "source_ids": [
     "official-home"
   ],
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-25",
   "approval_status": "source_verified_human_pending",
   "confidence": "official_first_party_statement_not_registry_verified"
 }
