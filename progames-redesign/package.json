@@ -11,7 +11,7 @@
     "build:legacy": "node build/generate.cjs && node build/multilingual.cjs && node build/seo.cjs && node build/seo-v42.cjs && node build/redirects.cjs && node build/seo-pl-v43.cjs",
     "test:legacy": "node verification/check-publication.cjs && node verification/test-trade-map.cjs && node verification/check-product-copy.cjs",
     "test:pl": "node verification/check-pl-growth.cjs",
-    "build:languages": "node build/extra-languages.cjs && npm run build:entity",
+    "build:languages": "node build/product-copy-v44.cjs && node build/extra-languages.cjs && npm run build:entity",
     "pretest:seo": "npm run build:languages",
     "pretest:i18n": "npm run build:languages",
     "test:languages": "node verification/check-extra-browser.cjs",
