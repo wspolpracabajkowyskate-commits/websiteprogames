@@ -1,7 +1,7 @@
 /* Brand normalisation: the brand is written PRO-GAMES (capitals, with a hyphen), as on the
    logo and on all social profiles.
+   The company name in visible company data and the footer is PRO-GAMES POLAND Sp. z o.o.
    Kept unchanged on purpose:
-   - the legal entity PRO GAMES POLAND Sp. z o.o. (registered company name);
    - third-party spellings quoted as such (UPlay "Pro-Games Poland");
    - schema.org alternateName lists (they connect old spellings with the brand);
    - mail subjects / form handlers (site-config.js, api/) and the 3D configurator.
@@ -10,10 +10,8 @@
 const fs = require('fs'), path = require('path');
 const root = path.resolve(__dirname, '..');
 
+const LISTS = /\\?"alternateName\\?":\s*\[[^\]]*\]/g;
 const PROTECT = [
-  /PRO GAMES POLAND Sp\. z o\.o\./g,
-  /Pro Games Poland Sp\. z o\.o\./g,
-  /\\?"alternateName\\?":\s*\[[^\]]*\]/g,
   /PRO-GAMES POLAND/g,
   /Pro-Games Poland/g,
   // "variants used by partners" sentences must keep the variant they cite
@@ -26,9 +24,14 @@ const BRAND = /\b(?:Pro Games|PRO GAMES|ProGames|PROGAMES|Pro-Games|PRO-GAMES)(?
 
 function normalizeBrand(text) {
   const kept = [];
+  const hold = m => `\u0000${kept.push(m) - 1}\u0000`;
+  // alternateName lists keep every spelling (old ones connect the brand's history)
+  let out = text.replace(LISTS, hold);
   // the wordmark image reads "PRO-GAMES POLAND": keep POLAND in its alt text
-  let out = text.replace(/(alt=\\?"|\balt:\s*')PRO GAMES POLAND/g, '$1PRO-GAMES POLAND');
-  for (const re of PROTECT) out = out.replace(re, m => `\u0000${kept.push(m) - 1}\u0000`);
+  out = out.replace(/(alt=\\?"|\balt:\s*')PRO GAMES POLAND/g, '$1PRO-GAMES POLAND');
+  // company name in company data and the footer
+  out = out.replace(/(?:PRO GAMES POLAND|Pro Games Poland|PRO-GAMES POLAND) Sp\. z o\.o\./g, 'PRO-GAMES POLAND Sp. z o.o.');
+  for (const re of PROTECT) out = out.replace(re, hold);
   out = out.replace(BRAND, 'PRO-GAMES');
   return out.replace(/\u0000(\d+)\u0000/g, (_, i) => kept[+i]);
 }

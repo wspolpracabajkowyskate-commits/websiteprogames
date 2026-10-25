@@ -26,7 +26,7 @@ for (const file of walk(root)) {
         orgs++;
         assert.equal(it.name, 'PRO-GAMES', rel);
         assert.equal(it.url, origin + '/', rel);
-        assert.equal(it.legalName, 'PRO GAMES POLAND Sp. z o.o.', rel);
+        assert.equal(it.legalName, 'PRO-GAMES POLAND Sp. z o.o.', rel);
         assert(it.sameAs.every(u => u.startsWith('https://')), rel);
       }
       if (it['@type'] === 'Product') {

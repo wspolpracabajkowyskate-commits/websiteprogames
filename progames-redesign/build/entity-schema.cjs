@@ -14,8 +14,8 @@ const ORGANIZATION = {
   '@type': 'Organization',
   '@id': ORG_ID,
   name: 'PRO-GAMES',
-  legalName: 'PRO GAMES POLAND Sp. z o.o.',
-  alternateName: ['PRO GAMES', 'PROGAMES', 'ProGames', 'Pro Games', 'Pro Games Poland', 'PRO-GAMES POLAND', 'Pro-Games Poland'],
+  legalName: 'PRO-GAMES POLAND Sp. z o.o.',
+  alternateName: ['PRO-GAMES POLAND', 'Pro-Games', 'Pro-Games Poland', 'PRO GAMES', 'PRO GAMES POLAND', 'PRO GAMES POLAND Sp. z o.o.', 'PROGAMES', 'ProGames', 'Pro Games', 'Pro Games Poland'],
   description: 'PRO-GAMES is a Polish manufacturer of commercial boxing arcade machines and amusement machines, based in Jastrzębie-Zdrój, Poland. Official website: https://www.progamespoland.com/.',
   url: origin + '/',
   logo: { '@type': 'ImageObject', url: origin + '/assets/progames-emblem-256.webp', width: 256, height: 256 },
@@ -57,7 +57,7 @@ function fix(item) {
   }
   if (item['@type'] === 'WebSite' && item['@id'] === origin + '/#website') {
     item.name = 'PRO-GAMES';
-    item.alternateName = ['PRO GAMES', 'PROGAMES', 'ProGames', 'progamespoland.com'];
+    item.alternateName = ['PRO-GAMES POLAND', 'Pro-Games', 'PRO GAMES', 'PROGAMES', 'ProGames', 'progamespoland.com'];
     item.publisher = { '@id': ORG_ID };
   }
   if (item['@type'] === 'Product') {
