@@ -6,7 +6,7 @@ import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "10"
+VER = "11"
 
 T = {
   'en': {
@@ -106,7 +106,7 @@ def page(lang):
       </div>
       <div class="mg-touch">
         <div class="mg-pad">{tb('left')}{tb('right')}</div>
-        <button type="button" class="mg-tb mg-tb-small mg-only-play" data-act="pause" data-label="II" aria-label="{esc(t['pause'])}">II</button>
+        <button type="button" class="mg-tb mg-tb-small mg-only-play" data-act="pause" data-label="=" aria-label="{esc(t['pause'])}">II</button>
         <div class="mg-pad mg-pad-act">{tb('smash', ' mg-tb-smash')}{tb('kick', ' mg-tb-kick')}{tb('punch', ' mg-tb-punch')}{tb('jump', ' mg-tb-jump')}</div>
       </div>
     </section>
