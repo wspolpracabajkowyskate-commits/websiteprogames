@@ -6,7 +6,7 @@ import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "5"
+VER = "6"
 
 T = {
   'en': {
