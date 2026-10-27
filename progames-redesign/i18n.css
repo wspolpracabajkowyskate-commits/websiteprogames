@@ -164,3 +164,7 @@ html:is(:lang(pl),:lang(de),:lang(fr)) .catalog-choice{overflow:hidden}
 
 /* Thirteen locales: keep the disclosure within the viewport. */
 .pg-language-list{max-height:min(65vh,520px);overflow-y:auto;overscroll-behavior:contain}
+
+/* GAMES tab (MONSTER GAME) */
+.desktop-nav a.nav-games,.mobile-nav a.nav-games{color:#ffe14a}
+.desktop-nav a.nav-games:hover{color:#fff27a}
