@@ -975,3 +975,8 @@ body.product-page-v2 .product-config-panel .gallery-variant-swatches{flex-wrap:w
 /* Hero description: on computers the third line starts after "obiektu". */
 .lead-break{display:none}
 @media(min-width:981px){.lead-break{display:inline}}
+/* iPhone turns the NIP number into a phone link, which then picked up the
+   block styling of the contact links (own line, bold, gaps). Keep it as text. */
+.company-registration a{display:inline;margin:0;font:inherit;color:inherit;text-decoration:none;overflow-wrap:normal}
+/* EN contact heading on phones: "LET'S BUILD / YOUR NEXT" instead of leaving NEXT alone */
+@media(max-width:640px){html:lang(en) .contact-copy h2{text-wrap:balance}html:lang(en) .contact-copy h2 span{text-wrap:wrap}}
