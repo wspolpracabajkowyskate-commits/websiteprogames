@@ -89,7 +89,12 @@ module.exports = async (req, res) => {
       const putText = (await put.text()).slice(0, 300);
       const get = await fetch(`https://${STORE}.private.blob.vercel-storage.com/monster-game/selftest.json?cache=0`, { headers: { authorization: 'Bearer ' + BLOB } });
       const back = get.ok ? await get.json() : null;
-      return res.status(200).json({ put: put.status, putText, get: get.status, etag: get.headers.get('etag'), same: back && back.t === probe.t, f });
+      const et = get.headers.get('etag');
+      const h2 = { authorization: 'Bearer ' + BLOB, 'x-api-version': '13', 'x-vercel-blob-store-id': STORE, 'x-vercel-blob-access': 'private', 'x-allow-overwrite': '1', 'x-add-random-suffix': '0', 'x-content-type': 'application/json' };
+      const okMatch = await fetch('https://vercel.com/api/blob/?' + new URLSearchParams({ pathname: 'monster-game/selftest.json' }), { method: 'PUT', headers: { ...h2, 'x-if-match': et }, body: '{"v":2}' });
+      const badMatch = await fetch('https://vercel.com/api/blob/?' + new URLSearchParams({ pathname: 'monster-game/selftest.json' }), { method: 'PUT', headers: { ...h2, 'x-if-match': et }, body: '{"v":3}' });
+      const board = await load();
+      return res.status(200).json({ put: put.status, get: get.status, etag: et, same: back && back.t === probe.t, ifMatchOk: okMatch.status, ifMatchStale: badMatch.status, staleText: (await badMatch.text()).slice(0, 200), board: board.etag === null ? 'empty' : 'exists' });
     }
     if (req.method === 'GET') {
       const { data } = await load();
