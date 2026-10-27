@@ -105,7 +105,7 @@ const FONT_SRC = {
   '↑': '00100011101010100100001000010000000', '↓': '00000001000010000100101010111000100',
   '◀': '00010001100111011111011100011000010', '▶': '01000011000111011111011100110001000',
   '♥': '00000010101111111111011100010000000', '(': '00010001000100001000010000010000010', ')': '01000001000001000010000100010001000',
-  '#': '01010010101111101010111110101001010', i: '00100000000110000100001000010001110', n: '00000000001011011001100011000110001', '%': '11001110010001000100010001001110011', ' ': '00000000000000000000000000000000000'
+  '#': '01010010101111101010111110101001010', '_': '00000000000000000000000000000011111', i: '00100000000110000100001000010001110', n: '00000000001011011001100011000110001', '%': '11001110010001000100010001001110011', ' ': '00000000000000000000000000000000000'
 };
 const DIA = { 'Ą': ['A', 'og'], 'Ć': ['C', 'ac'], 'Ę': ['E', 'og'], 'Ł': ['L', 'st'], 'Ń': ['N', 'ac'], 'Ó': ['O', 'ac'], 'Ś': ['S', 'ac'], 'Ź': ['Z', 'ac'], 'Ż': ['Z', 'dot'] };
 const FONT = {};
@@ -350,6 +350,11 @@ addEventListener('keydown', e => {
   if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
   if (!gameFocused()) return;
   const a = KEYMAP[e.code];
+  if (state === 'menu' && ui.screen === 'nick' && !e.ctrlKey && !e.metaKey) {
+    if (e.key.length === 1 && cleanNick(e.key)) { e.preventDefault(); focusNick(); nickInput.value = cleanNick(nickInput.value + e.key); ui.nick = nickInput.value; sfx('tick'); return; }
+    if (e.key === 'Backspace') { e.preventDefault(); nickInput.value = nickInput.value.slice(0, -1); ui.nick = nickInput.value; return; }
+    if (e.key === 'Enter') { e.preventDefault(); if (ui.sel === 1) cancelNick(); else confirmNick(); return; }
+  }
   if (menuActive()) {
     const m = MENU_KEYS[e.code];
     if (m || e.code === 'KeyP') e.preventDefault();
@@ -1021,6 +1026,7 @@ function stageClear() {
 function gameOver() {
   state = 'over'; stopMusic(); ui.sel = 0;
   save.top = Math.max(save.top, run.score); persist();
+  recordRun('E' + (level.idx + 1));
 }
 function pauseGame() { if (state !== 'play') return; state = 'pause'; ui.screen = 'pause'; ui.sel = 0; sfx('pause'); stopMusic(); }
 function resumeGame() { if (state !== 'pause') return; state = 'play'; ensureAudio(); startMusic(level.def.theme); }
@@ -1173,6 +1179,8 @@ const MACHINE = new Image();
 MACHINE.src = '/games/assets/monster-3in1-machine.png';
 const SCREEN = new Image();
 SCREEN.src = '/games/assets/machine-screen.png';
+const HAMMER = new Image();
+HAMMER.src = '/games/assets/machine-hammer.png';
 const LED_ROWS = [[2, [12, 17, 23, 30, 36]], [16, [7, 12, 17, 23, 29, 35]], [65, [10, 16, 21, 26, 31]]];
 const LED_COLS = [C.white, C.cyan, C.mag, C.yel];
 function drawFinish(f, t) {
@@ -1194,6 +1202,8 @@ function drawFinish(f, t) {
       ctx.drawImage(SCREEN, fi * 12, 0, 12, 13, x + 14, y + 34, 12, 13);
       ctx.globalAlpha = 0.18; ctx.fillStyle = C.cyan; ctx.fillRect(x + 14, y + 34 + (Math.floor(t * 20) % 13), 12, 1); ctx.globalAlpha = 1;
     }
+    // side panel: the HAMMER score column (100 ... 1000) from the real machine
+    if (HAMMER.complete && HAMMER.naturalWidth) ctx.drawImage(HAMMER, (Math.floor(t * 6) % 18) * 6, 0, 6, 40, x + 35, y + 21, 6, 40);
     if (Math.floor(t * 3) % 2) drawText(ctx, '↓', x + 25, y - 18, C.g3, { align: 'center', scale: 2, outline: C.ink });
     return;
   }
@@ -1444,9 +1454,11 @@ const UI = {
     over: 'GAME OVER', score: 'SCORE', retry: 'CONTINUE', retryNote: 'SAME STAGE - SCORE RESETS TO ZERO',
     end1: 'YOU BEAT BIG BAG!', end2: 'YOU ARE THE REAL MONSTER!', again: 'PLAY AGAIN', machine: 'THE REAL MONSTER 3in1',
     locked: '??????', nextPage: 'NEXT ▶', prevPage: '◀ PREVIOUS', copy: '(C) 2026 PRO-GAMES POLAND',
+    rank: 'RANKING', nick: 'NICK', enterNick: 'ENTER YOUR NICK', nickHint: 'LETTERS AND DIGITS - MAX 10', tapType: 'TAP THE BOX TO TYPE', ok: 'OK',
+    place: 'PLACE', newBest: 'NEW PERSONAL BEST!', yourBest: 'YOUR BEST', empty: 'NO SCORES YET - BE THE FIRST!', player: 'PLAYER', end: 'END',
     pages: ['CONTROLS', 'ENEMIES AND ITEMS', 'GOAL'],
     keys: [['← →', 'RUN'], ['SPACE / ↑', 'JUMP (HOLD = HIGHER)'], ['J / X', 'PUNCH - BREAKS CRATES'], ['K / C', 'KICK THE BALL'], ['↓ IN THE AIR', 'HAMMER SMASH'], ['↓ ON THE GROUND', 'HAMMER SWING - BREAKS WALLS'], ['P / ESC', 'PAUSE']],
-    touch: [['◀ ▶', 'RUN'], ['JUMP', 'JUMP (HOLD = HIGHER)'], ['PUNCH', 'BREAKS CRATES'], ['KICK', 'KICK THE BALL'], ['SMASH IN AIR', 'HAMMER SMASH'], ['SMASH ON GROUND', 'BREAKS CRACKED WALLS'], ['II', 'PAUSE']],
+    touch: [['◀ ▶', 'RUN'], ['JUMP', 'JUMP (HOLD = HIGHER)'], ['PUNCH', 'BREAKS CRATES'], ['KICK', 'KICK THE BALL'], ['SMASH IN AIR', 'HAMMER SMASH'], ['SMASH ON GROUND', 'BREAKS CRACKED WALLS'], ['=', 'MENU / PAUSE']],
     things: [['bagger', 'BAGGER - STOMP OR PUNCH IT'], ['sparky', "SPARKY - DON'T STOMP! PUNCH OR KICK"], ['glover', 'GLOVER - CHARGES AT YOU'], ['token', '100 TOKENS = EXTRA LIFE'], ['heart', 'HEART - RESTORES HEALTH'],
       ['crate', 'CRATE - HIDES TOKENS OR HEARTS'], ['cracked', 'CRACKED BLOCK - SMASH IT'], ['spring', 'SPRING - SMASH IT = MEGA JUMP'], ['check', 'SMALL MACHINE - CHECKPOINT'], ['rage', 'FULL RAGE BAR = 7 S INVINCIBLE']],
     goal: ['REACH THE MONSTER MACHINE', 'AT THE END OF EVERY STAGE.', '', 'STAGE 5: BEAT BIG BAG.', 'HIT IT WHILE IT LIES DAZED', 'AFTER A SLAM AND JUMP', 'OVER ITS SHOCKWAVES!', '', 'PROGRESS IS SAVED', 'AUTOMATICALLY.']
@@ -1461,9 +1473,11 @@ const UI = {
     over: 'GAME OVER', score: 'WYNIK', retry: 'KONTYNUUJ', retryNote: 'TEN SAM ETAP - WYNIK OD ZERA',
     end1: 'POKONAŁEŚ BIG BAG!', end2: 'JESTEŚ PRAWDZIWYM MONSTEREM!', again: 'ZAGRAJ PONOWNIE', machine: 'AUTOMAT MONSTER 3in1',
     locked: '??????', nextPage: 'DALEJ ▶', prevPage: '◀ WSTECZ', copy: '(C) 2026 PRO-GAMES POLAND',
+    rank: 'RANKING', nick: 'NICK', enterNick: 'WPISZ SWÓJ NICK', nickHint: 'LITERY I CYFRY - MAX 10', tapType: 'DOTKNIJ POLA, ABY PISAĆ', ok: 'OK',
+    place: 'MIEJSCE', newBest: 'NOWY REKORD GRACZA!', yourBest: 'TWÓJ REKORD', empty: 'BRAK WYNIKÓW - BĄDŹ PIERWSZY!', player: 'GRACZ', end: 'META',
     pages: ['STEROWANIE', 'PRZECIWNICY I PRZEDMIOTY', 'CEL GRY'],
     keys: [['← →', 'BIEG'], ['SPACJA / ↑', 'SKOK (TRZYMAJ = WYŻEJ)'], ['J / X', 'CIOS - ROZBIJA SKRZYNIE'], ['K / C', 'KOPNIĘCIE PIŁKI'], ['↓ W POWIETRZU', 'UDERZENIE MŁOTEM'], ['↓ NA ZIEMI', 'MŁOT KRUSZY ŚCIANY'], ['P / ESC', 'PAUZA']],
-    touch: [['◀ ▶', 'BIEG'], ['SKOK', 'SKOK (TRZYMAJ = WYŻEJ)'], ['CIOS', 'ROZBIJA SKRZYNIE'], ['KOP', 'KOPNIĘCIE PIŁKI'], ['MŁOT W GÓRZE', 'UDERZENIE MŁOTEM'], ['MŁOT NA ZIEMI', 'KRUSZY ŚCIANY'], ['II', 'PAUZA']],
+    touch: [['◀ ▶', 'BIEG'], ['SKOK', 'SKOK (TRZYMAJ = WYŻEJ)'], ['CIOS', 'ROZBIJA SKRZYNIE'], ['KOP', 'KOPNIĘCIE PIŁKI'], ['MŁOT W GÓRZE', 'UDERZENIE MŁOTEM'], ['MŁOT NA ZIEMI', 'KRUSZY ŚCIANY'], ['=', 'MENU / PAUZA']],
     things: [['bagger', 'WOREK - SKOCZ NA NIEGO LUB UDERZ'], ['sparky', 'ISKRA - NIE SKACZ! UDERZ LUB KOPNIJ'], ['glover', 'RĘKAWICA - SZARŻUJE NA CIEBIE'], ['token', '100 ŻETONÓW = DODATKOWE ŻYCIE'], ['heart', 'SERCE - ODNAWIA ZDROWIE'],
       ['crate', 'SKRZYNIA - KRYJE ŻETONY I SERCA'], ['cracked', 'PĘKNIĘTY BLOK - ROZBIJ MŁOTEM'], ['spring', 'SPRĘŻYNA - MŁOT = MEGA SKOK'], ['check', 'MAŁY AUTOMAT - PUNKT ZAPISU'], ['rage', 'PEŁNY PASEK SZAŁ = 7 S NIETYKALNOŚCI']],
     goal: ['DOJDŹ DO AUTOMATU MONSTER', 'NA KOŃCU KAŻDEGO ETAPU.', '', 'ETAP 5: POKONAJ BIG BAG.', 'UDERZAJ GO, GDY LEŻY', 'OGŁUSZONY PO UPADKU,', 'I PRZESKAKUJ FALE!', '', 'POSTĘP ZAPISUJE SIĘ', 'AUTOMATYCZNIE.']
@@ -1492,6 +1506,7 @@ function toggleFull() {
   } catch (e) { /* not supported */ }
 }
 function goMenu() {
+  if ((state === 'pause' || state === 'clear') && level && run && run.score > 0) recordRun('E' + (level.idx + 1));
   stopMusic(); state = 'menu'; ui.screen = 'main'; ui.sel = 0; attract = null; level = null;
   root.classList.remove('is-playing');
 }
@@ -1502,20 +1517,79 @@ function continueRun() {
 }
 function newGame(idx) { run = { score: 0, lives: 3, tokens: 0 }; startStage(idx || 0, true); }
 
+/* nickname (typed through a hidden input so phones show their keyboard) */
+const NICK_RE = /[^A-Z0-9ĄĆĘŁŃÓŚŹŻ_\-. ]/g;
+const nickInput = document.createElement('input');
+Object.assign(nickInput, { type: 'text', maxLength: 10, autocomplete: 'off', spellcheck: false });
+nickInput.setAttribute('autocapitalize', 'characters'); nickInput.setAttribute('autocorrect', 'off'); nickInput.setAttribute('enterkeyhint', 'done');
+nickInput.setAttribute('aria-label', UI.enterNick); nickInput.className = 'mg-nick-input';
+root.querySelector('.mg-stage').append(nickInput);
+const cleanNick = v => String(v || '').toUpperCase().replace(NICK_RE, '').replace(/^ +/, '').slice(0, 10);
+nickInput.addEventListener('input', () => { const v = cleanNick(nickInput.value); if (v !== nickInput.value) nickInput.value = v; ui.nick = v; sfx('tick'); });
+nickInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { e.preventDefault(); confirmNick(); }
+  else if (e.key === 'Escape') { e.preventDefault(); cancelNick(); }
+  else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { e.preventDefault(); menuInput(e.key === 'ArrowUp' ? 'up' : 'down'); }
+});
+function focusNick() { try { nickInput.focus({ preventScroll: true }); } catch (_) { nickInput.focus(); } }
+function openNick(next) {
+  ui.nickNext = next || null; ui.nickFrom = ui.screen === 'options' ? 'options' : 'main';
+  ui.nick = save.nick || ''; nickInput.value = ui.nick;
+  ui.screen = 'nick'; ui.sel = 0; sfx('ok'); focusNick();
+}
+function confirmNick() {
+  let n = cleanNick(ui.nick).trim();
+  if (!n) n = UI.player + (10 + Math.floor(Math.random() * 90));
+  save.nick = n; persist(); nickInput.blur(); sfx('ok');
+  const next = ui.nickNext; ui.nickNext = null;
+  if (next) next(); else openScreen(ui.nickFrom || 'main', true);
+}
+function cancelNick() { nickInput.blur(); ui.nickNext = null; openScreen(ui.nickFrom || 'main', true); }
+function withNick(fn) { return () => { if (save.nick) fn(); else openNick(fn); }; }
+
+/* ranking: best score per nick, kept in this browser */
+function recordRun(stageLabel) {
+  if (!run || run.recorded || run.score <= 0) return;
+  run.recorded = true;
+  const name = save.nick || UI.player;
+  save.ranking = Array.isArray(save.ranking) ? save.ranking : [];
+  let e = save.ranking.find(r => r.n === name), best = false;
+  if (!e) { e = { n: name, s: run.score, st: stageLabel, d: Date.now() }; save.ranking.push(e); best = true; }
+  else if (run.score > e.s) { e.s = run.score; e.st = stageLabel; e.d = Date.now(); best = true; }
+  save.ranking.sort((a, b) => b.s - a.s); save.ranking = save.ranking.slice(0, 50);
+  save.top = Math.max(save.top, run.score); persist();
+  ui.lastRank = { name, place: save.ranking.indexOf(e) + 1, best, score: run.score };
+}
+function drawRankTable(y0, count, lh) {
+  const list = (save.ranking || []).slice(0, count);
+  if (!list.length) { drawText(ctx, UI.empty, W / 2, y0 + 10, '#9b8fb8', { align: 'center' }); return; }
+  const wide = W >= 400, xL = Math.round(W / 2 - (wide ? 150 : 128)), xR = Math.round(W / 2 + (wide ? 150 : 128));
+  list.forEach((r, i) => {
+    const y = y0 + i * lh, me = r.n === save.nick, hl = ui.lastRank && r.n === ui.lastRank.name;
+    if (hl) { ctx.globalAlpha = 0.25 + 0.15 * Math.sin(time * 6); ctx.fillStyle = C.mag; ctx.fillRect(xL - 4, y - 2, xR - xL + 8, 11); ctx.globalAlpha = 1; }
+    const pc = i === 0 ? C.yel : i === 1 ? '#c0c4d8' : i === 2 ? '#e0904a' : '#9b8fb8';
+    drawText(ctx, String(i + 1).padStart(2, ' ') + '.', xL, y, pc);
+    drawText(ctx, r.n, xL + 24, y, me ? C.yel : C.white);
+    if (wide) drawText(ctx, r.st === 'END' ? UI.end : UI.stage + ' ' + String(r.st).replace('E', ''), xR - 64, y, C.cyan, { align: 'right' });
+    drawText(ctx, fmt(r.s), xR, y, me ? C.yel : C.white, { align: 'right' });
+  });
+}
+
 /* items for the current screen: [{label, act, dis, onLR}] */
 function currentItems() {
   if (state === 'menu') {
     if (ui.screen === 'main') {
-      const it = [{ label: UI.newGame, act: () => newGame(0) }];
-      if (hasSave()) it.push({ label: UI.cont + ' - ' + UI.stage + ' ' + (Math.min(save.run.stage, save.unlocked - 1) + 1), act: continueRun });
+      const it = [{ label: UI.newGame, act: withNick(() => newGame(0)) }];
+      if (hasSave()) it.push({ label: UI.cont + ' - ' + UI.stage + ' ' + (Math.min(save.run.stage, save.unlocked - 1) + 1), act: withNick(continueRun) });
       it.push({ label: UI.select, act: () => openScreen('select') });
+      it.push({ label: UI.rank, act: () => { ui.lastRank = null; openScreen('ranking'); } });
       it.push({ label: UI.howto, act: () => { ui.page = 0; openScreen('howto'); } });
       it.push({ label: UI.options, act: () => openScreen('options') });
       it.push({ label: UI.exit, act: () => { location.href = HOME; } });
       return it;
     }
     if (ui.screen === 'select') {
-      const it = LEVELS.map((l, i) => ({ label: (i + 1) + ' ' + (i < save.unlocked ? l.name[LANG] : UI.locked), dis: i >= save.unlocked, act: () => newGame(i) }));
+      const it = LEVELS.map((l, i) => ({ label: (i + 1) + ' ' + (i < save.unlocked ? l.name[LANG] : UI.locked), dis: i >= save.unlocked, act: withNick(() => newGame(i)) }));
       it.push({ label: UI.back, act: () => openScreen('main', true) });
       return it;
     }
@@ -1528,6 +1602,8 @@ function currentItems() {
       return it;
     }
     if (ui.screen === 'options') return optionItems(true);
+    if (ui.screen === 'nick') return [{ label: UI.ok, act: confirmNick }, { label: UI.back, act: cancelNick }];
+    if (ui.screen === 'ranking') return [{ label: UI.back, act: () => openScreen('main', true) }];
     if (ui.screen === 'confirm') return [
       { label: UI.no, act: () => openScreen('options', true) },
       { label: UI.yes, act: () => { const m = save.muted, mu = save.music; for (const k of Object.keys(save)) delete save[k]; save.unlocked = 1; save.best = {}; save.top = 0; save.muted = m; save.music = mu; persist(); ui.note = UI.deleted; ui.noteT = 2; openScreen('options', true); } }
@@ -1545,12 +1621,13 @@ function currentItems() {
   if (state === 'clear') {
     if (!ui.tally || ui.tally.shown <= ui.tally.rows.length) return [];
     return [
-      { label: ui.tally.last ? UI.go : UI.next, act: () => { if (ui.tally.last) { state = 'ending'; ui.sel = 0; ui.t = 0; save.top = Math.max(save.top, run.score); persist(); } else startStage(level.idx + 1, true); } },
+      { label: ui.tally.last ? UI.go : UI.next, act: () => { if (ui.tally.last) { state = 'ending'; ui.sel = 0; ui.t = 0; recordRun('END'); } else startStage(level.idx + 1, true); } },
       { label: UI.menu, act: goMenu }
     ];
   }
   if (state === 'over') return [
     { label: UI.retry, act: () => { run = { score: 0, lives: 3, tokens: 0 }; startStage(level.idx, true); } },
+    { label: UI.rank, act: () => { goMenu(); ui.screen = 'ranking'; ui.sel = 0; } },
     { label: UI.menu, act: goMenu }
   ];
   if (state === 'ending') return [
@@ -1567,6 +1644,7 @@ function optionItems(fromMenu) {
     { label: UI.music + ': ' + onoff(save.music), act: () => setMusic(!save.music), lr: true },
     { label: UI.full + ': ' + onoff(!!document.fullscreenElement), act: toggleFull, lr: true }
   ];
+  if (fromMenu) it.unshift({ label: UI.nick + ': ' + (save.nick || '-'), act: () => openNick(null) });
   if (fromMenu) it.push({ label: UI.reset, act: () => { openScreen('confirm'); ui.sel = 0; } });
   it.push({ label: UI.back, act: () => { if (state === 'pause') { ui.screen = 'pause'; ui.sel = 2; sfx('back'); } else openScreen('main', true); } });
   it.onLR = () => { const cur = it[ui.sel]; if (cur && cur.lr) { cur.act(); sfx('move'); } };
@@ -1576,9 +1654,9 @@ function openScreen(name, back) {
   const from = ui.screen;
   ui.screen = name; ui.sel = 0;
   if (back) { // return the cursor to the item that opened the sub-screen
-    const map = { select: UI.select, howto: UI.howto, options: UI.options };
+    const map = { select: UI.select, howto: UI.howto, options: UI.options, ranking: UI.rank };
     if (name === 'main' && map[from]) { const i = currentItems().findIndex(x => x.label === map[from]); ui.sel = Math.max(0, i); }
-    if (name === 'options' && from === 'confirm') ui.sel = 3;
+    if (name === 'options' && from === 'confirm') ui.sel = 4;
     sfx('back');
   } else sfx('ok');
 }
@@ -1601,7 +1679,7 @@ function menuInput(k) {
   else if (k === 'ok') { const it = items[clamp(ui.sel, 0, items.length - 1)]; if (it && !it.dis) { if (state !== 'menu' || ui.screen === 'main' || it.label !== UI.back) sfx('ok'); it.act(); } }
   else if (k === 'back') {
     if (state === 'pause') { if (ui.screen === 'options') { ui.screen = 'pause'; ui.sel = 2; sfx('back'); } else resumeGame(); }
-    else if (state === 'menu' && ui.screen !== 'main') { if (ui.screen === 'confirm') openScreen('options', true); else openScreen('main', true); }
+    else if (state === 'menu' && ui.screen !== 'main') { if (ui.screen === 'confirm') openScreen('options', true); else if (ui.screen === 'nick') cancelNick(); else openScreen('main', true); }
   }
 }
 function rankSound() { sfx(ui.tally.rank === 'monster' || ui.tally.rank === 'record' ? 'life' : 'checkpoint'); }
@@ -1682,11 +1760,11 @@ function drawMenuScreen() {
       withScreenCam(() => drawEnemy({ type: 'bagger', x: W - 52, y: 168, w: 14, h: 14, alive: true, dir: -1, t: time }, time));
       withScreenCam(() => drawEnemy({ type: 'sparky', x: W - 70, y: 132 + Math.sin(time * 2.4) * 6, w: 12, h: 12, alive: true, dir: -1, t: time }, time));
     }
-    drawItemsList(currentItems(), 104, { scale: 2, lh: 17 });
-    drawText(ctx, UI.top + '- ' + fmt(save.top), W / 2, 210, C.white, { align: 'center', shadow: '#3a0419' });
+    drawItemsList(currentItems(), 98, { scale: 2, lh: 16 });
+    drawText(ctx, UI.top + '- ' + fmt(save.top) + (save.nick ? '   ' + save.nick : ''), W / 2, 213, C.white, { align: 'center', shadow: '#3a0419' });
     return;
   }
-  const title = { select: UI.select, howto: UI.howto, options: UI.options, confirm: UI.reset }[ui.screen] || '';
+  const title = { select: UI.select, howto: UI.howto, options: UI.options, confirm: UI.reset, nick: UI.enterNick, ranking: UI.rank }[ui.screen] || '';
   drawPanel(8, 8, W - 16, H - 16);
   drawText(ctx, title, W / 2, 18, C.yel, { align: 'center', scale: 2, shadow: '#3a0419' });
   if (ui.screen === 'select') {
@@ -1713,8 +1791,22 @@ function drawMenuScreen() {
     }
     const items = currentItems();
     drawItemsList(items, H - 22 - (items.length - 1) * 11, { scale: 1, lh: 11, center: true });
+  } else if (ui.screen === 'nick') {
+    const bw = 10 * 18 + 16, bx = Math.round(W / 2 - bw / 2), by = 52;
+    ctx.fillStyle = C.ink; ctx.fillRect(bx - 2, by - 2, bw + 4, 38);
+    ctx.fillStyle = '#12062d'; ctx.fillRect(bx, by, bw, 34); ctx.fillStyle = C.cyan; ctx.fillRect(bx, by, bw, 2); ctx.fillStyle = C.mag; ctx.fillRect(bx, by + 32, bw, 2);
+    for (let i = 0; i < 10; i++) { const ch = (ui.nick || '')[i]; const cx = bx + 8 + i * 18;
+      if (ch) drawText(ctx, ch, cx, by + 7, C.yel, { scale: 3, shadow: '#3a0419' });
+      else { ctx.fillStyle = i === (ui.nick || '').length && Math.floor(time * 3) % 2 ? C.white : '#3c1765'; ctx.fillRect(cx, by + 26, 15, 3); } }
+    ui.nickBox = { x: bx, y: by + menuOY, w: bw, h: 34 };
+    drawText(ctx, UI.nickHint, W / 2, 96, '#9b8fb8', { align: 'center' });
+    if (lastTouch && document.activeElement !== nickInput) drawText(ctx, UI.tapType, W / 2, 108, Math.floor(time * 2) % 2 ? C.g3 : C.white, { align: 'center' });
+    drawItemsList(currentItems(), 128, { scale: 2, lh: 22 });
+  } else if (ui.screen === 'ranking') {
+    drawRankTable(44, 10, 14);
+    drawItemsList(currentItems(), H - 26, { scale: 1, lh: 11, center: true });
   } else if (ui.screen === 'options') {
-    drawItemsList(currentItems(), 54, { scale: 2, lh: 22 });
+    drawItemsList(currentItems(), 46, { scale: 2, lh: 21 });
     if (ui.noteT > 0) drawText(ctx, ui.note, W / 2, 196, C.g3, { align: 'center' });
   } else if (ui.screen === 'confirm') {
     drawText(ctx, UI.sure, W / 2, 70, C.white, { align: 'center', scale: W >= 400 ? 2 : 1 });
@@ -1752,18 +1844,25 @@ function drawClearScreen() {
     drawItemsList(currentItems(), 166, { scale: 2, lh: 18 });
   }
 }
+function drawRankLine(y) {
+  const r = ui.lastRank; if (!r) return;
+  drawText(ctx, r.name + ' - ' + UI.place + ' #' + r.place + (r.best ? '  ' + UI.newBest : ''), W / 2, y, r.best ? (Math.floor(time * 6) % 2 ? C.mag : C.yel) : C.cyan, { align: 'center' });
+}
 function drawOverScreen() {
-  drawText(ctx, UI.over, W / 2, 48, C.white, { align: 'center', scale: 4, shadow: '#3a0419' });
-  drawText(ctx, UI.score + ' ' + fmt(run.score), W / 2, 90, C.yel, { align: 'center', scale: 2 });
-  drawItemsList(currentItems(), 126, { scale: 2, lh: 20 });
-  drawText(ctx, UI.retryNote, W / 2, 196, '#9b8fb8', { align: 'center' });
+  drawText(ctx, UI.over, W / 2, 8, C.white, { align: 'center', scale: 3, shadow: '#3a0419' });
+  drawText(ctx, UI.score + ' ' + fmt(run.score), W / 2, 34, C.yel, { align: 'center', scale: 2 });
+  drawRankLine(54);
+  drawRankTable(68, 5, 12);
+  drawItemsList(currentItems(), 136, { scale: 2, lh: 19 });
+  drawText(ctx, UI.retryNote, W / 2, 213, '#9b8fb8', { align: 'center' });
 }
 function drawEndingScreen() {
-  drawText(ctx, UI.end1, W / 2, 12, C.yel, { align: 'center', scale: 2, shadow: '#3a0419' });
-  drawText(ctx, UI.end2, W / 2, 30, C.g3, { align: 'center' });
-  const f = SPR.win[0]; drawBig(f, W / 2 - 36, 40, 3);
-  drawText(ctx, UI.total + ' ' + fmt(run.score), W / 2, 122, C.white, { align: 'center', scale: 2, shadow: '#3a0419' });
-  drawItemsList(currentItems(), 146, { scale: 2, lh: 20 });
+  drawText(ctx, UI.end1, W / 2, 6, C.yel, { align: 'center', scale: 2, shadow: '#3a0419' });
+  drawText(ctx, UI.end2, W / 2, 24, C.g3, { align: 'center' });
+  drawText(ctx, UI.total + ' ' + fmt(run.score), W / 2, 36, C.white, { align: 'center', scale: 2, shadow: '#3a0419' });
+  drawRankLine(56);
+  drawRankTable(70, 5, 12);
+  drawItemsList(currentItems(), 140, { scale: 2, lh: 20 });
 }
 
 /* pointer support for the pixel menus */
@@ -1785,9 +1884,11 @@ canvas.addEventListener('pointerdown', e => {
   if (!menuActive()) return;
   e.preventDefault();
   if (state === 'clear' && ui.tally && ui.tally.shown <= ui.tally.rows.length) { menuInput('ok'); return; }
-  const m = rectAt(toCanvas(e)); const items = currentItems();
+  const pt = toCanvas(e), m = rectAt(pt); const items = currentItems();
+  if (state === 'menu' && ui.screen === 'nick' && !m) { focusNick(); return; }
   if (m && items[m.i] && !items[m.i].dis) { ui.sel = m.i; menuInput('ok'); }
 });
+canvas.addEventListener('click', () => { if (state === 'menu' && ui.screen === 'nick' && document.activeElement !== nickInput) focusNick(); });
 document.addEventListener('pointerdown', e => { if (!root.contains(e.target)) engaged = false; }, true);
 
 /* ---------- main loop ---------- */
@@ -1846,11 +1947,23 @@ root.addEventListener('click', e => {
 document.addEventListener('fullscreenchange', () => { root.classList.toggle('is-fullscreen', !!document.fullscreenElement); fitView(); });
 if (matchMedia('(pointer: coarse)').matches) { lastTouch = true; root.classList.add('is-touch'); }
 addEventListener('pointerdown', e => { if (e.pointerType === 'touch') { lastTouch = true; root.classList.add('is-touch'); } }, { passive: true });
+// no text selection, magnifier or callout while holding the buttons (iOS)
+const touchPad = root.querySelector('.mg-touch');
+if (touchPad) {
+  touchPad.addEventListener('touchstart', e => { if (e.cancelable) e.preventDefault(); }, { passive: false });
+  touchPad.addEventListener('touchmove', e => { if (e.cancelable) e.preventDefault(); }, { passive: false });
+  touchPad.addEventListener('touchend', e => { const b = e.target.closest('[data-act]'); if (e.cancelable) e.preventDefault(); if (b) b.click(); }, { passive: false });
+}
+root.addEventListener('selectstart', e => { if (e.target !== nickInput) e.preventDefault(); });
+root.addEventListener('contextmenu', e => { if (e.target !== nickInput) e.preventDefault(); });
+root.addEventListener('pointerdown', e => { if (e.target !== nickInput) { const sel = window.getSelection && window.getSelection(); if (sel && sel.rangeCount) sel.removeAllRanges(); } });
 // pixel labels on the touch buttons (same bitmap font as the game)
 root.querySelectorAll('[data-label]').forEach(btn => {
   const txt = btn.dataset.label, s = 2, c = document.createElement('canvas');
   c.width = textWidth(txt.toUpperCase(), s) + 4; c.height = 7 * s + 6;
-  const g = c.getContext('2d'); drawText(g, txt, 2, 3, '#ffffff', { scale: s, shadow: '#06041a' });
+  const g = c.getContext('2d');
+  if (txt === '=' || txt === 'II') { c.width = 22; g.fillStyle = '#06041a'; g.fillRect(4, 4, 16, 3); g.fillRect(4, 12, 16, 3); g.fillStyle = '#ffffff'; g.fillRect(3, 3, 16, 3); g.fillRect(3, 11, 16, 3); }
+  else drawText(g, txt, 2, 3, '#ffffff', { scale: s, shadow: '#06041a' });
   c.className = 'mg-tb-label'; c.setAttribute('aria-hidden', 'true'); btn.textContent = ''; btn.append(c);
 });
 
@@ -1858,5 +1971,5 @@ fitView(true);
 setMuted(muted);
 requestAnimationFrame(frame);
 // test hook
-window.__monsterGame = { get state() { return state; }, get player() { return player; }, get level() { return level; }, get run() { return run; }, get ui() { return ui; }, keys, press, release, startStage, step, menuInput };
+window.__monsterGame = { get state() { return state; }, get player() { return player; }, get level() { return level; }, get run() { return run; }, get ui() { return ui; }, get rects() { return menuRects.map(r => ({ ...r, y: r.y + menuOY })); }, get view() { return [W, H]; }, keys, press, release, startStage, step, menuInput };
 })();
