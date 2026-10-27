@@ -68,7 +68,8 @@
 .mg-machine p:not(.kicker){color:#aab1b9;max-width:640px;line-height:1.6;margin:0}
 .mg-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 /* GAMES MONSTER logo under the machine tile */
-.mg-brand{position:relative;z-index:1;display:flex;justify-content:center;margin:40px auto 0;padding-bottom:28px;width:var(--mg-w)}
+.mg-brand{position:relative;z-index:1;display:flex;justify-content:center;margin:40px auto 0;padding-bottom:16px;width:var(--mg-w)}
+.mg-about{position:relative;z-index:1;margin:0 auto;padding:0 8px 32px;max-width:680px;text-align:center;color:#9ba3ad;font-size:15px;line-height:1.6}
 .mg-brand img{display:block;width:min(275px,50%);height:auto;filter:drop-shadow(0 10px 30px rgba(139,237,54,.18))}
 .mg-footer{margin-top:0;padding-top:24px}
 @media(max-width:900px){.mg-machine{grid-template-columns:1fr 1fr;grid-template-areas:'photo .' 'text text';gap:22px 18px;padding:22px}.mg-machine-photo{width:100%;max-width:200px}.mg-peek{bottom:auto;height:min(78vw,340px);width:50%}.mg-peek img{width:min(76vw,300px);right:-34%;margin-top:calc(min(76vw,300px) * -.55)}}

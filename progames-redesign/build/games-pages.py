@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """Generates the MONSTER GAME pages (/games/ EN, /pl/gry/ PL) from one template.
-The pages are hidden for now: not linked in the navigation, not in the sitemap, noindex.
+Indexed pages (in the sitemap), optimised for the phrase GAMES MONSTER.
 Run from progames-redesign/:  python3 build/games-pages.py"""
 import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "13"
+VER = "15"
 
 T = {
   'en': {
     'path': 'games/index.html', 'url': '/games/', 'home': '/', 'locale': 'en_GB',
-    'title': 'MONSTER GAME – free browser arcade platformer',
-    'desc': 'Play MONSTER GAME for free in your browser: punch, kick and smash through 5 stages with the MONSTER 3in1 mascot and beat the BIG BAG boss.',
+    'title': 'GAMES MONSTER – free online arcade game in your browser',
+    'desc': 'GAMES MONSTER is a free online arcade game by PRO-GAMES: punch, kick and smash through 5 stages, beat the BIG BAG boss and join the online ranking.',
+    'h1': 'GAMES MONSTER – free online arcade game',
+    'about': 'GAMES MONSTER is a free arcade platformer by PRO-GAMES that you play straight in your browser, on a computer or a phone. Punch crates, kick the ball and smash with the hammer through 5 stages, beat the BIG BAG boss and fight for a place in the online ranking of all players.',
     'nav': [('/#machines', 'Products'), ('/catalog.html?catalog=machines', 'Catalogs'), ('/#business', 'For business'), ('/#distributors', 'Distributors'), ('/#trade-shows', 'Trade shows'), ('/#contact', 'Contact')],
     'cta': ('/#contact', 'Request a quote'), 'skip': 'Skip to the game', 'menu': 'Open menu', 'home_label': 'PRO-GAMES home',
     'canvas': 'MONSTER GAME – game screen. Use the arrow keys and Enter in the menu.',
@@ -25,8 +27,10 @@ T = {
   },
   'pl': {
     'path': 'pl/gry/index.html', 'url': '/pl/gry/', 'home': '/pl/', 'locale': 'pl_PL',
-    'title': 'MONSTER GAME – darmowa gra platformowa w przeglądarce',
-    'desc': 'Zagraj za darmo w MONSTER GAME w przeglądarce: uderzaj, kopaj i rozbijaj młotem przez 5 etapów z maskotką automatu MONSTER 3in1 i pokonaj bossa BIG BAG.',
+    'title': 'GAMES MONSTER – darmowa gra online w przeglądarce',
+    'desc': 'GAMES MONSTER to darmowa gra online od PRO-GAMES: uderzaj, kopaj i rozbijaj młotem przez 5 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu.',
+    'h1': 'GAMES MONSTER – darmowa gra online',
+    'about': 'GAMES MONSTER to darmowa gra platformowa od PRO-GAMES, w którą grasz od razu w przeglądarce, na komputerze i na telefonie. Rozbijaj skrzynie ciosem, kopnij piłkę i uderzaj młotem przez 5 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu online wszystkich graczy.',
     'nav': [('/pl/#machines', 'Produkty'), ('/pl/katalog.html?catalog=machines', 'Katalogi'), ('/pl/#business', 'Dla biznesu'), ('/pl/#distributors', 'Dystrybutorzy'), ('/pl/#trade-shows', 'Targi'), ('/pl/#contact', 'Kontakt')],
     'cta': ('/pl/#contact', 'Zapytaj o ofertę'), 'skip': 'Przejdź do gry', 'menu': 'Otwórz menu', 'home_label': 'PRO-GAMES — strona główna',
     'canvas': 'MONSTER GAME – ekran gry. W menu użyj strzałek i klawisza Enter.',
@@ -50,7 +54,7 @@ def page(lang):
     for l in ('en', 'pl'))
   langsw = f'<details class="pg-language" data-no-translate=""><summary aria-label="{t["lang_label"]}"><span>{t["lang_code"]}</span></summary><div class="pg-language-list">{langs}</div></details>'
   nav = '\n      '.join(f'<a href="{h}">{esc(n)}</a>' for h, n in t['nav'])
-  ld = {'@context': 'https://schema.org', '@type': 'VideoGame', '@id': canon + '#game', 'name': 'MONSTER GAME', 'url': canon, 'description': t['desc'], 'inLanguage': t['ld_lang'],
+  ld = {'@context': 'https://schema.org', '@type': 'VideoGame', '@id': canon + '#game', 'name': 'GAMES MONSTER', 'alternateName': ['MONSTER GAME', 'Monster Games'], 'url': canon, 'genre': ['Arcade', 'Platform game'], 'applicationCategory': 'Game', 'operatingSystem': 'Any (web browser)', 'description': t['desc'], 'inLanguage': t['ld_lang'],
         'gamePlatform': 'Web browser', 'playMode': 'SinglePlayer', 'isAccessibleForFree': True, 'image': ORIGIN + '/games/assets/monster-face.png',
         'author': {'@id': ORIGIN + '/#organization'}, 'publisher': {'@id': ORIGIN + '/#organization'}}
   b = t['btn']
@@ -63,10 +67,11 @@ def page(lang):
   <title>{esc(t['title'])}</title>
   <meta name="description" content="{esc(t['desc'])}">
   <meta name="theme-color" content="#06041a">
-  <meta name="robots" content="noindex,follow">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="{canon}">
   <link rel="alternate" hreflang="en" href="{ORIGIN}/games/">
   <link rel="alternate" hreflang="pl" href="{ORIGIN}/pl/gry/">
+  <link rel="alternate" hreflang="x-default" href="{ORIGIN}/games/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PRO-GAMES">
   <meta property="og:locale" content="{t['locale']}">
@@ -99,14 +104,14 @@ def page(lang):
   </div>
 
   <main class="mg-page" id="top">
-    <h1 class="mg-sr">MONSTER GAME</h1>
-    <section class="mg" id="monster-game" data-lang="{lang}" aria-label="MONSTER GAME">
+    <h1 class="mg-sr">{esc(t['h1'])}</h1>
+    <section class="mg" id="monster-game" data-lang="{lang}" aria-label="GAMES MONSTER">
       <div class="mg-stage">
         <canvas class="mg-canvas" width="400" height="225" tabindex="0" aria-label="{esc(t['canvas'])}"></canvas>
       </div>
       <div class="mg-touch">
         <div class="mg-pad">{tb('left')}{tb('right')}</div>
-        <button type="button" class="mg-tb mg-tb-small mg-only-play" data-act="pause" data-label="=" aria-label="{esc(t['pause'])}">II</button>
+        <button type="button" class="mg-tb mg-tb-small mg-only-play" data-act="pause" data-label="=" aria-label="{esc(t['pause'])}">=</button>
         <div class="mg-pad mg-pad-act">{tb('smash', ' mg-tb-smash')}{tb('kick', ' mg-tb-kick')}{tb('punch', ' mg-tb-punch')}{tb('jump', ' mg-tb-jump')}</div>
       </div>
     </section>
@@ -125,6 +130,7 @@ def page(lang):
       </div>
     </section>
     <div class="mg-brand"><img src="/games/assets/games-monster-logo.webp" alt="GAMES MONSTER" width="1000" height="436" loading="lazy" decoding="async"></div>
+    <p class="mg-about">{esc(t['about'])}</p>
   </main>
 
   <footer class="footer mg-footer"><div class="footer-bottom"><span>{t['footer']}</span><span>{esc(t['footer2'])}</span></div></footer>
