@@ -1,8 +1,8 @@
 /* The five supplied assets remain independent layers; no copy is baked into the CTA. */
-.games-promo{padding:16px max(24px,calc((100vw - var(--max,1440px))/2)) 56px;background:#f7f7f4}
+.games-promo{padding:16px max(24px,calc((100vw - var(--max,1440px))/2)) 0;background:#f3f4f5}
 .games-promo-card{position:relative;isolation:isolate;aspect-ratio:4.2;overflow:clip;border:1px solid #5e3188;border-radius:24px;background:#0a041b;box-shadow:0 24px 64px #0005}
 .games-promo-background,.games-promo-lightning{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.games-promo-lightning{opacity:.75;transform:scale(1.06);animation:games-energy 3.2s ease-in-out infinite}
+.games-promo-lightning{opacity:.16;transform:scale(1.025);animation:games-lightning-strike 7.4s linear infinite}
 .games-promo-monster{position:absolute;width:36%;height:auto;max-width:none;right:6%;top:-24%;pointer-events:none;transform-origin:50% 80%;animation:games-float 3.6s ease-in-out infinite}
 .games-promo-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:38%;margin:.6% 0 0 6%}
 .games-promo-logo{width:90%;height:auto;filter:drop-shadow(0 8px 12px #08001966)}
@@ -13,9 +13,18 @@
 .games-promo-play:focus-visible{outline:3px solid white;outline-offset:4px}
 .desktop-nav .games-nav-link{color:inherit;font-weight:800;letter-spacing:.04em}
 @keyframes games-float{0%,100%{transform:translateY(5px) rotate(-2deg) scale(1)}50%{transform:translateY(-14px) rotate(2deg) scale(1.025)}}
-@keyframes games-energy{0%,100%{opacity:.35;transform:scale(1.06) translateX(-1%)}35%{opacity:1;transform:scale(1.09) translateX(1%)}65%{opacity:.6;transform:scale(1.07) translateX(0)}}
+/* Three separated strikes: fast attack, brief afterglow, no drifting overlay. */
+@keyframes games-lightning-strike{
+ 0%,9%,15%,43%,49%,78%,85%,100%{opacity:.14;filter:brightness(.9);clip-path:inset(0)}
+ 10%,11%{opacity:1;filter:brightness(1.55);clip-path:inset(0 38% 0 0)}
+ 12%{opacity:.4;filter:brightness(1.1);clip-path:inset(0 38% 0 0)}
+ 44%,45%{opacity:.95;filter:brightness(1.4);clip-path:inset(0 0 0 46%)}
+ 46%{opacity:.35;filter:brightness(1);clip-path:inset(0 0 0 46%)}
+ 79%,80%{opacity:1;filter:brightness(1.6);clip-path:inset(0)}
+ 82%{opacity:.3;filter:brightness(1);clip-path:inset(0)}
+}
 @media(max-width:700px){
- .games-promo{padding:24px 20px 48px}
+ .games-promo{padding:24px 20px 0}
  .games-promo-card{aspect-ratio:1.12;border-radius:20px}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
@@ -33,3 +42,13 @@
 
 /* Keep the promotion close to the catalogue it follows. */
 .machines-light:has(+ .games-promo){padding-bottom:24px}
+
+/* Remove the double section gap and give the secondary B2B link room. */
+.games-promo + .intro.section{padding-top:48px}
+.business-head > .btn + p:not(.kicker){margin:24px auto 35px;max-width:640px;font-size:16px;line-height:1.55}
+.business-head > .btn + p a{display:inline-block;text-underline-offset:4px}
+.business-head > .btn + p a:hover{text-decoration:underline}
+@media(max-width:700px){
+ .games-promo + .intro.section{padding-top:36px}
+ .business-head > .btn + p:not(.kicker){margin-top:22px;font-size:15px;padding:0 16px}
+}
