@@ -1037,6 +1037,23 @@ function resumeGame() { if (state !== 'pause') return; state = 'play'; ensureAud
 
 /* ---------- rendering ---------- */
 let skyGrad = null, skyTheme = -1;
+/* words on the neon signs of the background buildings: stage 1 opens once with the credit, then the rest take turns */
+const SIGN_INTRO = ['CRE', 'ATED', 'BY', 'DAW', 'IDKA', 'YO'];
+const SIGN_WORDS = ['PRO', 'GAMES', 'MON', 'STER', 'JAS', 'TRZE', 'BIE', '3in1', 'WIN', 'GO', 'FAST', 'GREAT', 'WOW', 'POW', 'OH', 'SHIT'];
+const signIdx = new Map();
+function signWord(k, intro) {
+  // n = how many signed buildings come before this one, counted from the first one visible at the stage start
+  let n = signIdx.get(k);
+  if (n === undefined) {
+    if (k < 0) n = -1;
+    else { n = 0; for (let j = 0; j < k; j++) if (hash(j, 19) > 0.5) n++; }
+    signIdx.set(k, n);
+  }
+  if (n < 0 && intro) return null; // nothing before the credit, so it reads from its first word
+  if (n < 0) return SIGN_WORDS[((k % SIGN_WORDS.length) + SIGN_WORDS.length) % SIGN_WORDS.length];
+  if (intro) return n < SIGN_INTRO.length ? SIGN_INTRO[n] : SIGN_WORDS[(n - SIGN_INTRO.length) % SIGN_WORDS.length];
+  return SIGN_WORDS[n % SIGN_WORDS.length];
+}
 function drawBackground(th, t) {
   if (skyTheme !== level.def.theme) { skyGrad = ctx.createLinearGradient(0, 0, 0, H); skyGrad.addColorStop(0, th.sky[0]); skyGrad.addColorStop(1, th.sky[1]); skyTheme = level.def.theme; }
   ctx.fillStyle = skyGrad; ctx.fillRect(0, 0, W, H);
@@ -1074,11 +1091,12 @@ function drawBackground(th, t) {
       ctx.save(); ctx.translate(cx | 0, cy | 0); ctx.rotate(t * (k % 2 ? 0.6 : -0.6));
       ctx.fillStyle = th.far2; for (let i = 0; i < 8; i++) { ctx.rotate(Math.PI / 4); ctx.fillRect(-2, -rr - 3, 4, 5); }
       ctx.beginPath(); ctx.arc(0, 0, rr, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = th.sky[1]; ctx.beginPath(); ctx.arc(0, 0, 3, 0, Math.PI * 2); ctx.fill(); ctx.restore();
-    } else if (hash(k, 19) > 0.5) { // neon sign
+    } else if (hash(k, 19) > 0.5 && signWord(k, level.def.key === 'arcade')) { // neon sign
+      const word = signWord(k, level.def.key === 'arcade'), sw = Math.max(28, textWidth(word) + 6), sx = x + 22 - sw / 2;
       ctx.fillStyle = hash(k, 21) > 0.5 ? th.edge : th.edge2; ctx.globalAlpha = 0.25 + 0.2 * Math.sin(t * 3 + k);
-      ctx.fillRect((x + 8) | 0, (base2 - h - 14) | 0, 28, 8); ctx.globalAlpha = 1;
-      ctx.fillStyle = th.far2; ctx.fillRect((x + 12) | 0, (base2 - h - 6) | 0, 2, 6); ctx.fillRect((x + 30) | 0, (base2 - h - 6) | 0, 2, 6);
-      drawText(ctx, ['POW', 'KO', 'BAM', 'WIN', 'HIT', '3in1'][((k % 6) + 6) % 6], x + 22, base2 - h - 13, th.sky[0], { align: 'center' });
+      ctx.fillRect(sx | 0, (base2 - h - 14) | 0, sw, 8); ctx.globalAlpha = 1;
+      ctx.fillStyle = th.far2; ctx.fillRect((sx + 4) | 0, (base2 - h - 6) | 0, 2, 6); ctx.fillRect((sx + sw - 6) | 0, (base2 - h - 6) | 0, 2, 6);
+      drawText(ctx, word, x + 22, base2 - h - 13, th.sky[0], { align: 'center' });
     }
   }
   if (th.rain) {
