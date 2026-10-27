@@ -87,3 +87,15 @@
   .mg-machine{grid-template-columns:170px 1fr 160px;gap:26px}
   .mg-machine .mg-actions .btn{padding-left:18px;padding-right:18px}
 }
+
+/* phones: even, tidy line endings in the machine tile and the text under the logo */
+@media(max-width:600px){
+  .mg-machine p:not(.kicker){text-wrap:pretty}
+  .mg-about{text-wrap:balance}
+}
+
+/* phone line breaks in the machine headline (hidden on computers) */
+.mg-br{display:none}
+@media(max-width:600px){.mg-br{display:inline}}
+/* phones only: keep short words with their neighbour so lines end evenly */
+@media(max-width:600px){.mg-keep{white-space:nowrap}.mg-machine h2{font-size:min(30px,calc((100vw - 68px) / 10.3))}}
