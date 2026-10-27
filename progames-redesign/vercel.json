@@ -4,6 +4,31 @@
   "framework": null,
   "redirects": [
     {
+      "source": "/pl/games/",
+      "destination": "/pl/gry/",
+      "permanent": false
+    },
+    {
+      "source": "/pl/games",
+      "destination": "/pl/gry/",
+      "permanent": false
+    },
+    {
+      "source": "/pl/gry",
+      "destination": "/pl/gry/",
+      "permanent": false
+    },
+    {
+      "source": "/gry",
+      "destination": "/pl/gry/",
+      "permanent": false
+    },
+    {
+      "source": "/games",
+      "destination": "/games/",
+      "permanent": false
+    },
+    {
       "source": "/index.html",
       "has": [
         {
