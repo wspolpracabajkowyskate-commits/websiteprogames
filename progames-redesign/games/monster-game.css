@@ -1,10 +1,19 @@
 /* MONSTER GAME page – the game itself draws every menu in pixel art; the page only frames it. */
 .mg-body{background:#06041a;color:#f5f7fa}
 .mg-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.mg-page{padding:136px 12px 40px;overflow-x:clip}
+.mg-page{--mg-w:min(1180px,calc((100vh - 170px) * 16 / 9),calc(100vw - 48px));position:relative;padding:136px 12px 40px;overflow-x:clip}
+/* neon lightning behind the game window */
+.mg-page::before,.mg-page::after{content:"";position:absolute;top:96px;width:52vw;height:min(96vh,1040px);z-index:0;pointer-events:none;
+  background:url(/games/assets/lightning-bg.webp) left center/cover no-repeat;filter:saturate(1.2) brightness(1.15);
+  -webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.mg-page::before{left:0;opacity:.85;animation:mg-flicker 6s steps(1) infinite}
+.mg-page::after{right:0;transform:scaleX(-1);opacity:.75;animation:mg-flicker 6s steps(1) 2.7s infinite}
+@keyframes mg-flicker{0%,100%{opacity:.8}38%{opacity:1}39%{opacity:.35}40%{opacity:.95}72%{opacity:.6}73%{opacity:.9}}
+.mg,.mg-machine{z-index:1}
+.mg-lc{text-transform:none}
 
 /* game frame: hard pixel border, no rounded corners */
-.mg{position:relative;margin:0 auto;max-width:min(1280px,calc((100vh - 170px) * 16 / 9));min-width:min(100%,640px);background:#06041a;
+.mg{position:relative;margin:0 auto;width:var(--mg-w);background:#06041a;
   box-shadow:0 0 0 4px #06041a,0 0 0 8px #6b3fa8,0 0 0 12px #06041a,0 24px 80px rgba(0,0,0,.6)}
 .mg-stage{position:relative;aspect-ratio:16/9;width:100%;background:#06041a;overflow:hidden}
 .mg.is-narrow .mg-stage{aspect-ratio:4/3}
@@ -35,16 +44,18 @@
 .mg.is-fullscreen.is-touch .mg-touch>*{pointer-events:auto}
 .mg.is-fullscreen.is-touch .mg-tb{opacity:.75}
 
-@media(max-width:760px){.mg-page{padding-top:108px}.mg{max-width:100%;min-width:0}}
+@media(max-width:760px){.mg-page{--mg-w:calc(100vw - 24px);padding-top:108px}.mg-page::before,.mg-page::after{opacity:.45;animation:none;width:70vw}}
 @media(max-width:420px){.mg-tb{width:58px;height:54px}.mg-tb-small{width:42px;height:42px}}
 
 /* reference to the real machine */
-.mg-machine{margin:56px auto 0;max-width:1180px;display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center;padding:28px;
-  background:#0d1116;border:1px solid rgba(255,255,255,.1)}
-.mg-machine img{width:200px;height:200px;image-rendering:pixelated;image-rendering:crisp-edges;box-shadow:0 0 0 4px #06041a,0 0 0 8px #6b3fa8}
+.mg-machine{position:relative;margin:56px auto 0;width:var(--mg-w);display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;padding:32px;
+  background:#0d1116;box-shadow:0 0 0 4px #06041a,0 0 0 8px #6b3fa8,0 0 0 12px #06041a}
+.mg-machine-photo{display:block;background:#fff;padding:10px;box-shadow:0 0 0 4px #06041a,0 0 0 8px #e8283c}
+.mg-machine-photo img{display:block;width:100%;height:auto;aspect-ratio:580/850;object-fit:contain}
 .mg-machine h2{font:800 clamp(30px,4vw,54px)/.98 Manrope,sans-serif;letter-spacing:-.04em;margin:10px 0 12px;color:#fff}
 .mg-machine .kicker{margin:0;color:#9ba3ad}
 .mg-machine p:not(.kicker){color:#aab1b9;max-width:640px;line-height:1.6;margin:0}
 .mg-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .mg-footer{margin-top:60px;padding-top:30px}
-@media(max-width:900px){.mg-machine{grid-template-columns:1fr}.mg-machine img{width:140px;height:140px}}
+@media(max-width:900px){.mg-machine{grid-template-columns:1fr;gap:24px;padding:22px}.mg-machine-photo{width:170px}}
+@media(prefers-reduced-motion:reduce){.mg-page::before,.mg-page::after{animation:none}}
