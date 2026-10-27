@@ -2,8 +2,8 @@
 .games-promo{padding:32px max(24px,calc((100vw - var(--max,1440px))/2)) 80px}
 .games-promo-card{position:relative;isolation:isolate;aspect-ratio:3.48;overflow:clip;border:1px solid #5e3188;border-radius:24px;background:#0a041b;box-shadow:0 24px 64px #0005}
 .games-promo-background,.games-promo-lightning{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.games-promo-lightning{opacity:.75;animation:games-energy 7s ease-in-out infinite}
-.games-promo-monster{position:absolute;width:43%;height:auto;max-width:none;right:4%;top:-23%;pointer-events:none;transform-origin:50% 80%;animation:games-float 6s ease-in-out infinite}
+.games-promo-lightning{opacity:.75;transform:scale(1.06);animation:games-energy 3.2s ease-in-out infinite}
+.games-promo-monster{position:absolute;width:43%;height:auto;max-width:none;right:4%;top:-23%;pointer-events:none;transform-origin:50% 80%;animation:games-float 3.6s ease-in-out infinite}
 .games-promo-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:45%;margin:1% 0 0 3%}
 .games-promo-logo{width:90%;height:auto;filter:drop-shadow(0 8px 12px #08001966)}
 .games-promo-play{position:relative;display:block;width:70%;margin-top:-5%;border-radius:12px;transition:transform .2s ease,filter .2s ease}
@@ -11,10 +11,9 @@
 .games-promo-play span{position:absolute;left:9%;right:25%;top:18%;bottom:28%;display:flex;align-items:center;justify-content:center;color:#080604;font-family:Inter,'Arial Black',sans-serif;font-weight:800;font-size:clamp(18px,3vw,46px);line-height:1;letter-spacing:-.045em;-webkit-text-stroke:.8px currentColor;transform:scaleX(.88)}
 .games-promo-play:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.08)}
 .games-promo-play:focus-visible{outline:3px solid white;outline-offset:4px}
-.games-promo-card:hover .games-promo-monster{animation-play-state:paused}
 .desktop-nav .games-nav-link{color:inherit;font-weight:800;letter-spacing:.04em}
-@keyframes games-float{0%,100%{transform:translateY(0) rotate(-.5deg)}50%{transform:translateY(-7px) rotate(.5deg)}}
-@keyframes games-energy{0%,100%{opacity:.55}50%{opacity:.9}}
+@keyframes games-float{0%,100%{transform:translateY(5px) rotate(-2deg) scale(1)}50%{transform:translateY(-14px) rotate(2deg) scale(1.025)}}
+@keyframes games-energy{0%,100%{opacity:.35;transform:scale(1.06) translateX(-1%)}35%{opacity:1;transform:scale(1.09) translateX(1%)}65%{opacity:.6;transform:scale(1.07) translateX(0)}}
 @media(max-width:700px){
  .games-promo{padding:24px 20px 48px}
  .games-promo-card{aspect-ratio:1.12;border-radius:20px}
