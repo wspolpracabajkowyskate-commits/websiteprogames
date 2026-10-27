@@ -32,7 +32,7 @@ edit('pl/producent-automatow-bokserskich.html', h => {
   const oldH1 = /O (?:PROGAMES|PRO GAMES|ProGames|PRO-GAMES) — produkcja i wsparcie operatorów/g, newH1 = 'PRO-GAMES — polski producent automatów bokserskich';
   h = h.replace(oldTitle, newTitle).replace(oldH1, newH1);
   h = h.replace(/Poznaj (?:PROGAMES|PRO GAMES|ProGames|PRO-GAMES): produkcję i montaż w Polsce, historię marki, dane firmy oraz kontakt do sprzedaży i serwisu automatów\. Zobacz źródła branżowe\./g,
-    'PRO-GAMES (PRO-GAMES POLAND Sp. z o.o.) projektuje i produkuje automaty bokserskie w Jastrzębiu-Zdroju. Oficjalna strona, dane firmy, sprzedaż, serwis i części.');
+    'PRO-GAMES to polski producent automatów bokserskich z Jastrzębia-Zdroju. Oficjalna strona, dane firmy, sprzedaż, serwis i części.');
   h = place(h, 'progames-facts', PL_FACTS, '<div class="editorial-body">', 'after');
   return place(h, 'progames-identity-faq', PL_FAQ, '<section class="editorial-cta">', 'before');
 });

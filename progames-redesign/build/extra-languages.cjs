@@ -15,6 +15,8 @@ for(const file of fs.readdirSync('i18n/extra').filter(f=>f.endsWith('.tsv'))){
 }
 const aliases={28:20,49:20,57:54,84:69,85:70,87:74,89:76,90:77,109:74,112:78,116:108,117:110};
 for(const d of Object.values(dictionaries)){
+ d['Boxing and Amusement Machine Manufacturer']=d['Boxing Arcade Machine Manufacturer'];
+ d["Polish manufacturer of boxing arcade and amusement machines. PRO-GAMES offers boxers, kickers and hammers, with customisation, spare parts and service."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  for(const [to,from]of Object.entries(aliases))d[sources[to]]=d[sources[from]];
  for(const [to,from]of Object.entries({'Spare Parts':'Spare parts','spare parts':'Spare parts','SPARE PARTS.':'Spare parts','MANUFACTURING':'manufacturing','ELECTRONICS':'Electronics','BOOTH':'Booth','OPERATOR CONFIGURATION':'Operator configuration','MULTIPLAYER BOXER MACHINE':sources[36],'Send an inquiry':'Send inquiry','dispensing':'& dispensing','PRO-GAMES Machines Catalog':'MACHINE CATALOG','PRO-GAMES Spare Parts Catalog':'SPARE PARTS CATALOG'}))d[to]=d[from];
 }
