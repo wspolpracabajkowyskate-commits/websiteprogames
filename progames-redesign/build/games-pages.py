@@ -6,7 +6,7 @@ import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "4"
+VER = "5"
 
 T = {
   'en': {
@@ -123,6 +123,7 @@ def page(lang):
         </div>
       </div>
     </section>
+    <div class="mg-brand"><img src="/games/assets/games-monster-logo.webp" alt="GAMES MONSTER" width="1000" height="436" loading="lazy" decoding="async"></div>
   </main>
 
   <footer class="footer mg-footer"><div class="footer-bottom"><span>{t['footer']}</span><span>{esc(t['footer2'])}</span></div></footer>
