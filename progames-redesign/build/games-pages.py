@@ -6,34 +6,34 @@ import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "3"
+VER = "4"
 
 T = {
   'en': {
     'path': 'games/index.html', 'url': '/games/', 'home': '/', 'locale': 'en_GB',
     'title': 'MONSTER GAME – free browser arcade platformer',
-    'desc': 'Play MONSTER GAME for free in your browser: punch, kick and smash through 5 stages with the MONSTER 3IN1 mascot and beat the BIG BAG boss.',
+    'desc': 'Play MONSTER GAME for free in your browser: punch, kick and smash through 5 stages with the MONSTER 3in1 mascot and beat the BIG BAG boss.',
     'nav': [('/#machines', 'Products'), ('/catalog.html?catalog=machines', 'Catalogs'), ('/#business', 'For business'), ('/#distributors', 'Distributors'), ('/#trade-shows', 'Trade shows'), ('/#contact', 'Contact')],
     'cta': ('/#contact', 'Request a quote'), 'skip': 'Skip to the game', 'menu': 'Open menu', 'home_label': 'PRO-GAMES home',
     'canvas': 'MONSTER GAME – game screen. Use the arrow keys and Enter in the menu.',
     'btn': {'left': '◀', 'right': '▶', 'jump': 'JUMP', 'punch': 'PUNCH', 'kick': 'KICK', 'smash': 'SMASH'}, 'pause': 'Pause',
-    'machine_k': 'INSPIRED BY THE MACHINE', 'machine_h': 'MONSTER 3IN1 – boxer, kicker and hammer in one cabinet',
-    'machine_p': 'The MONSTER comes from the real MONSTER 3IN1 by PRO-GAMES: a commercial amusement machine combining a boxer, a kicker and a hammer, with tournament mode for up to three players.',
-    'machine_btn': 'View MONSTER 3IN1', 'contact_btn': 'Ask about the machine', 'product': '/en/products/monster-3in1.html', 'contact': '/#contact',
+    'machine_k': 'INSPIRED BY THE MACHINE', 'machine_h': 'MONSTER 3in1 – boxer, kicker and hammer in one cabinet',
+    'machine_p': 'The MONSTER comes from the real MONSTER 3in1 by PRO-GAMES: a commercial amusement machine combining a boxer, a kicker and a hammer, with tournament mode for up to three players.',
+    'machine_btn': 'View MONSTER 3in1', 'contact_btn': 'Ask about the machine', 'product': '/en/products/monster-3in1.html', 'contact': '/#contact',
     'lang_label': 'English — Choose language', 'lang_code': 'EN',
     'footer': '© 2026 PRO-GAMES POLAND Sp. z o.o.', 'footer2': 'Made in Poland / Built for operators', 'ld_lang': 'en', 'navlabel': 'Main navigation', 'langword': 'Language'
   },
   'pl': {
     'path': 'pl/gry/index.html', 'url': '/pl/gry/', 'home': '/pl/', 'locale': 'pl_PL',
     'title': 'MONSTER GAME – darmowa gra platformowa w przeglądarce',
-    'desc': 'Zagraj za darmo w MONSTER GAME w przeglądarce: uderzaj, kopaj i rozbijaj młotem przez 5 etapów z maskotką automatu MONSTER 3IN1 i pokonaj bossa BIG BAG.',
+    'desc': 'Zagraj za darmo w MONSTER GAME w przeglądarce: uderzaj, kopaj i rozbijaj młotem przez 5 etapów z maskotką automatu MONSTER 3in1 i pokonaj bossa BIG BAG.',
     'nav': [('/pl/#machines', 'Produkty'), ('/pl/katalog.html?catalog=machines', 'Katalogi'), ('/pl/#business', 'Dla biznesu'), ('/pl/#distributors', 'Dystrybutorzy'), ('/pl/#trade-shows', 'Targi'), ('/pl/#contact', 'Kontakt')],
     'cta': ('/pl/#contact', 'Zapytaj o ofertę'), 'skip': 'Przejdź do gry', 'menu': 'Otwórz menu', 'home_label': 'PRO-GAMES — strona główna',
     'canvas': 'MONSTER GAME – ekran gry. W menu użyj strzałek i klawisza Enter.',
     'btn': {'left': '◀', 'right': '▶', 'jump': 'SKOK', 'punch': 'CIOS', 'kick': 'KOP', 'smash': 'MŁOT'}, 'pause': 'Pauza',
-    'machine_k': 'INSPIRACJA: AUTOMAT', 'machine_h': 'MONSTER 3IN1 – boxer, kopacz i młot w jednym automacie',
-    'machine_p': 'MONSTER pochodzi z prawdziwego automatu MONSTER 3IN1 od PRO-GAMES: komercyjnego urządzenia rozrywkowego łączącego boxera, kopacza i młot, z trybem turniejowym dla maksymalnie trzech graczy.',
-    'machine_btn': 'Zobacz MONSTER 3IN1', 'contact_btn': 'Zapytaj o automat', 'product': '/pl/produkty/monster-3in1.html', 'contact': '/pl/#contact',
+    'machine_k': 'INSPIRACJA: AUTOMAT', 'machine_h': 'MONSTER 3in1 – boxer, kopacz i młot w jednym automacie',
+    'machine_p': 'MONSTER pochodzi z prawdziwego automatu MONSTER 3in1 od PRO-GAMES: komercyjnego urządzenia rozrywkowego łączącego boxera, kopacza i młot, z trybem turniejowym dla maksymalnie trzech graczy.',
+    'machine_btn': 'Zobacz MONSTER 3in1', 'contact_btn': 'Zapytaj o automat', 'product': '/pl/produkty/monster-3in1.html', 'contact': '/pl/#contact',
     'lang_label': 'Polski — Wybierz język', 'lang_code': 'PL',
     'footer': '© 2026 PRO-GAMES POLAND Sp. z o.o.', 'footer2': 'Polska produkcja / Stworzone dla operatorów', 'ld_lang': 'pl', 'navlabel': 'Nawigacja główna', 'langword': 'Język'
   }
@@ -112,13 +112,13 @@ def page(lang):
     </section>
 
     <section class="mg-machine">
-      <img src="/games/assets/monster-face.png" alt="MONSTER" width="768" height="768" loading="lazy" decoding="async">
+      <a class="mg-machine-photo" href="{t['product']}"><img src="/assets/products/monster-3in1-red.webp" alt="MONSTER 3in1 – PRO-GAMES" width="580" height="850" loading="lazy" decoding="async"></a>
       <div>
         <p class="kicker">{esc(t['machine_k'])}</p>
         <h2>{esc(t['machine_h'])}</h2>
         <p>{esc(t['machine_p'])}</p>
         <div class="mg-actions">
-          <a class="btn btn-primary" href="{t['product']}">{esc(t['machine_btn'])}</a>
+          <a class="btn btn-primary" href="{t['product']}">{esc(t['machine_btn']).replace('3in1', '3<span class="mg-lc">in</span>1')}</a>
           <a class="btn btn-ghost" href="{t['contact']}">{esc(t['contact_btn'])}</a>
         </div>
       </div>

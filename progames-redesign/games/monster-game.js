@@ -6,20 +6,35 @@ const root = document.getElementById('monster-game');
 if (!root) return;
 const LANG = root.dataset.lang === 'pl' ? 'pl' : 'en';
 const LEVELS = window.MONSTER_LEVELS;
-let W = 400;
-const H = 225, T = 16, ROWS = 15, DT = 1 / 60;
+let W = 400, H = 225;
+const T = 16, ROWS = 15, DT = 1 / 60, VH = 225;
 const canvas = root.querySelector('canvas.mg-canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = W; canvas.height = H;
 ctx.imageSmoothingEnabled = false;
 // Narrow screens (phones in portrait) get a 4:3 view so the monster is bigger.
-function fitView() {
+let fitKey = '';
+function fitView(force) {
   const narrow = root.clientWidth < 640 && !document.fullscreenElement;
-  const nw = narrow ? 300 : 400;
+  const stage = root.querySelector('.mg-stage');
   root.classList.toggle('is-narrow', narrow);
-  if (nw !== W) { W = nw; canvas.width = W; canvas.height = H; ctx.imageSmoothingEnabled = false; skyTheme = -1; }
+  // phones: the game screen grows down to the bottom of the viewport (touch buttons stay visible)
+  const key = narrow + ':' + root.clientWidth + ':' + Math.round(innerHeight / 120);
+  if (!force && key === fitKey) return;
+  fitKey = key;
+  let nw = narrow ? 300 : 400, nh = VH;
+  if (narrow) {
+    const touch = root.querySelector('.mg-touch');
+    const top = stage.getBoundingClientRect().top + scrollY;
+    const avail = innerHeight - top - (touch && root.classList.contains('is-touch') ? touch.offsetHeight : 0) - 22;
+    const hpx = Math.max(stage.clientWidth * 0.75, Math.min(avail, stage.clientWidth * 1.45));
+    stage.style.height = Math.round(hpx) + 'px';
+    nh = Math.max(VH, Math.min(430, Math.round(nw * hpx / stage.clientWidth)));
+  } else stage.style.height = '';
+  if (nw !== W || nh !== H) { W = nw; H = nh; canvas.width = W; canvas.height = H; ctx.imageSmoothingEnabled = false; skyTheme = -1; }
 }
 addEventListener('resize', () => fitView());
+addEventListener('orientationchange', () => setTimeout(() => fitView(true), 300));
 
 
 /* ---------- text ---------- */
@@ -90,7 +105,7 @@ const FONT_SRC = {
   '↑': '00100011101010100100001000010000000', '↓': '00000001000010000100101010111000100',
   '◀': '00010001100111011111011100011000010', '▶': '01000011000111011111011100110001000',
   '♥': '00000010101111111111011100010000000', '(': '00010001000100001000010000010000010', ')': '01000001000001000010000100010001000',
-  '#': '01010010101111101010111110101001010', '%': '11001110010001000100010001001110011', ' ': '00000000000000000000000000000000000'
+  '#': '01010010101111101010111110101001010', i: '00100000000110000100001000010001110', n: '00000000001011011001100011000110001', '%': '11001110010001000100010001001110011', ' ': '00000000000000000000000000000000000'
 };
 const DIA = { 'Ą': ['A', 'og'], 'Ć': ['C', 'ac'], 'Ę': ['E', 'og'], 'Ł': ['L', 'st'], 'Ń': ['N', 'ac'], 'Ó': ['O', 'ac'], 'Ś': ['S', 'ac'], 'Ź': ['Z', 'ac'], 'Ż': ['Z', 'dot'] };
 const FONT = {};
@@ -107,7 +122,7 @@ function glyph(g, ch, x, y, s) {
   else if (mark === 'st') { g.fillRect(x + 2 * s, y + 2 * s, s, s); g.fillRect(x + 1 * s, y + 4 * s, s, s); }
 }
 function drawText(g, str, x, y, color, opt = {}) {
-  const s = opt.scale || 1, txt = String(str).toUpperCase();
+  const s = opt.scale || 1, txt = [...String(str)].map(c => FONT[c] ? c : c.toUpperCase()).join('');
   const w = textWidth(txt, s);
   let x0 = Math.round(opt.align === 'center' ? x - w / 2 : opt.align === 'right' ? x - w : x);
   y = Math.round(y);
@@ -491,7 +506,7 @@ function startStage(idx, keepRun) {
   particles = []; popups = []; balls = []; waves = [];
   stageStats = { tokens: 0, startScore: run.score, enemies: 0, deaths: 0 };
   stageTime = 0; introT = 1.8; shake = 0; flash = 0;
-  cam.x = clamp(player.x - W * 0.35, 0, level.w - W); cam.y = clamp(player.y - H * 0.55, 0, level.h - H);
+  cam.x = clamp(player.x - W * 0.35, 0, level.w - W); cam.y = level.h <= H ? level.h - H : clamp(player.y - H * 0.55, 0, level.h - H);
   state = 'intro';
   // save: resume this stage with the score and lives it was started with
   save.run = { stage: idx, score: run.score, lives: run.lives, tokens: run.tokens }; persist();
@@ -958,7 +973,7 @@ function updateCamera(dt, snap) {
   const p = player;
   const look = p.face * 40 + p.vx * 0.15;
   const tx = clamp(p.x + p.w / 2 - W / 2 + look, 0, Math.max(0, level.w - W));
-  const ty = clamp(p.y + p.h / 2 - H * 0.55, 0, Math.max(0, level.h - H));
+  const ty = level.h <= H ? level.h - H : clamp(p.y + p.h / 2 - H * 0.55, 0, level.h - H);
   if (snap) { cam.x = tx; cam.y = ty; return; }
   cam.x += (tx - cam.x) * Math.min(1, dt * 6);
   cam.y += (ty - cam.y) * Math.min(1, dt * 4);
@@ -1051,8 +1066,9 @@ function drawBackground(th, t) {
       ctx.beginPath(); ctx.arc(0, 0, rr, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = th.sky[1]; ctx.beginPath(); ctx.arc(0, 0, 3, 0, Math.PI * 2); ctx.fill(); ctx.restore();
     } else if (hash(k, 19) > 0.5) { // neon sign
       ctx.fillStyle = hash(k, 21) > 0.5 ? th.edge : th.edge2; ctx.globalAlpha = 0.25 + 0.2 * Math.sin(t * 3 + k);
-      ctx.fillRect((x + 8) | 0, (base2 - h - 12) | 0, 28, 8); ctx.globalAlpha = 1;
-      drawText(ctx, ['POW', 'KO', 'BAM', 'WIN', 'HIT', '3IN1'][((k % 6) + 6) % 6], x + 22, base2 - h - 11, th.sky[0], { align: 'center' });
+      ctx.fillRect((x + 8) | 0, (base2 - h - 14) | 0, 28, 8); ctx.globalAlpha = 1;
+      ctx.fillStyle = th.far2; ctx.fillRect((x + 12) | 0, (base2 - h - 6) | 0, 2, 6); ctx.fillRect((x + 30) | 0, (base2 - h - 6) | 0, 2, 6);
+      drawText(ctx, ['POW', 'KO', 'BAM', 'WIN', 'HIT', '3in1'][((k % 6) + 6) % 6], x + 22, base2 - h - 13, th.sky[0], { align: 'center' });
     }
   }
   if (th.rain) {
@@ -1133,7 +1149,13 @@ function drawItems(t) {
     if (x > W || x + w < 0) continue;
     ctx.fillStyle = 'rgba(6,4,26,.82)'; ctx.fillRect(x, y, w, 15);
     ctx.fillStyle = C.mag; ctx.fillRect(x, y, w, 1); ctx.fillRect(x, y + 14, w, 1); ctx.fillStyle = C.cyan; ctx.fillRect(x, y, 1, 15); ctx.fillRect(x + w - 1, y, 1, 15);
-    ctx.fillStyle = '#2a2d40'; ctx.fillRect(x + 6, y + 15, 2, 60); ctx.fillRect(x + w - 8, y + 15, 2, 60);
+    if (hint.posts === undefined) {
+      const post = px => { const c = Math.floor(px / T); for (let r = Math.floor(hint.y / T) + 1; r < ROWS; r++) { const ch = tile(c, r); if (isSolid(ch) || ch === '=') return r * T - (hint.y + 15); } return 0; };
+      hint.posts = [post(hint.x + 7), post(hint.x + w - 7)];
+    }
+    ctx.fillStyle = '#2a2d40';
+    if (hint.posts[0] > 0) { ctx.fillRect(x + 6, y + 15, 2, hint.posts[0]); ctx.fillRect(x + 4, y + 15 + hint.posts[0] - 2, 6, 2); }
+    if (hint.posts[1] > 0) { ctx.fillRect(x + w - 8, y + 15, 2, hint.posts[1]); ctx.fillRect(x + w - 10, y + 15 + hint.posts[1] - 2, 6, 2); }
     drawText(ctx, txt, x + 6, y + 4, Math.floor(t * 2) % 7 ? C.white : C.yel);
   }
   for (const k of level.checkpoints) {
@@ -1166,7 +1188,7 @@ function drawFinish(f, t) {
   ctx.fillStyle = '#2b1049'; ctx.fillRect(x + 4, y + 30, 36, 8);
   ctx.fillStyle = C.h3; ctx.fillRect(x + 8, y + 31, 6, 6); ctx.fillStyle = C.white; ctx.fillRect(x + 19, y + 31, 6, 6); ctx.fillStyle = C.ink; ctx.fillRect(x + 21, y + 33, 2, 2);
   ctx.fillStyle = '#8a5a2b'; ctx.fillRect(x + 31, y + 31, 2, 6); ctx.fillStyle = '#c0c4d8'; ctx.fillRect(x + 29, y + 31, 6, 3);
-  drawText(ctx, '3IN1', x + 22, y + 42, C.yel, { align: 'center' });
+  drawText(ctx, '3in1', x + 22, y + 42, C.yel, { align: 'center' });
   ctx.fillStyle = '#1a0844'; ctx.fillRect(x + 6, y + 50, 32, 6);
   // arrow above
   if (Math.floor(t * 3) % 2) drawText(ctx, '↓', x + 22, y - 24, C.g3, { align: 'center', scale: 2, outline: C.ink });
@@ -1394,7 +1416,7 @@ const UI = {
     clear: 'CLEAR!', next: 'NEXT STAGE', go: 'CONTINUE', menu: 'MENU',
     tokens: 'TOKENS', time: 'TIME', timeBonus: 'TIME BONUS', perfect: 'NO-HIT BONUS', allTokens: 'ALL TOKENS', hearts: 'HEARTS BONUS', stageScore: 'STAGE SCORE', total: 'TOTAL',
     over: 'GAME OVER', score: 'SCORE', retry: 'CONTINUE', retryNote: 'SAME STAGE - SCORE RESETS TO ZERO',
-    end1: 'YOU BEAT BIG BAG!', end2: 'YOU ARE THE REAL MONSTER!', again: 'PLAY AGAIN', machine: 'THE REAL MONSTER 3IN1',
+    end1: 'YOU BEAT BIG BAG!', end2: 'YOU ARE THE REAL MONSTER!', again: 'PLAY AGAIN', machine: 'THE REAL MONSTER 3in1',
     locked: '??????', nextPage: 'NEXT ▶', prevPage: '◀ PREVIOUS', copy: '(C) 2026 PRO-GAMES POLAND',
     pages: ['CONTROLS', 'ENEMIES AND ITEMS', 'GOAL'],
     keys: [['← →', 'RUN'], ['SPACE / ↑', 'JUMP (HOLD = HIGHER)'], ['J / X', 'PUNCH - BREAKS CRATES'], ['K / C', 'KICK THE BALL'], ['↓ IN THE AIR', 'HAMMER SMASH'], ['↓ ON THE GROUND', 'HAMMER SWING - BREAKS WALLS'], ['P / ESC', 'PAUSE']],
@@ -1411,7 +1433,7 @@ const UI = {
     clear: 'UKOŃCZONY!', next: 'NASTĘPNY ETAP', go: 'DALEJ', menu: 'MENU',
     tokens: 'ŻETONY', time: 'CZAS', timeBonus: 'BONUS ZA CZAS', perfect: 'BEZ TRAFIENIA', allTokens: 'WSZYSTKIE ŻETONY', hearts: 'BONUS ZA SERCA', stageScore: 'WYNIK ETAPU', total: 'RAZEM',
     over: 'GAME OVER', score: 'WYNIK', retry: 'KONTYNUUJ', retryNote: 'TEN SAM ETAP - WYNIK OD ZERA',
-    end1: 'POKONAŁEŚ BIG BAG!', end2: 'JESTEŚ PRAWDZIWYM MONSTEREM!', again: 'ZAGRAJ PONOWNIE', machine: 'AUTOMAT MONSTER 3IN1',
+    end1: 'POKONAŁEŚ BIG BAG!', end2: 'JESTEŚ PRAWDZIWYM MONSTEREM!', again: 'ZAGRAJ PONOWNIE', machine: 'AUTOMAT MONSTER 3in1',
     locked: '??????', nextPage: 'DALEJ ▶', prevPage: '◀ WSTECZ', copy: '(C) 2026 PRO-GAMES POLAND',
     pages: ['STEROWANIE', 'PRZECIWNICY I PRZEDMIOTY', 'CEL GRY'],
     keys: [['← →', 'BIEG'], ['SPACJA / ↑', 'SKOK (TRZYMAJ = WYŻEJ)'], ['J / X', 'CIOS - ROZBIJA SKRZYNIE'], ['K / C', 'KOPNIĘCIE PIŁKI'], ['↓ W POWIETRZU', 'UDERZENIE MŁOTEM'], ['↓ NA ZIEMI', 'MŁOT KRUSZY ŚCIANY'], ['P / ESC', 'PAUZA']],
@@ -1424,7 +1446,12 @@ const UI = {
 const HOME = LANG === 'pl' ? '/pl/' : '/';
 const PRODUCT = LANG === 'pl' ? '/pl/produkty/monster-3in1.html' : '/en/products/monster-3in1.html';
 const ui = { screen: 'main', sel: 0, page: 0, from: 'main', tally: null, note: '', noteT: 0, t: 0 };
-let menuRects = [];
+let menuRects = [], menuOY = 0;
+function inMenuArea(fn) {
+  const realH = H, oy = Math.max(0, Math.round((H - VH) / 2));
+  menuOY = oy; ctx.save(); ctx.translate(0, oy); H = VH;
+  try { fn(); } finally { H = realH; ctx.restore(); }
+}
 SFX.move = () => tone(880, 0.035, 'square', 0.06);
 SFX.ok = () => { tone(660, 0.05, 'square', 0.08); tone(990, 0.08, 'square', 0.08, 0, 0.05); };
 SFX.back = () => tone(440, 0.07, 'square', 0.07, -120);
@@ -1669,7 +1696,6 @@ function drawMenuScreen() {
   }
 }
 function drawPauseScreen() {
-  ctx.fillStyle = 'rgba(6,4,26,.65)'; ctx.fillRect(0, 0, W, H);
   if (ui.screen === 'options') {
     drawPanel(W / 2 - 130, 22, 260, 182);
     drawText(ctx, UI.options, W / 2, 34, C.yel, { align: 'center', scale: 2, shadow: '#3a0419' });
@@ -1701,14 +1727,12 @@ function drawClearScreen() {
   }
 }
 function drawOverScreen() {
-  ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
   drawText(ctx, UI.over, W / 2, 48, C.white, { align: 'center', scale: 4, shadow: '#3a0419' });
   drawText(ctx, UI.score + ' ' + fmt(run.score), W / 2, 90, C.yel, { align: 'center', scale: 2 });
   drawItemsList(currentItems(), 126, { scale: 2, lh: 20 });
   drawText(ctx, UI.retryNote, W / 2, 196, '#9b8fb8', { align: 'center' });
 }
 function drawEndingScreen() {
-  ctx.fillStyle = 'rgba(6,4,26,.6)'; ctx.fillRect(0, 0, W, H);
   drawText(ctx, UI.end1, W / 2, 12, C.yel, { align: 'center', scale: 2, shadow: '#3a0419' });
   drawText(ctx, UI.end2, W / 2, 30, C.g3, { align: 'center' });
   const f = SPR.win[0]; drawBig(f, W / 2 - 36, 40, 3);
@@ -1720,7 +1744,7 @@ function drawEndingScreen() {
 function toCanvas(ev) {
   const r = canvas.getBoundingClientRect(), s = Math.min(r.width / W, r.height / H);
   const ox = r.left + (r.width - W * s) / 2, oy = r.top + (r.height - H * s) / 2;
-  return { x: (ev.clientX - ox) / s, y: (ev.clientY - oy) / s };
+  return { x: (ev.clientX - ox) / s, y: (ev.clientY - oy) / s - menuOY };
 }
 function rectAt(p) { return menuRects.find(m => p.x >= m.x && p.x <= m.x + m.w && p.y >= m.y && p.y <= m.y + m.h); }
 canvas.addEventListener('pointermove', e => {
@@ -1746,7 +1770,7 @@ function frame(now) {
   requestAnimationFrame(frame);
   const dt = clamp((now - last) / 1000, 0, 0.1); last = now;
   pollPad();
-  if (state === 'menu') { renderAttract(dt); drawMenuScreen(); return; }
+  if (state === 'menu') { renderAttract(dt); inMenuArea(drawMenuScreen); return; }
   if (!level) return;
   acc += dt;
   let steps = 0;
@@ -1755,11 +1779,11 @@ function frame(now) {
     for (const k in pressed) pressed[k] = false;
   }
   if (steps === 5) acc = 0;
-  if (state === 'over') { drawOverScreen(); return; }
+  if (state === 'over') { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H); inMenuArea(drawOverScreen); return; }
   render();
-  if (state === 'pause') drawPauseScreen();
-  else if (state === 'clear') drawClearScreen();
-  else if (state === 'ending') drawEndingScreen();
+  if (state === 'pause') { ctx.fillStyle = 'rgba(6,4,26,.65)'; ctx.fillRect(0, 0, W, H); inMenuArea(drawPauseScreen); }
+  else if (state === 'clear') inMenuArea(drawClearScreen);
+  else if (state === 'ending') { ctx.fillStyle = 'rgba(6,4,26,.6)'; ctx.fillRect(0, 0, W, H); inMenuArea(drawEndingScreen); }
   else menuRects = [];
 }
 function step(dt) {
@@ -1804,7 +1828,7 @@ root.querySelectorAll('[data-label]').forEach(btn => {
   c.className = 'mg-tb-label'; c.setAttribute('aria-hidden', 'true'); btn.textContent = ''; btn.append(c);
 });
 
-fitView();
+fitView(true);
 setMuted(muted);
 requestAnimationFrame(frame);
 // test hook
