@@ -516,7 +516,7 @@ function startStage(idx, keepRun) {
   cam.x = clamp(player.x - W * 0.35, 0, level.w - W); cam.y = level.h <= H ? level.h - H : clamp(player.y - H * 0.55, 0, level.h - H);
   state = 'intro';
   // save: resume this stage with the score and lives it was started with
-  save.run = { stage: idx, score: run.score, lives: run.lives, tokens: run.tokens }; persist();
+  save.run = { stage: idx, score: run.score, lives: run.lives, tokens: run.tokens, token: run.token || null }; persist();
   ensureAudio(); startMusic(level.def.theme);
   root.classList.add('is-playing');
 }
@@ -998,6 +998,7 @@ function stageClear() {
   const heartsBonus = player.hearts * 300;
   run.score += timeBonus + perfect + allTokens + heartsBonus;
   const stageScore = run.score - stageStats.startScore;
+  claimStage(run, level.idx, Math.floor(stageTime), stageScore);
   const pts = (tokens / total) * 60 + (!player.hitThisStage ? 20 : 0) + (stageTime <= def.par ? 20 : 0);
   const prevBest = save.best[level.idx] | 0;
   let rank = pts >= 80 ? 'monster' : pts >= 50 ? 'great' : 'good';
@@ -1009,7 +1010,7 @@ function stageClear() {
   persist();
   player.vx = 0; player.act = 'win';
   const last = level.idx === LEVELS.length - 1;
-  save.run = last ? null : { stage: level.idx + 1, score: run.score, lives: run.lives, tokens: run.tokens };
+  save.run = last ? null : { stage: level.idx + 1, score: run.score, lives: run.lives, tokens: run.tokens, token: run.token || null };
   persist();
   ui.tally = {
     t: -1.2, shown: 0, last, rank,
@@ -1458,7 +1459,7 @@ const UI = {
     end1: 'YOU BEAT BIG BAG!', end2: 'YOU ARE THE REAL MONSTER!', again: 'PLAY AGAIN', machine: 'THE REAL MONSTER 3in1',
     locked: '??????', nextPage: 'NEXT ▶', prevPage: '◀ PREVIOUS', copy: '(C) 2026 PRO-GAMES POLAND',
     rank: 'RANKING', nick: 'NICK', enterNick: 'ENTER YOUR NICK', nickHint: 'LETTERS AND DIGITS - MAX 10', tapType: 'TAP THE BOX TO TYPE', ok: 'OK',
-    place: 'PLACE', newBest: 'NEW PERSONAL BEST!', yourBest: 'YOUR BEST', empty: 'NO SCORES YET - BE THE FIRST!', player: 'PLAYER', end: 'END',
+    online: 'ALL PLAYERS - ONLINE', offline: 'OFFLINE - THIS DEVICE ONLY', place: 'PLACE', newBest: 'NEW PERSONAL BEST!', yourBest: 'YOUR BEST', empty: 'NO SCORES YET - BE THE FIRST!', player: 'PLAYER', end: 'END',
     pages: ['CONTROLS', 'ENEMIES AND ITEMS', 'GOAL'],
     keys: [['← →', 'RUN'], ['SPACE / ↑', 'JUMP (HOLD = HIGHER)'], ['J / X', 'PUNCH - BREAKS CRATES'], ['K / C', 'KICK THE BALL'], ['↓ IN THE AIR', 'HAMMER SMASH'], ['↓ ON THE GROUND', 'HAMMER SWING - BREAKS WALLS'], ['P / ESC', 'PAUSE']],
     touch: [['◀ ▶', 'RUN'], ['JUMP', 'JUMP (HOLD = HIGHER)'], ['PUNCH', 'BREAKS CRATES'], ['KICK', 'KICK THE BALL'], ['SMASH IN AIR', 'HAMMER SMASH'], ['SMASH ON GROUND', 'BREAKS CRACKED WALLS'], ['=', 'MENU / PAUSE']],
@@ -1477,7 +1478,7 @@ const UI = {
     end1: 'POKONAŁEŚ BIG BAG!', end2: 'JESTEŚ PRAWDZIWYM MONSTEREM!', again: 'ZAGRAJ PONOWNIE', machine: 'AUTOMAT MONSTER 3in1',
     locked: '??????', nextPage: 'DALEJ ▶', prevPage: '◀ WSTECZ', copy: '(C) 2026 PRO-GAMES POLAND',
     rank: 'RANKING', nick: 'NICK', enterNick: 'WPISZ SWÓJ NICK', nickHint: 'LITERY I CYFRY - MAX 10', tapType: 'DOTKNIJ POLA, ABY PISAĆ', ok: 'OK',
-    place: 'MIEJSCE', newBest: 'NOWY REKORD GRACZA!', yourBest: 'TWÓJ REKORD', empty: 'BRAK WYNIKÓW - BĄDŹ PIERWSZY!', player: 'GRACZ', end: 'META',
+    online: 'WSZYSCY GRACZE - ONLINE', offline: 'OFFLINE - TYLKO TO URZĄDZENIE', place: 'MIEJSCE', newBest: 'NOWY REKORD GRACZA!', yourBest: 'TWÓJ REKORD', empty: 'BRAK WYNIKÓW - BĄDŹ PIERWSZY!', player: 'GRACZ', end: 'META',
     pages: ['STEROWANIE', 'PRZECIWNICY I PRZEDMIOTY', 'CEL GRY'],
     keys: [['← →', 'BIEG'], ['SPACJA / ↑', 'SKOK (TRZYMAJ = WYŻEJ)'], ['J / X', 'CIOS - ROZBIJA SKRZYNIE'], ['K / C', 'KOPNIĘCIE PIŁKI'], ['↓ W POWIETRZU', 'UDERZENIE MŁOTEM'], ['↓ NA ZIEMI', 'MŁOT KRUSZY ŚCIANY'], ['P / ESC', 'PAUZA']],
     touch: [['◀ ▶', 'BIEG'], ['SKOK', 'SKOK (TRZYMAJ = WYŻEJ)'], ['CIOS', 'ROZBIJA SKRZYNIE'], ['KOP', 'KOPNIĘCIE PIŁKI'], ['MŁOT W GÓRZE', 'UDERZENIE MŁOTEM'], ['MŁOT NA ZIEMI', 'KRUSZY ŚCIANY'], ['=', 'MENU / PAUZA']],
@@ -1515,10 +1516,11 @@ function goMenu() {
 }
 function continueRun() {
   const r = save.run || { stage: 0, score: 0, lives: 3, tokens: 0 };
-  run = { score: r.score | 0, lives: r.lives === undefined ? 3 : r.lives, tokens: r.tokens | 0 };
+  run = { score: r.score | 0, lives: r.lives === undefined ? 3 : r.lives, tokens: r.tokens | 0, token: r.token || null };
+  if (!run.token && !run.score) beginOnline(run);
   startStage(Math.min(r.stage | 0, save.unlocked - 1), true);
 }
-function newGame(idx) { run = { score: 0, lives: 3, tokens: 0 }; startStage(idx || 0, true); }
+function newGame(idx) { run = { score: 0, lives: 3, tokens: 0 }; beginOnline(run); startStage(idx || 0, true); }
 
 /* nickname: arcade-style letter board (tap / click / arrows) + typing on a physical keyboard */
 const NICK_RE = /[^A-Z0-9ĄĆĘŁŃÓŚŹŻ_\-. ]/g;
@@ -1555,6 +1557,34 @@ function nickNav(k) {
 }
 function withNick(fn) { return () => { if (save.nick) fn(); else openNick(fn); }; }
 
+/* online ranking (shared by all players): see /api/ranking.js */
+const RANK_API = '/api/ranking';
+ui.global = null; ui.onlineState = 'idle';
+function rankPost(body) {
+  return fetch(RANK_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+    .then(r => r.ok ? r.json() : Promise.reject(r.status));
+}
+function fetchGlobal() {
+  ui.onlineState = 'loading';
+  fetch(RANK_API, { cache: 'no-store' }).then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(d => { if (d && Array.isArray(d.top)) { ui.global = d.top; ui.onlineState = 'ok'; } })
+    .catch(() => { ui.onlineState = 'off'; });
+}
+function beginOnline(r) {
+  r.token = null;
+  r.pending = rankPost({ op: 'start' }).then(d => { r.token = d.token; if (run === r && save.run) { save.run.token = d.token; persist(); } }).catch(() => {});
+}
+function claimStage(r, stage, time, score) {
+  r.pending = (r.pending || Promise.resolve()).then(() => r.token ? rankPost({ op: 'stage', token: r.token, stage, time, score }) : null)
+    .then(d => { if (d && d.token) { r.token = d.token; if (run === r && save.run) { save.run.token = d.token; persist(); } } }).catch(() => {});
+}
+function submitOnline(r, nick, stage, extra) {
+  const lr = ui.lastRank;
+  (r.pending || Promise.resolve()).then(() => r.token ? rankPost({ op: 'submit', token: r.token, nick, stage, extra }) : Promise.reject(0))
+    .then(d => { ui.global = d.top; ui.onlineState = 'ok'; if (lr && ui.lastRank === lr) lr.online = { place: d.place, best: d.best, total: d.total }; })
+    .catch(() => { if (lr) lr.offline = true; });
+}
+
 /* ranking: best score per nick, kept in this browser */
 function recordRun(stageLabel) {
   if (!run || run.recorded || run.score <= 0) return;
@@ -1567,10 +1597,12 @@ function recordRun(stageLabel) {
   save.ranking.sort((a, b) => b.s - a.s); save.ranking = save.ranking.slice(0, 50);
   save.top = Math.max(save.top, run.score); persist();
   ui.lastRank = { name, place: save.ranking.indexOf(e) + 1, best, score: run.score };
+  const finished = stageLabel === 'END';
+  submitOnline(run, name, finished || !level ? -1 : level.idx, finished || !stageStats ? 0 : Math.max(0, run.score - stageStats.startScore));
 }
 function drawRankTable(y0, count, lh) {
-  const list = (save.ranking || []).slice(0, count);
-  if (!list.length) { drawText(ctx, UI.empty, W / 2, y0 + 10, '#9b8fb8', { align: 'center' }); return; }
+  const list = (ui.global || save.ranking || []).slice(0, count);
+  if (!list.length) { drawText(ctx, ui.onlineState === 'loading' ? '...' : UI.empty, W / 2, y0 + 10, '#9b8fb8', { align: 'center' }); return; }
   const wide = W >= 400, xL = Math.round(W / 2 - (wide ? 150 : 128)), xR = Math.round(W / 2 + (wide ? 150 : 128));
   list.forEach((r, i) => {
     const y = y0 + i * lh, me = r.n === save.nick, hl = ui.lastRank && r.n === ui.lastRank.name;
@@ -1578,8 +1610,9 @@ function drawRankTable(y0, count, lh) {
     const pc = i === 0 ? C.yel : i === 1 ? '#c0c4d8' : i === 2 ? '#e0904a' : '#9b8fb8';
     drawText(ctx, String(i + 1).padStart(2, ' ') + '.', xL, y, pc);
     drawText(ctx, r.n, xL + 24, y, me ? C.yel : C.white);
-    if (wide) drawText(ctx, r.st === 'END' ? UI.end : UI.stage + ' ' + String(r.st).replace('E', ''), xR - 64, y, C.cyan, { align: 'right' });
-    drawText(ctx, fmt(r.s), xR, y, me ? C.yel : C.white, { align: 'right' });
+    const stl = r.st === 'END' ? UI.end : UI.stage + ' ' + String(r.st || '').replace('E', '');
+    if (wide) drawText(ctx, stl, xR - 64, y, C.cyan, { align: 'right' });
+    drawText(ctx, fmt(r.s ?? r.score), xR, y, me ? C.yel : C.white, { align: 'right' });
   });
 }
 
@@ -1592,7 +1625,7 @@ function currentItems() {
       it.push({ label: UI.select, act: () => openScreen('select') });
       it.push({ label: UI.howto, act: () => { ui.page = 0; openScreen('howto'); } });
       it.push({ label: UI.options, act: () => openScreen('options') });
-      it.push({ label: UI.rank, act: () => { ui.lastRank = null; openScreen('ranking'); } });
+      it.push({ label: UI.rank, act: () => { ui.lastRank = null; fetchGlobal(); openScreen('ranking'); } });
       it.push({ label: UI.exit, act: () => { location.href = HOME; } });
       return it;
     }
@@ -1634,7 +1667,7 @@ function currentItems() {
     ];
   }
   if (state === 'over') return [
-    { label: UI.retry, act: () => { run = { score: 0, lives: 3, tokens: 0 }; startStage(level.idx, true); } },
+    { label: UI.retry, act: () => { run = { score: 0, lives: 3, tokens: 0 }; beginOnline(run); startStage(level.idx, true); } },
     { label: UI.rank, act: () => { goMenu(); ui.screen = 'ranking'; ui.sel = 0; } },
     { label: UI.menu, act: goMenu }
   ];
@@ -1825,7 +1858,8 @@ function drawMenuScreen() {
     if (selBack) drawCursor(W / 2 - blw / 2 - 14, by2 + 4);
     menuRects.push({ x: W / 2 - blw / 2 - 18, y: by2 - 2, w: blw + 36, h: 18, i: NICK_KEYS.length });
   } else if (ui.screen === 'ranking') {
-    drawRankTable(44, 10, 14);
+    drawText(ctx, ui.onlineState === 'off' ? UI.offline : UI.online, W / 2, 36, ui.onlineState === 'off' ? '#9b8fb8' : C.g3, { align: 'center' });
+    drawRankTable(50, 10, 13);
     drawItemsList(currentItems(), H - 26, { scale: 1, lh: 11, center: true });
   } else if (ui.screen === 'options') {
     drawItemsList(currentItems(), 46, { scale: 2, lh: 21 });
@@ -1868,7 +1902,9 @@ function drawClearScreen() {
 }
 function drawRankLine(y) {
   const r = ui.lastRank; if (!r) return;
-  drawText(ctx, r.name + ' - ' + UI.place + ' #' + r.place + (r.best ? '  ' + UI.newBest : ''), W / 2, y, r.best ? (Math.floor(time * 6) % 2 ? C.mag : C.yel) : C.cyan, { align: 'center' });
+  const on = r.online, place = on ? on.place : (r.offline ? r.place : null), best = on ? on.best : r.best;
+  const txt = r.name + ' - ' + UI.place + ' ' + (place ? '#' + place : '...') + (best && place ? '  ' + UI.newBest : '');
+  drawText(ctx, txt, W / 2, y, best ? (Math.floor(time * 6) % 2 ? C.mag : C.yel) : C.cyan, { align: 'center' });
 }
 function drawOverScreen() {
   drawText(ctx, UI.over, W / 2, 8, C.white, { align: 'center', scale: 3, shadow: '#3a0419' });
@@ -1990,6 +2026,7 @@ root.querySelectorAll('[data-label]').forEach(btn => {
 
 fitView(true);
 setMuted(muted);
+fetchGlobal();
 requestAnimationFrame(frame);
 // test hook
 window.__monsterGame = { get state() { return state; }, get player() { return player; }, get level() { return level; }, get run() { return run; }, get ui() { return ui; }, get rects() { return menuRects.map(r => ({ ...r, y: r.y + menuOY })); }, get view() { return [W, H]; }, keys, press, release, startStage, step, menuInput };
