@@ -350,10 +350,12 @@ addEventListener('keydown', e => {
   if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
   if (!gameFocused()) return;
   const a = KEYMAP[e.code];
-  if (state === 'menu' && ui.screen === 'nick' && !e.ctrlKey && !e.metaKey) {
-    if (e.key.length === 1 && cleanNick(e.key)) { e.preventDefault(); focusNick(); nickInput.value = cleanNick(nickInput.value + e.key); ui.nick = nickInput.value; sfx('tick'); return; }
-    if (e.key === 'Backspace') { e.preventDefault(); nickInput.value = nickInput.value.slice(0, -1); ui.nick = nickInput.value; return; }
-    if (e.key === 'Enter') { e.preventDefault(); if (ui.sel === 1) cancelNick(); else confirmNick(); return; }
+  if (state === 'menu' && ui.screen === 'nick' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+    // typing on a keyboard: letters go straight in and the cursor jumps to OK, so Enter confirms
+    if (e.key.length === 1 && e.key !== ' ' && cleanNick(e.key)) { e.preventDefault(); nickType(e.key); ui.sel = NICK_KEYS.indexOf('OK'); return; }
+    if (e.key === 'Backspace') { e.preventDefault(); nickDel(); return; }
+    if (e.key === 'Escape') { e.preventDefault(); cancelNick(); return; }
+    if (e.key === 'Enter' || e.key === 'NumpadEnter') { e.preventDefault(); nickPress(ui.sel); return; }
   }
   if (menuActive()) {
     const m = MENU_KEYS[e.code];
@@ -584,7 +586,8 @@ function killEnemy(e, kind, dir) {
   if (kind === 'stomp') { e.squash = true; e.vx = 0; e.vy = 0; }
   else { e.vx = dir * 140; e.vy = -220; }
   player.combo = kind === 'stomp' ? player.combo + 1 : player.combo;
-  const pts = kind === 'stomp' ? Math.min(1000, 100 * Math.pow(2, Math.max(0, player.combo - 1))) : 100;
+  // boss-spawned sparkies: flat 100, at most 20 per stage (keeps scores verifiable)
+  const pts = e.spawned ? ((stageStats.spawnKills = (stageStats.spawnKills || 0) + 1) <= 20 ? 100 : 0) : kind === 'stomp' ? Math.min(1000, 100 * Math.pow(2, Math.max(0, player.combo - 1))) : 100;
   addScore(pts);
   pop(e.x + e.w / 2, e.y - 4, words[kind] || 'POW!', kind === 'kick' || kind === 'ball' ? C.g3 : kind === 'smash' ? C.yel : C.white, 2, 0.8);
   popups.push({ x: e.x + e.w / 2, y: e.y + 8, text: '+' + pts, color: C.yel, t: 0, life: 0.8, scale: 1 });
@@ -709,7 +712,7 @@ function updatePlayer(dt) {
     const strong = p.smashing;
     p.vy = strong ? -700 : -520; p.onGround = false; p.springing = true; p.smashing = false; p.act = null;
     sfx('spring'); level.springT = level.springT || {}; level.springT[p.groundC + ',' + p.groundR] = 0.3;
-    if (strong) { pop(p.x + 6, p.y - 6, 'MEGA!', C.yel, 2, 0.8); addScore(50); }
+    if (strong) pop(p.x + 6, p.y - 6, 'MEGA!', C.yel, 2, 0.8);
   }
   // landing
   if (p.onGround && wasAir) {
@@ -1517,34 +1520,39 @@ function continueRun() {
 }
 function newGame(idx) { run = { score: 0, lives: 3, tokens: 0 }; startStage(idx || 0, true); }
 
-/* nickname (typed through a hidden input so phones show their keyboard) */
+/* nickname: arcade-style letter board (tap / click / arrows) + typing on a physical keyboard */
 const NICK_RE = /[^A-Z0-9ĄĆĘŁŃÓŚŹŻ_\-. ]/g;
-const nickInput = document.createElement('input');
-Object.assign(nickInput, { type: 'text', maxLength: 10, autocomplete: 'off', spellcheck: false });
-nickInput.setAttribute('autocapitalize', 'characters'); nickInput.setAttribute('autocorrect', 'off'); nickInput.setAttribute('enterkeyhint', 'done');
-nickInput.setAttribute('aria-label', UI.enterNick); nickInput.className = 'mg-nick-input';
-root.querySelector('.mg-stage').append(nickInput);
+const NICK_KEYS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_'].concat(['DEL', 'OK']);
 const cleanNick = v => String(v || '').toUpperCase().replace(NICK_RE, '').replace(/^ +/, '').slice(0, 10);
-nickInput.addEventListener('input', () => { const v = cleanNick(nickInput.value); if (v !== nickInput.value) nickInput.value = v; ui.nick = v; sfx('tick'); });
-nickInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') { e.preventDefault(); confirmNick(); }
-  else if (e.key === 'Escape') { e.preventDefault(); cancelNick(); }
-  else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') { e.preventDefault(); menuInput(e.key === 'ArrowUp' ? 'up' : 'down'); }
-});
-function focusNick() { try { nickInput.focus({ preventScroll: true }); } catch (_) { nickInput.focus(); } }
 function openNick(next) {
   ui.nickNext = next || null; ui.nickFrom = ui.screen === 'options' ? 'options' : 'main';
-  ui.nick = save.nick || ''; nickInput.value = ui.nick;
-  ui.screen = 'nick'; ui.sel = 0; sfx('ok'); focusNick();
+  ui.nick = save.nick || ''; ui.screen = 'nick'; ui.sel = 0; sfx('ok');
 }
+function nickType(ch) { const v = cleanNick((ui.nick || '') + ch); if (v !== ui.nick) { ui.nick = v; sfx('tick'); } else sfx('back'); }
+function nickDel() { if (ui.nick) { ui.nick = ui.nick.slice(0, -1); sfx('back'); } }
 function confirmNick() {
   let n = cleanNick(ui.nick).trim();
   if (!n) n = UI.player + (10 + Math.floor(Math.random() * 90));
-  save.nick = n; persist(); nickInput.blur(); sfx('ok');
+  save.nick = n; persist(); sfx('ok');
   const next = ui.nickNext; ui.nickNext = null;
   if (next) next(); else openScreen(ui.nickFrom || 'main', true);
 }
-function cancelNick() { nickInput.blur(); ui.nickNext = null; openScreen(ui.nickFrom || 'main', true); }
+function cancelNick() { ui.nickNext = null; openScreen(ui.nickFrom || 'main', true); }
+function nickPress(i) {
+  if (i === NICK_KEYS.length) return cancelNick();
+  const k = NICK_KEYS[i];
+  if (k === 'DEL') nickDel(); else if (k === 'OK') confirmNick(); else nickType(k);
+}
+function nickNav(k) {
+  const n = NICK_KEYS.length, sel = ui.sel;
+  if (k === 'left') ui.sel = sel === n ? n - 1 : (sel + n - 1) % n;
+  else if (k === 'right') ui.sel = sel === n ? 0 : (sel + 1) % n;
+  else if (k === 'up') ui.sel = sel === n ? n - 5 : sel < 10 ? n : sel - 10;
+  else if (k === 'down') ui.sel = sel === n ? 0 : sel + 10 >= n ? n : sel + 10;
+  else if (k === 'ok') return nickPress(sel);
+  else if (k === 'back') return ui.nick ? nickDel() : cancelNick();
+  if (ui.sel !== sel) sfx('move');
+}
 function withNick(fn) { return () => { if (save.nick) fn(); else openNick(fn); }; }
 
 /* ranking: best score per nick, kept in this browser */
@@ -1582,9 +1590,9 @@ function currentItems() {
       const it = [{ label: UI.newGame, act: withNick(() => newGame(0)) }];
       if (hasSave()) it.push({ label: UI.cont + ' - ' + UI.stage + ' ' + (Math.min(save.run.stage, save.unlocked - 1) + 1), act: withNick(continueRun) });
       it.push({ label: UI.select, act: () => openScreen('select') });
-      it.push({ label: UI.rank, act: () => { ui.lastRank = null; openScreen('ranking'); } });
       it.push({ label: UI.howto, act: () => { ui.page = 0; openScreen('howto'); } });
       it.push({ label: UI.options, act: () => openScreen('options') });
+      it.push({ label: UI.rank, act: () => { ui.lastRank = null; openScreen('ranking'); } });
       it.push({ label: UI.exit, act: () => { location.href = HOME; } });
       return it;
     }
@@ -1602,7 +1610,7 @@ function currentItems() {
       return it;
     }
     if (ui.screen === 'options') return optionItems(true);
-    if (ui.screen === 'nick') return [{ label: UI.ok, act: confirmNick }, { label: UI.back, act: cancelNick }];
+    if (ui.screen === 'nick') return NICK_KEYS.map((k, i) => ({ label: k, act: () => nickPress(i) })).concat([{ label: UI.back, act: cancelNick }]);
     if (ui.screen === 'ranking') return [{ label: UI.back, act: () => openScreen('main', true) }];
     if (ui.screen === 'confirm') return [
       { label: UI.no, act: () => openScreen('options', true) },
@@ -1662,6 +1670,7 @@ function openScreen(name, back) {
 }
 function menuInput(k) {
   ensureAudio();
+  if (state === 'menu' && ui.screen === 'nick') { nickNav(k); return; }
   if (state === 'clear' && ui.tally && ui.tally.shown <= ui.tally.rows.length) {
     if (k === 'ok' || k === 'back') { ui.tally.t = 0; ui.tally.shown = ui.tally.rows.length + 1; ui.tally.revealed = true; rankSound(); }
     return;
@@ -1792,16 +1801,29 @@ function drawMenuScreen() {
     const items = currentItems();
     drawItemsList(items, H - 22 - (items.length - 1) * 11, { scale: 1, lh: 11, center: true });
   } else if (ui.screen === 'nick') {
-    const bw = 10 * 18 + 16, bx = Math.round(W / 2 - bw / 2), by = 52;
-    ctx.fillStyle = C.ink; ctx.fillRect(bx - 2, by - 2, bw + 4, 38);
-    ctx.fillStyle = '#12062d'; ctx.fillRect(bx, by, bw, 34); ctx.fillStyle = C.cyan; ctx.fillRect(bx, by, bw, 2); ctx.fillStyle = C.mag; ctx.fillRect(bx, by + 32, bw, 2);
+    const bw = 10 * 18 + 16, bx = Math.round(W / 2 - bw / 2), by = 38;
+    ctx.fillStyle = C.ink; ctx.fillRect(bx - 2, by - 2, bw + 4, 36);
+    ctx.fillStyle = '#12062d'; ctx.fillRect(bx, by, bw, 32); ctx.fillStyle = C.cyan; ctx.fillRect(bx, by, bw, 2); ctx.fillStyle = C.mag; ctx.fillRect(bx, by + 30, bw, 2);
     for (let i = 0; i < 10; i++) { const ch = (ui.nick || '')[i]; const cx = bx + 8 + i * 18;
-      if (ch) drawText(ctx, ch, cx, by + 7, C.yel, { scale: 3, shadow: '#3a0419' });
-      else { ctx.fillStyle = i === (ui.nick || '').length && Math.floor(time * 3) % 2 ? C.white : '#3c1765'; ctx.fillRect(cx, by + 26, 15, 3); } }
-    ui.nickBox = { x: bx, y: by + menuOY, w: bw, h: 34 };
-    drawText(ctx, UI.nickHint, W / 2, 96, '#9b8fb8', { align: 'center' });
-    if (lastTouch && document.activeElement !== nickInput) drawText(ctx, UI.tapType, W / 2, 108, Math.floor(time * 2) % 2 ? C.g3 : C.white, { align: 'center' });
-    drawItemsList(currentItems(), 128, { scale: 2, lh: 22 });
+      if (ch) drawText(ctx, ch, cx, by + 6, C.yel, { scale: 3, shadow: '#3a0419' });
+      else { ctx.fillStyle = i === (ui.nick || '').length && Math.floor(time * 3) % 2 ? C.white : '#3c1765'; ctx.fillRect(cx, by + 24, 15, 3); } }
+    // letter board
+    const cw = W >= 400 ? 27 : 26, ch = 20, gx = Math.round(W / 2 - cw * 5), gy = 80;
+    menuRects = [];
+    NICK_KEYS.forEach((k, i) => {
+      const col = i % 10, row = Math.floor(i / 10), x = gx + col * cw, y = gy + row * ch, sel = i === ui.sel;
+      const wide = k === 'DEL' || k === 'OK';
+      ctx.fillStyle = sel ? C.yel : (k === 'OK' ? '#1c5e1a' : k === 'DEL' ? '#5a1222' : '#2b1049'); ctx.fillRect(x + 1, y + 1, cw - 2, ch - 2);
+      ctx.fillStyle = sel ? '#fff6b0' : '#4a2a7a'; ctx.fillRect(x + 1, y + 1, cw - 2, 1);
+      const label = k === 'DEL' ? '←' : k;
+      drawText(ctx, label, x + cw / 2, y + 6, sel ? '#3a0419' : (wide ? C.white : '#e6defa'), { align: 'center' });
+      menuRects.push({ x: x, y: y, w: cw, h: ch, i });
+    });
+    const by2 = gy + 4 * ch + 10, selBack = ui.sel === NICK_KEYS.length;
+    const bl = UI.back, blw = textWidth(bl, 2);
+    drawText(ctx, bl, W / 2, by2, selBack ? C.yel : C.white, { align: 'center', scale: 2, shadow: '#3a0419' });
+    if (selBack) drawCursor(W / 2 - blw / 2 - 14, by2 + 4);
+    menuRects.push({ x: W / 2 - blw / 2 - 18, y: by2 - 2, w: blw + 36, h: 18, i: NICK_KEYS.length });
   } else if (ui.screen === 'ranking') {
     drawRankTable(44, 10, 14);
     drawItemsList(currentItems(), H - 26, { scale: 1, lh: 11, center: true });
@@ -1885,10 +1907,9 @@ canvas.addEventListener('pointerdown', e => {
   e.preventDefault();
   if (state === 'clear' && ui.tally && ui.tally.shown <= ui.tally.rows.length) { menuInput('ok'); return; }
   const pt = toCanvas(e), m = rectAt(pt); const items = currentItems();
-  if (state === 'menu' && ui.screen === 'nick' && !m) { focusNick(); return; }
   if (m && items[m.i] && !items[m.i].dis) { ui.sel = m.i; menuInput('ok'); }
 });
-canvas.addEventListener('click', () => { if (state === 'menu' && ui.screen === 'nick' && document.activeElement !== nickInput) focusNick(); });
+
 document.addEventListener('pointerdown', e => { if (!root.contains(e.target)) engaged = false; }, true);
 
 /* ---------- main loop ---------- */
@@ -1954,9 +1975,9 @@ if (touchPad) {
   touchPad.addEventListener('touchmove', e => { if (e.cancelable) e.preventDefault(); }, { passive: false });
   touchPad.addEventListener('touchend', e => { const b = e.target.closest('[data-act]'); if (e.cancelable) e.preventDefault(); if (b) b.click(); }, { passive: false });
 }
-root.addEventListener('selectstart', e => { if (e.target !== nickInput) e.preventDefault(); });
-root.addEventListener('contextmenu', e => { if (e.target !== nickInput) e.preventDefault(); });
-root.addEventListener('pointerdown', e => { if (e.target !== nickInput) { const sel = window.getSelection && window.getSelection(); if (sel && sel.rangeCount) sel.removeAllRanges(); } });
+root.addEventListener('selectstart', e => e.preventDefault());
+root.addEventListener('contextmenu', e => e.preventDefault());
+root.addEventListener('pointerdown', () => { const sel = window.getSelection && window.getSelection(); if (sel && sel.rangeCount) sel.removeAllRanges(); });
 // pixel labels on the touch buttons (same bitmap font as the game)
 root.querySelectorAll('[data-label]').forEach(btn => {
   const txt = btn.dataset.label, s = 2, c = document.createElement('canvas');
