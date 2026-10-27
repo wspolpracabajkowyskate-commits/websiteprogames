@@ -1,6 +1,8 @@
-/* The five supplied assets remain independent layers; no copy is baked into the CTA. */
+/* The five supplied assets remain independent layers; no copy is baked into the CTA.
+   The card carries a tiny blurred copy of the background so it never shows as an
+   empty dark box while the real layers are still downloading. */
 .games-promo{padding:56px max(24px,calc((100vw - var(--max,1440px))/2));background:#fbfbfa}
-.games-promo-card{position:relative;isolation:isolate;aspect-ratio:4.2;overflow:clip;border:1px solid #5e3188;border-radius:24px;background:#0a041b;box-shadow:none}
+.games-promo-card{position:relative;isolation:isolate;aspect-ratio:4.2;overflow:clip;border:1px solid #5e3188;border-radius:24px;background:#0a041b url(data:image/webp;base64,UklGRiIBAABXRUJQVlA4IBYBAACwBgCdASpAABUAPqVCnUmmI6MhM/mdUMAUiWQAs7PBe40VW0Ppjo5NkvjruhsU9ZVc66S4priRzYTIzdb4+AD++Q2/TSwWYil961pLaz/i2ba3ixcipDdKRb2mA5E8ftKGoAin7yvdCKaUNv/RKhxbfzQynu02lOXI39yViKHI6uuuYfwxuLncTXl5tgm/05e6r4fEmfLsFoit0WGM+s+bJ42XEKyWiWtqi/E6gRnAvH/ypP/i1yXP0M+4V8cXODiGLz8Zd7N4sMekcYNmmkPYcT7FO6HzJ2QzEU5JlCnJMoU5vGko0VRyLxeS3c6aG86W5BKKvtvJyShiYGA7Aco3ytlLomt1SMffBQJJSSQFqAlECAAAAA==) center/cover no-repeat;box-shadow:none}
 .games-promo-background,.games-promo-lightning{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .games-promo-lightning{opacity:.16;transform:scale(1.025);animation:games-lightning-strike 7.4s linear infinite}
 .games-promo-monster{position:absolute;width:36%;height:auto;max-width:none;right:6%;top:-24%;pointer-events:none;transform-origin:50% 80%;animation:games-float 3.6s ease-in-out infinite}
@@ -25,7 +27,7 @@
 }
 @media(max-width:700px){
  .games-promo{padding:40px 20px}
- .games-promo-card{aspect-ratio:1.12;border-radius:20px}
+ .games-promo-card{aspect-ratio:1.12;border-radius:20px;background-position:58% 40%;background-size:auto 118%}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
  .games-promo-content{position:absolute;inset:0;width:auto;margin:0}

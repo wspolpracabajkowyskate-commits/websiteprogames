@@ -7,6 +7,13 @@ const labels = {en:'PLAY',pl:'ZAGRAJ',es:'JUGAR',de:'SPIELEN',fr:'JOUER',el:'Î Î
 // link straight to the game page in the page's language (no redirect hop for visitors and Google)
 const gamesURL = lang => lang === 'pl' ? '/pl/gry/' : '/games/';
 const asset = name => '/assets/games-banner/' + name + '.webp';
+// The banner sits below the long product grid, so native lazy loading often starts it
+// too late and visitors scrolling down saw an empty card first. Start fetching the
+// layers a few screens ahead instead (still lazy for visitors who never scroll).
+const earlyLoad = "(function(){var s=document.currentScript.parentNode,i=s.querySelectorAll('img[loading=lazy]');"
+  + "function go(){i.forEach(function(m){m.loading='eager'})}"
+  + "if(!('IntersectionObserver'in window))return go();"
+  + "var o=new IntersectionObserver(function(e){if(e.some(function(x){return x.isIntersecting})){o.disconnect();go()}},{rootMargin:'3000px 0px'});o.observe(s)})()";
 function banner(lang) {
   return `\n    <section class="games-promo section-dark" aria-label="GAMES MONSTER" data-no-translate>
       <div class="games-promo-card" dir="ltr">
@@ -21,6 +28,7 @@ function banner(lang) {
           </a>
         </div>
       </div>
+      <script>${earlyLoad}</script>
     </section>\n`;
 }
 function walk(dir) {
