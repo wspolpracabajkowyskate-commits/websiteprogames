@@ -415,7 +415,7 @@ function buildLevel(idx) {
       case 'o': L.tokens.push({ x: px + 4, y: py + 4, w: 8, h: 8, got: false, ph: hash(c, r) * 6 }); break;
       case 'h': L.hearts.push({ x: px + 4, y: py + 4, w: 9, h: 8, got: false }); break;
       case 'K': L.checkpoints.push({ x: px + 2, y: py - 8, w: 12, h: 24, on: false, c, r }); break;
-      case 'F': L.finish = { x: px - 14, y: py + T - 56, w: 44, h: 56 }; break;
+      case 'F': L.finish = { x: px - 18, y: py + T - 90, w: 51, h: 90 }; break;
       case 'b': L.enemies.push(makeEnemy('bagger', px + 1, py + 2)); break;
       case 's': L.enemies.push(makeEnemy('sparky', px + 2, py + 2)); break;
       case 'g': L.enemies.push(makeEnemy('glover', px, py + 4)); break;
@@ -934,7 +934,7 @@ function updateBoss(dt) {
       if (B.t > 2.2) {
         B.state = 'gone'; shake = 0.6; flash = 0.4; sfx('smash');
         burst(B.x + B.w / 2, B.y + B.h / 2, 60, [C.h3, C.cyan, C.yel, C.mag, C.white], 260, 300, 3);
-        level.finish = { x: B.cx + 8 * T - 22, y: floorY - 56, w: 44, h: 56, appear: 0 };
+        level.finish = { x: B.cx + 8 * T - 26, y: floorY - 90, w: 51, h: 90, appear: 0 };
         for (let i = 0; i < 12; i++) level.tokens.push({ x: B.x + B.w / 2, y: B.y + 20, w: 8, h: 8, got: false, ph: i, vx: rnd(-140, 140), vy: rnd(-320, -160), loose: true });
         for (const e of level.enemies) if (e.alive) killEnemy(e, 'smash', 1);
         startMusic(level.def.theme);
@@ -1168,9 +1168,35 @@ function drawItems(t) {
   }
   if (level.finish) drawFinish(level.finish, t);
 }
+// the real PRO-GAMES MONSTER 3in1 cabinet as a pixel sprite (finish line of every stage)
+const MACHINE = new Image();
+MACHINE.src = '/games/assets/monster-3in1-machine.png';
+const SCREEN = new Image();
+SCREEN.src = '/games/assets/machine-screen.png';
+const LED_ROWS = [[2, [12, 17, 23, 30, 36]], [16, [7, 12, 17, 23, 29, 35]], [65, [10, 16, 21, 26, 31]]];
+const LED_COLS = [C.white, C.cyan, C.mag, C.yel];
 function drawFinish(f, t) {
   const x = Math.round(f.x - cam.x), y = Math.round(f.y - cam.y);
-  if (x > W + 60 || x < -60) return;
+  if (x > W + 70 || x < -70) return;
+  if (MACHINE.complete && MACHINE.naturalWidth) {
+    // pulsing floor glow + spotlight
+    ctx.globalAlpha = 0.16 + 0.08 * Math.sin(t * 4); ctx.fillStyle = C.g3;
+    ctx.beginPath(); ctx.ellipse(x + 25, y + 89, 34, 6, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.globalAlpha = 0.07; ctx.beginPath(); ctx.moveTo(x + 15, y - 30); ctx.lineTo(x + 36, y - 30); ctx.lineTo(x + 62, y + 90); ctx.lineTo(x - 11, y + 90); ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.drawImage(MACHINE, x, y);
+    // chasing LED lights
+    const step = Math.floor(t * 8);
+    for (const [ly, xs] of LED_ROWS) xs.forEach((lx, i) => { if ((i + step) % 3 === 0) { ctx.fillStyle = LED_COLS[(i + step) % 4]; ctx.fillRect(x + lx, y + ly, 2, 2); } });
+    // screen: the real MONSTER 3in1 attract animation (MONSTER, PUNCH, KICK, SMASH)
+    if (SCREEN.complete && SCREEN.naturalWidth) {
+      const fi = Math.floor(t * 2.5) % 25;
+      ctx.drawImage(SCREEN, fi * 12, 0, 12, 13, x + 14, y + 34, 12, 13);
+      ctx.globalAlpha = 0.18; ctx.fillStyle = C.cyan; ctx.fillRect(x + 14, y + 34 + (Math.floor(t * 20) % 13), 12, 1); ctx.globalAlpha = 1;
+    }
+    if (Math.floor(t * 3) % 2) drawText(ctx, '↓', x + 25, y - 18, C.g3, { align: 'center', scale: 2, outline: C.ink });
+    return;
+  }
   // glow
   ctx.globalAlpha = 0.18 + 0.1 * Math.sin(t * 4); ctx.fillStyle = C.g3; ctx.fillRect(x - 6, y - 6, 56, 68); ctx.globalAlpha = 1;
   // body
@@ -1683,7 +1709,7 @@ function drawMenuScreen() {
     } else {
       const lines = UI.goal, x0 = W >= 400 ? 30 : Math.round(W / 2 - 80);
       lines.forEach((l, i) => drawText(ctx, l, x0, 56 + i * 11, i === 0 || i === 3 ? C.yel : C.white));
-      if (W >= 400) withScreenCam(() => drawFinish({ x: W - 90, y: 76, w: 44, h: 56 }, time));
+      if (W >= 400) withScreenCam(() => drawFinish({ x: W - 92, y: 62, w: 51, h: 90 }, time));
     }
     const items = currentItems();
     drawItemsList(items, H - 22 - (items.length - 1) * 11, { scale: 1, lh: 11, center: true });
