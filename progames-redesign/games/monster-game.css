@@ -50,12 +50,15 @@
 /* reference to the real machine */
 .mg-machine{position:relative;margin:56px auto 0;width:var(--mg-w);display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center;padding:32px;
   background:#0d1116;box-shadow:0 0 0 4px #06041a,0 0 0 8px #6b3fa8,0 0 0 12px #06041a}
-.mg-machine-photo{display:block;background:#fff;padding:10px;box-shadow:0 0 0 4px #06041a,0 0 0 8px #e8283c}
+.mg-machine-photo{display:block;background:#fff;padding:10px}
 .mg-machine-photo img{display:block;width:100%;height:auto;aspect-ratio:580/850;object-fit:contain}
 .mg-machine h2{font:800 clamp(30px,4vw,54px)/.98 Manrope,sans-serif;letter-spacing:-.04em;margin:10px 0 12px;color:#fff}
 .mg-machine .kicker{margin:0;color:#9ba3ad}
 .mg-machine p:not(.kicker){color:#aab1b9;max-width:640px;line-height:1.6;margin:0}
 .mg-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.mg-footer{margin-top:60px;padding-top:30px}
+/* GAMES MONSTER logo under the machine tile */
+.mg-brand{position:relative;z-index:1;display:flex;justify-content:center;margin:48px auto 0;width:var(--mg-w)}
+.mg-brand img{display:block;width:min(440px,72%);height:auto;filter:drop-shadow(0 10px 30px rgba(139,237,54,.18))}
+.mg-footer{margin-top:44px;padding-top:30px}
 @media(max-width:900px){.mg-machine{grid-template-columns:1fr;gap:24px;padding:22px}.mg-machine-photo{width:170px}}
 @media(prefers-reduced-motion:reduce){.mg-page::before,.mg-page::after{animation:none}}
