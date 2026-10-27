@@ -40,11 +40,11 @@ for (const file of walk(root)) {
   html = html.replace(/(<div\b[^>]*class="mobile-nav"[^>]*>)/g,
     '$1<a class="games-nav-link" href="/games" data-no-translate>GAMES</a>');
   html = html.replace(/\s*<section class="games-promo section-dark"[\s\S]*?<\/section>\s*/g, '\n');
-  if (/<section\b[^>]*id="parts"/.test(html)) {
-    html = html.replace(/(<section\b[^>]*id="parts"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
+  if (/<section\b[^>]*id="machines"/.test(html)) {
+    html = html.replace(/(<section\b[^>]*id="machines"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
   }
   if (!html.includes('href="/games-promo.css?v=1"')) html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=1">\n</head>');
   fs.writeFileSync(file, html);
   count++;
 }
-console.log(`Games navigation published on ${count} pages; localized banners follow spare parts.`);
+console.log(`Games navigation published on ${count} pages; localized banners follow the product catalogue.`);
