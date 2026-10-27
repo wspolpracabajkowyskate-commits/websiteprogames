@@ -5,7 +5,7 @@
    Things: P start   o token   h heart   K checkpoint   F finish machine   1-9 hint sign
            b bagger  s sparky  g glover  M moving platform (horizontal)   V / W lift (vertical, opposite phase)
            Z boss (BIG BAG) */
-window.MONSTER_LEVELS = [
+(typeof window !== 'undefined' ? window : globalThis).MONSTER_LEVELS = [
   {
     key: 'arcade', theme: 0, par: 120,
     name: { en: 'NEON ARCADE', pl: 'NEONOWY SALON' },
@@ -345,3 +345,4 @@ window.MONSTER_LEVELS = [
     ]
   }
 ];
+if (typeof module !== 'undefined' && module.exports) module.exports = globalThis.MONSTER_LEVELS || window.MONSTER_LEVELS;
