@@ -6,7 +6,7 @@ import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "7"
+VER = "8"
 
 T = {
   'en': {
@@ -112,7 +112,7 @@ def page(lang):
     </section>
 
     <section class="mg-machine">
-      <img class="mg-machine-monster" src="/games/assets/monster-character.webp" alt="" width="631" height="640" loading="lazy" decoding="async">
+      <div class="mg-peek" aria-hidden="true"><img src="/games/assets/monster-character.webp" alt="" width="631" height="640" loading="lazy" decoding="async"></div>
       <a class="mg-machine-photo" href="{t['product']}"><img src="/assets/products/monster-3in1-red.webp" alt="MONSTER 3in1 – PRO-GAMES" width="580" height="850" loading="lazy" decoding="async"></a>
       <div>
         <p class="kicker">{esc(t['machine_k'])}</p>

@@ -48,15 +48,18 @@
 @media(max-width:420px){.mg-tb{width:58px;height:54px}.mg-tb-small{width:42px;height:42px}}
 
 /* reference to the real machine */
-.mg-machine{position:relative;margin:56px auto 0;width:var(--mg-w);display:grid;grid-template-columns:220px 1fr 210px;grid-template-areas:'photo text monster';gap:40px;align-items:start;padding:32px;
+.mg-machine{position:relative;margin:56px auto 0;width:var(--mg-w);display:grid;grid-template-columns:220px 1fr 230px;grid-template-areas:'photo text .';overflow:hidden;gap:40px;align-items:start;padding:32px;
   background:#0d1116;box-shadow:0 0 0 4px #06041a,0 0 0 8px #6b3fa8,0 0 0 12px #06041a}
 .mg-machine-photo{grid-area:photo;display:block;background:#fff;padding:10px;box-shadow:0 0 0 4px #06041a,0 0 0 8px #e8283c}
-.mg-machine>div{grid-area:text}
-/* the MONSTER next to the machine: gentle idle animation */
-.mg-machine-monster{grid-area:monster;align-self:center;justify-self:center;width:100%;max-width:210px;height:auto;transform-origin:50% 90%;
-  filter:drop-shadow(0 14px 22px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(139,237,54,.25));animation:mg-monster 3.2s ease-in-out infinite}
-@keyframes mg-monster{0%,100%{transform:translateY(0) rotate(-2deg) scale(1)}25%{transform:translateY(-8px) rotate(1deg) scale(1.02)}50%{transform:translateY(-3px) rotate(2deg) scale(1)}75%{transform:translateY(-10px) rotate(-1deg) scale(1.03)}}
+.mg-machine>div:not(.mg-peek){grid-area:text}
+.mg-machine>.mg-peek{grid-area:auto}
 .mg-machine-photo img{display:block;width:100%;height:auto;aspect-ratio:580/850;object-fit:contain}
+/* the MONSTER peeks in from behind the right edge of the tile */
+.mg-peek{position:absolute;top:0;right:0;bottom:0;width:300px;overflow:hidden;pointer-events:none;z-index:2}
+.mg-peek img{position:absolute;top:50%;right:-150px;width:400px;height:auto;margin-top:-210px;transform-origin:100% 60%;
+  filter:drop-shadow(-14px 16px 22px rgba(0,0,0,.6)) drop-shadow(0 0 22px rgba(139,237,54,.3));animation:mg-peek 4.2s ease-in-out infinite}
+@keyframes mg-peek{0%,100%{transform:rotate(-24deg) translateX(0)}18%{transform:rotate(-30deg) translateX(-26px)}30%{transform:rotate(-27deg) translateX(-20px)}
+  42%{transform:rotate(-31deg) translateX(-28px)}60%{transform:rotate(-22deg) translateX(6px)}80%{transform:rotate(-25deg) translateX(-4px)}}
 .mg-machine h2{font:800 clamp(30px,4vw,54px)/.98 Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 14px;color:#fff}
 .mg-machine .kicker{margin:2px 0 12px;color:#9ba3ad}
 .mg-machine p:not(.kicker){color:#aab1b9;max-width:640px;line-height:1.6;margin:0}
@@ -65,5 +68,5 @@
 .mg-brand{position:relative;z-index:1;display:flex;justify-content:center;margin:40px auto 0;padding-bottom:28px;width:var(--mg-w)}
 .mg-brand img{display:block;width:min(275px,50%);height:auto;filter:drop-shadow(0 10px 30px rgba(139,237,54,.18))}
 .mg-footer{margin-top:0;padding-top:24px}
-@media(max-width:900px){.mg-machine{grid-template-columns:1fr 1fr;grid-template-areas:'photo monster' 'text text';gap:22px 18px;padding:22px}.mg-machine-photo{width:100%;max-width:200px}.mg-machine-monster{max-width:180px}}
-@media(prefers-reduced-motion:reduce){.mg-page::before,.mg-page::after,.mg-machine-monster{animation:none}}
+@media(max-width:900px){.mg-machine{grid-template-columns:1fr 1fr;grid-template-areas:'photo .' 'text text';gap:22px 18px;padding:22px}.mg-machine-photo{width:100%;max-width:200px}.mg-peek{bottom:auto;height:min(78vw,340px);width:50%}.mg-peek img{width:min(76vw,300px);right:-34%;margin-top:calc(min(76vw,300px) * -.55)}}
+@media(prefers-reduced-motion:reduce){.mg-page::before,.mg-page::after,.mg-peek img{animation:none}}
