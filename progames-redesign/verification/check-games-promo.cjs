@@ -8,7 +8,7 @@ for(const [lang,label] of Object.entries(labels)){
  assert.equal(d.querySelector('.games-promo-play span').textContent,label,lang);
  for(const selector of ['.games-promo-play','.desktop-nav .games-nav-link','.mobile-nav .games-nav-link']){
   assert.equal(d.querySelectorAll(selector).length,1,lang+selector);
-  assert.equal(d.querySelector(selector).getAttribute('href'),'/games');
+  assert.equal(d.querySelector(selector).getAttribute('href'),lang==='pl'?'/pl/gry/':'/games/',lang+selector);
  }
  for(const image of d.querySelectorAll('.games-promo img'))assert(fs.existsSync('.'+image.getAttribute('src')));
 }

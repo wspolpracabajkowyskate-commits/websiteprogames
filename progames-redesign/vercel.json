@@ -6,27 +6,27 @@
     {
       "source": "/pl/games/",
       "destination": "/pl/gry/",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/pl/games",
       "destination": "/pl/gry/",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/pl/gry",
       "destination": "/pl/gry/",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/gry",
       "destination": "/pl/gry/",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/games",
       "destination": "/games/",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/index.html",

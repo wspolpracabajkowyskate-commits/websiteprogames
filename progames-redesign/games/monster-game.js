@@ -1524,11 +1524,21 @@ function newGame(idx) { run = { score: 0, lives: 3, tokens: 0 }; beginOnline(run
 
 /* nickname: arcade-style letter board (tap / click / arrows) + typing on a physical keyboard */
 const NICK_RE = /[^A-Z0-9ĄĆĘŁŃÓŚŹŻ_\-. ]/g;
-const NICK_KEYS = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_'].concat(['DEL', 'OK']);
+/* keys laid out like a normal (EU QWERTY) keyboard: ← where backspace is, OK where enter is.
+   x / w are in key widths, rows are staggered like on a real keyboard */
+const NICK_LAYOUT = [
+  { x: 0, keys: [...'1234567890', 'DEL'] },
+  { x: 0.5, keys: [...'QWERTYUIOP'] },
+  { x: 0.75, keys: [...'ASDFGHJKL', 'OK'] },
+  { x: 1.25, keys: [...'ZXCVBNM-_'] }
+];
+const NICK_POS = [];
+NICK_LAYOUT.forEach((r, row) => { let x = r.x; r.keys.forEach(k => { const w = k === 'OK' ? 1.25 : 1; NICK_POS.push({ k, row, x, w }); x += w; }); });
+const NICK_KEYS = NICK_POS.map(p => p.k), NICK_COLS = 11;
 const cleanNick = v => String(v || '').toUpperCase().replace(NICK_RE, '').replace(/^ +/, '').slice(0, 10);
 function openNick(next) {
   ui.nickNext = next || null; ui.nickFrom = ui.screen === 'options' ? 'options' : 'main';
-  ui.nick = save.nick || ''; ui.screen = 'nick'; ui.sel = 0; sfx('ok');
+  ui.nick = save.nick || ''; ui.screen = 'nick'; ui.sel = NICK_KEYS.indexOf('Q'); sfx('ok');
 }
 function nickType(ch) { const v = cleanNick((ui.nick || '') + ch); if (v !== ui.nick) { ui.nick = v; sfx('tick'); } else sfx('back'); }
 function nickDel() { if (ui.nick) { ui.nick = ui.nick.slice(0, -1); sfx('back'); } }
@@ -1546,11 +1556,15 @@ function nickPress(i) {
   if (k === 'DEL') nickDel(); else if (k === 'OK') confirmNick(); else nickType(k);
 }
 function nickNav(k) {
-  const n = NICK_KEYS.length, sel = ui.sel;
-  if (k === 'left') ui.sel = sel === n ? n - 1 : (sel + n - 1) % n;
-  else if (k === 'right') ui.sel = sel === n ? 0 : (sel + 1) % n;
-  else if (k === 'up') ui.sel = sel === n ? n - 5 : sel < 10 ? n : sel - 10;
-  else if (k === 'down') ui.sel = sel === n ? 0 : sel + 10 >= n ? n : sel + 10;
+  const n = NICK_KEYS.length, sel = ui.sel, rows = NICK_LAYOUT.length;
+  const cur = NICK_POS[sel], inRow = r => NICK_POS.map((p, i) => ({ ...p, i })).filter(p => p.row === r);
+  // the key in row r that sits closest under / above the centre cx
+  const nearest = (r, cx) => inRow(r).reduce((a, p) => Math.abs(p.x + p.w / 2 - cx) < Math.abs(a.x + a.w / 2 - cx) ? p : a).i;
+  if (k === 'left' || k === 'right') {
+    if (sel === n) ui.sel = k === 'left' ? n - 1 : 0;
+    else { const r = inRow(cur.row), j = r.findIndex(p => p.i === sel); ui.sel = r[(j + (k === 'left' ? r.length - 1 : 1)) % r.length].i; }
+  } else if (k === 'up') ui.sel = sel === n ? nearest(rows - 1, NICK_COLS / 2) : cur.row === 0 ? n : nearest(cur.row - 1, cur.x + cur.w / 2);
+  else if (k === 'down') ui.sel = sel === n ? nearest(0, NICK_COLS / 2) : cur.row === rows - 1 ? n : nearest(cur.row + 1, cur.x + cur.w / 2);
   else if (k === 'ok') return nickPress(sel);
   else if (k === 'back') return ui.nick ? nickDel() : cancelNick();
   if (ui.sel !== sel) sfx('move');
@@ -1841,16 +1855,16 @@ function drawMenuScreen() {
       if (ch) drawText(ctx, ch, cx, by + 6, C.yel, { scale: 3, shadow: '#3a0419' });
       else { ctx.fillStyle = i === (ui.nick || '').length && Math.floor(time * 3) % 2 ? C.white : '#3c1765'; ctx.fillRect(cx, by + 24, 15, 3); } }
     // letter board
-    const cw = W >= 400 ? 27 : 26, ch = 20, gx = Math.round(W / 2 - cw * 5), gy = 80;
+    const cw = W >= 400 ? 27 : 25, ch = 20, gx = Math.round(W / 2 - cw * NICK_COLS / 2), gy = 80;
     menuRects = [];
-    NICK_KEYS.forEach((k, i) => {
-      const col = i % 10, row = Math.floor(i / 10), x = gx + col * cw, y = gy + row * ch, sel = i === ui.sel;
+    NICK_POS.forEach((p, i) => {
+      const k = p.k, x = Math.round(gx + p.x * cw), y = gy + p.row * ch, kw = Math.round(p.w * cw), sel = i === ui.sel;
       const wide = k === 'DEL' || k === 'OK';
-      ctx.fillStyle = sel ? C.yel : (k === 'OK' ? '#1c5e1a' : k === 'DEL' ? '#5a1222' : '#2b1049'); ctx.fillRect(x + 1, y + 1, cw - 2, ch - 2);
-      ctx.fillStyle = sel ? '#fff6b0' : '#4a2a7a'; ctx.fillRect(x + 1, y + 1, cw - 2, 1);
+      ctx.fillStyle = sel ? C.yel : (k === 'OK' ? '#1c5e1a' : k === 'DEL' ? '#5a1222' : '#2b1049'); ctx.fillRect(x + 1, y + 1, kw - 2, ch - 2);
+      ctx.fillStyle = sel ? '#fff6b0' : '#4a2a7a'; ctx.fillRect(x + 1, y + 1, kw - 2, 1);
       const label = k === 'DEL' ? '←' : k;
-      drawText(ctx, label, x + cw / 2, y + 6, sel ? '#3a0419' : (wide ? C.white : '#e6defa'), { align: 'center' });
-      menuRects.push({ x: x, y: y, w: cw, h: ch, i });
+      drawText(ctx, label, x + kw / 2, y + 6, sel ? '#3a0419' : (wide ? C.white : '#e6defa'), { align: 'center' });
+      menuRects.push({ x: x, y: y, w: kw, h: ch, i });
     });
     const by2 = gy + 4 * ch + 10, selBack = ui.sel === NICK_KEYS.length;
     const bl = UI.back, blw = textWidth(bl, 2);
