@@ -1,6 +1,6 @@
 /* The five supplied assets remain independent layers; no copy is baked into the CTA. */
-.games-promo{padding:16px max(24px,calc((100vw - var(--max,1440px))/2)) 0;background:#f3f4f5}
-.games-promo-card{position:relative;isolation:isolate;aspect-ratio:4.2;overflow:clip;border:1px solid #5e3188;border-radius:24px;background:#0a041b;box-shadow:0 24px 64px #0005}
+.games-promo{padding:56px max(24px,calc((100vw - var(--max,1440px))/2));background:#fbfbfa}
+.games-promo-card{position:relative;isolation:isolate;aspect-ratio:4.2;overflow:clip;border:1px solid #5e3188;border-radius:24px;background:#0a041b;box-shadow:none}
 .games-promo-background,.games-promo-lightning{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .games-promo-lightning{opacity:.16;transform:scale(1.025);animation:games-lightning-strike 7.4s linear infinite}
 .games-promo-monster{position:absolute;width:36%;height:auto;max-width:none;right:6%;top:-24%;pointer-events:none;transform-origin:50% 80%;animation:games-float 3.6s ease-in-out infinite}
@@ -24,7 +24,7 @@
  82%{opacity:.3;filter:brightness(1);clip-path:inset(0)}
 }
 @media(max-width:700px){
- .games-promo{padding:24px 20px 0}
+ .games-promo{padding:40px 20px}
  .games-promo-card{aspect-ratio:1.12;border-radius:20px}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
@@ -41,14 +41,16 @@
 }
 
 /* Keep the promotion close to the catalogue it follows. */
-.machines-light:has(+ .games-promo){padding-bottom:24px}
+.machines-light:has(+ .games-promo){padding-bottom:0}
+.machines-light:has(+ .games-promo) > .seo-context-links:last-child{margin-bottom:0}
 
 /* Remove the double section gap and give the secondary B2B link room. */
-.games-promo + .intro.section{padding-top:48px}
+.games-promo + .intro.section{padding-top:0;background:#fbfbfa}
+.games-promo + .intro.section > .section-head > .kicker{margin-top:0}
 .business-head > .btn + p:not(.kicker){margin:24px auto 35px;max-width:640px;font-size:16px;line-height:1.55}
 .business-head > .btn + p a{display:inline-block;text-underline-offset:4px}
 .business-head > .btn + p a:hover{text-decoration:underline}
 @media(max-width:700px){
- .games-promo + .intro.section{padding-top:36px}
+ .games-promo + .intro.section{padding-top:0}
  .business-head > .btn + p:not(.kicker){margin-top:22px;font-size:15px;padding:0 16px}
 }
