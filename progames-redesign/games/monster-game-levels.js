@@ -712,7 +712,7 @@
   },
   {
     key: 'final', theme: 9, par: 170, boss: true, bossName: 'MEGA BAG', bossHp: 12,
-    name: { en: 'FINAL ROUND', pl: 'OSTATNIA RUNDA' },
+    name: { en: 'MONSTER STORM', pl: 'BURZA MONSTERA' },
     chunks: [
       [
         '............................',

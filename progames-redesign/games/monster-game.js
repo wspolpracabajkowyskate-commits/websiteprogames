@@ -60,7 +60,7 @@ const STR = {
       J: ['ICE IS SLIPPERY - BRAKE EARLY!', 'ICE IS SLIPPERY - BRAKE EARLY!'],
       L: ['WATCH OUT FOR FALLING ICICLES!', 'WATCH OUT FOR FALLING ICICLES!'],
       O: ['LAVA BURNS! FIREBALLS JUMP OUT', 'LAVA BURNS! FIREBALLS JUMP OUT'],
-      Q: ['LAST ROUND: MEGA BAG IS WAITING!', 'LAST ROUND: MEGA BAG IS WAITING!']
+      Q: ['FINAL STAGE: MEGA BAG! WATCH THE BOLTS', 'FINAL STAGE: MEGA BAG! WATCH THE BOLTS']
     },
     pops: { rage: 'MONSTER RAGE!', save: 'SAVED!', heart: '+HEART', life: '1UP!', ko: 'K.O.!', boss: 'BIG BAG!', ready: 'READY?', go: 'GO!' }
   },
@@ -85,7 +85,7 @@ const STR = {
       J: ['LÓD JEST ŚLISKI - HAMUJ WCZEŚNIEJ!', 'LÓD JEST ŚLISKI - HAMUJ WCZEŚNIEJ!'],
       L: ['UWAŻAJ NA SPADAJĄCE SOPLE!', 'UWAŻAJ NA SPADAJĄCE SOPLE!'],
       O: ['LAWA PARZY! UWAGA NA KULE OGNIA', 'LAWA PARZY! UWAGA NA KULE OGNIA'],
-      Q: ['OSTATNIA RUNDA: CZEKA MEGA BAG!', 'OSTATNIA RUNDA: CZEKA MEGA BAG!']
+      Q: ['FINAŁ: CZEKA MEGA BAG! UWAGA NA PIORUNY', 'FINAŁ: CZEKA MEGA BAG! UWAGA NA PIORUNY']
     },
     pops: { rage: 'SZAŁ MONSTERA!', save: 'ZAPIS!', heart: '+SERCE', life: '+ŻYCIE!', ko: 'K.O.!', boss: 'BIG BAG!', ready: 'GOTOWY?', go: 'START!' }
   }
@@ -182,8 +182,8 @@ const THEMES = [
   { sky: ['#06122a', '#1b4a7a'], far: '#14304f', far2: '#1a3d60', base: '#2a5d8a', lite: '#7cc4ee', dark: '#163a5c', edge: '#ffffff', edge2: '#63fafe', bolt: '#c8f6ff', bolt2: '#8bed36', ice: true, snow: true },
   // 8 volcano
   { sky: ['#140303', '#5a1408'], far: '#2a0806', far2: '#3a0e08', base: '#3a1a14', lite: '#6e3020', dark: '#1e0a08', edge: '#ff8a1e', edge2: '#ffe14a', bolt: '#ffe14a', bolt2: '#ff8a1e', lava: true },
-  // 9 final round – golden arena
-  { sky: ['#0a0418', '#3a1a05'], far: '#1e0c20', far2: '#2a1030', base: '#3a2a0e', lite: '#c8871e', dark: '#1a1006', edge: '#ffe14a', edge2: '#fc567e', bolt: '#ffe14a', bolt2: '#fc567e', arena: true, gold: true }
+  // 9 final stage – MONSTER storm: black and green, lightning everywhere
+  { sky: ['#000000', '#03140a'], far: '#04100a', far2: '#071a0e', base: '#0b150e', lite: '#1c4a26', dark: '#020604', edge: '#8bed36', edge2: '#c4ff7a', bolt: '#8bed36', bolt2: '#ffffff', arena: true, storm: true }
 ];
 
 /* ---------- monster sprite (procedural pixel art, faces right) ---------- */
@@ -327,7 +327,8 @@ const SFX = {
   crack() { noise(0.08, 0.12, 5000); tone(1800, 0.05, 'triangle', 0.05, -400); },
   shatter() { noise(0.2, 0.2, 6000); tone(2200, 0.08, 'triangle', 0.06, -1200); },
   fire() { noise(0.25, 0.14, 1400); tone(160, 0.2, 'sawtooth', 0.06, 120); },
-  boo() { tone(330, 0.35, 'triangle', 0.08, -120); tone(392, 0.35, 'triangle', 0.06, -150, 0.05); }
+  boo() { tone(330, 0.35, 'triangle', 0.08, -120); tone(392, 0.35, 'triangle', 0.06, -150, 0.05); },
+  thunder() { noise(0.6, 0.45, 1600); tone(60, 0.5, 'sawtooth', 0.2, -20); }
 };
 function sfx(name) { if (!muted && AC) try { SFX[name](); } catch (e) { /* ignore */ } }
 const midi = n => 440 * Math.pow(2, (n - 69) / 12);
@@ -458,7 +459,7 @@ function buildLevel(idx) {
   const L = {
     idx, def, theme: THEMES[def.theme], cols: x0, w: x0 * T, h: ROWS * T, grid,
     tokens: [], hearts: [], hints: [], checkpoints: [], plats: [], enemies: [], doors: [], finish: null, boss: null,
-    icicles: [], fires: [], shots: [], crumble: {}, G: def.gravity || 1,
+    icicles: [], fires: [], shots: [], crumble: {}, G: def.gravity || 1, strikes: [], stormT: 3,
     start: { x: 2 * T, y: 11 * T }, totalTokens: 0
   };
   for (let r = 0; r < ROWS; r++) for (let c = 0; c < x0; c++) {
@@ -670,7 +671,7 @@ function hitBoss(power, kind) {
   if (B.hp <= 0) {
     B.state = 'ko'; B.t = 0; addScore(5000); pop(B.x + B.w / 2, B.y - 20, STR.pops.ko, C.mag, 4, 2); sfx('clear'); stopMusic();
     // the fight is over: shockwaves vanish and nothing can hurt the monster any more
-    waves = []; B.extra = []; level.shots = [];
+    waves = []; B.extra = []; level.shots = []; level.strikes = [];
     for (const e of level.enemies) if (e.alive && e.spawned) killEnemy(e, 'smash', 1);
     player.inv = Math.max(player.inv, 3);
   }
@@ -702,7 +703,7 @@ function respawn() {
   const np = newPlayer(cp.x, cp.y);
   np.check = cp; np.hitThisStage = true; np.inv = 1.5; np.rage = Math.floor(p.rage / 2);
   player = np;
-  balls = []; waves = []; level.shots = [];
+  balls = []; waves = []; level.shots = []; level.strikes = []; level.stormT = 3;
   if (level.boss && level.boss.state !== 'gone' && level.boss.state !== 'ko' && level.boss.state !== 'wait') resetBossArena();
   else if (level.boss && (level.boss.state === 'gone' || level.boss.state === 'ko')) openArena();
   state = 'play'; startMusic(level.def.theme);
@@ -1006,12 +1007,20 @@ function updateBoss(dt) {
   // delayed shockwaves (game time, so nothing spawns while the game is paused)
   for (const x of B.extra) { x.t -= dt; if (x.t <= 0 && B.state !== 'ko') { waves.push({ x: x.x, y: floorY - 12, w: 12, h: 12, dir: x.dir, speed: x.speed, life: 3 }); } }
   B.extra = B.extra.filter(x => x.t > 0);
+  if (level.theme.storm && (B.state === 'swing' || B.state === 'tele' || B.state === 'dazed' || B.state === 'rise')) {
+    B.boltT = (B.boltT === undefined ? 3 : B.boltT) - dt;
+    if (B.boltT <= 0) {
+      const n = phase3 ? 3 : phase2 ? 2 : 1;
+      for (let i = 0; i < n; i++) addStrike(i === 0 ? p.x + p.w / 2 : clamp(B.cx + rnd(-11, 11) * T, B.cx - 13 * T, B.cx + 13 * T));
+      B.boltT = phase3 ? 2.6 : phase2 ? 3.4 : 4.6;
+    }
+  }
   switch (B.state) {
     case 'wait':
       B.y = -B.h - 10;
       if (p.x > B.cx - 13 * T) {
         for (const d of level.doors) setTile(d.c, d.r, '#');
-        B.state = 'intro'; B.t = 0; sfx('thud'); shake = 0.4; pop(B.cx, 4 * T, B.name + '!', B.mega ? C.yel : C.mag, 3, 1.6);
+        B.state = 'intro'; B.t = 0; sfx('thud'); shake = 0.4; pop(B.cx, 4 * T, B.name + '!', B.mega ? C.g3 : C.mag, 3, 1.6);
       }
       break;
     case 'intro':
@@ -1141,6 +1150,26 @@ function updateHazards(dt) {
     else if (!p.dying && overlap(p, s)) { s.life = 0; hurtPlayer(s.x + 2); }
   }
   level.shots = level.shots.filter(s => s.life > 0 && s.y < level.h + 10);
+  // final stage storm: lightning aimed near the monster (marked on the ground first)
+  if (level.theme.storm && state === 'play') {
+    const B = level.boss, fight = B && B.state !== 'wait' && B.state !== 'gone';
+    if (!fight && !(B && B.state === 'gone')) {
+      level.stormT -= dt;
+      if (level.stormT <= 0) { level.stormT = rnd(3.2, 5); addStrike(p.x + p.w / 2 + rnd(-28, 28)); }
+    }
+  }
+  for (const b of level.strikes) {
+    b.t -= dt;
+    if (b.s === 'warn' && b.t <= 0) { b.s = 'hit'; b.t = 0.28; sfx('thunder'); shake = Math.max(shake, 0.3); flash = Math.max(flash, 0.12); burst(b.x, b.y, 16, [C.g3, C.white, C.g4], 180, 400, 2); }
+    else if (b.s === 'hit' && !p.dying && Math.abs(p.x + p.w / 2 - b.x) < 12 && p.y + p.h <= b.y + 4) hurtPlayer(b.x); // a roof protects
+  }
+  level.strikes = level.strikes.filter(b => b.t > 0 || b.s === 'warn');
+}
+// a lightning bolt hits the first solid ground below the sky at column x
+function addStrike(x) {
+  const c = Math.floor(x / T); let r = 0;
+  while (r < ROWS && !isSolid(tile(c, r)) && tile(c, r) !== '=') r++;
+  level.strikes.push({ x, y: r * T, top: 0, t: 0.9, s: 'warn' });
 }
 function shatterIcicle(ic) {
   ic.state = 'gone'; ic.t = 3; sfx('shatter');
@@ -1232,6 +1261,7 @@ function drawBackground(th, t) {
   if (th.ice) return drawIceBg(th, t);
   if (th.halloween) return drawHalloweenBg(th, t);
   if (th.lava) return drawVolcanoBg(th, t);
+  if (th.storm) return drawStormBg(th, t);
   // big lightning (sky)
   const boltCycle = (t * 0.35) % 1;
   if (boltCycle < 0.06 || (th.rain && (t * 0.6) % 1 < 0.05)) {
@@ -1427,6 +1457,59 @@ function drawVolcanoBg(th, t) {
   }
   ctx.globalAlpha = 1;
 }
+// final stage: a black night lit by green lightning over a dark city
+function drawStormBg(th, t) {
+  // green storm clouds
+  for (let i = 0; i < 5; i++) {
+    const cx = wrap(hash(i, 31) * W * 2 + t * (5 + i * 2) - cam.x * 0.04, W + 160) - 80, cy = 14 + i * 13 - cam.y * 0.05;
+    ctx.fillStyle = i % 2 ? 'rgba(20,60,30,.55)' : 'rgba(10,36,18,.7)'; ctx.fillRect(cx | 0, cy | 0, 90, 8); ctx.fillRect((cx + 14) | 0, (cy - 5) | 0, 56, 5); ctx.fillRect((cx + 30) | 0, (cy + 8) | 0, 44, 4);
+  }
+  // big branching lightning, up to three at a time
+  for (let n = 0; n < 3; n++) {
+    const sp = 0.5 + n * 0.17, cyc = (t * sp + n * 0.37) % 1;
+    if (cyc > 0.09) continue;
+    const seed = Math.floor(t * sp + n * 0.37) * 7 + n, bx0 = hash(seed, 9) * W;
+    if (cyc < 0.03) { ctx.fillStyle = 'rgba(139,237,54,.10)'; ctx.fillRect(0, 0, W, H); }
+    for (const [col, lw] of [[th.bolt, 3], [C.white, 1]]) {
+      ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath();
+      let x = bx0, y = 0; ctx.moveTo(x, y);
+      for (let i = 0; i < 10; i++) {
+        x += (hash(seed, i + 20) - 0.5) * 34; y += 15; ctx.lineTo(x, y);
+        if (i === 3 || i === 6) { let x2 = x, y2 = y; for (let k = 0; k < 3; k++) { x2 += (hash(seed, i * 5 + k) - 0.3) * 26; y2 += 12; ctx.lineTo(x2, y2); } ctx.moveTo(x, y); }
+      }
+      ctx.stroke();
+    }
+    ctx.lineWidth = 1;
+  }
+  // far: dark skyline with green windows
+  const ox = cam.x * 0.2, b1 = H - 40 - cam.y * 0.1;
+  for (let k = Math.floor(ox / 34) - 1; k < Math.floor((ox + W) / 34) + 2; k++) {
+    const h = 34 + hash(k, 7) * 74, w = 22 + hash(k, 8) * 12, x = k * 34 - ox;
+    ctx.fillStyle = th.far; ctx.fillRect(x | 0, (b1 - h) | 0, w | 0, h + 60);
+    ctx.fillStyle = th.lite; ctx.globalAlpha = 0.5; ctx.fillRect(x | 0, (b1 - h) | 0, w | 0, 1); ctx.globalAlpha = 1;
+    for (let j = 0; j < 8; j++) if (hash(k, 30 + j) > 0.7) { ctx.fillStyle = (Math.floor(t * 0.7) + j + k) % 7 ? 'rgba(139,237,54,.3)' : 'rgba(196,255,122,.75)'; ctx.fillRect((x + 4 + (j % 3) * 6) | 0, (b1 - h + 10 + ((j / 3) | 0) * 10) | 0, 2, 3); }
+  }
+  // mid: towers with green neon signs and lightning rods
+  const ox2 = cam.x * 0.45, b2 = H - 18 - cam.y * 0.2;
+  for (let k = Math.floor(ox2 / 60) - 1; k < Math.floor((ox2 + W) / 60) + 2; k++) {
+    const x = k * 60 - ox2, h = 18 + hash(k, 17) * 38;
+    ctx.fillStyle = th.far2; ctx.fillRect(x | 0, (b2 - h) | 0, 44, h + 40);
+    ctx.fillRect((x + 21) | 0, (b2 - h - 16) | 0, 2, 16);
+    if ((t * 1.3 + k * 0.61) % 4 < 0.12) { ctx.strokeStyle = C.g4; ctx.beginPath(); ctx.moveTo((x + 22) | 0, (b2 - h - 16) | 0); ctx.lineTo((x + 16) | 0, (b2 - h - 40) | 0); ctx.lineTo((x + 26) | 0, (b2 - h - 60) | 0); ctx.stroke(); }
+    if (hash(k, 19) > 0.5) {
+      ctx.fillStyle = C.g3; ctx.globalAlpha = 0.25 + 0.2 * Math.sin(t * 3 + k); ctx.fillRect((x + 8) | 0, (b2 - h + 6) | 0, 28, 8); ctx.globalAlpha = 1;
+      drawText(ctx, ['POW', 'KO', 'BAM', 'WIN', 'HIT', '3in1'][((k % 6) + 6) % 6], x + 22, b2 - h + 7, '#021006', { align: 'center' });
+    }
+  }
+  // green spotlights
+  ctx.globalAlpha = 0.06; ctx.fillStyle = C.g3;
+  for (let i = 0; i < 3; i++) { const sx = W * (0.2 + i * 0.3) + Math.sin(t * 0.8 + i) * 40; ctx.beginPath(); ctx.moveTo(sx - 5, 0); ctx.lineTo(sx + 5, 0); ctx.lineTo(sx + 46, H); ctx.lineTo(sx - 46, H); ctx.fill(); }
+  ctx.globalAlpha = 1;
+  // green-lit rain
+  ctx.strokeStyle = 'rgba(139,237,54,.18)'; ctx.beginPath();
+  for (let i = 0; i < 60; i++) { const x = wrap(hash(i, 40) * W + t * 50 - cam.x * 0.6, W), y = wrap(hash(i, 41) * H + t * 360, H); ctx.moveTo(x, y); ctx.lineTo(x - 3, y + 8); }
+  ctx.stroke();
+}
 function drawTiles(th, t) {
   const c0 = Math.floor(cam.x / T), c1 = Math.ceil((cam.x + W) / T), r0 = Math.floor(cam.y / T), r1 = Math.ceil((cam.y + H) / T);
   for (let r = r0; r <= r1; r++) for (let c = c0; c <= c1; c++) {
@@ -1447,9 +1530,10 @@ function drawTiles(th, t) {
       if (!isSolid(tile(c + 1, r))) { ctx.fillStyle = th.dark; ctx.fillRect(x + T - 1, y, 1, T); }
     } else if (ch === 'I') {
       // ice block
-      ctx.fillStyle = '#4aa8d8'; ctx.fillRect(x, y, T, T); ctx.fillStyle = '#9be4ff'; ctx.fillRect(x + 1, y + 1, T - 2, T - 2);
-      ctx.fillStyle = '#c8f2ff'; ctx.fillRect(x + 2, y + 2, 5, 1); ctx.fillRect(x + 2, y + 3, 1, 3); ctx.fillRect(x + 9, y + 9, 1, 3); ctx.fillRect(x + 10, y + 8, 3, 1);
-      ctx.fillStyle = '#6cc6ee'; ctx.fillRect(x + 1, y + T - 3, T - 2, 2);
+      const gs = th.storm; // in the storm stage the ice is dark green glass
+      ctx.fillStyle = gs ? '#0e3a1a' : '#4aa8d8'; ctx.fillRect(x, y, T, T); ctx.fillStyle = gs ? '#1f6a34' : '#9be4ff'; ctx.fillRect(x + 1, y + 1, T - 2, T - 2);
+      ctx.fillStyle = gs ? '#8bed36' : '#c8f2ff'; ctx.fillRect(x + 2, y + 2, 5, 1); ctx.fillRect(x + 2, y + 3, 1, 3); ctx.fillRect(x + 9, y + 9, 1, 3); ctx.fillRect(x + 10, y + 8, 3, 1);
+      ctx.fillStyle = gs ? '#164d26' : '#6cc6ee'; ctx.fillRect(x + 1, y + T - 3, T - 2, 2);
       if (!isSolid(tile(c, r - 1))) { ctx.fillStyle = C.white; ctx.fillRect(x, y, T, 1); if ((Math.floor(t * 2) + c) % 7 === 0) { ctx.fillRect(x + 5, y + 2, 1, 1); ctx.fillRect(x + 4, y + 3, 3, 1); ctx.fillRect(x + 5, y + 4, 1, 1); } }
     } else if (ch === 'c') {
       // crumbling block (shakes before it falls)
@@ -1684,13 +1768,31 @@ function drawEnemy(e, t) {
   ctx.restore();
 }
 function drawHazards(t) {
+  for (const b of level.strikes) {
+    const x = Math.round(b.x - cam.x), gy = Math.round(b.y - cam.y);
+    if (x < -30 || x > W + 30) continue;
+    if (b.s === 'warn') {
+      const blink = Math.floor(t * 14) % 2;
+      ctx.globalAlpha = 0.14; ctx.fillStyle = C.g3; ctx.fillRect(x - 10, 0, 20, gy); ctx.globalAlpha = 1;
+      ctx.fillStyle = blink ? C.g3 : C.white; ctx.fillRect(x - 10, gy - 2, 20, 2); ctx.fillRect(x - 1, gy - 12, 2, 7); ctx.fillRect(x - 1, gy - 4, 2, 2);
+    } else {
+      ctx.globalAlpha = 0.4; ctx.fillStyle = C.g4; ctx.fillRect(x - 12, 0, 24, gy); ctx.globalAlpha = 1;
+      for (const [col, lw] of [[C.g3, 5], [C.white, 2]]) {
+        ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); let bx = x, by = 0; ctx.moveTo(bx, by);
+        while (by < gy) { by = Math.min(gy, by + 14); bx = x + (hash(Math.floor(t * 30), by) - 0.5) * 16; ctx.lineTo(bx, by); }
+        ctx.stroke();
+      }
+      ctx.lineWidth = 1;
+    }
+  }
   for (const ic of level.icicles) {
     if (ic.state === 'gone') continue;
     let x = Math.round(ic.x - cam.x), y = Math.round(ic.y - cam.y);
     if (x < -20 || x > W + 20) continue;
     if (ic.state === 'shake') x += Math.round(Math.sin(t * 80));
     const len = ic.state === 'grow' ? Math.round(ic.h * (1 - ic.t / 0.8)) : ic.h;
-    for (let i = 0; i < len; i++) { const w = Math.max(1, Math.round(8 * (1 - i / ic.h))); ctx.fillStyle = i < 3 ? '#e6f8ff' : '#9be4ff'; ctx.fillRect(x + 4 - Math.ceil(w / 2), y + i, w, 1); }
+    const gs = level.theme.storm;
+    for (let i = 0; i < len; i++) { const w = Math.max(1, Math.round(8 * (1 - i / ic.h))); ctx.fillStyle = i < 3 ? (gs ? '#c4ff7a' : '#e6f8ff') : (gs ? '#5ac83a' : '#9be4ff'); ctx.fillRect(x + 4 - Math.ceil(w / 2), y + i, w, 1); }
     ctx.fillStyle = C.white; ctx.fillRect(x + 2, y, 1, Math.min(len, 6));
   }
   for (const f of level.fires) {
@@ -1717,17 +1819,25 @@ function drawBoss(t) {
   // chain
   if (B.state !== 'dazed' && B.state !== 'ko') { ctx.fillStyle = '#8a8fa8'; for (let cy = y - 2; cy > -cam.y - 4; cy -= 6) ctx.fillRect(x + 18, cy - 4, 4, 4); }
   const hurt = B.flash > 0 && Math.floor(t * 30) % 2;
-  const mg = B.mega;
-  ctx.fillStyle = mg ? '#4a2a06' : '#1a0844'; ctx.fillRect(x + 2, y, 36, 56); ctx.fillRect(x, y + 4, 40, 48);
-  ctx.fillStyle = hurt ? C.white : mg ? '#d89a26' : C.h3; ctx.fillRect(x + 2, y + 2, 36, 52); ctx.fillRect(x + 1, y + 5, 38, 46);
-  ctx.fillStyle = hurt ? C.white : mg ? '#ffe14a' : '#9a6ad8'; ctx.fillRect(x + 5, y + 4, 8, 16);
-  ctx.fillStyle = mg ? C.mag : C.cyan; ctx.fillRect(x + 1, y + 36, 38, 3);
-  if (mg) { ctx.fillStyle = C.white; for (let i = 0; i < 5; i++) ctx.fillRect(x + 4 + i * 8, y + 37, 3, 1); }
+  const mg = B.mega; // MEGA BAG: black and electric green, crackling with lightning
+  if (mg) {
+    ctx.globalAlpha = 0.16 + 0.12 * Math.sin(t * 14); ctx.fillStyle = C.g3; ctx.fillRect(x - 4, y - 4, 48, 64); ctx.globalAlpha = 1;
+    ctx.strokeStyle = Math.floor(t * 20) % 2 ? C.g4 : C.white; ctx.beginPath();
+    for (let i = 0; i < 3; i++) { let ax = x + 20 + Math.sin(t * 7 + i * 2) * 26, ay = y + 4 + i * 18; ctx.moveTo(ax, ay); for (let j = 0; j < 3; j++) { ax += (hash(i * 9 + j, Math.floor(t * 15)) - 0.5) * 14; ay += 6; ctx.lineTo(Math.round(ax), Math.round(ay)); } }
+    ctx.stroke();
+  }
+  ctx.fillStyle = mg ? '#020604' : '#1a0844'; ctx.fillRect(x + 2, y, 36, 56); ctx.fillRect(x, y + 4, 40, 48);
+  ctx.fillStyle = hurt ? C.white : mg ? '#0e1a12' : C.h3; ctx.fillRect(x + 2, y + 2, 36, 52); ctx.fillRect(x + 1, y + 5, 38, 46);
+  ctx.fillStyle = hurt ? C.white : mg ? '#1f5a2a' : '#9a6ad8'; ctx.fillRect(x + 5, y + 4, 8, 16);
+  ctx.fillStyle = mg ? C.g3 : C.cyan; ctx.fillRect(x + 1, y + 36, 38, 3);
+  if (mg) { // green lightning bolt on the bag
+    ctx.fillStyle = C.g3; ctx.fillRect(x + 22, y + 6, 6, 3); ctx.fillRect(x + 20, y + 9, 6, 3); ctx.fillRect(x + 18, y + 12, 10, 3); ctx.fillRect(x + 22, y + 15, 5, 3); ctx.fillRect(x + 20, y + 18, 4, 3);
+    ctx.fillStyle = C.white; for (let i = 0; i < 5; i++) ctx.fillRect(x + 4 + i * 8, y + 37, 3, 1);
+  }
   ctx.fillStyle = '#c0c4d8'; ctx.fillRect(x + 14, y - 3, 12, 4);
-  if (mg) { // champion's crown
-    ctx.fillStyle = '#7a4a10'; ctx.fillRect(x + 9, y - 9, 22, 7); ctx.fillStyle = C.yel; ctx.fillRect(x + 10, y - 8, 20, 5);
-    ctx.fillRect(x + 10, y - 12, 3, 4); ctx.fillRect(x + 18, y - 13, 4, 5); ctx.fillRect(x + 27, y - 12, 3, 4);
-    ctx.fillStyle = C.mag; ctx.fillRect(x + 19, y - 7, 2, 2); ctx.fillStyle = C.cyan; ctx.fillRect(x + 13, y - 6, 2, 2); ctx.fillRect(x + 25, y - 6, 2, 2);
+  if (mg) { // lightning horns
+    ctx.fillStyle = C.g3; ctx.fillRect(x + 6, y - 10, 4, 8); ctx.fillRect(x + 9, y - 14, 3, 5); ctx.fillRect(x + 30, y - 10, 4, 8); ctx.fillRect(x + 28, y - 14, 3, 5);
+    ctx.fillStyle = C.white; ctx.fillRect(x + 7, y - 9, 1, 4); ctx.fillRect(x + 31, y - 9, 1, 4);
   }
   // face
   const dazed = B.state === 'dazed' || B.state === 'ko';
@@ -1744,7 +1854,7 @@ function drawBoss(t) {
     ctx.fillStyle = C.tooth; for (let i = 0; i < 5; i++) { ctx.fillRect(x + 11 + i * 4, y + 23, 2, 2); ctx.fillRect(x + 13 + i * 4, y + 28, 2, 2); }
   }
   // cracks by damage
-  ctx.fillStyle = mg ? '#4a2a06' : '#1a0844';
+  ctx.fillStyle = mg ? C.g2 : '#1a0844';
   const dmg = (B.maxHp - B.hp) * 8 / B.maxHp;
   if (dmg > 1) { ctx.fillRect(x + 30, y + 40, 1, 6); ctx.fillRect(x + 31, y + 46, 3, 1); }
   if (dmg > 3) { ctx.fillRect(x + 6, y + 26, 1, 8); ctx.fillRect(x + 7, y + 34, 3, 1); }
@@ -1838,8 +1948,8 @@ function drawHUD(t) {
   if (B && B.state !== 'wait' && B.state !== 'gone') {
     const bw = 140, bx = W / 2 - bw / 2, by = H - 14;
     ctx.fillStyle = 'rgba(6,4,26,.8)'; ctx.fillRect(bx - 2, by - 9, bw + 4, 19);
-    drawText(ctx, B.name, W / 2, by - 8, B.mega ? C.yel : C.mag, { align: 'center' });
-    ctx.fillStyle = '#2b1049'; ctx.fillRect(bx, by, bw, 6); ctx.fillStyle = B.flash > 0 ? C.white : B.mega ? '#d89a26' : C.h3; ctx.fillRect(bx, by, Math.round(bw * B.hp / B.maxHp), 6);
+    drawText(ctx, B.name, W / 2, by - 8, B.mega ? C.g3 : C.mag, { align: 'center' });
+    ctx.fillStyle = '#2b1049'; ctx.fillRect(bx, by, bw, 6); ctx.fillStyle = B.flash > 0 ? C.white : B.mega ? C.g3 : C.h3; ctx.fillRect(bx, by, Math.round(bw * B.hp / B.maxHp), 6);
     ctx.fillStyle = C.cyan; ctx.fillRect(bx, by, bw, 1);
   }
 }
@@ -2237,7 +2347,7 @@ function drawIcon(kind, x, y) {
     else if (kind === 'icicle') { for (let i = 0; i < 11; i++) { const w = Math.max(1, Math.round(8 * (1 - i / 12))); ctx.fillStyle = i < 3 ? '#e6f8ff' : '#9be4ff'; ctx.fillRect(x + 8 - Math.ceil(w / 2), y - 2 + i, w, 1); } }
     else if (kind === 'fire') { ctx.fillStyle = '#ff5a1e'; ctx.fillRect(x + 3, y, 10, 10); ctx.fillStyle = C.yel; ctx.fillRect(x + 5, y + 2, 6, 6); ctx.fillStyle = '#ff8a1e'; ctx.fillRect(x + 5, y + 10, 2, 3); ctx.fillRect(x + 9, y + 10, 2, 2); }
     else if (kind === 'space') { disc(x + 8, y + 5, 6, '#1d5fa8'); ctx.fillStyle = '#35a427'; ctx.fillRect(x + 5, y + 2, 4, 3); ctx.fillRect(x + 9, y + 6, 3, 3); }
-    else if (kind === 'mega') { ctx.fillStyle = '#d89a26'; ctx.fillRect(x + 3, y + 1, 10, 12); ctx.fillStyle = C.yel; ctx.fillRect(x + 4, y + 2, 3, 5); ctx.fillStyle = C.mag; ctx.fillRect(x + 3, y + 9, 10, 1); ctx.fillStyle = C.yel; ctx.fillRect(x + 4, y - 2, 8, 2); ctx.fillRect(x + 4, y - 4, 2, 2); ctx.fillRect(x + 10, y - 4, 2, 2); }
+    else if (kind === 'mega') { ctx.fillStyle = '#0e1a12'; ctx.fillRect(x + 3, y + 1, 10, 12); ctx.fillStyle = C.g3; ctx.fillRect(x + 7, y + 3, 3, 2); ctx.fillRect(x + 6, y + 5, 3, 2); ctx.fillRect(x + 3, y + 9, 10, 1); ctx.fillRect(x + 3, y - 3, 2, 4); ctx.fillRect(x + 11, y - 3, 2, 4); }
     else if (kind === 'crate' || kind === 'cracked' || kind === 'spring' || kind === 'ice' || kind === 'crumble' || kind === 'lava') {
       const sv = level; // reuse tile painter on a 1-tile fake level
       level = { cols: 1, grid: Array.from({ length: ROWS }, () => ['.']), springT: null, crumble: {} };
