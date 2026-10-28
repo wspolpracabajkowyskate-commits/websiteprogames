@@ -12,9 +12,9 @@ T = {
   'en': {
     'path': 'games/index.html', 'url': '/games/', 'home': '/', 'locale': 'en_GB',
     'title': 'GAMES MONSTER – free online arcade game in your browser',
-    'desc': 'GAMES MONSTER is a free online arcade game by PRO-GAMES: punch, kick and smash through 5 stages, beat the BIG BAG boss and join the online ranking.',
+    'desc': 'GAMES MONSTER is a free online arcade game by PRO-GAMES: punch, kick and smash through 10 stages, beat the BIG BAG boss and join the online ranking.',
     'h1': 'GAMES MONSTER – free online arcade game',
-    'about': 'GAMES MONSTER is a free arcade platformer by PRO-GAMES that you play straight in your browser, on a computer or a phone. Punch crates, kick the ball and smash with the hammer through 5 stages, beat the BIG BAG boss and fight for a place in the online ranking of all players.',
+    'about': 'GAMES MONSTER is a free arcade platformer by PRO-GAMES that you play straight in your browser, on a computer or a phone. Punch crates, kick the ball and smash with the hammer through 10 stages, beat the BIG BAG boss and fight for a place in the online ranking of all players.',
     'nav': [('/#machines', 'Products'), ('/catalog.html?catalog=machines', 'Catalogs'), ('/#business', 'For business'), ('/#distributors', 'Distributors'), ('/#trade-shows', 'Trade shows'), ('/#contact', 'Contact')],
     'cta': ('/#contact', 'Request a quote'), 'skip': 'Skip to the game', 'menu': 'Open menu', 'home_label': 'PRO-GAMES home',
     'canvas': 'MONSTER GAME – game screen. Use the arrow keys and Enter in the menu.',
@@ -28,9 +28,9 @@ T = {
   'pl': {
     'path': 'pl/gry/index.html', 'url': '/pl/gry/', 'home': '/pl/', 'locale': 'pl_PL',
     'title': 'GAMES MONSTER – darmowa gra online w przeglądarce',
-    'desc': 'GAMES MONSTER to darmowa gra online od PRO-GAMES: uderzaj, kopaj i rozbijaj młotem przez 5 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu.',
+    'desc': 'GAMES MONSTER to darmowa gra online od PRO-GAMES: uderzaj, kopaj i rozbijaj młotem przez 10 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu.',
     'h1': 'GAMES MONSTER – darmowa gra online',
-    'about': 'GAMES MONSTER to darmowa gra platformowa od PRO-GAMES, w którą grasz od razu w przeglądarce, na komputerze i na telefonie. Rozbijaj skrzynie ciosem, kopnij piłkę i uderzaj młotem przez 5 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu online wszystkich graczy.',
+    'about': 'GAMES MONSTER to darmowa gra platformowa od PRO-GAMES, w którą grasz od razu w przeglądarce, na komputerze i na telefonie. Rozbijaj skrzynie ciosem, kopnij piłkę i uderzaj młotem przez 10 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu online wszystkich graczy.',
     'nav': [('/pl/#machines', 'Produkty'), ('/pl/katalog.html?catalog=machines', 'Katalogi'), ('/pl/#business', 'Dla biznesu'), ('/pl/#distributors', 'Dystrybutorzy'), ('/pl/#trade-shows', 'Targi'), ('/pl/#contact', 'Kontakt')],
     'cta': ('/pl/#contact', 'Zapytaj o ofertę'), 'skip': 'Przejdź do gry', 'menu': 'Otwórz menu', 'home_label': 'PRO-GAMES — strona główna',
     'canvas': 'MONSTER GAME – ekran gry. W menu użyj strzałek i klawisza Enter.',
