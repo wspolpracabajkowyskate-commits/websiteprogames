@@ -24,11 +24,12 @@ const CAPS = LEVELS.map(l => {
     cols += Math.max(...chunk.map(r => r.length));
     for (const row of chunk) for (const ch of row) {
       if (ch === 'o') o++; else if (ch === 'B') B++; else if (ch === 'H') H++; else if (ch === 'h') h++;
-      else if (ch === 'b' || ch === 's' || ch === 'g') E++; else if (ch === 'X') X++;
+      else if ('bsgupq'.includes(ch)) E++; else if (ch === 'X') X++;
     }
   }
   let max = o * 10 + B * (50 + 30) + H * (50 + 500) + h * 500 + E * 1000 + X * 20 + l.par * 20 + 2000 + 1000 + 900;
-  if (l.boss) max += 8 * 300 + 5000 + 12 * 10 + 20 * 100;
+  // boss: 300 per hit (at most one hit per HP), K.O. bonus, 12 dropped tokens, at most 20 scoring helpers
+  if (l.boss) max += (l.bossHp || 8) * 300 + 5000 + 12 * 10 + 20 * 100;
   return { max: Math.ceil(max * 1.02) + 100, minT: Math.max(12, Math.floor(cols * 16 / 150 * 0.8)) };
 });
 
