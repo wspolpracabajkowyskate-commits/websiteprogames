@@ -667,7 +667,13 @@ function hitBoss(power, kind) {
   const words = { punch: 'POW!', kick: 'KICK!', ball: 'KICK!', smash: 'SMASH!', stomp: 'BAM!', rage: 'POW!' };
   pop(B.x + B.w / 2, B.y - 6, words[kind] || 'BAM!', C.yel, 3, 0.9);
   burst(B.x + B.w / 2, B.y + B.h / 2, 16, [C.h3, C.cyan, C.white], 200, 300, 2);
-  if (B.hp <= 0) { B.state = 'ko'; B.t = 0; addScore(5000); pop(B.x + B.w / 2, B.y - 20, STR.pops.ko, C.mag, 4, 2); sfx('clear'); stopMusic(); }
+  if (B.hp <= 0) {
+    B.state = 'ko'; B.t = 0; addScore(5000); pop(B.x + B.w / 2, B.y - 20, STR.pops.ko, C.mag, 4, 2); sfx('clear'); stopMusic();
+    // the fight is over: shockwaves vanish and nothing can hurt the monster any more
+    waves = []; B.extra = []; level.shots = [];
+    for (const e of level.enemies) if (e.alive && e.spawned) killEnemy(e, 'smash', 1);
+    player.inv = Math.max(player.inv, 3);
+  }
   else if (B.hits >= 3) { B.state = 'rise'; B.t = 0; }
   return true;
 }
@@ -698,8 +704,10 @@ function respawn() {
   player = np;
   balls = []; waves = []; level.shots = [];
   if (level.boss && level.boss.state !== 'gone' && level.boss.state !== 'ko' && level.boss.state !== 'wait') resetBossArena();
+  else if (level.boss && (level.boss.state === 'gone' || level.boss.state === 'ko')) openArena();
   state = 'play'; startMusic(level.def.theme);
 }
+function openArena() { for (const d of level.doors) setTile(d.c, d.r, '.'); }
 function resetBossArena() {
   const B = level.boss, nb = makeBoss(B.cx, B.y, level.def);
   nb.hp = B.hp; nb.y = nb.hangY - 40; level.boss = nb;
@@ -1054,6 +1062,7 @@ function updateBoss(dt) {
       B.y += 20 * dt;
       if (B.t > 2.2) {
         B.state = 'gone'; shake = 0.6; flash = 0.4; sfx('smash');
+        openArena();
         burst(B.x + B.w / 2, B.y + B.h / 2, 60, [C.h3, C.cyan, C.yel, C.mag, C.white], 260, 300, 3);
         level.finish = { x: B.cx + 8 * T - 26, y: floorY - 90, w: 51, h: 90, appear: 0 };
         for (let i = 0; i < 12; i++) level.tokens.push({ x: B.x + B.w / 2, y: B.y + 20, w: 8, h: 8, got: false, ph: i, vx: rnd(-140, 140), vy: rnd(-320, -160), loose: true });
