@@ -1210,6 +1210,7 @@ function stageClear() {
   run.score += timeBonus + perfect + allTokens + heartsBonus;
   const stageScore = run.score - stageStats.startScore;
   claimStage(run, level.idx, Math.floor(stageTime), stageScore);
+  submitProgress(run);
   const pts = (tokens / total) * 60 + (!player.hitThisStage ? 20 : 0) + (stageTime <= def.par ? 20 : 0);
   const prevBest = save.best[level.idx] | 0;
   let rank = pts >= 80 ? 'monster' : pts >= 50 ? 'great' : 'good';
@@ -2144,6 +2145,20 @@ function claimStage(r, stage, time, score) {
   r.pending = (r.pending || Promise.resolve()).then(() => r.token ? rankPost({ op: 'stage', token: r.token, stage, time, score }) : null)
     .then(d => { if (d && d.token) { r.token = d.token; if (run === r && save.run) { save.run.token = d.token; persist(); } } }).catch(() => {});
 }
+function submitProgress(r) {
+  // after every cleared stage: the run's verified total goes to the ranking straight away
+  const nick = save.nick || UI.player;
+  r.pending = (r.pending || Promise.resolve()).then(() => r.token ? rankPost({ op: 'submit', token: r.token, nick, stage: -1, extra: 0 }) : null)
+    .then(d => { if (d && d.top) { ui.global = d.top; ui.onlineState = 'ok'; } }).catch(() => {});
+}
+addEventListener('pagehide', () => {
+  // leaving the page in the middle of a stage: send what was played (keepalive survives the unload)
+  if (!run || run.recorded || !run.token || !level || run.score <= 0 || !stageStats || !(state === 'play' || state === 'pause' || state === 'dying')) return;
+  try {
+    fetch(RANK_API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ op: 'submit', token: run.token, nick: save.nick || UI.player, stage: level.idx, extra: Math.max(0, run.score - stageStats.startScore) }) });
+  } catch (e) { /* ignore */ }
+});
 function submitOnline(r, nick, stage, extra) {
   const lr = ui.lastRank;
   (r.pending || Promise.resolve()).then(() => r.token ? rankPost({ op: 'submit', token: r.token, nick, stage, extra }) : Promise.reject(0))
@@ -2166,6 +2181,52 @@ function recordRun(stageLabel) {
   const finished = stageLabel === 'END';
   submitOnline(run, name, finished || !level ? -1 : level.idx, finished || !stageStats ? 0 : Math.max(0, run.score - stageStats.startScore));
 }
+/* country flags (11×7 pixel art) for the online ranking; the country comes from the player's IP on the server */
+const FL = {
+  h: (...c) => ['h', c], v: (...c) => ['v', c],
+  W: '#ffffff', R: '#e8283c', B: '#1d4fb0', G: '#169b3c', Y: '#ffd21e', K: '#111111', L: '#6cb4ee', O: '#f08a1e', M: '#8a1538'
+};
+const FLAGS = {
+  PL: FL.h(FL.W, FL.R), DE: FL.h(FL.K, FL.R, FL.Y), FR: FL.v(FL.B, FL.W, FL.R), IT: FL.v(FL.G, FL.W, FL.R), ES: ['es'], GB: ['gb'], UK: ['gb'],
+  IE: FL.v(FL.G, FL.W, FL.O), NL: FL.h(FL.R, FL.W, FL.B), BE: FL.v(FL.K, FL.Y, FL.R), LU: FL.h(FL.R, FL.W, FL.L), AT: FL.h(FL.R, FL.W, FL.R),
+  CH: ['cross', '#e8283c', '#ffffff'], CZ: ['cz'], SK: FL.h(FL.W, FL.B, FL.R), HU: FL.h(FL.R, FL.W, FL.G), RO: FL.v(FL.B, FL.Y, FL.R),
+  BG: FL.h(FL.W, FL.G, FL.R), HR: FL.h(FL.R, FL.W, FL.B), SI: FL.h(FL.W, FL.B, FL.R), RS: FL.h(FL.R, FL.B, FL.W), UA: FL.h(FL.B, FL.Y),
+  RU: FL.h(FL.W, FL.B, FL.R), BY: FL.h(FL.R, FL.R, FL.G), LT: FL.h(FL.Y, FL.G, FL.R), LV: FL.h(FL.M, FL.W, FL.M), EE: FL.h(FL.B, FL.K, FL.W),
+  FI: ['nordic', '#ffffff', '#1d4fb0'], SE: ['nordic', '#2a6ebb', '#ffd21e'], NO: ['nordic', '#e8283c', '#ffffff', '#1d3a8a'], DK: ['nordic', '#e8283c', '#ffffff'],
+  IS: ['nordic', '#1d4fb0', '#ffffff', '#e8283c'], GR: ['gr'], PT: ['pt'], TR: ['dot', '#e8283c', '#ffffff'], US: ['us'], CA: ['ca'],
+  MX: FL.v(FL.G, FL.W, FL.R), BR: ['br'], AR: FL.h(FL.L, FL.W, FL.L), CL: ['cl'], CO: ['co'], PE: FL.v(FL.R, FL.W, FL.R), JP: ['dot', '#ffffff', '#e8283c'],
+  KR: ['dot', '#ffffff', '#1d4fb0'], CN: ['dot', '#e8283c', '#ffd21e'], IN: FL.h(FL.O, FL.W, FL.G), AU: ['au'], NZ: ['au'], ZA: FL.h(FL.R, FL.G, FL.B),
+  EG: FL.h(FL.R, FL.W, FL.K), SA: FL.h(FL.G, FL.G), AE: ['ae'], IL: ['il'], NG: FL.v(FL.G, FL.W, FL.G), GE: ['cross', '#ffffff', '#e8283c'],
+  MD: FL.v(FL.B, FL.Y, FL.R), AL: FL.h(FL.R, FL.R), MK: ['dot', '#e8283c', '#ffd21e'], BA: FL.h(FL.B, FL.B), ME: FL.h(FL.R, FL.R), CY: FL.h(FL.W, FL.W),
+  MT: FL.v(FL.W, FL.R), KZ: FL.h(FL.L, FL.L), TH: FL.h(FL.R, FL.W, FL.B, FL.W, FL.R), ID: FL.h(FL.R, FL.W), MY: FL.h(FL.R, FL.W, FL.R, FL.W), PH: FL.h(FL.B, FL.R),
+  VN: ['dot', '#e8283c', '#ffd21e'], SG: FL.h(FL.R, FL.W), MA: ['dot', '#e8283c', '#169b3c'], TN: ['dot', '#e8283c', '#ffffff'], DZ: FL.v(FL.G, FL.W),
+  IR: FL.h(FL.G, FL.W, FL.R), IQ: FL.h(FL.R, FL.W, FL.K), PK: FL.v(FL.W, FL.G, FL.G, FL.G), VE: FL.h(FL.Y, FL.B, FL.R), EC: ['co'], UY: FL.h(FL.W, FL.L, FL.W, FL.L)
+};
+function drawFlag(code, x, y) {
+  const f = FLAGS[code]; x = Math.round(x); y = Math.round(y);
+  const w = 11, h = 7, P = (xx, yy, ww, hh, col) => { ctx.fillStyle = col; ctx.fillRect(x + xx, y + yy, ww, hh); };
+  ctx.fillStyle = C.ink; ctx.fillRect(x - 1, y - 1, w + 2, h + 2);
+  if (!f) { P(0, 0, w, h, '#3c1765'); ctx.save(); ctx.translate(x + 1, y + 1); ctx.scale(0.5, 0.5); drawText(ctx, code || '?', 0, 0, C.white); ctx.restore(); return; }
+  const [k, a, b, c] = f;
+  if (k === 'h') { const n = a.length; for (let i = 0; i < n; i++) { const y0 = Math.round(i * h / n), y1 = Math.round((i + 1) * h / n); P(0, y0, w, y1 - y0, a[i]); } }
+  else if (k === 'v') { const n = a.length; for (let i = 0; i < n; i++) { const x0 = Math.round(i * w / n), x1 = Math.round((i + 1) * w / n); P(x0, 0, x1 - x0, h, a[i]); } }
+  else if (k === 'nordic') { P(0, 0, w, h, a); P(3, 0, 2, h, b); P(0, 2, w, 3, b); if (c) { P(0, 3, w, 1, c); P(3, 0, 1, h, c); P(4, 0, 0, 0, c); } }
+  else if (k === 'cross') { P(0, 0, w, h, a); P(4, 1, 3, 5, b); P(2, 2, 7, 3, b); }
+  else if (k === 'dot') { P(0, 0, w, h, a); P(4, 2, 3, 3, b); P(5, 1, 1, 5, b); P(3, 3, 5, 1, b); }
+  else if (k === 'es') { P(0, 0, w, h, '#c60b1e'); P(0, 2, w, 3, '#ffc400'); }
+  else if (k === 'gb') { P(0, 0, w, h, '#1d3a8a'); P(0, 0, 2, 1, FL.W); P(9, 6, 2, 1, FL.W); P(1, 1, 2, 1, FL.W); P(8, 5, 2, 1, FL.W); P(9, 0, 2, 1, FL.W); P(0, 6, 2, 1, FL.W); P(4, 0, 3, h, FL.W); P(0, 2, w, 3, FL.W); P(5, 0, 1, h, '#c8102e'); P(0, 3, w, 1, '#c8102e'); }
+  else if (k === 'cz') { P(0, 0, w, 3, FL.W); P(0, 3, w, 4, '#d7141a'); P(0, 0, 1, 7, '#11457e'); P(1, 1, 1, 5, '#11457e'); P(2, 2, 1, 3, '#11457e'); P(3, 3, 1, 1, '#11457e'); }
+  else if (k === 'gr') { for (let i = 0; i < 7; i++) P(0, i, w, 1, i % 2 ? FL.W : '#0d5eaf'); P(0, 0, 4, 4, '#0d5eaf'); P(1, 0, 1, 4, FL.W); P(0, 1, 4, 1, FL.W); }
+  else if (k === 'pt') { P(0, 0, 4, h, '#046a38'); P(4, 0, 7, h, '#da291c'); P(3, 2, 3, 3, FL.Y); }
+  else if (k === 'us') { for (let i = 0; i < 7; i++) P(0, i, w, 1, i % 2 ? FL.W : '#b22234'); P(0, 0, 5, 4, '#3c3b6e'); P(1, 1, 1, 1, FL.W); P(3, 1, 1, 1, FL.W); P(2, 2, 1, 1, FL.W); }
+  else if (k === 'ca') { P(0, 0, w, h, FL.W); P(0, 0, 3, h, FL.R); P(8, 0, 3, h, FL.R); P(5, 2, 1, 4, FL.R); P(4, 3, 3, 1, FL.R); P(4, 2, 1, 1, FL.R); P(6, 2, 1, 1, FL.R); }
+  else if (k === 'br') { P(0, 0, w, h, '#009c3b'); P(3, 1, 5, 5, '#ffdf00'); P(2, 2, 7, 3, '#ffdf00'); P(4, 2, 3, 3, '#002776'); }
+  else if (k === 'cl') { P(0, 0, w, 4, FL.W); P(0, 4, w, 3, FL.R); P(0, 0, 4, 4, '#0039a6'); P(1, 1, 1, 1, FL.W); }
+  else if (k === 'co') { P(0, 0, w, 4, FL.Y); P(0, 4, w, 2, '#003893'); P(0, 6, w, 1, '#ce1126'); }
+  else if (k === 'au') { P(0, 0, w, h, '#012169'); P(0, 0, 5, 3, '#c8102e'); P(2, 0, 1, 3, FL.W); P(0, 1, 5, 1, FL.W); P(7, 2, 1, 1, FL.W); P(9, 4, 1, 1, FL.W); P(3, 5, 1, 1, FL.W); }
+  else if (k === 'ae') { P(0, 0, w, 2, '#00732f'); P(0, 2, w, 3, FL.W); P(0, 5, w, 2, FL.K); P(0, 0, 3, h, FL.R); }
+  else if (k === 'il') { P(0, 0, w, h, FL.W); P(0, 1, w, 1, '#0038b8'); P(0, 5, w, 1, '#0038b8'); P(4, 2, 3, 3, '#0038b8'); P(5, 3, 1, 1, FL.W); }
+}
 function drawRankTable(y0, count, lh) {
   const list = (ui.global || save.ranking || []).slice(0, count);
   if (!list.length) { drawText(ctx, ui.onlineState === 'loading' ? '...' : UI.empty, W / 2, y0 + 10, '#9b8fb8', { align: 'center' }); return; }
@@ -2175,7 +2236,8 @@ function drawRankTable(y0, count, lh) {
     if (hl) { ctx.globalAlpha = 0.25 + 0.15 * Math.sin(time * 6); ctx.fillStyle = C.mag; ctx.fillRect(xL - 4, y - 2, xR - xL + 8, 11); ctx.globalAlpha = 1; }
     const pc = i === 0 ? C.yel : i === 1 ? '#c0c4d8' : i === 2 ? '#e0904a' : '#9b8fb8';
     drawText(ctx, String(i + 1).padStart(2, ' ') + '.', xL, y, pc);
-    drawText(ctx, r.n, xL + 24, y, me ? C.yel : C.white);
+    if (r.c) drawFlag(r.c, xL + 22, y);
+    drawText(ctx, r.n, xL + (r.c ? 37 : 24), y, me ? C.yel : C.white);
     const stl = r.st === 'END' ? UI.end : UI.stage + ' ' + String(r.st || '').replace('E', '');
     if (wide) drawText(ctx, stl, xR - 64, y, C.cyan, { align: 'right' });
     drawText(ctx, fmt(r.s ?? r.score), xR, y, me ? C.yel : C.white, { align: 'right' });

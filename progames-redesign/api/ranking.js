@@ -1,7 +1,7 @@
 /* MONSTER GAME – shared ranking (best score per nick), stored as one private JSON file in Vercel Blob.
    Scores cannot simply be posted: every cleared stage is checked against what that stage makes possible
    (maximum points, minimum time, real elapsed time) and the server signs the running total.
-   GET            -> { top: [{ n, s, st }], count }
+   GET            -> { top: [{ n, s, st, c }], count }   (top 10, c = country of the player)
    POST start     -> { token }                     new run
    POST stage     -> { token }                     { token, stage, time, score } after a cleared stage
    POST submit    -> { total, place, best, top }   { token, nick, stage, extra } when the run ends */
@@ -67,9 +67,12 @@ async function store(data, etag) {
   if (!r.ok) throw new Error('blob write ' + r.status + ' ' + (await r.text()).slice(0, 200));
   return true;
 }
+const TOP = 10;
 function topList(data, n) {
-  return Object.entries(data.p || {}).map(([k, v]) => ({ n: k, s: v.s, st: v.st })).sort((a, b) => b.s - a.s).slice(0, n);
+  return Object.entries(data.p || {}).map(([k, v]) => ({ n: k, s: v.s, st: v.st, c: v.c || '' })).sort((a, b) => b.s - a.s).slice(0, n);
 }
+// country of the request, from Vercel's IP geolocation (two letters, e.g. PL)
+const country = req => { const c = String(req.headers['x-vercel-ip-country'] || '').toUpperCase(); return /^[A-Z]{2}$/.test(c) && c !== 'XX' ? c : ''; };
 
 const hits = new Map();
 function limited(ip) {
@@ -86,7 +89,7 @@ module.exports = async (req, res) => {
   try {
     if (req.method === 'GET') {
       const { data } = await load();
-      return res.status(200).json({ ok: true, top: topList(data, 20), count: Object.keys(data.p || {}).length });
+      return res.status(200).json({ ok: true, top: topList(data, TOP), count: Object.keys(data.p || {}).length });
     }
     if (req.method !== 'POST') { res.setHeader('Allow', 'GET, POST'); return res.status(405).json({ ok: false }); }
     const origin = req.headers.origin;
@@ -124,25 +127,34 @@ module.exports = async (req, res) => {
         else extra = Math.min(extra, Math.floor(CAPS[i].max * 0.6), Math.floor((now - p.last) / 1000 * 120));
       }
       const total = p.sc + extra;
-      const st = p.done.includes(CAPS.length - 1) ? 'END' : 'E' + (Number.isInteger(b.stage) && b.stage >= 0 ? b.stage + 1 : p.done.length ? Math.max(...p.done) + 1 : 1);
-      let best = false, data;
-      for (let attempt = 0; attempt < 5; attempt++) {
+      // furthest stage reached: the unfinished one, or the one after the last cleared stage
+      const st = p.done.includes(CAPS.length - 1) ? 'END' : 'E' + (Number.isInteger(b.stage) && b.stage >= 0 ? b.stage + 1 : p.done.length ? Math.min(CAPS.length, Math.max(...p.done) + 2) : 1);
+      const cc = country(req);
+      let best = false, saved = false, data;
+      for (let attempt = 0; attempt < 6 && !saved; attempt++) {
+        if (attempt) await new Promise(r => setTimeout(r, 120 + Math.random() * 250));
         const cur = await load(); data = cur.data; data.p = data.p || {}; data.u = data.u || {};
-        // one submission per run, unless more stages were cleared since (continued run)
-        if (data.u[p.id] !== undefined && data.u[p.id] >= p.done.length) return res.status(409).json({ ok: false, error: 'used', top: topList(data, 20) });
-        data.u[p.id] = p.done.length;
+        // a run is submitted after every cleared stage; one more time with the points of an unfinished stage
+        const prev = data.u[p.id], pd = typeof prev === 'number' ? prev : prev ? prev.d : -1, px = typeof prev === 'number' ? 1 : prev ? prev.x : 0;
+        if (prev !== undefined && !(p.done.length > pd || (p.done.length === pd && !px && extra > 0))) {
+          // nothing new in this run: answer with the player's current place instead of an error
+          const all = topList(data, 500), place = all.findIndex(r => r.n === nick) + 1;
+          return res.status(200).json({ ok: true, total, best: false, place, dup: true, top: all.slice(0, TOP) });
+        }
+        data.u[p.id] = { d: p.done.length, x: extra > 0 ? 1 : 0 };
         const ids = Object.keys(data.u); if (ids.length > 5000) for (const k of ids.slice(0, ids.length - 5000)) delete data.u[k];
         const e = data.p[nick];
+        best = false;
         if (total > 0 && (!e || total > e.s)) {
-          data.p[nick] = { s: total, st, d: now }; best = true;
+          data.p[nick] = { s: total, st, d: now, c: cc || (e && e.c) || '' }; best = true;
           const keep = Object.entries(data.p).sort((x, y) => y[1].s - x[1].s).slice(0, 500);
           data.p = Object.fromEntries(keep);
-        }
-        if (await store(data, cur.etag)) break;
-        best = false; // someone else wrote at the same moment: reload and retry
+        } else if (e && cc && !e.c) e.c = cc;
+        saved = await store(data, cur.etag); // false: someone else wrote at the same moment, reload and retry
       }
+      if (!saved) return res.status(503).json({ ok: false, error: 'busy' });
       const all = topList(data, 500), place = all.findIndex(r => r.n === nick) + 1;
-      return res.status(200).json({ ok: true, total, best, place, top: all.slice(0, 20) });
+      return res.status(200).json({ ok: true, total, best, place, top: all.slice(0, TOP) });
     }
     return res.status(400).json({ ok: false });
   } catch (e) {
