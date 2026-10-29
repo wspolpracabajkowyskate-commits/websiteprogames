@@ -181,18 +181,20 @@ if(grid){
 
 window.PG_LOCALIZE?.();
 
-// Halloween: ghosts fall for 2.5 seconds after the page opens, fading out at the end.
+// Halloween: ghosts float down for 2.5 seconds after the page opens, fading out at the end.
+// All fall at the same pace; each one sways and drifts its own way (left or right), like a real ghost.
 (() => {
   if (window.PG_HALLOWEEN_PLAYED) return;
   window.PG_HALLOWEEN_PLAYED = true;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches || document.hidden) return;
-  const TOTAL = 2500, FADE = 700;
+  const TOTAL = 2500, FADE = 700, STEPS = 12;
   const layer = document.createElement('div');
   layer.setAttribute('aria-hidden', 'true');
   layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none';
   const height = window.innerHeight, width = window.innerWidth;
-  const count = width <= 600 ? 9 : 16;
+  const count = width <= 600 ? 6 : 11;
+  const fall = height * .85;
   const animations = [];
   let done = false;
   const cleanup = () => {
@@ -205,21 +207,23 @@ window.PG_LOCALIZE?.();
   document.body.append(layer);
   for (let i = 0; i < count; i++) {
     const ghost = document.createElement('span');
-    const size = 22 + Math.random() * 14;
-    const x = 12 + ((i + Math.random() * .8) / count) * Math.max(0, width - 60);
-    const delay = Math.random() * 900;
-    const sway = (Math.random() - .5) * 50, tilt = (Math.random() - .5) * 28;
-    const fall = height * (.75 + Math.random() * .45);
+    const size = 24 + Math.random() * 10;
+    const x = 20 + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - 80);
+    const startY = -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
+    const dir = Math.random() < .5 ? -1 : 1;                      // drifts left or right
+    const drift = dir * (30 + Math.random() * 60);
+    const wobble = 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = 1.5 + Math.random();
     ghost.textContent = '👻';
-    ghost.style.cssText = `position:absolute;top:-60px;left:${x}px;font-size:${size}px;line-height:1.3;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18))`;
+    ghost.style.cssText = `position:absolute;top:0;left:${x}px;font-size:${size}px;line-height:1.3;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18))${dir < 0 ? ';scale:-1 1' : ''}`;
     layer.append(ghost);
-    const pose = (dx, y, a) => `translate3d(${dx}px,${y}px,0) rotate(${a}deg)`;
-    animations.push(ghost.animate([
-      { transform: pose(0, 0, tilt), opacity: 0 },
-      { transform: pose(sway, fall * .3, -tilt * .6), opacity: .9, offset: .15 },
-      { transform: pose(-sway * .6, fall * .65, tilt * .6), opacity: .9, offset: .6 },
-      { transform: pose(sway * .4, fall, -tilt * .3), opacity: .9 }
-    ], { duration: TOTAL - delay, delay, easing: 'linear', fill: 'both' }));
+    const frames = [];
+    for (let k = 0; k <= STEPS; k++) {
+      const t = k / STEPS, w = Math.sin(phase + t * waves * Math.PI * 2);
+      const dx = drift * t + wobble * w, dy = startY + fall * t;
+      frames.push({ transform: `translate3d(${dx}px,${dy}px,0) rotate(${(dir * 8 + w * 10).toFixed(1)}deg)`, opacity: t === 0 ? 0 : .9, offset: t });
+    }
+    frames[1].opacity = .9;
+    animations.push(ghost.animate(frames, { duration: TOTAL, easing: 'linear', fill: 'both' }));
   }
   // the whole flock fades away during the last part of the 2.5 s
   animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: 'ease-in', fill: 'forwards' }));
