@@ -188,13 +188,16 @@ window.PG_LOCALIZE?.();
   window.PG_HALLOWEEN_PLAYED = true;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches || document.hidden) return;
-  const TOTAL = 2500, FADE = 700, STEPS = 12;
+  const STEPS = 12;
   const layer = document.createElement('div');
   layer.setAttribute('aria-hidden', 'true');
   layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none';
   const height = window.innerHeight, width = window.innerWidth;
-  const count = width <= 600 ? 6 : 11;
-  const fall = height * .85;
+  // phone: fewer, smaller ghosts that drift down more gently and start fading early, slowly
+  const phone = width <= 600;
+  const TOTAL = 2500, FADE = phone ? 1700 : 700;
+  const count = phone ? 6 : 11;
+  const fall = height * (phone ? .5 : .85);
   const animations = [];
   let done = false;
   const cleanup = () => {
@@ -207,12 +210,12 @@ window.PG_LOCALIZE?.();
   document.body.append(layer);
   for (let i = 0; i < count; i++) {
     const ghost = document.createElement('span');
-    const size = 24 + Math.random() * 10;
+    const size = phone ? 20 + Math.random() * 6 : 24 + Math.random() * 10;
     const x = 20 + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - 80);
-    const startY = -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
+    const startY = -60 + Math.random() * height * (phone ? .18 : .25);           // staggered heights instead of different speeds
     const dir = Math.random() < .5 ? -1 : 1;                      // drifts left or right
-    const drift = dir * (30 + Math.random() * 60);
-    const wobble = 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = 1.5 + Math.random();
+    const drift = dir * (phone ? 15 + Math.random() * 25 : 30 + Math.random() * 60);
+    const wobble = phone ? 6 + Math.random() * 6 : 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = 1.5 + Math.random();
     ghost.textContent = '👻';
     ghost.style.cssText = `position:absolute;top:0;left:${x}px;font-size:${size}px;line-height:1.3;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18))${dir < 0 ? ';scale:-1 1' : ''}`;
     layer.append(ghost);
@@ -226,7 +229,7 @@ window.PG_LOCALIZE?.();
     animations.push(ghost.animate(frames, { duration: TOTAL, easing: 'linear', fill: 'both' }));
   }
   // the whole flock fades away during the last part of the 2.5 s
-  animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: 'ease-in', fill: 'forwards' }));
+  animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: phone ? 'linear' : 'ease-in', fill: 'forwards' }));
   document.addEventListener('visibilitychange', onVisibility);
   window.setTimeout(cleanup, TOTAL + 50);
 })();
