@@ -182,7 +182,7 @@ if(grid){
 window.PG_LOCALIZE?.();
 
 // Halloween: ghosts float down for 2.5 seconds after the page opens, fading out at the end.
-// All fall at the same pace; each one sways and drifts its own way (left or right), like a real ghost.
+// All fall at the same pace and drift their own way (left or right); on desktop they also sway gently.
 (() => {
   if (window.PG_HALLOWEEN_PLAYED) return;
   window.PG_HALLOWEEN_PLAYED = true;
@@ -193,12 +193,12 @@ window.PG_LOCALIZE?.();
   layer.setAttribute('aria-hidden', 'true');
   layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none';
   const height = window.innerHeight, width = window.innerWidth;
-  // phone: fewer, smaller ghosts that drift down more gently and start fading early, slowly
+  // phone: fewer ghosts gliding down from above the screen, fading out slowly at the end
   const phone = width <= 600;
   const TOTAL = 2500, FADE = phone ? 1100 : 700;
   const count = phone ? 6 : 11;
-  const fall = height * (phone ? .34 : .85);
-  // phone: ghosts appear scattered over the whole screen (each in its own height band) and float down a little
+  const fall = height * .85, speed = height * .42; // speed: phone, px per second
+  // phone: shuffled order in which the ghosts come in from the top
   const bands = [...Array(count).keys()].sort(() => Math.random() - .5);
   const animations = [];
   let done = false;
@@ -214,7 +214,9 @@ window.PG_LOCALIZE?.();
     const ghost = document.createElement('span');
     const size = phone ? 25 + Math.random() * 7 : 24 + Math.random() * 10;
     const x = 20 + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - 80);
-    const startY = phone ? height * (.04 + (bands[i] + Math.random() * .7) / count * .72) : -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
+    // phone: every ghost enters from above the top edge, one after another (staggered), all at the same speed
+    const delay = phone ? (bands[i] + Math.random() * .6) / count * 900 : 0;
+    const startY = phone ? -70 : -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
     const dir = Math.random() < .5 ? -1 : 1;                      // drifts left or right
     const drift = dir * (phone ? 15 + Math.random() * 25 : 30 + Math.random() * 60);
     const wobble = phone ? 6 + Math.random() * 6 : 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = 1.5 + Math.random();
@@ -225,16 +227,16 @@ window.PG_LOCALIZE?.();
     for (let k = 0; k <= STEPS; k++) {
       const t = k / STEPS;
       let dx, dy, rot;
-      if (phone) { // phone: a smooth glide down, easing in, with a slight slant one way (no swaying)
-        const e = t * t * (1.6 - .6 * t);
-        dx = drift * .6 * e; dy = startY + fall * e; rot = dir * (4 + 4 * t);
+      if (phone) { // phone: a smooth glide down with a slight slant one way (no swaying)
+        const e2 = t < .12 ? t * t / .24 : t - .06;           // short gentle start, then a steady glide
+        dx = drift * .6 * t; dy = startY + speed * (TOTAL - delay) / 1000 * e2 / .94; rot = dir * (4 + 4 * t);
       } else {
         const w = Math.sin(phase + t * waves * Math.PI * 2);
         dx = drift * t + wobble * w; dy = startY + fall * t; rot = dir * 8 + w * 10;
       }
-      frames.push({ transform: `translate3d(${dx.toFixed(1)}px,${dy.toFixed(1)}px,0) rotate(${rot.toFixed(1)}deg)`, opacity: t === 0 ? 0 : phone && k === 1 ? .45 : .9, offset: t });
+      frames.push({ transform: `translate3d(${dx.toFixed(1)}px,${dy.toFixed(1)}px,0) rotate(${rot.toFixed(1)}deg)`, opacity: phone ? .9 : t === 0 ? 0 : .9, offset: t });
     }
-    animations.push(ghost.animate(frames, { duration: TOTAL, easing: 'linear', fill: 'both' }));
+    animations.push(ghost.animate(frames, { duration: TOTAL - delay, delay, easing: 'linear', fill: 'both' }));
   }
   // the whole flock fades away during the last part of the 2.5 s
   animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: phone ? 'linear' : 'ease-in', fill: 'forwards' }));
