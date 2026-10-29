@@ -182,24 +182,21 @@ if(grid){
 window.PG_LOCALIZE?.();
 
 // Halloween: ghosts float down for 2.5 seconds after the page opens, fading out at the end.
-// All fall at the same pace and drift their own way (left or right); on desktop they also sway gently.
+// All fall at the same pace; each one sways and drifts its own way (left or right), like a real ghost.
+// Phones get the same motion, scaled to the narrow screen (fewer ghosts, shorter sway and drift).
 (() => {
   if (window.PG_HALLOWEEN_PLAYED) return;
   window.PG_HALLOWEEN_PLAYED = true;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches || document.hidden) return;
-  const STEPS = 12;
+  const height = window.innerHeight, width = window.innerWidth;
+  const phone = width <= 600;
+  const TOTAL = 2500, FADE = phone ? 900 : 700, STEPS = 12;
+  const count = phone ? 7 : 11;
+  const fall = height * (phone ? .6 : .85);
   const layer = document.createElement('div');
   layer.setAttribute('aria-hidden', 'true');
   layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none';
-  const height = window.innerHeight, width = window.innerWidth;
-  // phone: fewer ghosts gliding down from above the screen, fading out slowly at the end
-  const phone = width <= 600;
-  const TOTAL = 2500, FADE = phone ? 1100 : 700;
-  const count = phone ? 6 : 11;
-  const fall = height * .85, speed = height * .42; // speed: phone, px per second
-  // phone: shuffled order in which the ghosts come in from the top
-  const bands = [...Array(count).keys()].sort(() => Math.random() - .5);
   const animations = [];
   let done = false;
   const cleanup = () => {
@@ -213,33 +210,24 @@ window.PG_LOCALIZE?.();
   for (let i = 0; i < count; i++) {
     const ghost = document.createElement('span');
     const size = phone ? 25 + Math.random() * 7 : 24 + Math.random() * 10;
-    const x = 20 + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - 80);
-    // phone: every ghost enters from above the top edge, one after another (staggered), all at the same speed
-    const delay = phone ? (bands[i] + Math.random() * .6) / count * 900 : 0;
-    const startY = phone ? -70 : -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
-    const dir = Math.random() < .5 ? -1 : 1;                      // drifts left or right
+    const x = (phone ? 8 : 20) + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - (phone ? 50 : 80));
+    const startY = -60 + Math.random() * height * (phone ? .2 : .25); // staggered heights instead of different speeds
+    const dir = Math.random() < .5 ? -1 : 1;                           // drifts left or right
     const drift = dir * (phone ? 15 + Math.random() * 25 : 30 + Math.random() * 60);
-    const wobble = phone ? 6 + Math.random() * 6 : 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = 1.5 + Math.random();
+    const wobble = phone ? 6 + Math.random() * 5 : 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = phone ? 1 + Math.random() * .6 : 1.5 + Math.random();
     ghost.textContent = '👻';
     ghost.style.cssText = `position:absolute;top:0;left:${x}px;font-size:${size}px;line-height:1.3;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18))${dir < 0 ? ';scale:-1 1' : ''}`;
     layer.append(ghost);
     const frames = [];
     for (let k = 0; k <= STEPS; k++) {
-      const t = k / STEPS;
-      let dx, dy, rot;
-      if (phone) { // phone: a smooth glide down with a slight slant one way (no swaying)
-        const e2 = t < .12 ? t * t / .24 : t - .06;           // short gentle start, then a steady glide
-        dx = drift * .6 * t; dy = startY + speed * (TOTAL - delay) / 1000 * e2 / .94; rot = dir * (4 + 4 * t);
-      } else {
-        const w = Math.sin(phase + t * waves * Math.PI * 2);
-        dx = drift * t + wobble * w; dy = startY + fall * t; rot = dir * 8 + w * 10;
-      }
-      frames.push({ transform: `translate3d(${dx.toFixed(1)}px,${dy.toFixed(1)}px,0) rotate(${rot.toFixed(1)}deg)`, opacity: phone ? .9 : t === 0 ? 0 : .9, offset: t });
+      const t = k / STEPS, w = Math.sin(phase + t * waves * Math.PI * 2);
+      const dx = drift * t + wobble * w, dy = startY + fall * t, rot = dir * (phone ? 6 : 8) + w * (phone ? 7 : 10);
+      frames.push({ transform: `translate3d(${dx.toFixed(1)}px,${dy.toFixed(1)}px,0) rotate(${rot.toFixed(1)}deg)`, opacity: t === 0 ? 0 : .9, offset: t });
     }
-    animations.push(ghost.animate(frames, { duration: TOTAL - delay, delay, easing: 'linear', fill: 'both' }));
+    animations.push(ghost.animate(frames, { duration: TOTAL, easing: 'linear', fill: 'both' }));
   }
   // the whole flock fades away during the last part of the 2.5 s
-  animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: phone ? 'linear' : 'ease-in', fill: 'forwards' }));
+  animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: 'ease-in', fill: 'forwards' }));
   document.addEventListener('visibilitychange', onVisibility);
   window.setTimeout(cleanup, TOTAL + 50);
 })();
