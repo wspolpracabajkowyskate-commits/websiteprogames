@@ -181,59 +181,58 @@ if(grid){
 
 window.PG_LOCALIZE?.();
 
-// Lightweight Halloween decoration; never intercept navigation or scrolling.
+// Lightweight Halloween decoration: one irregular two-second entrance burst.
 (() => {
-  if (document.getElementById('pg-halloween-ghosts')) return;
+  if (window.PG_HALLOWEEN_PLAYED) return;
+  window.PG_HALLOWEEN_PLAYED = true;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (motion.matches) return;
-  const style = document.createElement('style');
-  style.textContent = `
-    #pg-halloween-ghosts{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none}
-    .pg-ghost-fall{position:absolute;top:-64px;left:var(--x);opacity:0;animation:pg-ghost-fall var(--duration) linear var(--delay) 1 both;will-change:transform,opacity}
-    .pg-ghost-sway{display:block;animation:pg-ghost-sway var(--sway) ease-in-out infinite alternate}
-    .pg-ghost-emoji{display:block;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:var(--size);line-height:1.3;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18));animation:pg-ghost-tilt var(--sway) ease-in-out infinite alternate}
-    @keyframes pg-ghost-fall{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.78}70%{opacity:.78}100%{transform:translate3d(0,calc(100vh - 32px),0);opacity:0}}
-    @supports(height:100svh){@keyframes pg-ghost-fall{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.78}70%{opacity:.78}100%{transform:translate3d(0,calc(100svh - 32px),0);opacity:0}}}
-    @keyframes pg-ghost-sway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
-    @keyframes pg-ghost-tilt{from{transform:rotate(-11deg)}to{transform:rotate(11deg)}}
-    #pg-halloween-ghosts[data-paused] *{animation-play-state:paused}
-    @media(max-width:600px){.pg-ghost-fall:nth-child(n+7){display:none}}
-    @media(prefers-reduced-motion:reduce){#pg-halloween-ghosts{display:none}}
-  `;
+  if (motion.matches || document.hidden) return;
   const layer = document.createElement('div');
   layer.id = 'pg-halloween-ghosts';
   layer.setAttribute('aria-hidden', 'true');
-  for (let i = 0; i < 10; i++) {
-    const fall = document.createElement('span');
-    fall.className = 'pg-ghost-fall';
-    // Distribute the first six across the screen, also on mobile.
-    const x = 10 + ((i * 37) % 80);
-    const duration = 5 + Math.random() * 1.5;
-    fall.style.cssText = `--x:${x}%;--size:${22 + Math.random() * 13}px;--duration:${duration}s;--delay:${(i % 6) * 0.45}s;--sway:${2.4 + Math.random() * 2}s`;
-    const sway = document.createElement('span');
-    sway.className = 'pg-ghost-sway';
-    const emoji = document.createElement('span');
-    emoji.className = 'pg-ghost-emoji';
-    emoji.textContent = '👻';
-    sway.append(emoji);
-    fall.append(sway);
-    layer.append(fall);
-  }
-  document.head.append(style);
-  document.body.append(layer);
-  const pause = () => layer.toggleAttribute('data-paused', document.hidden || motion.matches);
-  document.addEventListener('visibilitychange', pause);
-  motion.addEventListener('change', pause);
-  pause();
-  // One short arrival burst: stop spawning after 2.25 seconds, then clear it.
+  layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none';
+  // Freeze the travel distance so mobile browser bars cannot restart or jump it.
+  const height = window.innerHeight;
+  const width = window.innerWidth;
+  const count = width <= 600 ? 6 : 10;
+  const animations = [];
   const cleanup = () => {
-    document.removeEventListener('visibilitychange', pause);
-    motion.removeEventListener('change', pause);
+    animations.forEach(animation => animation.cancel());
     layer.remove();
-    style.remove();
+    document.removeEventListener('visibilitychange', onVisibility);
+    motion.removeEventListener('change', cleanup);
   };
-  layer.addEventListener('animationend', event => {
-    if (event.animationName === 'pg-ghost-fall') event.target.remove();
-  });
-  window.setTimeout(cleanup, 10000);
+  const onVisibility = () => { if (document.hidden) cleanup(); };
+  document.body.append(layer);
+  for (let i = 0; i < count; i++) {
+    const ghost = document.createElement('span');
+    const size = 23 + Math.random() * 12;
+    const x = 28 + ((i + Math.random() * .7) / count) * Math.max(0, width - 100);
+    const drift = (Math.random() - .5) * 42;
+    const bend = (Math.random() - .5) * 30;
+    const tilt = (Math.random() - .5) * 26;
+    const end = Math.max(0, height - size * 1.5 - 20);
+    ghost.textContent = '👻';
+    ghost.style.cssText = `position:absolute;top:0;left:${x}px;font-size:${size}px;line-height:1.3;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18))`;
+    layer.append(ghost);
+    const pose = (dx, y, angle) => `translate3d(${dx}px,${y}px,0) rotate(${angle}deg)`;
+    const animation = ghost.animate([
+      { transform: pose(0, -50, tilt), opacity: 0, offset: 0 },
+      { transform: pose(bend, end * .10, -tilt * .5), opacity: .82, offset: .18 },
+      { transform: pose(-bend * .6, end * .48, tilt * .7), opacity: .82, offset: .55 },
+      { transform: pose(drift * .7, end * .73, -tilt * .4), opacity: .60, offset: .76 },
+      { transform: pose(drift, end, tilt * .3), opacity: 0, offset: 1 }
+    ], {
+      duration: 1500 + Math.random() * 250,
+      delay: Math.random() * 200,
+      easing: 'linear',
+      iterations: 1,
+      fill: 'both'
+    });
+    animation.onfinish = () => ghost.remove();
+    animations.push(animation);
+  }
+  document.addEventListener('visibilitychange', onVisibility);
+  motion.addEventListener('change', cleanup);
+  window.setTimeout(cleanup, 2050);
 })();
