@@ -2127,9 +2127,13 @@ function withNick(fn) { return () => { if (save.nick) fn(); else openNick(fn); }
 /* online ranking (shared by all players): see /api/ranking.js */
 const RANK_API = '/api/ranking';
 ui.global = null; ui.onlineState = 'idle';
-function rankPost(body) {
+function rankPost(body, tries) {
+  // a busy server or a dropped connection is tried again (up to 3 times); a rejected request is not
+  tries = tries === undefined ? 3 : tries;
   return fetch(RANK_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
-    .then(r => r.ok ? r.json() : Promise.reject(r.status));
+    .then(r => r.ok ? r.json() : Promise.reject(r.status), () => Promise.reject(0))
+    .catch(st => (tries > 1 && (st === 0 || st === 429 || st >= 500))
+      ? new Promise(res => setTimeout(res, 1500)).then(() => rankPost(body, tries - 1)) : Promise.reject(st));
 }
 function fetchGlobal() {
   ui.onlineState = 'loading';
