@@ -180,3 +180,49 @@ if(grid){
 }
 
 window.PG_LOCALIZE?.();
+
+// Lightweight Halloween decoration; never intercept navigation or scrolling.
+(() => {
+  if (document.getElementById('pg-halloween-ghosts')) return;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches) return;
+  const style = document.createElement('style');
+  style.textContent = `
+    #pg-halloween-ghosts{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none}
+    .pg-ghost-fall{position:absolute;top:-64px;left:var(--x);opacity:0;animation:pg-ghost-fall var(--duration) linear var(--delay) infinite;will-change:transform,opacity}
+    .pg-ghost-sway{display:block;animation:pg-ghost-sway var(--sway) ease-in-out infinite alternate}
+    .pg-ghost-emoji{display:block;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:var(--size);line-height:1.3;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18));animation:pg-ghost-tilt var(--sway) ease-in-out infinite alternate}
+    @keyframes pg-ghost-fall{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.78}70%{opacity:.78}100%{transform:translate3d(0,calc(100vh - 32px),0);opacity:0}}
+    @supports(height:100svh){@keyframes pg-ghost-fall{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.78}70%{opacity:.78}100%{transform:translate3d(0,calc(100svh - 32px),0);opacity:0}}}
+    @keyframes pg-ghost-sway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+    @keyframes pg-ghost-tilt{from{transform:rotate(-11deg)}to{transform:rotate(11deg)}}
+    #pg-halloween-ghosts[data-paused] *{animation-play-state:paused}
+    @media(max-width:600px){.pg-ghost-fall:nth-child(n+7){display:none}}
+    @media(prefers-reduced-motion:reduce){#pg-halloween-ghosts{display:none}}
+  `;
+  const layer = document.createElement('div');
+  layer.id = 'pg-halloween-ghosts';
+  layer.setAttribute('aria-hidden', 'true');
+  for (let i = 0; i < 10; i++) {
+    const fall = document.createElement('span');
+    fall.className = 'pg-ghost-fall';
+    // Distribute the first six across the screen, also on mobile.
+    const x = 10 + ((i * 37) % 80);
+    const duration = 13 + Math.random() * 7;
+    fall.style.cssText = `--x:${x}%;--size:${22 + Math.random() * 13}px;--duration:${duration}s;--delay:${-Math.random() * duration}s;--sway:${2.4 + Math.random() * 2}s`;
+    const sway = document.createElement('span');
+    sway.className = 'pg-ghost-sway';
+    const emoji = document.createElement('span');
+    emoji.className = 'pg-ghost-emoji';
+    emoji.textContent = '👻';
+    sway.append(emoji);
+    fall.append(sway);
+    layer.append(fall);
+  }
+  document.head.append(style);
+  document.body.append(layer);
+  const pause = () => layer.toggleAttribute('data-paused', document.hidden || motion.matches);
+  document.addEventListener('visibilitychange', pause);
+  motion.addEventListener('change', pause);
+  pause();
+})();
