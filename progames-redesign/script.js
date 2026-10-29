@@ -195,9 +195,9 @@ window.PG_LOCALIZE?.();
   const height = window.innerHeight, width = window.innerWidth;
   // phone: fewer, smaller ghosts that drift down more gently and start fading early, slowly
   const phone = width <= 600;
-  const TOTAL = 2500, FADE = phone ? 1700 : 700;
+  const TOTAL = 2500, FADE = phone ? 1100 : 700;
   const count = phone ? 6 : 11;
-  const fall = height * (phone ? .22 : .85);
+  const fall = height * (phone ? .34 : .85);
   // phone: ghosts appear scattered over the whole screen (each in its own height band) and float down a little
   const bands = [...Array(count).keys()].sort(() => Math.random() - .5);
   const animations = [];
@@ -212,7 +212,7 @@ window.PG_LOCALIZE?.();
   document.body.append(layer);
   for (let i = 0; i < count; i++) {
     const ghost = document.createElement('span');
-    const size = phone ? 20 + Math.random() * 6 : 24 + Math.random() * 10;
+    const size = phone ? 25 + Math.random() * 7 : 24 + Math.random() * 10;
     const x = 20 + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - 80);
     const startY = phone ? height * (.04 + (bands[i] + Math.random() * .7) / count * .72) : -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
     const dir = Math.random() < .5 ? -1 : 1;                      // drifts left or right
@@ -223,9 +223,16 @@ window.PG_LOCALIZE?.();
     layer.append(ghost);
     const frames = [];
     for (let k = 0; k <= STEPS; k++) {
-      const t = k / STEPS, w = Math.sin(phase + t * waves * Math.PI * 2);
-      const dx = drift * t + wobble * w, dy = startY + fall * t;
-      frames.push({ transform: `translate3d(${dx}px,${dy}px,0) rotate(${(dir * 8 + w * 10).toFixed(1)}deg)`, opacity: t === 0 ? 0 : phone && k === 1 ? .45 : .9, offset: t });
+      const t = k / STEPS;
+      let dx, dy, rot;
+      if (phone) { // phone: a smooth glide down, easing in, with a slight slant one way (no swaying)
+        const e = t * t * (1.6 - .6 * t);
+        dx = drift * .6 * e; dy = startY + fall * e; rot = dir * (4 + 4 * t);
+      } else {
+        const w = Math.sin(phase + t * waves * Math.PI * 2);
+        dx = drift * t + wobble * w; dy = startY + fall * t; rot = dir * 8 + w * 10;
+      }
+      frames.push({ transform: `translate3d(${dx.toFixed(1)}px,${dy.toFixed(1)}px,0) rotate(${rot.toFixed(1)}deg)`, opacity: t === 0 ? 0 : phone && k === 1 ? .45 : .9, offset: t });
     }
     animations.push(ghost.animate(frames, { duration: TOTAL, easing: 'linear', fill: 'both' }));
   }
