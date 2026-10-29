@@ -16,7 +16,7 @@ for(const file of fs.readdirSync('i18n/extra').filter(f=>f.endsWith('.tsv'))){
 const aliases={28:20,49:20,57:54,84:69,85:70,87:74,89:76,90:77,109:74,112:78,116:108,117:110};
 for(const d of Object.values(dictionaries)){
  d['Boxing and Amusement Machine Manufacturer']=d['Boxing Arcade Machine Manufacturer'];
- d["PRO-GAMES Polish manufacturer of boxing arcade and amusement machines. Boxers, combo machines, kickers and hammers for arcades, venues and distributors."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
+ d["PRO-GAMES is a Polish manufacturer of boxing arcade machines and amusement machines. Boxers, combo machines, kickers and hammers for arcades, entertainment venues and distributors."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  d["PRO-GAMES Polish manufacturer of boxing arcade and amusement machines. Find your model and request a quote."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  d["Polish manufacturer of boxing arcade and amusement machines. PRO-GAMES offers boxers, kickers and hammers, with customisation, spare parts and service."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  for(const [to,from]of Object.entries(aliases))d[sources[to]]=d[sources[from]];
