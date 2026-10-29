@@ -54,7 +54,9 @@ async function load() {
   const r = await fetch(`https://${STORE}.private.blob.vercel-storage.com/${FILE}?cache=0`, { headers: { authorization: 'Bearer ' + BLOB }, signal: AbortSignal.timeout(8000) });
   if (r.status === 404) return { data: { v: 1, p: {} }, etag: null };
   if (!r.ok) throw new Error('blob read ' + r.status);
-  return { data: await r.json(), etag: r.headers.get('etag') };
+  // the read may come back compressed with a weak etag (W/"…"); conditional writes need the plain one
+  const et = r.headers.get('etag');
+  return { data: await r.json(), etag: et ? et.replace(/^W\//, '') : null };
 }
 async function store(data, etag) {
   const headers = {
