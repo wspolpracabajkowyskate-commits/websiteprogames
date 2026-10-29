@@ -180,3 +180,49 @@ if(grid){
 }
 
 window.PG_LOCALIZE?.();
+
+// Halloween: ghosts fall for 2.5 seconds after the page opens, fading out at the end.
+(() => {
+  if (window.PG_HALLOWEEN_PLAYED) return;
+  window.PG_HALLOWEEN_PLAYED = true;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches || document.hidden) return;
+  const TOTAL = 2500, FADE = 700;
+  const layer = document.createElement('div');
+  layer.setAttribute('aria-hidden', 'true');
+  layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none';
+  const height = window.innerHeight, width = window.innerWidth;
+  const count = width <= 600 ? 9 : 16;
+  const animations = [];
+  let done = false;
+  const cleanup = () => {
+    if (done) return; done = true;
+    animations.forEach(a => a.cancel());
+    layer.remove();
+    document.removeEventListener('visibilitychange', onVisibility);
+  };
+  const onVisibility = () => { if (document.hidden) cleanup(); };
+  document.body.append(layer);
+  for (let i = 0; i < count; i++) {
+    const ghost = document.createElement('span');
+    const size = 22 + Math.random() * 14;
+    const x = 12 + ((i + Math.random() * .8) / count) * Math.max(0, width - 60);
+    const delay = Math.random() * 900;
+    const sway = (Math.random() - .5) * 50, tilt = (Math.random() - .5) * 28;
+    const fall = height * (.75 + Math.random() * .45);
+    ghost.textContent = '👻';
+    ghost.style.cssText = `position:absolute;top:-60px;left:${x}px;font-size:${size}px;line-height:1.3;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18))`;
+    layer.append(ghost);
+    const pose = (dx, y, a) => `translate3d(${dx}px,${y}px,0) rotate(${a}deg)`;
+    animations.push(ghost.animate([
+      { transform: pose(0, 0, tilt), opacity: 0 },
+      { transform: pose(sway, fall * .3, -tilt * .6), opacity: .9, offset: .15 },
+      { transform: pose(-sway * .6, fall * .65, tilt * .6), opacity: .9, offset: .6 },
+      { transform: pose(sway * .4, fall, -tilt * .3), opacity: .9 }
+    ], { duration: TOTAL - delay, delay, easing: 'linear', fill: 'both' }));
+  }
+  // the whole flock fades away during the last part of the 2.5 s
+  animations.push(layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: FADE, delay: TOTAL - FADE, easing: 'ease-in', fill: 'forwards' }));
+  document.addEventListener('visibilitychange', onVisibility);
+  window.setTimeout(cleanup, TOTAL + 50);
+})();
