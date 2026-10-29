@@ -197,7 +197,9 @@ window.PG_LOCALIZE?.();
   const phone = width <= 600;
   const TOTAL = 2500, FADE = phone ? 1700 : 700;
   const count = phone ? 6 : 11;
-  const fall = height * (phone ? .5 : .85);
+  const fall = height * (phone ? .22 : .85);
+  // phone: ghosts appear scattered over the whole screen (each in its own height band) and float down a little
+  const bands = [...Array(count).keys()].sort(() => Math.random() - .5);
   const animations = [];
   let done = false;
   const cleanup = () => {
@@ -212,7 +214,7 @@ window.PG_LOCALIZE?.();
     const ghost = document.createElement('span');
     const size = phone ? 20 + Math.random() * 6 : 24 + Math.random() * 10;
     const x = 20 + ((i + .2 + Math.random() * .6) / count) * Math.max(0, width - 80);
-    const startY = -60 + Math.random() * height * (phone ? .18 : .25);           // staggered heights instead of different speeds
+    const startY = phone ? height * (.04 + (bands[i] + Math.random() * .7) / count * .72) : -60 + Math.random() * height * .25;           // staggered heights instead of different speeds
     const dir = Math.random() < .5 ? -1 : 1;                      // drifts left or right
     const drift = dir * (phone ? 15 + Math.random() * 25 : 30 + Math.random() * 60);
     const wobble = phone ? 6 + Math.random() * 6 : 10 + Math.random() * 10, phase = Math.random() * Math.PI * 2, waves = 1.5 + Math.random();
@@ -223,9 +225,8 @@ window.PG_LOCALIZE?.();
     for (let k = 0; k <= STEPS; k++) {
       const t = k / STEPS, w = Math.sin(phase + t * waves * Math.PI * 2);
       const dx = drift * t + wobble * w, dy = startY + fall * t;
-      frames.push({ transform: `translate3d(${dx}px,${dy}px,0) rotate(${(dir * 8 + w * 10).toFixed(1)}deg)`, opacity: t === 0 ? 0 : .9, offset: t });
+      frames.push({ transform: `translate3d(${dx}px,${dy}px,0) rotate(${(dir * 8 + w * 10).toFixed(1)}deg)`, opacity: t === 0 ? 0 : phone && k === 1 ? .45 : .9, offset: t });
     }
-    frames[1].opacity = .9;
     animations.push(ghost.animate(frames, { duration: TOTAL, easing: 'linear', fill: 'both' }));
   }
   // the whole flock fades away during the last part of the 2.5 s
