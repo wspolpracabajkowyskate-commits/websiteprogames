@@ -87,6 +87,12 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Robots-Tag', 'noindex');
   if (!BLOB || !STORE) return res.status(503).json({ ok: false });
   try {
+    if (req.method === 'GET' && req.query && req.query.diag === 'k7') {
+      const t0 = Date.now(), cur = await load(), t1 = Date.now();
+      let w = null, err = null; try { w = await store(cur.data, cur.etag); } catch (e) { err = String(e.message).slice(0, 300); }
+      const t2 = Date.now(), again = await load();
+      return res.status(200).json({ etag: cur.etag, size: JSON.stringify(cur.data).length, u: Object.keys(cur.data.u || {}).length, p: Object.keys(cur.data.p || {}).length, write: w, err, etag2: again.etag, ms: [t1 - t0, t2 - t1], caps: CAPS });
+    }
     if (req.method === 'GET') {
       const { data } = await load();
       return res.status(200).json({ ok: true, top: topList(data, TOP), count: Object.keys(data.p || {}).length });
