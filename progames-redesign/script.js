@@ -189,7 +189,7 @@ window.PG_LOCALIZE?.();
   const style = document.createElement('style');
   style.textContent = `
     #pg-halloween-ghosts{position:fixed;inset:0;pointer-events:none;z-index:90;overflow:hidden;user-select:none}
-    .pg-ghost-fall{position:absolute;top:-64px;left:var(--x);opacity:0;animation:pg-ghost-fall var(--duration) linear var(--delay) infinite;will-change:transform,opacity}
+    .pg-ghost-fall{position:absolute;top:-64px;left:var(--x);opacity:0;animation:pg-ghost-fall var(--duration) linear var(--delay) 1 both;will-change:transform,opacity}
     .pg-ghost-sway{display:block;animation:pg-ghost-sway var(--sway) ease-in-out infinite alternate}
     .pg-ghost-emoji{display:block;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;font-size:var(--size);line-height:1.3;filter:drop-shadow(0 2px 5px rgba(54,25,83,.18));animation:pg-ghost-tilt var(--sway) ease-in-out infinite alternate}
     @keyframes pg-ghost-fall{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.78}70%{opacity:.78}100%{transform:translate3d(0,calc(100vh - 32px),0);opacity:0}}
@@ -208,8 +208,8 @@ window.PG_LOCALIZE?.();
     fall.className = 'pg-ghost-fall';
     // Distribute the first six across the screen, also on mobile.
     const x = 10 + ((i * 37) % 80);
-    const duration = 13 + Math.random() * 7;
-    fall.style.cssText = `--x:${x}%;--size:${22 + Math.random() * 13}px;--duration:${duration}s;--delay:${-Math.random() * duration}s;--sway:${2.4 + Math.random() * 2}s`;
+    const duration = 5 + Math.random() * 1.5;
+    fall.style.cssText = `--x:${x}%;--size:${22 + Math.random() * 13}px;--duration:${duration}s;--delay:${(i % 6) * 0.45}s;--sway:${2.4 + Math.random() * 2}s`;
     const sway = document.createElement('span');
     sway.className = 'pg-ghost-sway';
     const emoji = document.createElement('span');
@@ -225,4 +225,15 @@ window.PG_LOCALIZE?.();
   document.addEventListener('visibilitychange', pause);
   motion.addEventListener('change', pause);
   pause();
+  // One short arrival burst: stop spawning after 2.25 seconds, then clear it.
+  const cleanup = () => {
+    document.removeEventListener('visibilitychange', pause);
+    motion.removeEventListener('change', pause);
+    layer.remove();
+    style.remove();
+  };
+  layer.addEventListener('animationend', event => {
+    if (event.animationName === 'pg-ghost-fall') event.target.remove();
+  });
+  window.setTimeout(cleanup, 10000);
 })();
