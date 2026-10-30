@@ -82,8 +82,8 @@ def page(lang):
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/fonts/fonts.css">
-  <link rel="stylesheet" href="/styles.css?v=25">
-  <link rel="stylesheet" href="/i18n.css?v=39">
+  <link rel="stylesheet" href="/styles.css?v=26">
+  <link rel="stylesheet" href="/i18n.css?v=40">
   <link rel="stylesheet" href="/games/monster-game.css?v={VER}">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace('<', chr(92) + 'u003c')}</script>
 </head>
