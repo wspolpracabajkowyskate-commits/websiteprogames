@@ -41,13 +41,12 @@
  .games-promo-card{aspect-ratio:1.12;border-radius:20px;background-position:58% 40%;background-size:auto 118%}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
- .games-promo-content{position:absolute;inset:0;width:auto;margin:0;z-index:auto}
- /* phone: the headline sits behind the monster (which overlaps it a little); logo and button stay in front */
- .games-promo-logo{position:absolute;left:10%;top:7%;width:80%;z-index:3}
- .games-promo-play{position:absolute;left:6%;bottom:6%;width:48%;margin:0;z-index:3}
- .games-promo-tagline{position:absolute;left:5%;top:45%;width:60%;margin:0;font-size:clamp(17px,calc(7.7vw * var(--tl,1) * var(--tl,1)),38px);white-space:normal;text-align:left;z-index:1}
+ .games-promo-content{position:absolute;inset:0;width:auto;margin:0}
+ .games-promo-logo{position:absolute;left:10%;top:7%;width:80%}
+ .games-promo-play{position:absolute;left:6%;bottom:6%;width:48%;margin:0}
+ .games-promo-tagline{position:absolute;left:6%;top:46%;width:54%;margin:0;font-size:clamp(17px,calc(6.8vw * var(--tl,1)),34px);white-space:normal;text-align:left;z-index:2}
  .games-promo-play span{font-size:clamp(16px,4.6vw,28px)}
- .games-promo-monster{width:63%;right:-2%;top:38%;opacity:.95;z-index:2}
+ .games-promo-monster{width:63%;right:-2%;top:38%;opacity:.95;z-index:1}
 }
 @media(prefers-reduced-motion:reduce){
  .games-promo-monster,.games-promo-lightning{animation:none}
