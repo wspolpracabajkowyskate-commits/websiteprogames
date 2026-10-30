@@ -17,7 +17,7 @@
 .games-promo-play:focus-visible{outline:3px solid white;outline-offset:4px}
 .games-promo-head{margin:0 0 18px}
 .games-promo-kicker{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8b8f96}
-.games-promo-intro{margin:0;font-size:16px;line-height:1.5;color:#3a3d42;max-width:720px}
+.games-promo-intro{margin:0;font-size:16px;line-height:1.5;color:#3a3d42;max-width:860px}
 .desktop-nav .games-nav-link{color:inherit;font-weight:800;letter-spacing:.04em}
 @keyframes games-float{0%,100%{transform:translateY(5px) rotate(-2deg) scale(1)}50%{transform:translateY(-14px) rotate(2deg) scale(1.025)}}
 /* Three separated strikes: fast attack, brief afterglow, no drifting overlay. */
