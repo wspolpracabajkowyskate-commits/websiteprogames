@@ -2240,10 +2240,9 @@ function drawRankTable(y0, count, lh) {
     if (hl) { ctx.globalAlpha = 0.25 + 0.15 * Math.sin(time * 6); ctx.fillStyle = C.mag; ctx.fillRect(xL - 4, y - 2, xR - xL + 8, 11); ctx.globalAlpha = 1; }
     const pc = i === 0 ? C.yel : i === 1 ? '#c0c4d8' : i === 2 ? '#e0904a' : '#9b8fb8';
     drawText(ctx, String(i + 1).padStart(2, ' ') + '.', xL, y, pc);
-    if (r.c) drawFlag(r.c, xL + 22, y);
-    drawText(ctx, r.n, xL + (r.c ? 37 : 24), y, me ? C.yel : C.white);
-    const stl = r.st === 'END' ? UI.end : UI.stage + ' ' + String(r.st || '').replace('E', '');
-    if (wide) drawText(ctx, stl, xR - 64, y, C.cyan, { align: 'right' });
+    drawText(ctx, r.n, xL + 24, y, me ? C.yel : C.white);
+    // the player's country (from IP) sits in its own column, where the reached stage used to be
+    if (r.c) drawFlag(r.c, xR - 75, y);
     drawText(ctx, fmt(r.s ?? r.score), xR, y, me ? C.yel : C.white, { align: 'right' });
   });
 }
