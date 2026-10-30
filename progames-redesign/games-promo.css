@@ -15,9 +15,18 @@
 .games-promo-play span{position:absolute;left:9%;right:25%;top:18%;bottom:28%;display:flex;align-items:center;justify-content:center;color:#080604;font-family:Inter,'Arial Black',sans-serif;font-weight:800;font-size:clamp(16px,2.5vw,38px);line-height:1;letter-spacing:-.045em;-webkit-text-stroke:.8px currentColor;transform:scaleX(.88)}
 .games-promo-play:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.08)}
 .games-promo-play:focus-visible{outline:3px solid white;outline-offset:4px}
-.games-promo-head{margin:0 0 18px}
-.games-promo-kicker{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8b8f96}
-.games-promo-intro{margin:0;font-size:16px;line-height:1.5;color:#3a3d42;max-width:860px}
+/* Editorial introduction: the site's charcoal / orange palette, above the game artwork. */
+.games-promo-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:clamp(28px,5vw,80px);row-gap:16px;position:relative;margin:0 0 16px;padding:clamp(24px,3.2vw,48px);border:1px solid #252930;border-radius:24px;background:radial-gradient(ellipse at 0 0,#ff4b1312,transparent 60%),#101216;color:#f5f7fa}
+.games-promo-kicker{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin:0;font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#ff9169}
+.games-promo-kicker::before{content:"";width:24px;height:2px;flex:none;background:var(--accent,#ff4b13)}
+.games-promo-heading,.games-promo-details{min-width:0}
+.games-promo-title{margin:0;font-family:Manrope,Inter,Arial,sans-serif;font-size:clamp(32px,3.4vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.055em;text-wrap:balance;color:#f5f7fa}
+.games-promo-title span{color:#ff784c}
+.games-promo-intro{margin:0;max-width:65ch;font-size:clamp(15px,1.2vw,17px);line-height:1.75;color:#c5c9d0;text-wrap:pretty}
+.games-promo-facts{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:22px 0 0}
+.games-promo-facts li{display:flex;align-items:baseline;gap:6px;font-size:12px;color:#b8bec7}
+.games-promo-facts strong{font-family:Manrope,Inter,Arial,sans-serif;font-size:14px;font-weight:800;color:#fff}
+.games-promo-note{margin:18px 0 0;padding-top:16px;border-top:1px solid #ffffff1f;color:#aeb5bf;font-size:12px;line-height:1.7}
 .desktop-nav .games-nav-link{color:inherit;font-weight:800;letter-spacing:.04em}
 @keyframes games-float{0%,100%{transform:translateY(5px) rotate(-2deg) scale(1)}50%{transform:translateY(-14px) rotate(2deg) scale(1.025)}}
 /* Three separated strikes: fast attack, brief afterglow, no drifting overlay. */
@@ -32,8 +41,11 @@
 }
 @media(max-width:700px){
  .games-promo{padding:40px 20px}
- .games-promo-head{margin-bottom:14px}
- .games-promo-intro{font-size:15px}
+ .games-promo-head{grid-template-columns:minmax(0,1fr);gap:16px;margin-bottom:12px;padding:24px 20px;border-radius:20px}
+ .games-promo-title{font-size:clamp(30px,7.5vw,42px)}
+ .games-promo-intro{font-size:15px;line-height:1.7}
+ .games-promo-facts{gap:10px 16px;margin-top:18px}
+ .games-promo-note{font-size:11px;margin-top:16px;padding-top:14px}
  .games-promo-card{aspect-ratio:1.12;border-radius:20px;background-position:58% 40%;background-size:auto 118%}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
@@ -64,3 +76,4 @@
  .games-promo + .intro.section{padding-top:0}
  .business-head > .btn + p:not(.kicker){margin-top:22px;font-size:15px;padding:0 16px}
 }
+

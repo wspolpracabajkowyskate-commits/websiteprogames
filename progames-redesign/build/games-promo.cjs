@@ -38,7 +38,13 @@ function banner(lang) {
   return `\n    <section class="games-promo section-dark" aria-label="GAMES MONSTER" data-no-translate>
       <div class="games-promo-head" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">
         <p class="games-promo-kicker">${(heads[lang] || heads.en)[0]}</p>
-        <p class="games-promo-intro">${(heads[lang] || heads.en)[1]}</p>
+        <div class="games-promo-heading">
+          <h2 class="games-promo-title">${lang === 'pl' ? 'Wejdź do gry.<br><span>Pobij swój rekord.</span>' : 'GAMES <span>MONSTER</span>'}</h2>
+        </div>
+        <div class="games-promo-details">
+          <p class="games-promo-intro">${lang === 'pl' ? 'Poczuj energię automatów PRO-GAMES w darmowej grze przeglądarkowej. Uderzaj, kop piłkę i rozbijaj młotem. Pokonaj bossa BIG BAG i zawalcz o miejsce w rankingu online.' : (heads[lang] || heads.en)[1]}</p>
+          ${lang === 'pl' ? '<ul class="games-promo-facts" aria-label="O grze"><li><strong>10</strong> etapów</li><li><strong>BIG BAG</strong> finałowy boss</li><li><strong>TOP</strong> ranking online</li></ul><p class="games-promo-note">Graj za darmo · Bez pobierania · Telefon i komputer</p>' : ''}
+        </div>
       </div>
       <div class="games-promo-card" dir="ltr">
         <img class="games-promo-background" src="${asset('background')}" alt="" width="2048" height="682" loading="lazy" decoding="async">
@@ -80,8 +86,9 @@ for (const file of walk(root)) {
     html = html.replace(/(<section\b[^>]*id="machines"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
   }
   html = html.replace(/\s*<link rel="stylesheet" href="\/games-promo\.css\?v=\d+">/g, '');
-  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=4">\n</head>');
+  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=5">\n</head>');
   fs.writeFileSync(file, html);
   count++;
 }
 console.log(`Games navigation published on ${count} pages; localized banners follow the product catalogue.`);
+
