@@ -3,6 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
+// headline under the logo, also real localized text (not baked into the artwork)
+const taglines = {en:'BEAT YOUR HIGH SCORE!',pl:'POBIJ SWÓJ REKORD!',es:'¡SUPERA TU RÉCORD!',de:'KNACK DEINEN REKORD!',fr:'BATS TON RECORD !',el:'ΣΠΑΣΕ ΤΟ ΡΕΚΟΡ ΣΟΥ!',it:'BATTI IL TUO RECORD!',ar:'حطّم رقمك القياسي!',ro:'BATE-ȚI RECORDUL!',cs:'PŘEKONEJ SVŮJ REKORD!',hu:'DÖNTSD MEG A REKORDOD!',ru:'ПОБЕЙ СВОЙ РЕКОРД!',bg:'ПОДОБРИ РЕКОРДА СИ!'};
 const labels = {en:'PLAY',pl:'ZAGRAJ',es:'JUGAR',de:'SPIELEN',fr:'JOUER',el:'ΠΑΙΞΕ',it:'GIOCA',ar:'العب',ro:'JOACĂ',cs:'HRÁT',hu:'JÁTSSZ',ru:'ИГРАТЬ',bg:'ИГРАЙ'};
 // link straight to the game page in the page's language (no redirect hop for visitors and Google)
 const gamesURL = lang => lang === 'pl' ? '/pl/gry/' : '/games/';
@@ -14,6 +16,8 @@ const earlyLoad = "(function(){var s=document.currentScript.parentNode,i=s.query
   + "function go(){i.forEach(function(m){m.loading='eager'})}"
   + "if(!('IntersectionObserver'in window))return go();"
   + "var o=new IntersectionObserver(function(e){if(e.some(function(x){return x.isIntersecting})){o.disconnect();go()}},{rootMargin:'3000px 0px'});o.observe(s)})()";
+// longer translations get a proportionally smaller headline so every language fits the same space
+const tagScale = lang => Math.min(1, 19 / [...(taglines[lang] || taglines.en)].length).toFixed(3);
 function banner(lang) {
   return `\n    <section class="games-promo section-dark" aria-label="GAMES MONSTER" data-no-translate>
       <div class="games-promo-card" dir="ltr">
@@ -22,6 +26,7 @@ function banner(lang) {
         <img class="games-promo-monster" src="${asset('monster')}" alt="" width="1254" height="1254" loading="lazy" decoding="async">
         <div class="games-promo-content">
           <img class="games-promo-logo" src="${asset('logo')}" alt="GAMES MONSTER" width="1881" height="836" loading="lazy" decoding="async">
+          <p class="games-promo-tagline" style="--tl:${tagScale(lang)}" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${taglines[lang] || taglines.en}</p>
           <a class="games-promo-play" href="${gamesURL(lang)}" lang="${lang}">
             <img src="${asset('button')}" alt="" width="2048" height="682" loading="lazy" decoding="async">
             <span dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${labels[lang] || labels.en}</span>
@@ -54,7 +59,8 @@ for (const file of walk(root)) {
   if (/<section\b[^>]*id="machines"/.test(html)) {
     html = html.replace(/(<section\b[^>]*id="machines"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
   }
-  if (!html.includes('href="/games-promo.css?v=1"')) html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=1">\n</head>');
+  html = html.replace(/\s*<link rel="stylesheet" href="\/games-promo\.css\?v=\d+">/g, '');
+  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=2">\n</head>');
   fs.writeFileSync(file, html);
   count++;
 }

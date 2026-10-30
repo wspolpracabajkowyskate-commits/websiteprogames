@@ -8,8 +8,10 @@
 .games-promo-monster{position:absolute;width:36%;height:auto;max-width:none;right:6%;top:-24%;pointer-events:none;transform-origin:50% 80%;animation:games-float 3.6s ease-in-out infinite}
 .games-promo-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:38%;margin:.6% 0 0 6%}
 .games-promo-logo{width:90%;height:auto;filter:drop-shadow(0 8px 12px #08001966)}
-.games-promo-play{position:relative;display:block;width:70%;margin-top:-5%;border-radius:12px;transition:transform .2s ease,filter .2s ease}
+.games-promo-play{position:relative;display:block;width:70%;margin-top:-3%;border-radius:12px;transition:transform .2s ease,filter .2s ease}
 .games-promo-play img{width:100%;height:auto}
+/* "BEAT YOUR HIGH SCORE!" as localized text styled like the artwork: chunky white, black outline, slight tilt */
+.games-promo-tagline{position:relative;margin:-5.5% 0 0;max-width:100%;color:#fff;font-family:Manrope,'Arial Black',Inter,sans-serif;font-weight:800;font-size:clamp(15px,calc(2.95vw * var(--tl,1)),calc(50px * var(--tl,1)));line-height:1.02;letter-spacing:-.025em;text-align:center;text-transform:uppercase;white-space:nowrap;-webkit-text-stroke:.2em #0b0716;paint-order:stroke fill;text-shadow:0 .09em 0 #0b0716,0 .16em 0 #3b1474,0 .3em .5em #0800194d;transform:rotate(-2.5deg)}
 .games-promo-play span{position:absolute;left:9%;right:25%;top:18%;bottom:28%;display:flex;align-items:center;justify-content:center;color:#080604;font-family:Inter,'Arial Black',sans-serif;font-weight:800;font-size:clamp(16px,2.5vw,38px);line-height:1;letter-spacing:-.045em;-webkit-text-stroke:.8px currentColor;transform:scaleX(.88)}
 .games-promo-play:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.08)}
 .games-promo-play:focus-visible{outline:3px solid white;outline-offset:4px}
@@ -33,6 +35,7 @@
  .games-promo-content{position:absolute;inset:0;width:auto;margin:0}
  .games-promo-logo{position:absolute;left:10%;top:7%;width:80%}
  .games-promo-play{position:absolute;left:6%;bottom:6%;width:48%;margin:0}
+ .games-promo-tagline{position:absolute;left:6%;top:46%;width:54%;margin:0;font-size:clamp(18px,calc(7.2vw * var(--tl,1)),36px);white-space:normal;text-align:left;z-index:2}
  .games-promo-play span{font-size:clamp(16px,4.6vw,28px)}
  .games-promo-monster{width:63%;right:-2%;top:38%;opacity:.95;z-index:1}
 }
