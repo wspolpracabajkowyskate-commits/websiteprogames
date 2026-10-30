@@ -38,7 +38,7 @@ function banner(lang) {
   return `\n    <section class="games-promo section-dark" aria-label="GAMES MONSTER" data-no-translate>
       <div class="games-promo-head" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">
         <p class="games-promo-kicker">${(heads[lang] || heads.en)[0]}</p>
-        <p class="games-promo-intro">${lang === 'pl' ? '<strong class="games-promo-lead">Darmowa gra od PRO-GAMES, w którą zagrasz od razu w przeglądarce.</strong> <span class="games-promo-description">Uderzaj, kopnij piłkę i rozbijaj młotem przez 10 etapów, pokonaj bossa BIG BAG i zawalcz o miejsce w rankingu online.</span>' : (heads[lang] || heads.en)[1]}</p>
+        <p class="games-promo-intro">${lang === 'pl' ? '<strong class="games-promo-lead">Darmowa gra od PRO-GAMES, w którą zagrasz od razu w przeglądarce.</strong>' : (heads[lang] || heads.en)[1]}</p>
       </div>
       <div class="games-promo-card" dir="ltr">
         <img class="games-promo-background" src="${asset('background')}" alt="" width="2048" height="682" loading="lazy" decoding="async">
