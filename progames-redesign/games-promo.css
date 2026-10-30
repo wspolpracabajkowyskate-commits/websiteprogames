@@ -15,6 +15,9 @@
 .games-promo-play span{position:absolute;left:9%;right:25%;top:18%;bottom:28%;display:flex;align-items:center;justify-content:center;color:#080604;font-family:Inter,'Arial Black',sans-serif;font-weight:800;font-size:clamp(16px,2.5vw,38px);line-height:1;letter-spacing:-.045em;-webkit-text-stroke:.8px currentColor;transform:scaleX(.88)}
 .games-promo-play:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.08)}
 .games-promo-play:focus-visible{outline:3px solid white;outline-offset:4px}
+.games-promo-head{margin:0 0 18px}
+.games-promo-kicker{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8b8f96}
+.games-promo-intro{margin:0;font-size:16px;line-height:1.5;color:#3a3d42;max-width:720px}
 .desktop-nav .games-nav-link{color:inherit;font-weight:800;letter-spacing:.04em}
 @keyframes games-float{0%,100%{transform:translateY(5px) rotate(-2deg) scale(1)}50%{transform:translateY(-14px) rotate(2deg) scale(1.025)}}
 /* Three separated strikes: fast attack, brief afterglow, no drifting overlay. */
@@ -29,6 +32,8 @@
 }
 @media(max-width:700px){
  .games-promo{padding:40px 20px}
+ .games-promo-head{margin-bottom:14px}
+ .games-promo-intro{font-size:15px}
  .games-promo-card{aspect-ratio:1.12;border-radius:20px;background-position:58% 40%;background-size:auto 118%}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
