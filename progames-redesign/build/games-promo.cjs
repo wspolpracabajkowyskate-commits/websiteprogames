@@ -3,6 +3,22 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
+// small heading above the banner, so it reads as the site's own game rather than an advert
+const heads = {
+  en:['OUR GAME','A free game by PRO-GAMES, inspired by our MONSTER 3in1 machine.'],
+  pl:['NASZA GRA','Darmowa gra od PRO-GAMES inspirowana naszym automatem MONSTER 3in1.'],
+  es:['NUESTRO JUEGO','Un juego gratuito de PRO-GAMES inspirado en nuestra máquina MONSTER 3in1.'],
+  de:['UNSER SPIEL','Ein kostenloses Spiel von PRO-GAMES, inspiriert von unserem Automaten MONSTER 3in1.'],
+  fr:['NOTRE JEU','Un jeu gratuit de PRO-GAMES, inspiré de notre machine MONSTER 3in1.'],
+  el:['ΤΟ ΠΑΙΧΝΙΔΙ ΜΑΣ','Ένα δωρεάν παιχνίδι της PRO-GAMES, εμπνευσμένο από το μηχάνημά μας MONSTER 3in1.'],
+  it:['IL NOSTRO GIOCO','Un gioco gratuito di PRO-GAMES, ispirato alla nostra macchina MONSTER 3in1.'],
+  ar:['لعبتنا','لعبة مجانية من PRO-GAMES مستوحاة من جهازنا MONSTER 3in1.'],
+  ro:['JOCUL NOSTRU','Un joc gratuit de la PRO-GAMES, inspirat de automatul nostru MONSTER 3in1.'],
+  cs:['NAŠE HRA','Hra zdarma od PRO-GAMES inspirovaná naším automatem MONSTER 3in1.'],
+  hu:['A MI JÁTÉKUNK','Ingyenes játék a PRO-GAMES-től, a MONSTER 3in1 gépünk ihlette.'],
+  ru:['НАША ИГРА','Бесплатная игра от PRO-GAMES по мотивам нашего автомата MONSTER 3in1.'],
+  bg:['НАШАТА ИГРА','Безплатна игра от PRO-GAMES, вдъхновена от нашия автомат MONSTER 3in1.']
+};
 // headline under the logo, also real localized text (not baked into the artwork)
 const taglines = {en:'BEAT YOUR HIGH SCORE!',pl:'POBIJ SWÓJ REKORD!',es:'¡SUPERA TU RÉCORD!',de:'KNACK DEINEN REKORD!',fr:'BATS TON RECORD !',el:'ΣΠΑΣΕ ΤΟ ΡΕΚΟΡ ΣΟΥ!',it:'BATTI IL TUO RECORD!',ar:'حطّم رقمك القياسي!',ro:'BATE-ȚI RECORDUL!',cs:'PŘEKONEJ SVŮJ REKORD!',hu:'DÖNTSD MEG A REKORDOD!',ru:'ПОБЕЙ СВОЙ РЕКОРД!',bg:'ПОДОБРИ РЕКОРДА СИ!'};
 const labels = {en:'PLAY',pl:'ZAGRAJ',es:'JUGAR',de:'SPIELEN',fr:'JOUER',el:'ΠΑΙΞΕ',it:'GIOCA',ar:'العب',ro:'JOACĂ',cs:'HRÁT',hu:'JÁTSSZ',ru:'ИГРАТЬ',bg:'ИГРАЙ'};
@@ -20,6 +36,10 @@ const earlyLoad = "(function(){var s=document.currentScript.parentNode,i=s.query
 const tagScale = lang => Math.min(1, 19 / [...(taglines[lang] || taglines.en)].length).toFixed(3);
 function banner(lang) {
   return `\n    <section class="games-promo section-dark" aria-label="GAMES MONSTER" data-no-translate>
+      <div class="games-promo-head" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">
+        <p class="games-promo-kicker">${(heads[lang] || heads.en)[0]}</p>
+        <p class="games-promo-intro">${(heads[lang] || heads.en)[1]}</p>
+      </div>
       <div class="games-promo-card" dir="ltr">
         <img class="games-promo-background" src="${asset('background')}" alt="" width="2048" height="682" loading="lazy" decoding="async">
         <img class="games-promo-lightning" src="${asset('lightning')}" alt="" width="2048" height="682" loading="lazy" decoding="async">
@@ -60,7 +80,7 @@ for (const file of walk(root)) {
     html = html.replace(/(<section\b[^>]*id="machines"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
   }
   html = html.replace(/\s*<link rel="stylesheet" href="\/games-promo\.css\?v=\d+">/g, '');
-  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=2">\n</head>');
+  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=3">\n</head>');
   fs.writeFileSync(file, html);
   count++;
 }
