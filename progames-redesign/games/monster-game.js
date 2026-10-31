@@ -1640,62 +1640,27 @@ function drawGates(t) {
     if (g.bot) { ctx.fillStyle = '#1a2a20'; ctx.fillRect(x + 2, y + T - 4, 12, 4); ctx.fillStyle = '#4a6a52'; ctx.fillRect(x + 2, y + T - 4, 12, 1); ctx.fillStyle = lamp; ctx.fillRect(x + 6, y + T - 4, 4, 2); }
   }
 }
-/* decorations painted on walls: the PRO-GAMES logo (pixel version of the emblem + wordmark) */
+/* decorations painted on walls: the PRO-GAMES wordmark */
 function drawDecor(t) {
   for (const d of level.decor) {
     const x = Math.round(d.x - cam.x), y = Math.round(d.y - cam.y);
-    if (d.type === 'logo' && x < W && x + 192 > 0) drawPixelLogo(x, y, t);
+    if (d.type === 'logo' && x < W && x + 192 > 0) drawPixelLogo(x, y);
   }
 }
-const LOGO_FLAGS = [['#e8283c', '#ffffff'], ['#1d4fb0', '#ffd21e'], ['#169b3c', '#ffffff'], ['#ffffff', '#e8283c'], ['#1d3a8a', '#ffffff'], ['#ffd21e', '#e8283c'],
-  ['#e8283c', '#1d4fb0'], ['#ffffff', '#169b3c'], ['#111111', '#ffd21e'], ['#6cb4ee', '#ffffff'], ['#e8283c', '#ffd21e'], ['#169b3c', '#e8283c']];
-function drawPixelLogo(x0, y0, t) {
-  // a sign panel on the factory wall: 176 x 92 inside the 12 x 8 tile block
-  const px = x0 + 8, py = y0 + 18, pw = 176, ph = 92;
-  ctx.globalAlpha = 0.6; ctx.fillStyle = '#060b1c'; ctx.fillRect(px, py, pw, ph); ctx.globalAlpha = 1;
-  ctx.fillStyle = '#2b3a66'; ctx.fillRect(px, py, pw, 1); ctx.fillRect(px, py + ph - 1, pw, 1); ctx.fillRect(px, py, 1, ph); ctx.fillRect(px + pw - 1, py, 1, ph);
-  // marquee bulbs chasing around the panel
-  const per = 2 * (pw + ph), n = 30, step = per / n, off = Math.floor(t * 6);
-  for (let i = 0; i < n; i++) {
-    let d = i * step, bx, by;
-    if (d < pw) { bx = px + d; by = py; } else if ((d -= pw) < ph) { bx = px + pw; by = py + d; } else if ((d -= ph) < pw) { bx = px + pw - d; by = py + ph; } else { d -= pw; bx = px; by = py + ph - d; }
-    ctx.fillStyle = (i + off) % 3 === 0 ? C.yel : '#7a5a1e'; ctx.fillRect(Math.round(bx) - 1, Math.round(by) - 1, 2, 2);
-  }
-  // emblem: gold rim, ring of flags, silver disc with the orange swoosh
-  const R = 28, cx = px + 33, cy = py + ph / 2;
-  for (let dy = -R; dy <= R; dy++) for (let dx = -R; dx <= R; dx++) {
-    const dd = Math.sqrt(dx * dx + dy * dy); if (dd > R) continue;
-    let col;
-    if (dd > R - 1.6) col = dy > 6 ? '#8a5a14' : '#e0a432';
-    else if (dd > R - 7.5) {
-      const a = (Math.atan2(dy, dx) + Math.PI) / (Math.PI * 2), seg = Math.floor(a * 14), fr = a * 14 - seg;
-      const f = LOGO_FLAGS[seg % LOGO_FLAGS.length];
-      col = fr < 0.09 ? '#3a2a14' : (dd > R - 4.5 ? f[0] : f[1]);
-    } else if (dd > R - 9) col = '#5a4220';
-    else {
-      const ri = R - 9, a = Math.atan2(dy, dx) * 180 / Math.PI;
-      const swoosh = dd > ri * 0.62 && dd < ri * 0.92 && (a > 50 || a < -42);
-      col = swoosh ? (dy < -2 ? '#ffb04a' : dy < 6 ? '#ff8a1e' : '#d8620e') : (dy < -8 ? '#f4f6f9' : dy < 4 ? '#d6dbe1' : '#aab2bb');
-    }
-    ctx.fillStyle = col; ctx.fillRect(cx + dx, cy + dy, 1, 1);
-  }
-  drawText(ctx, 'PRO', cx + 1, cy - 8, '#1a1a22', { align: 'center' });
-  drawText(ctx, 'GAMES', cx + 1, cy + 1, '#1a1a22', { align: 'center' });
-  // wordmark: PRO (orange) -GAMES (silver), POLAND underneath, orange swoosh under PRO
-  const tx = px + 66, ty = py + 26;
-  drawText(ctx, 'PRO-GAMES', tx, ty, '#ffffff', { scale: 2, outline: '#06041a' });
+// the PRO-GAMES wordmark painted straight on the rock: PRO (orange) -GAMES (silver), orange swoosh, POLAND
+function drawPixelLogo(x0, y0) {
+  const S = 3, word = 'PRO-GAMES', w = textWidth(word, S), tx = Math.round(x0 + 96 - w / 2), ty = y0 + 46;
+  drawText(ctx, word, tx, ty, '#ffffff', { scale: S, outline: '#06041a' });
   const half = (txt, x, top, bot) => {
-    drawText(ctx, txt, x, ty, bot, { scale: 2 });
-    ctx.save(); ctx.beginPath(); ctx.rect(x - 2, ty - 2, 120, 8); ctx.clip(); drawText(ctx, txt, x, ty, top, { scale: 2 }); ctx.restore();
+    drawText(ctx, txt, x, ty, bot, { scale: S });
+    ctx.save(); ctx.beginPath(); ctx.rect(x - 2, ty - 2, 200, 11); ctx.clip(); drawText(ctx, txt, x, ty, top, { scale: S }); ctx.restore();
   };
   half('PRO', tx, '#ffb04a', '#ff7a12');
-  half('-GAMES', tx + 36, '#ffffff', '#c3c9d2');
-  ctx.fillStyle = '#06041a'; ctx.fillRect(tx - 1, ty + 17, 62, 4);
-  ctx.fillStyle = '#ff8a1e'; ctx.fillRect(tx, ty + 18, 58, 2); ctx.fillStyle = C.yel; ctx.fillRect(tx + 4, ty + 18, 30, 1); ctx.fillStyle = '#ff8a1e'; ctx.fillRect(tx + 58, ty + 18, 2, 1);
-  drawText(ctx, 'POLAND', tx + 105, ty + 24, '#ffffff', { align: 'right', outline: '#06041a' });
-  // a glint sweeping across the sign now and then
-  const gx = ((t * 60) % 520) - 60;
-  if (gx > 0 && gx < pw) { ctx.globalAlpha = 0.12; ctx.fillStyle = C.white; ctx.fillRect(px + gx, py + 1, 6, ph - 2); ctx.globalAlpha = 1; }
+  half('-GAMES', tx + 3 * 6 * S, '#ffffff', '#c3c9d2');
+  const sy = ty + 7 * S + 4, sw = 3 * 6 * S + 30;
+  ctx.fillStyle = '#06041a'; ctx.fillRect(tx - 1, sy - 1, sw + 3, 5);
+  ctx.fillStyle = '#ff8a1e'; ctx.fillRect(tx, sy, sw, 3); ctx.fillStyle = C.yel; ctx.fillRect(tx + 5, sy, sw - 22, 1); ctx.fillStyle = '#ff8a1e'; ctx.fillRect(tx + sw, sy + 1, 2, 1);
+  drawText(ctx, 'POLAND', tx + w, sy + 3, '#ffffff', { scale: 2, align: 'right', outline: '#06041a' });
 }
 function drawHeart(x, y, col, small) {
   x = Math.round(x); y = Math.round(y);
