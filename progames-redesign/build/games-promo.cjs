@@ -38,7 +38,7 @@ function banner(lang) {
   return `\n    <section class="games-promo section-dark" aria-label="GAMES MONSTER" data-no-translate>
       <div class="games-promo-head" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">
         <p class="games-promo-kicker">${(heads[lang] || heads.en)[0]}</p>
-        <p class="games-promo-intro">${lang === 'pl' ? '<strong class="games-promo-lead">Darmowa gra od PRO-GAMES, w którą zagrasz od razu w przeglądarce.</strong>' : (heads[lang] || heads.en)[1]}</p>
+        <p class="games-promo-intro">${lang === 'pl' ? '<span class="games-promo-lead">Darmowa gra od PRO-GAMES, w którą zagrasz od razu w przeglądarce.</span>' : (heads[lang] || heads.en)[1]}</p>
       </div>
       <div class="games-promo-card" dir="ltr">
         <img class="games-promo-background" src="${asset('background')}" alt="" width="2048" height="682" loading="lazy" decoding="async">
@@ -80,7 +80,7 @@ for (const file of walk(root)) {
     html = html.replace(/(<section\b[^>]*id="machines"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
   }
   html = html.replace(/\s*<link rel="stylesheet" href="\/games-promo\.css\?v=\d+">/g, '');
-  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=9">\n</head>');
+  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=10">\n</head>');
   fs.writeFileSync(file, html);
   count++;
 }

@@ -18,7 +18,7 @@
 /* Quiet, unboxed introduction; the artwork below remains the focal point. */
 .games-promo-head{margin:0 0 24px;padding:0;max-width:1040px}
 .games-promo-intro{margin:0;color:#555b63;font-size:16px;line-height:1.7;text-wrap:pretty}
-.games-promo-lead{display:block;margin:0 0 7px;color:#30353c;font-size:17px;font-weight:600;line-height:1.55;letter-spacing:-.01em}
+.games-promo-lead{display:block;margin:0 0 7px;color:#30353c;font-size:17px;font-weight:400;line-height:1.55;letter-spacing:-.01em}
 .games-promo-description{display:block}
 .games-promo-description strong{color:#41474f;font-weight:600}
 .games-promo-kicker{margin:0 0 9px;color:#666c74;font-size:11px;font-weight:700;line-height:1.4;letter-spacing:.16em;text-transform:uppercase}
@@ -37,7 +37,8 @@
 @media(max-width:700px){
  .games-promo{padding:40px 20px}
  .games-promo-head{margin-bottom:20px}
- .games-promo-intro{font-size:14px;line-height:1.7}\n .games-promo-lead{font-size:15px;line-height:1.6;margin-bottom:7px}
+ .games-promo-intro{font-size:14px;line-height:1.7}
+ .games-promo-lead{font-size:15px;line-height:1.6;margin-bottom:7px}
  .games-promo-card{aspect-ratio:1.12;border-radius:20px;background-position:58% 40%;background-size:auto 118%}
  .games-promo-background,.games-promo-lightning{object-position:58% center}
  .games-promo-background{transform:translateY(-8%) scale(1.18)}
