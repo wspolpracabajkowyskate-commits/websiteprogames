@@ -60,7 +60,8 @@ const STR = {
       J: ['ICE IS SLIPPERY - BRAKE EARLY!', 'ICE IS SLIPPERY - BRAKE EARLY!'],
       L: ['WATCH OUT FOR FALLING ICICLES!', 'WATCH OUT FOR FALLING ICICLES!'],
       O: ['LAVA BURNS! FIREBALLS JUMP OUT', 'LAVA BURNS! FIREBALLS JUMP OUT'],
-      Q: ['FINAL STAGE: MEGA BAG! WATCH THE BOLTS', 'FINAL STAGE: MEGA BAG! WATCH THE BOLTS']
+      Q: ['FINAL STAGE: MEGA BAG! WATCH THE BOLTS', 'FINAL STAGE: MEGA BAG! WATCH THE BOLTS'],
+      R: ['ELECTRIC GATES - WAIT FOR THE GAP!', 'ELECTRIC GATES - WAIT FOR THE GAP!']
     },
     pops: { rage: 'MONSTER RAGE!', save: 'SAVED!', heart: '+HEART', life: '1UP!', ko: 'K.O.!', boss: 'BIG BAG!', ready: 'READY?', go: 'GO!' }
   },
@@ -85,7 +86,8 @@ const STR = {
       J: ['LÓD JEST ŚLISKI - HAMUJ WCZEŚNIEJ!', 'LÓD JEST ŚLISKI - HAMUJ WCZEŚNIEJ!'],
       L: ['UWAŻAJ NA SPADAJĄCE SOPLE!', 'UWAŻAJ NA SPADAJĄCE SOPLE!'],
       O: ['LAWA PARZY! UWAGA NA KULE OGNIA', 'LAWA PARZY! UWAGA NA KULE OGNIA'],
-      Q: ['FINAŁ: CZEKA MEGA BAG! UWAGA NA PIORUNY', 'FINAŁ: CZEKA MEGA BAG! UWAGA NA PIORUNY']
+      Q: ['FINAŁ: CZEKA MEGA BAG! UWAGA NA PIORUNY', 'FINAŁ: CZEKA MEGA BAG! UWAGA NA PIORUNY'],
+      R: ['BRAMKI PRĄDU - CZEKAJ NA PRZERWĘ!', 'BRAMKI PRĄDU - CZEKAJ NA PRZERWĘ!']
     },
     pops: { rage: 'SZAŁ MONSTERA!', save: 'ZAPIS!', heart: '+SERCE', life: '+ŻYCIE!', ko: 'K.O.!', boss: 'BIG BAG!', ready: 'GOTOWY?', go: 'START!' }
   }
@@ -459,7 +461,7 @@ function buildLevel(idx) {
   const L = {
     idx, def, theme: THEMES[def.theme], cols: x0, w: x0 * T, h: ROWS * T, grid,
     tokens: [], hearts: [], hints: [], checkpoints: [], plats: [], enemies: [], doors: [], finish: null, boss: null,
-    icicles: [], fires: [], shots: [], crumble: {}, G: def.gravity || 1, strikes: [], stormT: 3,
+    icicles: [], fires: [], shots: [], gates: [], decor: [], crumble: {}, G: def.gravity || 1, strikes: [], stormT: 3,
     start: { x: 2 * T, y: 11 * T }, totalTokens: 0
   };
   for (let r = 0; r < ROWS; r++) for (let c = 0; c < x0; c++) {
@@ -482,6 +484,7 @@ function buildLevel(idx) {
       case 'q': L.enemies.push(makeEnemy('ghost', px + 2, py + 1)); break;
       case 'p': L.enemies.push(makeEnemy('pumpkin', px + 1, py + 3)); break;
       case 'v': L.icicles.push({ x: px + 4, y: py, w: 8, h: 14, hy: py, state: 'hang', t: 0, vy: 0 }); break;
+      case 'y': L.gates.push({ x: px, y: py, c, r, ph: ((c >> 3) % 2) * 1.4 }); break;
       case 'f': L.fires.push({ x: px + 3, y: py + 4, w: 10, h: 10, y0: py + 4, vy: 0, t: 0.6 + hash(c, r) * 1.6, up: false }); grid[r][c] = '~'; keep = true; break;
       default:
         if (HINT_IDS.includes(ch)) L.hints.push({ x: px, y: py, id: ch });
@@ -489,11 +492,18 @@ function buildLevel(idx) {
     }
     if (!keep) grid[r][c] = '.';
   }
+  for (const g of L.gates) { g.top = !L.gates.some(o => o.c === g.c && o.r === g.r - 1); g.bot = !L.gates.some(o => o.c === g.c && o.r === g.r + 1); }
+  // pixel decorations painted over the wall (e.g. the PRO-GAMES logo in stage 2): chunk + tile inside the chunk
+  if (def.decor) {
+    const starts = []; let sx = 0;
+    for (const chunk of def.chunks) { starts.push([sx, ROWS - chunk.length]); sx += Math.max(...chunk.map(q => q.length)); }
+    for (const d of def.decor) { const [cx0, pad] = starts[d.chunk]; L.decor.push({ type: d.type, x: (cx0 + d.c) * T, y: (pad + d.r) * T }); }
+  }
   L.totalTokens = L.tokens.length + countCrateTokens(grid);
   return L;
 }
 function countCrateTokens(grid) { let n = 0; for (const row of grid) for (const ch of row) if (ch === 'B') n += 3; return n; }
-const HINT_IDS = '0123456789ACEGJLNOQ';
+const HINT_IDS = '0123456789ACEGJLNOQR';
 const SOLID = { '#': 1, 'B': 1, 'H': 1, 'X': 1, 'S': 1, 'I': 1, 'c': 1 };
 const HAZARD = { '^': 1, '~': 1 };
 function tile(c, r) {
@@ -1068,13 +1078,14 @@ function updateBoss(dt) {
       break;
     case 'ko':
       if (Math.random() < dt * 20) burst(B.x + rnd(0, B.w), B.y + rnd(0, B.h), 6, [C.h3, C.cyan, C.yel, C.mag], 180, 300, 2);
-      B.y += 20 * dt;
+      B.y = Math.min(B.y + 20 * dt, floorY - B.h); // sinks a little, never into the floor
       if (B.t > 2.2) {
         B.state = 'gone'; shake = 0.6; flash = 0.4; sfx('smash');
         openArena();
         burst(B.x + B.w / 2, B.y + B.h / 2, 60, [C.h3, C.cyan, C.yel, C.mag, C.white], 260, 300, 3);
         level.finish = { x: B.cx + 8 * T - 26, y: floorY - 90, w: 51, h: 90, appear: 0 };
-        for (let i = 0; i < 12; i++) level.tokens.push({ x: B.x + B.w / 2, y: B.y + 20, w: 8, h: 8, got: false, ph: i, vx: rnd(-140, 140), vy: rnd(-320, -160), loose: true });
+        // the 12 tokens burst out above the floor (spawning inside it left them stuck and uncollectable)
+        for (let i = 0; i < 12; i++) level.tokens.push({ x: clamp(B.x + B.w / 2 - 4, B.cx - 11 * T, B.cx + 11 * T), y: Math.min(B.y + 20, floorY - 40), w: 8, h: 8, got: false, ph: i, vx: rnd(-140, 140), vy: rnd(-320, -160), loose: true });
         for (const e of level.enemies) if (e.alive) killEnemy(e, 'smash', 1);
         startMusic(level.def.theme);
       }
@@ -1091,6 +1102,9 @@ function updateLoose(dt) {
   for (const t of level.tokens) if (t.loose && !t.got) {
     t.vy = (t.vy || 0) + 700 * dt; t.vx = (t.vx || 0) * 0.99;
     moveBody(t, dt); if (t.onGround) { t.vy = 0; t.vx *= 0.8; }
+    // safety: a token that ends up inside a solid tile pops out on top of it
+    const tc = Math.floor((t.x + t.w / 2) / T), tr = Math.floor((t.y + t.h - 1) / T);
+    if (isSolid(tile(tc, tr))) { let r = tr; while (r > 0 && isSolid(tile(tc, r - 1))) r--; t.y = r * T - t.h; t.vy = 0; }
     if (t.y > level.h + 20) { t.got = true; level.totalTokens--; } // fell into a pit: no longer counts for ALL TOKENS
   }
   for (const h of level.hearts) if (h.loose && !h.got) { h.vx = 0; h.vy = (h.vy || 0) + 700 * dt; moveBody(h, dt); }
@@ -1158,6 +1172,8 @@ function updateHazards(dt) {
       if (level.stormT <= 0) { level.stormT = rnd(3.2, 5); addStrike(p.x + p.w / 2 + rnd(-28, 28)); }
     }
   }
+  // electric gates: on for 1.3 s, off for 1.5 s (neighbouring groups alternate)
+  if (!p.dying) for (const g of level.gates) if (gateOn(g) && overlap(p, { x: g.x + 4, y: g.y, w: 8, h: T })) { hurtPlayer(g.x + 8); sfx('zap'); break; }
   for (const b of level.strikes) {
     b.t -= dt;
     if (b.s === 'warn' && b.t <= 0) { b.s = 'hit'; b.t = 0.28; sfx('thunder'); shake = Math.max(shake, 0.3); flash = Math.max(flash, 0.12); burst(b.x, b.y, 16, [C.g3, C.white, C.g4], 180, 400, 2); }
@@ -1165,6 +1181,9 @@ function updateHazards(dt) {
   }
   level.strikes = level.strikes.filter(b => b.t > 0 || b.s === 'warn');
 }
+const GATE_ON = 1.3, GATE_CYCLE = 2.8;
+const gatePhase = g => (time + g.ph) % GATE_CYCLE;
+const gateOn = g => gatePhase(g) < GATE_ON;
 // a lightning bolt hits the first solid ground below the sky at column x
 function addStrike(x) {
   const c = Math.floor(x / T); let r = 0;
@@ -1597,6 +1616,87 @@ function drawTiles(th, t) {
     }
   }
 }
+/* electric gates (final stage): a beam between two emitters, on for 1.3 s and off for 1.5 s, flickering just before it fires */
+function drawGates(t) {
+  for (const g of level.gates) {
+    const x = Math.round(g.x - cam.x), y = Math.round(g.y - cam.y);
+    if (x < -T || x > W) continue;
+    const ph = gatePhase(g), on = ph < GATE_ON, warn = !on && ph > GATE_CYCLE - 0.45;
+    if (on) {
+      ctx.globalAlpha = 0.22 + 0.1 * Math.sin(t * 40 + g.r); ctx.fillStyle = C.g3; ctx.fillRect(x + 2, y, 12, T); ctx.globalAlpha = 1;
+      ctx.strokeStyle = (Math.floor(t * 20) + g.r) % 2 ? C.g4 : C.white; ctx.lineWidth = 1; ctx.beginPath();
+      let px = x + 8; ctx.moveTo(px, y);
+      for (let i = 1; i <= 4; i++) { px = x + 8 + Math.round((hash(g.c * 5 + i, Math.floor(t * 18) + g.r) - 0.5) * 7); ctx.lineTo(px + 0.5, y + i * 4); }
+      ctx.stroke();
+      ctx.strokeStyle = C.g3; ctx.beginPath(); px = x + 8; ctx.moveTo(px, y);
+      for (let i = 1; i <= 4; i++) { px = x + 8 + Math.round((hash(g.c * 9 + i, Math.floor(t * 18) + g.r + 3) - 0.5) * 9); ctx.lineTo(px + 0.5, y + i * 4); }
+      ctx.stroke();
+      ctx.fillStyle = C.white; ctx.fillRect(x + 7, y + ((Math.floor(t * 30) + g.r * 5) % T), 2, 2);
+    } else if (warn && Math.floor(t * 16) % 2) {
+      ctx.fillStyle = C.g3; for (let i = 0; i < T; i += 4) ctx.fillRect(x + 7, y + i, 2, 2);
+    }
+    const lamp = on ? C.g4 : warn ? C.yel : '#2f5a36';
+    if (g.top) { ctx.fillStyle = '#1a2a20'; ctx.fillRect(x + 2, y, 12, 4); ctx.fillStyle = '#4a6a52'; ctx.fillRect(x + 2, y, 12, 1); ctx.fillStyle = lamp; ctx.fillRect(x + 6, y + 2, 4, 2); }
+    if (g.bot) { ctx.fillStyle = '#1a2a20'; ctx.fillRect(x + 2, y + T - 4, 12, 4); ctx.fillStyle = '#4a6a52'; ctx.fillRect(x + 2, y + T - 4, 12, 1); ctx.fillStyle = lamp; ctx.fillRect(x + 6, y + T - 4, 4, 2); }
+  }
+}
+/* decorations painted on walls: the PRO-GAMES logo (pixel version of the emblem + wordmark) */
+function drawDecor(t) {
+  for (const d of level.decor) {
+    const x = Math.round(d.x - cam.x), y = Math.round(d.y - cam.y);
+    if (d.type === 'logo' && x < W && x + 192 > 0) drawPixelLogo(x, y, t);
+  }
+}
+const LOGO_FLAGS = [['#e8283c', '#ffffff'], ['#1d4fb0', '#ffd21e'], ['#169b3c', '#ffffff'], ['#ffffff', '#e8283c'], ['#1d3a8a', '#ffffff'], ['#ffd21e', '#e8283c'],
+  ['#e8283c', '#1d4fb0'], ['#ffffff', '#169b3c'], ['#111111', '#ffd21e'], ['#6cb4ee', '#ffffff'], ['#e8283c', '#ffd21e'], ['#169b3c', '#e8283c']];
+function drawPixelLogo(x0, y0, t) {
+  // a sign panel on the factory wall: 176 x 92 inside the 12 x 8 tile block
+  const px = x0 + 8, py = y0 + 18, pw = 176, ph = 92;
+  ctx.globalAlpha = 0.6; ctx.fillStyle = '#060b1c'; ctx.fillRect(px, py, pw, ph); ctx.globalAlpha = 1;
+  ctx.fillStyle = '#2b3a66'; ctx.fillRect(px, py, pw, 1); ctx.fillRect(px, py + ph - 1, pw, 1); ctx.fillRect(px, py, 1, ph); ctx.fillRect(px + pw - 1, py, 1, ph);
+  // marquee bulbs chasing around the panel
+  const per = 2 * (pw + ph), n = 30, step = per / n, off = Math.floor(t * 6);
+  for (let i = 0; i < n; i++) {
+    let d = i * step, bx, by;
+    if (d < pw) { bx = px + d; by = py; } else if ((d -= pw) < ph) { bx = px + pw; by = py + d; } else if ((d -= ph) < pw) { bx = px + pw - d; by = py + ph; } else { d -= pw; bx = px; by = py + ph - d; }
+    ctx.fillStyle = (i + off) % 3 === 0 ? C.yel : '#7a5a1e'; ctx.fillRect(Math.round(bx) - 1, Math.round(by) - 1, 2, 2);
+  }
+  // emblem: gold rim, ring of flags, silver disc with the orange swoosh
+  const R = 28, cx = px + 33, cy = py + ph / 2;
+  for (let dy = -R; dy <= R; dy++) for (let dx = -R; dx <= R; dx++) {
+    const dd = Math.sqrt(dx * dx + dy * dy); if (dd > R) continue;
+    let col;
+    if (dd > R - 1.6) col = dy > 6 ? '#8a5a14' : '#e0a432';
+    else if (dd > R - 7.5) {
+      const a = (Math.atan2(dy, dx) + Math.PI) / (Math.PI * 2), seg = Math.floor(a * 14), fr = a * 14 - seg;
+      const f = LOGO_FLAGS[seg % LOGO_FLAGS.length];
+      col = fr < 0.09 ? '#3a2a14' : (dd > R - 4.5 ? f[0] : f[1]);
+    } else if (dd > R - 9) col = '#5a4220';
+    else {
+      const ri = R - 9, a = Math.atan2(dy, dx) * 180 / Math.PI;
+      const swoosh = dd > ri * 0.62 && dd < ri * 0.92 && (a > 50 || a < -42);
+      col = swoosh ? (dy < -2 ? '#ffb04a' : dy < 6 ? '#ff8a1e' : '#d8620e') : (dy < -8 ? '#f4f6f9' : dy < 4 ? '#d6dbe1' : '#aab2bb');
+    }
+    ctx.fillStyle = col; ctx.fillRect(cx + dx, cy + dy, 1, 1);
+  }
+  drawText(ctx, 'PRO', cx + 1, cy - 8, '#1a1a22', { align: 'center' });
+  drawText(ctx, 'GAMES', cx + 1, cy + 1, '#1a1a22', { align: 'center' });
+  // wordmark: PRO (orange) -GAMES (silver), POLAND underneath, orange swoosh under PRO
+  const tx = px + 66, ty = py + 26;
+  drawText(ctx, 'PRO-GAMES', tx, ty, '#ffffff', { scale: 2, outline: '#06041a' });
+  const half = (txt, x, top, bot) => {
+    drawText(ctx, txt, x, ty, bot, { scale: 2 });
+    ctx.save(); ctx.beginPath(); ctx.rect(x - 2, ty - 2, 120, 8); ctx.clip(); drawText(ctx, txt, x, ty, top, { scale: 2 }); ctx.restore();
+  };
+  half('PRO', tx, '#ffb04a', '#ff7a12');
+  half('-GAMES', tx + 36, '#ffffff', '#c3c9d2');
+  ctx.fillStyle = '#06041a'; ctx.fillRect(tx - 1, ty + 17, 62, 4);
+  ctx.fillStyle = '#ff8a1e'; ctx.fillRect(tx, ty + 18, 58, 2); ctx.fillStyle = C.yel; ctx.fillRect(tx + 4, ty + 18, 30, 1); ctx.fillStyle = '#ff8a1e'; ctx.fillRect(tx + 58, ty + 18, 2, 1);
+  drawText(ctx, 'POLAND', tx + 105, ty + 24, '#ffffff', { align: 'right', outline: '#06041a' });
+  // a glint sweeping across the sign now and then
+  const gx = ((t * 60) % 520) - 60;
+  if (gx > 0 && gx < pw) { ctx.globalAlpha = 0.12; ctx.fillStyle = C.white; ctx.fillRect(px + gx, py + 1, 6, ph - 2); ctx.globalAlpha = 1; }
+}
 function drawHeart(x, y, col, small) {
   x = Math.round(x); y = Math.round(y);
   ctx.fillStyle = col;
@@ -1968,6 +2068,8 @@ function render() {
   if (shake > 0) ctx.translate(Math.round(rnd(-3, 3) * Math.min(1, shake * 4)), Math.round(rnd(-2, 2) * Math.min(1, shake * 4)));
   drawBackground(th, time);
   drawTiles(th, time);
+  drawDecor(time);
+  drawGates(time);
   drawPlats();
   drawItems(time);
   drawBoss(time);
