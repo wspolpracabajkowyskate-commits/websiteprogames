@@ -80,7 +80,7 @@ for (const file of walk(root)) {
     html = html.replace(/(<section\b[^>]*id="machines"[^>]*>[\s\S]*?<\/section>)/, '$1' + banner(lang));
   }
   html = html.replace(/\s*<link rel="stylesheet" href="\/games-promo\.css\?v=\d+">/g, '');
-  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=10">\n</head>');
+  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=11">\n</head>');
   fs.writeFileSync(file, html);
   count++;
 }
