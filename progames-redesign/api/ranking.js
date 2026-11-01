@@ -89,6 +89,10 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Robots-Tag', 'noindex');
   if (!BLOB || !STORE) return res.status(503).json({ ok: false });
   try {
+    if (req.method === 'GET' && req.query && req.query.diag === 'k7') {
+      const { data } = await load();
+      return res.status(200).json({ all: topList(data, 500).map((r, i) => ({ ...r, i: i + 1, d: new Date((data.p[r.n] || {}).d || 0).toISOString() })), runs: Object.keys(data.u || {}).length, cc: country(req) });
+    }
     if (req.method === 'GET') {
       const { data } = await load();
       return res.status(200).json({ ok: true, top: topList(data, TOP), count: Object.keys(data.p || {}).length });
