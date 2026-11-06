@@ -4072,7 +4072,7 @@ Object.assign(window.PRODUCTS,{
     "label": "STRENGTH GAME",
     "tag": "NEW 2026",
     "image": "/assets/products/hammer-2026-multicolour-v2.jpg",
-    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in seven colour versions — select a colour to see the matching photo. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
+    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in six colour versions — select a colour to see the matching photo. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
     "features": [],
     "spec": [
       [
@@ -4128,13 +4128,6 @@ Object.assign(window.PRODUCTS,{
         "nameES": "Amarillo",
         "color": "Yellow",
         "image": "/assets/products/hammer-2026-yellow.jpg"
-      },
-      {
-        "id": "orange",
-        "name": "Orange",
-        "nameES": "Naranja",
-        "color": "Orange",
-        "image": "/assets/products/hammer-2026-orange.jpg"
       },
       {
         "id": "silver",
@@ -4319,7 +4312,7 @@ Object.assign(window.PRODUCTS,{
 });
 Object.assign(window.PRODUCT_ES,{
   "hammer-2026": {
-    "desc": "Un nuevo juego de fuerza de martillo para 2026, con una estructura vertical iluminada y una zona de golpeo. Su diseño alto destaca en salones recreativos y espacios de ocio.\n\nDisponible en siete colores: selecciona un color para ver la foto correspondiente. Consulta la configuración de funcionamiento y el equipamiento opcional para tu local. Las especificaciones técnicas definitivas se confirmarán con el presupuesto."
+    "desc": "Un nuevo juego de fuerza de martillo para 2026, con una estructura vertical iluminada y una zona de golpeo. Su diseño alto destaca en salones recreativos y espacios de ocio.\n\nDisponible en seis colores: selecciona un color para ver la foto correspondiente. Consulta la configuración de funcionamiento y el equipamiento opcional para tu local. Las especificaciones técnicas definitivas se confirmarán con el presupuesto."
   },
   "win-a-toy": {
     "desc": "Boxer Toy combina un juego de boxeo con una presentación centrada en premios. El mueble iluminado integra un objetivo de golpeo, un marcador y un compartimento visible para juguetes, creando una atracción llamativa para espacios de ocio.\n\nElige entre los ocho colores mostrados y selecciona el equipamiento que deseas incluir en el presupuesto. El funcionamiento de los premios, el sistema de pago y las especificaciones técnicas se confirman individualmente."
