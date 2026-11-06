@@ -832,13 +832,53 @@ window.PRODUCTS={
     ],
     "variants": [
       {
+        "id": "yellow",
         "name": "Yellow",
         "nameES": "Amarillo",
-        "id": "yellow",
         "color": "Yellow",
-        "sourceImage": "https://static.wixstatic.com/media/d36c49_6cecc2a52bae4458a0a3816b5f3088bd~mv2.jpg",
-        "sourceFileName": "Standard.jpg",
         "image": "/assets/products/pow-boxer-yellow.webp"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "nameES": "Plata",
+        "color": "Silver",
+        "image": "/assets/products/pow-boxer-silver.webp"
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/pow-boxer-black.webp"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/pow-boxer-blue.webp"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/pow-boxer-orange.webp"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/pow-boxer-red.webp"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/pow-boxer-green.webp"
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-powboxer",
@@ -4032,7 +4072,7 @@ Object.assign(window.PRODUCTS,{
     "label": "STRENGTH GAME",
     "tag": "NEW 2026",
     "image": "/assets/products/hammer-2026-multicolour-v2.jpg",
-    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in the single multicolour finish shown. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
+    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in seven colour versions — select a colour to see the matching photo. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
     "features": [],
     "spec": [
       [
@@ -4055,11 +4095,53 @@ Object.assign(window.PRODUCTS,{
     "options": [],
     "variants": [
       {
-        "id": "multicolour",
-        "name": "Multicolour",
-        "nameES": "Multicolor",
-        "color": "Multicolour",
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
         "image": "/assets/products/hammer-2026-multicolour-v2.jpg"
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/hammer-2026-black.jpg"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/hammer-2026-blue.jpg"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/hammer-2026-green.jpg"
+      },
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/hammer-2026-yellow.jpg"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/hammer-2026-orange.jpg"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "nameES": "Plata",
+        "color": "Silver",
+        "image": "/assets/products/hammer-2026-silver.jpg"
       }
     ],
     "source": "https://www.progamespoland.com/",
@@ -4237,7 +4319,7 @@ Object.assign(window.PRODUCTS,{
 });
 Object.assign(window.PRODUCT_ES,{
   "hammer-2026": {
-    "desc": "Un nuevo juego de fuerza de martillo para 2026, con una estructura vertical iluminada y una zona de golpeo. Su diseño alto destaca en salones recreativos y espacios de ocio.\n\nDisponible en el único acabado multicolor mostrado. Consulta la configuración de funcionamiento y el equipamiento opcional para tu local. Las especificaciones técnicas definitivas se confirmarán con el presupuesto."
+    "desc": "Un nuevo juego de fuerza de martillo para 2026, con una estructura vertical iluminada y una zona de golpeo. Su diseño alto destaca en salones recreativos y espacios de ocio.\n\nDisponible en siete colores: selecciona un color para ver la foto correspondiente. Consulta la configuración de funcionamiento y el equipamiento opcional para tu local. Las especificaciones técnicas definitivas se confirmarán con el presupuesto."
   },
   "win-a-toy": {
     "desc": "Boxer Toy combina un juego de boxeo con una presentación centrada en premios. El mueble iluminado integra un objetivo de golpeo, un marcador y un compartimento visible para juguetes, creando una atracción llamativa para espacios de ocio.\n\nElige entre los ocho colores mostrados y selecciona el equipamiento que deseas incluir en el presupuesto. El funcionamiento de los premios, el sistema de pago y las especificaciones técnicas se confirman individualmente."
