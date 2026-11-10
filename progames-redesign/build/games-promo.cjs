@@ -86,3 +86,24 @@ for (const file of walk(root)) {
 }
 console.log(`Games navigation published on ${count} pages; localized banners follow the product catalogue.`);
 
+// The game is built around the Monster 3 in 1 machines, so their product pages also carry
+// the banner, right below the "Documentation and support" section.
+const BANNER_MODELS = ['monster-3in1', 'monster-3in1-ticket'];
+let productCount = 0;
+for (const file of walk(root)) {
+  let html = fs.readFileSync(file,'utf8');
+  const model = html.match(/<body\b[^>]*data-model="([^"]+)"/)?.[1];
+  if (!BANNER_MODELS.includes(model)) continue;
+  const lang = html.match(/<html[^>]*\blang="([^"]+)"/)?.[1] || 'en';
+  html = html.replace(/\s*<section class="games-promo section-dark"[\s\S]*?<\/section>\s*/g, '\n');
+  const support = /(<section\b[^>]*class="section seo-product-support"[^>]*>[\s\S]*?<\/section>)/;
+  if (support.test(html)) html = html.replace(support, '$1' + banner(lang));
+  else if (/<section\b[^>]*class="operator-note/.test(html)) html = html.replace(/(<section\b[^>]*class="operator-note)/, banner(lang) + '$1');
+  else continue;
+  html = html.replace(/\s*<link rel="stylesheet" href="\/games-promo\.css\?v=\d+">/g, '');
+  html = html.replace('</head>','<link rel="stylesheet" href="/games-promo.css?v=11">\n</head>');
+  fs.writeFileSync(file, html);
+  productCount++;
+}
+console.log(`Games banner added to ${productCount} Monster 3 in 1 product pages.`);
+
