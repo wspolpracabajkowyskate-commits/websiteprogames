@@ -3,7 +3,8 @@
 import json, hashlib, re, subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-DATE='2026-10-25'
+DATE='2026-11-13'  # products.js snapshot
+HOME_DATE='2026-10-25'  # home.html snapshot (not re-retrieved)
 def write(path,data):
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 # Node evaluates only the archived, reviewed first-party JS in a timeout-limited context.
@@ -20,9 +21,9 @@ write('products/catalog.json',{'schema_version':'1.0','as_of':DATE,'scope':'46 r
 write('products/specifications.json',{'as_of':DATE,'specifications':[{'product_id':p['id'],'values':p['technical_specifications'],'source_ids':p['source_ids'],'approval_status':p['approval_status']} for p in products]})
 html=(ROOT/'sources/snapshots/home.html').read_text()
 org=next(json.loads(x) for x in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',html,re.S) if json.loads(x).get('@type')=='Organization')
-write('company/profile.json',{'name':org['name'],'legal_name':org.get('legalName'),'description':org.get('description'),'url':org['url'],'address':org['address'],'tax_id':org['taxID'],'regon':org['identifier']['value'],'sales':{'email':org['email'],'phone':org['telephone']},'contacts':org['contactPoint'],'social_profiles':org['sameAs'],'source_ids':['official-home'],'verified_at':DATE,'approval_status':'source_verified_human_pending','confidence':'official_first_party_statement_not_registry_verified'})
+write('company/profile.json',{'name':org['name'],'legal_name':org.get('legalName'),'description':org.get('description'),'url':org['url'],'address':org['address'],'tax_id':org['taxID'],'regon':org['identifier']['value'],'sales':{'email':org['email'],'phone':org['telephone']},'contacts':org['contactPoint'],'social_profiles':org['sameAs'],'source_ids':['official-home'],'verified_at':HOME_DATE,'approval_status':'source_verified_human_pending','confidence':'official_first_party_statement_not_registry_verified'})
 sources=[]
 for sid,url,path in [('official-products-js','https://www.progamespoland.com/products.js','sources/snapshots/products.js'),('official-home','https://www.progamespoland.com/','sources/snapshots/home.html')]:
- sources.append({'id':sid,'url':url,'retrieved_at':DATE,'type':'official_first_party','http_status':200,'snapshot':path,'sha256':hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),'confidence':'high_source_authenticity_factual_claims_not_independently_certified','limitations':'Generated or legacy copied text may contain inaccuracies. Human review pending.'})
+ sources.append({'id':sid,'url':url,'retrieved_at':HOME_DATE if sid=='official-home' else DATE,'type':'official_first_party','http_status':200,'snapshot':path,'sha256':hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),'confidence':'high_source_authenticity_factual_claims_not_independently_certified','limitations':'Generated or legacy copied text may contain inaccuracies. Human review pending.'})
 write('sources/source-register.json',{'as_of':DATE,'sources':sources})
 print(f'Extracted {len(products)} products; {sum(p["relationship"]=="distributed" for p in products)} distributed.')

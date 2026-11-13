@@ -10,8 +10,8 @@ for(const p of pages){
  assert(row.internal_links>0);
 }
 const home=parseHTML(fs.readFileSync('pl/index.html','utf8')).document;
-assert.strictEqual(home.title, 'Producent automatów bokserskich i rozrywkowych | PRO-GAMES');
-assert(home.querySelector('h1').textContent.includes('BOKSERSKIE'));
+assert.strictEqual(home.title, 'Producent automatów bokserskich i rozrywkowych');
+assert(/automatów bokserskich/i.test(home.querySelector('h1').textContent));
 assert(home.querySelector('.hero .lead').textContent.includes('polski producent automatów bokserskich'));
 assert.equal(home.querySelector('link[rel=canonical]').href,'https://www.progamespoland.com/pl/');
 const result={checked_at:new Date().toISOString(),status:'passed',products:rows.length,scope:'HTML and schema checks, not independent certification of product specifications',rows};

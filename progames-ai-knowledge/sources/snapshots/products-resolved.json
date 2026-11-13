@@ -35,6 +35,15 @@
     ],
     "variants": [
       {
+        "name": "Green",
+        "nameES": "Verde",
+        "id": "green",
+        "color": "Green",
+        "sourceImage": "https://static.wixstatic.com/media/d36c49_4ef9d427262b4f5cb2710288044e922d~mv2.jpg",
+        "sourceFileName": "3in1ticketGreen.jpg",
+        "image": "/assets/products/monster-3in1-ticket-green.webp"
+      },
+      {
         "name": "White",
         "nameES": "Blanco",
         "id": "white",
@@ -60,15 +69,6 @@
         "sourceImage": "https://static.wixstatic.com/media/d36c49_22c5ef2bff4b402fb4480ae3f0708506~mv2.jpg",
         "sourceFileName": "3in1ticketYellow.jpg",
         "image": "/assets/products/monster-3in1-ticket-yellow.webp"
-      },
-      {
-        "name": "Green",
-        "nameES": "Verde",
-        "id": "green",
-        "color": "Green",
-        "sourceImage": "https://static.wixstatic.com/media/d36c49_4ef9d427262b4f5cb2710288044e922d~mv2.jpg",
-        "sourceFileName": "3in1ticketGreen.jpg",
-        "image": "/assets/products/monster-3in1-ticket-green.webp"
       },
       {
         "name": "Blue",
@@ -99,7 +99,7 @@
       }
     ],
     "source": "https://www.progamespoland.com/monster-3in1-ticket",
-    "image": "/assets/products/monster-3in1-ticket-white.webp",
+    "image": "/assets/products/monster-3in1-ticket-green.webp",
     "sourceCopyStatus": "matched"
   },
   "monster-3in1": {
@@ -138,6 +138,15 @@
     ],
     "variants": [
       {
+        "name": "Blue",
+        "nameES": "Azul",
+        "id": "blue",
+        "color": "Blue",
+        "sourceImage": "https://static.wixstatic.com/media/d36c49_f6e319708c734e2e8a424d07bb864c22~mv2.jpeg",
+        "sourceFileName": "WhatsApp Image 2025-11-04 at 20.36.55.jpeg",
+        "image": "/assets/products/monster-3in1-blue-photo.webp"
+      },
+      {
         "name": "Red",
         "nameES": "Rojo",
         "id": "red",
@@ -174,15 +183,6 @@
         "image": "/assets/products/monster-3in1-yellow.webp"
       },
       {
-        "name": "Blue",
-        "nameES": "Azul",
-        "id": "blue",
-        "color": "Blue",
-        "sourceImage": "https://static.wixstatic.com/media/d36c49_f6e319708c734e2e8a424d07bb864c22~mv2.jpeg",
-        "sourceFileName": "WhatsApp Image 2025-11-04 at 20.36.55.jpeg",
-        "image": "/assets/products/monster-3in1-blue.webp"
-      },
-      {
         "name": "Orange",
         "nameES": "Naranja",
         "id": "orange",
@@ -193,7 +193,7 @@
       }
     ],
     "source": "https://www.progamespoland.com/monster-3w1",
-    "image": "/assets/products/monster-3in1-red.webp",
+    "image": "/assets/products/monster-3in1-blue-photo.webp",
     "sourceCopyStatus": "matched"
   },
   "double-hit": {
@@ -831,13 +831,53 @@
     ],
     "variants": [
       {
+        "id": "yellow",
         "name": "Yellow",
         "nameES": "Amarillo",
-        "id": "yellow",
         "color": "Yellow",
-        "sourceImage": "https://static.wixstatic.com/media/d36c49_6cecc2a52bae4458a0a3816b5f3088bd~mv2.jpg",
-        "sourceFileName": "Standard.jpg",
         "image": "/assets/products/pow-boxer-yellow.webp"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "nameES": "Plata",
+        "color": "Silver",
+        "image": "/assets/products/pow-boxer-silver.webp"
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/pow-boxer-black.webp"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/pow-boxer-blue.webp"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/pow-boxer-orange.webp"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/pow-boxer-red.webp"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/pow-boxer-green.webp"
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-powboxer",
@@ -3550,8 +3590,8 @@
     "category": "strength",
     "label": "STRENGTH GAME",
     "tag": "NEW 2026",
-    "image": "/assets/products/hammer-2026-multicolour-v2.jpg",
-    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in the single multicolour finish shown. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
+    "image": "/assets/products/hammer-2026-red.jpg",
+    "desc": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in six colour versions — select a colour to see the matching photo. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
     "features": [],
     "spec": [
       [
@@ -3574,11 +3614,46 @@
     "options": [],
     "variants": [
       {
-        "id": "multicolour",
-        "name": "Multicolour",
-        "nameES": "Multicolor",
-        "color": "Multicolour",
-        "image": "/assets/products/hammer-2026-multicolour-v2.jpg"
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/hammer-2026-red.jpg"
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/hammer-2026-black.jpg"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/hammer-2026-blue.jpg"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/hammer-2026-green.jpg"
+      },
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/hammer-2026-yellow.jpg"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "nameES": "Plata",
+        "color": "Silver",
+        "image": "/assets/products/hammer-2026-silver.jpg"
       }
     ],
     "source": "https://www.progamespoland.com/",
@@ -3677,7 +3752,7 @@
     "category": "boxer",
     "label": "BOXER PREMIUM",
     "tag": "NEW 2026",
-    "image": "/assets/products/leader-rank-blue.jpg",
+    "image": "/assets/products/leader-rank-yellow.jpg",
     "desc": "Boxer TV introduces a bold 2026 cabinet design with a prominent front display, illuminated accents and a raised boxing target. Its competition-inspired artwork makes it a distinctive addition to an arcade or entertainment venue.\n\nSelect one of the seven available cabinet colours and build your enquiry with the optional equipment below. Game functions, display specification and final technical details will be confirmed in your quotation.",
     "features": [],
     "spec": [
@@ -3701,6 +3776,13 @@
     "options": [],
     "variants": [
       {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/leader-rank-yellow.jpg"
+      },
+      {
         "id": "blue",
         "name": "Blue",
         "nameES": "Azul",
@@ -3720,13 +3802,6 @@
         "nameES": "Rojo",
         "color": "Red",
         "image": "/assets/products/leader-rank-red.jpg"
-      },
-      {
-        "id": "yellow",
-        "name": "Yellow",
-        "nameES": "Amarillo",
-        "color": "Yellow",
-        "image": "/assets/products/leader-rank-yellow.jpg"
       },
       {
         "id": "green",
