@@ -4,6 +4,46 @@
   "framework": null,
   "redirects": [
     {
+      "source": "/:lang(el|it|ar|ro|cs|hu|ru|bg)",
+      "destination": "https://www.progamespoland.com/:lang/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:lang(de|fr|el|it|ar|ro|cs|hu|ru|bg)/index.html",
+      "destination": "https://www.progamespoland.com/:lang/",
+      "statusCode": 301
+    },
+    {
+      "source": "/games/index.html",
+      "destination": "https://www.progamespoland.com/games/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pl/gry/index.html",
+      "destination": "https://www.progamespoland.com/pl/gry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/es",
+      "destination": "https://www.progamespoland.com/es.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/es/",
+      "destination": "https://www.progamespoland.com/es.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/en",
+      "destination": "https://www.progamespoland.com/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/",
+      "destination": "https://www.progamespoland.com/",
+      "statusCode": 301
+    },
+    {
       "source": "/pl/games/",
       "destination": "/pl/gry/",
       "permanent": true
@@ -7929,6 +7969,30 @@
       ]
     },
     {
+      "source": "/(.*)\\.(css|js)",
+      "has": [
+        {
+          "type": "query",
+          "key": "v"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/favicon.svg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         {
@@ -7966,6 +8030,24 @@
     },
     {
       "source": "/(.*\\.md|variant-audit.json|KONTROLA_WARIANTOW.html)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(tsv|csv|cjs|py)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/(vercel.json|FILES-V42.json)",
       "headers": [
         {
           "key": "X-Robots-Tag",
