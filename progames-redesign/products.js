@@ -4051,9 +4051,10 @@ window.PRODUCT_COLLECTIONS={
     "coverModels": [
       "joker",
       "champion",
-      "pow-boxer"
+      "poison-squad"
     ],
     "coverVariants": {
+      "poison-squad": "yellow",
       "champion": "red",
       "gladiator": "black",
       "black-jack": "red",
