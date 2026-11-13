@@ -6,10 +6,16 @@ import json, pathlib
 
 ORIGIN = 'https://www.progamespoland.com'
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VER = "19"
+VER = "19"          # monster-game.css
+VER_LEVELS = "20"   # monster-game-levels.js
+VER_GAME = "24"     # monster-game.js
 
 T = {
   'en': {
+    # Published markup with hand-placed line-break helpers; plain text stays in machine_h / machine_p / about.
+    'machine_h_html': 'MONSTER 3in1 – boxer,<br class="mg-br"> <span class="mg-keep">kicker and hammer</span><br class="mg-br"> in one cabinet',
+    'machine_p_html': 'The MONSTER comes from the real MONSTER 3in1 by PRO-GAMES: a commercial amusement machine combining a boxer, a kicker and a hammer, with tournament mode for up to <span class="mg-keep">three players.</span>',
+    'about_html': 'GAMES MONSTER is a free arcade platformer <span class="mg-keep">by PRO-GAMES</span> that you play straight in your browser, on a computer or a phone. Punch crates, kick the ball and smash with the hammer through 10 stages, beat the BIG BAG boss and fight for a place in the online ranking of <span class="mg-keep">all players.</span>',
     'path': 'games/index.html', 'url': '/games/', 'home': '/', 'locale': 'en_GB',
     'title': 'GAMES MONSTER – free online arcade game in your browser',
     'desc': 'GAMES MONSTER is a free online arcade game by PRO-GAMES: punch, kick and smash through 10 stages, beat the BIG BAG boss and join the online ranking.',
@@ -26,6 +32,10 @@ T = {
     'footer': '© 2026 PRO-GAMES POLAND Sp. z o.o.', 'footer2': 'Made in Poland / Built for operators', 'ld_lang': 'en', 'navlabel': 'Main navigation', 'langword': 'Language'
   },
   'pl': {
+    # Published markup with hand-placed line-break helpers; plain text stays in machine_h / machine_p / about.
+    'machine_h_html': 'MONSTER 3in1 – boxer,<br class="mg-br"> kopacz i&nbsp;młot<br class="mg-br"> w&nbsp;jednym automacie',
+    'machine_p_html': 'MONSTER pochodzi z prawdziwego automatu MONSTER 3in1 od PRO-GAMES: komercyjnego urządzenia rozrywkowego łączącego boxera, kopacza <span class="mg-keep">i młot,</span> <span class="mg-keep">z trybem</span> turniejowym dla&nbsp;maksymalnie trzech graczy.',
+    'about_html': 'GAMES MONSTER to darmowa gra platformowa <span class="mg-keep">od PRO-GAMES,</span> <span class="mg-keep">w którą</span> grasz od razu <span class="mg-keep">w przeglądarce,</span> na komputerze <span class="mg-keep">i na</span> telefonie. Rozbijaj skrzynie ciosem, kopnij piłkę <span class="mg-keep">i uderzaj</span> młotem przez 10 etapów, pokonaj bossa BIG BAG <span class="mg-keep">i walcz</span> <span class="mg-keep">o miejsce</span> <span class="mg-keep">w rankingu</span> online <span class="mg-keep">wszystkich graczy.</span>',
     'path': 'pl/gry/index.html', 'url': '/pl/gry/', 'home': '/pl/', 'locale': 'pl_PL',
     'title': 'GAMES MONSTER – darmowa gra online w przeglądarce',
     'desc': 'GAMES MONSTER to darmowa gra online od PRO-GAMES: uderzaj, kopaj i rozbijaj młotem przez 10 etapów, pokonaj bossa BIG BAG i walcz o miejsce w rankingu.',
@@ -89,6 +99,7 @@ def page(lang):
   <link rel="stylesheet" href="/i18n.css?v=40">
   <link rel="stylesheet" href="/games/monster-game.css?v={VER}">
   <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace('<', chr(92) + 'u003c')}</script>
+<link rel="stylesheet" href="/games-promo.css?v=11">
 </head>
 <body class="mg-body" data-page-kind="games">
   <a href="#monster-game" class="skip-link">{esc(t['skip'])}</a>
@@ -98,11 +109,11 @@ def page(lang):
     </a>
     <nav class="desktop-nav" aria-label="{t['navlabel']}">
       {nav}
-    </nav>
+    <a class="games-nav-link" href="{t['url']}" data-no-translate>GAMES</a></nav>
     <div class="language-switch header-language" aria-label="{t['langword']}">{langsw}</div><a class="btn btn-primary header-cta" href="{t['cta'][0]}">{esc(t['cta'][1])}</a>
     <button class="menu-toggle" aria-label="{esc(t['menu'])}" aria-expanded="false"><span></span><span></span></button>
   </header>
-  <div class="mobile-nav" id="mobileNav"><div aria-label="{t['langword']}" class="mobile-language">{langsw}</div>
+  <div class="mobile-nav" id="mobileNav"><a class="games-nav-link" href="{t['url']}" data-no-translate>GAMES</a><div aria-label="{t['langword']}" class="mobile-language">{langsw}</div>
     {nav}
   </div>
 
@@ -121,11 +132,11 @@ def page(lang):
 
     <section class="mg-machine">
       <div class="mg-peek" aria-hidden="true"><img src="/games/assets/monster-character.webp" alt="" width="631" height="640" loading="lazy" decoding="async"></div>
-      <a class="mg-machine-photo" href="{t['product']}"><img src="/assets/products/monster-3in1-red.webp" alt="MONSTER 3in1 – PRO-GAMES" width="580" height="850" loading="lazy" decoding="async"></a>
+      <a class="mg-machine-photo" href="{t['product']}"><img src="/assets/products/monster-3in1-blue-photo.webp" alt="MONSTER 3in1 – PRO-GAMES" width="580" height="850" loading="lazy" decoding="async"></a>
       <div>
         <p class="kicker">{esc(t['machine_k'])}</p>
-        <h2>{esc(t['machine_h'])}</h2>
-        <p>{esc(t['machine_p'])}</p>
+        <h2>{t['machine_h_html']}</h2>
+        <p>{t['machine_p_html']}</p>
         <div class="mg-actions">
           <a class="btn btn-primary" href="{t['product']}">{esc(t['machine_btn']).replace('3in1', '3<span class="mg-lc">in</span>1')}</a>
           <a class="btn btn-ghost" href="{t['contact']}">{esc(t['contact_btn'])}</a>
@@ -133,15 +144,15 @@ def page(lang):
       </div>
     </section>
     <div class="mg-brand"><img src="/games/assets/games-monster-logo.webp" alt="GAMES MONSTER" width="1000" height="436" loading="lazy" decoding="async"></div>
-    <p class="mg-about">{esc(t['about'])}</p>
+    <p class="mg-about">{t['about_html']}</p>
   </main>
 
   <footer class="footer mg-footer"><div class="footer-bottom"><span>{t['footer']}</span><span>{esc(t['footer2'])}</span></div></footer>
   <script>
   (function(){{var t=document.querySelector('.menu-toggle'),m=document.getElementById('mobileNav');if(!t||!m)return;t.addEventListener('click',function(){{var o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));m.classList.toggle('open',!o);}});m.querySelectorAll('a').forEach(function(a){{a.addEventListener('click',function(){{m.classList.remove('open');t.setAttribute('aria-expanded','false');}});}});}})();
   </script>
-  <script src="/games/monster-game-levels.js?v={VER}" defer></script>
-  <script src="/games/monster-game.js?v={VER}" defer></script>
+  <script src="/games/monster-game-levels.js?v={VER_LEVELS}" defer></script>
+  <script src="/games/monster-game.js?v={VER_GAME}" defer></script>
 </body>
 </html>
 '''
