@@ -25,7 +25,7 @@ def check_page(url):
  r['passed']=r.get('status')==200 and p.canon==[url] and p.h1==1 and 'noindex' not in robots.lower();r.pop('headers',None);return r
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--live',action='store_true');ap.add_argument('--out',required=True);a=ap.parse_args()
- now=datetime.datetime.now(datetime.timezone.utc);manifest=json.loads((SITE/'build/pages.json').read_text());urls=['https://www.progamespoland.com'+p['url'] for p in manifest]
+ now=datetime.datetime.now(datetime.timezone.utc);manifest=json.loads((SITE/'build/pages.json').read_text())+json.loads((SITE/'build/standalone-pages.json').read_text());urls=['https://www.progamespoland.com'+p['url'] for p in manifest]
  root=ET.fromstring((SITE/'sitemap.xml').read_text());sm=[x.text for x in root.findall('{*}url/{*}loc')]
  result={'checked_at':now.isoformat(),'kind':'live' if a.live else 'local','manifest_count':len(urls),'sitemap_matches_manifest':set(sm)==set(urls),'duplicate_sitemap_urls':len(sm)!=len(set(sm))}
  if a.live:

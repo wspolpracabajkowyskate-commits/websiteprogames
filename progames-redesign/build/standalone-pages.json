@@ -1,0 +1,14 @@
+[
+  {
+    "url": "/games/",
+    "filename": "games/index.html",
+    "lang": "en",
+    "alternates": 3
+  },
+  {
+    "url": "/pl/gry/",
+    "filename": "pl/gry/index.html",
+    "lang": "pl",
+    "alternates": 3
+  }
+]
