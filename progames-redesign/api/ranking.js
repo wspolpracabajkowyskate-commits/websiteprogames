@@ -11,7 +11,8 @@ const LEVELS = require('../games/monster-game-levels.js');
 const BLOB = process.env.BLOB_READ_WRITE_TOKEN || '';
 const STORE = BLOB.split('_')[3] || '';
 const SECRET = crypto.createHash('sha256').update('monster-rank-v1:' + BLOB).digest();
-const FILE = 'monster-game/ranking.json';
+// preview deployments share the Blob store with production: they get their own file, so test runs never touch the public ranking
+const FILE = !process.env.VERCEL_ENV || process.env.VERCEL_ENV === 'production' ? 'monster-game/ranking.json' : 'monster-game/ranking-preview.json';
 const ORIGINS = ['https://www.progamespoland.com', 'https://progamespoland.com', 'https://www.progames.pl', 'https://progames.pl', 'https://websiteprogames.vercel.app'];
 const PREVIEW = /^https:\/\/websiteprogames(-[a-z0-9-]+)?-progames1\.vercel\.app$/;
 const NICK_RE = /^[A-Z0-9ĄĆĘŁŃÓŚŹŻ_\-. ]{1,10}$/;
@@ -77,26 +78,29 @@ function topList(data, n) {
 const country = req => { const c = String(req.headers['x-vercel-ip-country'] || '').toUpperCase(); return /^[A-Z]{2}$/.test(c) && c !== 'XX' ? c : ''; };
 
 const hits = new Map();
-function limited(ip) {
+function limited(key, max = 40) {
   const now = Date.now();
   for (const [k, v] of hits) if (v.until < now) hits.delete(k);
-  const h = hits.get(ip) || { c: 0, until: now + 60000 };
-  h.c++; hits.set(ip, h);
-  return h.c > 40;
+  const h = hits.get(key) || { c: 0, until: now + 60000 };
+  h.c++; hits.set(key, h);
+  return h.c > max;
 }
+const clientIp = req => req.headers['x-vercel-forwarded-for'] || req.headers['x-forwarded-for'] || 'unknown';
 
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store'); res.setHeader('X-Robots-Tag', 'noindex');
   if (!BLOB || !STORE) return res.status(503).json({ ok: false });
   try {
     if (req.method === 'GET') {
+      // reading the table is generous (120 a minute per address) and counted apart from game requests
+      if (limited('get:' + clientIp(req), 120)) { res.setHeader('Retry-After', '60'); return res.status(429).json({ ok: false }); }
       const { data } = await load();
       return res.status(200).json({ ok: true, top: topList(data, TOP), count: Object.keys(data.p || {}).length });
     }
     if (req.method !== 'POST') { res.setHeader('Allow', 'GET, POST'); return res.status(405).json({ ok: false }); }
     const origin = req.headers.origin;
     if (!origin || !(ORIGINS.includes(origin) || PREVIEW.test(origin))) return res.status(403).json({ ok: false });
-    const ip = req.headers['x-vercel-forwarded-for'] || req.headers['x-forwarded-for'] || 'unknown';
+    const ip = clientIp(req);
     if (limited(ip)) { res.setHeader('Retry-After', '60'); return res.status(429).json({ ok: false }); }
     let b = req.body; try { if (typeof b === 'string') b = JSON.parse(b); } catch { return res.status(400).json({ ok: false }); }
     if (!b || typeof b !== 'object' || JSON.stringify(b).length > 2000) return res.status(400).json({ ok: false });
