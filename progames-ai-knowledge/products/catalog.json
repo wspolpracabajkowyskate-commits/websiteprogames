@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "as_of": "2026-10-25",
+  "as_of": "2026-11-13",
   "scope": "46 records resolved from public products.js; not independent manufacturer validation",
   "products": [
     {
@@ -23,6 +23,11 @@
       ],
       "colors": [
         {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/monster-3in1-ticket-green.webp"
+        },
+        {
           "id": "white",
           "name": "White",
           "image": "/assets/products/monster-3in1-ticket-white.webp"
@@ -36,11 +41,6 @@
           "id": "yellow",
           "name": "Yellow",
           "image": "/assets/products/monster-3in1-ticket-yellow.webp"
-        },
-        {
-          "id": "green",
-          "name": "Green",
-          "image": "/assets/products/monster-3in1-ticket-green.webp"
         },
         {
           "id": "blue",
@@ -69,7 +69,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -128,6 +128,11 @@
       ],
       "colors": [
         {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/monster-3in1-blue-photo.webp"
+        },
+        {
           "id": "red",
           "name": "Red",
           "image": "/assets/products/monster-3in1-red.webp"
@@ -148,11 +153,6 @@
           "image": "/assets/products/monster-3in1-yellow.webp"
         },
         {
-          "id": "blue",
-          "name": "Blue",
-          "image": "/assets/products/monster-3in1-blue.webp"
-        },
-        {
           "id": "orange",
           "name": "Orange",
           "image": "/assets/products/monster-3in1-orange.webp"
@@ -169,7 +169,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -276,7 +276,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -378,7 +378,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -482,7 +482,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -586,7 +586,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -688,7 +688,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -796,7 +796,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -861,6 +861,36 @@
           "id": "yellow",
           "name": "Yellow",
           "image": "/assets/products/pow-boxer-yellow.webp"
+        },
+        {
+          "id": "silver",
+          "name": "Silver",
+          "image": "/assets/products/pow-boxer-silver.webp"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/pow-boxer-black.webp"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/pow-boxer-blue.webp"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "image": "/assets/products/pow-boxer-orange.webp"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/pow-boxer-red.webp"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/pow-boxer-green.webp"
         }
       ],
       "technical_specifications": {
@@ -874,7 +904,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -977,7 +1007,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1080,7 +1110,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1183,7 +1213,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1286,7 +1316,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1389,7 +1419,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1492,7 +1522,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1600,7 +1630,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1703,7 +1733,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1806,7 +1836,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -1909,7 +1939,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2012,7 +2042,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2115,7 +2145,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2218,7 +2248,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2290,7 +2320,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2392,7 +2422,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2495,7 +2525,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2592,7 +2622,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2695,7 +2725,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2857,7 +2887,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -2960,7 +2990,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3059,7 +3089,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3161,7 +3191,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3243,7 +3273,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3346,7 +3376,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3453,7 +3483,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3531,7 +3561,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3611,7 +3641,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3685,7 +3715,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3764,7 +3794,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3843,7 +3873,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3905,7 +3935,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -3967,7 +3997,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -4029,7 +4059,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -4074,15 +4104,40 @@
       "category": "strength",
       "relationship": "manufacturer_site_catalogue",
       "manufacturer": null,
-      "short_description": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in the single multicolour finish shown. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
+      "short_description": "A new 2026 hammer-style strength game with a tall illuminated cabinet and a dedicated striking area. Its vertical design gives the attraction a clear presence in arcades and entertainment venues.\n\nAvailable in six colour versions — select a colour to see the matching photo. Ask our team about the operating setup and optional equipment for your venue. Final technical specifications will be confirmed with your quotation.",
       "applications": null,
       "features": null,
       "options": null,
       "colors": [
         {
-          "id": "multicolour",
-          "name": "Multicolour",
-          "image": "/assets/products/hammer-2026-multicolour-v2.jpg"
+          "id": "red",
+          "name": "Red",
+          "image": "/assets/products/hammer-2026-red.jpg"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/hammer-2026-black.jpg"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "image": "/assets/products/hammer-2026-blue.jpg"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/hammer-2026-green.jpg"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/hammer-2026-yellow.jpg"
+        },
+        {
+          "id": "silver",
+          "name": "Silver",
+          "image": "/assets/products/hammer-2026-silver.jpg"
         }
       ],
       "technical_specifications": {
@@ -4096,7 +4151,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -4198,7 +4253,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -4249,6 +4304,11 @@
       "options": null,
       "colors": [
         {
+          "id": "yellow",
+          "name": "Yellow",
+          "image": "/assets/products/leader-rank-yellow.jpg"
+        },
+        {
           "id": "blue",
           "name": "Blue",
           "image": "/assets/products/leader-rank-blue.jpg"
@@ -4262,11 +4322,6 @@
           "id": "red",
           "name": "Red",
           "image": "/assets/products/leader-rank-red.jpg"
-        },
-        {
-          "id": "yellow",
-          "name": "Yellow",
-          "image": "/assets/products/leader-rank-yellow.jpg"
         },
         {
           "id": "green",
@@ -4295,7 +4350,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {
@@ -4396,7 +4451,7 @@
       "source_ids": [
         "official-products-js"
       ],
-      "verified_at": "2026-10-25",
+      "verified_at": "2026-11-13",
       "approval_status": "source_verified_human_pending",
       "confidence": "high_for_source_transcription_not_independent_product_certification",
       "evidence": {

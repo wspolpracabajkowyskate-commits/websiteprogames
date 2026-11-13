@@ -1,14 +1,14 @@
 {
-  "as_of": "2026-10-25",
+  "as_of": "2026-11-13",
   "sources": [
     {
       "id": "official-products-js",
       "url": "https://www.progamespoland.com/products.js",
-      "retrieved_at": "2026-10-25",
+      "retrieved_at": "2026-11-13",
       "type": "official_first_party",
       "http_status": 200,
       "snapshot": "sources/snapshots/products.js",
-      "sha256": "07a685d14faf5b86f2d2d7f242daafed60f5e767e95fe08f0920065a5ef91d81",
+      "sha256": "49188a4aa4571f05d1957d989db9c95a357c6aa431091b16f606b05839e1b45d",
       "confidence": "high_source_authenticity_factual_claims_not_independently_certified",
       "limitations": "Generated or legacy copied text may contain inaccuracies. Human review pending."
     },
