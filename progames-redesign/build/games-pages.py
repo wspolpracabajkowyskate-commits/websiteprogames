@@ -79,6 +79,9 @@ def page(lang):
   <meta property="og:description" content="{esc(t['desc'])}">
   <meta property="og:url" content="{canon}">
   <meta property="og:image" content="{ORIGIN}/games/assets/monster-face.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="768">
+  <meta property="og:image:height" content="768">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/fonts/fonts.css">
