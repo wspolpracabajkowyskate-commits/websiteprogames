@@ -1602,6 +1602,46 @@
   },
   {
     "kind": "product",
+    "lang": "en",
+    "key": "double-hit-pow",
+    "url": "/en/products/double-hit-pow.html",
+    "filename": "en/products/double-hit-pow.html",
+    "title": "Double Hit POW | Boxing & kicking machine | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "double-hit-pow",
+    "url": "/es/productos/double-hit-pow.html",
+    "filename": "es/productos/double-hit-pow.html",
+    "title": "Double Hit POW | Máquina de boxeo y patadas | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "pl",
+    "key": "double-hit-pow",
+    "url": "/pl/produkty/double-hit-pow.html",
+    "filename": "pl/produkty/double-hit-pow.html",
+    "title": "Double Hit POW | Automat boksersko-piłkarski | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "de",
+    "key": "double-hit-pow",
+    "url": "/de/produkte/double-hit-pow.html",
+    "filename": "de/produkte/double-hit-pow.html",
+    "title": "Double Hit POW | Box- und Kickautomat | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "fr",
+    "key": "double-hit-pow",
+    "url": "/fr/produits/double-hit-pow.html",
+    "filename": "fr/produits/double-hit-pow.html",
+    "title": "Double Hit POW | Machine de boxe et de football | PRO-GAMES"
+  },
+  {
+    "kind": "product",
     "lang": "fr",
     "key": "double-hit-gift",
     "url": "/fr/produits/double-hit-gift.html",

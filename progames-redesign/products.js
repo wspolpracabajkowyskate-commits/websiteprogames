@@ -302,6 +302,95 @@ window.PRODUCTS={
     "image": "/assets/products/double-hit-red.webp",
     "sourceCopyStatus": "matched"
   },
+  "double-hit-pow": {
+    "name": "Double Hit POW",
+    "category": "combo",
+    "label": "BOXER + KICKER",
+    "desc": "Offers two exciting challenges in one compact machine with vibrant LED lights that bring extra attraction. Press the top Start button to release the punchball and test your strength or hit the bottom button to kick the football and show off your skills. Double the action, all in one game!",
+    "features": [
+      "Thrilling gameplay: Captivates players with exciting challenges that test their strength, ensuring they stay engaged and keep coming back for more fun.",
+      "Unmatched Durability & Convenience: Built with premium electronics and tough mechanics, making it perfect for high-traffic venues. Plus, it accepts bills, coins, cards, and tokens for seamless transactions.",
+      "Boost Your Profits: Adjustable difficulty settings and free play modes to increase engagement and driving higher revenue."
+    ],
+    "spec": [
+      [
+        "Height",
+        "219 cm / 86″"
+      ],
+      [
+        "Width",
+        "85 cm / 34″"
+      ],
+      [
+        "Length",
+        "122 cm / 48″"
+      ],
+      [
+        "Weight",
+        "175 kg / 386 lb"
+      ]
+    ],
+    "options": [
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
+    ],
+    "variants": [
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/double-hit-pow-yellow.webp"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "nameES": "Plata",
+        "color": "Silver",
+        "image": "/assets/products/double-hit-pow-silver.webp"
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/double-hit-pow-black.webp"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/double-hit-pow-blue.webp"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/double-hit-pow-orange.webp"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/double-hit-pow-red.webp"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/double-hit-pow-green.webp"
+      }
+    ],
+    "image": "/assets/products/double-hit-pow-yellow.webp",
+    "sourceCopyStatus": "matched"
+  },
   "double-hit-gift": {
     "name": "Double Hit Gift",
     "category": "combo",
@@ -3685,6 +3774,9 @@ window.PRODUCT_ES={
     "desc": "Máquina recreativa 3 en 1: Boxer, Kicker y Hammer\n\nEsta innovadora máquina recreativa 3 en 1 combina tres populares juegos de fuerza en una unidad compacta: Boxer, Kicker y Hammer.\n\nLos jugadores pueden poner a prueba su fuerza eligiendo entre golpear con el puño, dar patadas o golpear con el martillo, todo integrado en una sola estructura resistente y llamativa.\n\nLa máquina presenta un diseño moderno con iluminación LED y sensores de alta calidad para una puntuación precisa\n\nIdeal para bares, centros de ocio y eventos, ofrece el máximo entretenimiento a la vez que ahorra espacio."
   },
   "double-hit": {
+    "desc": "Ofrece dos emocionantes retos en una máquina compacta con luces LED vibrantes que añaden atractivo. Pulsa el botón Start superior para liberar el saco de boxeo y poner a prueba tu fuerza, o el botón inferior para dar una patada al balón y demostrar tu habilidad. ¡El doble de acción en un solo juego!"
+  },
+  "double-hit-pow": {
     "desc": "Ofrece dos emocionantes retos en una máquina compacta con luces LED vibrantes que añaden atractivo. Pulsa el botón Start superior para liberar el saco de boxeo y poner a prueba tu fuerza, o el botón inferior para dar una patada al balón y demostrar tu habilidad. ¡El doble de acción en un solo juego!"
   },
   "double-hit-gift": {
