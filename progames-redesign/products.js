@@ -346,11 +346,11 @@ window.PRODUCTS={
         "image": "/assets/products/double-hit-pow-yellow.webp"
       },
       {
-        "id": "silver",
-        "name": "Silver",
-        "nameES": "Plata",
-        "color": "Silver",
-        "image": "/assets/products/double-hit-pow-silver.webp"
+        "id": "white",
+        "name": "White",
+        "nameES": "Blanco",
+        "color": "White",
+        "image": "/assets/products/double-hit-pow-white.webp"
       },
       {
         "id": "black",
@@ -928,11 +928,11 @@ window.PRODUCTS={
         "image": "/assets/products/pow-boxer-red.webp"
       },
       {
-        "id": "silver",
-        "name": "Silver",
-        "nameES": "Plata",
-        "color": "Silver",
-        "image": "/assets/products/pow-boxer-silver.webp"
+        "id": "white",
+        "name": "White",
+        "nameES": "Blanco",
+        "color": "White",
+        "image": "/assets/products/pow-boxer-white.webp"
       },
       {
         "id": "black",
@@ -2406,11 +2406,11 @@ window.PRODUCTS={
         "image": "/assets/products/boxer-combat-pow-yellow.webp"
       },
       {
-        "id": "silver",
-        "name": "Silver",
-        "nameES": "Plata",
-        "color": "Silver",
-        "image": "/assets/products/boxer-combat-pow-silver.webp"
+        "id": "white",
+        "name": "White",
+        "nameES": "Blanco",
+        "color": "White",
+        "image": "/assets/products/boxer-combat-pow-white.webp"
       },
       {
         "id": "black",
