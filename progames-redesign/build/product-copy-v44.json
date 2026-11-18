@@ -2,7 +2,7 @@
   "_about": "Unique product descriptions (.detail-lead) only for models whose description repeated another model's text. Same device facts, different wording; artwork motifs are taken from the product photos. Applied by build/product-copy-v44.cjs. Other products are not touched.",
   "en": {
     "joker": ["Joker is a Boxer Standard boxing machine from PRO-GAMES, decorated with playing cards and a grinning Bad Clown character. Players punch the bag to beat the high score – a captivating strength challenge that keeps customers coming back."],
-    "pow-boxer": ["POW Boxer brings comic-book pop art to the Boxer Standard collection, with bold POW! lettering on a yellow cabinet. Every punch is a test of strength that invites players to return and improve their result."],
+    "pow-boxer": ["POW Boxer brings comic-book pop art to the Boxer Standard collection, with bold POW! lettering across the cabinet. Every punch is a test of strength that invites players to return and improve their result."],
     "champion": ["Champion dresses the Boxer Standard cabinet in a title-fight theme: a championship belt, flames and stars-and-stripes graphics. Guests step up, hit the bag and try to beat the top score."],
     "easy": ["Easy is the classic boxing design in the PRO-GAMES Boxer Standard range, with boxer silhouettes and bold BOXER lettering. The game is simple: strike the bag, check the score and play again to beat it."],
     "cyber-punch": ["Cyber Punch gives the Boxer Standard machine a sci-fi look, with an armoured cyber fighter and GAME OVER artwork. Its strength-testing gameplay holds attention and brings players back for a rematch."],
@@ -33,7 +33,7 @@
   },
   "pl": {
     "joker": ["Joker to automat bokserski z kolekcji Boxer Standard, którego grafika łączy karty do gry z postacią złowrogiego klauna (Bad Clown). Gracz uderza w gruszkę i walczy o najlepszy wynik. Dostępne wykończenia: biały, żółty, czerwony, zielony, niebieski, czarny i pomarańczowy – wybierz kolor w konfiguratorze i zapytaj o ofertę dla swojego obiektu."],
-    "pow-boxer": ["POW Boxer wnosi do kolekcji Boxer Standard komiksowy styl pop-art z wielkim napisem POW! na żółtej obudowie. Każde uderzenie w gruszkę to test siły, a wynik zachęca do kolejnej próby. Model prezentujemy w wykończeniu żółtym – zaznacz go w konfiguratorze i zapytaj o ofertę."],
+    "pow-boxer": ["POW Boxer wnosi do kolekcji Boxer Standard komiksowy styl pop-art z wielkim napisem POW! na obudowie. Każde uderzenie w gruszkę to test siły, a wynik zachęca do kolejnej próby. Dostępne wykończenia: czerwony, srebrny, czarny, niebieski, pomarańczowy i zielony – kolor wskażesz w konfiguratorze i zapytasz o ofertę."],
     "champion": ["Champion to boks w mistrzowskim wydaniu: obudowę z kolekcji Boxer Standard zdobią pas mistrzowski, płomienie i motyw gwiazd i pasów. Gracz uderza w gruszkę i próbuje pobić najlepszy wynik. Wykończenia: pomarańczowy, żółty, czerwony, biały, czarny i niebieski – kolor wskażesz w konfiguratorze."],
     "easy": ["Easy to klasyczny wzór kolekcji Boxer Standard: sylwetki bokserów i wyrazisty napis BOXER. Zasady są proste – uderz w gruszkę, sprawdź wynik i zagraj ponownie, żeby go poprawić. Dostępne kolory: biały, żółty, pomarańczowy, czarny, czerwony i niebieski; wybierz wariant w konfiguratorze i zapytaj o ofertę."],
     "cyber-punch": ["Cyber Punch nadaje automatowi bokserskiemu z kolekcji Boxer Standard futurystyczny wygląd: opancerzony cyberwojownik i napis GAME OVER. Gracz sprawdza siłę ciosu na gruszce i porównuje wynik gry. Wykończenia do wyboru: pomarańczowy, biały, czerwony, czarny, żółty i niebieski – zaznacz kolor w konfiguratorze."],
@@ -56,7 +56,7 @@
   },
   "es": {
     "joker": ["Joker es una máquina de boxeo de la colección Boxer Standard de PRO-GAMES, decorada con naipes y un inquietante payaso (Bad Clown). Los jugadores golpean el saco para batir la mejor puntuación, un reto de fuerza que hace que los clientes vuelvan."],
-    "pow-boxer": ["POW Boxer lleva el pop art del cómic a la colección Boxer Standard, con un gran rótulo POW! sobre un mueble amarillo. Cada golpe es una prueba de fuerza que invita a volver y mejorar el resultado."],
+    "pow-boxer": ["POW Boxer lleva el pop art del cómic a la colección Boxer Standard, con un gran rótulo POW! en el mueble. Cada golpe es una prueba de fuerza que invita a volver y mejorar el resultado."],
     "champion": ["Champion viste el mueble Boxer Standard con un tema de combate por el título: cinturón de campeón, llamas y gráficos de barras y estrellas. Los jugadores golpean el saco e intentan superar la mejor puntuación."],
     "easy": ["Easy es el diseño clásico de boxeo de la gama Boxer Standard de PRO-GAMES, con siluetas de boxeadores y un llamativo rótulo BOXER. El juego es sencillo: golpea el saco, mira la puntuación y vuelve a jugar para superarla."],
     "cyber-punch": ["Cyber Punch da a la máquina Boxer Standard un aire de ciencia ficción, con un guerrero cibernético acorazado y el lema GAME OVER. Su juego de fuerza mantiene la atención y anima a pedir la revancha."],
@@ -85,7 +85,7 @@
   },
   "de": {
     "joker": ["Joker ist ein Boxautomat der Boxer-Standard-Kollektion von PRO-GAMES, gestaltet mit Spielkarten und einem grinsenden Bad Clown. Die Spieler schlagen auf den Ball, um den Highscore zu knacken – eine Kraftprobe, die Gäste immer wieder anzieht."],
-    "pow-boxer": ["POW Boxer bringt Comic-Pop-Art in die Boxer-Standard-Kollektion, mit großem POW!-Schriftzug auf gelbem Gehäuse. Jeder Schlag ist ein Krafttest, der zum Wiederkommen und Verbessern des Ergebnisses einlädt."],
+    "pow-boxer": ["POW Boxer bringt Comic-Pop-Art in die Boxer-Standard-Kollektion, mit großem POW!-Schriftzug auf dem Gehäuse. Jeder Schlag ist ein Krafttest, der zum Wiederkommen und Verbessern des Ergebnisses einlädt."],
     "champion": ["Champion kleidet das Boxer-Standard-Gehäuse im Stil eines Titelkampfs: Meistergürtel, Flammen und Sternenbanner-Grafik. Die Spieler treten an den Ball und versuchen, den Bestwert zu schlagen."],
     "easy": ["Easy ist das klassische Box-Design der Boxer-Standard-Reihe von PRO-GAMES, mit Boxer-Silhouetten und auffälligem BOXER-Schriftzug. Das Spiel ist einfach: zuschlagen, Punktzahl ablesen und erneut spielen, um sie zu übertreffen."],
     "cyber-punch": ["Cyber Punch verleiht dem Boxer-Standard-Automaten einen Science-Fiction-Look mit gepanzertem Cyberkämpfer und GAME-OVER-Motiv. Das Kraftspiel fesselt die Spieler und lockt sie zur Revanche zurück."],
@@ -113,7 +113,7 @@
   },
   "fr": {
     "joker": ["Joker est une machine de boxe de la collection Boxer Standard de PRO-GAMES, décorée de cartes à jouer et d’un clown ricanant (Bad Clown). Les joueurs frappent la poire pour battre le meilleur score, un défi de force qui fait revenir la clientèle."],
-    "pow-boxer": ["POW Boxer apporte le pop art de la bande dessinée à la collection Boxer Standard, avec un grand POW! sur un meuble jaune. Chaque coup est un test de force qui donne envie de revenir et d’améliorer son score."],
+    "pow-boxer": ["POW Boxer apporte le pop art de la bande dessinée à la collection Boxer Standard, avec un grand POW! sur le meuble. Chaque coup est un test de force qui donne envie de revenir et d’améliorer son score."],
     "champion": ["Champion habille le meuble Boxer Standard aux couleurs d’un combat pour le titre : ceinture de champion, flammes et graphisme étoilé. Les joueurs frappent la poire et tentent de battre le meilleur score."],
     "easy": ["Easy est le design boxe classique de la gamme Boxer Standard de PRO-GAMES, avec des silhouettes de boxeurs et un grand lettrage BOXER. Le jeu est simple : frapper la poire, lire le score et rejouer pour le dépasser."],
     "cyber-punch": ["Cyber Punch donne à la machine Boxer Standard un style science-fiction, avec un combattant cybernétique en armure et le motif GAME OVER. Son jeu de force retient l’attention et pousse à demander la revanche."],

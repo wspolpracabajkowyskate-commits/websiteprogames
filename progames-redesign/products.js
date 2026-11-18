@@ -921,11 +921,11 @@ window.PRODUCTS={
     ],
     "variants": [
       {
-        "id": "yellow",
-        "name": "Yellow",
-        "nameES": "Amarillo",
-        "color": "Yellow",
-        "image": "/assets/products/pow-boxer-yellow.webp"
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/pow-boxer-red.webp"
       },
       {
         "id": "silver",
@@ -956,13 +956,6 @@ window.PRODUCTS={
         "image": "/assets/products/pow-boxer-orange.webp"
       },
       {
-        "id": "red",
-        "name": "Red",
-        "nameES": "Rojo",
-        "color": "Red",
-        "image": "/assets/products/pow-boxer-red.webp"
-      },
-      {
         "id": "green",
         "name": "Green",
         "nameES": "Verde",
@@ -971,7 +964,7 @@ window.PRODUCTS={
       }
     ],
     "source": "https://www.progamespoland.com/boxer-standard-powboxer",
-    "image": "/assets/products/pow-boxer-yellow.webp",
+    "image": "/assets/products/pow-boxer-red.webp",
     "sourceCopyStatus": "matched"
   },
   "champion": {
