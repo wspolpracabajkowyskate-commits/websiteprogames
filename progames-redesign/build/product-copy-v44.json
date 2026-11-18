@@ -17,6 +17,7 @@
     "viking": ["Viking shows a horned-helmet warrior on a blue cabinet in the Boxer Standard collection. Players take on the punching bag and return to improve their result."],
     "disco": ["Disco brings a club look to the Boxer Standard range, with a party graphic and neon DISCO lettering. Guests test their punch and compete for the highest score."],
     "boxer-combat": ["Boxer Combat is a premium PRO-GAMES boxing machine with a red cabinet framed by LED lights and BOXING FIGHT TONIGHT graphics. Its strength-testing gameplay keeps players competing and coming back for more."],
+    "boxer-combat-pow": ["Boxer Combat POW is a premium PRO-GAMES boxing machine that pairs the Boxer Combat cabinet with comic-book pop-art graphics, LED lights and bold POW BOXER lettering. Its strength-testing gameplay keeps players competing and coming back for more."],
     "boxer-ring": ["Boxer Ring is a premium boxing machine with a round score display on a column-style red cabinet. Players punch the bag to beat the best result, which keeps them engaged and returning."],
     "monster-3in1-ticket": [
       "Monster 3 in 1 Ticket is the ticket version of the PRO-GAMES Monster family: boxing, kicking and a hammer strike in a single machine.",
@@ -47,6 +48,7 @@
     "viking": ["Viking to wojownik w rogatym hełmie na niebieskiej obudowie automatu bokserskiego z kolekcji Boxer Standard. Gracz mierzy się z gruszką i wraca, by poprawić swój wynik. Kolory: pomarańczowy, żółty, biały, czerwony, niebieski i czarny – wariant zaznaczysz w konfiguratorze, a my przygotujemy ofertę."],
     "disco": ["Disco wprowadza do kolekcji Boxer Standard klubowy klimat: imprezowa grafika i neonowy napis DISCO. Goście sprawdzają siłę uderzenia i rywalizują o najwyższy wynik. Dostępne wykończenia: biały, czarny, żółty, pomarańczowy, niebieski i czerwony – wybierz kolor w konfiguratorze i zapytaj o ofertę."],
     "boxer-combat": ["Boxer Combat to automat bokserski PRO-GAMES z gamy Premium: czerwona obudowa obramowana światłami LED i grafika BOXING FIGHT TONIGHT. Gracz uderza w gruszkę i rywalizuje o najlepszy wynik. Wykończenia: czerwony, biały, pomarańczowy, czarny, niebieski i żółty – kolor wskażesz w konfiguratorze i zapytasz o ofertę."],
+    "boxer-combat-pow": ["Boxer Combat POW to automat bokserski PRO-GAMES z gamy Premium: obudowa Boxer Combat z komiksową grafiką pop-art, światłami LED i dużym napisem POW BOXER. Gracz uderza w gruszkę i rywalizuje o najlepszy wynik. Wykończenia: żółty, srebrny, czarny, niebieski, pomarańczowy, czerwony i zielony – kolor wskażesz w konfiguratorze i zapytasz o ofertę."],
     "boxer-ring": ["Boxer Ring to automat bokserski z gamy Premium z okrągłym wyświetlaczem wyniku na czerwonej obudowie w formie kolumny. Gracz uderza w gruszkę, by pobić najlepszy wynik, i wraca po kolejną próbę. Dostępne kolory: czerwony, czarny, biały, żółty i niebieski – wybierz wariant w konfiguratorze i zapytaj o ofertę."],
     "kids-basketball": ["Kids Basketball to automat do koszykówki dla dzieci z oferty dystrybucyjnej PRO-GAMES. Przed zamówieniem poproś dział sprzedaży o potwierdzenie producenta, dokumentacji technicznej, dostępnej wersji i zasad wsparcia."],
     "kiddie-ride": ["Kiddie Ride to bujak dla najmłodszych z oferty dystrybucyjnej PRO-GAMES. Zobacz zdjęcie i zapytaj dział sprzedaży o producenta, aktualną gamę, dokumentację techniczną i wsparcie, zanim złożysz zamówienie."],
@@ -69,6 +71,7 @@
     "viking": ["Viking muestra a un guerrero con casco de cuernos sobre un mueble azul de la colección Boxer Standard. Los jugadores se enfrentan al saco y vuelven para mejorar su resultado."],
     "disco": ["Disco aporta un ambiente de club a la gama Boxer Standard, con un gráfico festivo y el rótulo de neón DISCO. Los clientes ponen a prueba su golpe y compiten por la puntuación más alta."],
     "boxer-combat": ["Boxer Combat es una máquina de boxeo premium de PRO-GAMES con mueble rojo enmarcado por luces LED y gráficos BOXING FIGHT TONIGHT. Su juego de fuerza mantiene la competición y hace que los jugadores vuelvan."],
+    "boxer-combat-pow": ["Boxer Combat POW es una máquina de boxeo premium de PRO-GAMES que combina el mueble Boxer Combat con gráficos pop art de cómic, luces LED y un gran rótulo POW BOXER. Su juego de fuerza mantiene la competición y hace que los jugadores vuelvan."],
     "boxer-ring": ["Boxer Ring es una máquina de boxeo premium con un marcador redondo sobre un mueble rojo en forma de columna. Los jugadores golpean el saco para batir el mejor resultado, lo que los mantiene enganchados."],
     "monster-3in1-ticket": [
       "Monster 3 in 1 Ticket es la versión con tickets de la familia Monster de PRO-GAMES: boxeo, patada y martillo en una sola máquina.",
@@ -97,6 +100,7 @@
     "viking": ["Viking zeigt einen Krieger mit Hörnerhelm auf einem blauen Gehäuse der Boxer-Standard-Kollektion. Die Spieler nehmen es mit dem Boxball auf und kehren zurück, um ihr Ergebnis zu verbessern."],
     "disco": ["Disco bringt Club-Atmosphäre in die Boxer-Standard-Reihe, mit Partygrafik und DISCO-Schriftzug in Neon. Die Gäste testen ihre Schlagkraft und kämpfen um die höchste Punktzahl."],
     "boxer-combat": ["Boxer Combat ist ein Premium-Boxautomat von PRO-GAMES mit rotem Gehäuse, eingerahmt von LED-Leuchten und BOXING-FIGHT-TONIGHT-Grafik. Das Kraftspiel hält den Wettkampf am Laufen und bringt Spieler zurück."],
+    "boxer-combat-pow": ["Boxer Combat POW ist ein Premium-Boxautomat von PRO-GAMES, der das Boxer-Combat-Gehäuse mit Comic-Pop-Art-Grafik, LED-Leuchten und großem POW-BOXER-Schriftzug verbindet. Das Kraftspiel hält den Wettkampf am Laufen und bringt Spieler zurück."],
     "boxer-ring": ["Boxer Ring ist ein Premium-Boxautomat mit runder Punkteanzeige auf einem roten Gehäuse in Säulenform. Die Spieler schlagen zu, um den Bestwert zu knacken, und bleiben so am Ball."],
     "monster-3in1-ticket": [
       "Monster 3 in 1 Ticket ist die Ticket-Version der Monster-Familie von PRO-GAMES: Boxen, Kicken und Hammerschlag in einem einzigen Automaten.",
@@ -124,6 +128,7 @@
     "viking": ["Viking montre un guerrier au casque à cornes sur un meuble bleu de la collection Boxer Standard. Les joueurs affrontent la poire et reviennent pour améliorer leur résultat."],
     "disco": ["Disco apporte une ambiance club à la gamme Boxer Standard, avec un graphisme festif et le lettrage néon DISCO. Les clients testent leur frappe et se disputent le meilleur score."],
     "boxer-combat": ["Boxer Combat est une machine de boxe premium de PRO-GAMES au meuble rouge encadré de lumières LED et au graphisme BOXING FIGHT TONIGHT. Son jeu de force entretient la compétition et fait revenir les joueurs."],
+    "boxer-combat-pow": ["Boxer Combat POW est une machine de boxe premium de PRO-GAMES qui associe le meuble Boxer Combat à un graphisme pop art de bande dessinée, des lumières LED et un grand lettrage POW BOXER. Son jeu de force entretient la compétition et fait revenir les joueurs."],
     "boxer-ring": ["Boxer Ring est une machine de boxe premium avec un afficheur de score rond sur un meuble rouge en forme de colonne. Les joueurs frappent la poire pour battre le meilleur résultat, ce qui les garde dans le jeu."],
     "monster-3in1-ticket": [
       "Monster 3 in 1 Ticket est la version à tickets de la famille Monster de PRO-GAMES : boxe, coup de pied et marteau dans une seule machine.",

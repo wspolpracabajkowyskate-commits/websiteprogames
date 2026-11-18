@@ -2280,6 +2280,95 @@ window.PRODUCTS={
     "image": "/assets/products/boxer-combat-red.webp",
     "sourceCopyStatus": "matched"
   },
+  "boxer-combat-pow": {
+    "name": "Boxer Combat POW",
+    "category": "boxer",
+    "label": "BOXER PREMIUM",
+    "desc": "Immersive Experience: Captivating gameplay that challenges strength, keeping customers coming back for more.",
+    "features": [
+      "Built to Last: Designed with robust electronics and mechanics, perfect for high-traffic venues looking for reliable performance.",
+      "Multible Payment Options: Supports a variety of payment methods, including bills, coins, cards, and tokens—suitable for any currency.",
+      "Revenue Booster: Adjustable difficulty levels and free play mode to engage diverse audiences and maximize profits."
+    ],
+    "spec": [
+      [
+        "Height",
+        "219 cm / 86″"
+      ],
+      [
+        "Width",
+        "72 cm / 28″"
+      ],
+      [
+        "Length",
+        "115 cm / 45″"
+      ],
+      [
+        "Weight",
+        "121 kg / 265 lb"
+      ]
+    ],
+    "options": [
+      "Bill acceptor.",
+      "Nayax device.",
+      "Ticket dispenser.",
+      "Custom sticker and branding (Advance orders).",
+      "Silent mode (Advance orders)."
+    ],
+    "variants": [
+      {
+        "id": "yellow",
+        "name": "Yellow",
+        "nameES": "Amarillo",
+        "color": "Yellow",
+        "image": "/assets/products/boxer-combat-pow-yellow.webp"
+      },
+      {
+        "id": "silver",
+        "name": "Silver",
+        "nameES": "Plata",
+        "color": "Silver",
+        "image": "/assets/products/boxer-combat-pow-silver.webp"
+      },
+      {
+        "id": "black",
+        "name": "Black",
+        "nameES": "Negro",
+        "color": "Black",
+        "image": "/assets/products/boxer-combat-pow-black.webp"
+      },
+      {
+        "id": "blue",
+        "name": "Blue",
+        "nameES": "Azul",
+        "color": "Blue",
+        "image": "/assets/products/boxer-combat-pow-blue.webp"
+      },
+      {
+        "id": "orange",
+        "name": "Orange",
+        "nameES": "Naranja",
+        "color": "Orange",
+        "image": "/assets/products/boxer-combat-pow-orange.webp"
+      },
+      {
+        "id": "red",
+        "name": "Red",
+        "nameES": "Rojo",
+        "color": "Red",
+        "image": "/assets/products/boxer-combat-pow-red.webp"
+      },
+      {
+        "id": "green",
+        "name": "Green",
+        "nameES": "Verde",
+        "color": "Green",
+        "image": "/assets/products/boxer-combat-pow-green.webp"
+      }
+    ],
+    "image": "/assets/products/boxer-combat-pow-yellow.webp",
+    "sourceCopyStatus": "matched"
+  },
   "boxer-fist": {
     "name": "Boxer Fist · 3 Player",
     "category": "boxer",
@@ -3659,6 +3748,9 @@ window.PRODUCT_ES={
     "desc": "Contacta con PRO-GAMES para obtener la descripción del producto, las especificaciones técnicas y el equipamiento disponible para este modelo."
   },
   "boxer-combat": {
+    "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
+  },
+  "boxer-combat-pow": {
     "desc": "Experiencia envolvente: Un juego cautivador que pone a prueba la fuerza y anima a los clientes a volver."
   },
   "boxer-fist": {

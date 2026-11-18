@@ -1770,6 +1770,46 @@
   },
   {
     "kind": "product",
+    "lang": "en",
+    "key": "boxer-combat-pow",
+    "url": "/en/products/boxer-combat-pow.html",
+    "filename": "en/products/boxer-combat-pow.html",
+    "title": "Boxer Combat POW | Boxing arcade machine | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "es",
+    "key": "boxer-combat-pow",
+    "url": "/es/productos/boxer-combat-pow.html",
+    "filename": "es/productos/boxer-combat-pow.html",
+    "title": "Boxer Combat POW | Máquina de boxeo | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "pl",
+    "key": "boxer-combat-pow",
+    "url": "/pl/produkty/boxer-combat-pow.html",
+    "filename": "pl/produkty/boxer-combat-pow.html",
+    "title": "Boxer Combat POW | Automat bokserski | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "de",
+    "key": "boxer-combat-pow",
+    "url": "/de/produkte/boxer-combat-pow.html",
+    "filename": "de/produkte/boxer-combat-pow.html",
+    "title": "Boxer Combat POW | Boxautomat | PRO-GAMES"
+  },
+  {
+    "kind": "product",
+    "lang": "fr",
+    "key": "boxer-combat-pow",
+    "url": "/fr/produits/boxer-combat-pow.html",
+    "filename": "fr/produits/boxer-combat-pow.html",
+    "title": "Boxer Combat POW | Machine de boxe | PRO-GAMES"
+  },
+  {
+    "kind": "product",
     "lang": "fr",
     "key": "boxer-fist",
     "url": "/fr/produits/boxer-fist.html",
