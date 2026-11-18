@@ -4308,11 +4308,11 @@ Object.assign(window.PRODUCTS,{
         "image": "/assets/products/hammer-2026-yellow.jpg"
       },
       {
-        "id": "silver",
-        "name": "Silver",
-        "nameES": "Plata",
-        "color": "Silver",
-        "image": "/assets/products/hammer-2026-silver.jpg"
+        "id": "white",
+        "name": "White",
+        "nameES": "Blanco",
+        "color": "White",
+        "image": "/assets/products/hammer-2026-white.jpg"
       }
     ],
     "source": "https://www.progamespoland.com/",
