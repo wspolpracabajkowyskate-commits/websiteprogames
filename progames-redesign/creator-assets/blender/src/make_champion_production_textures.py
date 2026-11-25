@@ -107,16 +107,23 @@ cv2.fillPoly(mask, [np.round(poly * 16).astype(np.int32)], 255, lineType=cv2.LIN
 mask = cv2.GaussianBlur(mask.astype(np.float32) / 255.0, (0, 0), 0.0015 * PX_PER_M)[..., None]
 front_print = front
 front = (front * (1 - mask) + old[..., :3] * mask).round().clip(0, 255).astype(np.uint8)
-# the cut-out also has a plate-shaped neck above the shield (bag bracket): no sticker there, the
-# painted body shows -> transparent.  White of the print (incl. its thin cut line) above the shield,
-# inside the neck width, outside the shield.
+# the cut-out also has a plate-shaped neck above the shield (white on the print). It is filled with
+# the print artwork just above it (mirrored across the neck's top edge, per column), so the star
+# background runs down to the shield with no gap.
 X, Y = np.meshgrid(xs, ys)
-cut = (front_print.min(2) > 200) & (np.abs(X) < 0.185) & (Y > 1.70) & (mask[..., 0] < 0.5)
-cut = cv2.dilate(cut.astype(np.uint8), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)))
-cut &= ((np.abs(X) < 0.185) & (Y > 1.70)).astype(np.uint8)
-alpha = (255 - cv2.GaussianBlur(cut.astype(np.float32) * 255, (0, 0), 1.0)).clip(0, 255).astype(np.uint8)
-alpha[mask[..., 0] > 0.5] = 255
-save(front, 'champion_zone_front.webp', alpha=alpha)
+zone = (np.abs(X) < 0.19) & (Y > 1.70)
+cut = (front_print.min(2) > 200) & zone & (mask[..., 0] < 0.5)
+cut = cv2.dilate(cut.astype(np.uint8), cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))).astype(bool) & zone
+src_y = np.tile(np.arange(fh)[:, None], (1, fw)).astype(np.float32)
+for c in np.where(cut.any(0))[0]:
+    rows = np.where(cut[:, c])[0]
+    top = rows.min()
+    src_y[rows, c] = np.clip(2 * top - rows - 1, 0, fh - 1)
+src_x = np.tile(np.arange(fw)[None, :], (fh, 1)).astype(np.float32)
+filled = cv2.remap(front_print, src_x, src_y, cv2.INTER_LINEAR)
+w = cv2.GaussianBlur(cut.astype(np.float32), (0, 0), 1.5)[..., None] * (1 - mask)
+front = (front * (1 - w) + filled * w).round().clip(0, 255).astype(np.uint8)
+save(front, 'champion_zone_front.webp', alpha=np.full((fh, fw), 255, np.uint8))
 
 # ---------------------------------------------------------------- SIDES
 y0, y1 = D['col_y0'] + 0.002, D['col_box_y1'] - 0.004
