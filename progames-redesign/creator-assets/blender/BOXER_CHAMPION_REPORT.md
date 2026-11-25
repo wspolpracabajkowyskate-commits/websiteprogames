@@ -1,3 +1,23 @@
+# Boxer Champion – model report
+
+## v11 (25.11.2026): production print files
+- Front, both sides and the canopy band now come from the factory PRINT FILES
+  (`reference/production/`: `champion_sheet_front_sides.webp` = CHAMPION__PG sheet 1350 × 1940 mm,
+  `champion_sheet_band.webp` = Champion_top 2650 × 250 mm) instead of photo bakes.
+  Script: `blender/src/make_champion_production_textures.py`, then
+  `blender/src/glb_replace_images.py` swaps the four images inside `models/boxer-champion.glb`
+  (geometry, UVs and materials unchanged).
+- The sheet is laid on at true 1:1 scale and wrapped round the column (325 + 700 + 325 mm = column
+  0.70 × 0.321 m + 4 mm round the rear edges), so the front/side joins are those of the real sticker.
+- Vertical placement from the crest cut-out: the white crest on the sheet is cut out on the machine
+  (the score shield and displays sit there). Its tip is placed at y 0.875 m so the shield covers it
+  all round (≥ 6 mm). The rules / service stickers printed inside the cut-out are separate stickers
+  and are not used. The plate-shaped neck of the cut-out above the shield is transparent (painted body).
+- Inside the shield the v10 shield artwork is kept (`champion_front_v10_shield_source.webp`) – the
+  shield print itself is not part of these files.
+- Resolution ≈ 3 px/mm (front 2048 × 5409, sides 837 × 5543, band 8192 × 610; the print raster
+  itself is ≈ 2.8 px/mm). Model URL versioned `?v=11`.
+
 # Boxer Champion – model report (v10: shape from the manufacturer CAD renders)
 
 ## v10.3 (22.10.2026)
