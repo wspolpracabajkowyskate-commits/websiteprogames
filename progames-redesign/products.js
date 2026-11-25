@@ -191,6 +191,14 @@ window.PRODUCTS={
         "sourceImage": "https://static.wixstatic.com/media/d36c49_b75ea8cc5bbf431294f5cdabd63ed930~mv2.jpg",
         "sourceFileName": "Monster3in1Orange.jpg",
         "image": "/assets/products/monster-3in1-orange-photo.webp"
+      },
+      {
+        "name": "Green",
+        "nameES": "Verde",
+        "id": "green",
+        "color": "Green",
+        "sourceFileName": "WhatsApp Image 2026-11-22 at 19.07.29 (2).jpeg",
+        "image": "/assets/products/monster-3in1-green-photo.webp"
       }
     ],
     "source": "https://www.progamespoland.com/monster-3w1",
