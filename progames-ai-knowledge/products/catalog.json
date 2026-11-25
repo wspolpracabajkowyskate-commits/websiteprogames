@@ -135,27 +135,27 @@
         {
           "id": "red",
           "name": "Red",
-          "image": "/assets/products/monster-3in1-red.webp"
+          "image": "/assets/products/monster-3in1-red-photo.webp"
         },
         {
           "id": "black",
           "name": "Black",
-          "image": "/assets/products/monster-3in1-black.webp"
+          "image": "/assets/products/monster-3in1-black-photo.webp"
         },
         {
           "id": "white",
           "name": "White",
-          "image": "/assets/products/monster-3in1-white.webp"
+          "image": "/assets/products/monster-3in1-white-photo.webp"
         },
         {
           "id": "yellow",
           "name": "Yellow",
-          "image": "/assets/products/monster-3in1-yellow.webp"
+          "image": "/assets/products/monster-3in1-yellow-photo.webp"
         },
         {
           "id": "orange",
           "name": "Orange",
-          "image": "/assets/products/monster-3in1-orange.webp"
+          "image": "/assets/products/monster-3in1-orange-photo.webp"
         }
       ],
       "technical_specifications": {
@@ -3082,7 +3082,7 @@
         "Height": "225 Cm / 89″",
         "Width": "95 cm / 38″",
         "Length": "140 cm / 56″",
-        "Weight": "125 kg / 276 lb"
+        "Weight": "121 kg / 266 lb"
       },
       "official_url": "https://www.progamespoland.com/en/products/hammer.html",
       "polish_url": "https://www.progamespoland.com/pl/produkty/hammer.html",
@@ -3184,7 +3184,7 @@
         "Height": "170 cm / 67″",
         "Width": "133 cm / 52″",
         "Length": "66 cm / 26″",
-        "Weight": "100 kg / 221 lb"
+        "Weight": "110 kg / 242 lb"
       },
       "official_url": "https://www.progamespoland.com/en/products/kicker.html",
       "polish_url": "https://www.progamespoland.com/pl/produkty/kicker.html",

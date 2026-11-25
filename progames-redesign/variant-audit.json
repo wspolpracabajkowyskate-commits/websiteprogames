@@ -81,7 +81,7 @@
         "color": "Red",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_2ccdfe409adb4a62a3a9adcd9b5e3879~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-25 at 21.23.42 (1).jpeg",
-        "image": "/assets/products/monster-3in1-red.webp"
+        "image": "/assets/products/monster-3in1-red-photo.webp"
       },
       {
         "name": "Black",
@@ -90,7 +90,7 @@
         "color": "Black",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_d72a7ba8470a46a18b2be3187bd9b875~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-24 at 21.31.28.jpeg",
-        "image": "/assets/products/monster-3in1-black.webp"
+        "image": "/assets/products/monster-3in1-black-photo.webp"
       },
       {
         "name": "White",
@@ -99,7 +99,7 @@
         "color": "White",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_60dd3c05ac3045fd8bab9b8c141e2bdc~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-24 at 21.31.27.jpeg",
-        "image": "/assets/products/monster-3in1-white.webp"
+        "image": "/assets/products/monster-3in1-white-photo.webp"
       },
       {
         "name": "Yellow",
@@ -108,7 +108,7 @@
         "color": "Yellow",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_39249cce3907437787d188071719290d~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-25 at 21.23.42.jpeg",
-        "image": "/assets/products/monster-3in1-yellow.webp"
+        "image": "/assets/products/monster-3in1-yellow-photo.webp"
       },
       {
         "name": "Blue",
@@ -126,7 +126,7 @@
         "color": "Orange",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_b75ea8cc5bbf431294f5cdabd63ed930~mv2.jpg",
         "sourceFileName": "Monster3in1Orange.jpg",
-        "image": "/assets/products/monster-3in1-orange.webp"
+        "image": "/assets/products/monster-3in1-orange-photo.webp"
       }
     ]
   },
