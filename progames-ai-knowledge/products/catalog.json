@@ -156,6 +156,11 @@
           "id": "orange",
           "name": "Orange",
           "image": "/assets/products/monster-3in1-orange-photo.webp"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "image": "/assets/products/monster-3in1-green-photo.webp"
         }
       ],
       "technical_specifications": {

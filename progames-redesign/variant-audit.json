@@ -127,6 +127,12 @@
         "sourceImage": "https://static.wixstatic.com/media/d36c49_b75ea8cc5bbf431294f5cdabd63ed930~mv2.jpg",
         "sourceFileName": "Monster3in1Orange.jpg",
         "image": "/assets/products/monster-3in1-orange-photo.webp"
+      },
+      {
+        "name": "Green",
+        "id": "green",
+        "color": "Green",
+        "image": "/assets/products/monster-3in1-green-photo.webp"
       }
     ]
   },
