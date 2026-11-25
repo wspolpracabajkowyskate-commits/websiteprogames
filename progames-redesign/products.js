@@ -145,7 +145,7 @@ window.PRODUCTS={
         "color": "Red",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_2ccdfe409adb4a62a3a9adcd9b5e3879~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-25 at 21.23.42 (1).jpeg",
-        "image": "/assets/products/monster-3in1-red.webp"
+        "image": "/assets/products/monster-3in1-red-photo.webp"
       },
       {
         "name": "Black",
@@ -154,7 +154,7 @@ window.PRODUCTS={
         "color": "Black",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_d72a7ba8470a46a18b2be3187bd9b875~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-24 at 21.31.28.jpeg",
-        "image": "/assets/products/monster-3in1-black.webp"
+        "image": "/assets/products/monster-3in1-black-photo.webp"
       },
       {
         "name": "White",
@@ -163,7 +163,7 @@ window.PRODUCTS={
         "color": "White",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_60dd3c05ac3045fd8bab9b8c141e2bdc~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-24 at 21.31.27.jpeg",
-        "image": "/assets/products/monster-3in1-white.webp"
+        "image": "/assets/products/monster-3in1-white-photo.webp"
       },
       {
         "name": "Yellow",
@@ -172,7 +172,7 @@ window.PRODUCTS={
         "color": "Yellow",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_39249cce3907437787d188071719290d~mv2.jpeg",
         "sourceFileName": "WhatsApp Image 2025-11-25 at 21.23.42.jpeg",
-        "image": "/assets/products/monster-3in1-yellow.webp"
+        "image": "/assets/products/monster-3in1-yellow-photo.webp"
       },
       {
         "name": "Blue",
@@ -190,11 +190,11 @@ window.PRODUCTS={
         "color": "Orange",
         "sourceImage": "https://static.wixstatic.com/media/d36c49_b75ea8cc5bbf431294f5cdabd63ed930~mv2.jpg",
         "sourceFileName": "Monster3in1Orange.jpg",
-        "image": "/assets/products/monster-3in1-orange.webp"
+        "image": "/assets/products/monster-3in1-orange-photo.webp"
       }
     ],
     "source": "https://www.progamespoland.com/monster-3w1",
-    "image": "/assets/products/monster-3in1-red.webp",
+    "image": "/assets/products/monster-3in1-red-photo.webp",
     "sourceCopyStatus": "matched"
   },
   "double-hit": {
@@ -3058,7 +3058,7 @@ window.PRODUCTS={
       ],
       [
         "Weight",
-        "125 kg / 276 lb"
+        "121 kg / 266 lb"
       ]
     ],
     "options": [
@@ -3144,7 +3144,7 @@ window.PRODUCTS={
       ],
       [
         "Weight",
-        "100 kg / 221 lb"
+        "110 kg / 242 lb"
       ]
     ],
     "options": [
@@ -3953,10 +3953,11 @@ window.PG_ES={
     "70 cm / 28″": "70 cm / 28″",
     "120 kg / 265 lb": "120 kg / 265 lb",
     "100 kg / 221 lb": "100 kg / 221 lb",
+    "110 kg / 242 lb": "110 kg / 242 lb",
     "140 kg / 309 lb": "140 kg / 309 lb",
     "225 Cm / 89″": "225 Cm / 89″",
     "95 cm / 38″": "95 cm / 38″",
-    "125 kg / 276 lb": "125 kg / 276 lb",
+    "121 kg / 266 lb": "121 kg / 266 lb",
     "170 cm / 67″": "170 cm / 67″",
     "133 cm / 52″": "133 cm / 52″",
     "66 cm / 26″": "66 cm / 26″",
