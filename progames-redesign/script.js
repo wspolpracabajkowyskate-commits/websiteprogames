@@ -220,3 +220,14 @@ window.PG_LOCALIZE?.();
     setTimeout(()=>e.target.style.transitionDelay='',1200);io.unobserve(e.target);}),{threshold:.25,rootMargin:'0px 0px -8% 0px'});
   tiles.forEach(t=>io.observe(t));
 })();
+
+// Production video: loaded only when the tile scrolls into view, plays muted in a loop while visible,
+// paused off-screen. Reduced motion keeps the poster.
+(()=>{
+  const v=document.querySelector('.factory-video video');if(!v)return;
+  v.muted=true;v.removeAttribute('controls');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');return;}
+  const start=()=>{if(!v.src&&v.dataset.src)v.src=v.dataset.src;const p=v.play();if(p&&p.catch)p.catch(()=>{});};
+  if(!('IntersectionObserver' in window)){start();return;}
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)start();else if(v.src)v.pause();}),{rootMargin:'200px 0px'}).observe(v);
+})();
