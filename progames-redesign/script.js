@@ -203,9 +203,11 @@ window.PG_LOCALIZE?.();
     // same projection as /assets/maps/world-outline.svg (1000 x 460)
     const P=(lon,lat)=>[20+(lon+180)/360*960,20+(85-lat)/145*420];
     const [ox,oy]=P(18.6,49.95); // Jastrzębie-Zdrój
-    const dest=[[-81.4,28.5],[-118.2,34],[-99.1,19.4],[-58.4,-34.6],[-0.1,51.5],[-3.7,40.4],[55.3,25.2],[28,-26.2],[103.8,1.35],[139.7,35.7],[151.2,-33.9],[37.6,55.8]];
+    const dest=[[-81.4,28.5],[-74,40.7],[-118.2,34],[-79.4,43.7],[-99.1,19.4],[-74.1,4.7],[-77,-12],[-46.6,-23.5],[-58.4,-34.6],[-70.7,-33.4],
+      [-0.1,51.5],[-3.7,40.4],[-9.1,38.7],[2.35,48.9],[12.5,41.9],[18,59.3],[23.7,38],[29,41],[37.6,55.8],
+      [31.2,30],[3.4,6.5],[36.8,-1.3],[28,-26.2],[55.3,25.2],[46.7,24.7],[72.9,19.1],[100.5,13.75],[103.8,1.35],[121,14.6],[127,37.5],[139.7,35.7],[115.9,-32],[151.2,-33.9],[174.8,-36.8]];
     const paths=dest.map(([lon,lat],i)=>{const [x,y]=P(lon,lat),mx=(ox+x)/2,my=(oy+y)/2,d=Math.hypot(x-ox,y-oy);
-      return `<path pathLength="1" style="--i:${i}" d="M${ox.toFixed(1)} ${oy.toFixed(1)}Q${mx.toFixed(1)} ${(my-d*.32).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}"/><circle class="dest-ring" style="--i:${i}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/><circle class="dest" style="--i:${i}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;}).join('');
+      return `<path pathLength="1" style="--i:${i*.55}" d="M${ox.toFixed(1)} ${oy.toFixed(1)}Q${mx.toFixed(1)} ${(my-d*.32).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}"/><circle class="dest-ring" style="--i:${i*.55}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/><circle class="dest" style="--i:${i*.55}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;}).join('');
     map.insertAdjacentHTML('beforeend',`<svg class="stat-routes" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="statRouteGrad" x1="0" x2="1"><stop offset="0" stop-color="#ff4b13"/><stop offset="1" stop-color="#ffb08a"/></linearGradient></defs>${paths}<circle class="origin-ring" cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" r="6"/><circle class="origin" cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" r="5"/></svg>`);
     routes=map.querySelector('.stat-routes');
   }
