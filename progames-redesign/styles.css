@@ -1067,7 +1067,7 @@ body.product-page-v2 .product-config-panel .gallery-variant-swatches{flex-wrap:w
 .intro-grid-trust .stat{grid-column:auto;min-height:300px}
 .intro-grid-trust .stat h3{font-size:clamp(21px,1.75vw,26px);overflow-wrap:break-word}
 .intro-grid-trust .stat.stat-world{padding-bottom:26px;isolation:isolate}
-.intro-grid-trust .stat-world .stat-map{position:absolute;left:-12%;right:-12%;bottom:-9%;margin:0;z-index:-1;-webkit-mask-image:linear-gradient(180deg,transparent 0,transparent 22%,#000 58%);mask-image:linear-gradient(180deg,transparent 0,transparent 22%,#000 58%)}
+.intro-grid-trust .stat-world .stat-map{position:absolute;left:-12%;right:-12%;bottom:-9%;margin:0;z-index:-1;-webkit-mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.55) 14%,#000 34%);mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.55) 14%,#000 34%)}
 .intro-grid-trust .stat-world .stat-map img{opacity:.9;-webkit-mask-image:none;mask-image:none}
 .intro-grid-trust .stat-world p{max-width:none}
 .intro-grid-trust .stat-machines h3{font-variant-numeric:tabular-nums}
@@ -1093,3 +1093,8 @@ body.product-page-v2 .product-config-panel .gallery-variant-swatches{flex-wrap:w
 .factory-video video::-webkit-media-controls{display:none!important}
 @media(min-width:641px){.factory-grid{grid-template-columns:minmax(0,.6fr) minmax(0,1fr);grid-template-rows:262px 262px 214px}}
 @media(min-width:641px) and (max-width:1180px){.factory-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1fr);grid-template-rows:220px 220px 180px}}
+/* worldwide tile on desktop: brighter map and routes under the text */
+@media(min-width:1181px){.intro-grid-trust .stat-world .stat-map img{opacity:1}.intro-grid-trust .stat-routes path{stroke-width:1.5;stroke-opacity:1}.intro-grid-trust .stat-world p{text-shadow:0 1px 10px rgba(8,12,16,.7)}}
+/* the PRO-GAMES POLAND name never breaks across lines (span added by build/typography.cjs) */
+.nw{white-space:nowrap}
+.nw.nw-wrap{white-space:normal}
