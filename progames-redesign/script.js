@@ -188,8 +188,16 @@ window.PG_LOCALIZE?.();
   const still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const year=list.querySelector('.stat-year');
   if(year){const now=Math.max(2026,new Date().getFullYear());year.insertAdjacentHTML('beforeend',`<div class="stat-timeline" aria-hidden="true"><span>2012</span><i><b></b></i><span>${now}</span></div>`);}
-  const fleet=list.querySelector('.stat-machines');
-  if(fleet)fleet.insertAdjacentHTML('beforeend','<div class="stat-fleet" aria-hidden="true">'+Array.from({length:26},(_,i)=>`<i style="--i:${i}"></i>`).join('')+'</div>');
+  // 10 000+ machines: count up the number in the heading, keeping its local thousands separator
+  const count=list.querySelector('.stat-machines h3');let runCount=()=>{};
+  if(count){const m=count.textContent.match(/\d{1,3}(?:([\s.,\u00a0\u202f])\d{3})+|\d{4,}/);
+    if(m){const total=+m[0].replace(/\D/g,''),sep=m[1]||'',full=count.textContent,fmt=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,sep);
+      count.setAttribute('aria-label',full);
+      runCount=()=>{const t0=performance.now(),dur=1600;const step=t=>{const k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);
+        count.textContent=full.replace(m[0],fmt(Math.round(total*e/10)*10));if(k<1)requestAnimationFrame(step);else count.textContent=full;};requestAnimationFrame(step);};}}
+  // 100% made in Poland: rotating "Made in Poland" stamp with the flag in the middle
+  const pl=list.querySelector('.stat-poland .stat-icon');
+  if(pl)pl.insertAdjacentHTML('afterend','<div class="stat-stamp" aria-hidden="true"><svg viewBox="0 0 160 160"><defs><path id="statStampPath" d="M80 80m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/><clipPath id="statStampFlag"><circle cx="80" cy="80" r="34"/></clipPath></defs><circle cx="80" cy="80" r="76" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 5"/><circle cx="80" cy="80" r="44" fill="none" stroke="currentColor" stroke-width="1.5"/><g class="stamp-text"><text font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="3.2" fill="currentColor"><textPath href="#statStampPath">MADE IN POLAND • PRO-GAMES POLAND •</textPath></text></g><g clip-path="url(#statStampFlag)"><rect x="40" y="40" width="80" height="40" fill="#fff"/><rect x="40" y="80" width="80" height="40" fill="#dc143c"/></g><circle cx="80" cy="80" r="34" fill="none" stroke="#e2e4e7"/></svg></div>');
   const map=list.querySelector('.stat-map');let routes=null;
   if(map){
     // same projection as /assets/maps/world-outline.svg (1000 x 460)
@@ -206,7 +214,7 @@ window.PG_LOCALIZE?.();
   list.classList.add('stats-anim');
   tiles.forEach((t,i)=>t.style.transitionDelay=`0s,0s,0s,${i*110}ms,${i*110}ms`);
   const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;
-    e.target.classList.add('is-in');if(e.target.contains(routes))setTimeout(()=>routes.classList.add('is-on'),350);
+    e.target.classList.add('is-in');if(e.target.contains(count))runCount();if(e.target.contains(routes))setTimeout(()=>routes.classList.add('is-on'),350);
     setTimeout(()=>e.target.style.transitionDelay='',1200);io.unobserve(e.target);}),{threshold:.25,rootMargin:'0px 0px -8% 0px'});
   tiles.forEach(t=>io.observe(t));
 })();
