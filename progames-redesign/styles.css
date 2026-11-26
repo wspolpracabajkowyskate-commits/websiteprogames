@@ -1020,3 +1020,45 @@ body.product-page-v2 .product-config-panel .gallery-variant-swatches{flex-wrap:w
 /* trust tiles (home "who we are"): heading + sentence instead of a big number */.stats-trust{list-style:none;margin:0;padding:0}.stat-trust h3{margin:0;font:800 clamp(22px,2.3vw,32px)/1.12 Manrope;color:#0c0d0f;letter-spacing:-.01em}.stat-trust p{margin:14px 0 0;color:#5f656c;font-size:14px;line-height:1.55}
 /* floating WhatsApp (main sales line) */.wa-float{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:58;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:transform .2s ease,box-shadow .2s ease;text-decoration:none}.wa-float:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 10px 26px rgba(0,0,0,.28)}.wa-float:focus-visible{outline:3px solid #0c0d0f;outline-offset:3px}@media(max-width:640px){.wa-float{width:48px;height:48px;right:14px;bottom:14px}.wa-float svg{width:23px;height:23px}}@media print{.wa-float{display:none}}@media(prefers-reduced-motion:reduce){.wa-float{transition:none}}
 /* configurator: send the configuration on WhatsApp */.config-summary .config-whatsapp{width:100%;min-height:44px;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;white-space:normal;text-align:center;padding:10px 12px;font-size:10px;background:#fff;color:#128c4a;border:1px solid #25d366}.config-summary .config-whatsapp:hover{background:#25d366;color:#fff}
+/* about: trust tiles as cards (icons, export map, timeline, entrance + hover motion) */
+.stats.stats-trust{display:grid;grid-template-columns:1fr 1fr;gap:14px;border:0}
+.stats-trust .stat{position:relative;display:flex;flex-direction:column;min-height:0;padding:28px 28px 26px;border:1px solid #e2e4e7;border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 1px 0 rgba(12,13,15,.03);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .45s,opacity .7s,translate .7s}
+.stats-trust .stat::before{content:"";position:absolute;left:28px;right:28px;top:0;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--accent2),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.stats-trust .stat:hover{transform:translateY(-4px);border-color:#d3d6da;box-shadow:0 22px 44px -26px rgba(12,13,15,.38)}
+.stats-trust .stat:hover::before{transform:scaleX(1)}
+.stat-icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:22px;border-radius:14px;background:rgba(255,75,19,.09);color:var(--accent);transition:transform .45s cubic-bezier(.3,1.6,.4,1)}
+.stat-icon svg{width:24px;height:24px}
+.stats-trust .stat:hover .stat-icon{transform:rotate(-6deg) scale(1.06)}
+.stat-world,.stat-poland{grid-column:1/-1}
+.stats-trust .stat.stat-world{padding-bottom:0;background:radial-gradient(120% 90% at 18% 0,#162330 0,#0b1016 60%);border-color:#0b1016;color:#fff}
+.stats-trust .stat-world h3{color:#fff}.stats-trust .stat-world p{color:#a3abb4;max-width:440px}
+.stat-world .stat-icon{background:rgba(255,75,19,.18);color:#ff7a4a}
+.stats-trust .stat.stat-world:hover{border-color:#0b1016;box-shadow:0 26px 50px -24px rgba(8,12,16,.65)}
+.stat-map{position:relative;margin:14px -28px 0;line-height:0}
+.stat-map img{width:100%;height:auto;opacity:.85;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent 0,#000 18%,#000 82%,transparent)}
+.stat-map .stat-routes{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.stat-routes path{fill:none;stroke:url(#statRouteGrad);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.stat-routes .dest{fill:#ffb08a;opacity:0;transform-box:fill-box;transform-origin:center}
+.stat-routes .dest-ring{fill:none;stroke:#ff7a4a;stroke-width:1.2;opacity:0;transform-box:fill-box;transform-origin:center}
+.stat-routes .origin{fill:var(--accent)}.stat-routes .origin-ring{fill:none;stroke:var(--accent);stroke-width:1.5;transform-box:fill-box;transform-origin:center}
+.stat-routes.is-on path{animation:statRoute 1.5s cubic-bezier(.45,.05,.2,1) forwards;animation-delay:calc(var(--i)*.16s + .2s)}
+.stat-routes.is-on .dest{animation:statDot .5s ease-out forwards;animation-delay:calc(var(--i)*.16s + 1.4s)}
+.stat-routes.is-on .dest-ring{animation:statRing 2.6s ease-out infinite;animation-delay:calc(var(--i)*.16s + 1.6s)}
+.stat-routes.is-on .origin-ring{animation:statRing 2.2s ease-out infinite}
+@keyframes statRoute{to{stroke-dashoffset:0}}
+@keyframes statDot{0%{opacity:0;transform:scale(.2)}70%{opacity:1;transform:scale(1.4)}100%{opacity:1;transform:scale(1)}}
+@keyframes statRing{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(3.2)}}
+.stat-poland::after{content:"";position:absolute;right:28px;top:30px;width:44px;height:30px;border-radius:7px;background:linear-gradient(#fff 50%,#dc143c 50%);box-shadow:inset 0 0 0 1px #e2e4e7,0 6px 14px -8px rgba(220,20,60,.6)}
+.stat-timeline{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:20px;font:800 11px/1 Manrope,sans-serif;letter-spacing:.06em;color:#0c0d0f}
+.stat-timeline span:last-child{color:var(--accent)}
+.stat-timeline i{position:relative;flex:1;height:4px;border-radius:4px;background:#eceef0;overflow:hidden}
+.stat-timeline b{position:absolute;inset:0;border-radius:4px;background:linear-gradient(90deg,var(--accent2),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 1.6s .35s cubic-bezier(.2,.7,.2,1)}
+.stat-fleet{display:grid;grid-template-columns:repeat(13,9px);gap:5px;margin-top:auto;padding-top:20px}
+.stat-fleet i{width:9px;height:15px;border-radius:2px 2px 1px 1px;background:#d9dcdf;transform-origin:bottom;transition:background-color .4s,transform .4s cubic-bezier(.3,1.6,.4,1)}
+.stats-trust.stats-anim .stat{opacity:0;translate:0 22px}
+.stats-trust.stats-anim .stat.is-in{opacity:1;translate:0 0}
+.stats-trust .stat.is-in .stat-timeline b{transform:scaleX(1)}
+.stats-trust .stat.is-in .stat-fleet i{background:var(--accent);transition-delay:calc(var(--i)*45ms + .3s)}
+.stats-trust .stat.is-in .stat-fleet i:nth-child(3n+2){background:#ff8a4d}.stats-trust .stat.is-in .stat-fleet i:nth-child(4n){background:#0c0d0f}
+@media(max-width:640px){.stats.stats-trust{grid-template-columns:1fr}.stats-trust .stat{padding:24px 22px 22px}.stat-map{margin:12px -22px 0}.stat-poland::after{right:22px;top:24px;width:38px;height:26px}}
+@media(prefers-reduced-motion:reduce){.stats-trust.stats-anim .stat{opacity:1;translate:none}.stats-trust .stat,.stat-icon,.stat-timeline b,.stat-fleet i{transition:none}.stat-routes path{stroke-dashoffset:0}.stat-routes .dest{opacity:1}.stat-routes.is-on *{animation:none!important}}

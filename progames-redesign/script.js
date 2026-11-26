@@ -180,3 +180,33 @@ if(grid){
 }
 
 window.PG_LOCALIZE?.();
+
+// About section: trust tiles - timeline (2012 -> this year), fleet of mini machines, export routes from
+// Poland on the world map, staggered entrance. Decorative only (aria-hidden); content stays in the HTML.
+(()=>{
+  const list=document.querySelector('.stats-trust');if(!list)return;
+  const still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const year=list.querySelector('.stat-year');
+  if(year){const now=Math.max(2026,new Date().getFullYear());year.insertAdjacentHTML('beforeend',`<div class="stat-timeline" aria-hidden="true"><span>2012</span><i><b></b></i><span>${now}</span></div>`);}
+  const fleet=list.querySelector('.stat-machines');
+  if(fleet)fleet.insertAdjacentHTML('beforeend','<div class="stat-fleet" aria-hidden="true">'+Array.from({length:26},(_,i)=>`<i style="--i:${i}"></i>`).join('')+'</div>');
+  const map=list.querySelector('.stat-map');let routes=null;
+  if(map){
+    // same projection as /assets/maps/world-outline.svg (1000 x 460)
+    const P=(lon,lat)=>[20+(lon+180)/360*960,20+(85-lat)/145*420];
+    const [ox,oy]=P(18.6,49.95); // Jastrzębie-Zdrój
+    const dest=[[-81.4,28.5],[-118.2,34],[-99.1,19.4],[-58.4,-34.6],[-0.1,51.5],[-3.7,40.4],[55.3,25.2],[28,-26.2],[103.8,1.35],[139.7,35.7],[151.2,-33.9],[37.6,55.8]];
+    const paths=dest.map(([lon,lat],i)=>{const [x,y]=P(lon,lat),mx=(ox+x)/2,my=(oy+y)/2,d=Math.hypot(x-ox,y-oy);
+      return `<path pathLength="1" style="--i:${i}" d="M${ox.toFixed(1)} ${oy.toFixed(1)}Q${mx.toFixed(1)} ${(my-d*.32).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}"/><circle class="dest-ring" style="--i:${i}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/><circle class="dest" style="--i:${i}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`;}).join('');
+    map.insertAdjacentHTML('beforeend',`<svg class="stat-routes" viewBox="0 0 1000 460" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="statRouteGrad" x1="0" x2="1"><stop offset="0" stop-color="#ff4b13"/><stop offset="1" stop-color="#ffb08a"/></linearGradient></defs>${paths}<circle class="origin-ring" cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" r="6"/><circle class="origin" cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" r="5"/></svg>`);
+    routes=map.querySelector('.stat-routes');
+  }
+  const tiles=[...list.querySelectorAll('.stat')];
+  if(still||!('IntersectionObserver' in window)){tiles.forEach(t=>t.classList.add('is-in'));routes?.classList.add('is-on');return;}
+  list.classList.add('stats-anim');
+  tiles.forEach((t,i)=>t.style.transitionDelay=`0s,0s,0s,${i*110}ms,${i*110}ms`);
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;
+    e.target.classList.add('is-in');if(e.target.contains(routes))setTimeout(()=>routes.classList.add('is-on'),350);
+    setTimeout(()=>e.target.style.transitionDelay='',1200);io.unobserve(e.target);}),{threshold:.25,rootMargin:'0px 0px -8% 0px'});
+  tiles.forEach(t=>io.observe(t));
+})();
