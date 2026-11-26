@@ -17,9 +17,9 @@
   const meetingIntro=isES?'Me gustaría concertar una reunión durante:':(window.PG_T?.('I would like to arrange a meeting at:')||'I would like to arrange a meeting at:');
   const meetingTime=isES?'Fecha y hora preferidas:':(window.PG_T?.('Preferred date and time:')||'Preferred date and time:');
   events.forEach(event=>{
+    // "Arrange a meeting" only for upcoming / running shows (added or removed in refresh())
     const link=event.card.querySelector('.trade-meeting')||document.createElement('a');
-    link.className='trade-meeting';link.href='#inquiry';link.textContent=meetingLabel;
-    event.card.querySelector('.trade-main').append(link);event.meeting=link;
+    link.className='trade-meeting';link.href='#inquiry';link.textContent=meetingLabel;link.remove();event.meeting=link;
     link.addEventListener('click',()=>{
       const message=document.querySelector('#inquiry textarea[name="message"]');
       if(!message)return;
@@ -67,7 +67,7 @@
     const date=today();
     events.forEach(event=>{
       event.state=stateOf(event,date);
-      event.meeting.hidden=event.state==='past';
+      if(event.state==='past')event.meeting.remove();else if(!event.meeting.isConnected)event.card.querySelector('.trade-main').append(event.meeting);
       event.pin.dataset.state=event.state;event.tab.dataset.state=event.state;
       event.pin.setAttribute('aria-label',`${event.city} — ${event.name}, ${event.date}. ${labels[event.state]}`);
       event.pin.title=`${event.city} · ${event.date}`;
