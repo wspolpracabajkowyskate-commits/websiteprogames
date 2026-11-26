@@ -6,8 +6,10 @@ let enabled=false,touched=false,codes={},requestId=null;const defaults={en:'GB',
 function choose(code){if(!codes[code])return;country.value=code;dial.value=codes[code];form.querySelector('.phone-prefix').textContent=codes[code]}
 country.addEventListener('change',()=>{touched=true;choose(country.value)});form.addEventListener('input',()=>{requestId=null;status.textContent=''});
 const names=new Intl.DisplayNames([lang],{type:'region'});[...country.options].forEach(o=>o.textContent=names.of(o.value));[...country.options].sort((a,b)=>a.textContent.localeCompare(b.textContent,lang)).forEach(o=>country.append(o));
+// Polish version: Poland pinned at the top of the list (before the alphabetical list) and always the default (+48)
+const pinned={pl:'PL'}[lang];if(pinned){const po=[...country.options].find(o=>o.value===pinned);if(po){const sep=document.createElement('option');sep.disabled=true;sep.value='';sep.textContent='──────────';country.prepend(sep);country.prepend(po);po.selected=true}}
 fetch('/assets/data/countries.json').then(r=>r.json()).then(data=>{codes=data;if(!touched)choose(defaults[lang]||'GB')}).catch(()=>{});
-fetch('/api/contact',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(async data=>{if(!data)return;enabled=!!data.enabled;if(enabled){button.textContent=copy[0];note.textContent=copy[4]}if(data.country&&!touched){if(!Object.keys(codes).length)codes=await fetch('/assets/data/countries.json').then(r=>r.json());if(!touched)choose(data.country)}}).catch(()=>{});
+fetch('/api/contact',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(async data=>{if(!data)return;enabled=!!data.enabled;if(enabled){button.textContent=copy[0];note.textContent=copy[4]}if(data.country&&!touched&&!pinned){if(!Object.keys(codes).length)codes=await fetch('/assets/data/countries.json').then(r=>r.json());if(!touched)choose(data.country)}}).catch(()=>{});
 window.PG_SEND_INQUIRY=async data=>{
  data.set('country',country.value+' — '+country.selectedOptions[0].textContent);data.delete('website');const phone=data.get('phone')?.trim();if(phone)data.set('phone',phone.startsWith('+')?phone:dial.value+' '+phone);
  if(!enabled){location.href=window.PG_INQUIRY_URL(data);return}

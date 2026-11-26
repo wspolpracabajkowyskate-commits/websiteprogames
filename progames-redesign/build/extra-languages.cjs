@@ -16,18 +16,18 @@ for(const file of fs.readdirSync('i18n/extra').filter(f=>f.endsWith('.tsv'))){
 const aliases={28:20,49:20,57:54,84:69,85:70,87:74,89:76,90:77,109:74,112:78,116:108,117:110};
 for(const d of Object.values(dictionaries)){
  d['Boxing and Amusement Machine Manufacturer']=d['Boxing Arcade Machine Manufacturer'];
- d["PRO-GAMES is a Polish manufacturer of boxing arcade machines and amusement machines. Boxers, combo machines, kickers and hammers for arcades, entertainment venues and distributors."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
- d["PRO-GAMES Polish manufacturer of boxing arcade and amusement machines. Find your model and request a quote."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
- d["Polish manufacturer of boxing arcade and amusement machines. PRO-GAMES offers boxers, kickers and hammers, with customisation, spare parts and service."]=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
+ d["PRO-GAMES POLAND is a Polish manufacturer of boxing arcade machines and amusement machines. Boxers, combo machines, kickers and hammers for arcades, entertainment venues and distributors."]=d['PRO-GAMES POLAND manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
+ d["PRO-GAMES POLAND Polish manufacturer of boxing arcade and amusement machines. Find your model and request a quote."]=d['PRO-GAMES POLAND manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
+ d["Polish manufacturer of boxing arcade and amusement machines. PRO-GAMES POLAND offers boxers, kickers and hammers, with customisation, spare parts and service."]=d['PRO-GAMES POLAND manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  for(const [to,from]of Object.entries(aliases))d[sources[to]]=d[sources[from]];
- for(const [to,from]of Object.entries({'Spare Parts':'Spare parts','spare parts':'Spare parts','SPARE PARTS.':'Spare parts','MANUFACTURING':'manufacturing','ELECTRONICS':'Electronics','BOOTH':'Booth','OPERATOR CONFIGURATION':'Operator configuration','MULTIPLAYER BOXER MACHINE':sources[36],'Send an inquiry':'Send inquiry','dispensing':'& dispensing','PRO-GAMES Machines Catalog':'MACHINE CATALOG','PRO-GAMES Spare Parts Catalog':'SPARE PARTS CATALOG'}))d[to]=d[from];
+ for(const [to,from]of Object.entries({'Spare Parts':'Spare parts','spare parts':'Spare parts','SPARE PARTS.':'Spare parts','MANUFACTURING':'manufacturing','ELECTRONICS':'Electronics','BOOTH':'Booth','OPERATOR CONFIGURATION':'Operator configuration','MULTIPLAYER BOXER MACHINE':sources[36],'Send an inquiry':'Send inquiry','dispensing':'& dispensing','PRO-GAMES POLAND Machines Catalog':'MACHINE CATALOG','PRO-GAMES POLAND Spare Parts Catalog':'SPARE PARTS CATALOG'}))d[to]=d[from];
 }
 const productContext={window:{}};vm.runInNewContext(fs.readFileSync('products.js','utf8'),productContext);
 const brands=[...new Set([...Object.values(productContext.window.PRODUCTS).map(p=>p.name),'Boxer Standard'])];
 for(const d of Object.values(dictionaries)){
- d['PRO-GAMES manufactures commercial boxing arcade machines in Poland. Compare boxer, combo and strength games, explore configurations and request a B2B quote.']=d['PRO-GAMES manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
+ d['PRO-GAMES POLAND manufactures commercial boxing arcade machines in Poland. Compare boxer, combo and strength games, explore configurations and request a B2B quote.']=d['PRO-GAMES POLAND manufactures commercial boxing and amusement machines in Poland. Find your model and request a quote.'];
  d['Explore 15 Boxer Standard designs, including Champion, Joker and MMA. Compare images, colours and technical specifications, then request your configuration.']=d['15 Boxer Standard designs. Choose a model to explore its colours, photos and specifications.'];
- d['Browse and download the PRO-GAMES machine and spare parts catalogs in PDF. Explore our range and find parts information for your amusement equipment.']=d['Choose the catalog you need. Browse it directly on this page or download the original PDF for offline use.'];
+ d['Browse and download the PRO-GAMES POLAND machine and spare parts catalogs in PDF. Explore our range and find parts information for your amusement equipment.']=d['Choose the catalog you need. Browse it directly on this page or download the original PDF for offline use.'];
 }
 const runtime=fs.readFileSync('i18n/extra/runtime.js','utf8');
 for(const l of langs)fs.writeFileSync('i18n/'+l+'.js','window.PG_BRANDS='+JSON.stringify(brands)+';window.PG_DICTIONARY='+JSON.stringify(dictionaries[l])+';\n'+runtime);
@@ -46,7 +46,7 @@ for(const p of original){
  html=html.replace(/<a\b[^>]*\blang="(?:el|it|ar|ro|cs|hu|ru|bg)"[^>]*>[^<]*<\/a>/g,'');
  html=html.replace(/(<div class="pg-language-list">)([\s\S]*?)(<\/div>)/g,(_,a,b,c)=>a+b+languageLinks(equivalent)+c);
  if(!p.editorial){html=html.replace(/<link\b(?=[^>]*hreflang="(?:el|it|ar|ro|cs|hu|ru|bg)")[^>]*>/g,'');html=html.replace('</head>',alternates(p)+'</head>');}
- html=html.replace(/(\/site-config\.js|\/language\.js|\/contact\.js|\/i18n\.css)\?v=[^"']*/g,'$1?v=44');
+ html=html.replace(/(\/site-config\.js|\/language\.js|\/contact\.js|\/i18n\.css)\?v=[^"']*/g,'$1?v=45');
  fs.writeFileSync(p.filename,html);
 }
 const unresolved=new Set();
@@ -79,7 +79,7 @@ for(const l of langs){
    if(typeof obj==='string'){if(obj===origin+'/#organization'||obj===origin+'/#website')return obj;if(obj.startsWith(origin)){const u=new URL(obj);return mapping.has(u.pathname)?origin+mapping.get(u.pathname)+u.search+u.hash:obj;}return t(obj);}return obj;
   };
   for(const s of d.querySelectorAll('script[type="application/ld+json"]')){const obj=JSON.parse(s.textContent);if(obj['@type']==='Organization'||obj['@type']==='WebSite')continue;const translated=translateObject(obj);if(obj['@type']==='Product')translated.description=d.querySelector('.detail-lead').textContent.replace(/\s+/g,' ').trim();s.textContent=JSON.stringify(translated).replaceAll('<','\\u003c');}
-  const script=d.createElement('script');script.src='/i18n/'+l+'.js?v=44';d.head.append(script);
+  const script=d.createElement('script');script.src='/i18n/'+l+'.js?v=45';d.head.append(script);
   const css=d.createElement('link');css.rel='stylesheet';css.href='/i18n/extra/layout.css?v=45';d.head.append(css);
   // Record actual untranslated content, not placeholders or product names.
   function collect(n){if(['SCRIPT','STYLE','SVG'].includes(n.nodeName)||n.hasAttribute?.('data-no-translate')||n.closest?.('select[name=country]'))return;if(n.nodeType===3){const text=n.textContent.trim().replace(/\s+/g,' ');if(text&&t(text)===text&&/[A-Za-z]{3}/.test(text))unresolved.add(text);}for(const ch of n.childNodes)collect(ch);}if(l==='el')collect(d.body);

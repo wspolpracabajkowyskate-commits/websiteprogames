@@ -3,7 +3,7 @@ const products=window.PRODUCTS||{};
 const params=new URLSearchParams(location.search);
 const requested=document.body.dataset.model||params.get('model')||'champion';
 const key=Object.hasOwn(products,requested)?requested:null;
-if(!key){ document.title='Product not found | PRO-GAMES'; document.querySelector('#productDetail').innerHTML=document.documentElement.lang==='es'?'<section class="section"><h1>Producto no encontrado</h1><a href="/es.html#machines">Ver productos</a></section>':'<section class="section"><h1>Product not found</h1><a href="/#machines">View products</a></section>'; window.PG_LOCALIZE?.(); return; }
+if(!key){ document.title='Product not found | PRO-GAMES POLAND'; document.querySelector('#productDetail').innerHTML=document.documentElement.lang==='es'?'<section class="section"><h1>Producto no encontrado</h1><a href="/es.html#machines">Ver productos</a></section>':'<section class="section"><h1>Product not found</h1><a href="/#machines">View products</a></section>'; window.PG_LOCALIZE?.(); return; }
 const p=products[key];
 const lang=document.documentElement.lang;
 const isES=lang==='es';
@@ -19,23 +19,23 @@ const FAMILY_URL=routes.collection(lang);
 const txt=isPL?{
  all:'Wszystkie produkty',allMachines:'Wszystkie automaty',request:'Zapytaj o ofertę',catalog:'Zobacz pełny katalog →',price:'Cena i ostateczna konfiguracja są ustalane indywidualnie.',
  colour:'KOLOR / WZÓR',current:'Wybrane wykończenie',colourNote:'Wybierz kolor lub wzór, aby zobaczyć zdjęcie tej wersji urządzenia. Dostępność i szczegóły konfiguracji potwierdza dział sprzedaży.',
- finish:'WYKOŃCZENIE / WZÓR',currentImage:'Zdjęcie produktu',currentNote:'Zapytaj PRO-GAMES o dostępne wykończenia, kolory i możliwości personalizacji tego modelu.',
+ finish:'WYKOŃCZENIE / WZÓR',currentImage:'Zdjęcie produktu',currentNote:'Zapytaj PRO-GAMES POLAND o dostępne wykończenia, kolory i możliwości personalizacji tego modelu.',
  details:'SZCZEGÓŁY PRODUKTU',built:'DO INTENSYWNEJ\nEKSPLOATACJI.',features:'Najważniejsze cechy',specs:'Dane techniczne',options:'Dostępne opcje i wyposażenie',
- operator:'KONFIGURACJA DLA OPERATORA',one:'TWÓJ AUTOMAT.\nDOPASOWANY DO LOKALU.',operatorText:'System płatności, grafika, oświetlenie, funkcje biletowe i nagrodowe oraz szczegóły techniczne zależą od modelu, rynku i zamówienia. Skontaktuj się z PRO-GAMES, aby potwierdzić konfigurację odpowiednią dla Twojego obiektu.',
+ operator:'KONFIGURACJA DLA OPERATORA',one:'TWÓJ AUTOMAT.\nDOPASOWANY DO LOKALU.',operatorText:'System płatności, grafika, oświetlenie, funkcje biletowe i nagrodowe oraz szczegóły techniczne zależą od modelu, rynku i zamówienia. Skontaktuj się z PRO-GAMES POLAND, aby potwierdzić konfigurację odpowiednią dla Twojego obiektu.',
  explore:'POZNAJ WIĘCEJ',related:'POWIĄZANE AUTOMATY',viewAll:'Zobacz wszystkie produkty ↗',ready:'POROZMAWIAJMY',build:'STWÓRZMY TWOJĄ\nNOWĄ ATRAKCJĘ.',send:'Wyślij zapytanie'
 }:isES?{
   all:'Todos los productos', allMachines:'Todas las máquinas', request:'Solicitar oferta', catalog:'Ver catálogo completo →', price:'El precio y la configuración final se cotizan individualmente.',
-  colour:'COLOR / ACABADO', current:'Acabado actual', colourNote:'Selecciona un color o acabado. La foto principal cambia automáticamente para mostrar la variante real de PRO-GAMES. El color, el diseño y la disponibilidad final se confirman con el equipo comercial.',
-  finish:'ACABADO / DISEÑO', currentImage:'Imagen actual del producto', currentNote:'Consulta con el equipo comercial de PRO-GAMES las opciones actuales de diseño, color y personalización para este modelo.',
+  colour:'COLOR / ACABADO', current:'Acabado actual', colourNote:'Selecciona un color o acabado. La foto principal cambia automáticamente para mostrar la variante real de PRO-GAMES POLAND. El color, el diseño y la disponibilidad final se confirman con el equipo comercial.',
+  finish:'ACABADO / DISEÑO', currentImage:'Imagen actual del producto', currentNote:'Consulta con el equipo comercial de PRO-GAMES POLAND las opciones actuales de diseño, color y personalización para este modelo.',
   details:'DETALLES DEL PRODUCTO', built:'DISEÑADA PARA\nUSO COMERCIAL.', features:'Características principales', specs:'Especificaciones técnicas', options:'Opciones / mejoras disponibles',
-  operator:'CONFIGURACIÓN PARA OPERADORES', one:'UNA MÁQUINA.\nCONFIGURADA PARA TU LOCAL.', operatorText:'El hardware de pago, el diseño gráfico, la iluminación, la configuración de tickets o premios y algunos detalles técnicos pueden variar según el mercado y el pedido. Contacta con PRO-GAMES para confirmar la especificación exacta que necesitas.',
+  operator:'CONFIGURACIÓN PARA OPERADORES', one:'UNA MÁQUINA.\nCONFIGURADA PARA TU LOCAL.', operatorText:'El hardware de pago, el diseño gráfico, la iluminación, la configuración de tickets o premios y algunos detalles técnicos pueden variar según el mercado y el pedido. Contacta con PRO-GAMES POLAND para confirmar la especificación exacta que necesitas.',
   explore:'DESCUBRE MÁS', related:'MÁQUINAS RELACIONADAS', viewAll:'Ver todos los productos ↗', ready:'¿HABLAMOS?', build:'CREEMOS TU PRÓXIMA\nEXPERIENCIA DE ENTRETENIMIENTO.', send:'Enviar consulta'
 }:{
   all:'All products', allMachines:'All machines', request:'Request a quote', catalog:'View full product catalog →', price:'Pricing and final configuration are quoted individually.',
-  colour:'COLOUR / ARTWORK', current:'Current finish', colourNote:'Select a colour / artwork option. The main product photo changes automatically to the corresponding real PRO-GAMES variant. Final colour, artwork and availability are confirmed with the sales team.',
-  finish:'FINISH / ARTWORK', currentImage:'Current product image', currentNote:'Ask the PRO-GAMES sales team about current artwork, colour and branding options for this model.',
+  colour:'COLOUR / ARTWORK', current:'Current finish', colourNote:'Select a colour / artwork option. The main product photo changes automatically to the corresponding real PRO-GAMES POLAND variant. Final colour, artwork and availability are confirmed with the sales team.',
+  finish:'FINISH / ARTWORK', currentImage:'Current product image', currentNote:'Ask the PRO-GAMES POLAND sales team about current artwork, colour and branding options for this model.',
   details:'PRODUCT DETAILS', built:'BUILT FOR\nCOMMERCIAL PLAY.', features:'Key features', specs:'Technical specifications', options:'Available upgrades / options',
-  operator:'OPERATOR CONFIGURATION', one:'ONE MACHINE.\nCONFIGURED FOR YOUR VENUE.', operatorText:'Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact PRO-GAMES for the current specification of the exact version you need.',
+  operator:'OPERATOR CONFIGURATION', one:'ONE MACHINE.\nCONFIGURED FOR YOUR VENUE.', operatorText:'Payment hardware, artwork, lighting, ticket or prize configuration and some technical details can vary by market and order. Contact PRO-GAMES POLAND for the current specification of the exact version you need.',
   explore:'EXPLORE MORE', related:'RELATED MACHINES', viewAll:'View all products ↗', ready:'READY TO TALK?', build:"LET'S BUILD YOUR NEXT\nENTERTAINMENT EXPERIENCE.", send:'Send an inquiry'
 };
 const label=(isES||isPL)?(es.labels[p.label]||p.label):p.label;
@@ -47,9 +47,9 @@ const localOption=x=>(isES||isPL)?(es.options[x]||x):x;
 const localSpec=x=>(isES||isPL)?(es.specs[x]||x):x;
 const localColor=x=>(isES||isPL)?(es.colors[x]||x):x;
 
-if(!document.body.dataset.model) document.title=`${p.name} | PRO-GAMES`;
+if(!document.body.dataset.model) document.title=`${p.name} | PRO-GAMES POLAND`;
 const meta=document.querySelector('meta[name="description"]');
-if(meta&&!document.body.dataset.model) meta.content=isPL?`${p.name} — automat PRO-GAMES. Kolory, zdjęcia, dane techniczne i konfiguracja dla operatorów.`:isES?`${p.name} de PRO-GAMES. Descripción, especificaciones, colores disponibles y configuración para operadores.`:`${p.name} by PRO-GAMES. Product overview, verified dimensions, available finishes and operator configuration.`;
+if(meta&&!document.body.dataset.model) meta.content=isPL?`${p.name} — automat PRO-GAMES POLAND. Kolory, zdjęcia, dane techniczne i konfiguracja dla operatorów.`:isES?`${p.name} de PRO-GAMES POLAND. Descripción, especificaciones, colores disponibles y configuración para operadores.`:`${p.name} by PRO-GAMES POLAND. Product overview, verified dimensions, available finishes and operator configuration.`;
 
 const detail=document.querySelector('#productDetail');
 const variantList=(p.variants||[]).filter(v=>v&&v.image);
@@ -72,7 +72,8 @@ const quoteLabels=isES?{title:'CONFIGURA TU MÁQUINA',intro:'Selecciona las opci
 const quoteOptions=window.PG_QUOTE_OPTIONS;
 const selectedOptions=new Set(window.PG_QUOTE_SELECTION(params).map(o=>o.id));
 const optionCards=group=>quoteOptions.filter(o=>o.group===group).map(o=>`<label class="config-option"><input type="checkbox" name="equipment" value="${o.id}" ${selectedOptions.has(o.id)?'checked':''}><span class="config-option-content"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${o.icon}</svg><span>${isES?o.es:o.en}</span><span class="config-check" aria-hidden="true"></span></span></label>`).join('');
-const configurationHTML=`<section class="machine-config" aria-labelledby="configTitle"><p class="config-standard config-standard-coins">${isES?'Cada máquina incluye un monedero de serie. Puedes añadir un monedero adicional en el configurador.':'Every machine includes a coin acceptor as standard. You can add an extra coin acceptor in the configurator.'}</p><div class="config-heading"><p class="kicker">${quoteLabels.title}</p><h2 id="configTitle">${isES?'Elige tu equipamiento.':'Choose your equipment.'}</h2><p>${quoteLabels.intro}</p></div><fieldset><legend>${quoteLabels.payment}</legend><p class="config-helper">${quoteLabels.paymentNote}</p><div class="config-grid">${optionCards('payment')}</div></fieldset><fieldset><legend>${quoteLabels.extras}</legend><div class="config-grid">${optionCards('extras')}</div></fieldset><p class="config-standard">${isES?'Incluido de serie con cada máquina: cable de alimentación de 2 metros.':'Included as standard with every machine: 2-meter power cable.'}</p><div class="config-summary"><h3>${quoteLabels.summary}</h3><dl><div><dt>${quoteLabels.model}</dt><dd>${p.name}</dd></div><div><dt>${quoteLabels.color}</dt><dd id="configFinish"></dd></div><div><dt>${quoteLabels.payment}</dt><dd id="configPayment"></dd></div><div><dt>${quoteLabels.extras}</dt><dd id="configExtras"></dd></div></dl><a class="btn btn-primary config-quote" href="${HOME_URL}#contact">${quoteLabels.cta}</a><p class="config-footnote">${quoteLabels.note}</p><span id="configAnnouncement" class="config-sr" role="status" aria-live="polite"></span></div><noscript><p>${isES?'Activa JavaScript para añadir las opciones a tu consulta. También puedes escribirlas en el formulario de contacto.':'Enable JavaScript to include selected options in your enquiry, or list them in the contact form.'}</p></noscript></section>`;
+const WA_BUTTON=`<a class="btn config-whatsapp" href="https://wa.me/48536068912" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span>${isES?'Enviar esta configuración por WhatsApp':(window.PG_T?.('Send this configuration on WhatsApp')||'Send this configuration on WhatsApp')}</span></a>`;
+const configurationHTML=`<section class="machine-config" aria-labelledby="configTitle"><p class="config-standard config-standard-coins">${isES?'Cada máquina incluye un monedero de serie. Puedes añadir un monedero adicional en el configurador.':'Every machine includes a coin acceptor as standard. You can add an extra coin acceptor in the configurator.'}</p><div class="config-heading"><p class="kicker">${quoteLabels.title}</p><h2 id="configTitle">${isES?'Elige tu equipamiento.':'Choose your equipment.'}</h2><p>${quoteLabels.intro}</p></div><fieldset><legend>${quoteLabels.payment}</legend><p class="config-helper">${quoteLabels.paymentNote}</p><div class="config-grid">${optionCards('payment')}</div></fieldset><fieldset><legend>${quoteLabels.extras}</legend><div class="config-grid">${optionCards('extras')}</div></fieldset><p class="config-standard">${isES?'Incluido de serie con cada máquina: cable de alimentación de 2 metros.':'Included as standard with every machine: 2-meter power cable.'}</p><div class="config-summary"><h3>${quoteLabels.summary}</h3><dl><div><dt>${quoteLabels.model}</dt><dd>${p.name}</dd></div><div><dt>${quoteLabels.color}</dt><dd id="configFinish"></dd></div><div><dt>${quoteLabels.payment}</dt><dd id="configPayment"></dd></div><div><dt>${quoteLabels.extras}</dt><dd id="configExtras"></dd></div></dl><a class="btn btn-primary config-quote" href="${HOME_URL}#contact">${quoteLabels.cta}</a>${WA_BUTTON}<p class="config-footnote">${quoteLabels.note}</p><span id="configAnnouncement" class="config-sr" role="status" aria-live="polite"></span></div><noscript><p>${isES?'Activa JavaScript para añadir las opciones a tu consulta. También puedes escribirlas en el formulario de contacto.':'Enable JavaScript to include selected options in your enquiry, or list them in the contact form.'}</p></noscript></section>`;
 const finishBlock=p.availableColors?'':variantList.length>1?`<div class="finish-selector compact"><p class="finish-note">${txt.colourNote}</p></div>`:`<div class="finish-selector single"><p class="kicker">${txt.finish}</p><h3>${displayVariantName(mainVariant,selectedIndex)}</h3><p class="finish-note">${txt.currentNote}</p></div>`;
 
 const hasStaticDetail=Boolean(detail.querySelector('#productMainImage'));
@@ -120,6 +121,8 @@ ${(p.features.length||p.spec.length||p.options.length)?`<section class="product-
 </section>
 `;
 
+// static product pages already contain the configurator: add the WhatsApp button next to the quote button
+if(!document.querySelector('.config-whatsapp'))document.querySelectorAll('.config-quote').forEach(q=>q.insertAdjacentHTML('afterend',WA_BUTTON));
 let variantRequest=0;
 function updateVariantLinks(){
   const variant=variantList[selectedIndex]||mainVariant;
@@ -129,6 +132,18 @@ function updateVariantLinks(){
   const productQuery=new URLSearchParams(query);productQuery.delete('model');
   document.querySelectorAll('[data-lang-link]').forEach(a=>{a.href=routes.product(a.dataset.langLink,key)+'?'+productQuery;});
   document.querySelectorAll('.config-quote').forEach(a=>{a.href=HOME_URL+'?'+query+'#inquiry';});
+  // WhatsApp (main sales line): model, finish and the selected options in the page language
+  const T=x=>isES?x:(window.PG_T?.(x)||x), optName=o=>isES?o.es:T(o.en);
+  const pay=selected.filter(o=>o.group==='payment').map(optName).join(', ')||(isES?quoteLabels.standard:T(quoteLabels.standard));
+  const extra=selected.filter(o=>o.group==='extras').map(optName).join(', ')||(isES?quoteLabels.none:T(quoteLabels.none));
+  const pageUrl=location.origin+location.pathname+'?'+productQuery;
+  const waText=[isES?'Hola PRO-GAMES POLAND, quisiera un presupuesto para esta configuración:':T('Hello PRO-GAMES POLAND, I would like a quote for this configuration:'),
+    (isES?quoteLabels.model:T(quoteLabels.model))+': '+p.name,
+    (isES?quoteLabels.color:T(quoteLabels.color))+': '+displayVariantName(variant,selectedIndex),
+    (isES?quoteLabels.payment:T(quoteLabels.payment))+': '+pay,
+    (isES?quoteLabels.extras:T(quoteLabels.extras))+': '+extra,
+    (isES?'Enlace':T('Link'))+': '+pageUrl].join('\n');
+  document.querySelectorAll('.config-whatsapp').forEach(a=>{a.href='https://wa.me/48536068912?text='+encodeURIComponent(waText);});
   document.querySelector('#configFinish').textContent=displayVariantName(variant,selectedIndex);
   document.querySelector('#configPayment').textContent=selected.filter(o=>o.group==='payment').map(o=>isES?o.es:(window.PG_T?.(o.en)||o.en)).join(', ')||quoteLabels.standard;
   document.querySelector('#configExtras').textContent=selected.filter(o=>o.group==='extras').map(o=>isES?o.es:(window.PG_T?.(o.en)||o.en)).join(', ')||quoteLabels.none;

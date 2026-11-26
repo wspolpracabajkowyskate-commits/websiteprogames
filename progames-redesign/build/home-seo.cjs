@@ -8,8 +8,8 @@ process.chdir(path.resolve(__dirname, '..'));
 for (const file of ['pl/index.html', 'pl/producent-automatow-bokserskich.html']) {
   const source = fs.readFileSync(file, 'utf8');
   const updated = source
-    .replaceAll('PRO-GAMES projektuje i produkuje automaty bokserskie w Jastrzębiu-Zdroju.', 'PRO-GAMES to polski producent automatów bokserskich z Jastrzębia-Zdroju.')
-    .replaceAll('PRO-GAMES (PRO-GAMES POLAND Sp. z o.o.) projektuje i produkuje automaty bokserskie w Jastrzębiu-Zdroju.', 'PRO-GAMES to polski producent automatów bokserskich z Jastrzębia-Zdroju.');
+    .replaceAll('PRO-GAMES POLAND projektuje i produkuje automaty bokserskie w Jastrzębiu-Zdroju.', 'PRO-GAMES POLAND to polski producent automatów bokserskich z Jastrzębia-Zdroju.')
+    .replaceAll('PRO-GAMES POLAND (PRO-GAMES POLAND Sp. z o.o.) projektuje i produkuje automaty bokserskie w Jastrzębiu-Zdroju.', 'PRO-GAMES POLAND to polski producent automatów bokserskich z Jastrzębia-Zdroju.');
   if (updated !== source) fs.writeFileSync(file, updated);
 }
 const config = require('./home-seo.json');
@@ -24,7 +24,7 @@ for (const [file, copy] of Object.entries(config)) {
     ['meta[name="twitter:title"]', copy.title],
     ['meta[property="og:description"]', copy.description],
     ['meta[name="twitter:description"]', copy.description],
-    ['meta[property="og:site_name"]', 'PRO-GAMES'],
+    ['meta[property="og:site_name"]', 'PRO-GAMES POLAND'],
   ]) {
     const element = document.querySelector(selector);
     if (!element) throw Error(`Missing ${selector} in ${file}`);
@@ -52,4 +52,4 @@ for (const [file, copy] of Object.entries(config)) {
   entry.title = copy.title;
 }
 fs.writeFileSync('build/pages.json', JSON.stringify(pages, null, 2) + '\n');
-console.log('PL/EN homepage SEO: manufacturer first, consistent PRO-GAMES brand.');
+console.log('PL/EN homepage SEO: manufacturer first, consistent PRO-GAMES POLAND brand.');
