@@ -69,6 +69,8 @@ GFX_TOP_FRONT, GFX_SCORE, GFX_LEFT, GFX_RIGHT, GFX_LOWER_FRONT, GFX_KICKER, GFX_
 
 Factory graphics in `textures/zone_*.webp` (Double Strike) were extracted from the product photos and are
 low resolution – replace them with the production print files (same file names) and rebuild.
-Boxer Champion uses the production print files since v11 (`reference/production/`, see
-`blender/BOXER_CHAMPION_REPORT.md`): `python3 blender/src/make_champion_production_textures.py creator-assets`
-then `python3 blender/src/glb_replace_images.py models/boxer-champion.glb champion_zone_front=... ` (no Blender needed).
+Boxer Champion, Boxer POW and Boxer Easy share one cabinet (`models/boxer-{champion,pow,easy}.glb` are the same
+mesh with different embedded artwork) and use the production print files (`reference/production/`, see
+`blender/BOXER_CHAMPION_REPORT.md`): `python3 blender/src/make_boxer_production_textures.py creator-assets champion pow easy`,
+then `python3 blender/src/glb_replace_images.py models/boxer-<id>.glb champion_zone_front=textures/<id>/<id>_zone_front.webp ...`
+(no Blender needed). Monster 3in1 and Double Strike are `hidden` in the picker (open with `?model=`).

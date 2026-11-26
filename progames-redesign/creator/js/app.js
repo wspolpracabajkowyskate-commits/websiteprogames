@@ -2,17 +2,17 @@
 // Loaded only by /creator/index.html, so nothing here touches the public site.
 import * as THREE from '/creator/vendor/three/three.module.min.js';
 import { GLTFLoader } from '/creator/vendor/three/addons/loaders/GLTFLoader.js';
-import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=26';
-import { Studio, detectQuality } from './studio.js?v=26';
-import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=26';
-import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=26';
-import { ARView } from './ar.js?v=26';
+import { PRODUCTS, DEFAULT_PRODUCT, BODY_COLORS, CAMERA_PRESETS } from './config.js?v=27';
+import { Studio, detectQuality } from './studio.js?v=27';
+import { ZoneGraphics, DEFAULT_TRANSFORM, loadImage, normalizeUpload } from './graphics.js?v=27';
+import { loadState, saveState, clearState, putImage, getImage, deleteImage } from './storage.js?v=27';
+import { ARView } from './ar.js?v=27';
 
 const $ = (s) => document.querySelector(s);
 const params = new URLSearchParams(location.search);
 const LAST_KEY = 'progames-creator:last-model';
 const lastModel = (() => { try { return localStorage.getItem(LAST_KEY); } catch (e) { return null; } })();
-const product = PRODUCTS[params.get('model')] || PRODUCTS[lastModel] || PRODUCTS[DEFAULT_PRODUCT];
+const product = PRODUCTS[params.get('model')] || (PRODUCTS[lastModel] && !PRODUCTS[lastModel].hidden ? PRODUCTS[lastModel] : null) || PRODUCTS[DEFAULT_PRODUCT];
 try { localStorage.setItem(LAST_KEY, product.id); } catch (e) { /* ignore */ }
 const ACCEPT = ['image/png', 'image/jpeg', 'image/webp', 'image/svg+xml'];
 
@@ -416,6 +416,7 @@ function buildUI() {
   const ml = $('#models');
   if (ml && !ml.children.length) {
     for (const p of Object.values(PRODUCTS)) {
+      if (p.hidden && p.id !== product.id) continue;
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'cr-machine'; b.setAttribute('role', 'radio');
       b.setAttribute('aria-checked', String(p.id === product.id));

@@ -1,5 +1,15 @@
 # Boxer Champion – model report
 
+## v11.1 (26.11.2026): Boxer POW and Boxer Easy on the same cabinet
+- `models/boxer-pow.glb`, `models/boxer-easy.glb`: copies of the Champion GLB with their own print files
+  (`reference/production/{pow,easy}_sheet_*.webp`, same die-cut: crest tip 1075 mm from the top).
+  Script renamed to `make_boxer_production_textures.py` (machines: champion, pow, easy).
+- The POW / Easy print files are 1112 × 1600 px (≈ 0.82 px/mm) – textures at 2 px/mm with light
+  sharpening; send the vector / full-resolution files for print-sharp results.
+- Shields: Easy has the Champion shield print. POW shield is rectified from the six product photos
+  (homography on the print around it, median of the six, coloured bezel removed):
+  `reference/production/pow_shield_source.webp` – low resolution until the shield print file is available.
+
 ## v11 (25.11.2026): production print files
 - Front, both sides and the canopy band now come from the factory PRINT FILES
   (`reference/production/`: `champion_sheet_front_sides.webp` = CHAMPION__PG sheet 1350 × 1940 mm,
