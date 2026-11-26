@@ -19,7 +19,7 @@ const PROTECT = [
   // "variants used by partners" sentences must keep the variant they cite
   /also appears as Pro Games Poland or Pro-Games Poland/g,
   /zapisy Pro Games Poland i Pro-Games Poland/g,
-  /(?:Are|Czy) Pro Games Poland, ProGames (?:and|i) PRO-GAMES POLAND/g,
+  /(?:Are|Czy) Pro Games Poland, ProGames (?:and|i) (?:<span class="nw">)?PRO-GAMES POLAND/g,
 ];
 const BRAND = /\b(?:Pro Games|PRO GAMES|ProGames|PROGAMES|Pro-Games|PRO-GAMES)(?: Poland| POLAND)?\b/g;
 
